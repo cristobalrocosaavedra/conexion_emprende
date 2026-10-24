@@ -104,3 +104,68 @@ App: Expo (recomendado) o PWA.
 Modelo de negocio: A, B, C o una mezcla.
 Primer corredor (propuesta: Santiago → La Serena).
 Nivel de verificación mínimo para que una ficha aparezca en las rutas.
+
+10. Reformulación de la visión — conversación del 24-10-2026
+
+Esta sección conserva la idea original y registra su evolución. En los puntos que cambian, esta reformulación reemplaza las propuestas anteriores. No autoriza todavía construir el esqueleto ni funciones. Las fases originales deben revisarse antes de implementarlas.
+
+10.1 Propósito y público
+Una plataforma pública de descubrimiento de turismo, pequeñas y medianas empresas, emprendimientos y comercio local de todo Chile, con vocación de difusión y crecimiento viral. Las rutas conectan lo descubierto; no son el único punto de entrada al producto. No está decidido que sea una red social ni que tenga comentarios, seguidores o publicaciones personales.
+
+Incluye atractivos turísticos, gastronomía, hotelería tradicional, residenciales, ofertas, comercio establecido local, emprendimientos por encargo e itinerantes. No se propone un catálogo de departamentos ni un servicio de arriendos particulares al estilo Airbnb.
+
+10.2 Inicio: recorrer Chile por regiones
+La primera pantalla presenta en general la región donde está la persona y prioriza descubrimientos cercanos, ampliándose hacia el resto de la región. La ubicación del dispositivo se solicita con consentimiento; no se propone guardar sus coordenadas. Sigue pendiente definir la experiencia cuando la persona no concede el permiso.
+
+La navegación principal se imagina como un recorrido vertical por Chile: desplazarse hacia el norte permite descubrir regiones del norte; hacia el sur, las del sur. Cada sección representa una región y sus atractivos, comercios y emprendimientos. El gesto exacto y su relación con el movimiento del contenido se deben probar en la maqueta para evitar confusiones.
+
+La región que se está explorando puede diferir de la ubicación física del usuario. Es posible recorrer otras regiones para preparar vacaciones y descubrir qué hay entre el origen y el destino.
+
+10.3 Secciones y viaje
+Inicio: descubrimiento regional con identidad visual propia, diferente de los otros proyectos.
+Exploración: contenido de la región que se está consultando; cambia al cambiar de región.
+Eventos: eventos de la región consultada, tanto la actual como una futura región de destino.
+Mi ruta (nombre provisional): reúne lugares y paradas elegidos mientras se recorren las regiones, para un viaje previsto o aún sin fecha.
+
+La propuesta incluye visualizar y simular el recorrido en un mapa: origen, destino, paradas, desvíos y tiempos estimados. Contempla ida y vuelta y la elección de regresar o no al punto de partida. Los lugares seleccionados deben distinguirse de los negocios que no constituyen una parada visitable.
+
+10.4 Visibilidad y modelo comercial por definir
+Se busca que todos los inscritos tengan oportunidades de aparecer, evitando que solo sean visibles los más populares. Se conversaron como posibilidades la rotación, el azar, las recomendaciones, las notas y la interacción. También se propusieron planes que modifiquen frecuencia, duración, tamaño o espacio de exposición.
+
+La intención expresada es que todos aparezcan diariamente. Aún no es una garantía técnica: falta definir qué cuenta como aparición (inclusión en la rotación o visualización real por una persona), capacidad disponible, volumen de inscritos, distribución justa y relación con los planes. No se fijaron duraciones, precios ni un algoritmo. Toda exposición pagada deberá identificarse como tal, conforme a la regla original de publicidad rotulada.
+
+10.5 Emprendimientos y presencia física
+Los emprendimientos por encargo, a domicilio o itinerantes pueden formar parte del catálogo aunque no siempre correspondan a una parada en ruta. Se propuso exigir verificación en Google para aparecer como comercio local o parada; queda pendiente precisar el alcance y cómo comprobarla. No se asume que tener una ficha en Google equivalga a verificación propia por la plataforma ni que autorice publicar una dirección privada.
+
+10.6 Prioridad inmediata y decisiones aplazadas
+El nombre continúa provisional. Se aplazan la revisión de INAPI, marca y dominio: la prioridad es desarrollar y evaluar una maqueta de aplicación móvil y comprobar su funcionamiento en Android mediante APK. No se necesita contratar un dominio para esta validación inicial. La maqueta utilizará solo datos de ejemplo rotulados como tales, sin inventar información turística real.
+
+Antes de construir, acordar la experiencia de la maqueta y presentar su esqueleto para aprobación. No se han elegido aún todos los detalles técnicos ni se ha autorizado implementar las funciones de las fases posteriores. Los repositorios de los otros proyectos permanecen independientes; no se modifican sin las dos confirmaciones por trabajo exigidas por el usuario.
+
+10.7 Dirección visual del inicio — tarjetas regionales
+El usuario confirma un inicio centrado en tarjetas y una composición que represente visualmente la región consultada. El mapa no será protagonista del inicio: se reserva para la exploración y para pequeños contextos de ubicación dentro de las fichas de atractivos. No es necesario incluir un mapa regional en la portada de la maqueta.
+
+Cada región tendrá identidad visual mediante imágenes o ilustraciones simuladas, simples y livianas durante la maqueta. La referencia visual puede alternar entre distintos lugares de la región, con rotación a lo largo del mes. La implementación, frecuencia y transiciones se definirán al diseñar la maqueta; no se exige descargar imágenes pesadas ni generar contenido continuamente.
+
+Para Valparaíso, el usuario propone como referencias posibles un moái de Rapa Nui, el puerto de Valparaíso, el reloj de flores de Viña del Mar, los túneles del sector de Petorca y la playa de Papudo. Son referencias para la dirección artística, no fichas turísticas verificadas ni afirmaciones de accesibilidad por carretera. Debe revisarse la referencia exacta antes de convertirla en contenido real; Rapa Nui no constituye una parada vial desde Chile continental. Las ilustraciones de maqueta se identificarán como ilustraciones de referencia.
+
+La organización visual permitirá descubrir la región, sus provincias y sus comunas de manera gradual y armoniosa, con contenido agrupado por territorio. La portada representa la región completa aunque muestre un motivo de una comuna o provincia concreta; debe identificar el lugar representado sin confundirlo con el alcance de toda la región. Cambiar el motivo de fondo no cambia por sí solo la región consultada ni los filtros territoriales.
+
+Propuesta para presentar y validar antes de construir: encabezado con región consultada y acción para cambiarla; portada regional ilustrada con identificación del motivo; accesos a exploración y eventos; grupos de tarjetas por provincia y acceso a sus comunas; navegación del viaje. La composición exacta, el espacio de las ofertas y la relación entre desplazamiento por contenido y cambio de región siguen pendientes de validar.
+
+10.8 Navegación entre regiones — definición del usuario
+La navegación regional principal será mediante gestos verticales: hacia arriba para ir al norte y hacia abajo para ir al sur. Esta definición reemplaza la propuesta conversada de utilizar el desplazamiento vertical solo para contenido y botones como mecanismo principal de cambio de región. La interfaz debe enseñar claramente la dirección de ambos gestos.
+
+Habrá además un selector desplegable con todas las regiones para ir rápidamente a una región concreta. Al seleccionarla, la transición recorrerá visualmente las portadas de las regiones intermedias, en el orden geográfico correspondiente, hasta llegar al destino. El objetivo es sentir el recorrido por Chile, no abrir una pantalla desconectada de la anterior. La animación no debe activar consultas, permisos de ubicación ni cambios persistentes por cada región intermedia; estas solo se representan durante el tránsito.
+
+El usuario describe ventanas de 0,1 o 0,2 «milisegundos». Se interpreta provisionalmente la intención visual como 0,1–0,2 segundos (100–200 ms) por región, ya que fracciones de milisegundo no permiten distinguir una pantalla. La duración exacta y un límite total para trayectos largos deben ajustarse en la maqueta. No es una medida definitiva aprobada. Se respetará la preferencia del dispositivo de reducir movimiento, ofreciendo en ese caso una transición breve sin recorrer animadamente todas las portadas.
+
+En el extremo norte solo se ofrece avanzar hacia el sur; en el extremo sur, hacia el norte. No habrá navegación circular ni regiones inexistentes más allá de los límites. Arica y Punta Arenas fueron los ejemplos del usuario para representar estos extremos; la navegación se organiza por regiones, no por ciudades, y sus límites corresponden a Arica y Parinacota y Magallanes y de la Antártica Chilena.
+
+Queda por diseñar cómo explorar contenido dentro de cada región sin confundir ese gesto con el cambio regional: tarjetas resumidas que abran una vista de detalle o exploración constituyen una posibilidad por presentar, no una decisión cerrada. No implementar todavía estas interacciones; primero presentar la maqueta y el esqueleto para aprobación.
+
+11. Planificación técnica y visual — entrega de Fase 0
+
+El usuario pide propuestas visuales almacenadas, opciones de nombre y una arquitectura técnica que contemple crecimiento. El logo sigue aplazado y no se elige un nombre automáticamente. La prioridad aclarada es definir pantallas y navegación para comenzar después con primeras APK descargables. No se autoriza todavía implementar funciones productivas de Fase 1.
+
+Documentos de propuesta: [arquitectura y plan técnico](PLAN-TECNICO.md), [nombres candidatos](NOMBRES.md), [direcciones visuales](diseno/PROPUESTAS.md) y [pantallas y entregas APK](diseno/PANTALLAS.md). La lámina visual se conserva en docs/diseno/propuestas-visuales-v01.png. Son propuestas para revisar, no decisiones técnicas aprobadas ni una aplicación ejecutable. Primero revisar dirección visual y pantallas; luego aprobar el esqueleto antes de construirlo. La maqueta Android usa ejemplos locales y no requiere resolver dominio, marca ni backend productivo.
