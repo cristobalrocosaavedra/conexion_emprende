@@ -2,6 +2,10 @@
 
 24-10-2026. La prioridad confirmada por el usuario es definir las pantallas y su despliegue, y luego descargar primeras versiones Android. Este documento propone el contenido de esas entregas; todavía no autoriza construirlas ni fija fechas.
 
+## Decisiones incorporadas
+
+Nombre elegido para continuar: **Territorio Vivo**. Tema oscuro preferido para la propuesta, con una versión clara de igual estructura. Portada y tarjetas de detalle/eventos parten de B; exploración territorial y selector con mapa parten de A. No se trata de escoger una lámina completa ni de tener dos aplicaciones distintas. Aún pendientes la aprobación concreta de pantallas, el esqueleto y la construcción de APK.
+
 ## Orden de revisión
 
 1. Portada regional y lenguaje visual, comparando A y B de [la lámina](propuestas-visuales-v01.png).

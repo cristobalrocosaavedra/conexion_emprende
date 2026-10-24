@@ -1,6 +1,22 @@
-# Propuestas visuales — versión 01
+# Propuestas visuales — historial y dirección elegida
 
 24-10-2026. Mockups de Fase 0, no pantallas implementadas. Sin logo y con nombre provisional. Toda ficha, evento, oferta o recorrido dibujado es de ejemplo; las ilustraciones regionales son referencias visuales, no documentación turística.
+
+## Dirección elegida: mezcla de A y B, con preferencia oscura
+
+El usuario elige **Territorio Vivo** como nombre de la app. Se deja atrás la elección excluyente A/B: una sola experiencia combina las piezas de ambas propuestas.
+
+- **Portada e identidad:** preferencia por el ambiente oscuro e inmersivo de B.
+- **Exploración por provincia/comuna:** jerarquía, distribución y lectura de A, adaptadas también al tema oscuro.
+- **Selector territorial:** mapa esquemático y lista de regiones de A. No convertir el inicio en un mapa protagonista ni usar la silueta generada como cartografía real.
+- **Detalle de emprendimientos y eventos:** estilo de tarjetas de B, con ilustración y contenido legible.
+- **Tema:** ofrecer claro y oscuro con la misma información, estructura, navegación y acciones. La preferencia personal del usuario es oscuro; no define por sí sola el valor inicial para todos.
+
+Propuesta técnica por confirmar al construir: opciones Sistema / Claro / Oscuro, siguiendo inicialmente el sistema y recordando una selección manual en el dispositivo. Colores mediante tokens semánticos (fondo, superficie, texto, acento, borde, estado), sin duplicar pantallas ni ligar lógica de negocio al tema. Contraste y foco se verifican en ambos modos. La portada puede tener variantes de ilustración compatibles, sin duplicar todo el catálogo de recursos por tema.
+
+La [lámina V02](territorio-vivo-v02.png) compara portada, exploración territorial y selector en ambos temas. No cierra automáticamente los detalles de Eventos y Mi viaje: se revisarán en su propia lámina. El usuario ha elegido la dirección, no ha aprobado todavía cada pantalla ni el esqueleto.
+
+## Versión 01 — alternativas originales
 
 ## Dos direcciones para comparar
 
@@ -8,7 +24,7 @@
 
 **B · Ventanas de Chile.** Azul noche, turquesa y crema. Paisaje más inmersivo, bloques geométricos y tarjetas claras superpuestas. Más protagonismo del viaje y una atmósfera nocturna. Debemos cuidar el contraste y que la ilustración no compita con el contenido.
 
-La recomendación es probar A primero y rescatar de B su sensación de ventana regional. No mezclar ambas sin una revisión, ni interpretar la lámina como especificación exacta de tipografía, espaciado o datos. La generación visual puede introducir diferencias de texto: los requisitos de este documento y PLAN.md prevalecen.
+La recomendación inicial de probar A primero queda reemplazada por la mezcla elegida arriba. No interpretar la lámina como especificación exacta de tipografía, espaciado o datos. La generación visual puede introducir diferencias de texto: los requisitos de este documento y PLAN.md prevalecen.
 
 ## Pantallas y estados a diseñar
 
@@ -46,6 +62,6 @@ Reducir movimiento desactiva el tránsito animado largo. Contraste WCAG AA, text
 
 ## Cómo revisar esta entrega
 
-Primero elegir A o B, o señalar elementos concretos de cada una. Después ajustar la portada y el salto regional. El nombre se decide por separado; no condiciona la estructura de navegación. Logo, fotografías definitivas, algoritmo de rotación, ranking y espacios comerciales se diseñan más adelante.
+La mezcla y el nombre Territorio Vivo ya fueron elegidos. Ahora revisar la portada y el salto regional, y después los detalles. El nombre no condiciona la estructura de navegación. Logo, fotografías definitivas, algoritmo de rotación, ranking y espacios comerciales se diseñan más adelante.
 
 La lámina está guardada en [propuestas-visuales-v01.png](propuestas-visuales-v01.png). Es un PNG de revisión; no es un recurso optimizado de la app. El mapa dibujado es esquemático y no debe usarse como cartografía ni como geometría regional. Véase también el [detalle de pantallas y primeras APK](PANTALLAS.md).

@@ -1,6 +1,8 @@
 # Propuesta técnica — descubrimiento regional de Chile
 
-Estado: propuesta para revisión, 24-10-2026. Nombre provisional. Solo Fase 0.
+Estado: propuesta para revisión, 24-10-2026. Nombre elegido para continuar: Territorio Vivo. Solo Fase 0.
+
+Dirección visual confirmada: mezcla de las propuestas A/B con preferencia oscura; claro y oscuro serán temas de la misma estructura. Véase [la decisión visual](diseno/PROPUESTAS.md). La arquitectura y el esqueleto aún no están aprobados.
 
 El detalle para revisar cada pantalla y preparar entregas Android está en [Pantallas y primeras APK](diseno/PANTALLAS.md).
 
@@ -144,4 +146,4 @@ Al incorporar Supabase se agregan pruebas locales de RLS y migraciones, sin escr
 
 ## Decisiones abiertas, de una en una
 
-Primero revisar dirección visual. Después confirmar arquitectura monorepo/Expo, alcance de la APK y configuración manual necesaria. Nombre, negocio, elegibilidad mínima de paradas y política de rotación siguen abiertos; no necesitan resolverse para dibujar la maqueta. INAPI, dominio y logo se aplazan por indicación del usuario. No incorporar proveedores reales, Google o cobros hasta acordar sus reglas y necesidades.
+La dirección visual mixta y el nombre Territorio Vivo ya se eligieron; falta revisar las pantallas concretas. Después confirmar arquitectura monorepo/Expo, alcance de la APK y configuración manual necesaria. Modelo de negocio, elegibilidad mínima de paradas y política de rotación siguen abiertos; no necesitan resolverse para dibujar la maqueta. INAPI, dominio y logo se aplazan por indicación del usuario. No incorporar proveedores reales, Google o cobros hasta acordar sus reglas y necesidades.
