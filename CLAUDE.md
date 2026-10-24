@@ -15,3 +15,5 @@
 - Antes de ofrecer una descarga nueva, mostrar dos o tres capturas o mockups de las pantallas principales de la candidata y distinguir capturas funcionales de ilustraciones. Guardar esas vistas para revisión.
 - Mantener identificadores y firma de la app base, incrementar versionCode y conservar preferencias/paradas con migración de datos cuando cambie el esquema. Una actualización normal se instala encima; no recomendar borrar la app como paso rutinario.
 - Canal compartido: releases/latest/download/territorio-vivo-android.apk solo para builds verdes de develop después de revisión/fusión del usuario. Los APK de PR son candidatos y no reemplazan la última versión compartida. No fusionar ni publicar main por cuenta propia.
+
+- Matichoc: portada siempre con su logo o una foto real autorizada de su puesto/toldo de feria. No elegir automáticamente tabletas u otras fotos de producto como imagen principal. Mostrar el logo completo, sin recortar.

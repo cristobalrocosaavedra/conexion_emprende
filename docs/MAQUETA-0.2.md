@@ -24,8 +24,8 @@ usuario en dos confirmaciones, sin modificar los repositorios de origen.
 - Mi viaje permite guardar, quitar, reordenar y cargar las paradas de un recorrido;
   muestra conexiones e ida/vuelta. Conserva IDs de paradas, región y tema entre
   aperturas. No guarda coordenadas del viajero.
-- Las fichas de Matichoc usan la foto de producto propia conservada en el
-  directorio; el resto de las imágenes genéricas se identifica como ilustración.
+- Las tarjetas y la ficha de Matichoc usan su logo completo sobre blanco, por
+  preferencia explícita del titular; el resto de las imágenes genéricas se identifica como ilustración.
 - Ubicación con permiso de primer plano para identificar región con el
   geocodificador del sistema; se puede seguir manualmente. Si ya existe permiso,
   se intenta reconocer región al abrir, sin reemplazar una elección posterior.

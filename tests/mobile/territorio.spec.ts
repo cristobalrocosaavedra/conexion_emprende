@@ -232,9 +232,7 @@ test("genera tres vistas principales de la candidata antes de ofrecer la APK", a
     .getByRole("button", { name: "Chocolatería Matichoc", exact: true })
     .click();
   await expect(
-    page
-      .getByText("Foto de producto del catálogo original", { exact: true })
-      .last(),
+    page.getByText("Logo de Matichoc", { exact: true }).last(),
   ).toBeVisible();
   await page.screenshot({
     path: "previews/pantalla-ficha.png",

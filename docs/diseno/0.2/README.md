@@ -6,7 +6,7 @@ manualmente. Las ilustraciones están rotuladas y los lugares esperan verificaci
 
 - [Inicio: Valparaíso → Petorca → La Ligua](pantalla-inicio.png).
 - [Explorar: filtros por comuna y mapa interactivo](pantalla-explorar.png).
-- [Ficha de Matichoc con foto propia del catálogo](pantalla-ficha.png).
+- [Ficha de Matichoc con logo como portada](pantalla-ficha.png).
 
 El fondo OSM no cargó por la restricción de red del entorno; se conservan límites
 y puntos con su aviso. No se ha sustituido el mapa con una imagen ficticia.

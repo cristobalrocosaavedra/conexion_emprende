@@ -12,7 +12,7 @@ import type { ImageSourcePropType } from "react-native";
 import { palettes } from "@territorio-vivo/design-tokens";
 import type { Place } from "@territorio-vivo/core";
 import { messages as t } from "@territorio-vivo/i18n";
-import { placeArt, placeArtLabel } from "./art";
+import { placeArt, placeArtLabel, placeArtFit } from "./art";
 export type Palette = typeof palettes.dark | typeof palettes.light;
 export function Action({
   label,
@@ -166,11 +166,17 @@ export function PlaceCard({
       <View>
         <Image
           source={placeArt(place)}
-          style={{ width: "100%", height: dense ? 60 : compact ? 98 : 155 }}
-          resizeMode="cover"
+          style={{
+            width: "100%",
+            height: dense ? 60 : compact ? 98 : 155,
+            backgroundColor:
+              placeArtFit(place) === "contain" ? "#fff" : undefined,
+          }}
+          resizeMode={placeArtFit(place)}
         />
         <View
           style={{
+            display: placeArtFit(place) === "contain" ? "none" : "flex",
             position: "absolute",
             bottom: 7,
             left: 9,

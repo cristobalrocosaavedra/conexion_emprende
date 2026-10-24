@@ -73,7 +73,7 @@ export const es = {
   routesReference:
     "Recorridos heredados de tu catálogo, pendientes de revisión. La vista de viaje conecta sus paradas sin calcular carreteras.",
   locationAccess: "Ubicación de la región",
-  productPhoto: "Foto de producto del catálogo original",
+  matichocLogo: "Logo de Matichoc",
   zoomIn: "Acercar",
   zoomOut: "Alejar",
   naturalEarthAttribution: "Límites: Natural Earth",

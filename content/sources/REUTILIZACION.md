@@ -6,16 +6,16 @@ modificarlos a ellos». Alcance aplicado: lectura y copia/adaptación a
 conexion_emprende para esta ampliación. Los proyectos de origen no se modifican,
 no se instalan dependencias ni se arrancan procesos en ellos.
 
-| Origen                        | Revisión                                 | Elementos utilizados                                                                                                                                                                                                           |
-| ----------------------------- | ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Matichoc/directorio_turistico | 4843e5c1aad8ec25371cb618304f528b74ababb1 | Datos literales de scripts/seed.ts: 37 referencias de lugares, 63 localidades y 3 recorridos; tres ilustraciones de rutas en public/rutas y foto propia de producto Matichoc en public/fotos/chocolateria-matichoc/tableta.jpg |
-| Matichoc/city_tour            | a31135cc9bc3d2ffd22b663d61ec30bcab26b3e2 | Cinco ilustraciones genéricas de public/ilustraciones, documentadas como IA en docs/IMAGENES.md; fórmula Haversine de src/lib/itinerary-engine/geo.ts                                                                          |
+| Origen                        | Revisión                                 | Elementos utilizados                                                                                                                                                                            |
+| ----------------------------- | ---------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Matichoc/directorio_turistico | 4843e5c1aad8ec25371cb618304f528b74ababb1 | Datos literales de scripts/seed.ts: 37 referencias de lugares, 63 localidades y 3 recorridos; tres ilustraciones de rutas en public/rutas y logo de Matichoc en public/brand/matichoc-logo.webp |
+| Matichoc/city_tour            | a31135cc9bc3d2ffd22b663d61ec30bcab26b3e2 | Cinco ilustraciones genéricas de public/ilustraciones, documentadas como IA en docs/IMAGENES.md; fórmula Haversine de src/lib/itinerary-engine/geo.ts                                           |
 
 Se copian snapshots: la aplicación no importa código ni consulta datos de esos
 repositorios durante ejecución, instalación o CI. No se ejecutó scripts/seed.ts ni
 se consultaron credenciales o bases de datos. La extracción leyó exclusivamente
 literales con el parser TypeScript, sin evaluar llamadas ni variables de entorno.
-No se copiaron logos, contactos privados, tokens, fotos de terceros ni calendarios
+No se copiaron logos de terceros, contactos privados, tokens, fotos de terceros ni calendarios
 como si fueran eventos vigentes. La reutilización de las ilustraciones está
 amparada en la autorización del titular y en la documentación de procedencia.
 
@@ -65,3 +65,10 @@ Solo se persisten región elegida, tema y IDs de paradas; no coordenadas del via
 
 Se retiraron menciones editoriales a patrocinios y al nombre del sitio de origen;
 no se heredan auspicios ni relaciones comerciales a Territorio Vivo.
+
+Por indicación expresa del usuario, Matichoc usa siempre como portada el logo o
+un puesto/toldo real autorizado, nunca una tableta elegida automáticamente. Se
+utiliza la copia del mismo diseño de logo disponible en public/brand del origen,
+con fondo circular/transparente, contenida completa sobre blanco. El adjunto del
+usuario muestra la variante cuadrada; no se afirma haber descargado ese archivo
+local de Windows. La foto de producto se retiró de los recursos de la app.

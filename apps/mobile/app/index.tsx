@@ -47,6 +47,7 @@ import {
   routeArt,
   eventArt,
   placeArtLabel,
+  placeArtFit,
 } from "../src/art";
 import { usePreferences } from "../src/usePreferences";
 
@@ -1032,7 +1033,16 @@ export default function Home() {
                 {tag(t.pending)}
               </View>
               <ScrollView contentContainerStyle={styles.content}>
-                <Image source={placeArt(detail)} style={styles.detailImage} />
+                <Image
+                  source={placeArt(detail)}
+                  resizeMode={placeArtFit(detail)}
+                  style={[
+                    styles.detailImage,
+                    placeArtFit(detail) === "contain" && {
+                      backgroundColor: "#fff",
+                    },
+                  ]}
+                />
                 {tag(placeArtLabel(detail))}
                 {title(detail.name)}
                 {body(

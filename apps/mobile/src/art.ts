@@ -42,7 +42,7 @@ export function regionArt(region: RegionId): ImageSourcePropType {
 }
 export function placeArt(place: Place): ImageSourcePropType {
   if (place.id === "chocolateria-matichoc")
-    return require("../assets/territorio/matichoc-tableta.jpg");
+    return require("../assets/territorio/matichoc-logo.webp");
   return categories[place.category];
 }
 export function routeArt(id: string): ImageSourcePropType {
@@ -58,5 +58,9 @@ export function eventArt(index: number): ImageSourcePropType {
 }
 
 export function placeArtLabel(place: Place): string {
-  return place.id === "chocolateria-matichoc" ? t.productPhoto : t.artLabel;
+  return place.id === "chocolateria-matichoc" ? t.matichocLogo : t.artLabel;
+}
+
+export function placeArtFit(place: Place): "contain" | "cover" {
+  return place.id === "chocolateria-matichoc" ? "contain" : "cover";
 }

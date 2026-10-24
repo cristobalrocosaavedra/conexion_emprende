@@ -109,3 +109,8 @@ GitHub rechazó la primera subida con GH007 por el correo privado de los commits
 - Candidata publicada en rama feat/maqueta-territorial, commit 8617bf7. PR [#3](https://github.com/cristobalrocosaavedra/conexion_emprende/pull/3), borrador hacia develop, sin fusión. Incluye la corrección del PR #2; la compilación nativa y comparación con la APK base se están comprobando en GitHub Actions. El canal compartido sigue sin publicar hasta la revisión/fusión del usuario.
 
 - Revisión adicional en 360 × 640: detectado recorte de tarjetas y controles inferiores al mostrar provincia/comuna. Ajustada la portada en alturas reducidas (cabecera condensada, imagen de tarjeta menor y acciones horizontales) y añadida comprobación de visibilidad. La ejecución previa se cancela para validar/compilar la candidata corregida.
+
+### Portada de Matichoc corregida por el titular
+
+- El usuario solicita logo o puesto/toldo de feria como imagen principal. Se retira la tableta y se utiliza el mismo diseño de logo disponible en el directorio autorizado, sin alterar el original ni modificar ese repositorio. Logo completo con ajuste contener y fondo blanco en tarjetas y ficha. Se registra la preferencia en AGENTS.md y CLAUDE.md.
+- Se regeneran las tres vistas y se sustituye la candidata del PR #3 después de la validación completa; cancelado el build previo para no entregar la portada descartada.
