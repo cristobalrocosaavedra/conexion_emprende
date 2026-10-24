@@ -36,11 +36,54 @@ jobs:
           path: previews/
           if-no-files-found: error
           retention-days: 14
+  verificar-firma-base:
+    name: Comprobar certificado de la base antes de compilar
+    permissions:
+      contents: read
+      actions: read
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    if: ${{ !startsWith(github.ref, 'refs/heads/docs/') && !startsWith(github.head_ref, 'docs/') }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
+        with:
+          node-version-file: .node-version
+          package-manager-cache: false
+      - uses: actions/setup-java@b843ebf9b913146b38da2eaa7aeddf76074ae1ad # v6
+        with:
+          distribution: temurin
+          java-version: "21"
+          verify-signature: true
+      - uses: android-actions/setup-android@be39fa834029ff78f1a44aa3bb0819b8fc2bd8fd # v4
+      - name: Leer certificado público de la APK base
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/apk-base"
+          gh run download 40117286924 --repo "$GITHUB_REPOSITORY" --name territorio-vivo-android-5 --dir "$RUNNER_TEMP/apk-base"
+          anterior=$(find "$RUNNER_TEMP/apk-base" -maxdepth 1 -name '*.apk' -type f)
+          test -n "$anterior"
+          verificador=$(find "$ANDROID_HOME/build-tools" -name apksigner -type f | sort -V | tail -n 1)
+          echo "Herramienta de firma: $verificador"
+          "$verificador" verify --verbose --print-certs "$anterior" 2>&1 | tee "$RUNNER_TEMP/certificado-base.txt"
+          node --input-type=module - "$RUNNER_TEMP/certificado-base.txt" <<'JS'
+          import { readFileSync } from 'node:fs';
+          import assert from 'node:assert/strict';
+          import { readApkCertificate } from './scripts/apk-certificate.mjs';
+          const expected = JSON.parse(readFileSync('apps/mobile/app-identity.json', 'utf8')).testCertificateSha256;
+          assert.equal(readApkCertificate(readFileSync(process.argv[2], 'utf8')), expected);
+          JS
+
   compilar:
     permissions:
       contents: read
       actions: read
-    needs: validar
+    needs: [validar, verificar-firma-base]
     if: ${{ !startsWith(github.ref, 'refs/heads/docs/') && !startsWith(github.head_ref, 'docs/') }}
     runs-on: ubuntu-24.04
     timeout-minutes: 55
@@ -116,7 +159,7 @@ jobs:
           verificador=$(find "$ANDROID_HOME/build-tools" -name apksigner -type f | sort -V | tail -n 1)
           test -n "$verificador"
           "$verificador" verify --print-certs "$archivo" > "$RUNNER_TEMP/certificado.txt"
-          sed -n '/^Signer .*certificate SHA-256 digest:/p' "$RUNNER_TEMP/certificado.txt"
+          cat "$RUNNER_TEMP/certificado.txt"
           badging="$(dirname "$verificador")/aapt2"
           "$badging" dump badging "$archivo" > "$RUNNER_TEMP/manifiesto.txt"
           unzip -p "$archivo" assets/index.android.bundle > "$RUNNER_TEMP/territorio-vivo.bundle"
