@@ -105,3 +105,5 @@ GitHub rechazó la primera subida con GH007 por el correo privado de los commits
 
 - Validación local de la candidata: typecheck, lint, 22 pruebas de lógica y protección del canal de publicación, exportaciones Metro Android/iOS/web, build Next.js, ocho flujos de interfaz móvil y formato en verde. Incluye persistencia de comuna y restauración de preferencias anteriores.
 - Tres [capturas funcionales](diseno/0.2/README.md) guardadas para revisión previa. La captura usa La Ligua manual y tema oscuro; la conexión del entorno no carga las teselas, por lo que el mapa presenta honestamente límites, puntos y aviso. Los otros dos repositorios siguen sin modificaciones.
+
+- Candidata publicada en rama feat/maqueta-territorial, commit 8617bf7. PR [#3](https://github.com/cristobalrocosaavedra/conexion_emprende/pull/3), borrador hacia develop, sin fusión. Incluye la corrección del PR #2; la compilación nativa y comparación con la APK base se están comprobando en GitHub Actions. El canal compartido sigue sin publicar hasta la revisión/fusión del usuario.
