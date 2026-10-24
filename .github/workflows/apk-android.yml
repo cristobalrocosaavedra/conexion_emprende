@@ -12,7 +12,7 @@ env:
 permissions:
   contents: read
 concurrency:
-  group: apk-${{ github.ref }}
+  group: apk-${{ github.head_ref || github.ref_name }}
   cancel-in-progress: true
 jobs:
   validar:
@@ -65,9 +65,19 @@ jobs:
           propiedades=apps/mobile/android/gradle/wrapper/gradle-wrapper.properties
           url=$(sed -n 's/^distributionUrl=//p' "$propiedades" | tr -d '\\')
           case "$url" in https://services.gradle.org/distributions/*-bin.zip) ;; *) exit 1 ;; esac
-          suma=$(curl --fail --silent --show-error --retry 3 "$url.sha256")
-          [[ "$suma" =~ ^[a-fA-F0-9]{64}$ ]]
-          echo "distributionSha256Sum=$suma" >> "$propiedades"
+          suma=$(curl --location --proto '=https' --proto-redir '=https' --fail --silent --show-error --retry 3 "$url.sha256")
+          if [[ ! "$suma" =~ ^[a-fA-F0-9]{64}$ ]]; then
+            echo 'La respuesta de Gradle no contiene un checksum SHA-256 válido.' >&2
+            exit 1
+          fi
+          existente=$(sed -n 's/^distributionSha256Sum=//p' "$propiedades")
+          if [ -n "$existente" ] && [ "$existente" != "$suma" ]; then
+            echo 'El checksum guardado difiere del oficial; se detiene la compilación.' >&2
+            exit 1
+          fi
+          if [ -z "$existente" ]; then
+            echo "distributionSha256Sum=$suma" >> "$propiedades"
+          fi
       - uses: gradle/actions/setup-gradle@3f5f9adaf7d9fecd50b5935e54106014257a94e6 # v6
         with:
           cache-provider: basic

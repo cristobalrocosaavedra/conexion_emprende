@@ -33,7 +33,7 @@ La compilación se ejecuta también por push a ramas feat/fix, por lo que no
 requiere fusionar nada en main o develop para obtener la APK. Los cambios en
 ramas docs solo validan; no disparan compilación nativa. Si se abre un PR además
 del push, puede haber dos ejecuciones iniciales; se cancelan ejecuciones obsoletas
-del mismo ref. Revisar consumo antes de ampliar frecuencia o arquitecturas.
+de la misma rama, compartiendo grupo entre push y PR. Revisar consumo antes de ampliar frecuencia o arquitecturas.
 
 ## Pasos en lenguaje simple
 
@@ -86,3 +86,12 @@ Para diagnosticarlo, los hosts de logs results-receiver.actions.githubuserconten
 y productionresultssa19.blob.core.windows.net deben habilitarse en el entorno;
 sus descargas siguen bloqueadas con 403. Los dominios están guardados en borrador.
 No hay APK comprobada todavía. El resultado se registra en la bitácora.
+
+## Corrección tras el primer build
+
+El PR #1 fue fusionado por el usuario en develop. Ya fue posible leer sus logs:
+el fallo estaba en la descarga del checksum de Gradle, que devolvía HTTP 301.
+La corrección sigue redirecciones HTTPS, conserva la validación SHA-256 y se
+detiene si hay discrepancia con un valor guardado. El resultado de la siguiente
+compilación se registra en la bitácora; todavía no equivale a instalación en un
+teléfono real.

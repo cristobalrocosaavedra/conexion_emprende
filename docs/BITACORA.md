@@ -61,3 +61,11 @@ GitHub rechazó la primera subida con GH007 por el correo privado de los commits
 - Bloqueo externo: los logs se sirven desde results-receiver.actions.githubusercontent.com y productionresultssa19.blob.core.windows.net, y su descarga devuelve 403 del proxy. Se guardaron ambos dominios en el borrador de red, preservando los existentes. Requiere aplicar los ajustes del entorno para continuar. No hay APK disponible ni instalación Android comprobada; no se afirma que la compilación nativa funcione.
 - Reintento de fuentes tras el cambio de acceso: datos.gob.cl respondió 200; se guardó únicamente inventario de cinco conjuntos, todos con licencia declarada no comercial y metadatos de 2015. No se importaron registros turísticos. La URL candidata SERNATUR respondió 404 y debe reemplazarse por una vigente. Documentación Expo respondió 200 en ese reintento.
 - Las notas de cierre y el inventario se conservan en un commit local, sin otra subida mientras la compilación nativa siga sin diagnóstico. Retomar con acceso a logs, corregir la causa, validar todo antes de push y comprobar el artefacto real. Los importes freemium/presupuesto siguen siendo propuestas, no tarifas verificadas ni precios aprobados.
+
+## 24-10-2026 — Continuación tras fusionar el PR #1
+
+- Se comprobó que el usuario fusionó el PR #1 en develop; main no se modifica. Rama de corrección fix/compilacion-apk creada desde origin/develop, preservando las notas y el inventario que habían quedado locales.
+- La política observada del entorno ya permite los destinos de logs. Se descargó el log del job fallido y se identificó el fallo anterior a Gradle: curl no seguía la redirección del checksum oficial. Reproducción: sin redirección HTTP 301 y 167 bytes; siguiendo HTTPS, HTTP 200 y exactamente 64 caracteres hexadecimales.
+- Corregida descarga con seguimiento de redirecciones solo HTTPS. Se conserva la validación de SHA-256 y se rechaza discrepancia con un checksum previamente guardado. No se deshabilita ninguna verificación.
+- Unificada concurrencia por rama para que el push y el PR del mismo cambio no compilen dos APK simultáneamente.
+- Validación completa antes de push; build nativo seguirá exclusivamente en GitHub. Resultado de PR y ejecución remota se registrará al comprobarlos.
