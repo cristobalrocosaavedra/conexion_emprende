@@ -33,3 +33,18 @@ google-services.json
 
 # Android Profiling
 *.hprof
+
+# Dependencias y salidas reproducibles
+node_modules/
+.pnpm-store/
+.expo/
+dist/
+.next/
+coverage/
+*.tsbuildinfo
+apps/mobile/android/
+apps/mobile/ios/
+.env
+.env.*
+!.env.example
+.DS_Store

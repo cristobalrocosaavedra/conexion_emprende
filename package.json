@@ -1,0 +1,30 @@
+{
+  "name": "territorio-vivo",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@10.33.0",
+  "engines": {
+    "node": ">=24.3.0 <25"
+  },
+  "scripts": {
+    "dev:mobile": "pnpm --filter @territorio-vivo/mobile start",
+    "dev:web": "pnpm --filter @territorio-vivo/web dev",
+    "typecheck": "pnpm -r typecheck",
+    "lint": "eslint . --max-warnings 0",
+    "test": "vitest run",
+    "build": "pnpm --filter @territorio-vivo/mobile build && pnpm --filter @territorio-vivo/web build",
+    "format:check": "prettier --check .",
+    "format": "prettier --write .",
+    "validate": "pnpm typecheck && pnpm lint && pnpm test && pnpm build && pnpm format:check"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@types/node": "24.10.13",
+    "eslint": "10.13.0",
+    "prettier": "3.9.10",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.72.0",
+    "vitest": "5.0.5"
+  },
+  "type": "module"
+}
