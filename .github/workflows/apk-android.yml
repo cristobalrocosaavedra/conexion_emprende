@@ -1,0 +1,100 @@
+name: Validación y APK Android de pruebas
+on:
+  pull_request:
+    branches: [develop]
+  push:
+    branches: [develop, "feat/**", "fix/**", "docs/**"]
+  workflow_dispatch:
+env:
+  CI: "1"
+  EXPO_NO_TELEMETRY: "1"
+  NEXT_TELEMETRY_DISABLED: "1"
+permissions:
+  contents: read
+concurrency:
+  group: apk-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 # v6
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
+        with:
+          node-version-file: .node-version
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm validate
+  compilar:
+    needs: validar
+    if: ${{ !startsWith(github.ref, 'refs/heads/docs/') && !startsWith(github.head_ref, 'docs/') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    env:
+      CI: "1"
+      EXPO_NO_TELEMETRY: "1"
+      NODE_OPTIONS: --max-old-space-size=6144
+      ORG_GRADLE_PROJECT_reactNativeArchitectures: arm64-v8a
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 # v6
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
+        with:
+          node-version-file: .node-version
+          cache: pnpm
+      - uses: actions/setup-java@b843ebf9b913146b38da2eaa7aeddf76074ae1ad # v6
+        with:
+          distribution: temurin
+          java-version: "21"
+          verify-signature: true
+      - uses: android-actions/setup-android@be39fa834029ff78f1a44aa3bb0819b8fc2bd8fd # v4
+      - run: pnpm install --frozen-lockfile
+      - name: Generar proyecto Android desde Expo
+        working-directory: apps/mobile
+        run: pnpm exec expo prebuild --platform android --no-install
+      - name: Verificar distribución Gradle
+        shell: bash
+        run: |
+          set -euo pipefail
+          propiedades=apps/mobile/android/gradle/wrapper/gradle-wrapper.properties
+          url=$(sed -n 's/^distributionUrl=//p' "$propiedades" | tr -d '\\')
+          case "$url" in https://services.gradle.org/distributions/*-bin.zip) ;; *) exit 1 ;; esac
+          suma=$(curl --fail --silent --show-error --retry 3 "$url.sha256")
+          [[ "$suma" =~ ^[a-fA-F0-9]{64}$ ]]
+          echo "distributionSha256Sum=$suma" >> "$propiedades"
+      - uses: gradle/actions/setup-gradle@3f5f9adaf7d9fecd50b5935e54106014257a94e6 # v6
+        with:
+          cache-provider: basic
+      - name: Compilar APK con JavaScript incluido y firma de pruebas
+        working-directory: apps/mobile/android
+        run: ./gradlew :app:assembleRelease --no-daemon --max-workers=2
+      - name: Verificar firma y preparar descarga
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -n "${ANDROID_HOME:-}"
+          archivo=apps/mobile/android/app/build/outputs/apk/release/app-release.apk
+          test -s "$archivo"
+          verificador=$(find "$ANDROID_HOME/build-tools" -name apksigner -type f | sort -V | tail -n 1)
+          test -n "$verificador"
+          "$verificador" verify "$archivo"
+          unzip -p "$archivo" assets/index.android.bundle > "$RUNNER_TEMP/territorio-vivo.bundle"
+          test -s "$RUNNER_TEMP/territorio-vivo.bundle"
+          mkdir -p artefactos
+          cp "$archivo" artefactos/territorio-vivo-0.1.0-arm64.apk
+          git rev-parse HEAD > artefactos/COMMIT.txt
+          (cd artefactos && sha256sum *.apk > SHA256SUMS.txt)
+          echo 'APK de maqueta para Android ARM64. Firma pública de desarrollo; sin catálogo real.' > artefactos/LEEME.txt
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: territorio-vivo-android-${{ github.run_number }}
+          path: artefactos/
+          if-no-files-found: error
+          retention-days: 14
+          compression-level: 0

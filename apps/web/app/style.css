@@ -1,0 +1,43 @@
+:root {
+  color-scheme: dark;
+  --bg: #071e30;
+  --text: #f6f1e7;
+  --accent: #49d5c3;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, sans-serif;
+}
+main {
+  max-width: 900px;
+  padding: 12vh 8vw;
+  margin: auto;
+}
+h1 {
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  line-height: 1.06;
+  max-width: 800px;
+}
+p {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  max-width: 620px;
+}
+.brand {
+  font-weight: 750;
+}
+.status {
+  color: var(--accent);
+}
+aside {
+  margin-top: 3rem;
+  border-top: 1px solid #355268;
+  padding-top: 1.5rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+}

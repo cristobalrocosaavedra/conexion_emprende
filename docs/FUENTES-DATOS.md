@@ -4,12 +4,12 @@
 
 ## Consultas realizadas
 
-| Fuente candidata | URL consultada | Uso por investigar | Resultado observado |
-| --- | --- | --- | --- |
-| SERNATUR | https://www.sernatur.cl/registro-de-prestadores-de-servicios-turisticos/ | Registro de prestadores, disponibilidad de exportación y permisos de reutilización | Proxy: túnel 403; contenido y licencia no examinados |
-| Datos abiertos del Estado | https://datos.gob.cl/api/3/action/package_search?q=turismo&rows=3 | Descubrir conjuntos turísticos, metadatos y licencias por recurso | Proxy: túnel 403; catálogo no leído |
-| OpenStreetMap | https://www.openstreetmap.org/copyright | Condiciones, atribución y obligaciones antes de extraer puntos | Proxy: túnel 403; no se extrajeron datos |
-| Chile Cultura | https://chilecultura.gob.cl/ | Investigar información cultural/eventos, su vigencia y vía de reutilización | Proxy: túnel 403; existencia de API/exportación no comprobada |
+| Fuente candidata          | URL consultada                                                           | Uso por investigar                                                                 | Resultado observado                                           |
+| ------------------------- | ------------------------------------------------------------------------ | ---------------------------------------------------------------------------------- | ------------------------------------------------------------- |
+| SERNATUR                  | https://www.sernatur.cl/registro-de-prestadores-de-servicios-turisticos/ | Registro de prestadores, disponibilidad de exportación y permisos de reutilización | Proxy: túnel 403; contenido y licencia no examinados          |
+| Datos abiertos del Estado | https://datos.gob.cl/api/3/action/package_search?q=turismo&rows=3        | Descubrir conjuntos turísticos, metadatos y licencias por recurso                  | Proxy: túnel 403; catálogo no leído                           |
+| OpenStreetMap             | https://www.openstreetmap.org/copyright                                  | Condiciones, atribución y obligaciones antes de extraer puntos                     | Proxy: túnel 403; no se extrajeron datos                      |
+| Chile Cultura             | https://chilecultura.gob.cl/                                             | Investigar información cultural/eventos, su vigencia y vía de reutilización        | Proxy: túnel 403; existencia de API/exportación no comprobada |
 
 Un 403 de túnel ocurre antes de leer el servidor de destino: no demuestra que el sitio no exista, que haya rechazado al usuario ni que necesite una clave. Tampoco confirma que los endpoints anteriores estén vigentes. No se intentó eludir el bloqueo ni desactivar TLS.
 

@@ -185,3 +185,13 @@ El inicio usa ubicación consentida para abrir la región y priorizar la zona ce
 Se solicita iniciar preparación de un catálogo basal nacional a partir de directorios públicos. La procedencia, licencia, vigencia y condición de no verificado se revisan antes de incorporar registros. El inventario y bloqueo actual están en FUENTES-DATOS.md; no se importaron datos aún. La posible referencia a los otros repositorios no sustituye las dos confirmaciones por trabajo exigidas para consultarlos o modificarlos.
 
 Se presenta ESQUELETO-APK.md como propuesta concreta de monorepo Expo/React Native, web Next.js y paquetes comunes, con Supabase previsto para el futuro. La dirección de producto está aprobada; la tecnología y la creación de archivos de aplicación se confirman antes de construir, conforme a la instrucción inicial del usuario. Mantener la bitácora y distinguir APK generada, instalada y probada.
+
+14. Construcción del esqueleto y APK en GitHub Actions; Android e iOS
+
+El usuario indica avanzar con los cambios para subirlos al repositorio y generar la APK en GitHub Actions. No compilar una APK ni instalar Android SDK en el entorno de trabajo. Se adopta el monorepo con Expo/React Native compartido para Android e iOS, Next.js para web y paquetes comunes. La exportación JavaScript iOS se valida desde el inicio; su firma, build nativo y distribución a iPhone se planifican por separado. Una APK no funciona en iPhone.
+
+La primera entrega es el cascarón de Fase 0: portada esquemática, temas claro/oscuro/sistema, selector lateral mapa/lista, tránsito norte/sur y pestañas con estados sin catálogo. No detecta ubicación ni incorpora fichas reales todavía. El workflow valida, genera Android mediante Expo prebuild y compila Gradle en el runner; entrega APK con firma pública de pruebas, checksum y commit. No usa EAS ni requiere cuenta Expo. El resultado remoto debe comprobarse antes de afirmar que hay APK descargable.
+
+15. Presupuesto y freemium por decidir
+
+El usuario solicita desde ahora presupuesto de mantenimiento y plan de monetización: ficha gratuita, mayor exposición pagada y herramientas para oferentes. COSTOS-Y-MONETIZACION.md presenta partidas, fórmulas, escenarios orientativos y punto de equilibrio, diferenciando supuestos de tarifas verificadas. No hay precios aprobados ni cobros implementados. La exposición pagada se rotula y no compra verificación. Moderación, soporte y reglas de compra digital de Android/iOS forman parte del costo y de las decisiones antes de cobrar.

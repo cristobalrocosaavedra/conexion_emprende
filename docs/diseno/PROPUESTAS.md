@@ -34,16 +34,16 @@ La recomendación inicial de probar A primero queda reemplazada por la mezcla el
 
 ## Pantallas y estados a diseñar
 
-| Pantalla | Debe mostrar | Acción principal |
-| --- | --- | --- |
-| Entrada | Elegir región o permitir ubicación, con explicación breve | Entrar a una región sin exigir cuenta |
-| Portada regional | Región, motivo ilustrado identificado, tarjetas y pistas Norte/Sur | Cambiar región o abrir contenido |
-| Selector regional | Lista norte-sur y región actual | Saltar con tránsito visual intermedio |
-| Explorar | Región → provincia → comuna, categorías y tarjetas | Abrir una ficha o guardar para el viaje |
-| Ficha | Ejemplo rotulado; a futuro fuente, vigencia y verificación | Añadir parada cuando sea visitable |
-| Eventos | Región consultada, filtro temporal y ejemplos sin fechas reales | Ver detalle |
-| Mi viaje | Selección de ejemplo, origen/destino e ida/vuelta | Revisar una simulación ilustrativa |
-| Sin contenido/error | Mensaje honesto y alternativa de región/categoría | Recuperar navegación sin inventar datos |
+| Pantalla            | Debe mostrar                                                       | Acción principal                        |
+| ------------------- | ------------------------------------------------------------------ | --------------------------------------- |
+| Entrada             | Elegir región o permitir ubicación, con explicación breve          | Entrar a una región sin exigir cuenta   |
+| Portada regional    | Región, motivo ilustrado identificado, tarjetas y pistas Norte/Sur | Cambiar región o abrir contenido        |
+| Selector regional   | Lista norte-sur y región actual                                    | Saltar con tránsito visual intermedio   |
+| Explorar            | Región → provincia → comuna, categorías y tarjetas                 | Abrir una ficha o guardar para el viaje |
+| Ficha               | Ejemplo rotulado; a futuro fuente, vigencia y verificación         | Añadir parada cuando sea visitable      |
+| Eventos             | Región consultada, filtro temporal y ejemplos sin fechas reales    | Ver detalle                             |
+| Mi viaje            | Selección de ejemplo, origen/destino e ida/vuelta                  | Revisar una simulación ilustrativa      |
+| Sin contenido/error | Mensaje honesto y alternativa de región/categoría                  | Recuperar navegación sin inventar datos |
 
 La lámina muestra una selección de pantallas para comparar dirección artística, no todos estos estados. La maqueta posterior debe cubrirlos sin implementar servicios productivos.
 

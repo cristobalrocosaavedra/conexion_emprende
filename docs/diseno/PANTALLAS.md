@@ -1,10 +1,10 @@
 # Pantallas y primeras APK — plan para revisión
 
-24-10-2026. La prioridad confirmada por el usuario es definir las pantallas y su despliegue, y luego descargar primeras versiones Android. La V02 ya fue aprobada como base visual para avanzar a la APK; el esqueleto y la tecnología se presentan para confirmación antes de construir. No se fijaron fechas.
+24-10-2026. La prioridad confirmada por el usuario es definir las pantallas y su despliegue, y luego descargar primeras versiones Android. La V02 fue aprobada como base y el usuario indicó avanzar con el esqueleto para compilar la APK en GitHub Actions, contemplando Android e iOS. No se fijaron fechas.
 
 ## Decisiones incorporadas
 
-Nombre elegido para continuar: **Territorio Vivo**. Tema oscuro preferido para la propuesta, con una versión clara de igual estructura. Portada y tarjetas de detalle/eventos parten de B; exploración territorial y selector con mapa parten de A. No se trata de escoger una lámina completa ni de tener dos aplicaciones distintas. La base visual V02 está aprobada. Véase el [esqueleto para confirmar](../ESQUELETO-APK.md). Se acuerdan ahora los detalles de construcción y tecnología, sin activar servicios productivos.
+Nombre elegido para continuar: **Territorio Vivo**. Tema oscuro preferido para la propuesta, con una versión clara de igual estructura. Portada y tarjetas de detalle/eventos parten de B; exploración territorial y selector con mapa parten de A. No se trata de escoger una lámina completa ni de tener dos aplicaciones distintas. La base visual V02 está aprobada. Véase el [estado del esqueleto](../ESQUELETO-APK.md). La APK se compila en GitHub Actions; no se usa build local ni EAS. La primera entrega implementa navegación y estados sin datos, sin servicios productivos.
 
 ## Orden de revisión
 
@@ -18,16 +18,16 @@ Revisar una decisión principal por vez. Las primeras APK no necesitan que el no
 
 ## Contrato de cada pantalla
 
-| ID | Pantalla y contenido | Entrada y salida | Estados que debemos revisar |
-| --- | --- | --- | --- |
-| P01 | Bienvenida: explicación de ubicación y selección manual | Primera apertura → portada elegida | Permiso pendiente, concedido, denegado, ubicación no disponible; nunca bloquear exploración |
-| P02 | Portada: región, motivo identificado, categorías y accesos breves | Desde bienvenida, gesto o selector → otra región o detalle | Región física distinta de consultada; extremo norte/sur; textos largos |
-| P03 | Menú lateral: mapa interactivo y lista completa norte-sur sincronizados, con región consultada | Abrir desde encabezado → elegir o cancelar | Región actual, salto cercano/lejano, cambio de destino durante animación, reducir movimiento |
-| P04 | Explorar: territorio y categorías | Desde portada o pestaña → provincia, comuna o ficha | Todo el territorio, filtro activo, sin resultados; volver conserva filtros |
-| P05 | Ficha: ilustración, ejemplo rotulado, tipo de actividad y acción guardar | Desde Explorar/Eventos → guardar o volver | Visitable frente a por encargo/itinerante; no ofrecer parada vial si no corresponde |
-| P06 | Eventos: región consultada, categorías y fecha como filtro de demostración | Pestaña → detalle | Sin eventos, filtros; ninguna fecha o disponibilidad ficticia como real |
-| P07 | Mi viaje: paradas de ejemplo, origen/destino y modalidad | Guardar desde ficha o pestaña → revisar simulación | Vacío, duplicado, quitar/reordenar, solo ida/ida y vuelta; sin tiempos reales |
-| P08 | Simulación visual: trazado esquemático y secuencia de paradas | Desde Mi viaje → volver y editar | Siempre «recorrido ilustrativo, sin cálculo real»; no activar navegación GPS |
+| ID  | Pantalla y contenido                                                                           | Entrada y salida                                           | Estados que debemos revisar                                                                  |
+| --- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| P01 | Bienvenida: explicación de ubicación y selección manual                                        | Primera apertura → portada elegida                         | Permiso pendiente, concedido, denegado, ubicación no disponible; nunca bloquear exploración  |
+| P02 | Portada: región, motivo identificado, categorías y accesos breves                              | Desde bienvenida, gesto o selector → otra región o detalle | Región física distinta de consultada; extremo norte/sur; textos largos                       |
+| P03 | Menú lateral: mapa interactivo y lista completa norte-sur sincronizados, con región consultada | Abrir desde encabezado → elegir o cancelar                 | Región actual, salto cercano/lejano, cambio de destino durante animación, reducir movimiento |
+| P04 | Explorar: territorio y categorías                                                              | Desde portada o pestaña → provincia, comuna o ficha        | Todo el territorio, filtro activo, sin resultados; volver conserva filtros                   |
+| P05 | Ficha: ilustración, ejemplo rotulado, tipo de actividad y acción guardar                       | Desde Explorar/Eventos → guardar o volver                  | Visitable frente a por encargo/itinerante; no ofrecer parada vial si no corresponde          |
+| P06 | Eventos: región consultada, categorías y fecha como filtro de demostración                     | Pestaña → detalle                                          | Sin eventos, filtros; ninguna fecha o disponibilidad ficticia como real                      |
+| P07 | Mi viaje: paradas de ejemplo, origen/destino y modalidad                                       | Guardar desde ficha o pestaña → revisar simulación         | Vacío, duplicado, quitar/reordenar, solo ida/ida y vuelta; sin tiempos reales                |
+| P08 | Simulación visual: trazado esquemático y secuencia de paradas                                  | Desde Mi viaje → volver y editar                           | Siempre «recorrido ilustrativo, sin cálculo real»; no activar navegación GPS                 |
 
 Las pestañas Explorar y Eventos siguen la región elegida para explorar. Mi viaje conserva las selecciones entre regiones. La detección física no reemplaza esa elección durante la sesión. Si el usuario cambia región, definir y probar qué filtros territoriales se restablecen; nunca mantener una comuna de una región incompatible.
 
@@ -43,7 +43,9 @@ Propuesta APK 0.2: ajustes tras probar el teléfono real; accesibilidad, transic
 
 ## Cómo llegará al teléfono
 
-Ruta recomendada a evaluar: Expo con EAS Build, perfil de distribución interna Android y salida APK (no AAB). Permite descargar sin publicar en Google Play. No se necesitan dominio ni cuenta de Play para esta prueba. EAS requiere cuenta, acceso de red, condiciones del servicio y capacidad de build disponible; no se promete que sea gratis ni que ya esté configurado.
+Decisión posterior: GitHub Actions con Expo prebuild y Gradle, salida APK (no AAB). Instrucciones actuales en [ANDROID-CI.md](../ANDROID-CI.md). La propuesta anterior de EAS que sigue se conserva como antecedente y NO es el procedimiento elegido.
+
+Propuesta anterior: Expo con EAS Build, perfil de distribución interna Android y salida APK (no AAB). Permite descargar sin publicar en Google Play. No se necesitan dominio ni cuenta de Play para esta prueba. EAS requiere cuenta, acceso de red, condiciones del servicio y capacidad de build disponible; no se promete que sea gratis ni que ya esté configurado.
 
 Antes de construir, explicar paso a paso:
 

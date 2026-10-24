@@ -2,7 +2,7 @@
 
 Estado: propuesta para revisión, 24-10-2026. Nombre elegido para continuar: Territorio Vivo. Solo Fase 0.
 
-Dirección visual confirmada: mezcla de las propuestas A/B con preferencia oscura; claro y oscuro serán temas de la misma estructura. Véase [la decisión visual](diseno/PROPUESTAS.md). La V02 quedó aprobada como base visual para la APK. La tecnología y el esqueleto se concretan para confirmar en [ESQUELETO-APK.md](ESQUELETO-APK.md).
+Dirección visual confirmada: mezcla de las propuestas A/B con preferencia oscura; claro y oscuro serán temas de la misma estructura. Véase [la decisión visual](diseno/PROPUESTAS.md). La V02 quedó aprobada como base visual. El usuario indicó avanzar al esqueleto y generar APK en GitHub Actions; iOS debe contemplarse desde el inicio. Estado actual en [ESQUELETO-APK.md](ESQUELETO-APK.md). Las propuestas antiguas de este documento se leen junto a esa decisión posterior.
 
 La preparación de datos públicos se registra en [FUENTES-DATOS.md](FUENTES-DATOS.md); las consultas iniciales están bloqueadas por la política de red y no se importaron registros.
 
@@ -12,7 +12,7 @@ Este documento traduce la visión de [PLAN.md](PLAN.md) en una arquitectura y en
 
 ## Resultado que buscamos primero
 
-Una maqueta Android instalable mediante APK, con datos de ejemplo identificados, para comprobar la experiencia de recorrer regiones, explorar tarjetas y preparar visualmente un viaje. Sin cuentas reales, pagos, base productiva, seguimiento de ubicación ni cálculo real de rutas. Antes de construirla se presenta y aprueba el esqueleto. Las propuestas visuales actuales son imágenes, no una APK.
+Una maqueta Android instalable mediante APK generada en GitHub Actions, con una base React Native compartida para iOS y datos de ejemplo identificados, para comprobar la experiencia de recorrer regiones, explorar tarjetas y preparar visualmente un viaje. Sin cuentas reales, pagos, base productiva, seguimiento de ubicación ni cálculo real de rutas. Antes de construirla se presenta y aprueba el esqueleto. Las propuestas visuales actuales son imágenes, no una APK.
 
 Dos puertas de revisión: primero dirección visual y alcance; después estructura técnica y esqueleto. No se construyen funciones de Fase 1 en esta entrega. La arquitectura completa describe el destino futuro, no todo lo que se instalará ahora.
 
@@ -104,13 +104,13 @@ Modo sin señal por región: manifiesto versionado, tamaño previo, checksum, de
 
 ## Escalar sin sobredimensionar el inicio
 
-| Etapa | Diseño | Señal para ampliar |
-| --- | --- | --- |
-| Maqueta | Recursos locales, sin servicios pagados | Experiencia aprobada y APK probada |
-| Piloto | Un Supabase, medios en almacenamiento/CDN y API protegida | Medir latencia, errores, tamaño de catálogo y cola |
-| Más regiones | Índices, paginación por cursor, miniaturas, caché de contenido público e invalidación | Consultas lentas o presión real de CPU/IO |
-| Rutas nacionales | Motor separado, límites, candidatos acotados y trabajos de actualización | Saturación y latencia medidas con carga representativa |
-| Mayor tráfico | Colas con reintentos idempotentes, escalado de workers y réplicas donde proceda | Presupuesto de latencia o disponibilidad incumplido |
+| Etapa            | Diseño                                                                                | Señal para ampliar                                     |
+| ---------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------ |
+| Maqueta          | Recursos locales, sin servicios pagados                                               | Experiencia aprobada y APK probada                     |
+| Piloto           | Un Supabase, medios en almacenamiento/CDN y API protegida                             | Medir latencia, errores, tamaño de catálogo y cola     |
+| Más regiones     | Índices, paginación por cursor, miniaturas, caché de contenido público e invalidación | Consultas lentas o presión real de CPU/IO              |
+| Rutas nacionales | Motor separado, límites, candidatos acotados y trabajos de actualización              | Saturación y latencia medidas con carga representativa |
+| Mayor tráfico    | Colas con reintentos idempotentes, escalado de workers y réplicas donde proceda       | Presupuesto de latencia o disponibilidad incumplido    |
 
 No empezar con microservicios para cada pantalla. Separar inicialmente solo lo que tiene necesidades distintas: app, web, base, medios y, cuando corresponda, ruteo. Actualizar datos de mapas como trabajo versionado y reversible; no reconstruir dentro de una petición de usuario.
 
@@ -122,7 +122,7 @@ Medir rendimiento en Android representativo: fluidez, memoria, arranque y bytes 
 
 CI en GitHub Actions: instalar con lockfile congelado; typecheck; lint; tests; build; comprobación de formato sin reescritura. Misma validación antes de cada push. En el esqueleto, scripts reales por paquete, sin comandos que devuelvan éxito sin comprobar nada. Core: lógica y contratos; móvil: componentes y navegación; web: compilación y pruebas relevantes. Cambiar idioma y reducir movimiento se verifican como comportamiento, no solo como existencia de archivos.
 
-El APK no se valida con `next build` ni con una exportación web. Validar Metro y recursos; después generar e instalar un APK firmado para pruebas y comprobar gestos, botón Atrás, estados sin permiso y accesibilidad en Android. EAS requiere cuenta y servicio externo; build local requiere JDK, Android SDK y recursos. Elegir el camino y explicar cuentas y claves antes de solicitar configuración. No crear cuentas ni contratar servicios en esta fase.
+El APK no se valida con `next build` ni con una exportación web. Validar Metro y recursos; después generar e instalar un APK firmado para pruebas y comprobar gestos, botón Atrás, estados sin permiso y accesibilidad en Android. Se eligió compilar con Expo prebuild y Gradle en GitHub Actions, sin SDK local ni cuenta EAS. iOS requerirá un runner macOS y definición de firma/distribución antes de entregar a teléfonos. No crear cuentas ni contratar servicios en esta fase.
 
 Al incorporar Supabase se agregan pruebas locales de RLS y migraciones, sin escribir en bases productivas. Al incorporar rutas se prueban perfiles, destinos sin ruta, errores, tiempos y limitación de peticiones. Copias de seguridad y prueba de restauración, monitoreo y retirada de contenido deben estar resueltos antes de abrir registros reales.
 
@@ -148,4 +148,4 @@ Al incorporar Supabase se agregan pruebas locales de RLS y migraciones, sin escr
 
 ## Decisiones abiertas, de una en una
 
-La dirección visual mixta y el nombre Territorio Vivo ya se eligieron; falta revisar las pantallas concretas. Después confirmar arquitectura monorepo/Expo, alcance de la APK y configuración manual necesaria. Modelo de negocio, elegibilidad mínima de paradas y política de rotación siguen abiertos; no necesitan resolverse para dibujar la maqueta. INAPI, dominio y logo se aplazan por indicación del usuario. No incorporar proveedores reales, Google o cobros hasta acordar sus reglas y necesidades.
+La dirección visual V02, Territorio Vivo y el avance con monorepo/Expo a una APK por GitHub Actions quedan adoptados. La primera entrega es un cascarón; la ubicación real, el catálogo y las siguientes pantallas se completan en incrementos. Firma productiva y distribución iOS se acuerdan cuando se necesiten. Modelo de negocio, elegibilidad mínima de paradas y política de rotación siguen abiertos; no necesitan resolverse para dibujar la maqueta. INAPI, dominio y logo se aplazan por indicación del usuario. No incorporar proveedores reales, Google o cobros hasta acordar sus reglas y necesidades.
