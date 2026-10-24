@@ -116,6 +116,7 @@ jobs:
           verificador=$(find "$ANDROID_HOME/build-tools" -name apksigner -type f | sort -V | tail -n 1)
           test -n "$verificador"
           "$verificador" verify --print-certs "$archivo" > "$RUNNER_TEMP/certificado.txt"
+          sed -n '/^Signer .*certificate SHA-256 digest:/p' "$RUNNER_TEMP/certificado.txt"
           badging="$(dirname "$verificador")/aapt2"
           "$badging" dump badging "$archivo" > "$RUNNER_TEMP/manifiesto.txt"
           unzip -p "$archivo" assets/index.android.bundle > "$RUNNER_TEMP/territorio-vivo.bundle"

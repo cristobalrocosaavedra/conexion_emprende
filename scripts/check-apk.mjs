@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { readApkCertificate } from "./apk-certificate.mjs";
 import { createHash } from "node:crypto";
 import { readFileSync, writeFileSync } from "node:fs";
 import { execFileSync } from "node:child_process";
@@ -7,10 +8,7 @@ const [certificatePath, badgingPath, apkPath, outputPath] =
 const identity = JSON.parse(
   readFileSync("apps/mobile/app-identity.json", "utf8"),
 );
-const certificate = readFileSync(certificatePath, "utf8")
-  .match(/Signer #1 certificate SHA-256 digest:\s*([a-f0-9:]+)/i)?.[1]
-  .replaceAll(":", "")
-  .toLowerCase();
+const certificate = readApkCertificate(readFileSync(certificatePath, "utf8"));
 assert.equal(
   certificate,
   identity.testCertificateSha256,

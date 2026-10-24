@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { readApkCertificate } from "./apk-certificate.mjs";
 import { execFileSync } from "node:child_process";
 import { mkdtempSync, readFileSync, readdirSync } from "node:fs";
 import { tmpdir } from "node:os";
@@ -59,12 +60,11 @@ if (release) {
 const apks = readdirSync(dir).filter((n) => n.endsWith(".apk"));
 assert.equal(apks.length, 1, "La versión anterior debe contener una sola APK.");
 const apk = join(dir, apks[0]);
-const cert = execFileSync(signer, ["verify", "--print-certs", apk], {
-  encoding: "utf8",
-})
-  .match(/Signer #1 certificate SHA-256 digest:\s*([a-f0-9:]+)/i)?.[1]
-  .replaceAll(":", "")
-  .toLowerCase();
+const cert = readApkCertificate(
+  execFileSync(signer, ["verify", "--print-certs", apk], {
+    encoding: "utf8",
+  }),
+);
 const header =
   execFileSync(badging, ["dump", "badging", apk], { encoding: "utf8" })
     .split("\n")
