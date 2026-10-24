@@ -80,6 +80,9 @@ en las políticas del repositorio. Es una configuración de GitHub, no una razó
 para compartir contraseñas o tokens por chat.
 
 La API de GitHub estaba bloqueada por 403 del proxy durante la preparación;
-se guardó api.github.com en el borrador de red para permitir crear el PR y
-consultar runs desde el asistente. El acceso Git y el acceso API son independientes.
-El resultado final de push/PR/ejecución se registra en la bitácora.
+se guardó api.github.com y luego volvió a responder: el PR #1 ya está abierto como
+borrador a develop. La validación remota pasó, pero el primer build nativo falló.
+Para diagnosticarlo, los hosts de logs results-receiver.actions.githubusercontent.com
+y productionresultssa19.blob.core.windows.net deben habilitarse en el entorno;
+sus descargas siguen bloqueadas con 403. Los dominios están guardados en borrador.
+No hay APK comprobada todavía. El resultado se registra en la bitácora.

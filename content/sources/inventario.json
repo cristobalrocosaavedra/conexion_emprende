@@ -1,0 +1,58 @@
+{
+  "consultado_el": "2026-10-24",
+  "consulta": "https://datos.gob.cl/api/3/action/package_search?q=turismo&rows=5",
+  "tipo": "metadatos_de_descubrimiento_no_catalogo_publicado",
+  "registros_turisticos_importados": 0,
+  "conjuntos": [
+    {
+      "dataset_id": "b5bf0587-f460-4e86-81b7-d9a833383da1",
+      "catalogo_url": "https://datos.gob.cl/dataset/3852",
+      "titulo": "Turismo Aventura",
+      "organismo": "Servicio Nacional de Turismo",
+      "licencia_declarada": "cc-nc",
+      "licencia_url": "http://creativecommons.org/licenses/by-nc/2.0/",
+      "metadata_modified": "2015-10-30T13:03:32.067885",
+      "decision": "no_importar_sin_permiso_comercial_y_revision_de_vigencia"
+    },
+    {
+      "dataset_id": "225e3c0a-b299-4f03-a130-58ee52adc5a9",
+      "catalogo_url": "https://datos.gob.cl/dataset/14674",
+      "titulo": "Turismo Aventura",
+      "organismo": "Servicio Nacional de Turismo",
+      "licencia_declarada": "cc-nc",
+      "licencia_url": "http://creativecommons.org/licenses/by-nc/2.0/",
+      "metadata_modified": "2015-10-30T13:07:12.302001",
+      "decision": "no_importar_sin_permiso_comercial_y_revision_de_vigencia"
+    },
+    {
+      "dataset_id": "9ae14531-2523-4ade-807b-70543994aaca",
+      "catalogo_url": "https://datos.gob.cl/dataset/15658",
+      "titulo": "Turismo Informe Anual 2011",
+      "organismo": "Servicio Nacional de Turismo",
+      "licencia_declarada": "cc-nc",
+      "licencia_url": "http://creativecommons.org/licenses/by-nc/2.0/",
+      "metadata_modified": "2015-10-30T13:05:45.677955",
+      "decision": "no_importar_sin_permiso_comercial_y_revision_de_vigencia"
+    },
+    {
+      "dataset_id": "bacbfd20-10f0-40c7-856d-baa3aa773f7a",
+      "catalogo_url": "https://datos.gob.cl/dataset/15661",
+      "titulo": "Turismo Informe Anual 2011",
+      "organismo": "Servicio Nacional de Turismo",
+      "licencia_declarada": "cc-nc",
+      "licencia_url": "http://creativecommons.org/licenses/by-nc/2.0/",
+      "metadata_modified": "2015-10-30T13:05:45.376879",
+      "decision": "no_importar_sin_permiso_comercial_y_revision_de_vigencia"
+    },
+    {
+      "dataset_id": "5c3d8f35-b7a3-4b3b-bc05-f67f282c5fea",
+      "catalogo_url": "https://datos.gob.cl/dataset/15654",
+      "titulo": "Turismo Informe Anual 2010",
+      "organismo": "Servicio Nacional de Turismo",
+      "licencia_declarada": "cc-nc",
+      "licencia_url": "http://creativecommons.org/licenses/by-nc/2.0/",
+      "metadata_modified": "2015-10-30T13:05:46.213616",
+      "decision": "no_importar_sin_permiso_comercial_y_revision_de_vigencia"
+    }
+  ]
+}
