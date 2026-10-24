@@ -7,6 +7,17 @@ describe("identidad de firma de APK", () => {
       readApkCertificate(`Signer #1 certificate SHA-256 digest: ${cert}\n`),
     ).toBe(cert);
   });
+  it("lee la salida V2 Signer de Android build-tools 37 observada en CI", () => {
+    const output = `Verifies\nVerified using v2 scheme (APK Signature Scheme v2): true\nNumber of signers: 1\nV2 Signer: certificate DN: CN=Android Debug\nV2 Signer: certificate SHA-256 digest: ${cert}\nV2 Signer: public key SHA-256 digest: ${"a".repeat(64)}\n`;
+    expect(readApkCertificate(output)).toBe(cert);
+  });
+  it("rechaza dos certificados distintos en el formato V2 Signer", () => {
+    expect(() =>
+      readApkCertificate(
+        `V2 Signer: certificate SHA-256 digest: ${cert}\nV2 Signer: certificate SHA-256 digest: ${"a".repeat(64)}\n`,
+      ),
+    ).toThrow("distintas identidades");
+  });
   it("lee intervalos SDK v3.1 con el mismo certificado sin aceptar rotación", () => {
     const output = `Signer (minSdkVersion=33, maxSdkVersion=2147483647) certificate SHA-256 digest: ${cert}\nSigner (minSdkVersion=24, maxSdkVersion=32) certificate SHA-256 digest: ${cert}\n`;
     expect(readApkCertificate(output)).toBe(cert);
