@@ -149,3 +149,56 @@ Al incorporar Supabase se agregan pruebas locales de RLS y migraciones, sin escr
 ## Decisiones abiertas, de una en una
 
 La dirección visual V02, Territorio Vivo y el avance con monorepo/Expo a una APK por GitHub Actions quedan adoptados. La primera entrega es un cascarón; la ubicación real, el catálogo y las siguientes pantallas se completan en incrementos. Firma productiva y distribución iOS se acuerdan cuando se necesiten. Modelo de negocio, elegibilidad mínima de paradas y política de rotación siguen abiertos; no necesitan resolverse para dibujar la maqueta. INAPI, dominio y logo se aplazan por indicación del usuario. No incorporar proveedores reales, Google o cobros hasta acordar sus reglas y necesidades.
+
+## Contenido vivo y actualizaciones de la app
+
+Aclaración del titular del 24-10-2026: eventos diarios, fichas, fotos, logos y
+portadas programadas deben cambiar sin distribuir una APK nueva. Esto no cambia
+la elección de una app nativa; exige separar el programa instalado de su contenido.
+
+La maqueta 0.2 mantiene catálogo y recursos de referencia empaquetados para probar
+la experiencia. Por eso cambiar su logo hoy requiere compilar. Antes de un piloto
+abierto se deberá sustituir esa fuente por un repositorio de contenido remoto
+intercambiable, con contratos en core, sin importar datos de otros proyectos en
+runtime. No se activa ese backend por esta aclaración.
+
+| Capa                              | Responsabilidad                                                                        | Distribución de cambios                                                           |
+| --------------------------------- | -------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| App instalada                     | Pantallas, gestos, funciones y permisos                                                | Nueva versión cuando el cambio lo requiera; los cambios nativos requieren binario |
+| Supabase Postgres/PostGIS con RLS | Fichas publicadas, coordenadas públicas de lugares, eventos y programación territorial | Consultas desde la app, sin nueva APK                                             |
+| Storage/CDN                       | Logos, fotos y portadas publicadas, con miniaturas y revisión                          | URLs con revisión o hash para invalidar imágenes anteriores                       |
+| Caché del dispositivo             | Última información descargada y fecha de sincronización                                | Actualización al recuperar conexión; nunca prometer novedades sin señal           |
+
+Flujo propuesto: el oferente edita → se valida/modera según política → se publica
+una revisión → los teléfonos refrescan esa revisión. La app solo puede leer los
+campos/versiones publicados mediante RLS. El contenido pendiente permanece fuera
+del catálogo público y de URLs públicas de imágenes. No usar claves de servicio
+en el móvil. Las coordenadas del viajero no se guardan ni se usan como condición
+para poder consultar manualmente una región.
+
+Refrescar al abrir, recuperar foco, cambiar territorio o actualizar manualmente.
+Usar paginación, versiones/ETag y caché para evitar bajar todo el catálogo o todas
+las imágenes. Los avisos en tiempo real son opcionales, acotados a pantallas y
+territorios visibles, con reconexión y consulta posterior: no equivalen a sondear
+la API sin pausa. La latencia depende de publicación, refresco y conectividad; no
+se promete inmediatez absoluta. Mostrar errores y conservar la última copia útil.
+
+Ejemplo: en octubre se cargan y aprueban eventos de enero. Cada evento declara
+territorio, inicio/fin y ventana de publicación/destacado. El servidor selecciona
+los vigentes usando instantes UTC y la zona horaria del territorio, sin confiar
+en el reloj manual del teléfono. La app muestra los correspondientes al día y
+lugar consultados; al terminar dejan de destacarse sin una APK diaria. Las
+portadas necesitan reglas editoriales explícitas, con patrocinio rotulado si lo
+hay; no todo evento vigente ocupa automáticamente la portada.
+
+Los fondos cartográficos en línea también se obtienen del proveedor sin una APK
+por cada cambio de calles. Los puntos del catálogo provienen de la base publicada.
+Las futuras descargas offline tendrán versiones y sincronización de contenido
+propias. Hoy las geometrías y los puntos de referencia se empaquetan con la
+maqueta; el fondo de teselas requiere Internet.
+
+Una entrega de funciones nativas, cambios de permisos o dependencias sigue el canal
+de versiones de Android/iOS. Actualizaciones remotas de JavaScript, si se evalúan,
+no sustituyen la API de contenido ni permiten cambiar módulos nativos sin binario.
+Antes de conectar oferentes reales se deben probar RLS, moderación, programación
+de eventos, invalidación de imágenes, reconexión y restauración de caché.

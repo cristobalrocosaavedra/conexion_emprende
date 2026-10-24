@@ -114,3 +114,11 @@ GitHub rechazó la primera subida con GH007 por el correo privado de los commits
 
 - El usuario solicita logo o puesto/toldo de feria como imagen principal. Se retira la tableta y se utiliza el mismo diseño de logo disponible en el directorio autorizado, sin alterar el original ni modificar ese repositorio. Logo completo con ajuste contener y fondo blanco en tarjetas y ficha. Se registra la preferencia en AGENTS.md y CLAUDE.md.
 - Se regeneran las tres vistas y se sustituye la candidata del PR #3 después de la validación completa; cancelado el build previo para no entregar la portada descartada.
+
+### Contenido vivo y bloqueo de consulta remota
+
+- Aclarada la separación entre binario y contenido: fichas, medios, eventos y portadas programadas se servirán desde backend/almacenamiento con revisión, RLS y caché, sin APK por cada cambio. Registrado el flujo y el ejemplo de eventos de enero cargados en octubre en PLAN-TECNICO.md y en la descripción del PR #3. Sin activar servicios remotos ni cuentas.
+- Último código subido: 7f32b14, con el logo de Matichoc. Validación local completa en verde (22 pruebas de lógica y 9 de interfaz, typecheck, lint, build Android/iOS/web, Next.js y formato). La validación remota terminó correctamente en la ejecución 40125333713; la APK estaba en compilación nativa al perder acceso.
+- Después, GitHub devolvió HTTP 401: gh auth status confirmó credencial inyectada no válida y git ls-remote tampoco pudo autenticarse. No se reemplazaron credenciales ni se solicitó un token. No se afirma APK generada, firma comparada ni instalación verificada para esta candidata: resultado final remoto sin confirmar.
+- Los tres previews remotos existen como pantallas-13, artefacto 12572696476; la descarga desde este entorno fue bloqueada en productionresultssa11.blob.core.windows.net. Destino añadido al borrador de red preservando los anteriores. El guardado confirmó requires_publish; aplicar requiere revisar/guardar y publicar en ajustes. Las capturas locales están en docs/diseno/0.2.
+- Esta aclaración documental queda en commit local, pendiente de push cuando se restablezca el acceso de GitHub. El código funcional y sus capturas ya están en el PR #3; no hay publicación del canal compartido ni fusión a main.
