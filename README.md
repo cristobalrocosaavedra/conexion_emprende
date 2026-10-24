@@ -1,7 +1,8 @@
 # Territorio Vivo
 
 Maqueta territorial Android/iOS con Expo y React Native: portadas regionales,
-gestos norte/sur, selector geográfico, catálogo de referencia de Petorca, mapa,
+gestos como una lista norte/sur, selector compacto, recorrido visual por Chile,
+catálogo de referencia de Petorca y primera base comunitaria de las 16 regiones, mapa,
 fichas y selección de paradas. Los productos de origen permanecen independientes.
 
 ## Desarrollo
@@ -42,7 +43,9 @@ local. El workflow prepara Android, compila y verifica la APK en GitHub.
 
 - [Plan e historial](docs/PLAN.md).
 - [Mockups base](docs/diseno/PROPUESTAS.md).
-- [Qué incluye la maqueta 0.2](docs/MAQUETA-0.2.md).
+- [Qué incluye la maqueta 0.3](docs/MAQUETA-0.3.md).
+- [Referencias nacionales y fuentes](docs/CATALOGO-NACIONAL.md).
+- [Procedencia y licencia del extracto OSM](content/sources/OSM-CHILE.md).
 - [APK desde GitHub](docs/ANDROID-CI.md).
 - [Fuentes públicas](docs/FUENTES-DATOS.md).
 - [Elementos reutilizados y condiciones](content/sources/REUTILIZACION.md).

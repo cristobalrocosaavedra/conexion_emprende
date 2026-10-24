@@ -168,7 +168,13 @@ export function PlaceCard({
           source={placeArt(place)}
           style={{
             width: "100%",
-            height: dense ? 60 : compact ? 98 : 155,
+            height: dense
+              ? place.origin === "osm"
+                ? 44
+                : 60
+              : compact
+                ? 98
+                : 155,
             backgroundColor:
               placeArtFit(place) === "contain" ? "#fff" : undefined,
           }}
@@ -234,10 +240,15 @@ export function PlaceCard({
             numberOfLines={3}
             style={{ color: colors.muted, fontSize: 13, lineHeight: 20 }}
           >
-            {place.summary}
+            {place.origin === "osm" ? t.osmReference : place.summary}
           </Text>
         )}
         <Text style={{ color: colors.muted, fontSize: 10 }}>{t.pending}</Text>
+        {place.origin === "osm" && (
+          <Text style={{ color: colors.muted, fontSize: 9, lineHeight: 11 }}>
+            {t.osmCredit}
+          </Text>
+        )}
       </View>
     </Pressable>
   );

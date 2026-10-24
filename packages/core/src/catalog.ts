@@ -1,3 +1,4 @@
+import national from "../../../content/catalogo/osm-chile.json";
 import snapshot from "../../../content/catalogo/petorca.json";
 import geography from "../../../content/catalogo/regiones.geo.json";
 import type { RegionId } from "./index";
@@ -16,6 +17,7 @@ export interface Place {
   longitude: number | null;
   source: { url: string; label: string } | null;
   verification: "pending";
+  origin?: "osm";
   importedAt: string;
 }
 export interface Locality {
@@ -39,7 +41,7 @@ export interface RegionFeature {
   properties: { id: RegionId; name: string; bounds: number[][] };
   geometry: { type: "MultiPolygon"; coordinates: number[][][][] };
 }
-export const places = snapshot.places as Place[];
+export const places = [...snapshot.places, ...national.places] as Place[];
 export const localities = snapshot.localities as Locality[];
 export const curatedRoutes = snapshot.routes as CuratedRoute[];
 export const regionFeatures = geography.features as RegionFeature[];
@@ -89,7 +91,7 @@ export function swipeDirection(
   if (Math.abs(dy) < Math.abs(dx) * 1.25) return null;
   if (Math.abs(dy) < 48 && !(Math.abs(dy) > 18 && Math.abs(velocityY) > 0.5))
     return null;
-  return dy < 0 ? "north" : "south";
+  return dy < 0 ? "south" : "north";
 }
 /** Serialización para scripts locales, sin permitir que datos cierren la etiqueta script. */
 export function serializeForHtml(value: unknown): string {

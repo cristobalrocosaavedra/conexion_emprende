@@ -38,7 +38,9 @@ import {
 import type { Category, Place, RegionId } from "@territorio-vivo/core";
 import { messages as t } from "@territorio-vivo/i18n";
 import { palettes } from "@territorio-vivo/design-tokens";
-import { RegionMap } from "../src/RegionMap";
+import { RegionPicker } from "../src/RegionPicker";
+import { RegionJourney } from "../src/RegionJourney";
+import type { Journey } from "../src/RegionJourney";
 import { PlaceMap } from "../src/PlaceMap";
 import { Action, Cover, Pill, PlaceCard } from "../src/ui";
 import {
@@ -60,6 +62,9 @@ export default function Home() {
   const setCommune = (commune: string) =>
     setPreferences((p) => ({ ...p, commune }));
   const [passing, setPassing] = useState<RegionId | null>(null);
+  const [journey, setJourney] = useState<Journey | null>(null);
+  const [pickerHeight, setPickerHeight] = useState(400);
+  const journeyProgress = useRef(new Animated.Value(0)).current;
   const [drawer, setDrawer] = useState(false),
     [tab, setTab] = useState<Tab>("home");
   const tabRef = useRef(tab);
@@ -103,6 +108,14 @@ export default function Home() {
     () => places.filter((p) => p.region === current),
     [current],
   );
+  const provinceIds = [...new Set(regionalPlaces.map((p) => p.province))];
+  const localCommuneCount = activeProvince
+    ? new Set(
+        regionalPlaces
+          .filter((p) => p.province === activeProvince)
+          .map((p) => p.commune),
+      ).size
+    : new Set(regionalPlaces.map((p) => p.commune)).size;
   const filtered = useMemo(
     () =>
       filterPlaces(current, commune, category, query).filter(
@@ -173,6 +186,8 @@ export default function Home() {
   const save = (id: string) =>
     setPreferences((p) => ({ ...p, stopIds: toggleStop(p.stopIds, id) }));
   const clearAnimation = () => {
+    setJourney(null);
+    journeyProgress.stopAnimation();
     generation.current++;
     timeouts.current.forEach(clearTimeout);
     timeouts.current = [];
@@ -195,10 +210,18 @@ export default function Home() {
       timeouts.current.forEach(clearTimeout);
       motion.stopAnimation();
       opacity.stopAnimation();
+      journeyProgress.stopAnimation();
     };
-  }, [motion, opacity]);
+  }, [motion, opacity, journeyProgress]);
   useEffect(() => {
     const sub = BackHandler.addEventListener("hardwareBackPress", () => {
+      if (journey) {
+        clearAnimation();
+        setPassing(null);
+        motion.setValue(0);
+        opacity.setValue(1);
+        return true;
+      }
       if (detail) {
         setDetail(null);
         return true;
@@ -218,7 +241,7 @@ export default function Home() {
       return false;
     });
     return () => sub.remove();
-  }, [detail, eventDetail, mapMode, tab]);
+  }, [detail, eventDetail, mapMode, tab, journey]);
   const finishRegion = (id: RegionId, nextCommune?: string) => {
     setPreferences((p) => ({
       ...p,
@@ -228,6 +251,7 @@ export default function Home() {
     setCategory("all");
     setQuery("");
     setPassing(null);
+    setJourney(null);
   };
   const selectRegion = (
     next: RegionId,
@@ -247,7 +271,7 @@ export default function Home() {
       return;
     }
     if (gesture) {
-      const sign = regionIds.indexOf(next) < regionIds.indexOf(origin) ? -1 : 1;
+      const sign = regionIds.indexOf(next) < regionIds.indexOf(origin) ? 1 : -1;
       Animated.timing(motion, {
         toValue: sign * pageHeight * 0.18,
         duration: 100,
@@ -265,25 +289,33 @@ export default function Home() {
       return;
     }
     motion.setValue(0);
-    opacity.setValue(0.8);
-    const interval = Math.min(140, 1200 / path.length);
+    opacity.setValue(1);
+    const steps = [origin, ...path];
+    const interval =
+      Math.min(3600, Math.max(1100, steps.length * 240)) / steps.length;
+    setJourney({ path: steps, index: 0 });
+    journeyProgress.setValue(0);
+    Animated.timing(journeyProgress, {
+      toValue: path.length,
+      duration: interval * path.length,
+      useNativeDriver: false,
+    }).start();
     path.forEach((id, i) =>
       timeouts.current.push(
         setTimeout(
           () => {
             if (generation.current !== ticket) return;
-            if (i === path.length - 1) {
-              finishRegion(id, nextCommune);
-              Animated.timing(opacity, {
-                toValue: 1,
-                duration: 120,
-                useNativeDriver: true,
-              }).start();
-            } else setPassing(id);
+            setPassing(id);
+            setJourney({ path: steps, index: i + 1 });
           },
           interval * (i + 1),
         ),
       ),
+    );
+    timeouts.current.push(
+      setTimeout(() => {
+        if (generation.current === ticket) finishRegion(next, nextCommune);
+      }, interval * steps.length),
     );
   };
   const selectFromMap = (id: RegionId) => {
@@ -294,6 +326,7 @@ export default function Home() {
     onMoveShouldSetPanResponderCapture: (_, g) =>
       tab === "home" &&
       !drawer &&
+      !journey &&
       Math.abs(g.dy) > 18 &&
       Math.abs(g.dy) > Math.abs(g.dx) * 1.25,
     onPanResponderMove: (_, g) => motion.setValue(g.dy * 0.25),
@@ -532,6 +565,8 @@ export default function Home() {
         >
           <Animated.View
             testID="regional-window"
+            importantForAccessibility={journey ? "no-hide-descendants" : "auto"}
+            accessibilityElementsHidden={Boolean(journey)}
             style={[
               styles.homeWindow,
               { transform: [{ translateY: motion }], opacity },
@@ -553,7 +588,7 @@ export default function Home() {
                   compactHome && { fontSize: 29, lineHeight: 34 },
                 ]}
               >
-                {t.regions[current]}
+                {compactHome ? t.regionShortNames[current] : t.regions[current]}
               </Text>
               {activeCommune && (
                 <View style={styles.localContext}>
@@ -607,8 +642,8 @@ export default function Home() {
                       : t.discoverRegion}
                   </Text>
                   <Text style={[styles.caption, muted]}>
-                    {current === "valparaiso"
-                      ? `${t.province} · ${communeIds.length} ${t.communesLabel}`
+                    {regionalPlaces.length
+                      ? `${activeProvince ? t.provinceNames[activeProvince as keyof typeof t.provinceNames] : `${provinceIds.length} ${t.provincesLabel}`} · ${localCommuneCount} ${t.communesLabel}`
                       : t.subtitle}
                   </Text>
                 </View>
@@ -672,6 +707,20 @@ export default function Home() {
               </View>
             </View>
           </Animated.View>
+          {journey && (
+            <RegionJourney
+              journey={journey}
+              progress={journeyProgress}
+              colors={colors}
+              height={pageHeight}
+              onCancel={() => {
+                clearAnimation();
+                setPassing(null);
+                motion.setValue(0);
+                opacity.setValue(1);
+              }}
+            />
+          )}
         </View>
       ) : (
         <ScrollView
@@ -684,7 +733,13 @@ export default function Home() {
                 {title(tab === "businesses" ? t.businesses : t.explore)}
                 {button(t.map, () => setMapMode("region"), false, true)}
               </View>
-              {tag(current === "valparaiso" ? t.province : t.regions[current])}
+              {tag(
+                commune !== "all" && activeProvince
+                  ? t.provinceNames[
+                      activeProvince as keyof typeof t.provinceNames
+                    ]
+                  : t.regions[current],
+              )}
               <TextInput
                 accessibilityLabel={t.search}
                 placeholder={t.search}
@@ -931,6 +986,8 @@ export default function Home() {
           {storageError && body(t.storageUnavailable)}
           <Text style={[styles.caption, muted]}>
             {t.demo} · {t.sourceDate}
+            {"\n"}
+            {t.osmLicense}
           </Text>
         </ScrollView>
       )}
@@ -944,7 +1001,11 @@ export default function Home() {
           <Pressable
             key={id}
             accessibilityRole="tab"
-            accessibilityState={{ selected: tab === id }}
+            accessibilityState={{
+              selected: tab === id,
+              disabled: Boolean(journey),
+            }}
+            disabled={Boolean(journey)}
             onPress={() => setTab(id)}
             style={[
               styles.tab,
@@ -985,36 +1046,63 @@ export default function Home() {
               {title(t.chooseRegion)}
               {button(t.close, () => setDrawer(false), false, true)}
             </View>
-            <ScrollView contentContainerStyle={styles.drawerContent}>
-              {button(
-                locationBusy ? t.locationBusy : t.location,
-                () => void locate(),
-                false,
-                false,
-                locationBusy,
-              )}
-              {body(locationMessage)}
-              <Text style={[styles.caption, muted]}>
-                {t.locationExplanation}
-              </Text>
-
-              <View style={styles.mapLayout}>
-                <RegionMap selected={current} onSelect={selectRegion} />
-                <View style={styles.regionList}>
-                  {regionIds.map((id) => (
-                    <View key={id}>
-                      {button(
-                        t.regions[id],
-                        () => selectRegion(id),
-                        current === id,
-                        true,
-                      )}
-                    </View>
-                  ))}
-                </View>
-              </View>
-              {body(t.geographicMap)}
+            <Text
+              style={{ fontSize: 11, color: colors.muted, textAlign: "center" }}
+            >
+              {t.pickerHint}
+            </Text>
+            <ScrollView
+              style={{ flex: 1 }}
+              onLayout={(e) => setPickerHeight(e.nativeEvent.layout.height)}
+              contentContainerStyle={{
+                paddingHorizontal: 12,
+                flexGrow: 1,
+                justifyContent: "center",
+              }}
+            >
+              <RegionPicker
+                selected={current}
+                onSelect={selectRegion}
+                colors={colors}
+                height={pickerHeight}
+              />
             </ScrollView>
+            <View style={{ padding: 10, gap: 4 }}>
+              {locationMessage ? (
+                <Text style={[styles.caption, muted]}>{locationMessage}</Text>
+              ) : null}
+              <View
+                style={{ flexDirection: "row", gap: 10, alignItems: "center" }}
+              >
+                {button(
+                  locationBusy ? t.locationBusy : t.location,
+                  () => void locate(),
+                  false,
+                  true,
+                  locationBusy,
+                )}
+                <Text
+                  style={{
+                    flex: 1,
+                    fontSize: 10,
+                    lineHeight: 13,
+                    color: colors.muted,
+                  }}
+                >
+                  {t.locationCompact}
+                </Text>
+              </View>
+              <Text
+                style={{
+                  fontSize: 9,
+                  lineHeight: 12,
+                  color: colors.muted,
+                  textAlign: "center",
+                }}
+              >
+                {t.geographicMap}
+              </Text>
+            </View>
           </SafeAreaView>
         </View>
       </Modal>
@@ -1049,8 +1137,10 @@ export default function Home() {
                   `${t.communes[detail.commune as keyof typeof t.communes] ?? detail.commune} · ${t.regions[detail.region]}`,
                 )}
                 {tag(t.categories[detail.category])}
-                {body(detail.description)}
-                {body(t.inherited)}
+                {body(
+                  detail.origin === "osm" ? t.osmDetails : detail.description,
+                )}
+                {body(detail.origin === "osm" ? t.osmReference : t.inherited)}
                 {body(t.visitInfo)}
                 {button(
                   stopIds.includes(detail.id) ? t.saved : t.save,
@@ -1078,6 +1168,9 @@ export default function Home() {
                   body(t.sourceOwner)
                 )}
                 <Text style={[styles.caption, muted]}>{t.sourceDate}</Text>
+                {detail.origin === "osm" && (
+                  <Text style={[styles.caption, muted]}>{t.osmLicense}</Text>
+                )}
               </ScrollView>
             </>
           )}
@@ -1111,7 +1204,9 @@ export default function Home() {
             onRegion={selectFromMap}
           />
           <View style={styles.mapFooter}>
-            {body(mapMode === "trip" ? t.noRoadCalculation : t.inherited)}
+            {body(
+              mapMode === "trip" ? t.noRoadCalculation : t.catalogReference,
+            )}
           </View>
         </SafeAreaView>
       </Modal>

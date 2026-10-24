@@ -17,8 +17,8 @@ import {
 } from "./index";
 describe("catálogo heredado con procedencia", () => {
   it("conserva 37 referencias sin verificarlas automáticamente", () => {
-    expect(places).toHaveLength(37);
-    expect(new Set(places.map((p) => p.id)).size).toBe(37);
+    expect(places.filter((p) => p.origin !== "osm")).toHaveLength(37);
+    expect(new Set(places.map((p) => p.id)).size).toBe(places.length);
     for (const p of places) {
       expect(p.verification).toBe("pending");
       if (p.source)
@@ -42,7 +42,7 @@ describe("catálogo heredado con procedencia", () => {
       "chocolateria",
     );
     expect(result.map((p) => p.id)).toContain("chocolateria-matichoc");
-    expect(filterPlaces("atacama")).toEqual([]);
+    expect(filterPlaces("atacama", "papudo")).toEqual([]);
     expect(
       filterPlaces("valparaiso", "papudo").every((p) => p.commune === "papudo"),
     ).toBe(true);
@@ -68,11 +68,11 @@ describe("catálogo heredado con procedencia", () => {
 });
 describe("gestos y selección del viaje", () => {
   it("reconoce norte/sur y descarta deslizamientos horizontales y toques", () => {
-    expect(swipeDirection(2, -80)).toBe("north");
-    expect(swipeDirection(2, 80)).toBe("south");
+    expect(swipeDirection(2, -80)).toBe("south");
+    expect(swipeDirection(2, 80)).toBe("north");
     expect(swipeDirection(80, 10)).toBeNull();
     expect(swipeDirection(1, 6)).toBeNull();
-    expect(swipeDirection(2, -24, -0.8)).toBe("north");
+    expect(swipeDirection(2, -24, -0.8)).toBe("south");
   });
   it("agrega/quita sin duplicados y reordena sin perder una parada", () => {
     expect(toggleStop(["a"], "a")).toEqual([]);
@@ -145,4 +145,21 @@ it("la distancia reutilizada es estable, simétrica y no inventa tiempos por car
   expect(haversineDistanceKm(a, a)).toBe(0);
   expect(haversineDistanceKm(a, b)).toBeCloseTo(haversineDistanceKm(b, a), 8);
   expect(haversineDistanceKm(a, b)).toBeGreaterThan(0);
+});
+
+describe("base comunitaria nacional", () => {
+  it("separa 27 referencias OSM pendientes y cubre las 16 regiones", () => {
+    const open = places.filter((p) => p.origin === "osm");
+    expect(open).toHaveLength(27);
+    expect([...new Set(open.map((p) => p.region))].sort()).toEqual(
+      [...regionIds].sort(),
+    );
+    for (const p of open) {
+      expect(p.source?.url).toMatch(
+        /^https:\/\/www\.openstreetmap\.org\/(node|way)\/\d+$/,
+      );
+      expect(isLocated(p)).toBe(true);
+      expect(p.verification).toBe("pending");
+    }
+  });
 });

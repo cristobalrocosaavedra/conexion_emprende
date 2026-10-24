@@ -17,3 +17,6 @@
 - Canal compartido: releases/latest/download/territorio-vivo-android.apk solo para builds verdes de develop después de revisión/fusión del usuario. Los APK de PR son candidatos y no reemplazan la última versión compartida. No fusionar ni publicar main por cuenta propia.
 
 - Matichoc: portada siempre con su logo o una foto real autorizada de su puesto/toldo de feria. No elegir automáticamente tabletas u otras fotos de producto como imagen principal. Mostrar el logo completo, sin recortar.
+
+- Navegación confirmada tras probar 0.2: dedo arriba → sur; dedo abajo → norte. Selector compacto de 16 regiones con enlaces/líneas; al elegir destino mostrar recorrido visible sobre el país, respetar reducir movimiento y no persistir regiones intermedias. Ver docs/MAQUETA-0.3.md.
+- El catálogo OSM se conserva separado, con atribución/ODbL y extracto de datos y licencia adjuntos a la distribución. Revisar condiciones por fuente: no equiparar automáticamente una etiqueta no comercial con prohibición de mostrar cualquier atractivo público, ni suponer que no vender datos elimina toda condición. El negocio previsto es posicionamiento privado rotulado, separado de catálogo público y verificación.

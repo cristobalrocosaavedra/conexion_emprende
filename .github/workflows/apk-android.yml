@@ -97,9 +97,10 @@ jobs:
       - uses: gradle/actions/setup-gradle@3f5f9adaf7d9fecd50b5935e54106014257a94e6 # v6
         with:
           cache-provider: basic
+          cache-read-only: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name != github.repository }}
       - name: Compilar APK con JavaScript incluido y firma de pruebas
         working-directory: apps/mobile/android
-        run: ./gradlew :app:assembleRelease --no-daemon --max-workers=2
+        run: ./gradlew :app:assembleRelease --build-cache --no-daemon --max-workers=2
       - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8
         with:
           name: pantallas-${{ github.run_number }}
@@ -127,6 +128,11 @@ jobs:
           cp vistas/pantalla-inicio.png artefactos/pantalla-inicio.png
           cp vistas/pantalla-explorar.png artefactos/pantalla-explorar.png
           cp vistas/pantalla-ficha.png artefactos/pantalla-ficha.png
+          cp vistas/pantalla-selector.png artefactos/pantalla-selector.png
+          cp vistas/pantalla-recorrido.png artefactos/pantalla-recorrido.png
+          cp docs/diseno/0.3/recorrido.webm artefactos/recorrido.webm
+          cp content/catalogo/osm-chile.json artefactos/datos-osm.json
+          cp content/sources/ODbL-1.0.txt artefactos/LICENCIA-DATOS-OSM.txt
           node scripts/check-upgrade.mjs "$verificador" "$badging" artefactos/version.json
           git rev-parse HEAD > artefactos/COMMIT.txt
           (cd artefactos && sha256sum *.apk > SHA256SUMS.txt)
