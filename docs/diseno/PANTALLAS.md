@@ -1,14 +1,14 @@
 # Pantallas y primeras APK — plan para revisión
 
-24-10-2026. La prioridad confirmada por el usuario es definir las pantallas y su despliegue, y luego descargar primeras versiones Android. Este documento propone el contenido de esas entregas; todavía no autoriza construirlas ni fija fechas.
+24-10-2026. La prioridad confirmada por el usuario es definir las pantallas y su despliegue, y luego descargar primeras versiones Android. La V02 ya fue aprobada como base visual para avanzar a la APK; el esqueleto y la tecnología se presentan para confirmación antes de construir. No se fijaron fechas.
 
 ## Decisiones incorporadas
 
-Nombre elegido para continuar: **Territorio Vivo**. Tema oscuro preferido para la propuesta, con una versión clara de igual estructura. Portada y tarjetas de detalle/eventos parten de B; exploración territorial y selector con mapa parten de A. No se trata de escoger una lámina completa ni de tener dos aplicaciones distintas. Aún pendientes la aprobación concreta de pantallas, el esqueleto y la construcción de APK.
+Nombre elegido para continuar: **Territorio Vivo**. Tema oscuro preferido para la propuesta, con una versión clara de igual estructura. Portada y tarjetas de detalle/eventos parten de B; exploración territorial y selector con mapa parten de A. No se trata de escoger una lámina completa ni de tener dos aplicaciones distintas. La base visual V02 está aprobada. Véase el [esqueleto para confirmar](../ESQUELETO-APK.md). Se acuerdan ahora los detalles de construcción y tecnología, sin activar servicios productivos.
 
 ## Orden de revisión
 
-1. Portada regional y lenguaje visual, comparando A y B de [la lámina](propuestas-visuales-v01.png).
+1. Portada y lenguaje visual: usar la [V02 aprobada](territorio-vivo-v02.png); V01 queda como historial.
 2. Gesto regional y selector, incluida transición intermedia y extremos.
 3. Explorar por provincia/comuna y ficha de ejemplo.
 4. Eventos y Mi viaje, con simulación claramente ilustrativa.
@@ -22,7 +22,7 @@ Revisar una decisión principal por vez. Las primeras APK no necesitan que el no
 | --- | --- | --- | --- |
 | P01 | Bienvenida: explicación de ubicación y selección manual | Primera apertura → portada elegida | Permiso pendiente, concedido, denegado, ubicación no disponible; nunca bloquear exploración |
 | P02 | Portada: región, motivo identificado, categorías y accesos breves | Desde bienvenida, gesto o selector → otra región o detalle | Región física distinta de consultada; extremo norte/sur; textos largos |
-| P03 | Selector: lista completa norte-sur y región consultada | Abrir desde encabezado → elegir o cancelar | Región actual, salto cercano/lejano, cambio de destino durante animación, reducir movimiento |
+| P03 | Menú lateral: mapa interactivo y lista completa norte-sur sincronizados, con región consultada | Abrir desde encabezado → elegir o cancelar | Región actual, salto cercano/lejano, cambio de destino durante animación, reducir movimiento |
 | P04 | Explorar: territorio y categorías | Desde portada o pestaña → provincia, comuna o ficha | Todo el territorio, filtro activo, sin resultados; volver conserva filtros |
 | P05 | Ficha: ilustración, ejemplo rotulado, tipo de actividad y acción guardar | Desde Explorar/Eventos → guardar o volver | Visitable frente a por encargo/itinerante; no ofrecer parada vial si no corresponde |
 | P06 | Eventos: región consultada, categorías y fecha como filtro de demostración | Pestaña → detalle | Sin eventos, filtros; ninguna fecha o disponibilidad ficticia como real |
@@ -62,4 +62,4 @@ Alternativa: build local con Android SDK, JDK y firma de pruebas. Requiere compr
 
 No basta que exista el archivo. Comprobar integridad del APK, instalación y arranque en Android real o emulador; documentar cuál se utilizó y qué queda pendiente en el teléfono del usuario. Revisar todas las pantallas incluidas, sentido norte/sur, extremos, selector rápido, regreso, datos de ejemplo, escala de texto y reducir movimiento. Si no hay dispositivo disponible, informar esa limitación sin afirmar que se probó.
 
-La aprobación visual no se deduce de haber generado imágenes. El usuario elige y corrige primero; después se registra qué versión se implementará.
+La aprobación visual fue expresada por el usuario: la V02 es la base. La generación de imágenes por sí sola no constituye aprobación de tecnologías ni del esqueleto.

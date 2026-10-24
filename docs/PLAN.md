@@ -175,3 +175,13 @@ Documentos de propuesta: [arquitectura y plan técnico](PLAN-TECNICO.md), [nombr
 El usuario elige Territorio Vivo como nombre para continuar, por cómo suena y sin incluir Chile directamente en la marca. Se mantiene el alcance chileno del producto. La revisión de marca, dominio y disponibilidad continúa aplazada y no se crea logo todavía. Esta decisión reemplaza el nombre pendiente de las secciones anteriores sin reescribir el plan original.
 
 La dirección visual combina ambas propuestas: preferencia por el tema oscuro y la portada inmersiva de B; exploración de provincias/comunas y selector con mapa de A; tarjetas de detalle de emprendimientos y eventos de B. Habrá temas claro y oscuro sobre la misma estructura, sin separar funciones o navegación por tema. La preferencia por oscuro no implica imponerlo a todas las personas. Falta acordar el comportamiento inicial del tema y revisar las pantallas concretas. No constituye aprobación del esqueleto ni autorización para construir funciones posteriores.
+
+13. Base aprobada para avanzar a la primera APK
+
+El usuario confirma las pantallas V02 como base visual. El selector será un menú lateral con mapa interactivo y lista de regiones; se contempla agrupar visualmente norte, centro, sur y extremo sur, con límites editoriales aún por definir, y señalar destacados seleccionables del viaje según territorio. Seleccionar un evento abre su información y permite guardarlo, sin prometer conectividad ni tiempos de ruta calculados.
+
+El inicio usa ubicación consentida para abrir la región y priorizar la zona cercana. Ejemplo expresado: La Ligua, provincia de Petorca, región de Valparaíso; eventos y contenido locales primero, con expansión al resto de la región. Diferenciar la posición física de la región que el usuario elige explorar. No guardar coordenadas ni presentar contenido lejano como cercano.
+
+Se solicita iniciar preparación de un catálogo basal nacional a partir de directorios públicos. La procedencia, licencia, vigencia y condición de no verificado se revisan antes de incorporar registros. El inventario y bloqueo actual están en FUENTES-DATOS.md; no se importaron datos aún. La posible referencia a los otros repositorios no sustituye las dos confirmaciones por trabajo exigidas para consultarlos o modificarlos.
+
+Se presenta ESQUELETO-APK.md como propuesta concreta de monorepo Expo/React Native, web Next.js y paquetes comunes, con Supabase previsto para el futuro. La dirección de producto está aprobada; la tecnología y la creación de archivos de aplicación se confirman antes de construir, conforme a la instrucción inicial del usuario. Mantener la bitácora y distinguir APK generada, instalada y probada.

@@ -2,7 +2,9 @@
 
 Estado: propuesta para revisión, 24-10-2026. Nombre elegido para continuar: Territorio Vivo. Solo Fase 0.
 
-Dirección visual confirmada: mezcla de las propuestas A/B con preferencia oscura; claro y oscuro serán temas de la misma estructura. Véase [la decisión visual](diseno/PROPUESTAS.md). La arquitectura y el esqueleto aún no están aprobados.
+Dirección visual confirmada: mezcla de las propuestas A/B con preferencia oscura; claro y oscuro serán temas de la misma estructura. Véase [la decisión visual](diseno/PROPUESTAS.md). La V02 quedó aprobada como base visual para la APK. La tecnología y el esqueleto se concretan para confirmar en [ESQUELETO-APK.md](ESQUELETO-APK.md).
+
+La preparación de datos públicos se registra en [FUENTES-DATOS.md](FUENTES-DATOS.md); las consultas iniciales están bloqueadas por la política de red y no se importaron registros.
 
 El detalle para revisar cada pantalla y preparar entregas Android está en [Pantallas y primeras APK](diseno/PANTALLAS.md).
 

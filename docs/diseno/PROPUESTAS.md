@@ -1,6 +1,12 @@
-# Propuestas visuales — historial y dirección elegida
+# Mockups base — V02 aprobada e historial
 
 24-10-2026. Mockups de Fase 0, no pantallas implementadas. Sin logo y con nombre provisional. Toda ficha, evento, oferta o recorrido dibujado es de ejemplo; las ilustraciones regionales son referencias visuales, no documentación turística.
+
+## Base visual aprobada
+
+El usuario confirma que las [pantallas V02](territorio-vivo-v02.png) son la base para construir la primera maqueta Android. El selector con mapa será un menú lateral y sus regiones se podrán seleccionar desde mapa o lista. La aprobación visual no sustituye la confirmación del [esqueleto técnico](../ESQUELETO-APK.md) solicitado antes de crear la aplicación.
+
+Inicio localizado: región completa y prioridad de eventos y contenido cercanos; ejemplo La Ligua → Petorca → Valparaíso. La obtención de posición requiere consentimiento. Los grupos norte/centro/sur/extremo sur y destacados del viaje son una ampliación a diseñar sobre el selector aprobado, no una nueva geografía oficial.
 
 ## Dirección elegida: mezcla de A y B, con preferencia oscura
 
@@ -14,7 +20,7 @@ El usuario elige **Territorio Vivo** como nombre de la app. Se deja atrás la el
 
 Propuesta técnica por confirmar al construir: opciones Sistema / Claro / Oscuro, siguiendo inicialmente el sistema y recordando una selección manual en el dispositivo. Colores mediante tokens semánticos (fondo, superficie, texto, acento, borde, estado), sin duplicar pantallas ni ligar lógica de negocio al tema. Contraste y foco se verifican en ambos modos. La portada puede tener variantes de ilustración compatibles, sin duplicar todo el catálogo de recursos por tema.
 
-La [lámina V02](territorio-vivo-v02.png) compara portada, exploración territorial y selector en ambos temas. No cierra automáticamente los detalles de Eventos y Mi viaje: se revisarán en su propia lámina. El usuario ha elegido la dirección, no ha aprobado todavía cada pantalla ni el esqueleto.
+La [lámina V02](territorio-vivo-v02.png) compara portada, exploración territorial y selector en ambos temas. No cierra automáticamente los detalles de Eventos y Mi viaje: se revisarán en su propia lámina. El usuario aprobó V02 como base visual; los estados detallados se afinan al construir. El esqueleto y la tecnología se presentan para confirmación separada.
 
 ## Versión 01 — alternativas originales
 
