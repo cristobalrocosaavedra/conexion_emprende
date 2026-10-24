@@ -69,3 +69,18 @@ GitHub rechazó la primera subida con GH007 por el correo privado de los commits
 - Corregida descarga con seguimiento de redirecciones solo HTTPS. Se conserva la validación de SHA-256 y se rechaza discrepancia con un checksum previamente guardado. No se deshabilita ninguna verificación.
 - Unificada concurrencia por rama para que el push y el PR del mismo cambio no compilen dos APK simultáneamente.
 - Validación completa antes de push; build nativo seguirá exclusivamente en GitHub. Resultado de PR y ejecución remota se registrará al comprobarlos.
+
+### PR de corrección y comprobaciones
+
+- PR [#2](https://github.com/cristobalrocosaavedra/conexion_emprende/pull/2), borrador a develop, commit 2d69dc6. Ejecución de referencia [40117286924](https://github.com/cristobalrocosaavedra/conexion_emprende/actions/runs/40117286924).
+- La validación completa local terminó en verde antes del push; se probó el fragmento real del workflow con descarga oficial, repetición idempotente y rechazo de discrepancia. La validación del PR también pasó en GitHub.
+- El grupo de concurrencia compartido canceló el build duplicado del push al comenzar el del PR. Main y los otros repositorios siguen sin modificaciones.
+
+### Primera APK generada en GitHub
+
+- Ejecución 40117286924 terminada en success. Validar: 1m10s; compilar: 14m26s. La verificación de Gradle, build release, firma, presencia del bundle y subida del artefacto terminaron en success.
+- [Descarga del artefacto territorio-vivo-android-5](https://github.com/cristobalrocosaavedra/conexion_emprende/actions/runs/40117286924/artifacts/12569897462), ID 12569897462, 33.706.587 bytes de archivo distribuido, sin expirar al comprobarlo. Contiene APK ARM64 0.1.0, commit, checksum y LEEME. El tamaño corresponde al artefacto, no se presenta como tamaño exacto del APK extraído.
+- Código de referencia: 2d69dc682a2421a32afec0f566f1661157f82fd0. PR #2 permanece como borrador a develop. Las ejecuciones duplicadas canceladas son distintas de los jobs aprobados de la ejecución de referencia.
+- Logs completos descargados por el destino results-receiver y resultado de firma/bundle confirmado en CI. La descarga binaria adicional desde este entorno fue bloqueada en productionresultssa6.blob.core.windows.net; ese host específico se guardó en el borrador de red, pendiente de aplicar. No se afirma comparación local del checksum del APK.
+- No se compiló APK en esta máquina, no se instaló en Android real/emulador y no se probó build nativo iOS. Siguiente paso del usuario: descargar, instalar y revisar portada, selector, gestos, pestañas y temas. La ubicación y el catálogo siguen pendientes.
+- Notas de cierre conservadas en un commit local para no disparar otra compilación nativa idéntica por una actualización documental; el resultado también queda en la descripción del PR #2.

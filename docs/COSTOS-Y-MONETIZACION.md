@@ -85,3 +85,11 @@ Antes de activar pagos, revisar reglas vigentes de ambas tiendas. Vender destaca
 ## Próximas decisiones de negocio
 
 Después de probar la APK: fijar presupuesto máximo del piloto; medir moderación y tráfico; entrevistar oferentes sobre Impulso; comprobar tarifas de infraestructura y reglas de tiendas; aprobar precios, impuestos y entrega de exposición. Llevar esas decisiones de una en una con el usuario. El nombre de los planes y los valores anteriores son hipótesis, no funciones autorizadas para implementar ahora.
+
+## Primera medición de CI
+
+La ejecución 40117286924, del 24-10-2026, consumió 1m10s de validación y 14m26s
+para el job Android, y produjo un artefacto de 33.706.587 bytes. Es una medición
+de esta primera compilación, no una tarifa ni una promesa de duración futura.
+El costo facturable depende del plan, cuotas y reglas de GitHub. La concurrencia
+por rama evita mantener el push y PR del mismo cambio compilando a la vez.

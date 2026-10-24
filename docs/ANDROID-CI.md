@@ -95,3 +95,12 @@ La corrección sigue redirecciones HTTPS, conserva la validación SHA-256 y se
 detiene si hay discrepancia con un valor guardado. El resultado de la siguiente
 compilación se registra en la bitácora; todavía no equivale a instalación en un
 teléfono real.
+
+## Primera descarga disponible
+
+La ejecución 40117286924 del PR #2 terminó correctamente. [Descargar artefacto
+territorio-vivo-android-5](https://github.com/cristobalrocosaavedra/conexion_emprende/actions/runs/40117286924/artifacts/12569897462).
+Descomprimir el ZIP e instalar territorio-vivo-0.1.0-arm64.apk según los pasos de
+este documento. El artefacto tiene retención de 14 días; si expira, generar una
+nueva ejecución. La firma y el bundle fueron verificados por CI; la instalación
+y el funcionamiento en el teléfono del usuario siguen pendientes.
