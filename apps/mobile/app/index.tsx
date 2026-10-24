@@ -81,6 +81,7 @@ export default function Home() {
   const generation = useRef(0),
     timeouts = useRef<ReturnType<typeof setTimeout>[]>([]);
   const current = passing ?? region;
+  const compactHome = pageHeight < 600;
   const regionRef = useRef(current);
   regionRef.current = current;
   const mode = resolveTheme(theme, useColorScheme()),
@@ -429,6 +430,7 @@ export default function Home() {
       place={place}
       colors={colors}
       compact={compact}
+      dense={compact && compactHome}
       onPress={() => setDetail(place)}
       onSave={() => save(place.id)}
       saved={stopIds.includes(place.id)}
@@ -535,11 +537,23 @@ export default function Home() {
             ]}
           >
             <Cover source={regionArt(current)} dark={mode === "dark"} />
-            <View style={styles.heroTop}>
+            <View
+              style={[
+                styles.heroTop,
+                compactHome && { paddingTop: 10, gap: 4 },
+              ]}
+            >
               <Text style={styles.eyebrow}>
                 {t.regionalWindow.toUpperCase()}
               </Text>
-              <Text style={styles.heroTitle}>{t.regions[current]}</Text>
+              <Text
+                style={[
+                  styles.heroTitle,
+                  compactHome && { fontSize: 29, lineHeight: 34 },
+                ]}
+              >
+                {t.regions[current]}
+              </Text>
               {activeCommune && (
                 <View style={styles.localContext}>
                   <Text style={styles.provinceContext}>
@@ -549,7 +563,12 @@ export default function Home() {
                         ]
                       : t.regions[current]}
                   </Text>
-                  <Text style={styles.communeContext}>
+                  <Text
+                    style={[
+                      styles.communeContext,
+                      compactHome && { fontSize: 18 },
+                    ]}
+                  >
                     {t.communePrefix}{" "}
                     {t.communes[activeCommune as keyof typeof t.communes] ??
                       activeCommune}
@@ -562,9 +581,11 @@ export default function Home() {
                   </Text>
                 </View>
               )}
-              <Text style={styles.heroSubtitle}>
-                {t.regionStories[current]}
-              </Text>
+              {!compactHome && (
+                <Text style={styles.heroSubtitle}>
+                  {t.regionStories[current]}
+                </Text>
+              )}
               <Text style={styles.artLabel}>{t.artLabel}</Text>
             </View>
             <View style={styles.homeBottom}>
@@ -592,12 +613,17 @@ export default function Home() {
                 </View>
                 {button(t.map, () => setMapMode("region"), false, true)}
               </View>
-              <View style={styles.quickActions}>
+              <ScrollView
+                horizontal
+                showsHorizontalScrollIndicator={false}
+                style={{ flexGrow: 0 }}
+                contentContainerStyle={{ flexDirection: "row", gap: 7 }}
+              >
                 {button(t.explore, () => setTab("explore"), true, true)}
                 {button(t.events, () => setTab("events"), false, true)}
                 {button(t.routes, () => setTab("routes"), false, true)}
                 {button(t.businesses, () => setTab("businesses"), false, true)}
-              </View>
+              </ScrollView>
               {featured.length ? (
                 <ScrollView
                   horizontal

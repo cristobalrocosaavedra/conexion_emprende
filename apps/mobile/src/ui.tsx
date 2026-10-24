@@ -139,6 +139,7 @@ export function PlaceCard({
   onSave,
   saved = false,
   compact = false,
+  dense = false,
 }: {
   place: Place;
   colors: Palette;
@@ -146,6 +147,7 @@ export function PlaceCard({
   onSave: () => void;
   saved?: boolean;
   compact?: boolean;
+  dense?: boolean;
 }) {
   return (
     <Pressable
@@ -164,7 +166,7 @@ export function PlaceCard({
       <View>
         <Image
           source={placeArt(place)}
-          style={{ width: "100%", height: compact ? 98 : 155 }}
+          style={{ width: "100%", height: dense ? 60 : compact ? 98 : 155 }}
           resizeMode="cover"
         />
         <View
@@ -205,7 +207,7 @@ export function PlaceCard({
           </Text>
         </Pressable>
       </View>
-      <View style={{ padding: 13, gap: 5 }}>
+      <View style={{ padding: dense ? 9 : 13, gap: 5 }}>
         <Text style={{ color: colors.accent, fontSize: 11, fontWeight: "700" }}>
           {t.communes[place.commune as keyof typeof t.communes] ??
             place.commune}{" "}

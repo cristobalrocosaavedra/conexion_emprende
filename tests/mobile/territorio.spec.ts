@@ -241,3 +241,21 @@ test("genera tres vistas principales de la candidata antes de ofrecer la APK", a
     animations: "disabled",
   });
 });
+
+test("mantiene ficha y controles visibles en un teléfono de 360 por 640", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 360, height: 640 });
+  await page.getByRole("tab", { name: /Explorar/ }).click();
+  await page
+    .getByRole("button", { name: "La Ligua", exact: true })
+    .first()
+    .click();
+  await page.getByRole("tab", { name: /Inicio/ }).click();
+  await expect(
+    page.getByRole("button", { name: "Museo de La Ligua", exact: true }),
+  ).toBeInViewport({ ratio: 0.95 });
+  await expect(
+    page.getByRole("button", { name: "↓ Sur", exact: true }),
+  ).toBeInViewport();
+});
