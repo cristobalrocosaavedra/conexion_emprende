@@ -3,7 +3,7 @@
 ## 24-10-2026 — Plan original
 
 - Plan del producto guardado íntegro en docs/PLAN.md.
-- Commit: `4d74eeb`, rama `docs/plan-inicial`.
+- Commit original local: `4d74eeb`; versión con correo noreply: `ae986d6`, rama `docs/plan-inicial`.
 - PR: no creado; sin push.
 
 ## 24-10-2026 — Visión regional, propuestas visuales y plan técnico
@@ -48,3 +48,7 @@
 - Comprobación adicional Expo online bloqueada por proxy; comprobación offline informa dependencias actualizadas con advertencia de confiabilidad limitada. No se presenta como compatibilidad nativa demostrada; esta queda pendiente del build en GitHub.
 - Guardado [presupuesto y plan freemium](COSTOS-Y-MONETIZACION.md): escenarios con supuestos explícitos, moderación/soporte, precios hipotéticos, equilibrio y reglas de exposición pagada. Nada contratado ni precio aprobado.
 - Guardado api.github.com como requisito de red del entorno, preservando destinos anteriores. La API devolvió 403 de túnel; no se concluye falta de cuenta ni se solicitaron tokens. El acceso Git se comprueba por separado. Resultado de publicación del código y PR se añadirá a continuación.
+
+### Corrección de privacidad antes de publicar
+
+GitHub rechazó la primera subida con GH007 por el correo privado de los commits nuevos. Se conservaron los contenidos y mensajes, cambiando solo la identidad de correo a noreply en los commits aún no publicados. No se modificó la configuración de privacidad de la cuenta ni se forzó una rama remota. El historial anterior se conserva en una referencia local de respaldo que no se sube. Correspondencias para este registro: 4d74eeb → ae986d6; 990f004 → 53f1977; a6743ca → 75cb956; 9aaef1a → ac7c68a; 31dc4a4 → 80111ce. La subida se reintenta después de la validación completa.
