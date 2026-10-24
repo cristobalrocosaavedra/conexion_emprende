@@ -9,5 +9,9 @@
 - No inventar datos turísticos. Ejemplos rotulados y separados del catálogo real. Fuentes, licencias, fechas y estado de verificación explícitos. No reutilizar fotos ni importar directorios sin revisar condiciones.
 - RLS estricta antes del primer dato real. Secretos solo en configuración segura; nunca en repositorio, chat, cliente o logs. Ubicación con consentimiento, sin persistir coordenadas ni registrar posición en analítica. No pedir ubicación en segundo plano.
 - Explicar cuentas, claves y configuración paso a paso en lenguaje simple. No pedir valores secretos en el chat. Mantener docs/BITACORA.md con fecha, entrega y PR o motivo de ausencia.
-- Seguir el alcance aprobado: cascarón y maqueta de Fase 0, sin activar registro de oferentes, backend productivo, pagos ni ruteo real de fases posteriores.
+- Alcance vigente: maqueta territorial 0.2, catálogo local de referencia, mapas, fichas y selección de paradas. No activar registro de oferentes, backend productivo, pagos ni ruteo real sin nueva petición. La copia de elementos de ambos proyectos se confirmó dos veces para esta ampliación el 24-10-2026, sin modificar los orígenes; no es permiso permanente para otros trabajos.
 - Usar este checkout aislado; no crear worktrees salvo petición expresa. Preservar trabajo previo del usuario.
+
+- Antes de ofrecer una descarga nueva, mostrar dos o tres capturas o mockups de las pantallas principales de la candidata y distinguir capturas funcionales de ilustraciones. Guardar esas vistas para revisión.
+- Mantener identificadores y firma de la app base, incrementar versionCode y conservar preferencias/paradas con migración de datos cuando cambie el esquema. Una actualización normal se instala encima; no recomendar borrar la app como paso rutinario.
+- Canal compartido: releases/latest/download/territorio-vivo-android.apk solo para builds verdes de develop después de revisión/fusión del usuario. Los APK de PR son candidatos y no reemplazan la última versión compartida. No fusionar ni publicar main por cuenta propia.

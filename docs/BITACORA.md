@@ -84,3 +84,24 @@ GitHub rechazó la primera subida con GH007 por el correo privado de los commits
 - Logs completos descargados por el destino results-receiver y resultado de firma/bundle confirmado en CI. La descarga binaria adicional desde este entorno fue bloqueada en productionresultssa6.blob.core.windows.net; ese host específico se guardó en el borrador de red, pendiente de aplicar. No se afirma comparación local del checksum del APK.
 - No se compiló APK en esta máquina, no se instaló en Android real/emulador y no se probó build nativo iOS. Siguiente paso del usuario: descargar, instalar y revisar portada, selector, gestos, pestañas y temas. La ubicación y el catálogo siguen pendientes.
 - Notas de cierre conservadas en un commit local para no disparar otra compilación nativa idéntica por una actualización documental; el resultado también queda en la descripción del PR #2.
+
+## 24-10-2026 — Maqueta territorial ampliada, versión 0.2
+
+- El usuario solicita una experiencia más completa tras probar Android. Confirmada dos veces la lectura y copia/adaptación de elementos de city_tour y directorio_turistico, con prohibición de modificarlos. Solo se trabaja en conexion_emprende.
+- Snapshot del directorio: 37 referencias, 63 localidades y 3 recorridos. Fuente y estado pendiente por ficha. Las Palmas se clasifica en Coquimbo según la nota del origen; Castillo del Diablo permanece como referencia sin pin ni coordenadas confirmadas.
+- Copiadas ilustraciones genéricas y portadas de rutas del titular y adaptada su función Haversine, sin dependencias entre proyectos. Procedencia y alcance en content/sources/REUTILIZACION.md.
+- Generados cuatro fondos de zonas; recursos WebP optimizados de unos 640 KB en total. Las 16 regiones usan contextos y geometrías propias de Natural Earth (dominio público), con atribución y precisión referencial.
+- Portada de ventana completa con gesto norte/sur capturado fuera de la ilustración, tarjetas horizontales y salto regional con tránsito visual. Mapas Leaflet en WebView nativa y vista web; filtros, fichas, paradas, recorridos, ida/vuelta y persistencia de preferencias/IDs sin coordenadas del usuario. Agenda de ejemplo rotulada.
+- Ubicación solo en primer plano con consentimiento; si no hay permiso o resolución fiable se conserva selección manual. La app no solicita ubicación en segundo plano.
+- Añadidas pruebas de catálogo/procedencia, gestos, seguridad del puente HTML, persistencia y recorridos; pruebas de interfaz con Chromium, incluido gesto fuera de la imagen y mapa sin teselas. Resultado de validación y APK se registra después de ejecutar.
+
+### Actualizaciones y revisión previa de pantallas
+
+- Por indicación del usuario, cada entrega mostrará dos o tres vistas principales antes de ofrecer descargar. La candidata genera automáticamente inicio, explorar y ficha, y las adjunta también al artefacto.
+- Conservados identificador y certificado de la APK base. CI asigna número creciente y compara firma, paquete y versión con la APK previa; la instalación real encima se comprobará en el teléfono. Las preferencias y paradas válidas se conservan, sin coordenadas del viajero.
+- Preparado canal GitHub Releases: únicamente una fusión revisada por el usuario a develop y un build verde publicarán la nueva última versión compartida. Los PR solo producen candidatos. El enlace estable todavía no está publicado. No se fusiona main ni se publica en tiendas.
+- Inicio con jerarquía región → provincia → comuna y prioridad de contenidos de la comuna. La selección manual se distingue de la ubicación identificada por el sistema y se conserva entre aperturas.
+- Documentado el procedimiento en ACTUALIZACIONES.md. La actualización descarga el APK completo; no son parches ni actualizaciones automáticas remotas.
+
+- Validación local de la candidata: typecheck, lint, 22 pruebas de lógica y protección del canal de publicación, exportaciones Metro Android/iOS/web, build Next.js, ocho flujos de interfaz móvil y formato en verde. Incluye persistencia de comuna y restauración de preferencias anteriores.
+- Tres [capturas funcionales](diseno/0.2/README.md) guardadas para revisión previa. La captura usa La Ligua manual y tema oscuro; la conexión del entorno no carga las teselas, por lo que el mapa presenta honestamente límites, puntos y aviso. Los otros dos repositorios siguen sin modificaciones.

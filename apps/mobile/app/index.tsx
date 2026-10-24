@@ -1,232 +1,919 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   AccessibilityInfo,
+  Animated,
   BackHandler,
+  Image,
+  Linking,
   Modal,
   PanResponder,
+  Platform,
   Pressable,
   ScrollView,
   StyleSheet,
   Text,
+  TextInput,
   View,
   useColorScheme,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
+import * as Location from "expo-location";
 import {
+  curatedRoutes,
+  filterPlaces,
+  findRegionName,
+  haversineDistanceKm,
+  isLocated,
+  localities,
+  moveStop,
   neighbor,
+  places,
   regionIds,
   resolveTheme,
+  swipeDirection,
+  toggleStop,
   transitionPath,
 } from "@territorio-vivo/core";
-import type { RegionId, ThemePreference } from "@territorio-vivo/core";
+import type { Category, Place, RegionId } from "@territorio-vivo/core";
 import { messages as t } from "@territorio-vivo/i18n";
 import { palettes } from "@territorio-vivo/design-tokens";
-import { Landscape } from "../src/Landscape";
 import { RegionMap } from "../src/RegionMap";
+import { PlaceMap } from "../src/PlaceMap";
+import { Action, Cover, Pill, PlaceCard } from "../src/ui";
+import {
+  placeArt,
+  regionArt,
+  routeArt,
+  eventArt,
+  placeArtLabel,
+} from "../src/art";
+import { usePreferences } from "../src/usePreferences";
 
-type Tab = "home" | "explore" | "events" | "trip" | "businesses";
+type Tab = "home" | "explore" | "events" | "trip" | "businesses" | "routes";
+type MapMode = "region" | "trip" | "place" | null;
 export default function Home() {
-  const [region, setRegion] = useState<RegionId>("valparaiso");
+  const { preferences, setPreferences, hydrated, storageError } =
+    usePreferences();
+  const { region, commune, theme, stopIds, roundTrip } = preferences;
+  const setCommune = (commune: string) =>
+    setPreferences((p) => ({ ...p, commune }));
   const [passing, setPassing] = useState<RegionId | null>(null);
-  const [drawer, setDrawer] = useState(false);
-  const [tab, setTab] = useState<Tab>("home");
-  const [theme, setTheme] = useState<ThemePreference>("system");
-  const [reduceMotion, setReduceMotion] = useState(false);
-  const timeouts = useRef<ReturnType<typeof setTimeout>[]>([]);
+  const [drawer, setDrawer] = useState(false),
+    [tab, setTab] = useState<Tab>("home");
+  const tabRef = useRef(tab);
+  tabRef.current = tab;
+  const [category, setCategory] = useState("all"),
+    [query, setQuery] = useState("");
+  const [detail, setDetail] = useState<Place | null>(null),
+    [eventDetail, setEventDetail] = useState<number | null>(null);
+  const [mapMode, setMapMode] = useState<MapMode>(null),
+    [mapPlace, setMapPlace] = useState<Place | null>(null);
+  const [reduceMotion, setReduceMotion] = useState(false),
+    [pageHeight, setPageHeight] = useState(650);
+  const [locationBusy, setLocationBusy] = useState(false),
+    [locationMessage, setLocationMessage] = useState("");
+  const [physicalRegion, setPhysicalRegion] = useState<RegionId | null>(null);
+  const [nearbyOrder, setNearbyOrder] = useState<string[]>([]);
+  const [locatedCommune, setLocatedCommune] = useState<string | null>(null);
+  const motion = useRef(new Animated.Value(0)).current;
+  const opacity = useRef(new Animated.Value(1)).current;
+  const generation = useRef(0),
+    timeouts = useRef<ReturnType<typeof setTimeout>[]>([]);
   const current = passing ?? region;
-  const mode = resolveTheme(theme, useColorScheme());
-  const colors = palettes[mode];
-  const cancel = () => {
+  const regionRef = useRef(current);
+  regionRef.current = current;
+  const mode = resolveTheme(theme, useColorScheme()),
+    colors = palettes[mode];
+  const text = { color: colors.text },
+    muted = { color: colors.muted };
+  const activeCommune =
+    commune !== "all"
+      ? commune
+      : physicalRegion === current
+        ? locatedCommune
+        : null;
+  const activeProvince = activeCommune
+    ? places.find((p) => p.region === current && p.commune === activeCommune)
+        ?.province
+    : null;
+  const regionalPlaces = useMemo(
+    () => places.filter((p) => p.region === current),
+    [current],
+  );
+  const filtered = useMemo(
+    () =>
+      filterPlaces(current, commune, category, query).filter(
+        (p) => tab !== "businesses" || p.category === "gastronomia",
+      ),
+    [current, commune, category, query, tab],
+  );
+  const tripPlaces = useMemo(
+    () =>
+      stopIds
+        .map((id) => places.find((p) => p.id === id))
+        .filter((p): p is Place => Boolean(p)),
+    [stopIds],
+  );
+  const tripLocated = useMemo(() => tripPlaces.filter(isLocated), [tripPlaces]);
+  const tripDistance = useMemo(() => {
+    const points =
+      roundTrip && tripLocated.length > 1
+        ? [...tripLocated, tripLocated[0]]
+        : tripLocated;
+    return points.reduce(
+      (sum, p, i) => (i ? sum + haversineDistanceKm(points[i - 1], p) : sum),
+      0,
+    );
+  }, [tripLocated, roundTrip]);
+  const communeIds = useMemo(
+    () => [...new Set(regionalPlaces.map((p) => p.commune))],
+    [regionalPlaces],
+  );
+  const regionalLocalities = useMemo(
+    () => localities.filter((p) => communeIds.includes(p.commune)),
+    [communeIds],
+  );
+  const featured = useMemo(
+    () =>
+      [...regionalPlaces]
+        .sort((a, b) => {
+          const localDifference =
+            Number(b.commune === activeCommune) -
+            Number(a.commune === activeCommune);
+          if (localDifference) return localDifference;
+          const ai = nearbyOrder.indexOf(a.id),
+            bi = nearbyOrder.indexOf(b.id);
+          if (ai >= 0 || bi >= 0)
+            return (ai >= 0 ? ai : Infinity) - (bi >= 0 ? bi : Infinity);
+          return (
+            Number(b.commune === locatedCommune) -
+            Number(a.commune === locatedCommune)
+          );
+        })
+        .slice(0, 5),
+    [regionalPlaces, locatedCommune, nearbyOrder, activeCommune],
+  );
+  const mapPoints =
+    mapMode === "trip"
+      ? tripPlaces
+      : mapMode === "place" && mapPlace
+        ? [mapPlace]
+        : filtered;
+  const mapRegion =
+    mapMode === "place" && mapPlace
+      ? mapPlace.region
+      : mapMode === "trip" && tripPlaces.length
+        ? tripPlaces[0].region
+        : current;
+  const setStops = (next: string[]) =>
+    setPreferences((p) => ({ ...p, stopIds: next }));
+  const save = (id: string) =>
+    setPreferences((p) => ({ ...p, stopIds: toggleStop(p.stopIds, id) }));
+  const clearAnimation = () => {
+    generation.current++;
     timeouts.current.forEach(clearTimeout);
     timeouts.current = [];
+    motion.stopAnimation();
+    opacity.stopAnimation();
   };
   useEffect(() => {
     let active = true;
-    AccessibilityInfo.isReduceMotionEnabled().then((value) => {
-      if (active) setReduceMotion(value);
+    AccessibilityInfo.isReduceMotionEnabled().then((v) => {
+      if (active) setReduceMotion(v);
     });
-    const subscription = AccessibilityInfo.addEventListener(
+    const sub = AccessibilityInfo.addEventListener(
       "reduceMotionChanged",
       setReduceMotion,
     );
     return () => {
       active = false;
-      subscription.remove();
+      sub.remove();
+      generation.current++;
       timeouts.current.forEach(clearTimeout);
+      motion.stopAnimation();
+      opacity.stopAnimation();
     };
-  }, []);
+  }, [motion, opacity]);
   useEffect(() => {
-    const subscription = BackHandler.addEventListener(
-      "hardwareBackPress",
-      () => {
-        if (tab !== "home") {
-          setTab("home");
-          return true;
-        }
-        return false;
-      },
-    );
-    return () => subscription.remove();
-  }, [tab]);
-  const selectRegion = (next: RegionId) => {
-    cancel();
+    const sub = BackHandler.addEventListener("hardwareBackPress", () => {
+      if (detail) {
+        setDetail(null);
+        return true;
+      }
+      if (eventDetail !== null) {
+        setEventDetail(null);
+        return true;
+      }
+      if (mapMode) {
+        setMapMode(null);
+        return true;
+      }
+      if (tab !== "home") {
+        setTab("home");
+        return true;
+      }
+      return false;
+    });
+    return () => sub.remove();
+  }, [detail, eventDetail, mapMode, tab]);
+  const finishRegion = (id: RegionId, nextCommune?: string) => {
+    setPreferences((p) => ({
+      ...p,
+      region: id,
+      commune: nextCommune ?? (p.region === id ? p.commune : "all"),
+    }));
+    setCategory("all");
+    setQuery("");
+    setPassing(null);
+  };
+  const selectRegion = (
+    next: RegionId,
+    gesture = false,
+    nextCommune?: string,
+  ) => {
+    clearAnimation();
     setDrawer(false);
-    const path = transitionPath(current, next);
-    if (reduceMotion || path.length < 2) {
-      setRegion(next);
-      setPassing(null);
+    setTab("home");
+    const origin = regionRef.current,
+      path = transitionPath(origin, next),
+      ticket = generation.current;
+    if (!path.length || reduceMotion) {
+      finishRegion(next, nextCommune);
+      motion.setValue(0);
+      opacity.setValue(1);
       return;
     }
+    if (gesture) {
+      const sign = regionIds.indexOf(next) < regionIds.indexOf(origin) ? -1 : 1;
+      Animated.timing(motion, {
+        toValue: sign * pageHeight * 0.18,
+        duration: 100,
+        useNativeDriver: true,
+      }).start(({ finished }) => {
+        if (!finished || generation.current !== ticket) return;
+        finishRegion(next, nextCommune);
+        motion.setValue(-sign * pageHeight * 0.16);
+        Animated.timing(motion, {
+          toValue: 0,
+          duration: 180,
+          useNativeDriver: true,
+        }).start();
+      });
+      return;
+    }
+    motion.setValue(0);
+    opacity.setValue(0.8);
     const interval = Math.min(140, 1200 / path.length);
-    path.forEach((id, i) => {
+    path.forEach((id, i) =>
       timeouts.current.push(
         setTimeout(
           () => {
+            if (generation.current !== ticket) return;
             if (i === path.length - 1) {
-              setRegion(id);
-              setPassing(null);
+              finishRegion(id, nextCommune);
+              Animated.timing(opacity, {
+                toValue: 1,
+                duration: 120,
+                useNativeDriver: true,
+              }).start();
             } else setPassing(id);
           },
           interval * (i + 1),
         ),
-      );
-    });
+      ),
+    );
+  };
+  const selectFromMap = (id: RegionId) => {
+    setMapMode(null);
+    selectRegion(id);
   };
   const pan = PanResponder.create({
-    onMoveShouldSetPanResponder: (_, g) =>
-      Math.abs(g.dy) > 30 && Math.abs(g.dy) > Math.abs(g.dx) * 1.5,
+    onMoveShouldSetPanResponderCapture: (_, g) =>
+      tab === "home" &&
+      !drawer &&
+      Math.abs(g.dy) > 18 &&
+      Math.abs(g.dy) > Math.abs(g.dx) * 1.25,
+    onPanResponderMove: (_, g) => motion.setValue(g.dy * 0.25),
     onPanResponderRelease: (_, g) => {
-      if (Math.abs(g.dy) < 50) return;
-      const next = neighbor(current, g.dy < 0 ? "north" : "south");
-      if (next) selectRegion(next);
+      const direction = swipeDirection(g.dx, g.dy, g.vy);
+      const next = direction ? neighbor(regionRef.current, direction) : null;
+      if (next) selectRegion(next, true);
+      else
+        Animated.spring(motion, { toValue: 0, useNativeDriver: true }).start();
     },
+    onPanResponderTerminate: () =>
+      Animated.spring(motion, { toValue: 0, useNativeDriver: true }).start(),
   });
-  const colorText = { color: colors.text };
-  const muted = { color: colors.muted };
-  const surface = {
-    backgroundColor: colors.surface,
-    borderColor: colors.border,
+  const locate = async (automatic = false) => {
+    const selectionAtStart = generation.current;
+    if (Platform.OS === "web") {
+      setLocationMessage(t.locationWeb);
+      return;
+    }
+    setLocationBusy(true);
+    setLocationMessage("");
+    try {
+      const permission = await Location.requestForegroundPermissionsAsync();
+      if (permission.status !== "granted") {
+        setLocationMessage(t.locationDenied);
+        return;
+      }
+      const position = await Location.getCurrentPositionAsync({
+        accuracy: Location.Accuracy.Balanced,
+      });
+      const addresses = await Location.reverseGeocodeAsync({
+        latitude: position.coords.latitude,
+        longitude: position.coords.longitude,
+      });
+      const address = addresses[0],
+        id = address
+          ? findRegionName(address.region ?? address.subregion ?? "")
+          : null;
+      if (!id) {
+        setLocationMessage(t.locationUnresolved);
+        return;
+      }
+      setPhysicalRegion(id);
+      const origin = {
+        latitude: position.coords.latitude,
+        longitude: position.coords.longitude,
+      };
+      setNearbyOrder(
+        places
+          .filter((p) => p.region === id)
+          .filter(isLocated)
+          .sort(
+            (a, b) =>
+              haversineDistanceKm(origin, a) - haversineDistanceKm(origin, b),
+          )
+          .map((p) => p.id),
+      );
+      const locality = (
+        address.city ??
+        address.district ??
+        ""
+      ).toLocaleLowerCase("es");
+      const found = Object.entries(t.communes).find(
+        ([, name]) => name.toLocaleLowerCase("es") === locality,
+      );
+      setLocatedCommune(found?.[0] ?? null);
+      if (
+        generation.current === selectionAtStart &&
+        (!automatic || tabRef.current === "home")
+      )
+        selectRegion(id, false, found?.[0] ?? "all");
+      setLocationMessage(t.located);
+    } catch {
+      setLocationMessage(t.locationDenied);
+    } finally {
+      setLocationBusy(false);
+    }
   };
-  const button = (label: string, onPress: () => void, selected = false) => (
-    <Pressable
-      accessibilityRole="button"
-      accessibilityState={{ selected }}
-      onPress={onPress}
-      style={[
-        styles.button,
-        surface,
-        selected && { borderColor: colors.accent },
-      ]}
-    >
-      <Text style={[styles.buttonText, colorText]}>{label}</Text>
-    </Pressable>
+  useEffect(() => {
+    if (!hydrated || Platform.OS === "web") return;
+    let active = true;
+    Location.getForegroundPermissionsAsync()
+      .then((permission) => {
+        if (active && permission.status === "granted") void locate(true);
+      })
+      .catch(() => {});
+    return () => {
+      active = false;
+    };
+    // Solo al hidratar: una elección manual posterior no dispara otra localización.
+  }, [hydrated]);
+  const openPlace = (id: string) => {
+    const place = places.find((p) => p.id === id);
+    if (place) {
+      setMapMode(null);
+      setDetail(place);
+    }
+  };
+  const openSource = (url: string) => {
+    try {
+      if (["https:", "http:"].includes(new URL(url).protocol))
+        void Linking.openURL(url).catch(() => {});
+    } catch {
+      /* Fuentes inválidas no se abren. */
+    }
+  };
+  const title = (value: string) => (
+    <Text style={[styles.title, text]}>{value}</Text>
   );
-  const headings = {
-    home: t.discover,
-    explore: t.explore,
-    events: t.events,
-    trip: t.tripTitle,
-    businesses: t.businesses,
-  };
-  const bodies = {
-    home: t.discoverBody,
-    explore: t.exploreBody,
-    events: t.eventsBody,
-    trip: t.tripBody,
-    businesses: t.businessesBody,
-  };
+  const body = (value: string) => (
+    <Text style={[styles.body, muted]}>{value}</Text>
+  );
+  const button = (
+    label: string,
+    onPress: () => void,
+    primary = false,
+    small = false,
+    disabled = false,
+    accessibilityLabel?: string,
+  ) => (
+    <Action
+      label={label}
+      onPress={onPress}
+      colors={colors}
+      primary={primary}
+      small={small}
+      disabled={disabled}
+      accessibilityLabel={accessibilityLabel}
+    />
+  );
+  const tag = (value: string) => <Pill colors={colors}>{value}</Pill>;
+  const card = (place: Place, compact = false) => (
+    <PlaceCard
+      key={place.id}
+      place={place}
+      colors={colors}
+      compact={compact}
+      onPress={() => setDetail(place)}
+      onSave={() => save(place.id)}
+      saved={stopIds.includes(place.id)}
+    />
+  );
+  const renderRoutes = () =>
+    curatedRoutes.map((route) => (
+      <View
+        key={route.id}
+        style={[
+          styles.panel,
+          { backgroundColor: colors.surface, borderColor: colors.border },
+        ]}
+      >
+        <Image
+          source={routeArt(route.id)}
+          resizeMode="cover"
+          style={styles.routeImage}
+        />
+        <View style={styles.panelInside}>
+          {tag(t.artLabel)}
+          {title(route.name)}
+          {body(route.description)}
+          {tag(t.pending)}
+          {button(
+            t.loadRoute,
+            () => {
+              setStops([...new Set([...stopIds, ...route.stopIds])]);
+              setTab("trip");
+            },
+            true,
+          )}
+          <Pressable
+            accessibilityRole="link"
+            onPress={() => openSource(route.source.url)}
+          >
+            <Text style={[styles.source, { color: colors.accent }]}>
+              {route.source.label}
+            </Text>
+          </Pressable>
+        </View>
+      </View>
+    ));
   return (
     <SafeAreaView style={[styles.page, { backgroundColor: colors.background }]}>
       <StatusBar style={mode === "dark" ? "light" : "dark"} />
       <View style={styles.header}>
-        <Text style={[styles.brand, colorText]}>{t.brand}</Text>
-        <View style={styles.theme}>
-          <Text style={[styles.caption, muted]}>{t.theme}</Text>
+        <View style={{ flex: 1 }}>
+          <Text style={[styles.brand, text]}>{t.brand}</Text>
           <Pressable
             accessibilityRole="button"
-            accessibilityLabel={`${t.theme}: ${t[theme]}`}
-            onPress={() =>
-              setTheme(
-                theme === "system"
-                  ? "dark"
-                  : theme === "dark"
-                    ? "light"
-                    : "system",
-              )
-            }
-            style={[styles.themeButton, surface]}
+            accessibilityLabel={t.openRegions}
+            onPress={() => setDrawer(true)}
+            style={styles.selector}
           >
-            <Text style={colorText}>{t[theme]}</Text>
+            <Text
+              style={[styles.selectorText, { color: colors.accent }]}
+              numberOfLines={1}
+            >
+              ☰ {t.regions[current]} ▾
+            </Text>
           </Pressable>
         </View>
-      </View>
-      <View style={styles.regionHeader}>
         <Pressable
           accessibilityRole="button"
-          accessibilityLabel={t.openRegions}
-          onPress={() => setDrawer(true)}
-          style={[styles.regionButton, surface]}
+          accessibilityLabel={t.location}
+          onPress={() => {
+            setDrawer(true);
+          }}
+          style={[styles.themeButton, { borderColor: colors.border }]}
         >
-          <Text style={[styles.regionName, colorText]}>
-            {t.regions[current]} ▾
-          </Text>
+          <Text style={{ color: colors.accent, fontSize: 20 }}>⌖</Text>
+        </Pressable>
+        <Pressable
+          accessibilityRole="button"
+          accessibilityLabel={`${t.theme}: ${t[theme]}`}
+          onPress={() =>
+            setPreferences((p) => ({
+              ...p,
+              theme:
+                p.theme === "system"
+                  ? "dark"
+                  : p.theme === "dark"
+                    ? "light"
+                    : "system",
+            }))
+          }
+          style={[styles.themeButton, { borderColor: colors.border }]}
+        >
+          <Text style={[styles.caption, muted]}>◐ {t[theme]}</Text>
         </Pressable>
       </View>
-      <ScrollView contentContainerStyle={styles.content}>
-        {tab === "home" ? (
-          <>
-            <View style={[styles.hero, surface]} {...pan.panHandlers}>
-              <Landscape dark={mode === "dark"} />
-              <Text style={[styles.illustration, muted]}>{t.illustration}</Text>
-              <View style={styles.directions}>
-                {neighbor(current, "north") ? (
-                  button(
-                    `↑ ${t.north}`,
-                    () => selectRegion(neighbor(current, "north")!),
-                    false,
-                  )
-                ) : (
-                  <View />
+      {tab === "home" ? (
+        <View
+          style={styles.homeBody}
+          onLayout={(e) => setPageHeight(e.nativeEvent.layout.height)}
+          {...pan.panHandlers}
+        >
+          <Animated.View
+            testID="regional-window"
+            style={[
+              styles.homeWindow,
+              { transform: [{ translateY: motion }], opacity },
+            ]}
+          >
+            <Cover source={regionArt(current)} dark={mode === "dark"} />
+            <View style={styles.heroTop}>
+              <Text style={styles.eyebrow}>
+                {t.regionalWindow.toUpperCase()}
+              </Text>
+              <Text style={styles.heroTitle}>{t.regions[current]}</Text>
+              {activeCommune && (
+                <View style={styles.localContext}>
+                  <Text style={styles.provinceContext}>
+                    {activeProvince
+                      ? t.provinceNames[
+                          activeProvince as keyof typeof t.provinceNames
+                        ]
+                      : t.regions[current]}
+                  </Text>
+                  <Text style={styles.communeContext}>
+                    {t.communePrefix}{" "}
+                    {t.communes[activeCommune as keyof typeof t.communes] ??
+                      activeCommune}
+                  </Text>
+                  <Text style={styles.artLabel}>
+                    {physicalRegion === current &&
+                    locatedCommune === activeCommune
+                      ? t.located
+                      : t.manualCommune}
+                  </Text>
+                </View>
+              )}
+              <Text style={styles.heroSubtitle}>
+                {t.regionStories[current]}
+              </Text>
+              <Text style={styles.artLabel}>{t.artLabel}</Text>
+            </View>
+            <View style={styles.homeBottom}>
+              <View
+                style={[
+                  styles.rowBetween,
+                  {
+                    backgroundColor: colors.background + "EB",
+                    borderRadius: 16,
+                    padding: 10,
+                  },
+                ]}
+              >
+                <View style={{ flex: 1 }}>
+                  <Text style={[styles.sectionHeading, text]}>
+                    {regionalPlaces.length
+                      ? `${activeCommune ? regionalPlaces.filter((p) => p.commune === activeCommune).length : regionalPlaces.length} ${t.referencePlaces}`
+                      : t.discoverRegion}
+                  </Text>
+                  <Text style={[styles.caption, muted]}>
+                    {current === "valparaiso"
+                      ? `${t.province} · ${communeIds.length} ${t.communesLabel}`
+                      : t.subtitle}
+                  </Text>
+                </View>
+                {button(t.map, () => setMapMode("region"), false, true)}
+              </View>
+              <View style={styles.quickActions}>
+                {button(t.explore, () => setTab("explore"), true, true)}
+                {button(t.events, () => setTab("events"), false, true)}
+                {button(t.routes, () => setTab("routes"), false, true)}
+                {button(t.businesses, () => setTab("businesses"), false, true)}
+              </View>
+              {featured.length ? (
+                <ScrollView
+                  horizontal
+                  showsHorizontalScrollIndicator={false}
+                  contentContainerStyle={styles.horizontalCards}
+                >
+                  {featured.map((p) => card(p, true))}
+                </ScrollView>
+              ) : (
+                <View
+                  style={[
+                    styles.previewEmpty,
+                    {
+                      backgroundColor: colors.surface + "E8",
+                      borderColor: colors.border,
+                    },
+                  ]}
+                >
+                  {body(t.regionalCatalog)}
+                  {button(t.viewMap, () => setMapMode("region"), true)}
+                </View>
+              )}
+              <View style={styles.rowBetween}>
+                {button(
+                  `↑ ${t.north}`,
+                  () => {
+                    const n = neighbor(current, "north");
+                    if (n) selectRegion(n, true);
+                  },
+                  false,
+                  true,
+                  !neighbor(current, "north"),
                 )}
-                {neighbor(current, "south") ? (
-                  button(
-                    `↓ ${t.south}`,
-                    () => selectRegion(neighbor(current, "south")!),
-                    false,
-                  )
-                ) : (
-                  <View />
+                <Text style={[styles.swipeCaption, muted]}>{t.swipeHint}</Text>
+                {button(
+                  `↓ ${t.south}`,
+                  () => {
+                    const n = neighbor(current, "south");
+                    if (n) selectRegion(n, true);
+                  },
+                  false,
+                  true,
+                  !neighbor(current, "south"),
                 )}
               </View>
             </View>
-            <Text style={[styles.title, colorText]}>{headings[tab]}</Text>
-            <Text style={[styles.body, muted]}>{bodies[tab]}</Text>
-            <View style={styles.cards}>
-              {button(t.explore, () => setTab("explore"))}
-              {button(t.events, () => setTab("events"))}
-              {button(t.businesses, () => setTab("businesses"))}
-            </View>
-          </>
-        ) : (
-          <View style={[styles.empty, surface]}>
-            <Text style={[styles.title, colorText]}>{headings[tab]}</Text>
-            <Text style={[styles.body, muted]}>{bodies[tab]}</Text>
-            {tab !== "trip" && (
-              <>
-                <Text style={[styles.emptyTitle, colorText]}>{t.empty}</Text>
-                <Text style={[styles.body, muted]}>{t.emptyBody}</Text>
-              </>
+          </Animated.View>
+        </View>
+      ) : (
+        <ScrollView
+          contentContainerStyle={styles.content}
+          keyboardShouldPersistTaps="handled"
+        >
+          {tab === "explore" || tab === "businesses" ? (
+            <>
+              <View style={styles.rowBetween}>
+                {title(tab === "businesses" ? t.businesses : t.explore)}
+                {button(t.map, () => setMapMode("region"), false, true)}
+              </View>
+              {tag(current === "valparaiso" ? t.province : t.regions[current])}
+              <TextInput
+                accessibilityLabel={t.search}
+                placeholder={t.search}
+                placeholderTextColor={colors.muted}
+                value={query}
+                onChangeText={setQuery}
+                style={[
+                  styles.search,
+                  {
+                    color: colors.text,
+                    borderColor: colors.border,
+                    backgroundColor: colors.surface,
+                  },
+                ]}
+              />
+              <ScrollView
+                horizontal
+                showsHorizontalScrollIndicator={false}
+                contentContainerStyle={styles.chips}
+              >
+                {button(
+                  t.allCommunes,
+                  () => setCommune("all"),
+                  commune === "all",
+                  true,
+                )}
+                {communeIds.map((id) => (
+                  <View key={id}>
+                    {button(
+                      t.communes[id as keyof typeof t.communes] ?? id,
+                      () => setCommune(id),
+                      commune === id,
+                      true,
+                    )}
+                  </View>
+                ))}
+              </ScrollView>
+              <ScrollView
+                horizontal
+                showsHorizontalScrollIndicator={false}
+                contentContainerStyle={styles.chips}
+              >
+                {button(
+                  t.all,
+                  () => setCategory("all"),
+                  category === "all",
+                  true,
+                )}
+                {(Object.keys(t.categories) as Category[]).map((id) => (
+                  <View key={id}>
+                    {button(
+                      t.categories[id],
+                      () => setCategory(id),
+                      category === id,
+                      true,
+                    )}
+                  </View>
+                ))}
+              </ScrollView>
+              <View style={styles.mapPreview}>
+                <PlaceMap
+                  region={current}
+                  points={filtered}
+                  dark={mode === "dark"}
+                  onPlace={openPlace}
+                  onRegion={selectFromMap}
+                />
+              </View>
+              <Text style={[styles.caption, muted]}>
+                {t.notOfficialMap} · {filtered.length} {t.referencePlaces}
+              </Text>
+              {filtered.length ? (
+                filtered.map((p) => card(p))
+              ) : (
+                <View
+                  style={[
+                    styles.panelInside,
+                    { backgroundColor: colors.surface, borderRadius: 20 },
+                  ]}
+                >
+                  {body(
+                    regionalPlaces.length ? t.noResults : t.regionalCatalog,
+                  )}
+                </View>
+              )}
+              {current === "valparaiso" && regionalLocalities.length > 0 && (
+                <View
+                  style={[
+                    styles.panelInside,
+                    {
+                      borderColor: colors.border,
+                      borderWidth: 1,
+                      borderRadius: 20,
+                    },
+                  ]}
+                >
+                  {title(t.localitiesLabel)}
+                  {body(
+                    regionalLocalities
+                      .filter((l) => commune === "all" || l.commune === commune)
+                      .map((l) => l.name)
+                      .join(" · "),
+                  )}
+                </View>
+              )}
+            </>
+          ) : tab === "routes" ? (
+            <>
+              {title(t.curatedRoutes)}
+              {body(t.routesReference)}
+              {renderRoutes()}
+            </>
+          ) : tab === "events" ? (
+            <>
+              {title(t.events)}
+              {tag(t.regions[current])}
+              {body(t.noLiveEvents)}
+              {title(t.demoEvents)}
+              {t.eventNames.map((name, i) => (
+                <Pressable
+                  key={name}
+                  accessibilityRole="button"
+                  accessibilityLabel={name}
+                  onPress={() => setEventDetail(i)}
+                  style={[
+                    styles.panel,
+                    {
+                      backgroundColor: colors.surface,
+                      borderColor: colors.border,
+                    },
+                  ]}
+                >
+                  <Image source={eventArt(i)} style={styles.routeImage} />
+                  <View style={styles.panelInside}>
+                    {tag(t.eventExample)}
+                    {title(name)}
+                    {body(t.eventBody)}
+                  </View>
+                </Pressable>
+              ))}
+            </>
+          ) : (
+            <>
+              {title(t.trip)}
+              {body(`${tripPlaces.length} ${t.selectedCount}`)}
+              {!tripPlaces.length ? (
+                <>
+                  {body(t.emptyTrip)}
+                  {button(t.explore, () => setTab("explore"), true)}
+                  {title(t.curatedRoutes)}
+                  {renderRoutes()}
+                </>
+              ) : (
+                <>
+                  <View style={styles.quickActions}>
+                    {button(
+                      t.onlyOneWay,
+                      () => setPreferences((p) => ({ ...p, roundTrip: false })),
+                      !roundTrip,
+                      true,
+                    )}
+                    {button(
+                      t.roundTrip,
+                      () => setPreferences((p) => ({ ...p, roundTrip: true })),
+                      roundTrip,
+                      true,
+                    )}
+                    {button(t.map, () => setMapMode("trip"), false, true)}
+                  </View>
+                  <View style={styles.mapPreview}>
+                    <PlaceMap
+                      region={tripPlaces[0].region}
+                      points={tripPlaces}
+                      trip
+                      roundTrip={roundTrip}
+                      dark={mode === "dark"}
+                      onPlace={openPlace}
+                    />
+                  </View>
+                  {tag(t.tripSchematic)}
+                  {body(`${tripDistance.toFixed(1)} ${t.straightDistance}`)}
+                  {body(t.noRoadCalculation)}
+                  {tripPlaces.map((p, i) => (
+                    <View
+                      key={p.id}
+                      style={[
+                        styles.tripStop,
+                        {
+                          backgroundColor: colors.surface,
+                          borderColor: colors.border,
+                        },
+                      ]}
+                    >
+                      <Pressable
+                        accessibilityRole="button"
+                        onPress={() => setDetail(p)}
+                        style={{ flex: 1 }}
+                      >
+                        <Text style={[styles.sectionHeading, text]}>
+                          {i + 1}. {p.name}
+                        </Text>
+                        <Text style={[styles.caption, muted]}>
+                          {t.regions[p.region]} · {t.pending}
+                        </Text>
+                      </Pressable>
+                      <View style={styles.quickActions}>
+                        {button(
+                          "↑",
+                          () => setStops(moveStop(stopIds, p.id, -1)),
+                          false,
+                          true,
+                          i === 0,
+                          `${t.moveUp}: ${p.name}`,
+                        )}
+                        {button(
+                          "↓",
+                          () => setStops(moveStop(stopIds, p.id, 1)),
+                          false,
+                          true,
+                          i === tripPlaces.length - 1,
+                          `${t.moveDown}: ${p.name}`,
+                        )}
+                        {button(t.remove, () => save(p.id), false, true)}
+                      </View>
+                    </View>
+                  ))}
+                </>
+              )}
+            </>
+          )}
+          {body(locationMessage)}
+          {button(
+            locationBusy ? t.locationBusy : t.location,
+            () => void locate(),
+            false,
+            false,
+            locationBusy,
+          )}
+          <Text style={[styles.caption, muted]}>{t.locationExplanation}</Text>
+          {physicalRegion &&
+            button(t.yourZone, () =>
+              selectRegion(physicalRegion, false, locatedCommune ?? "all"),
             )}
-            {button(t.returnHome, () => setTab("home"))}
-          </View>
-        )}
-        <Text style={[styles.notice, { color: colors.accent }]}>{t.demo}</Text>
-        <Text style={[styles.caption, muted]}>{t.manual}</Text>
-        <Text style={[styles.caption, muted]}>{t.noLocation}</Text>
-      </ScrollView>
-      <View style={[styles.tabs, { borderTopColor: colors.border }]}>
-        {(["home", "explore", "events", "trip"] as const).map((id) => (
+          {storageError && body(t.storageUnavailable)}
+          <Text style={[styles.caption, muted]}>
+            {t.demo} · {t.sourceDate}
+          </Text>
+        </ScrollView>
+      )}
+      <View
+        style={[
+          styles.tabs,
+          { borderTopColor: colors.border, backgroundColor: colors.background },
+        ]}
+      >
+        {(["home", "explore", "events", "trip"] as const).map((id, i) => (
           <Pressable
             key={id}
             accessibilityRole="tab"
@@ -237,6 +924,14 @@ export default function Home() {
               tab === id && { backgroundColor: colors.badge },
             ]}
           >
+            <Text
+              style={{
+                fontSize: 19,
+                color: tab === id ? colors.accent : colors.muted,
+              }}
+            >
+              {["⌂", "⌕", "▦", "♡"][i]}
+            </Text>
             <Text
               style={[
                 styles.tabText,
@@ -259,123 +954,273 @@ export default function Home() {
             accessibilityViewIsModal
             style={[styles.drawer, { backgroundColor: colors.background }]}
           >
-            <View style={styles.drawerHeading}>
-              <Text style={[styles.title, colorText]}>{t.chooseRegion}</Text>
-              {button(t.close, () => setDrawer(false))}
+            <View style={styles.modalHeading}>
+              {title(t.chooseRegion)}
+              {button(t.close, () => setDrawer(false), false, true)}
             </View>
             <ScrollView contentContainerStyle={styles.drawerContent}>
+              {button(
+                locationBusy ? t.locationBusy : t.location,
+                () => void locate(),
+                false,
+                false,
+                locationBusy,
+              )}
+              {body(locationMessage)}
+              <Text style={[styles.caption, muted]}>
+                {t.locationExplanation}
+              </Text>
+
               <View style={styles.mapLayout}>
                 <RegionMap selected={current} onSelect={selectRegion} />
                 <View style={styles.regionList}>
                   {regionIds.map((id) => (
-                    <Pressable
-                      key={id}
-                      accessibilityRole="button"
-                      accessibilityState={{ selected: current === id }}
-                      onPress={() => selectRegion(id)}
-                      style={[
-                        styles.regionItem,
-                        surface,
-                        current === id && { borderColor: colors.accent },
-                      ]}
-                    >
-                      <Text style={[styles.regionLabel, colorText]}>
-                        {t.regions[id]}
-                      </Text>
-                    </Pressable>
+                    <View key={id}>
+                      {button(
+                        t.regions[id],
+                        () => selectRegion(id),
+                        current === id,
+                        true,
+                      )}
+                    </View>
                   ))}
                 </View>
               </View>
-              <Text style={[styles.caption, muted]}>{t.schematic}</Text>
+              {body(t.geographicMap)}
             </ScrollView>
           </SafeAreaView>
         </View>
       </Modal>
+      <Modal
+        visible={detail !== null}
+        animationType={reduceMotion ? "none" : "slide"}
+        onRequestClose={() => setDetail(null)}
+      >
+        <SafeAreaView
+          style={[styles.page, { backgroundColor: colors.background }]}
+        >
+          {detail && (
+            <>
+              <View style={styles.modalHeading}>
+                {button(t.close, () => setDetail(null), false, true)}
+                {tag(t.pending)}
+              </View>
+              <ScrollView contentContainerStyle={styles.content}>
+                <Image source={placeArt(detail)} style={styles.detailImage} />
+                {tag(placeArtLabel(detail))}
+                {title(detail.name)}
+                {body(
+                  `${t.communes[detail.commune as keyof typeof t.communes] ?? detail.commune} · ${t.regions[detail.region]}`,
+                )}
+                {tag(t.categories[detail.category])}
+                {body(detail.description)}
+                {body(t.inherited)}
+                {body(t.visitInfo)}
+                {button(
+                  stopIds.includes(detail.id) ? t.saved : t.save,
+                  () => save(detail.id),
+                  true,
+                )}
+                {isLocated(detail)
+                  ? button(t.viewMap, () => {
+                      setMapPlace(detail);
+                      setDetail(null);
+                      setMapMode("place");
+                    })
+                  : body(t.locationPending)}
+                {title(t.source)}
+                {detail.source ? (
+                  <Pressable
+                    accessibilityRole="link"
+                    onPress={() => openSource(detail.source!.url)}
+                  >
+                    <Text style={[styles.source, { color: colors.accent }]}>
+                      {detail.source.label} ↗
+                    </Text>
+                  </Pressable>
+                ) : (
+                  body(t.sourceOwner)
+                )}
+                <Text style={[styles.caption, muted]}>{t.sourceDate}</Text>
+              </ScrollView>
+            </>
+          )}
+        </SafeAreaView>
+      </Modal>
+      <Modal
+        visible={mapMode !== null}
+        animationType={reduceMotion ? "none" : "slide"}
+        onRequestClose={() => setMapMode(null)}
+      >
+        <SafeAreaView
+          style={[styles.page, { backgroundColor: colors.background }]}
+        >
+          <View style={styles.modalHeading}>
+            {title(
+              mapMode === "trip"
+                ? t.trip
+                : mapMode === "place" && mapPlace
+                  ? mapPlace.name
+                  : t.regions[current],
+            )}
+            {button(t.close, () => setMapMode(null), false, true)}
+          </View>
+          <PlaceMap
+            region={mapRegion}
+            points={mapPoints}
+            trip={mapMode === "trip"}
+            roundTrip={roundTrip}
+            dark={mode === "dark"}
+            onPlace={openPlace}
+            onRegion={selectFromMap}
+          />
+          <View style={styles.mapFooter}>
+            {body(mapMode === "trip" ? t.noRoadCalculation : t.inherited)}
+          </View>
+        </SafeAreaView>
+      </Modal>
+      <Modal
+        visible={eventDetail !== null}
+        animationType={reduceMotion ? "none" : "slide"}
+        onRequestClose={() => setEventDetail(null)}
+      >
+        <SafeAreaView
+          style={[styles.page, { backgroundColor: colors.background }]}
+        >
+          <View style={styles.modalHeading}>
+            {title(t.events)}
+            {button(t.close, () => setEventDetail(null), false, true)}
+          </View>
+          <ScrollView contentContainerStyle={styles.content}>
+            <Image
+              source={eventArt(eventDetail ?? 0)}
+              style={styles.detailImage}
+            />
+            {tag(t.eventExample)}
+            {title(t.eventNames[eventDetail ?? 0])}
+            {body(t.eventBody)}
+            {tag(t.regions[current])}
+          </ScrollView>
+        </SafeAreaView>
+      </Modal>
+      {!hydrated && <View pointerEvents="none" style={styles.hydration} />}
     </SafeAreaView>
   );
 }
 const styles = StyleSheet.create({
   page: { flex: 1 },
   header: {
-    paddingHorizontal: 20,
-    paddingTop: 12,
+    paddingHorizontal: 22,
+    paddingTop: 9,
+    paddingBottom: 8,
     flexDirection: "row",
-    justifyContent: "space-between",
     alignItems: "center",
-    gap: 8,
-  },
-  brand: { fontSize: 25, fontWeight: "800", flexShrink: 1 },
-  theme: { alignItems: "flex-end" },
-  themeButton: {
-    minHeight: 48,
-    paddingHorizontal: 12,
-    justifyContent: "center",
-    borderRadius: 12,
-    borderWidth: 1,
-  },
-  regionHeader: { paddingHorizontal: 20, paddingVertical: 12 },
-  regionButton: {
-    borderRadius: 16,
-    padding: 14,
-    borderWidth: 1,
-    minHeight: 48,
-  },
-  regionName: { fontSize: 17, fontWeight: "600" },
-  content: {
-    paddingHorizontal: 20,
-    paddingBottom: 24,
     gap: 12,
-    maxWidth: 680,
+  },
+  brand: { fontSize: 25, fontWeight: "800", letterSpacing: -0.6 },
+  selector: { minHeight: 38, justifyContent: "center" },
+  selectorText: { fontSize: 13, fontWeight: "600" },
+  themeButton: {
+    borderWidth: 1,
+    minHeight: 48,
+    justifyContent: "center",
+    borderRadius: 15,
+    paddingHorizontal: 12,
+  },
+  homeBody: { flex: 1, overflow: "hidden" },
+  homeWindow: { flex: 1 },
+  localContext: { gap: 3 },
+  provinceContext: { color: "#dcece7", fontSize: 12 },
+  communeContext: { color: "#fff", fontSize: 22, fontWeight: "700" },
+  heroTop: { paddingHorizontal: 24, paddingTop: 22, gap: 8 },
+  eyebrow: {
+    color: "#dbefe9",
+    fontSize: 10,
+    letterSpacing: 2,
+    fontWeight: "700",
+  },
+  heroTitle: {
+    color: "#fff",
+    fontSize: 37,
+    fontWeight: "800",
+    letterSpacing: -1,
+    lineHeight: 43,
+    maxWidth: 310,
+  },
+  heroSubtitle: { color: "#fff", fontSize: 16, maxWidth: 290, lineHeight: 23 },
+  artLabel: { color: "#d9e4df", fontSize: 9, marginTop: 4 },
+  homeBottom: {
+    marginTop: "auto",
+    paddingHorizontal: 18,
+    paddingBottom: 7,
+    gap: 9,
+  },
+  rowBetween: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    gap: 10,
+  },
+  sectionHeading: { fontSize: 17, fontWeight: "700" },
+  quickActions: { flexDirection: "row", gap: 7, flexWrap: "wrap" },
+  horizontalCards: { gap: 12, paddingVertical: 1, paddingRight: 4 },
+  previewEmpty: { padding: 15, borderRadius: 20, borderWidth: 1, gap: 10 },
+  swipeCaption: { fontSize: 9, textAlign: "center", flex: 1, lineHeight: 14 },
+  content: {
+    padding: 20,
+    paddingBottom: 35,
+    gap: 15,
     width: "100%",
+    maxWidth: 720,
     alignSelf: "center",
   },
-  hero: { borderRadius: 24, borderWidth: 1, overflow: "hidden" },
-  illustration: { fontSize: 11, padding: 10 },
-  directions: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    paddingHorizontal: 12,
-    paddingBottom: 12,
-    gap: 12,
-  },
-  button: {
-    minHeight: 48,
-    borderRadius: 14,
-    paddingHorizontal: 16,
-    paddingVertical: 13,
+  title: { fontSize: 25, fontWeight: "700", letterSpacing: -0.4 },
+  body: { fontSize: 14, lineHeight: 23 },
+  caption: { fontSize: 11, lineHeight: 17 },
+  panel: { borderRadius: 22, borderWidth: 1, overflow: "hidden" },
+  panelInside: { padding: 18, gap: 13 },
+  routeImage: { height: 180, width: "100%" },
+  search: {
+    borderRadius: 15,
     borderWidth: 1,
-    justifyContent: "center",
+    minHeight: 50,
+    paddingHorizontal: 16,
+    fontSize: 15,
   },
-  buttonText: { fontWeight: "600", fontSize: 16 },
-  title: { fontSize: 26, fontWeight: "700" },
-  body: { fontSize: 16, lineHeight: 25 },
-  cards: { gap: 10 },
-  notice: { fontSize: 11, fontWeight: "700", letterSpacing: 1, marginTop: 10 },
-  caption: { fontSize: 12, lineHeight: 19 },
-  tabs: { flexDirection: "row", padding: 8, borderTopWidth: 1, gap: 3 },
+  chips: { gap: 7 },
+  mapPreview: { height: 285, borderRadius: 21, overflow: "hidden" },
+  source: { fontSize: 14, lineHeight: 22, textDecorationLine: "underline" },
+  tripStop: { padding: 15, borderRadius: 19, borderWidth: 1, gap: 12 },
+  tabs: { flexDirection: "row", padding: 8, borderTopWidth: 1, gap: 4 },
   tab: {
     flex: 1,
-    minHeight: 52,
-    padding: 8,
+    minHeight: 58,
     justifyContent: "center",
     alignItems: "center",
-    borderRadius: 14,
+    borderRadius: 15,
+    gap: 3,
   },
-  tabText: { fontSize: 13, fontWeight: "600" },
-  empty: { borderWidth: 1, borderRadius: 20, padding: 20, gap: 16 },
-  emptyTitle: { fontSize: 20, fontWeight: "700" },
-  overlay: { flex: 1, backgroundColor: "#00000088", flexDirection: "row" },
-  drawer: { width: "94%", maxWidth: 480, height: "100%" },
-  drawerHeading: { padding: 16, gap: 12 },
-  drawerContent: { paddingHorizontal: 16, paddingBottom: 24 },
-  mapLayout: { flexDirection: "row", gap: 12 },
+  tabText: { fontSize: 11, fontWeight: "600" },
+  overlay: { flex: 1, backgroundColor: "#00000088" },
+  drawer: { width: "96%", maxWidth: 500, height: "100%" },
+  modalHeading: {
+    padding: 16,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    gap: 12,
+  },
+  drawerContent: { padding: 16, gap: 15 },
+  mapLayout: { flexDirection: "row", gap: 14 },
   regionList: { flex: 1, gap: 6 },
-  regionItem: {
-    minHeight: 48,
-    padding: 10,
-    borderRadius: 12,
-    borderWidth: 1,
-    justifyContent: "center",
+  detailImage: { height: 245, width: "100%", borderRadius: 22 },
+  mapFooter: { padding: 15 },
+  hydration: {
+    position: "absolute",
+    top: 0,
+    bottom: 0,
+    left: 0,
+    right: 0,
+    backgroundColor: "#071e30aa",
   },
-  regionLabel: { fontSize: 14 },
 });

@@ -5,6 +5,6 @@ it("cada región navegable tiene un nombre y se explicita el estado de la maquet
   expect(Object.keys(messages.regions).sort()).toEqual([...regionIds].sort());
   for (const value of Object.values(messages.regions))
     expect(value.trim().length).toBeGreaterThan(0);
-  expect(messages.demo).toContain("SIN CATÁLOGO REAL");
-  expect(messages.noLocation).toContain("no solicitamos ni guardamos");
+  expect(messages.demo).toContain("CATÁLOGO DE REFERENCIA");
+  expect(messages.noLocation).toContain("no guardamos");
 });

@@ -195,3 +195,11 @@ La primera entrega es el cascarón de Fase 0: portada esquemática, temas claro/
 15. Presupuesto y freemium por decidir
 
 El usuario solicita desde ahora presupuesto de mantenimiento y plan de monetización: ficha gratuita, mayor exposición pagada y herramientas para oferentes. COSTOS-Y-MONETIZACION.md presenta partidas, fórmulas, escenarios orientativos y punto de equilibrio, diferenciando supuestos de tarifas verificadas. No hay precios aprobados ni cobros implementados. La exposición pagada se rotula y no compra verificación. Moderación, soporte y reglas de compra digital de Android/iOS forman parte del costo y de las decisiones antes de cobrar.
+
+16. Ampliación de la maqueta tras la primera prueba en Android
+
+El usuario probó la primera APK y solicita una maqueta visual e interactiva más completa: gesto en la portada entera, reutilizar elementos propios para poblar Petorca, recrear las otras regiones y disponer de mapas. Confirmó por segunda vez que se pueden usar elementos de city_tour y directorio_turistico, con la condición de no modificar esos proyectos. Autorización acotada a esta ampliación, no permiso permanente para trabajos futuros.
+
+Se incorpora catálogo local de referencia, filtros por comuna/categoría, fichas con fuentes, mapa geográfico interactivo y selección/reordenación de paradas persistida en el dispositivo. No se crea backend de altas, moderación o pagos. Los recorridos conectan paradas de forma esquemática; no se presentan como rutas por calles ni tiempos calculados. Los eventos sin agenda vigente se muestran solo como demostraciones explícitas.
+
+Las 16 regiones tendrán portadas con identidad territorial, cuatro fondos ilustrados por grandes zonas y geometrías de Natural Earth para selección y exploración. El catálogo detallado parte de las referencias de Petorca y su corredor; las regiones aún sin fichas lo indican sin inventar establecimientos. La ubicación de primer plano puede identificar región con consentimiento; las coordenadas del viajero no se persisten. La compilación APK continúa exclusivamente en GitHub Actions y el código mantiene compatibilidad Android/iOS.

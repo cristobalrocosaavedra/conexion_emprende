@@ -1,3 +1,11 @@
+# Flujo vigente desde 0.2
+
+Ver [ACTUALIZACIONES.md](ACTUALIZACIONES.md): tres pantallas antes de descargar,
+instalación encima de la base y canal compartido después de revisión en develop.
+La APK candidata se llama `territorio-vivo-android.apk`. La base 0.1 fue instalada
+y probada por el usuario. El resto del documento conserva el registro inicial;
+las limitaciones y resultados históricos no describen el estado de 0.2.
+
 # Descargar la maqueta Android desde GitHub
 
 La APK se compila en **GitHub Actions**, no en el entorno de trabajo ni en EAS.

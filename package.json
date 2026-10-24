@@ -15,7 +15,8 @@
     "build": "pnpm --filter @territorio-vivo/mobile build && pnpm --filter @territorio-vivo/web build",
     "format:check": "prettier --check .",
     "format": "prettier --write .",
-    "validate": "pnpm typecheck && pnpm lint && pnpm test && pnpm build && pnpm format:check"
+    "validate": "pnpm typecheck && pnpm lint && pnpm test && pnpm build && pnpm test:mobile && pnpm format:check",
+    "test:mobile": "playwright test"
   },
   "devDependencies": {
     "@eslint/js": "10.0.1",
@@ -24,7 +25,8 @@
     "prettier": "3.9.10",
     "typescript": "6.0.3",
     "typescript-eslint": "8.72.0",
-    "vitest": "5.0.5"
+    "vitest": "5.0.5",
+    "@playwright/test": "1.64.0"
   },
   "type": "module"
 }

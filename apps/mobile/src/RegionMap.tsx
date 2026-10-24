@@ -1,8 +1,33 @@
-import { View } from "react-native";
-import Svg, { Polygon } from "react-native-svg";
-import { regionIds } from "@territorio-vivo/core";
+import Svg, { Path } from "react-native-svg";
+import { regionFeatures } from "@territorio-vivo/core";
 import type { RegionId } from "@territorio-vivo/core";
 import { messages as t } from "@territorio-vivo/i18n";
+const mercator = (latitude: number) =>
+  (Math.log(Math.tan(Math.PI / 4 + (latitude * Math.PI) / 360)) * 180) /
+  Math.PI;
+const allPoints = regionFeatures.flatMap((f) =>
+  f.geometry.coordinates.flatMap((p) => p[0]),
+);
+const minX = Math.min(...allPoints.map((p) => p[0])),
+  maxX = Math.max(...allPoints.map((p) => p[0]));
+const minY = Math.min(...allPoints.map((p) => mercator(p[1]))),
+  maxY = Math.max(...allPoints.map((p) => mercator(p[1])));
+const scale = Math.min(105 / (maxX - minX), 600 / (maxY - minY));
+const paths = regionFeatures.map((f, i) => ({
+  id: f.properties.id,
+  index: i,
+  path: f.geometry.coordinates
+    .map(
+      (poly) =>
+        poly[0]
+          .map(
+            (p, j) =>
+              `${j ? "L" : "M"}${(12 + (p[0] - minX) * scale).toFixed(1)},${(5 + (maxY - mercator(p[1])) * scale).toFixed(1)}`,
+          )
+          .join(" ") + "Z",
+    )
+    .join(" "),
+}));
 export function RegionMap({
   selected,
   onSelect,
@@ -11,30 +36,25 @@ export function RegionMap({
   onSelect: (id: RegionId) => void;
 }) {
   return (
-    <View>
-      <Svg
-        width={68}
-        height={560}
-        viewBox="0 0 68 560"
-        accessibilityLabel={t.schematic}
-      >
-        {regionIds.map((id, i) => {
-          const x = 15 + Math.sin(i * 0.5) * 9,
-            y = i * 34 + 4,
-            w = i > 12 ? 25 : 20;
-          return (
-            <Polygon
-              key={id}
-              points={`${x},${y} ${x + w},${y + 3} ${x + w + 2},${y + 31} ${x + 2},${y + 34}`}
-              fill={selected === id ? "#F4BA69" : i % 2 ? "#39ACAF" : "#77C8BE"}
-              stroke="#102D42"
-              strokeWidth="1"
-              onPress={() => onSelect(id)}
-              accessibilityLabel={t.regions[id]}
-            />
-          );
-        })}
-      </Svg>
-    </View>
+    <Svg
+      width={115}
+      height={610}
+      viewBox="0 0 125 615"
+      accessibilityLabel={t.geographicMap}
+    >
+      {paths.map((f) => (
+        <Path
+          key={f.id}
+          d={f.path}
+          fill={
+            selected === f.id ? "#F5BC70" : f.index % 2 ? "#2E9FA6" : "#6BC5BF"
+          }
+          stroke="#102D42"
+          strokeWidth={0.6}
+          onPress={() => onSelect(f.id)}
+          accessibilityLabel={t.regions[f.id]}
+        />
+      ))}
+    </Svg>
   );
 }
