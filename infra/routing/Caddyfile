@@ -1,0 +1,17 @@
+{
+	admin off
+	log {
+		output discard
+	}
+}
+{$ROUTING_HOST} {
+	log {
+		output discard
+	}
+	header {
+		Cache-Control "no-store"
+		Referrer-Policy "no-referrer"
+		X-Content-Type-Options "nosniff"
+	}
+	reverse_proxy gateway:8080
+}

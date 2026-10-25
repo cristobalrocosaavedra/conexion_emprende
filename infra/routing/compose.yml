@@ -1,0 +1,68 @@
+name: territorio-vivo-rutas
+x-private: &private
+  restart: unless-stopped
+  read_only: true
+  cap_drop: [ALL]
+  security_opt: [no-new-privileges:true]
+  logging:
+    driver: none
+  ulimits:
+    core: 0
+services:
+  osrm:
+    <<: *private
+    image: ghcr.io/project-osrm/osrm-backend:v26.10.0-debian@sha256:55dbfd47d984c2cacd64e32901b4321c86b5ec761438e69aa053dc78698a786f
+    command:
+      [
+        osrm-routed,
+        --algorithm,
+        MLD,
+        --verbosity,
+        NONE,
+        --threads,
+        "3",
+        --default-radius,
+        "1000",
+        --max-viaroute-size,
+        "40",
+        /data/chile.osrm,
+      ]
+    volumes: [./data:/data:ro]
+    networks: [backend]
+    mem_limit: 12g
+    cpus: 3
+    pids_limit: 128
+  gateway:
+    <<: *private
+    image: nginx:1.28.0-alpine@sha256:30f1c0d78e0ad60901648be663a710bdadf19e4c10ac6782c235200619158284
+    entrypoint: [nginx]
+    command: [-g, "daemon off;"]
+    user: "101:101"
+    volumes: [./nginx.conf:/etc/nginx/nginx.conf:ro]
+    tmpfs: ["/tmp:uid=101,gid=101,mode=1700"]
+    depends_on: [osrm]
+    networks: [backend, edge]
+    mem_limit: 128m
+    pids_limit: 64
+  https:
+    <<: *private
+    image: caddy:2.10.2-alpine@sha256:4c6e91c6ed0e2fa03efd5b44747b625fec79bc9cd06ac5235a779726618e530d
+    cap_add: [NET_BIND_SERVICE]
+    ports: ["80:80", "443:443"]
+    environment:
+      ROUTING_HOST: ${ROUTING_HOST:?Configura el nombre DNS del VPS}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - certificates:/data
+      - caddy_config:/config
+    depends_on: [gateway]
+    networks: [edge]
+    mem_limit: 128m
+    pids_limit: 128
+networks:
+  backend:
+    internal: true
+  edge:
+volumes:
+  certificates:
+  caddy_config:
