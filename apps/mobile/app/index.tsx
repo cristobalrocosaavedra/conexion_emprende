@@ -21,6 +21,7 @@ import { StatusBar } from "expo-status-bar";
 
 import {
   curatedRoutes,
+  nationalSuggestions,
   filterPlaces,
   haversineDistanceKm,
   isLocated,
@@ -124,6 +125,10 @@ export default function Home() {
         (p) => tab !== "businesses" || p.category === "gastronomia",
       ),
     [current, commune, category, query, tab],
+  );
+  const nationalMatches = useMemo(
+    () => nationalSuggestions(query, current),
+    [query, current],
   );
   const tripPlaces = useMemo(
     () =>
@@ -802,8 +807,26 @@ export default function Home() {
                   ]}
                 >
                   {body(
-                    regionalPlaces.length ? t.noResults : t.regionalCatalog,
+                    regionalPlaces.length
+                      ? nationalMatches.length
+                        ? t.noRegionalResults
+                        : t.noResults
+                      : t.regionalCatalog,
                   )}
+                </View>
+              )}
+              {nationalMatches.length > 0 && (
+                <View style={{ gap: 12 }}>
+                  {title(t.otherRegions)}
+                  {body(t.otherRegionsHelp)}
+                  {nationalMatches.map((p) => (
+                    <View key={p.id}>
+                      {tag(
+                        `${t.regions[p.region]} · ${t.communes[p.commune as keyof typeof t.communes] ?? p.commune}`,
+                      )}
+                      {card(p)}
+                    </View>
+                  ))}
                 </View>
               )}
               {current === "valparaiso" && regionalLocalities.length > 0 && (

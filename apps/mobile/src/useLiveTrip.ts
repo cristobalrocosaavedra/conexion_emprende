@@ -4,6 +4,7 @@ import * as Location from "expo-location";
 import { activateKeepAwakeAsync, deactivateKeepAwake } from "expo-keep-awake";
 import {
   fetchRoadRoute,
+  travelHeading,
   haversineDistanceKm,
   isLocated,
   navigationUpdate,
@@ -105,6 +106,8 @@ export function useLiveTrip(
         longitude: p.coords.longitude,
         accuracy: p.coords.accuracy,
         timestamp: p.timestamp,
+        heading: p.coords.heading,
+        speed: p.coords.speed,
       };
       if (
         !Number.isFinite(value.latitude) ||
@@ -395,6 +398,8 @@ export function useLiveTrip(
         longitude: p.coords.longitude,
         accuracy: p.coords.accuracy,
         timestamp: p.timestamp,
+        heading: p.coords.heading,
+        speed: p.coords.speed,
       };
       if (
         !Number.isFinite(value.latitude) ||
@@ -403,6 +408,13 @@ export function useLiveTrip(
         Math.abs(value.longitude) > 180
       )
         return;
+      value.heading = travelHeading(
+        lastReliable.current,
+        value,
+        value.heading ?? null,
+        value.speed ?? null,
+        currentFix.current?.heading ?? null,
+      );
       currentFix.current = value;
       setFix(value);
       const current = routeRef.current;

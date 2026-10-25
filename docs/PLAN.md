@@ -231,3 +231,7 @@ El usuario reafirma el recorrido dentro de la app; si se evaluara una alternativ
 20. Servicio público temporal — autorización del 25-10-2026
 
 El titular solicita usar un servicio público de rutas para pruebas inmediatas y presupuesto US$0. Esta decisión sustituye para la beta la restricción de solo VPS propio sin logs. Se preconfigura FOSSGIS/OSRM, sin pedir servidor al viajero, manteniendo caminos e indicaciones dentro de Territorio Vivo. Aviso explícito: el proveedor recibe y registra consultas; respetar máximo una por segundo, atribución, no uso intensivo ni acceso vendido. La app sigue sin persistir coordenadas ni usar ubicación de segundo plano. Probar trayectos locales e interregionales reales antes de ofrecer descarga; la disponibilidad pública no se garantiza para producción. No consultar ni modificar los otros repositorios.
+
+21. Ajustes tras prueba en carretera — 25-10-2026
+
+Buscar desde una región también debe sugerir lugares de otras regiones con su ubicación administrativa, permitiendo guardarlos sin cambiar la región explorada. El mapa de viaje tendrá orientación según el avance del vehículo, alternativa norte arriba, gestos libres de desplazamiento/zoom/rotación y controles de recenter/recorrido completo. El seguimiento no debe anular gestos manuales. Rumbo de primer plano solo en memoria; las duraciones prolongadas se expresan en horas y minutos. El servicio de ruteo público temporal y el presupuesto US$0 se mantienen.

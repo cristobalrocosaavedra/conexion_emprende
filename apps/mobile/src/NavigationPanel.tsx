@@ -1,5 +1,6 @@
 import { Text, View, Linking } from "react-native";
 import { messages as t } from "@territorio-vivo/i18n";
+import { durationParts } from "@territorio-vivo/core";
 import type { RoadStep } from "@territorio-vivo/core";
 import { palettes } from "@territorio-vivo/design-tokens";
 import { Action } from "./ui";
@@ -32,6 +33,12 @@ export const distanceText = (meters: number) =>
   meters < 1000
     ? `${Math.round(meters)} ${n.maneuvers.meters}`
     : `${(meters / 1000).toFixed(1)} ${n.maneuvers.kilometers}`;
+export function durationText(seconds: number) {
+  const { hours, minutes } = durationParts(seconds);
+  return hours
+    ? `${hours} ${n.maneuvers.hours}${minutes ? ` ${minutes} ${n.maneuvers.minutes}` : ""}`
+    : `${minutes} ${n.maneuvers.minutes}`;
+}
 export function NavigationPanel({
   nav,
   server,
@@ -83,10 +90,9 @@ export function NavigationPanel({
               nav.update?.remainingMeters ?? nav.route.distanceMeters,
             )}{" "}
             ·{" "}
-            {Math.ceil(
-              (nav.update?.remainingSeconds ?? nav.route.durationSeconds) / 60,
-            )}{" "}
-            {n.maneuvers.minutes}
+            {durationText(
+              nav.update?.remainingSeconds ?? nav.route.durationSeconds,
+            )}
           </Text>
           {!compact && <Text style={{ color: muted }}>{n.road}</Text>}
           {nav.active && (

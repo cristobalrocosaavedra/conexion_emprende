@@ -1,3 +1,4 @@
+import { buildTripMapDocument } from "./trip-map-document";
 import {
   regionFeatures,
   regionBounds,
@@ -19,6 +20,7 @@ export function buildMapDocument({
   roundTrip?: boolean;
   dark?: boolean;
 }): string {
+  if (trip) return buildTripMapDocument(points, dark, roundTrip);
   const payload = serializeForHtml({
     features: regionFeatures,
     region,

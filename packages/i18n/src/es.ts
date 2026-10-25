@@ -1,6 +1,15 @@
 import permissions from "./permissions.json";
 export const es = {
+  noRegionalResults: "No hay coincidencias en la región seleccionada.",
+  otherRegions: "Coincidencias en otras regiones",
+  otherRegionsHelp:
+    "Puedes abrir estas fichas y agregarlas a tu viaje sin cambiar la región que estás explorando.",
   navigation: {
+    courseUp: "Rumbo de avance",
+    northUp: "Norte arriba",
+    entireRoute: "Ver ruta completa",
+    mapUnsupported:
+      "No se pudo iniciar el mapa interactivo en este dispositivo.",
     title: "Tu ruta por calles",
     idle: "Prepara tu recorrido",
     locating: "Buscando tu ubicación…",
@@ -84,6 +93,7 @@ export const es = {
       meters: "m",
       kilometers: "km",
       minutes: "min",
+      hours: "h",
     },
   },
 

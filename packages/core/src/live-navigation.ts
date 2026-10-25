@@ -4,6 +4,8 @@ import type { RoadRoute } from "./road-routing";
 export interface NavigationFix extends GeoPoint {
   accuracy: number | null;
   timestamp: number;
+  heading?: number | null;
+  speed?: number | null;
 }
 export interface RouteProjection {
   point: GeoPoint;

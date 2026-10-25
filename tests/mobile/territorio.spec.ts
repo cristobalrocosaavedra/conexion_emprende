@@ -427,23 +427,22 @@ test("ruta pública lista sin configurar VPS: trazado por calles, mapa estable y
   await page
     .getByText("Tu ruta por calles", { exact: true })
     .scrollIntoViewIfNeeded();
-  await page.screenshot({ path: "previews/pantalla-ruta-0.4.1.png" });
+  await page.screenshot({ path: "previews/pantalla-ruta-0.5.0.png" });
   await expect(
     page.getByText("Conexión esquemática · no es una ruta por calles", {
       exact: true,
     }),
   ).toHaveCount(0);
   const frame = page.frameLocator("iframe").first();
-  await expect(frame.locator(".leaflet-overlay-pane path")).not.toHaveCount(0);
-  const road = frame.locator('path[stroke="#168b82"]');
-  await expect(road).toHaveCount(1);
+  await expect(frame.locator(".maplibregl-canvas")).toBeVisible();
+  await expect(frame.locator("#note")).toContainText("Trazado por calles");
   await frame.locator("#map").evaluate(() => {
     (window as unknown as { tvNavigation: (v: unknown) => void }).tvNavigation({
       fix: null,
       follow: false,
     });
   });
-  await expect(road).toHaveCount(1);
+  await expect(frame.locator("#note")).toContainText("Trazado por calles");
   // Las áreas regionales dejaron de ser enlaces que cerraban el mapa.
   await page.unroute("https://tile.openstreetmap.org/**");
   await page
@@ -452,12 +451,42 @@ test("ruta pública lista sin configurar VPS: trazado por calles, mapa estable y
   const map = page.frameLocator("iframe").last();
   await map.locator("#map").click({ position: { x: 150, y: 120 } });
   await page.unroute("https://tile.openstreetmap.org/**");
+  await expect(
+    map.getByRole("button", { name: "Ver ruta completa", exact: true }),
+  ).toBeVisible();
+  await expect(map.locator("#note")).toContainText("Trazado por calles");
+  await map.locator("#map").evaluate(() => {
+    const w = window as unknown as {
+      tvNavigation: (v: unknown) => void;
+      tvMap: {
+        getBearing: () => number;
+        getZoom: () => number;
+        setZoom: (n: number) => void;
+        fire: (e: string, data: unknown) => void;
+      };
+    };
+    const value = {
+      fix: {
+        latitude: -18.4787,
+        longitude: -70.3133,
+        heading: 90,
+        accuracy: 10,
+        timestamp: Date.now(),
+      },
+      follow: true,
+    };
+    w.tvNavigation(value);
+    if (Math.abs(w.tvMap.getBearing() - 90) > 1)
+      throw Error("No orientó al rumbo de avance");
+    w.tvMap.fire("zoomstart", { originalEvent: new Event("wheel") });
+    w.tvMap.setZoom(12);
+    w.tvNavigation({ ...value, fix: { ...value.fix, longitude: -70.31 } });
+    if (w.tvMap.getZoom() !== 12) throw Error("El GPS anuló el zoom manual");
+  });
   await map
-    .locator(".leaflet-tile-loaded")
-    .first()
-    .waitFor({ timeout: 5000 })
-    .catch(() => {});
-  await page.screenshot({ path: "previews/pantalla-mapa-0.4.1.png" });
+    .getByRole("button", { name: "Ver ruta completa", exact: true })
+    .click();
+  await page.screenshot({ path: "previews/pantalla-mapa-0.5.0.png" });
   await expect(
     page.getByRole("button", { name: "Cerrar", exact: true }).last(),
   ).toBeVisible();
@@ -529,4 +558,48 @@ test("desactivar rutas persiste y no consulta proveedor al abrir", async ({
     page.getByRole("button", { name: "Activar rutas de prueba", exact: true }),
   ).toBeVisible();
   expect(calls).toEqual([]);
+});
+
+test("encuentra Matichoc en Valparaíso al buscar desde Coquimbo", async ({
+  page,
+}) => {
+  await page.evaluate(() =>
+    localStorage.setItem(
+      "territorio-vivo.preferences.v2",
+      JSON.stringify({
+        region: "coquimbo",
+        commune: "all",
+        theme: "dark",
+        stopIds: [],
+        roundTrip: false,
+      }),
+    ),
+  );
+  await page.reload();
+  await page.getByRole("tab", { name: /Explorar/ }).click();
+  await page.getByRole("textbox", { name: "Buscar lugares" }).fill("matichoc");
+  await expect(
+    page.getByText("Coincidencias en otras regiones", { exact: true }),
+  ).toBeVisible();
+  await expect(
+    page.getByText("Valparaíso · La Ligua", { exact: true }),
+  ).toBeVisible();
+  await page
+    .getByRole("button", { name: "Chocolatería Matichoc", exact: true })
+    .scrollIntoViewIfNeeded();
+  await page.screenshot({ path: "previews/pantalla-busqueda-0.5.0.png" });
+  await page
+    .getByRole("button", { name: "Chocolatería Matichoc", exact: true })
+    .click();
+  await page
+    .getByRole("button", { name: "Guardar en mi viaje", exact: true })
+    .click();
+  await page
+    .getByRole("button", { name: "Cerrar", exact: true })
+    .last()
+    .click();
+  await page.getByRole("tab", { name: /Mi viaje/ }).click();
+  await expect(
+    page.getByText("1. Chocolatería Matichoc", { exact: true }),
+  ).toBeVisible();
 });

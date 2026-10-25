@@ -9,6 +9,7 @@ export default defineConfig({
     ...devices["Pixel 7"],
     baseURL: "http://127.0.0.1:3012",
     launchOptions: {
+      args: ["--enable-unsafe-swiftshader"],
       executablePath: process.env.PW_CHROMIUM_PATH || undefined,
     },
     trace: "retain-on-failure",
