@@ -31,7 +31,7 @@ export function buildTripMapDocument(
  const data=${data};const note=document.getElementById('note');
  const send=value=>{if(window.ReactNativeWebView)window.ReactNativeWebView.postMessage(JSON.stringify(value));else window.parent.postMessage(JSON.stringify(value),'*');};
  try{
- const map=new maplibregl.Map({container:'map',maxPitch:0,style:{version:8,sources:{osm:{type:'raster',tiles:['https://tile.openstreetmap.org/{z}/{x}/{y}.png'],tileSize:256,attribution:'© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'}},layers:[{id:'background',type:'background',paint:{'background-color':'${dark ? "#102d42" : "#ddebe6"}'}},{id:'osm',type:'raster',source:'osm'}]},center:data.points[0]?.xy||[-71.2,-32.45],zoom:10,attributionControl:{compact:true},locale:{'NavigationControl.ZoomIn':data.labels.zoomIn,'NavigationControl.ZoomOut':data.labels.zoomOut,'NavigationControl.ResetBearing':data.labels.north}});
+ const map=new maplibregl.Map({container:'map',maxPitch:0,maxZoom:20,style:{version:8,sources:{osm:{type:'raster',maxzoom:19,tiles:['https://tile.openstreetmap.org/{z}/{x}/{y}.png'],tileSize:256,attribution:'© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'}},layers:[{id:'background',type:'background',paint:{'background-color':'${dark ? "#102d42" : "#ddebe6"}'}},{id:'osm',type:'raster',source:'osm'}]},center:data.points[0]?.xy||[-71.2,-32.45],zoom:10,attributionControl:{compact:true},locale:{'NavigationControl.ZoomIn':data.labels.zoomIn,'NavigationControl.ZoomOut':data.labels.zoomOut,'NavigationControl.ResetBearing':data.labels.north}});
  window.tvMap=map;
  map.addControl(new maplibregl.NavigationControl(),'top-right');
  let offline=false,ready=false,pending=null,line=null,fix=null,follow=true,active=false,course=true,lastHeading=0,hadActive=false;
@@ -59,7 +59,7 @@ export function buildTripMapDocument(
  };
  window.tvNavigation=value=>{if(!ready){pending=value===null?null:{...pending,...value};return;}apply(value);};
  window.addEventListener('message',e=>{if(e.source===window.parent&&e.data?.type==='tv-navigation')window.tvNavigation(e.data.value);});
- map.on('load',()=>{
+ map.once('style.load',()=>{
  map.addSource('road',{type:'geojson',data:geo([])});map.addLayer({id:'road-line',type:'line',source:'road',paint:{'line-color':'#168b82','line-width':5}});
  map.addSource('position',{type:'geojson',data:{type:'FeatureCollection',features:[]}});map.addLayer({id:'position-point',type:'circle',source:'position',paint:{'circle-color':'#2274df','circle-radius':8,'circle-stroke-width':3,'circle-stroke-color':'#ffffff'}});
  for(const [i,p]of data.points.entries()){
