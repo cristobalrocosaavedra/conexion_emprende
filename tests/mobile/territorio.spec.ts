@@ -296,6 +296,8 @@ test("el selector recorre Chile con una línea y permite cancelar sin guardar re
   await page
     .getByRole("button", { name: "Abrir selector de regiones" })
     .click();
+  await page.clock.install({ time: new Date("2026-10-25T09:00:00Z") });
+  await page.clock.pauseAt(new Date("2026-10-25T09:01:00Z"));
   await page
     .getByRole("button", {
       name: "Magallanes y de la Antártica Chilena",
@@ -304,11 +306,15 @@ test("el selector recorre Chile con una línea y permite cancelar sin guardar re
     .click();
   const journey = page.getByTestId("region-journey");
   await expect(journey).toBeVisible();
+  // Dieciséis regiones, 225 ms por ventana. Fijar el instante evita perder
+  // Metropolitana en un runner ocupado; se mantiene la comprobación visual.
+  await page.clock.runFor(1400);
   await expect(
     journey.getByText("Metropolitana de Santiago", { exact: true }),
   ).toBeVisible();
   await page.screenshot({ path: "previews/pantalla-recorrido.png" });
-  await expect(journey).toHaveCount(0, { timeout: 6000 });
+  await page.clock.runFor(3000);
+  await expect(journey).toHaveCount(0);
   await expect(
     page.getByRole("button", { name: "Abrir selector de regiones" }),
   ).toContainText("Magallanes");
@@ -321,6 +327,7 @@ test("el selector recorre Chile con una línea y permite cancelar sin guardar re
   await page
     .getByRole("button", { name: "Detener recorrido", exact: true })
     .click();
+  await page.clock.resume();
   await page.reload();
   await expect(
     page.getByRole("button", { name: "Abrir selector de regiones" }),
