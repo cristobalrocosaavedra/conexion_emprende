@@ -53,7 +53,7 @@ if(args[0]==='api'&&args.includes('PATCH')){console.log('{}');process.exit(0);}
 console.error('Solicitud inesperada');process.exit(10);
 `;
   writeFileSync(join(dir, "bin/gh"), stub, { mode: 0o755 });
-  mkdirSync(join(dir, "docs/diseno/0.4"), { recursive: true });
+  mkdirSync(join(dir, "docs/diseno/0.2.0"), { recursive: true });
   writeFileSync(join(dir, "artefactos/sobrante.png"), "No debe publicarse");
   for (const name of [
     "pantalla-inicio.png",
@@ -61,7 +61,7 @@ console.error('Solicitud inesperada');process.exit(10);
     "pantalla-mapa.png",
   ])
     writeFileSync(
-      join(dir, "docs/diseno/0.4", name),
+      join(dir, "docs/diseno/0.2.0", name),
       Buffer.from("89504e470d0a1a0a", "hex"),
     );
   const run = () =>

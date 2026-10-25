@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { Text, TextInput, View } from "react-native";
+import { Text, View, Linking } from "react-native";
 import { messages as t } from "@territorio-vivo/i18n";
 import type { RoadStep } from "@territorio-vivo/core";
 import { palettes } from "@territorio-vivo/design-tokens";
@@ -46,7 +45,6 @@ export function NavigationPanel({
   compact?: boolean;
   onMap?: () => void;
 }) {
-  const [input, setInput] = useState("");
   const fg = dark ? "#f4f0e5" : "#123247",
     muted = dark ? "#c1cbd0" : "#46616c";
   const busy = nav.status === "locating" || nav.status === "calculating";
@@ -90,7 +88,7 @@ export function NavigationPanel({
             )}{" "}
             {n.maneuvers.minutes}
           </Text>
-          <Text style={{ color: muted }}>{n.road}</Text>
+          {!compact && <Text style={{ color: muted }}>{n.road}</Text>}
           {nav.active && (
             <Text style={{ color: fg, fontSize: 18 }}>
               {distanceText(nav.update?.distanceToManeuver ?? 0)} ·{" "}
@@ -106,43 +104,38 @@ export function NavigationPanel({
       {!server.url ? (
         <>
           <Text style={{ color: fg }}>{n.serverMissing}</Text>
-          {!compact && (
-            <>
-              <Text style={{ color: fg, fontWeight: "700" }}>
-                {n.serverTitle}
-              </Text>
-              <Text style={{ color: muted }}>{n.serverHelp}</Text>
-              <TextInput
-                accessibilityLabel={n.serverTitle}
-                placeholder={n.serverPlaceholder}
-                placeholderTextColor={muted}
-                value={input}
-                onChangeText={setInput}
-                autoCapitalize="none"
-                autoCorrect={false}
-                keyboardType="url"
-                style={{
-                  color: fg,
-                  backgroundColor: dark ? "#102d42" : "#fff",
-                  padding: 12,
-                  borderRadius: 8,
-                  minHeight: 48,
-                }}
-              />
-              {action(
-                server.busy ? n.connecting : n.connect,
-                () => void server.connect(input),
-                server.busy || !input.trim(),
-              )}
-              {server.failed && (
-                <Text style={{ color: fg }}>{n.serverError}</Text>
-              )}
-            </>
-          )}
+          {action(n.enable, () => void server.enable(), server.busy)}
         </>
       ) : (
         <>
-          {!compact && <Text style={{ color: muted }}>{n.connected}</Text>}
+          {!compact && (
+            <Text style={{ color: muted }}>
+              {server.publicService ? n.publicService : n.connected}
+            </Text>
+          )}
+          {server.publicService && (
+            <Text style={{ color: muted }}>
+              {compact ? n.publicPrivacyShort : n.publicPrivacy}
+            </Text>
+          )}
+          {!compact && server.publicService && (
+            <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8 }}>
+              {action(
+                n.conditions,
+                () =>
+                  void Linking.openURL(
+                    "https://routing.openstreetmap.de/about.html",
+                  ),
+              )}
+              {action(
+                n.fixMap,
+                () =>
+                  void Linking.openURL(
+                    "https://www.openstreetmap.org/fixthemap",
+                  ),
+              )}
+            </View>
+          )}
           <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8 }}>
             {!nav.active && action(n.start, () => void nav.start(), busy)}
             {!nav.active &&
@@ -159,7 +152,7 @@ export function NavigationPanel({
           {!compact &&
             !nav.active &&
             action(
-              n.disconnect,
+              n.disable,
               () => {
                 nav.stop();
                 void server.disconnect();

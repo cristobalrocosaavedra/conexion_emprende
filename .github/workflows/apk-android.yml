@@ -44,11 +44,24 @@ jobs:
         with:
           persist-credentials: false
       - run: bash scripts/test-routing.sh
+  ruteo-publico:
+    name: Probar rutas regional e interregional
+    runs-on: ubuntu-24.04
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
+        with:
+          node-version-file: .node-version
+          package-manager-cache: false
+      - run: node --experimental-transform-types scripts/test-public-routing.mjs
   compilar:
     permissions:
       contents: read
       actions: read
-    needs: [validar, motor-rutas]
+    needs: [validar, motor-rutas, ruteo-publico]
     if: ${{ !startsWith(github.ref, 'refs/heads/docs/') && !startsWith(github.head_ref, 'docs/') }}
     runs-on: ubuntu-24.04
     timeout-minutes: 55

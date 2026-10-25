@@ -1,7 +1,11 @@
 import { describe, it, expect, vi } from "vitest";
 import realResponse from "../../../tests/routing/fixtures/respuesta-arica.json";
 import { fetchRoadRoute, osrmRouteUrl, parseOsrmRoute } from "./road-routing";
-import { checkRoutingServer, routingServerUrl } from "./routing-server";
+import {
+  checkRoutingServer,
+  routingServerUrl,
+  PUBLIC_ROUTING_URL,
+} from "./routing-server";
 import { navigationUpdate, routeLengths } from "./live-navigation";
 import type { RoadRoute } from "./road-routing";
 // Geometría y maniobras artificiales, solo para pruebas, nunca catálogo turístico.
@@ -54,6 +58,14 @@ const sample = {
 };
 const route = (): RoadRoute => parseOsrmRoute(sample, 2);
 describe("ruta vial propia", () => {
+  it("habilita solo el servicio público autorizado sin fingir capabilities privadas", async () => {
+    const fake = vi.fn();
+    const server = await checkRoutingServer(PUBLIC_ROUTING_URL, fake);
+    expect(server.baseUrl).toBe(PUBLIC_ROUTING_URL);
+    expect(server.maxWaypoints).toBe(40);
+    expect(fake).not.toHaveBeenCalled();
+  });
+
   it("interpreta una respuesta de OSRM real procesada con calles de Arica", () => {
     const r = parseOsrmRoute(realResponse, 2);
     expect(r.points).toHaveLength(26);

@@ -1,4 +1,6 @@
-# Servidor propio de rutas — preparación 0.4
+# Servidor propio de rutas — preparación futura
+
+**Decisión vigente, 25-10-2026: presupuesto US$0 y servicio público temporal para pruebas, autorizado por el titular.** Ver [RUTEO-PUBLICO-DE-PRUEBAS.md](RUTEO-PUBLICO-DE-PRUEBAS.md). No hace falta contratar ni configurar este VPS para la candidata 0.4.1. Lo que sigue conserva la preparación de la alternativa propia para más adelante.
 
 Decisión del titular, 24-10-2026: navegación dentro de Territorio Vivo, sin abrir Google Maps; motor en un VPS nuevo, separado y sin registros de ubicación. **No se ha contratado ni desplegado un VPS.** Los archivos de `infra/routing` son una instalación preparada para revisión, no un servicio público activo.
 

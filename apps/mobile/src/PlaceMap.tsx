@@ -13,6 +13,7 @@ export interface NavigationMapState {
   route: RoadRoute | null;
   fix: NavigationFix | null;
   follow: boolean;
+  publicService?: boolean;
 }
 export interface PlaceMapProps {
   navigation?: NavigationMapState;
@@ -42,15 +43,23 @@ export function PlaceMap({
   const ref = useRef<WebView<object>>(null);
   const latest = useRef(navigation);
   latest.current = navigation;
-  const update = () =>
+  const sentRoute = useRef<RoadRoute | null | undefined>(undefined);
+  const update = (force = false) => {
+    const value = latest.current;
+    const { route, ...rest } = value ?? { route: null };
+    const payload = value
+      ? { ...rest, ...(force || sentRoute.current !== route ? { route } : {}) }
+      : null;
+    sentRoute.current = route;
     ref.current?.injectJavaScript(
-      `window.tvNavigation?.(${JSON.stringify(latest.current ?? null)});true;`,
+      `window.tvNavigation?.(${JSON.stringify(payload)});true;`,
     );
-  useEffect(update, [navigation]);
+  };
+  useEffect(() => update(), [navigation]);
   return (
     <WebView<object>
       ref={ref}
-      onLoadEnd={update}
+      onLoadEnd={() => update(true)}
       style={{ flex: 1, backgroundColor: dark ? "#102d42" : "#e1ede7" }}
       source={source}
       originWhitelist={["about:blank"]}
@@ -69,7 +78,8 @@ export function PlaceMap({
           return true;
         if (
           request.url.startsWith("https://www.openstreetmap.org/") ||
-          request.url.startsWith("https://leafletjs.com/")
+          request.url.startsWith("https://leafletjs.com/") ||
+          request.url === "https://routing.openstreetmap.de/about.html"
         )
           void Linking.openURL(request.url);
         return false;

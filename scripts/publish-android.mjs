@@ -45,7 +45,9 @@ for (const name of [
   "pantalla-mapa.png",
 ])
   assert.equal(
-    readFileSync(join("docs/diseno/0.4", name)).subarray(0, 8).toString("hex"),
+    readFileSync(join("docs/diseno", meta.version, name))
+      .subarray(0, 8)
+      .toString("hex"),
     "89504e470d0a1a0a",
     "Falta una vista previa válida de la versión.",
   );
@@ -94,7 +96,7 @@ const tag = `android-v${meta.version}-c${meta.versionCode}`;
 const existing = api("releases?per_page=100").find((r) => r.tag_name === tag);
 if (existing && !existing.draft)
   throw new Error("La versión ya publicada es inmutable.");
-const releaseNotes = `## Versión de pruebas ${meta.version} · compilación ${meta.versionCode}\n\nDescargar únicamente **territorio-vivo-android.apk**. Las capturas están [en el repositorio](https://github.com/${repo}/tree/${meta.commit}/docs/diseno/0.4), separadas de la instalación.\n\nCatálogo de referencia pendiente de verificación. Navegación interna preparada para servidor propio; consultar [configuración y estado](https://github.com/${repo}/blob/${meta.commit}/docs/SERVIDOR-DE-RUTAS.md) antes de intentar calcular rutas. No hay respaldo público para el GPS.\n\nLa actualización conserva la app base cuando coinciden firma e identificador. Android puede pedir autorización de la fuente; no requiere desinstalar ni permisos de administrador.\n\nDatos abiertos y licencia: [procedencia OSM](https://github.com/${repo}/blob/${meta.commit}/content/sources/OSM-CHILE.md).\n\nCódigo: ${meta.commit}.\n`;
+const releaseNotes = `## Versión de pruebas ${meta.version} · compilación ${meta.versionCode}\n\nDescargar únicamente **territorio-vivo-android.apk**. Las capturas están [en el repositorio](https://github.com/${repo}/tree/${meta.commit}/docs/diseno/${meta.version}), separadas de la instalación.\n\nCatálogo de referencia pendiente de verificación. Rutas públicas temporales dentro de la app; el proveedor recibe y registra las consultas. Consultar [configuración y estado](https://github.com/${repo}/blob/${meta.commit}/docs/RUTEO-PUBLICO-DE-PRUEBAS.md) antes de intentar calcular rutas. Servicio de pruebas sin disponibilidad garantizada.\n\nLa actualización conserva la app base cuando coinciden firma e identificador. Android puede pedir autorización de la fuente; no requiere desinstalar ni permisos de administrador.\n\nDatos abiertos y licencia: [procedencia OSM](https://github.com/${repo}/blob/${meta.commit}/content/sources/OSM-CHILE.md).\n\nCódigo: ${meta.commit}.\n`;
 const body = {
   tag_name: tag,
   target_commitish: meta.commit,

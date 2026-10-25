@@ -42,6 +42,7 @@ export function buildMapDocument({
       mapSchematic: t.tripSchematic,
       follow: t.navigation.follow,
       road: t.navigation.road,
+      routingAttribution: t.navigation.routingAttribution,
     },
   });
   return `<!doctype html><html lang="es"><head><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><style>${leafletCss}
@@ -74,8 +75,9 @@ export function buildMapDocument({
  followControl.onAdd=()=>{const b=L.DomUtil.create('button','tv-button');b.textContent=data.labels.follow;L.DomEvent.disableClickPropagation(b);b.onclick=()=>{follow=true;if(latestFix)map.setView([latestFix.latitude,latestFix.longitude],16);};return b;};
  followControl.addTo(map);
  window.tvNavigation=value=>{
-  if(!value){if(road)map.removeLayer(road);if(gps)map.removeLayer(gps);if(accuracy)map.removeLayer(accuracy);road=gps=accuracy=null;routeSignature='';if(schematic&&!map.hasLayer(schematic))schematic.addTo(map);return;}
+  if(!value){latestFix=null;latestFollow=false;follow=true;map.attributionControl.removeAttribution(data.labels.routingAttribution);if(road)map.removeLayer(road);if(gps)map.removeLayer(gps);if(accuracy)map.removeLayer(accuracy);road=gps=accuracy=null;routeSignature='';if(schematic&&!map.hasLayer(schematic))schematic.addTo(map);return;}
   const r=value.route,p=value.fix;
+  if(value.publicService&&r)map.attributionControl.addAttribution(data.labels.routingAttribution);
   if(value.follow&&!latestFollow)follow=true;latestFollow=value.follow;
   if(r&&Array.isArray(r.points)){
    if(schematic&&map.hasLayer(schematic))map.removeLayer(schematic);
@@ -83,7 +85,7 @@ export function buildMapDocument({
    const signature=JSON.stringify(coordinates);
    if(signature!==routeSignature){routeSignature=signature;if(road)map.removeLayer(road);road=L.polyline(coordinates,{color:'#168b82',weight:6,opacity:0.95}).addTo(map);map.fitBounds(road.getBounds(),{padding:[30,30],maxZoom:16});}
    const note=document.getElementById('note');note.hidden=false;note.textContent=data.labels.road;
-  }else if(road){map.removeLayer(road);road=null;routeSignature='';if(schematic)schematic.addTo(map);}
+  }else if(Object.prototype.hasOwnProperty.call(value,'route')&&road){map.attributionControl.removeAttribution(data.labels.routingAttribution);map.removeLayer(road);road=null;routeSignature='';if(schematic)schematic.addTo(map);const note=document.getElementById('note');note.textContent=data.labels.mapSchematic;}
   if(p&&Number.isFinite(p.latitude)&&Number.isFinite(p.longitude)){
    latestFix=p;const xy=[p.latitude,p.longitude];
    if(!gps)gps=L.circleMarker(xy,{radius:8,color:'#fff',weight:3,fillColor:'#2274df',fillOpacity:1}).addTo(map);else gps.setLatLng(xy);

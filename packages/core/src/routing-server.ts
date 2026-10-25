@@ -1,3 +1,7 @@
+// Servicio compartido temporal autorizado por el titular para pruebas sin costo.
+export const PUBLIC_ROUTING_URL =
+  "https://routing.openstreetmap.de/routed-car/";
+export const isPublicRouting = (url: string) => url === PUBLIC_ROUTING_URL;
 export interface RoutingServer {
   baseUrl: string;
   name: string;
@@ -21,6 +25,13 @@ export async function checkRoutingServer(
   input: string,
   fetcher: typeof fetch = fetch,
 ): Promise<RoutingServer> {
+  if (isPublicRouting(input))
+    return {
+      baseUrl: PUBLIC_ROUTING_URL,
+      name: "FOSSGIS / OSRM",
+      maxWaypoints: 40,
+      coverage: "Mundial; servicio de pruebas sin garantía",
+    };
   const base = routingServerUrl(input);
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), 12000);

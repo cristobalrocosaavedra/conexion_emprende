@@ -97,3 +97,7 @@ por rama evita mantener el push y PR del mismo cambio compilando a la vez.
 ## Decisión posterior: VPS separado para rutas
 
 El titular elige un motor propio sin logs de ubicación. La preparación 0.4 está en [SERVIDOR-DE-RUTAS.md](SERVIDOR-DE-RUTAS.md): propuesta inicial 4 vCPU / 16 GB RAM / 160 GB SSD; reservar US$25–60/mes más US$5–15 de contingencia, impuestos y excedentes. Es una estimación para comparar proveedores, no precio verificado ni gasto aprobado. Medir el grafo nacional y carga real antes de comprometer capacidad o plazo. No vincular la compra a una suscripción de oferentes todavía.
+
+## Presupuesto vigente: US$0 durante las pruebas (25-10-2026)
+
+El titular aclara que no desea gastar ahora. Autoriza usar FOSSGIS/OSRM temporalmente para probar ruteo dentro de la app. No se contratan VPS ni servicios facturables. Los montos anteriores son escenarios futuros, no gastos aprobados. El servicio público es compartido, registra consultas y tiene condiciones/límites; no se vende su acceso ni se usa como compromiso de capacidad de una app comercial. Ver RUTEO-PUBLICO-DE-PRUEBAS.md.

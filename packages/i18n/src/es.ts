@@ -25,9 +25,19 @@ export const es = {
     poorSignal: "Señal de ubicación imprecisa; esperando una lectura fiable.",
     offRoute: "Fuera del recorrido; preparando recálculo…",
     visited: "Parada alcanzada",
+    enable: "Activar rutas de prueba",
+    disable: "Desactivar rutas",
+    publicService: "Servicio gratuito de pruebas · FOSSGIS / OSRM",
+    publicPrivacyShort: "Servicio público temporal · consultas registradas",
+    publicPrivacy:
+      "El servicio recibe las coordenadas consultadas y las guarda en sus registros. Se usa temporalmente para probar rutas; puede limitar consultas o no estar disponible. La app no guarda un historial de tu ubicación.",
+    conditions: "Condiciones del servicio",
+    fixMap: "Corregir datos en OpenStreetMap",
+    routingAttribution:
+      '<a href="https://routing.openstreetmap.de/about.html">Rutas: FOSSGIS / OSRM</a>',
     serverTitle: "Conectar el servidor de esta prueba",
     serverMissing:
-      "El servidor propio aún no está conectado. Puedes guardar paradas; para calcular caminos falta activar el VPS.",
+      "Las rutas están desactivadas. Puedes activarlas para calcular el viaje con el servicio gratuito de pruebas.",
     serverHelp:
       "Cuando esté instalado, pega su dirección HTTPS pública. La comprobación no envía tu ubicación. No ingreses contraseñas ni claves.",
     serverPlaceholder: "https://rutas.ejemplo.cl",
@@ -38,7 +48,7 @@ export const es = {
     serverError:
       "No se pudo conectar. Revisa HTTPS, el motor y la configuración de privacidad del servidor.",
     errors: {
-      server: "Conecta primero el servidor propio de rutas.",
+      server: "Activa las rutas de prueba para calcular tu recorrido.",
       missingCoordinates:
         "Alguna parada no tiene ubicación confirmada en el catálogo. Retírala para calcular el recorrido.",
       moreStops:

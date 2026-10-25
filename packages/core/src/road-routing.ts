@@ -33,8 +33,8 @@ export interface RoadRoute {
   snappedWaypoints: GeoPoint[];
 }
 const MAX_POINTS = 40,
-  MAX_GEOMETRY = 50000,
-  MAX_RESPONSE = 8000000;
+  MAX_GEOMETRY = 250000,
+  MAX_RESPONSE = 32000000;
 const validPoint = (p: GeoPoint) =>
   Number.isFinite(p.latitude) &&
   Number.isFinite(p.longitude) &&
@@ -56,6 +56,7 @@ export function osrmRouteUrl(base: string, points: GeoPoint[]): string {
   url.pathname += `route/v1/driving/${points.map((p) => `${p.longitude.toFixed(6)},${p.latitude.toFixed(6)}`).join(";")}`;
   url.search = new URLSearchParams({
     overview: "full",
+    radiuses: points.map(() => "1000").join(";"),
     geometries: "geojson",
     steps: "true",
     alternatives: "false",
@@ -182,7 +183,12 @@ export async function fetchRoadRoute(
     const response = await fetcher(url, {
       signal: controller.signal,
       cache: "no-store",
-      headers: { Accept: "application/json", "Cache-Control": "no-store" },
+      headers: {
+        Accept: "application/json",
+        "Cache-Control": "no-store",
+        "User-Agent":
+          "TerritorioVivo-Beta/0.4.1 (+https://github.com/cristobalrocosaavedra/conexion_emprende)",
+      },
     });
     if (Number(response.headers.get("content-length")) > MAX_RESPONSE)
       throw new RouteFailure("invalidResponse");

@@ -902,6 +902,7 @@ export default function Home() {
                         route: liveTrip.route,
                         fix: liveTrip.fix,
                         follow: liveTrip.active,
+                        publicService: routingServer.publicService,
                       }}
                     />
                   </View>
@@ -1209,6 +1210,7 @@ export default function Home() {
                     route: liveTrip.route,
                     fix: liveTrip.fix,
                     follow: liveTrip.active,
+                    publicService: routingServer.publicService,
                   }
                 : undefined
             }

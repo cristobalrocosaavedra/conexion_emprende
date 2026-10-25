@@ -227,3 +227,7 @@ Preparación, presupuesto orientativo, límites y pasos simples del VPS en docs/
 19. Descarga simple — 25-10-2026
 
 El usuario reafirma el recorrido dentro de la app; si se evaluara una alternativa externa tendría que conservar el plan completo con paradas, no perder el viaje. La decisión vigente continúa siendo navegación interna y VPS propio. Pide que la descarga contenga únicamente la aplicación: separar capturas/videos y metadatos de la APK. Los artefactos de Actions se descargan como un ZIP con una sola APK; el canal de releases ofrece el .apk directo después de revisión/fusión del usuario. Las vistas quedan en el repositorio y los datos abiertos/licencia son accesibles desde la app.
+
+20. Servicio público temporal — autorización del 25-10-2026
+
+El titular solicita usar un servicio público de rutas para pruebas inmediatas y presupuesto US$0. Esta decisión sustituye para la beta la restricción de solo VPS propio sin logs. Se preconfigura FOSSGIS/OSRM, sin pedir servidor al viajero, manteniendo caminos e indicaciones dentro de Territorio Vivo. Aviso explícito: el proveedor recibe y registra consultas; respetar máximo una por segundo, atribución, no uso intensivo ni acceso vendido. La app sigue sin persistir coordenadas ni usar ubicación de segundo plano. Probar trayectos locales e interregionales reales antes de ofrecer descarga; la disponibilidad pública no se garantiza para producción. No consultar ni modificar los otros repositorios.

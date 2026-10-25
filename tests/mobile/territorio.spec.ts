@@ -376,7 +376,7 @@ test("la portada de una región con nombre largo conserva sus controles en 360 p
   ).toBeInViewport({ ratio: 0.95 });
 });
 
-test("ruta dentro de la app: conexión sin GPS, trazado por calles, mapa estable y edición", async ({
+test("ruta pública lista sin configurar VPS: trazado por calles, mapa estable y edición", async ({
   page,
 }) => {
   // Servidor simulado con una respuesta REAL del motor local sobre calles públicas.
@@ -386,25 +386,13 @@ test("ruta dentro de la app: conexión sin GPS, trazado por calles, mapa estable
     readFileSync("tests/routing/fixtures/museos-arica.json", "utf8"),
   );
   const requests: string[] = [];
-  await page.route("https://rutas.example.test/**", async (r) => {
-    requests.push(r.request().url());
-    const path = new URL(r.request().url()).pathname;
-    await r.fulfill({
-      json:
-        path === "/capabilities"
-          ? {
-              service: "territorio-vivo-routing",
-              schema: 1,
-              coordinateLogs: false,
-              profile: "driving",
-              maxWaypoints: 40,
-              coverage: "Prueba técnica Arica",
-            }
-          : path === "/healthz"
-            ? { code: "Ok" }
-            : response,
-    });
-  });
+  await page.route(
+    "https://routing.openstreetmap.de/routed-car/**",
+    async (r) => {
+      requests.push(r.request().url());
+      await r.fulfill({ json: response });
+    },
+  );
   await page.evaluate(() =>
     localStorage.setItem(
       "territorio-vivo.preferences.v2",
@@ -420,23 +408,14 @@ test("ruta dentro de la app: conexión sin GPS, trazado por calles, mapa estable
   await page.reload();
   await page.getByRole("tab", { name: /Mi viaje/ }).click();
   await expect(
-    page.getByText("El servidor propio aún no está conectado.", {
-      exact: false,
+    page.getByText("Servicio gratuito de pruebas · FOSSGIS / OSRM", {
+      exact: true,
     }),
   ).toBeVisible();
-  await page
-    .getByRole("textbox", { name: "Conectar el servidor de esta prueba" })
-    .fill("https://rutas.example.test");
-  await page
-    .getByRole("button", { name: "Comprobar y conectar", exact: true })
-    .click();
   await expect(
-    page.getByText("Servidor propio conectado", { exact: true }),
-  ).toBeVisible();
-  expect(requests.map((u) => new URL(u).pathname)).toEqual([
-    "/capabilities",
-    "/healthz",
-  ]);
+    page.getByRole("textbox", { name: "Conectar el servidor de esta prueba" }),
+  ).toHaveCount(0);
+  expect(requests).toEqual([]);
   await page
     .getByRole("button", { name: "Ver entre mis paradas", exact: true })
     .click();
@@ -448,7 +427,7 @@ test("ruta dentro de la app: conexión sin GPS, trazado por calles, mapa estable
   await page
     .getByText("Tu ruta por calles", { exact: true })
     .scrollIntoViewIfNeeded();
-  await page.screenshot({ path: "previews/pantalla-ruta-0.4.png" });
+  await page.screenshot({ path: "previews/pantalla-ruta-0.4.1.png" });
   await expect(
     page.getByText("Conexión esquemática · no es una ruta por calles", {
       exact: true,
@@ -456,6 +435,15 @@ test("ruta dentro de la app: conexión sin GPS, trazado por calles, mapa estable
   ).toHaveCount(0);
   const frame = page.frameLocator("iframe").first();
   await expect(frame.locator(".leaflet-overlay-pane path")).not.toHaveCount(0);
+  const road = frame.locator('path[stroke="#168b82"]');
+  await expect(road).toHaveCount(1);
+  await frame.locator("#map").evaluate(() => {
+    (window as unknown as { tvNavigation: (v: unknown) => void }).tvNavigation({
+      fix: null,
+      follow: false,
+    });
+  });
+  await expect(road).toHaveCount(1);
   // Las áreas regionales dejaron de ser enlaces que cerraban el mapa.
   await page.unroute("https://tile.openstreetmap.org/**");
   await page
@@ -469,7 +457,7 @@ test("ruta dentro de la app: conexión sin GPS, trazado por calles, mapa estable
     .first()
     .waitFor({ timeout: 5000 })
     .catch(() => {});
-  await page.screenshot({ path: "previews/pantalla-mapa-0.4.png" });
+  await page.screenshot({ path: "previews/pantalla-mapa-0.4.1.png" });
   await expect(
     page.getByRole("button", { name: "Cerrar", exact: true }).last(),
   ).toBeVisible();
@@ -496,4 +484,49 @@ test("ruta dentro de la app: conexión sin GPS, trazado por calles, mapa estable
   );
   expect(prefs).not.toContain("latitude");
   expect(prefs).not.toContain("geometry");
+});
+
+test("desactivar rutas persiste y no consulta proveedor al abrir", async ({
+  page,
+}) => {
+  const calls: string[] = [];
+  await page.route("https://routing.openstreetmap.de/**", (r) => {
+    calls.push(r.request().url());
+    return r.abort();
+  });
+  await page.evaluate(() => {
+    localStorage.setItem("territorio-vivo.routing-server.v1", "");
+    localStorage.setItem(
+      "territorio-vivo.preferences.v2",
+      JSON.stringify({
+        region: "valparaiso",
+        commune: "all",
+        theme: "light",
+        stopIds: ["museo-de-la-ligua", "papudo-plaza"],
+        roundTrip: false,
+      }),
+    );
+  });
+  await page.reload();
+  await page.getByRole("tab", { name: /Mi viaje/ }).click();
+  await expect(
+    page.getByRole("button", { name: "Activar rutas de prueba", exact: true }),
+  ).toBeVisible();
+  expect(calls).toEqual([]);
+  await page
+    .getByRole("button", { name: "Activar rutas de prueba", exact: true })
+    .click();
+  await expect(
+    page.getByRole("button", { name: "Iniciar ruta", exact: true }),
+  ).toBeVisible();
+  expect(calls).toEqual([]);
+  await page
+    .getByRole("button", { name: "Desactivar rutas", exact: true })
+    .click();
+  await page.reload();
+  await page.getByRole("tab", { name: /Mi viaje/ }).click();
+  await expect(
+    page.getByRole("button", { name: "Activar rutas de prueba", exact: true }),
+  ).toBeVisible();
+  expect(calls).toEqual([]);
 });

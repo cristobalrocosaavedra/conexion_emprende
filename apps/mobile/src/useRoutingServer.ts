@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { checkRoutingServer, routingServerUrl } from "@territorio-vivo/core";
+import {
+  checkRoutingServer,
+  routingServerUrl,
+  PUBLIC_ROUTING_URL,
+  isPublicRouting,
+} from "@territorio-vivo/core";
 const key = "territorio-vivo.routing-server.v1";
 // Solo la URL pública. Nunca claves ni coordenadas del viajero.
 export function useRoutingServer() {
@@ -12,9 +17,19 @@ export function useRoutingServer() {
     let alive = true;
     void AsyncStorage.getItem(key)
       .then((value) => {
-        if (alive && value) {
+        if (alive) {
+          if (value === null) {
+            setUrl(PUBLIC_ROUTING_URL);
+            return;
+          }
           try {
-            setUrl(routingServerUrl(value));
+            setUrl(
+              value === ""
+                ? ""
+                : isPublicRouting(value)
+                  ? value
+                  : routingServerUrl(value),
+            );
           } catch {
             /* Una configuración inválida no se utiliza. */
           }
@@ -44,12 +59,21 @@ export function useRoutingServer() {
   };
   const disconnect = async () => {
     try {
-      await AsyncStorage.removeItem(key);
+      await AsyncStorage.setItem(key, "");
       setUrl("");
       setFailed(false);
     } catch {
       setStorageFailed(true);
     }
   };
-  return { url, busy, failed, storageFailed, connect, disconnect };
+  return {
+    url,
+    publicService: isPublicRouting(url),
+    busy,
+    failed,
+    storageFailed,
+    connect,
+    disconnect,
+    enable: () => connect(PUBLIC_ROUTING_URL),
+  };
 }
