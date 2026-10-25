@@ -53,13 +53,15 @@ if(args[0]==='api'&&args.includes('PATCH')){console.log('{}');process.exit(0);}
 console.error('Solicitud inesperada');process.exit(10);
 `;
   writeFileSync(join(dir, "bin/gh"), stub, { mode: 0o755 });
+  mkdirSync(join(dir, "docs/diseno/0.4"), { recursive: true });
+  writeFileSync(join(dir, "artefactos/sobrante.png"), "No debe publicarse");
   for (const name of [
     "pantalla-inicio.png",
-    "pantalla-explorar.png",
-    "pantalla-ficha.png",
+    "pantalla-ruta.png",
+    "pantalla-mapa.png",
   ])
     writeFileSync(
-      join(dir, "artefactos", name),
+      join(dir, "docs/diseno/0.4", name),
       Buffer.from("89504e470d0a1a0a", "hex"),
     );
   const run = () =>
@@ -101,6 +103,10 @@ describe("canal de APK sin publicar en servicios reales", () => {
     expect(create).toBeGreaterThanOrEqual(0);
     expect(upload).toBeGreaterThan(create);
     expect(publish).toBeGreaterThan(upload);
+    expect(
+      calls[upload].some((a) => a.endsWith("territorio-vivo-android.apk")),
+    ).toBe(true);
+    expect(calls[upload].some((a) => /\.(png|webm)$/.test(a))).toBe(false);
   });
   it("un build anterior no reemplaza una versión más nueva", () => {
     const f = fixture("older");

@@ -93,3 +93,7 @@ para el job Android, y produjo un artefacto de 33.706.587 bytes. Es una medició
 de esta primera compilación, no una tarifa ni una promesa de duración futura.
 El costo facturable depende del plan, cuotas y reglas de GitHub. La concurrencia
 por rama evita mantener el push y PR del mismo cambio compilando a la vez.
+
+## Decisión posterior: VPS separado para rutas
+
+El titular elige un motor propio sin logs de ubicación. La preparación 0.4 está en [SERVIDOR-DE-RUTAS.md](SERVIDOR-DE-RUTAS.md): propuesta inicial 4 vCPU / 16 GB RAM / 160 GB SSD; reservar US$25–60/mes más US$5–15 de contingencia, impuestos y excedentes. Es una estimación para comparar proveedores, no precio verificado ni gasto aprobado. Medir el grafo nacional y carga real antes de comprometer capacidad o plazo. No vincular la compra a una suscripción de oferentes todavía.

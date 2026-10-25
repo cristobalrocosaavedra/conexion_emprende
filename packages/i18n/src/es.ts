@@ -1,5 +1,82 @@
 import permissions from "./permissions.json";
 export const es = {
+  navigation: {
+    title: "Tu ruta por calles",
+    idle: "Prepara tu recorrido",
+    locating: "Buscando tu ubicación…",
+    calculating: "Calculando el camino…",
+    ready: "Ruta lista para revisar",
+    navigating: "Navegación en la app",
+    paused: "Navegación pausada: vuelve a la app",
+    arrived: "Llegaste al destino",
+    error: "No se pudo preparar la ruta",
+    start: "Iniciar ruta",
+    stop: "Detener ruta",
+    calculate: "Calcular desde mi ubicación",
+    preview: "Ver entre mis paradas",
+    recalculate: "Recalcular",
+    follow: "Seguir mi posición",
+    openMap: "Ver navegación en mapa",
+    road: "Trazado por calles · auto · tiempo estimado sin tráfico en vivo",
+    foreground:
+      "La ubicación se usa mientras esta pantalla está activa. Al salir de la app, la navegación se pausa. No se guarda tu recorrido.",
+    liveEdits:
+      "Puedes agregar, quitar o mover paradas: la ruta se recalcula aquí.",
+    poorSignal: "Señal de ubicación imprecisa; esperando una lectura fiable.",
+    offRoute: "Fuera del recorrido; preparando recálculo…",
+    visited: "Parada alcanzada",
+    serverTitle: "Conectar el servidor de esta prueba",
+    serverMissing:
+      "El servidor propio aún no está conectado. Puedes guardar paradas; para calcular caminos falta activar el VPS.",
+    serverHelp:
+      "Cuando esté instalado, pega su dirección HTTPS pública. La comprobación no envía tu ubicación. No ingreses contraseñas ni claves.",
+    serverPlaceholder: "https://rutas.ejemplo.cl",
+    connect: "Comprobar y conectar",
+    connecting: "Comprobando servidor…",
+    connected: "Servidor propio conectado",
+    disconnect: "Desconectar servidor",
+    serverError:
+      "No se pudo conectar. Revisa HTTPS, el motor y la configuración de privacidad del servidor.",
+    errors: {
+      server: "Conecta primero el servidor propio de rutas.",
+      missingCoordinates:
+        "Alguna parada no tiene ubicación confirmada en el catálogo. Retírala para calcular el recorrido.",
+      moreStops:
+        "Agrega al menos dos paradas para ver el camino entre ellas, o calcula desde tu ubicación.",
+      permission:
+        "Permite la ubicación mientras usas la app en los ajustes del teléfono.",
+      services:
+        "Activa la ubicación del teléfono para iniciar desde donde estás.",
+      gps: "No se obtuvo una ubicación reciente. Inténtalo al tener mejor señal.",
+      network:
+        "No se pudo contactar al servidor. Conservamos tus paradas; vuelve a calcular cuando tengas conexión.",
+      timeout: "El cálculo tardó demasiado. Intenta de nuevo.",
+      noRoute:
+        "El motor no encuentra un camino entre estas paradas. Revisa el orden, las coordenadas y la cobertura instalada.",
+      invalidResponse:
+        "El servidor entregó una ruta no válida. No se mostrará como un camino real.",
+      tooManyStops:
+        "Esta versión permite hasta 39 paradas desde tu posición (38 con regreso).",
+      invalidPoints:
+        "Revisa las coordenadas de tus paradas y la dirección del servidor.",
+    },
+    maneuvers: {
+      depart: "Comienza el recorrido",
+      arrive: "Llegada a la parada",
+      roundabout: "Entra a la rotonda",
+      exit: "Toma la salida",
+      turn: "Gira",
+      left: "a la izquierda",
+      right: "a la derecha",
+      straight: "Sigue recto",
+      uturn: "Realiza un retorno permitido",
+      continue: "Continúa por el recorrido",
+      meters: "m",
+      kilometers: "km",
+      minutes: "min",
+    },
+  },
+
   brand: "Territorio Vivo",
   subtitle: "Descubre lo que mueve cada territorio",
   demo: "MAQUETA · CATÁLOGO DE REFERENCIA",
@@ -85,6 +162,15 @@ export const es = {
   webBody:
     "Estamos preparando una aplicación para Android e iOS que conecte turismo, emprendimientos y comercio local. Esta es la base del proyecto, todavía sin catálogo público.",
   webStatus: "Primera maqueta en desarrollo",
+  currentArea: "Tu ubicación actual",
+  consultedArea: "Región consultada · ubicación con ⌖",
+  locatedApproximate: "Ubicación aproximada identificada",
+  locationServicesOff:
+    "La ubicación del teléfono está desactivada. Actívala para identificar tu zona.",
+  locationStale:
+    "El teléfono devolvió una ubicación antigua. Reintenta con la ubicación activada.",
+  locationUnavailable:
+    "No pudimos obtener una ubicación actual. Puedes reintentar o elegir región.",
   noLocation:
     "Solo usamos la ubicación si lo autorizas; no guardamos coordenadas.",
   returnHome: "Volver al inicio",
@@ -184,8 +270,9 @@ export const es = {
   osmReference: "Referencia comunitaria de OpenStreetMap · sin verificar",
   osmDetails:
     "Este lugar está registrado en la cartografía comunitaria de OpenStreetMap. No hemos comprobado en terreno su vigencia, acceso ni contacto. El punto puede representar el centro de un edificio o elemento cartográfico, no una entrada habilitada.",
+  openDataLicense: "Ver datos abiertos y licencia",
   osmLicense:
-    "Datos © Colaboradores de OpenStreetMap · ODbL 1.0. El extracto de datos abiertos y su licencia se incluyen con la descarga de esta maqueta.",
+    "Datos © Colaboradores de OpenStreetMap · ODbL 1.0. El extracto de datos abiertos y su licencia están disponibles en el repositorio.",
   source: "Fuente y procedencia",
   sourceDate: "Importado el 24-10-2026 · vigencia pendiente",
   inherited:

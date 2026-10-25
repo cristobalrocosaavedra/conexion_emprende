@@ -213,3 +213,17 @@ El selector mostrará las dieciséis regiones a la vez en teléfonos habituales,
 Se amplía el catálogo basal con referencias públicas de otras regiones. Primera extracción: 27 registros urbanos de OpenStreetMap bajo ODbL, separados de las referencias de Petorca, sin verificar vigencia ni acceso. Se documentan fuentes oficiales para futuras referencias de parques; no se inventan coordenadas ni se copian fotos o descripciones sin revisar condiciones.
 
 El usuario aclara que la monetización será posicionamiento de negocios particulares, no venta de datos turísticos. Los atractivos públicos forman parte del catálogo gratuito. Revisar las condiciones de cada fuente y el uso concreto: no vender una base no determina por sí solo si su uso cumple una cláusula no comercial, y una etiqueta de un portal no prohíbe por sí sola mostrar parques o redactar fichas factuales propias. Promociones privadas siempre rotuladas y separadas de verificación y recomendación.
+
+18. Navegación interna y servidor propio — decisión del 24-10-2026
+
+Tras probar 0.3, el usuario solicita trazado real, botón de inicio y ubicación correcta al abrir. Rechaza derivar la navegación a Google Maps: editar paradas y recalcular debe ocurrir dentro de Territorio Vivo. Se autoriza ampliar el alcance a navegación visual en primer plano, no a registro de oferentes ni pagos.
+
+El usuario elige explícitamente un servidor propio sin registros de ubicación y un VPS nuevo separado, pendiente de contratación. No se usarán servidores públicos como respaldo para el GPS. Se prepara OSRM, HTTPS, límites y desactivación de registros en motor, gateway y contenedores. La app tendrá una configuración pública de servidor para activar la beta sin otra APK; antes de GPS comprobará configuración y salud. La posición, origen de regreso y geometría se mantienen solo en memoria; se pausa al salir de la app.
+
+Se corrige el permiso inicial: solicitar una vez si nunca se decidió y reutilizar mientras esté vigente, respetando denegación y la opción del sistema «Solo esta vez». La región guardada es una región consultada hasta obtener una ubicación reciente. La resolución local de región evita confundir una respuesta errónea Metropolitana con una posición de Valparaíso; la provincia no se interpreta como comuna.
+
+Preparación, presupuesto orientativo, límites y pasos simples del VPS en docs/SERVIDOR-DE-RUTAS.md. No hay contratación, despliegue productivo ni claves creadas por esta decisión. Cobertura nacional, certificado HTTPS público y recorrido físico Android/iOS se comprobarán en el servidor/dispositivos reales antes de declararlos operativos.
+
+19. Descarga simple — 25-10-2026
+
+El usuario reafirma el recorrido dentro de la app; si se evaluara una alternativa externa tendría que conservar el plan completo con paradas, no perder el viaje. La decisión vigente continúa siendo navegación interna y VPS propio. Pide que la descarga contenga únicamente la aplicación: separar capturas/videos y metadatos de la APK. Los artefactos de Actions se descargan como un ZIP con una sola APK; el canal de releases ofrece el .apk directo después de revisión/fusión del usuario. Las vistas quedan en el repositorio y los datos abiertos/licencia son accesibles desde la app.

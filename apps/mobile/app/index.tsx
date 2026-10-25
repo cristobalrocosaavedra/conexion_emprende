@@ -18,11 +18,10 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
-import * as Location from "expo-location";
+
 import {
   curatedRoutes,
   filterPlaces,
-  findRegionName,
   haversineDistanceKm,
   isLocated,
   localities,
@@ -52,6 +51,10 @@ import {
   placeArtFit,
 } from "../src/art";
 import { usePreferences } from "../src/usePreferences";
+import { NavigationPanel } from "../src/NavigationPanel";
+import { useLiveTrip } from "../src/useLiveTrip";
+import { useRoutingServer } from "../src/useRoutingServer";
+import { useDeviceLocation } from "../src/useDeviceLocation";
 
 type Tab = "home" | "explore" | "events" | "trip" | "businesses" | "routes";
 type MapMode = "region" | "trip" | "place" | null;
@@ -77,8 +80,7 @@ export default function Home() {
     [mapPlace, setMapPlace] = useState<Place | null>(null);
   const [reduceMotion, setReduceMotion] = useState(false),
     [pageHeight, setPageHeight] = useState(650);
-  const [locationBusy, setLocationBusy] = useState(false),
-    [locationMessage, setLocationMessage] = useState("");
+  const manualRegionSelection = useRef(false);
   const [physicalRegion, setPhysicalRegion] = useState<RegionId | null>(null);
   const [nearbyOrder, setNearbyOrder] = useState<string[]>([]);
   const [locatedCommune, setLocatedCommune] = useState<string | null>(null);
@@ -130,6 +132,8 @@ export default function Home() {
         .filter((p): p is Place => Boolean(p)),
     [stopIds],
   );
+  const routingServer = useRoutingServer();
+  const liveTrip = useLiveTrip(tripPlaces, roundTrip, routingServer.url);
   const tripLocated = useMemo(() => tripPlaces.filter(isLocated), [tripPlaces]);
   const tripDistance = useMemo(() => {
     const points =
@@ -257,14 +261,17 @@ export default function Home() {
     next: RegionId,
     gesture = false,
     nextCommune?: string,
+    animate = true,
+    source: "user" | "location" = "user",
   ) => {
+    manualRegionSelection.current = source === "user";
     clearAnimation();
     setDrawer(false);
     setTab("home");
     const origin = regionRef.current,
       path = transitionPath(origin, next),
       ticket = generation.current;
-    if (!path.length || reduceMotion) {
+    if (!animate || !path.length || reduceMotion) {
       finishRegion(next, nextCommune);
       motion.setValue(0);
       opacity.setValue(1);
@@ -318,10 +325,6 @@ export default function Home() {
       }, interval * steps.length),
     );
   };
-  const selectFromMap = (id: RegionId) => {
-    setMapMode(null);
-    selectRegion(id);
-  };
   const pan = PanResponder.create({
     onMoveShouldSetPanResponderCapture: (_, g) =>
       tab === "home" &&
@@ -340,84 +343,58 @@ export default function Home() {
     onPanResponderTerminate: () =>
       Animated.spring(motion, { toValue: 0, useNativeDriver: true }).start(),
   });
-  const locate = async (automatic = false) => {
-    const selectionAtStart = generation.current;
-    if (Platform.OS === "web") {
-      setLocationMessage(t.locationWeb);
-      return;
-    }
-    setLocationBusy(true);
-    setLocationMessage("");
-    try {
-      const permission = await Location.requestForegroundPermissionsAsync();
-      if (permission.status !== "granted") {
-        setLocationMessage(t.locationDenied);
-        return;
-      }
-      const position = await Location.getCurrentPositionAsync({
-        accuracy: Location.Accuracy.Balanced,
-      });
-      const addresses = await Location.reverseGeocodeAsync({
-        latitude: position.coords.latitude,
-        longitude: position.coords.longitude,
-      });
-      const address = addresses[0],
-        id = address
-          ? findRegionName(address.region ?? address.subregion ?? "")
-          : null;
-      if (!id) {
-        setLocationMessage(t.locationUnresolved);
-        return;
-      }
-      setPhysicalRegion(id);
-      const origin = {
-        latitude: position.coords.latitude,
-        longitude: position.coords.longitude,
-      };
-      setNearbyOrder(
-        places
-          .filter((p) => p.region === id)
-          .filter(isLocated)
-          .sort(
-            (a, b) =>
-              haversineDistanceKm(origin, a) - haversineDistanceKm(origin, b),
-          )
-          .map((p) => p.id),
-      );
-      const locality = (
-        address.city ??
-        address.district ??
-        ""
-      ).toLocaleLowerCase("es");
-      const found = Object.entries(t.communes).find(
-        ([, name]) => name.toLocaleLowerCase("es") === locality,
-      );
-      setLocatedCommune(found?.[0] ?? null);
+  const deviceLocation = useDeviceLocation({
+    enabled: hydrated,
+    selectionVersion: () => generation.current,
+    onReady: (area, mode, version) => {
+      setPhysicalRegion(area.region);
+      setNearbyOrder(area.nearbyIds);
+      setLocatedCommune(area.commune);
       if (
-        generation.current === selectionAtStart &&
-        (!automatic || tabRef.current === "home")
-      )
-        selectRegion(id, false, found?.[0] ?? "all");
-      setLocationMessage(t.located);
+        mode === "manual" ||
+        (tabRef.current === "home" &&
+          !manualRegionSelection.current &&
+          generation.current === version)
+      ) {
+        selectRegion(
+          area.region,
+          false,
+          area.commune ?? "all",
+          false,
+          "location",
+        );
+      }
+    },
+  });
+  const locationBusy = deviceLocation.busy,
+    locationMessage = deviceLocation.message;
+  useEffect(() => {
+    if (deviceLocation.result && deviceLocation.result.status !== "ready") {
+      setPhysicalRegion(null);
+      setLocatedCommune(null);
+      setNearbyOrder([]);
+    }
+  }, [deviceLocation.result]);
+  const locate = async () => {
+    try {
+      if (
+        deviceLocation.result?.status === "denied" &&
+        !deviceLocation.result.canAskAgain
+      ) {
+        await Linking.openSettings();
+        return;
+      }
+      if (deviceLocation.result?.status === "servicesOff") {
+        if (Platform.OS === "android")
+          await Linking.sendIntent("android.settings.LOCATION_SOURCE_SETTINGS");
+        else await Linking.openSettings();
+        return;
+      }
+      await deviceLocation.refresh("manual");
     } catch {
-      setLocationMessage(t.locationDenied);
-    } finally {
-      setLocationBusy(false);
+      await deviceLocation.refresh("manual");
     }
   };
-  useEffect(() => {
-    if (!hydrated || Platform.OS === "web") return;
-    let active = true;
-    Location.getForegroundPermissionsAsync()
-      .then((permission) => {
-        if (active && permission.status === "granted") void locate(true);
-      })
-      .catch(() => {});
-    return () => {
-      active = false;
-    };
-    // Solo al hidratar: una elección manual posterior no dispara otra localización.
-  }, [hydrated]);
   const openPlace = (id: string) => {
     const place = places.find((p) => p.id === id);
     if (place) {
@@ -580,7 +557,12 @@ export default function Home() {
               ]}
             >
               <Text style={styles.eyebrow}>
-                {t.regionalWindow.toUpperCase()}
+                {locationBusy
+                  ? t.locationBusy
+                  : deviceLocation.result?.status === "ready" &&
+                      physicalRegion === current
+                    ? t.currentArea
+                    : t.consultedArea}
               </Text>
               <Text
                 style={[
@@ -805,7 +787,6 @@ export default function Home() {
                   points={filtered}
                   dark={mode === "dark"}
                   onPlace={openPlace}
-                  onRegion={selectFromMap}
                 />
               </View>
               <Text style={[styles.caption, muted]}>
@@ -917,11 +898,25 @@ export default function Home() {
                       roundTrip={roundTrip}
                       dark={mode === "dark"}
                       onPlace={openPlace}
+                      navigation={{
+                        route: liveTrip.route,
+                        fix: liveTrip.fix,
+                        follow: liveTrip.active,
+                      }}
                     />
                   </View>
-                  {tag(t.tripSchematic)}
-                  {body(`${tripDistance.toFixed(1)} ${t.straightDistance}`)}
-                  {body(t.noRoadCalculation)}
+                  <NavigationPanel
+                    nav={liveTrip}
+                    server={routingServer}
+                    dark={mode === "dark"}
+                    onMap={() => setMapMode("trip")}
+                  />
+                  {!liveTrip.route && (
+                    <>
+                      {tag(t.tripSchematic)}
+                      {body(`${tripDistance.toFixed(1)} ${t.straightDistance}`)}
+                    </>
+                  )}
                   {tripPlaces.map((p, i) => (
                     <View
                       key={p.id}
@@ -940,6 +935,9 @@ export default function Home() {
                       >
                         <Text style={[styles.sectionHeading, text]}>
                           {i + 1}. {p.name}
+                          {liveTrip.visited.includes(p.id)
+                            ? ` · ${t.navigation.visited}`
+                            : ""}
                         </Text>
                         <Text style={[styles.caption, muted]}>
                           {t.regions[p.region]} · {t.pending}
@@ -979,16 +977,20 @@ export default function Home() {
             locationBusy,
           )}
           <Text style={[styles.caption, muted]}>{t.locationExplanation}</Text>
-          {physicalRegion &&
-            button(t.yourZone, () =>
-              selectRegion(physicalRegion, false, locatedCommune ?? "all"),
-            )}
+          {physicalRegion && button(t.yourZone, () => void locate())}
           {storageError && body(t.storageUnavailable)}
           <Text style={[styles.caption, muted]}>
             {t.demo} · {t.sourceDate}
             {"\n"}
             {t.osmLicense}
           </Text>
+          {button(
+            t.openDataLicense,
+            () =>
+              void Linking.openURL(
+                "https://github.com/cristobalrocosaavedra/conexion_emprende/blob/6c377f14f4b6125bb1a4dc0f453fb244a38a4296/content/sources/OSM-CHILE.md",
+              ),
+          )}
         </ScrollView>
       )}
       <View
@@ -1201,11 +1203,26 @@ export default function Home() {
             roundTrip={roundTrip}
             dark={mode === "dark"}
             onPlace={openPlace}
-            onRegion={selectFromMap}
+            navigation={
+              mapMode === "trip"
+                ? {
+                    route: liveTrip.route,
+                    fix: liveTrip.fix,
+                    follow: liveTrip.active,
+                  }
+                : undefined
+            }
           />
           <View style={styles.mapFooter}>
-            {body(
-              mapMode === "trip" ? t.noRoadCalculation : t.catalogReference,
+            {mapMode === "trip" ? (
+              <NavigationPanel
+                nav={liveTrip}
+                server={routingServer}
+                dark={mode === "dark"}
+                compact
+              />
+            ) : (
+              body(t.catalogReference)
             )}
           </View>
         </SafeAreaView>

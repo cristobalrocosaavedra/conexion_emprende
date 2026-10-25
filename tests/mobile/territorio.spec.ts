@@ -375,3 +375,125 @@ test("la portada de una región con nombre largo conserva sus controles en 360 p
     }),
   ).toBeInViewport({ ratio: 0.95 });
 });
+
+test("ruta dentro de la app: conexión sin GPS, trazado por calles, mapa estable y edición", async ({
+  page,
+}) => {
+  // Servidor simulado con una respuesta REAL del motor local sobre calles públicas.
+  // No simula un GPS ni representa un servidor contratado.
+  const { readFileSync } = await import("node:fs");
+  const response = JSON.parse(
+    readFileSync("tests/routing/fixtures/museos-arica.json", "utf8"),
+  );
+  const requests: string[] = [];
+  await page.route("https://rutas.example.test/**", async (r) => {
+    requests.push(r.request().url());
+    const path = new URL(r.request().url()).pathname;
+    await r.fulfill({
+      json:
+        path === "/capabilities"
+          ? {
+              service: "territorio-vivo-routing",
+              schema: 1,
+              coordinateLogs: false,
+              profile: "driving",
+              maxWaypoints: 40,
+              coverage: "Prueba técnica Arica",
+            }
+          : path === "/healthz"
+            ? { code: "Ok" }
+            : response,
+    });
+  });
+  await page.evaluate(() =>
+    localStorage.setItem(
+      "territorio-vivo.preferences.v2",
+      JSON.stringify({
+        region: "arica-parinacota",
+        commune: "all",
+        theme: "dark",
+        stopIds: ["osm-node-12462068289", "osm-node-13305279880"],
+        roundTrip: false,
+      }),
+    ),
+  );
+  await page.reload();
+  await page.getByRole("tab", { name: /Mi viaje/ }).click();
+  await expect(
+    page.getByText("El servidor propio aún no está conectado.", {
+      exact: false,
+    }),
+  ).toBeVisible();
+  await page
+    .getByRole("textbox", { name: "Conectar el servidor de esta prueba" })
+    .fill("https://rutas.example.test");
+  await page
+    .getByRole("button", { name: "Comprobar y conectar", exact: true })
+    .click();
+  await expect(
+    page.getByText("Servidor propio conectado", { exact: true }),
+  ).toBeVisible();
+  expect(requests.map((u) => new URL(u).pathname)).toEqual([
+    "/capabilities",
+    "/healthz",
+  ]);
+  await page
+    .getByRole("button", { name: "Ver entre mis paradas", exact: true })
+    .click();
+  await expect(
+    page.getByText("Ruta lista para revisar", { exact: true }),
+  ).toBeVisible();
+  expect(requests.filter((u) => u.includes("/route/")).length).toBe(1);
+  mkdirSync("previews", { recursive: true });
+  await page
+    .getByText("Tu ruta por calles", { exact: true })
+    .scrollIntoViewIfNeeded();
+  await page.screenshot({ path: "previews/pantalla-ruta-0.4.png" });
+  await expect(
+    page.getByText("Conexión esquemática · no es una ruta por calles", {
+      exact: true,
+    }),
+  ).toHaveCount(0);
+  const frame = page.frameLocator("iframe").first();
+  await expect(frame.locator(".leaflet-overlay-pane path")).not.toHaveCount(0);
+  // Las áreas regionales dejaron de ser enlaces que cerraban el mapa.
+  await page.unroute("https://tile.openstreetmap.org/**");
+  await page
+    .getByRole("button", { name: "Ver navegación en mapa", exact: true })
+    .click();
+  const map = page.frameLocator("iframe").last();
+  await map.locator("#map").click({ position: { x: 150, y: 120 } });
+  await page.unroute("https://tile.openstreetmap.org/**");
+  await map
+    .locator(".leaflet-tile-loaded")
+    .first()
+    .waitFor({ timeout: 5000 })
+    .catch(() => {});
+  await page.screenshot({ path: "previews/pantalla-mapa-0.4.png" });
+  await expect(
+    page.getByRole("button", { name: "Cerrar", exact: true }).last(),
+  ).toBeVisible();
+  await page
+    .getByRole("button", { name: "Cerrar", exact: true })
+    .last()
+    .click();
+  // Cambiar el plan invalida el trazado; una parada sola necesita GPS u otro destino.
+  await page
+    .getByRole("button", { name: "Quitar parada", exact: true })
+    .last()
+    .click();
+  await expect(
+    page.getByText(
+      "Agrega al menos dos paradas para ver el camino entre ellas, o calcula desde tu ubicación.",
+      { exact: true },
+    ),
+  ).toBeVisible();
+  await expect(
+    page.getByText("Ruta lista para revisar", { exact: true }),
+  ).toHaveCount(0);
+  const prefs = await page.evaluate(() =>
+    localStorage.getItem("territorio-vivo.preferences.v2"),
+  );
+  expect(prefs).not.toContain("latitude");
+  expect(prefs).not.toContain("geometry");
+});

@@ -1,10 +1,21 @@
-import { useMemo } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import { Linking } from "react-native";
 import { WebView } from "react-native-webview";
 import { decodeMapSelection } from "@territorio-vivo/core";
-import type { Place, RegionId } from "@territorio-vivo/core";
+import type {
+  Place,
+  RegionId,
+  RoadRoute,
+  NavigationFix,
+} from "@territorio-vivo/core";
 import { buildMapDocument } from "./map-document";
+export interface NavigationMapState {
+  route: RoadRoute | null;
+  fix: NavigationFix | null;
+  follow: boolean;
+}
 export interface PlaceMapProps {
+  navigation?: NavigationMapState;
   region: RegionId;
   points: Place[];
   trip?: boolean;
@@ -21,17 +32,29 @@ export function PlaceMap({
   dark,
   onPlace,
   onRegion,
+  navigation,
 }: PlaceMapProps) {
   const html = useMemo(
     () => buildMapDocument({ region, points, trip, roundTrip, dark }),
     [region, points, trip, roundTrip, dark],
   );
+  const source = useMemo(() => ({ html }), [html]);
+  const ref = useRef<WebView<object>>(null);
+  const latest = useRef(navigation);
+  latest.current = navigation;
+  const update = () =>
+    ref.current?.injectJavaScript(
+      `window.tvNavigation?.(${JSON.stringify(latest.current ?? null)});true;`,
+    );
+  useEffect(update, [navigation]);
   return (
-    <WebView
+    <WebView<object>
+      ref={ref}
+      onLoadEnd={update}
       style={{ flex: 1, backgroundColor: dark ? "#102d42" : "#e1ede7" }}
-      source={{ html }}
+      source={source}
       originWhitelist={["about:blank"]}
-      applicationNameForUserAgent="TerritorioVivo/0.2"
+      applicationNameForUserAgent="TerritorioVivo/0.4"
       geolocationEnabled={false}
       allowFileAccess={false}
       mixedContentMode="never"

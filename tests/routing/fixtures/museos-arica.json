@@ -1,0 +1,265 @@
+{
+  "code": "Ok",
+  "routes": [
+    {
+      "legs": [
+        {
+          "steps": [
+            {
+              "intersections": [
+                {
+                  "out": 0,
+                  "entry": [true],
+                  "bearings": [221],
+                  "location": [-70.313463, -18.47864]
+                }
+              ],
+              "driving_side": "right",
+              "geometry": {
+                "coordinates": [
+                  [-70.313463, -18.47864],
+                  [-70.313925, -18.479143],
+                  [-70.31397, -18.479192]
+                ],
+                "type": "LineString"
+              },
+              "maneuver": {
+                "bearing_after": 221,
+                "bearing_before": 0,
+                "location": [-70.313463, -18.47864],
+                "modifier": "left",
+                "type": "depart"
+              },
+              "name": "Manuel Blanco Encalada",
+              "mode": "driving",
+              "weight": 9.1,
+              "duration": 9.1,
+              "distance": 81.2
+            },
+            {
+              "intersections": [
+                {
+                  "out": 3,
+                  "in": 0,
+                  "entry": [false, false, true, true],
+                  "bearings": [45, 135, 225, 315],
+                  "location": [-70.31397, -18.479192]
+                }
+              ],
+              "driving_side": "right",
+              "geometry": {
+                "coordinates": [
+                  [-70.31397, -18.479192],
+                  [-70.314292, -18.478947],
+                  [-70.314614, -18.478702],
+                  [-70.314661, -18.478667]
+                ],
+                "type": "LineString"
+              },
+              "maneuver": {
+                "bearing_after": 307,
+                "bearing_before": 220,
+                "location": [-70.31397, -18.479192],
+                "modifier": "right",
+                "type": "turn"
+              },
+              "name": "Bernardo O'Higgins",
+              "mode": "driving",
+              "weight": 10.8,
+              "duration": 10.8,
+              "distance": 93.3
+            },
+            {
+              "intersections": [
+                {
+                  "out": 0,
+                  "in": 1,
+                  "entry": [true, false, false, true],
+                  "bearings": [45, 135, 225, 315],
+                  "location": [-70.314661, -18.478667]
+                }
+              ],
+              "driving_side": "right",
+              "geometry": {
+                "coordinates": [
+                  [-70.314661, -18.478667],
+                  [-70.313982, -18.477931],
+                  [-70.313937, -18.477882],
+                  [-70.31386, -18.477799]
+                ],
+                "type": "LineString"
+              },
+              "maneuver": {
+                "bearing_after": 40,
+                "bearing_before": 307,
+                "location": [-70.314661, -18.478667],
+                "modifier": "right",
+                "type": "turn"
+              },
+              "name": "General Lagos",
+              "mode": "driving",
+              "weight": 14.5,
+              "duration": 14.5,
+              "distance": 128
+            },
+            {
+              "intersections": [
+                {
+                  "out": 1,
+                  "in": 2,
+                  "entry": [true, true, false, false],
+                  "bearings": [45, 135, 225, 315],
+                  "location": [-70.31386, -18.477799]
+                },
+                {
+                  "out": 1,
+                  "in": 3,
+                  "entry": [false, true, true, false],
+                  "bearings": [45, 135, 225, 315],
+                  "location": [-70.313287, -18.478447]
+                },
+                {
+                  "out": 1,
+                  "in": 3,
+                  "entry": [true, true, false, false],
+                  "bearings": [45, 135, 225, 315],
+                  "location": [-70.312638, -18.479179]
+                },
+                {
+                  "out": 1,
+                  "in": 3,
+                  "entry": [false, true, true, false],
+                  "bearings": [45, 135, 225, 315],
+                  "location": [-70.312033, -18.479863]
+                },
+                {
+                  "out": 1,
+                  "in": 3,
+                  "entry": [false, true, true, false],
+                  "bearings": [45, 135, 225, 315],
+                  "location": [-70.311412, -18.480564]
+                },
+                {
+                  "out": 1,
+                  "in": 3,
+                  "entry": [true, true, false, false],
+                  "bearings": [45, 135, 225, 315],
+                  "location": [-70.311361, -18.480622]
+                }
+              ],
+              "driving_side": "right",
+              "geometry": {
+                "coordinates": [
+                  [-70.31386, -18.477799],
+                  [-70.313318, -18.478411],
+                  [-70.313287, -18.478447],
+                  [-70.313063, -18.4787],
+                  [-70.312669, -18.479144],
+                  [-70.312638, -18.479179],
+                  [-70.312071, -18.47982],
+                  [-70.312033, -18.479863],
+                  [-70.311451, -18.480519],
+                  [-70.311412, -18.480564],
+                  [-70.311361, -18.480622],
+                  [-70.311323, -18.480654],
+                  [-70.31129, -18.480682]
+                ],
+                "type": "LineString"
+              },
+              "maneuver": {
+                "bearing_after": 139,
+                "bearing_before": 40,
+                "location": [-70.31386, -18.477799],
+                "modifier": "right",
+                "type": "turn"
+              },
+              "name": "Chacabuco",
+              "mode": "driving",
+              "weight": 38.1,
+              "duration": 38.1,
+              "distance": 419
+            },
+            {
+              "intersections": [
+                {
+                  "in": 0,
+                  "entry": [true],
+                  "bearings": [312],
+                  "location": [-70.31129, -18.480682]
+                }
+              ],
+              "driving_side": "right",
+              "geometry": {
+                "coordinates": [
+                  [-70.31129, -18.480682],
+                  [-70.31129, -18.480682]
+                ],
+                "type": "LineString"
+              },
+              "maneuver": {
+                "bearing_after": 0,
+                "bearing_before": 132,
+                "location": [-70.31129, -18.480682],
+                "modifier": "left",
+                "type": "arrive"
+              },
+              "name": "Chacabuco",
+              "mode": "driving",
+              "weight": 0,
+              "duration": 0,
+              "distance": 0
+            }
+          ],
+          "weight": 72.5,
+          "summary": "General Lagos, Chacabuco",
+          "duration": 72.5,
+          "distance": 721.6
+        }
+      ],
+      "weight_name": "routability",
+      "geometry": {
+        "coordinates": [
+          [-70.313463, -18.47864],
+          [-70.313925, -18.479143],
+          [-70.31397, -18.479192],
+          [-70.314292, -18.478947],
+          [-70.314614, -18.478702],
+          [-70.314661, -18.478667],
+          [-70.313982, -18.477931],
+          [-70.313937, -18.477882],
+          [-70.31386, -18.477799],
+          [-70.313318, -18.478411],
+          [-70.313287, -18.478447],
+          [-70.313063, -18.4787],
+          [-70.312669, -18.479144],
+          [-70.312638, -18.479179],
+          [-70.312071, -18.47982],
+          [-70.312033, -18.479863],
+          [-70.311451, -18.480519],
+          [-70.311412, -18.480564],
+          [-70.311361, -18.480622],
+          [-70.311323, -18.480654],
+          [-70.31129, -18.480682]
+        ],
+        "type": "LineString"
+      },
+      "weight": 72.5,
+      "duration": 72.5,
+      "distance": 721.6
+    }
+  ],
+  "waypoints": [
+    {
+      "hint": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "location": [-70.313463, -18.47864],
+      "name": "Manuel Blanco Encalada",
+      "distance": 19.81516563
+    },
+    {
+      "hint": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "location": [-70.31129, -18.480682],
+      "name": "Chacabuco",
+      "distance": 9.046010796
+    }
+  ]
+}
