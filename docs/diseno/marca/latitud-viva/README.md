@@ -12,3 +12,5 @@ Paleta de trabajo: coral `#FF6154`, fucsia `#FF4597`, berenjena `#22162E` y nomb
 La lámina incluye una muestra ilustrativa del ícono; no es una captura del teléfono. Son PNG de revisión generados con OpenAI image_gen. Todavía no son archivos vectoriales ni assets definitivos de Android/iOS; falta preparar variantes consistentes y comprobar tamaños/máscaras al integrarlos. No se ha cambiado la APK, el tema de la app ni la identidad de Matichoc.
 
 Originales intactos; procedencia, prompt del refinamiento y hashes en [generacion.json](generacion.json). Entrega guardada y versionada localmente, sin push ni nuevo PR. La app del PR #4 sigue con su compilación y branding anteriores a estas exploraciones.
+
+El titular solicita entender qué habrá dentro de las formas. Se propone una [lámina de contenido territorial](contenido/README.md) con motivos reconocibles; estos detalles nuevos siguen en revisión.

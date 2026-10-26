@@ -241,3 +241,9 @@ GitHub rechazó la primera subida con GH007 por el correo privado de los commits
 - Restablecido el entorno, se recuperan las dos propuestas v04 que no se pudieron guardar por desconexión: A Mosaico territorial y B Latitud viva. Originales intactos, sin recrear o sustituir la elección del titular.
 - Se genera con OpenAI image_gen un ajuste de B más compacto, conservando las cinco piezas y colores. Propuesta elegida, ajuste y procedencia guardados en docs/diseno/marca/latitud-viva; no se atribuye aprobación automática del ajuste nuevo.
 - Entrega de imágenes/documentación versionada localmente, sin push ni nuevo PR. No se modifican app, APK, tema, catálogo, Matichoc, otros repositorios o producción. No se requieren pruebas de app por ser una entrega visual sin código; se revisa formato y diferencias de documentación.
+
+## 26-10-2026 — Contenido reconocible dentro de Latitud viva
+
+- El titular pregunta qué contendrán las formas y señala que solo ve colores. Se aclara el carácter abstracto anterior y se propone relieve del desierto, cordillera/valles, bosque/agua y fiordos/islas dentro de las piezas.
+- Lámina ampliada con rótulos explicativos generada con OpenAI image_gen, guardada en docs/diseno/marca/latitud-viva/contenido. Propuesta nueva de detalle, sin atribuir aprobación al titular; rótulos fuera de la marca y simplificación pendiente para íconos pequeños.
+- Solo imágenes/documentación locales, sin push ni PR nuevo, sin modificar aplicación o APK. No corresponde ejecutar pruebas de app para esta exploración gráfica.
