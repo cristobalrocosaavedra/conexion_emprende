@@ -57,6 +57,8 @@ import { Action, Cover, Pill, PlaceCard } from "../src/ui";
 import {
   placeArt,
   regionArt,
+  regionArtFocus,
+  regionArtLabel,
   routeArt,
   eventArt,
   placeArtLabel,
@@ -602,7 +604,11 @@ export default function Home() {
               { transform: [{ translateY: motion }], opacity },
             ]}
           >
-            <Cover source={regionArt(current)} dark={mode === "dark"} />
+            <Cover
+              source={regionArt(current, activeCommune)}
+              focusX={regionArtFocus(current, activeCommune)}
+              dark={mode === "dark"}
+            />
             <View
               style={[
                 styles.heroTop,
@@ -653,7 +659,9 @@ export default function Home() {
                   {t.regionStories[current]}
                 </Text>
               )}
-              <Text style={styles.artLabel}>{t.artLabel}</Text>
+              <Text style={styles.artLabel}>
+                {regionArtLabel(current, activeCommune)}
+              </Text>
             </View>
             <View style={styles.homeBottom}>
               <View
@@ -999,7 +1007,10 @@ export default function Home() {
                     },
                   ]}
                 >
-                  <Image source={eventArt(i)} style={styles.routeImage} />
+                  <Image
+                    source={eventArt(current, activeCommune)}
+                    style={styles.routeImage}
+                  />
                   <View style={styles.panelInside}>
                     {tag(t.eventExample)}
                     {title(name)}
@@ -1318,6 +1329,8 @@ export default function Home() {
                   ]}
                 />
                 {tag(placeArtLabel(detail))}
+                {placeArtFit(detail) !== "contain" &&
+                  body(t.illustrationDetails)}
                 {title(detail.name)}
                 {body(
                   `${communeName(detail.commune)} · ${t.regions[detail.region]}`,
@@ -1448,7 +1461,7 @@ export default function Home() {
           </View>
           <ScrollView contentContainerStyle={styles.content}>
             <Image
-              source={eventArt(eventDetail ?? 0)}
+              source={eventArt(current, activeCommune)}
               style={styles.detailImage}
             />
             {tag(t.eventExample)}

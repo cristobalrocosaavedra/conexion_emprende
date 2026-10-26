@@ -434,7 +434,7 @@ test("ruta pública lista sin configurar VPS: trazado por calles, mapa estable y
   await page
     .getByText("Tu ruta por calles", { exact: true })
     .scrollIntoViewIfNeeded();
-  await page.screenshot({ path: "previews/pantalla-ruta-0.6.1.png" });
+  await page.screenshot({ path: "previews/pantalla-ruta-0.7.0.png" });
   await expect(
     page.getByText("Conexión esquemática · no es una ruta por calles", {
       exact: true,
@@ -493,7 +493,7 @@ test("ruta pública lista sin configurar VPS: trazado por calles, mapa estable y
   await map
     .getByRole("button", { name: "Ver ruta completa", exact: true })
     .click();
-  await page.screenshot({ path: "previews/pantalla-mapa-0.6.1.png" });
+  await page.screenshot({ path: "previews/pantalla-mapa-0.7.0.png" });
   await expect(
     page.getByRole("button", { name: "Cerrar", exact: true }).last(),
   ).toBeVisible();
@@ -594,7 +594,7 @@ test("encuentra Matichoc en Valparaíso al buscar desde Coquimbo", async ({
   await page
     .getByRole("button", { name: "Chocolatería Matichoc", exact: true })
     .scrollIntoViewIfNeeded();
-  await page.screenshot({ path: "previews/pantalla-busqueda-0.6.1.png" });
+  await page.screenshot({ path: "previews/pantalla-busqueda-0.7.0.png" });
   await page
     .getByRole("button", { name: "Chocolatería Matichoc", exact: true })
     .click();
@@ -632,7 +632,7 @@ test("el maestro permite revisar y guardar referencias nuevas sin inventar coord
     page.getByRole("button", { name: "Abrir selector de regiones" }),
   ).toContainText("Metropolitana de Santiago");
   await expect(page.getByTestId("regional-window")).toBeVisible();
-  await page.screenshot({ path: "previews/pantalla-inicio-0.6.1.png" });
+  await page.screenshot({ path: "previews/pantalla-inicio-0.7.0.png" });
   await page.getByRole("tab", { name: /Explorar/ }).click();
   await page
     .getByRole("textbox", { name: "Buscar lugares" })
@@ -646,7 +646,7 @@ test("el maestro permite revisar y guardar referencias nuevas sin inventar coord
   await page
     .getByRole("button", { name: "Parque Violeta Parra", exact: true })
     .scrollIntoViewIfNeeded();
-  await page.screenshot({ path: "previews/pantalla-catalogo-0.6.1.png" });
+  await page.screenshot({ path: "previews/pantalla-catalogo-0.7.0.png" });
   await page
     .getByRole("button", { name: "Parque Violeta Parra", exact: true })
     .click();
@@ -677,7 +677,7 @@ test("el maestro permite revisar y guardar referencias nuevas sin inventar coord
         )?.y ?? 1000,
     )
     .toBeLessThan(70);
-  await page.screenshot({ path: "previews/pantalla-ficha-0.6.1.png" });
+  await page.screenshot({ path: "previews/pantalla-ficha-0.7.0.png" });
   await page
     .getByRole("button", { name: "Guardar en mi viaje", exact: true })
     .click();
@@ -740,7 +740,7 @@ test("la portada diferencia Valparaíso completo de las once referencias de La L
     page.getByText("90 referencias en la región", { exact: true }),
   ).toBeVisible();
   await expect(page.getByText("11 en La Ligua", { exact: true })).toBeVisible();
-  await page.screenshot({ path: "previews/pantalla-valparaiso-0.6.1.png" });
+  await page.screenshot({ path: "previews/pantalla-valparaiso-0.7.0.png" });
   await page
     .getByRole("button", { name: "Ver toda la región", exact: true })
     .click();
@@ -775,7 +775,7 @@ test("Rapa Nui tiene cuatro referencias y mapa local con aviso de llegada aérea
   await expect(
     page.frameLocator("iframe").first().locator("path.leaflet-interactive"),
   ).toHaveCount(4);
-  await page.screenshot({ path: "previews/pantalla-rapa-0.6.1.png" });
+  await page.screenshot({ path: "previews/pantalla-rapa-0.7.0.png" });
   await page.getByRole("tab", { name: /Inicio/ }).click();
   await expect(
     page.getByText("4 en Isla de Pascua", { exact: true }),
@@ -831,7 +831,7 @@ test("los destinos insulares permanecen guardados aparte y no consultan rutas de
     .getByText("3 lugares guardados", { exact: true })
     .scrollIntoViewIfNeeded();
   await page.screenshot({
-    path: "previews/pantalla-viajes-separados-0.6.1.png",
+    path: "previews/pantalla-viajes-separados-0.7.0.png",
   });
   await page.getByRole("button", { name: "Iniciar ruta", exact: true }).click();
   await expect(
@@ -850,5 +850,52 @@ test("los destinos insulares permanecen guardados aparte y no consultan rutas de
     "osm-way-222144438",
     "osm-way-1459388783",
   ]);
-  await page.screenshot({ path: "previews/pantalla-aviso-traslado-0.6.1.png" });
+  await page.screenshot({ path: "previews/pantalla-aviso-traslado-0.7.0.png" });
+});
+
+test("la portada cambia de paisaje por zona y conserva imágenes legibles en el celular", async ({
+  page,
+}) => {
+  const sources = new Set<string>();
+  for (const [region, commune, scene, capture] of [
+    ["valparaiso", "la-ligua", "Interior de Petorca", "petorca"],
+    ["valparaiso", "isla-de-pascua", "Rapa Nui", "rapa-inicio"],
+    ["magallanes", "all", "Magallanes", "magallanes"],
+  ]) {
+    await page.evaluate(
+      ({ region, commune }) =>
+        localStorage.setItem(
+          "territorio-vivo.preferences.v2",
+          JSON.stringify({
+            region,
+            commune,
+            theme: "dark",
+            stopIds: [],
+            roundTrip: false,
+          }),
+        ),
+      { region, commune },
+    );
+    await page.reload();
+    await expect(
+      page
+        .getByText(`Ilustración de referencia · ${scene}`, { exact: true })
+        .first(),
+    ).toBeVisible();
+    const image = page.getByTestId("territorial-cover").locator("img").first();
+    await expect
+      .poll(() =>
+        image.evaluate(
+          (node: HTMLImageElement) => node.complete && node.naturalWidth > 0,
+        ),
+      )
+      .toBe(true);
+    sources.add((await image.getAttribute("src"))!);
+    const frame = await image.boundingBox();
+    const window = await page.getByTestId("territorial-cover").boundingBox();
+    expect(frame!.width).toBeGreaterThanOrEqual(window!.width);
+    expect(frame!.height).toBeGreaterThanOrEqual(window!.height);
+    await page.screenshot({ path: `previews/pantalla-${capture}-0.7.0.png` });
+  }
+  expect(sources.size).toBe(3);
 });

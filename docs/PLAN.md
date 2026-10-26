@@ -245,3 +245,8 @@ Tras revisar la simulación, el titular autoriza incorporar todo el maestro a la
 23. Conteos regionales y Rapa Nui — 26-10-2026
 
 La portada debe distinguir región completa y comuna activa (Valparaíso tenía 86 referencias, La Ligua 11). Se conserva prioridad local y se añade acceso a toda la región. El usuario pide incluir Rapa Nui como parte de Valparaíso y sugerir llegada en avión sin calcular carretera desde el continente. Se agregan cuatro referencias OSM pendientes, con datos/licencia/procedencia, mapa y recorrido local separados. Los destinos siguen guardados al cambiar de ámbito. Se protege el cálculo vial y el esquema contra conexiones sobre el océano. El Excel anterior debe seguir siendo utilizable al crecer el catálogo.
+
+
+24. Colección visual territorial — 26-10-2026
+
+El usuario solicita imágenes más representativas para cada región y zona. Se prepara una primera colección de 16 portadas regionales y ocho variantes de zonas, con estilo editorial coherente, optimizadas para móvil y guardadas en una galería revisable. Inicio y fichas eligen la imagen por región/comuna y distinguen ilustraciones de fotografías. Matichoc conserva su logo autorizado y completo. Las imágenes no cambian el catálogo ni su validación humana. Se conserva la APK como única descarga de instalación y la colección visual por separado. Ver docs/diseno/coleccion-0.7/README.md.

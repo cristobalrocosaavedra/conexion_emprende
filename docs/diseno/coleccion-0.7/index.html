@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="es">
+  <meta charset="utf-8" /><meta
+    name="viewport"
+    content="width=device-width,initial-scale=1"
+  /><title>Territorio Vivo · Colección territorial</title
+  ><style>
+    :root {
+      color-scheme: dark;
+      --bg: #071e30;
+      --fg: #f7f2e6;
+      --card: #102d3b;
+      --accent: #75d9bd;
+    }
+    body.light {
+      color-scheme: light;
+      --bg: #fcf6eb;
+      --fg: #173846;
+      --card: #fff;
+      --accent: #0c7768;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: system-ui, sans-serif;
+    }
+    header {
+      max-width: 1240px;
+      margin: auto;
+      padding: 48px 24px 32px;
+    }
+    small,
+    span {
+      color: var(--accent);
+      letter-spacing: 0.13em;
+    }
+    h1 {
+      font-size: clamp(32px, 6vw, 64px);
+      line-height: 1.05;
+      margin: 18px 0;
+    }
+    header p {
+      max-width: 700px;
+      line-height: 1.7;
+      opacity: 0.85;
+    }
+    button {
+      background: var(--accent);
+      color: var(--bg);
+      border: 0;
+      border-radius: 20px;
+      padding: 12px 20px;
+      font: inherit;
+      cursor: pointer;
+    }
+    main {
+      max-width: 1240px;
+      margin: auto;
+      padding: 0 24px 48px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 24px;
+    }
+    article {
+      border-radius: 20px;
+      overflow: hidden;
+      background: var(--card);
+    }
+    img {
+      width: 100%;
+      aspect-ratio: 1.5;
+      object-fit: cover;
+      display: block;
+    }
+    .info {
+      padding: 20px;
+    }
+    .info span {
+      font-size: 10px;
+    }
+    h2 {
+      font-size: 22px;
+      margin: 8px 0;
+    }
+    p {
+      line-height: 1.5;
+    }
+    footer {
+      padding: 24px;
+      text-align: center;
+      opacity: 0.75;
+    }
+  </style>
+  <header>
+    <small>TERRITORIO VIVO / COLECCIÓN 01</small>
+    <h1>Un país.<br />Muchas formas de habitarlo.</h1>
+    <p>
+      16 portadas regionales y 8 paisajes de zonas. Ilustraciones generadas con
+      IA para dar identidad a la maqueta: no son fotografías de lugares o
+      negocios, mapas ni evidencia de validación. Las estaciones y escenas no
+      indican condiciones actuales. Abre cada imagen para verla completa.
+    </p>
+    <button onclick="document.body.classList.toggle('light')">
+      Cambiar claro / oscuro
+    </button>
+  </header>
+  <main>
+    <article>
+      <a
+        href="../../../apps/mobile/assets/territorio/coleccion/arica-parinacota.webp"
+        ><img
+          loading="lazy"
+          src="../../../apps/mobile/assets/territorio/coleccion/arica-parinacota.webp"
+          alt="Ilustración: Arica y Parinacota"
+      /></a>
+      <div class="info">
+        <span>REGIÓN</span>
+        <h2>Arica y Parinacota</h2>
+        <p>Costa árida y morro inspirados en Arica</p>
+      </div>
+    </article>
+    <article>
+      <a href="../../../apps/mobile/assets/territorio/coleccion/tarapaca.webp"
+        ><img
+          loading="lazy"
+          src="../../../apps/mobile/assets/territorio/coleccion/tarapaca.webp"
+          alt="Ilustración: Tarapacá"
+      /></a>
+      <div class="info">
+        <span>REGIÓN</span>
+        <h2>Tarapacá</h2>
+        <p>Pampa y patrimonio salitrero</p>
+      </div>
+    </article>
+    <article>
+      <a
+        href="../../../apps/mobile/assets/territorio/coleccion/antofagasta.webp"
+        ><img
+          loading="lazy"
+          src="../../../apps/mobile/assets/territorio/coleccion/antofagasta.webp"
+          alt="Ilustración: Antofagasta"
+      /></a>
+      <div class="info">
+        <span>REGIÓN</span>
+        <h2>Antofagasta</h2>
+        <p>Arco costero inspirado en La Portada</p>
+      </div>
+    </article>
+    <article>
+      <a href="../../../apps/mobile/assets/territorio/coleccion/atacama.webp"
+        ><img
+          loading="lazy"
+          src="../../../apps/mobile/assets/territorio/coleccion/atacama.webp"
+          alt="Ilustración: Atacama"
+      /></a>
+      <div class="info">
+        <span>REGIÓN</span>
+        <h2>Atacama</h2>
+        <p>Desierto florido estacional, sin promesa de floración actual</p>
+      </div>
+    </article>
+    <article>
+      <a href="../../../apps/mobile/assets/territorio/coleccion/coquimbo.webp"
+        ><img
+          loading="lazy"
+          src="../../../apps/mobile/assets/territorio/coleccion/coquimbo.webp"
+          alt="Ilustración: Coquimbo"
+      /></a>
+      <div class="info">
+        <span>REGIÓN</span>
+        <h2>Coquimbo</h2>
+        <p>Valle del Elqui, cultivos entre cerros áridos</p>
+      </div>
+    </article>
+    <article>
+      <a href="../../../apps/mobile/assets/territorio/coleccion/valparaiso.webp"
+        ><img
+          loading="lazy"
+          src="../../../apps/mobile/assets/territorio/coleccion/valparaiso.webp"
+          alt="Ilustración: Valparaíso"
+      /></a>
+      <div class="info">
+        <span>REGIÓN</span>
+        <h2>Valparaíso</h2>
+        <p>Cerros de colores, escaleras y puerto</p>
+      </div>
+    </article>
+    <article>
+      <a
+        href="../../../apps/mobile/assets/territorio/coleccion/metropolitana.webp"
+        ><img
+          loading="lazy"
+          src="../../../apps/mobile/assets/territorio/coleccion/metropolitana.webp"
+          alt="Ilustración: Metropolitana de Santiago"
+      /></a>
+      <div class="info">
+        <span>REGIÓN</span>
+        <h2>Metropolitana de Santiago</h2>
+        <p>Ciudad y cordillera de los Andes</p>
+      </div>
+    </article>
+    <article>
+      <a href="../../../apps/mobile/assets/territorio/coleccion/ohiggins.webp"
+        ><img
+          loading="lazy"
+          src="../../../apps/mobile/assets/territorio/coleccion/ohiggins.webp"
+          alt="Ilustración: O’Higgins"
+      /></a>
+      <div class="info">
+        <span>REGIÓN</span>
+        <h2>O’Higgins</h2>
+        <p>Viñedos de otoño, adobe y cordillera</p>
+      </div>
+    </article>
+    <article>
+      <a href="../../../apps/mobile/assets/territorio/coleccion/maule.webp"
+        ><img
+          loading="lazy"
+          src="../../../apps/mobile/assets/territorio/coleccion/maule.webp"
+          alt="Ilustración: Maule"
+      /></a>
+      <div class="info">
+        <span>REGIÓN</span>
+        <h2>Maule</h2>
+        <p>Río y campos del valle central</p>
+      </div>
+    </article>
+    <article>
+      <a href="../../../apps/mobile/assets/territorio/coleccion/nuble.webp"
+        ><img
+          loading="lazy"
+          src="../../../apps/mobile/assets/territorio/coleccion/nuble.webp"
+          alt="Ilustración: Ñuble"
+      /></a>
+      <div class="info">
+        <span>REGIÓN</span>
+        <h2>Ñuble</h2>
+        <p>Precordillera, bosque y estero</p>
+      </div>
+    </article>
+    <article>
+      <a href="../../../apps/mobile/assets/territorio/coleccion/biobio.webp"
+        ><img
+          loading="lazy"
+          src="../../../apps/mobile/assets/territorio/coleccion/biobio.webp"
+          alt="Ilustración: Biobío"
+      /></a>
+      <div class="info">
+        <span>REGIÓN</span>
+        <h2>Biobío</h2>
+        <p>Río ancho, puentes y ciudad</p>
+      </div>
+    </article>
+    <article>
+      <a href="../../../apps/mobile/assets/territorio/coleccion/araucania.webp"
+        ><img
+          loading="lazy"
+          src="../../../apps/mobile/assets/territorio/coleccion/araucania.webp"
+          alt="Ilustración: La Araucanía"
+      /></a>
+      <div class="info">
+        <span>REGIÓN</span>
+        <h2>La Araucanía</h2>
+        <p>Araucarias y paisaje volcánico lacustre</p>
+      </div>
+    </article>
+    <article>
+      <a href="../../../apps/mobile/assets/territorio/coleccion/los-rios.webp"
+        ><img
+          loading="lazy"
+          src="../../../apps/mobile/assets/territorio/coleccion/los-rios.webp"
+          alt="Ilustración: Los Ríos"
+      /></a>
+      <div class="info">
+        <span>REGIÓN</span>
+        <h2>Los Ríos</h2>
+        <p>Selva valdiviana y río entre brumas</p>
+      </div>
+    </article>
+    <article>
+      <a href="../../../apps/mobile/assets/territorio/coleccion/los-lagos.webp"
+        ><img
+          loading="lazy"
+          src="../../../apps/mobile/assets/territorio/coleccion/los-lagos.webp"
+          alt="Ilustración: Los Lagos"
+      /></a>
+      <div class="info">
+        <span>REGIÓN</span>
+        <h2>Los Lagos</h2>
+        <p>Lago y volcán nevado del sur</p>
+      </div>
+    </article>
+    <article>
+      <a href="../../../apps/mobile/assets/territorio/coleccion/aysen.webp"
+        ><img
+          loading="lazy"
+          src="../../../apps/mobile/assets/territorio/coleccion/aysen.webp"
+          alt="Ilustración: Aysén"
+      /></a>
+      <div class="info">
+        <span>REGIÓN</span>
+        <h2>Aysén</h2>
+        <p>Río turquesa y montañas patagónicas</p>
+      </div>
+    </article>
+    <article>
+      <a href="../../../apps/mobile/assets/territorio/coleccion/magallanes.webp"
+        ><img
+          loading="lazy"
+          src="../../../apps/mobile/assets/territorio/coleccion/magallanes.webp"
+          alt="Ilustración: Magallanes"
+      /></a>
+      <div class="info">
+        <span>REGIÓN</span>
+        <h2>Magallanes</h2>
+        <p>Estepa, lago y torres de granito</p>
+      </div>
+    </article>
+    <article>
+      <a
+        href="../../../apps/mobile/assets/territorio/coleccion/petorca-interior.webp"
+        ><img
+          loading="lazy"
+          src="../../../apps/mobile/assets/territorio/coleccion/petorca-interior.webp"
+          alt="Ilustración: Interior de Petorca"
+      /></a>
+      <div class="info">
+        <span>ZONA</span>
+        <h2>Interior de Petorca</h2>
+        <p>Valle seco, adobe y referencia ferroviaria; escena compuesta</p>
+      </div>
+    </article>
+    <article>
+      <a
+        href="../../../apps/mobile/assets/territorio/coleccion/litoral-central.webp"
+        ><img
+          loading="lazy"
+          src="../../../apps/mobile/assets/territorio/coleccion/litoral-central.webp"
+          alt="Ilustración: Litoral de Valparaíso"
+      /></a>
+      <div class="info">
+        <span>ZONA</span>
+        <h2>Litoral de Valparaíso</h2>
+        <p>Caleta y bahía rocosa inspiradas en Papudo y Zapallar</p>
+      </div>
+    </article>
+    <article>
+      <a
+        href="../../../apps/mobile/assets/territorio/coleccion/choapa-costa.webp"
+        ><img
+          loading="lazy"
+          src="../../../apps/mobile/assets/territorio/coleccion/choapa-costa.webp"
+          alt="Ilustración: Costa de Choapa"
+      /></a>
+      <div class="info">
+        <span>ZONA</span>
+        <h2>Costa de Choapa</h2>
+        <p>Caleta del Norte Chico inspirada en Los Vilos</p>
+      </div>
+    </article>
+    <article>
+      <a href="../../../apps/mobile/assets/territorio/coleccion/chiloe.webp"
+        ><img
+          loading="lazy"
+          src="../../../apps/mobile/assets/territorio/coleccion/chiloe.webp"
+          alt="Ilustración: Chiloé"
+      /></a>
+      <div class="info">
+        <span>ZONA</span>
+        <h2>Chiloé</h2>
+        <p>Palafitos, marea e iglesia de madera</p>
+      </div>
+    </article>
+    <article>
+      <a href="../../../apps/mobile/assets/territorio/coleccion/altiplano.webp"
+        ><img
+          loading="lazy"
+          src="../../../apps/mobile/assets/territorio/coleccion/altiplano.webp"
+          alt="Ilustración: Altiplano"
+      /></a>
+      <div class="info">
+        <span>ZONA</span>
+        <h2>Altiplano</h2>
+        <p>Laguna salina, vicuñas y volcanes</p>
+      </div>
+    </article>
+    <article>
+      <a
+        href="../../../apps/mobile/assets/territorio/coleccion/valparaiso-interior.webp"
+        ><img
+          loading="lazy"
+          src="../../../apps/mobile/assets/territorio/coleccion/valparaiso-interior.webp"
+          alt="Ilustración: Interior de Valparaíso"
+      /></a>
+      <div class="info">
+        <span>ZONA</span>
+        <h2>Interior de Valparaíso</h2>
+        <p>Palmas y cerros secos inspirados en Olmué y Ocoa</p>
+      </div>
+    </article>
+    <article>
+      <a
+        href="../../../apps/mobile/assets/territorio/coleccion/coquimbo-costa.webp"
+        ><img
+          loading="lazy"
+          src="../../../apps/mobile/assets/territorio/coleccion/coquimbo-costa.webp"
+          alt="Ilustración: Costa de Coquimbo"
+      /></a>
+      <div class="info">
+        <span>ZONA</span>
+        <h2>Costa de Coquimbo</h2>
+        <p>Bahía del Norte Chico y faro simbólico; sin ubicación exacta</p>
+      </div>
+    </article>
+    <article>
+      <a href="../../../apps/mobile/assets/territorio/coleccion/rapa-nui.webp"
+        ><img
+          loading="lazy"
+          src="../../../apps/mobile/assets/territorio/coleccion/rapa-nui.webp"
+          alt="Ilustración: Rapa Nui"
+      /></a>
+      <div class="info">
+        <span>ZONA</span>
+        <h2>Rapa Nui</h2>
+        <p>
+          Moái hacia el interior y costa volcánica; composición no documental
+        </p>
+      </div>
+    </article>
+  </main>
+  <footer>
+    Propuesta visual · 26-10-2026 · Territorio Vivo · Sin datos de ubicación de
+    viajeros
+  </footer>
+</html>

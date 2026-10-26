@@ -13,7 +13,7 @@ if (
 const config: ExpoConfig = {
   name: "Territorio Vivo",
   slug: "territorio-vivo",
-  version: "0.6.1",
+  version: "0.7.0",
   orientation: "portrait",
   scheme: "territoriovivo",
   userInterfaceStyle: "automatic",

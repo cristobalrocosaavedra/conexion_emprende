@@ -1,16 +1,14 @@
+import { useState } from "react";
 import type { ReactNode } from "react";
-import {
-  Image,
-  ImageBackground,
-  Pressable,
-  StyleSheet,
-  Text,
-  View,
-} from "react-native";
+import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import Svg, { Defs, LinearGradient, Rect, Stop } from "react-native-svg";
 import type { ImageSourcePropType } from "react-native";
 import { palettes } from "@territorio-vivo/design-tokens";
-import { communeName, roadAreaForPlace } from "@territorio-vivo/core";
+import {
+  communeName,
+  roadAreaForPlace,
+  coverFrame,
+} from "@territorio-vivo/core";
 import type { Place } from "@territorio-vivo/core";
 import { messages as t } from "@territorio-vivo/i18n";
 import { placeArt, placeArtLabel, placeArtFit } from "./art";
@@ -95,19 +93,34 @@ export function Pill({
 }
 export function Cover({
   source,
+  focusX = 0.5,
   dark = true,
   children,
 }: {
   source: ImageSourcePropType;
+  focusX?: number;
   dark?: boolean;
   children?: ReactNode;
 }) {
+  const [size, setSize] = useState({ width: 0, height: 0 });
   return (
-    <ImageBackground
-      source={source}
-      resizeMode="cover"
-      style={StyleSheet.absoluteFill}
+    <View
+      testID="territorial-cover"
+      onLayout={(e) => setSize(e.nativeEvent.layout)}
+      style={[StyleSheet.absoluteFill, { overflow: "hidden" }]}
     >
+      <Image
+        source={source}
+        resizeMode="cover"
+        style={
+          size.width
+            ? {
+                position: "absolute",
+                ...coverFrame(size.width, size.height, focusX),
+              }
+            : StyleSheet.absoluteFill
+        }
+      />
       <View pointerEvents="none" style={StyleSheet.absoluteFill}>
         <Svg width="100%" height="100%">
           <Defs>
@@ -130,7 +143,7 @@ export function Cover({
         </Svg>
       </View>
       {children}
-    </ImageBackground>
+    </View>
   );
 }
 export function PlaceCard({

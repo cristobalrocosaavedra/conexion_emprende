@@ -56,3 +56,6 @@ export * from "./routing-server";
 export * from "./travel-display";
 
 export * from "./travel-areas";
+
+export { visualScene, coverFrame } from "./visual-scenes";
+export type { VisualSceneId } from "./visual-scenes";
