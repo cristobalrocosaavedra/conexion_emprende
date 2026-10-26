@@ -101,6 +101,16 @@ export const es = {
   },
 
   brand: "Territorio Vivo",
+  brandIdentity: {
+    open: "Ver el símbolo de Territorio Vivo",
+    title: "Nuestro territorio, en un símbolo",
+    image:
+      "Latitud viva: norte ocre, centro terracota, sur verde y austral azul",
+    description:
+      "Latitud viva reúne desierto, cordillera, bosque y agua en una forma que recorre el país de norte a sur.",
+    symbolic:
+      "Es una interpretación gráfica del territorio; no es un mapa ni un límite regional.",
+  },
   subtitle: "Descubre lo que mueve cada territorio",
   demo: "MAQUETA · CATÁLOGO DE REFERENCIA",
   manual: "Región elegida para explorar",

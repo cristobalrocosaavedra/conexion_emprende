@@ -262,3 +262,8 @@ Tras rechazar el logo turístico literal, el titular expresa preferencia tentati
 El titular pide conectar Pulso con la multiforma de Chile y elige B, Latitud viva: piezas orgánicas coral/fucsia, composición norte-sur y extremo austral fragmentado. Se conserva la propuesta elegida y un refinamiento más compacto en docs/diseno/marca/latitud-viva. El producto sigue llamándose Territorio Vivo. Esta elección orienta la preparación de recursos gráficos; todavía no se integra a la APK ni se cambia el tema actual.
 
 Revisión visual solicitada: los detalles interiores del símbolo incorporan desierto, cordillera/valles, bosque/agua y fiordos/islas. Se recolorean por zona: ocres en el norte, terracota en el centro, verde en el sur y azules en austral. Ver docs/diseno/marca/latitud-viva/contenido; la revisión gráfica no cambia todavía el tema ni la APK.
+
+
+27. Marca integrada a la candidata — 26-10-2026
+
+El titular solicita incluir la identidad recoloreada en la nueva compilación y PR. Candidata 0.7.1: logo en cabecera, ampliación al tocarlo e ícono de instalación para Android/iOS generado desde la misma dirección B. Se mantienen identificadores, firma, preferencias y catálogo. Actualizar el mismo PR #4, ejecutar validación completa, mostrar capturas y compilar la APK solo en Actions antes de ofrecer descarga. Ver docs/diseno/marca/latitud-viva/INTEGRACION.md.

@@ -16,3 +16,5 @@ Originales intactos; procedencia, prompt del refinamiento y hashes en [generacio
 El titular solicita entender qué habrá dentro de las formas. Se propone una [lámina de contenido territorial](contenido/README.md) con motivos reconocibles; estos detalles nuevos siguen en revisión.
 
 **Revisión de color solicitada:** la [versión por zonas](contenido/simbolo-colores-zonas.png) sustituye coral/fucsia por ocres, terracota, verde y azules en esta exploración. Ver [detalle de la paleta](contenido/README.md#color-por-zona). La paleta coral/fucsia anterior se conserva como historial.
+
+**Integración solicitada posteriormente:** a partir de la candidata 0.7.1 se incorpora a cabecera e ícono de instalación; ver [INTEGRACION.md](INTEGRACION.md). Los avisos de entrega local anteriores describen el estado de aquellas rondas, no el estado de esta candidata.

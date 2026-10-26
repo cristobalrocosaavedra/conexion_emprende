@@ -54,6 +54,7 @@ import { RegionJourney } from "../src/RegionJourney";
 import type { Journey } from "../src/RegionJourney";
 import { PlaceMap } from "../src/PlaceMap";
 import { Action, Cover, Pill, PlaceCard } from "../src/ui";
+import { Brand, BrandDialog } from "../src/Branding";
 import {
   placeArt,
   regionArt,
@@ -82,6 +83,7 @@ export default function Home() {
   const [journey, setJourney] = useState<Journey | null>(null);
   const [pickerHeight, setPickerHeight] = useState(400);
   const journeyProgress = useRef(new Animated.Value(0)).current;
+  const [brandVisible, setBrandVisible] = useState(false);
   const [drawer, setDrawer] = useState(false),
     [tab, setTab] = useState<Tab>("home");
   const tabRef = useRef(tab);
@@ -543,9 +545,15 @@ export default function Home() {
   return (
     <SafeAreaView style={[styles.page, { backgroundColor: colors.background }]}>
       <StatusBar style={mode === "dark" ? "light" : "dark"} />
+      <BrandDialog
+        visible={brandVisible}
+        onClose={() => setBrandVisible(false)}
+        colors={colors}
+        reduceMotion={reduceMotion}
+      />
       <View style={styles.header}>
         <View style={{ flex: 1 }}>
-          <Text style={[styles.brand, text]}>{t.brand}</Text>
+          <Brand colors={colors} onPress={() => setBrandVisible(true)} />
           <Pressable
             accessibilityRole="button"
             accessibilityLabel={t.openRegions}
@@ -1485,7 +1493,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     gap: 12,
   },
-  brand: { fontSize: 25, fontWeight: "800", letterSpacing: -0.6 },
   selector: { minHeight: 38, justifyContent: "center" },
   selectorText: { fontSize: 13, fontWeight: "600" },
   themeButton: {

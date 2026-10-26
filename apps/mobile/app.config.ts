@@ -13,7 +13,8 @@ if (
 const config: ExpoConfig = {
   name: "Territorio Vivo",
   slug: "territorio-vivo",
-  version: "0.7.0",
+  version: "0.7.1",
+  icon: "./assets/marca/latitud-viva-icono.png",
   orientation: "portrait",
   scheme: "territoriovivo",
   userInterfaceStyle: "automatic",

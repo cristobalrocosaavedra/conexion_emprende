@@ -32,3 +32,5 @@
 - Rapa Nui pertenece a Valparaíso: distinguir conteo regional de comuna activa. Los destinos insulares pueden guardarse y recorrerse localmente, con traslado aéreo separado; nunca calcular ni dibujar una carretera al continente. Preservar revisiones de versiones anteriores del Excel cuando el catálogo crezca. Ver docs/VALPARAISO-Y-RAPA-NUI.md.
 
 - Colección visual: 16 portadas regionales y variantes de zonas en apps/mobile/assets/territorio/coleccion. Elegir por territorio y rotular como ilustración; no presentarlas como fotos del negocio ni evidencia de validación. Conservar el logo completo de Matichoc. Registrar procedencia y peso de nuevos assets en docs/diseno/coleccion-0.7/manifest.json; galería y capturas separadas de la APK.
+
+- Marca vigente para integración: Latitud viva, dirección B elegida. Cinco piezas con norte ocre, centro terracota, sur verde y austral turquesa/azul, motivos interiores marfil. Recursos de app en apps/mobile/assets/marca; fuente de ícono Expo Android/iOS y cabecera con ampliación. No confundirla con el logo de Matichoc. Ver docs/diseno/marca/latitud-viva/INTEGRACION.md.

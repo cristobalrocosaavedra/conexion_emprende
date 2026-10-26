@@ -434,7 +434,7 @@ test("ruta pública lista sin configurar VPS: trazado por calles, mapa estable y
   await page
     .getByText("Tu ruta por calles", { exact: true })
     .scrollIntoViewIfNeeded();
-  await page.screenshot({ path: "previews/pantalla-ruta-0.7.0.png" });
+  await page.screenshot({ path: "previews/pantalla-ruta-0.7.1.png" });
   await expect(
     page.getByText("Conexión esquemática · no es una ruta por calles", {
       exact: true,
@@ -493,7 +493,7 @@ test("ruta pública lista sin configurar VPS: trazado por calles, mapa estable y
   await map
     .getByRole("button", { name: "Ver ruta completa", exact: true })
     .click();
-  await page.screenshot({ path: "previews/pantalla-mapa-0.7.0.png" });
+  await page.screenshot({ path: "previews/pantalla-mapa-0.7.1.png" });
   await expect(
     page.getByRole("button", { name: "Cerrar", exact: true }).last(),
   ).toBeVisible();
@@ -594,7 +594,7 @@ test("encuentra Matichoc en Valparaíso al buscar desde Coquimbo", async ({
   await page
     .getByRole("button", { name: "Chocolatería Matichoc", exact: true })
     .scrollIntoViewIfNeeded();
-  await page.screenshot({ path: "previews/pantalla-busqueda-0.7.0.png" });
+  await page.screenshot({ path: "previews/pantalla-busqueda-0.7.1.png" });
   await page
     .getByRole("button", { name: "Chocolatería Matichoc", exact: true })
     .click();
@@ -632,7 +632,7 @@ test("el maestro permite revisar y guardar referencias nuevas sin inventar coord
     page.getByRole("button", { name: "Abrir selector de regiones" }),
   ).toContainText("Metropolitana de Santiago");
   await expect(page.getByTestId("regional-window")).toBeVisible();
-  await page.screenshot({ path: "previews/pantalla-inicio-0.7.0.png" });
+  await page.screenshot({ path: "previews/pantalla-inicio-0.7.1.png" });
   await page.getByRole("tab", { name: /Explorar/ }).click();
   await page
     .getByRole("textbox", { name: "Buscar lugares" })
@@ -646,7 +646,7 @@ test("el maestro permite revisar y guardar referencias nuevas sin inventar coord
   await page
     .getByRole("button", { name: "Parque Violeta Parra", exact: true })
     .scrollIntoViewIfNeeded();
-  await page.screenshot({ path: "previews/pantalla-catalogo-0.7.0.png" });
+  await page.screenshot({ path: "previews/pantalla-catalogo-0.7.1.png" });
   await page
     .getByRole("button", { name: "Parque Violeta Parra", exact: true })
     .click();
@@ -677,7 +677,7 @@ test("el maestro permite revisar y guardar referencias nuevas sin inventar coord
         )?.y ?? 1000,
     )
     .toBeLessThan(70);
-  await page.screenshot({ path: "previews/pantalla-ficha-0.7.0.png" });
+  await page.screenshot({ path: "previews/pantalla-ficha-0.7.1.png" });
   await page
     .getByRole("button", { name: "Guardar en mi viaje", exact: true })
     .click();
@@ -740,7 +740,7 @@ test("la portada diferencia Valparaíso completo de las once referencias de La L
     page.getByText("90 referencias en la región", { exact: true }),
   ).toBeVisible();
   await expect(page.getByText("11 en La Ligua", { exact: true })).toBeVisible();
-  await page.screenshot({ path: "previews/pantalla-valparaiso-0.7.0.png" });
+  await page.screenshot({ path: "previews/pantalla-valparaiso-0.7.1.png" });
   await page
     .getByRole("button", { name: "Ver toda la región", exact: true })
     .click();
@@ -775,7 +775,7 @@ test("Rapa Nui tiene cuatro referencias y mapa local con aviso de llegada aérea
   await expect(
     page.frameLocator("iframe").first().locator("path.leaflet-interactive"),
   ).toHaveCount(4);
-  await page.screenshot({ path: "previews/pantalla-rapa-0.7.0.png" });
+  await page.screenshot({ path: "previews/pantalla-rapa-0.7.1.png" });
   await page.getByRole("tab", { name: /Inicio/ }).click();
   await expect(
     page.getByText("4 en Isla de Pascua", { exact: true }),
@@ -831,7 +831,7 @@ test("los destinos insulares permanecen guardados aparte y no consultan rutas de
     .getByText("3 lugares guardados", { exact: true })
     .scrollIntoViewIfNeeded();
   await page.screenshot({
-    path: "previews/pantalla-viajes-separados-0.7.0.png",
+    path: "previews/pantalla-viajes-separados-0.7.1.png",
   });
   await page.getByRole("button", { name: "Iniciar ruta", exact: true }).click();
   await expect(
@@ -850,7 +850,7 @@ test("los destinos insulares permanecen guardados aparte y no consultan rutas de
     "osm-way-222144438",
     "osm-way-1459388783",
   ]);
-  await page.screenshot({ path: "previews/pantalla-aviso-traslado-0.7.0.png" });
+  await page.screenshot({ path: "previews/pantalla-aviso-traslado-0.7.1.png" });
 });
 
 test("la portada cambia de paisaje por zona y conserva imágenes legibles en el celular", async ({
@@ -895,7 +895,95 @@ test("la portada cambia de paisaje por zona y conserva imágenes legibles en el 
     const window = await page.getByTestId("territorial-cover").boundingBox();
     expect(frame!.width).toBeGreaterThanOrEqual(window!.width);
     expect(frame!.height).toBeGreaterThanOrEqual(window!.height);
-    await page.screenshot({ path: `previews/pantalla-${capture}-0.7.0.png` });
+    await page.screenshot({ path: `previews/pantalla-${capture}-0.7.1.png` });
   }
   expect(sources.size).toBe(3);
+});
+
+test("el logo territorial se ve en claro y oscuro y se puede ampliar sin perder el viaje", async ({
+  page,
+}) => {
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await page.setViewportSize({ width: 360, height: 640 });
+  for (const theme of ["dark", "light"]) {
+    await page.evaluate(
+      (theme) =>
+        localStorage.setItem(
+          "territorio-vivo.preferences.v2",
+          JSON.stringify({
+            region: "valparaiso",
+            commune: "la-ligua",
+            theme,
+            stopIds: ["chocolateria-matichoc"],
+            roundTrip: false,
+          }),
+        ),
+      theme,
+    );
+    await page.reload();
+    const brand = page.getByRole("button", {
+      name: "Ver el símbolo de Territorio Vivo",
+      exact: true,
+    });
+    await expect(brand).toBeInViewport({ ratio: 1 });
+    await expect
+      .poll(() =>
+        page
+          .getByTestId("brand-symbol")
+          .locator("img")
+          .evaluate(
+            (image: HTMLImageElement) =>
+              image.complete && image.naturalWidth > 0,
+          ),
+      )
+      .toBe(true);
+    if (theme === "dark")
+      await page.screenshot({
+        path: "previews/pantalla-marca-inicio-0.7.1.png",
+      });
+    await brand.click();
+    await expect(
+      page.getByText("Nuestro territorio, en un símbolo", { exact: true }),
+    ).toBeVisible();
+    const symbol = page.getByRole("img", {
+      name: "Latitud viva: norte ocre, centro terracota, sur verde y austral azul",
+      exact: true,
+    });
+    await expect(symbol).toBeVisible();
+    await expect(symbol).toBeInViewport({ ratio: 0.95 });
+    await expect
+      .poll(() =>
+        symbol.evaluate(
+          (image: HTMLImageElement) => image.complete && image.naturalWidth > 0,
+        ),
+      )
+      .toBe(true);
+    await expect(
+      page.getByRole("button", { name: "Cerrar", exact: true }),
+    ).toBeInViewport({ ratio: 1 });
+    // La imagen accesible y el fondo CSS de React Native Web comparten recurso,
+    // pero el repintado del fondo puede ocurrir después de complete=true.
+    await symbol.evaluate(async (image: HTMLImageElement) => {
+      await image.decode();
+      await new Promise<void>((resolve) =>
+        requestAnimationFrame(() => requestAnimationFrame(() => resolve())),
+      );
+    });
+    await page.screenshot({
+      path: `previews/pantalla-marca-${theme}-0.7.1.png`,
+      animations: "disabled",
+    });
+    await page.getByRole("button", { name: "Cerrar", exact: true }).click();
+    await expect(brand).toBeVisible();
+    expect(
+      await page.evaluate(
+        () =>
+          JSON.parse(localStorage.getItem("territorio-vivo.preferences.v2")!)
+            .stopIds,
+      ),
+    ).toEqual(["chocolateria-matichoc"]);
+    await expect(
+      page.getByRole("button", { name: "Abrir selector de regiones" }),
+    ).toContainText("Valparaíso");
+  }
 });

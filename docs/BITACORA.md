@@ -253,3 +253,10 @@ GitHub rechazó la primera subida con GH007 por el correo privado de los commits
 - El titular pide recolorear por zona. Se mantiene la composición explicada y sus motivos; norte ocre, centro terracota, sur verde y austral turquesa/azul, con detalles marfil.
 - Edición con OpenAI image_gen, original intacto y PNG de revisión guardado en docs/diseno/marca/latitud-viva/contenido/simbolo-colores-zonas.png. Paleta y procedencia documentadas.
 - Entrega local sin push ni nuevo PR. No se cambian código, tema de la app, APK, catálogo o Matichoc. Revisión de formato; sin pruebas de app por ser un cambio de imagen y documentación.
+
+## 26-10-2026 — Integración de Latitud viva, candidata 0.7.1
+
+- El titular solicita que la identidad recoloreada aparezca en la nueva compilación y PR. Se integra el símbolo en la cabecera, con apertura de la vista ampliada que explica sus zonas, y como fuente nativa de íconos Expo Android/iOS.
+- Ícono cuadrado opaco con cinco piezas, sin rótulos. Fuente PNG de 1254 × 1254 generada con OpenAI image_gen; WebP de cabecera/explicación para cuidar el peso. Originales, prompts e historial gráfico conservados. La versión anterior 0.7.0 cerró en verde en Actions 40377761327, compilación 100039, APK en artefacto 12679545513.
+- Permanece la firma y los identificadores; preferencias/paradas sin migración porque el esquema no cambia. Matichoc conserva su logo. Sin cambios de catálogo, Excel, permisos o ruteo. Sin producción ni consultas a otros repositorios.
+- Continúa PR #4, borrador a develop. Se suben también las exploraciones gráficas guardadas antes solo localmente. Validación completa en verde: 71 pruebas de lógica, 18 de catálogo/Excel y 23 de interfaz (112); tipos, lint, exportaciones Android/iOS/web, Next.js y formato. Se corrige la altura de la imagen ampliada en web y se espera carga/repintado antes de capturar. Prueba enfocada del logo también en verde; capturas guardadas en docs/diseno/0.7.1 y mostradas antes de ofrecer descarga. APK nativa/firma pendientes de Actions en este registro.
