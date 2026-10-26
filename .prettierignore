@@ -16,3 +16,6 @@ playwright-report
 test-results
 
 previews
+
+# Paquete original, respaldo exacto y reportes reproducibles del importador.
+content/staging/catalogo-maestro

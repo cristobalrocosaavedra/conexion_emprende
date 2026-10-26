@@ -52,3 +52,8 @@ playwright-report/
 test-results/
 
 previews/
+
+# Estados locales de simulación; insumos y reporte sí quedan versionados.
+content/staging/catalogo-maestro/simulacion/estado-propuesto.json
+content/staging/catalogo-maestro/trabajo/
+__pycache__/

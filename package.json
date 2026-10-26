@@ -11,12 +11,14 @@
     "dev:web": "pnpm --filter @territorio-vivo/web dev",
     "typecheck": "pnpm -r typecheck",
     "lint": "eslint . --max-warnings 0",
-    "test": "vitest run",
+    "test": "vitest run && pnpm test:catalogo",
     "build": "pnpm --filter @territorio-vivo/mobile build && pnpm --filter @territorio-vivo/web build",
     "format:check": "prettier --check .",
     "format": "prettier --write .",
     "validate": "pnpm typecheck && pnpm lint && pnpm test && pnpm build && pnpm test:mobile && pnpm format:check",
-    "test:mobile": "playwright test"
+    "test:mobile": "playwright test",
+    "test:catalogo": "python3 -m unittest discover -s tests/catalogo -v",
+    "catalogo:simular": "python3 scripts/catalogo/integrar.py simulate"
   },
   "devDependencies": {
     "@eslint/js": "10.0.1",

@@ -1,0 +1,13 @@
+{
+  "filas": 737,
+  "tipo": {
+    "comuna": 346,
+    "atractivo": 368,
+    "localidad": 23
+  },
+  "regiones": 16,
+  "provincias": 56,
+  "comunas": 346,
+  "comunas_unicas": 346,
+  "atractivos_con_coordenadas": 63
+}

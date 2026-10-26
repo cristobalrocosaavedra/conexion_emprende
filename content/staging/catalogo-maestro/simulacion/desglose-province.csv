@@ -1,0 +1,57 @@
+﻿region,province,rows,coordinates,existingPlaces,existingLocalities,existingRoutes,pendingCUT,coordinateConflicts,new-draft,update-assertions,review-duplicate,conflict,quarantine,unchanged,unchanged-proposal,proposal-updated
+Antofagasta,Antofagasta,19,3,2,0,0,4,0,19,0,0,0,0,0,0,0
+Antofagasta,El Loa,7,1,0,0,0,3,0,7,0,0,0,0,0,0,0
+Antofagasta,Tocopilla,2,0,0,0,0,2,0,2,0,0,0,0,0,0,0
+Arica y Parinacota,Arica,14,2,2,0,0,2,0,14,0,0,0,0,0,0,0
+Arica y Parinacota,Parinacota,6,2,0,0,0,2,0,6,0,0,0,0,0,0,0
+Atacama,Chañaral,3,1,0,0,0,2,0,3,0,0,0,0,0,0,0
+Atacama,Copiapó,14,2,1,0,0,3,0,14,0,0,0,0,0,0,0
+Atacama,Huasco,9,1,0,0,0,4,0,9,0,0,0,0,0,0,0
+Aysén,Aysén,10,2,0,0,0,3,0,10,0,0,0,0,0,0,0
+Aysén,Capitán Prat,4,0,0,0,0,3,0,4,0,0,0,0,0,0,0
+Aysén,Coyhaique,5,0,1,0,0,2,0,5,0,0,0,0,0,0,0
+Aysén,General Carrera,7,2,0,0,0,2,0,7,0,0,0,0,0,0,0
+Biobío,Arauco,12,0,0,0,0,7,0,12,0,0,0,0,0,0,0
+Biobío,Biobío,17,2,0,0,0,14,0,17,0,0,0,0,0,0,0
+Biobío,Concepción,31,2,2,0,0,12,0,31,0,0,0,0,0,0,0
+Coquimbo,Choapa,9,0,1,0,0,4,0,9,0,0,0,0,0,0,0
+Coquimbo,Elqui,26,1,2,0,0,6,0,26,0,0,0,0,0,0,0
+Coquimbo,Limarí,7,2,0,0,0,5,0,7,0,0,0,0,0,0,0
+La Araucanía,Cautín,37,3,1,0,0,21,0,37,0,0,0,0,0,0,0
+La Araucanía,Malleco,13,1,0,0,0,11,0,13,0,0,0,0,0,0,0
+Los Lagos,Chiloé,20,1,0,0,0,10,0,20,0,0,0,0,0,0,0
+Los Lagos,Llanquihue,24,2,1,0,0,9,0,24,0,0,0,0,0,0,0
+Los Lagos,Osorno,8,0,0,0,0,7,0,8,0,0,0,0,0,0,0
+Los Lagos,Palena,5,1,0,0,0,4,0,5,0,0,0,0,0,0,0
+Los Ríos,Del Ranco,8,0,0,0,0,4,0,8,0,0,0,0,0,0,0
+Los Ríos,Valdivia,26,4,2,0,0,8,0,26,0,0,0,0,0,0,0
+Magallanes,Antártica Chilena,3,0,0,0,0,2,0,3,0,0,0,0,0,0,0
+Magallanes,Magallanes,11,2,2,0,0,4,0,11,0,0,0,0,0,0,0
+Magallanes,Tierra del Fuego,4,0,0,0,0,3,0,4,0,0,0,0,0,0,0
+Magallanes,Última Esperanza,8,2,0,0,0,2,0,8,0,0,0,0,0,0,0
+Maule,Cauquenes,8,1,0,0,0,3,0,8,0,0,0,0,0,0,0
+Maule,Curicó,18,2,0,0,0,9,0,18,0,0,0,0,0,0,0
+Maule,Linares,8,0,0,0,0,8,0,8,0,0,0,0,0,0,0
+Maule,Talca,19,1,2,0,0,10,0,19,0,0,0,0,0,0,0
+Metropolitana,Chacabuco,4,1,0,0,0,3,0,4,0,0,0,0,0,0,0
+Metropolitana,Cordillera,7,2,0,0,0,3,0,7,0,0,0,0,0,0,0
+Metropolitana,Maipo,4,0,0,0,0,4,0,4,0,0,0,0,0,0,0
+Metropolitana,Melipilla,5,0,0,0,0,5,0,5,0,0,0,0,0,0,0
+Metropolitana,Santiago,66,1,2,0,0,32,0,66,0,0,0,0,0,0,0
+Metropolitana,Talagante,5,0,0,0,0,5,0,5,0,0,0,0,0,0,0
+O’Higgins,Cachapoal,23,2,2,0,0,17,0,23,0,0,0,0,0,0,0
+O’Higgins,Cardenal Caro,19,2,0,0,0,6,0,19,0,0,0,0,0,0,0
+O’Higgins,Colchagua,12,0,0,0,0,10,0,12,0,0,0,0,0,0,0
+Tarapacá,Del Tamarugal,11,3,0,0,0,5,0,11,0,0,0,0,0,0,0
+Tarapacá,Iquique,12,1,2,0,0,2,0,12,0,0,0,0,0,0,0
+Valparaíso,Isla de Pascua,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Valparaíso,Los Andes,4,0,0,0,0,4,0,4,0,0,0,0,0,0,0
+Valparaíso,Marga Marga,6,1,0,0,0,4,0,6,0,0,0,0,0,0,0
+Valparaíso,Petorca,43,0,36,63,3,5,0,21,0,22,0,0,0,0,0
+Valparaíso,Quillota,6,1,0,0,0,5,0,6,0,0,0,0,0,0,0
+Valparaíso,San Antonio,14,0,0,0,0,6,0,13,0,1,0,0,0,0,0
+Valparaíso,San Felipe de Aconcagua,6,0,0,0,0,6,0,6,0,0,0,0,0,0,0
+Valparaíso,Valparaíso,32,2,2,0,0,7,0,31,0,1,0,0,0,0,0
+Ñuble,Diguillín,17,2,1,0,0,9,0,17,0,0,0,0,0,0,0
+Ñuble,Itata,12,1,0,0,0,7,0,12,0,0,0,0,0,0,0
+Ñuble,Punilla,6,1,0,0,0,5,0,6,0,0,0,0,0,0,0

@@ -7,7 +7,8 @@ fichas y selección de paradas. Los productos de origen permanecen independiente
 
 ## Desarrollo
 
-Node 24.19.0 y pnpm 10.33.0. Desde la raíz:
+Node 24.19.0, pnpm 10.33.0 y Python 3.10 o posterior para las pruebas del
+importador local. Desde la raíz:
 
 ```bash
 corepack pnpm install --frozen-lockfile
@@ -44,6 +45,7 @@ local. El workflow prepara Android, compila y verifica la APK en GitHub.
 - [Plan e historial](docs/PLAN.md).
 - [Mockups base](docs/diseno/PROPUESTAS.md).
 - [Qué incluye la maqueta 0.3](docs/MAQUETA-0.3.md).
+- [Catálogo maestro: simulación y modelo candidato](docs/catalogo-maestro/README.md).
 - [Referencias nacionales y fuentes](docs/CATALOGO-NACIONAL.md).
 - [Procedencia y licencia del extracto OSM](content/sources/OSM-CHILE.md).
 - [APK desde GitHub](docs/ANDROID-CI.md).

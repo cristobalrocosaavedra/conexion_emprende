@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-26",
+  "CUT": {
+    "status": "pending",
+    "validatedCommunes": 0,
+    "discovery": "datos.gob.cl respondió HTTP 200; recursos CUT no descargados"
+  },
+  "SERNATUR_MMA": {
+    "status": "not-downloaded",
+    "recordsIncorporated": 0,
+    "url": "https://lineasdebasepublicas.mma.gob.cl/datos_abiertos/dataset/7aa4b072-c938-4c45-a31e-9d57c41c2713/resource/3bd18aad-1add-483c-af7f-d90e49f1e6d2/download/atractivos-turisticos_geojson.zip",
+    "error": "curl (56): CONNECT tunnel failed, response 403",
+    "licenseVerified": false,
+    "crsVerified": false
+  }
+}
