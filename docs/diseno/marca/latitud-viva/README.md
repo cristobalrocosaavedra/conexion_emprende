@@ -14,3 +14,5 @@ La lámina incluye una muestra ilustrativa del ícono; no es una captura del tel
 Originales intactos; procedencia, prompt del refinamiento y hashes en [generacion.json](generacion.json). Entrega guardada y versionada localmente, sin push ni nuevo PR. La app del PR #4 sigue con su compilación y branding anteriores a estas exploraciones.
 
 El titular solicita entender qué habrá dentro de las formas. Se propone una [lámina de contenido territorial](contenido/README.md) con motivos reconocibles; estos detalles nuevos siguen en revisión.
+
+**Revisión de color solicitada:** la [versión por zonas](contenido/simbolo-colores-zonas.png) sustituye coral/fucsia por ocres, terracota, verde y azules en esta exploración. Ver [detalle de la paleta](contenido/README.md#color-por-zona). La paleta coral/fucsia anterior se conserva como historial.

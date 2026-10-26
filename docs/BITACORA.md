@@ -247,3 +247,9 @@ GitHub rechazó la primera subida con GH007 por el correo privado de los commits
 - El titular pregunta qué contendrán las formas y señala que solo ve colores. Se aclara el carácter abstracto anterior y se propone relieve del desierto, cordillera/valles, bosque/agua y fiordos/islas dentro de las piezas.
 - Lámina ampliada con rótulos explicativos generada con OpenAI image_gen, guardada en docs/diseno/marca/latitud-viva/contenido. Propuesta nueva de detalle, sin atribuir aprobación al titular; rótulos fuera de la marca y simplificación pendiente para íconos pequeños.
 - Solo imágenes/documentación locales, sin push ni PR nuevo, sin modificar aplicación o APK. No corresponde ejecutar pruebas de app para esta exploración gráfica.
+
+## 26-10-2026 — Color territorial para Latitud viva
+
+- El titular pide recolorear por zona. Se mantiene la composición explicada y sus motivos; norte ocre, centro terracota, sur verde y austral turquesa/azul, con detalles marfil.
+- Edición con OpenAI image_gen, original intacto y PNG de revisión guardado en docs/diseno/marca/latitud-viva/contenido/simbolo-colores-zonas.png. Paleta y procedencia documentadas.
+- Entrega local sin push ni nuevo PR. No se cambian código, tema de la app, APK, catálogo o Matichoc. Revisión de formato; sin pruebas de app por ser un cambio de imagen y documentación.
