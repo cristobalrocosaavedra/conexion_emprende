@@ -216,3 +216,9 @@ GitHub rechazó la primera subida con GH007 por el correo privado de los commits
 - Galería local claro/oscuro, ZIP de revisión y manifiesto de procedencia/hashes en docs/diseno/coleccion-0.7. 24 WebP, 4.596.936 bytes totales, sin cambiar resolución. Originales intactos en el entorno de generación. Colección separada del instalador.
 - Continúa PR #4, borrador a develop. No se modifican catálogo, Excel, estados de validación, preferencias, fuentes de datos ni otros repositorios. No se fusiona ni publica producción. Se mantiene identidad y firma para instalar encima de la app base.
 - Validación local completa en verde: 71 pruebas de lógica, 18 de catálogo/Excel y 22 de interfaz (111 en total), tipos, lint, exportaciones Android/iOS/web, Next.js y formato. Galería comprobada con sus 24 imágenes cargadas y cambio de tema. Capturas funcionales guardadas en docs/diseno/0.7.0 y mostradas antes de ofrecer descarga. Resultado nativo pendiente de GitHub Actions en este registro; no se anuncia una APK nueva como disponible antes de confirmar su artefacto.
+
+## 26-10-2026 — Propuestas de logo para Territorio Vivo
+
+- Petición «Logo?»: se preparan dos interpretaciones del concepto ventana, cerros, camino y sol, con los colores de la app. Una propuesta transparente para fondo claro y una presentación sobre fondo oscuro, generadas con OpenAI image_gen.
+- Archivos de revisión guardados en docs/diseno/marca, con originales intactos y alcance documentado. Los intentos con residuos de transparencia se descartan. Bocetos PNG, sin afirmar que sean vectoriales o una marca definitiva.
+- Entrega local para revisión visual, sin push ni nuevo PR. No se integran a la app ni se cambia la APK del PR #4. No se modifica Matichoc, catálogo, producción ni otros repositorios. No se requieren pruebas de aplicación porque solo se guardan imágenes y documentación.
