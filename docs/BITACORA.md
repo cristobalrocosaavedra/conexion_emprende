@@ -228,3 +228,9 @@ GitHub rechazó la primera subida con GH007 por el correo privado de los commits
 - El titular rechaza la primera propuesta por genérica y pide una marca más creativa y disruptiva. Se marca la dirección anterior como descartada y se conservan sus archivos como historial.
 - Tres nuevas direcciones con OpenAI image_gen: Pulso (orgánico, coral/fucsia), Cruce (modular, negro/lima) y Vértice (tipografía cinética, ultramar/amarillo). Bocetos guardados en docs/diseno/marca/v02 para comparación; pendientes de elección y refinamiento.
 - Solo imágenes y documentación locales, sin push ni PR nuevo, sin modificar APK, temas, catálogo, Matichoc ni producción. No se ejecutan pruebas de app porque no hay cambios funcionales.
+
+## 26-10-2026 — Pulso como dirección provisional, v03
+
+- El titular considera que Pulso tiene más onda, manteniendo dudas. Se registra preferencia provisional, sin atribuir aprobación definitiva de marca, nombre, paleta ni implementación.
+- Dos refinamientos con OpenAI image_gen: A conserva cuatro módulos orgánicos más compactos; B explora dos bandas y una V sugerida. Láminas con muestras ilustrativas de ícono guardadas en docs/diseno/marca/v03, procedencia y prompts registrados.
+- Entrega local sin push ni PR nuevo; solo imágenes y documentación. No se modifica la APK, su tema ni el catálogo. Las muestras de ícono no sustituyen pruebas físicas ni recursos de Android/iOS. No corresponde ejecutar pruebas de aplicación para estos bocetos.

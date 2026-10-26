@@ -250,3 +250,8 @@ La portada debe distinguir región completa y comuna activa (Valparaíso tenía 
 24. Colección visual territorial — 26-10-2026
 
 El usuario solicita imágenes más representativas para cada región y zona. Se prepara una primera colección de 16 portadas regionales y ocho variantes de zonas, con estilo editorial coherente, optimizadas para móvil y guardadas en una galería revisable. Inicio y fichas eligen la imagen por región/comuna y distinguen ilustraciones de fotografías. Matichoc conserva su logo autorizado y completo. Las imágenes no cambian el catálogo ni su validación humana. Se conserva la APK como única descarga de instalación y la colección visual por separado. Ver docs/diseno/coleccion-0.7/README.md.
+
+
+25. Dirección de marca provisional — 26-10-2026
+
+Tras rechazar el logo turístico literal, el titular expresa preferencia tentativa por la exploración Pulso, de formas orgánicas y colores coral/fucsia sobre berenjena. Continuar refinando su símbolo, tipografía y legibilidad; no interpretar esta preferencia como logo final ni cambio de nombre. El producto sigue siendo Territorio Vivo. Las propuestas se guardan en docs/diseno/marca/v03 sin aplicarlas todavía a la app.

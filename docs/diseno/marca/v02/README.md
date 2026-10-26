@@ -1,5 +1,7 @@
 # Logos v02 — exploración más disruptiva
 
+**Actualización:** Pulso recibe una preferencia tentativa del titular. Continúa en [Pulso v03](../v03/README.md); no hay logo definitivo aprobado.
+
 El 26-10-2026 el titular rechaza las propuestas anteriores: «muy feo», pide más creatividad y una dirección más disruptiva. Las propuestas de ventana, sol y camino quedan descartadas como dirección de marca.
 
 Tres bocetos generados con OpenAI image_gen para comparar direcciones:
