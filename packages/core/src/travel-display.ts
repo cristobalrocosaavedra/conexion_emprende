@@ -43,7 +43,9 @@ export function nationalSuggestions(query: string, region: RegionId): Place[] {
         p.region !== region &&
         tokens.every(
           (word) =>
-            normalized(p.name + " " + p.summary).includes(word) ||
+            normalized(
+              p.name + " " + p.summary + " " + (p.aliases ?? []).join(" "),
+            ).includes(word) ||
             (word.length >= 5 &&
               normalized(p.name)
                 .split(/\s+/)

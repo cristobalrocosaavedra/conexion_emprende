@@ -12,6 +12,7 @@ export interface Place {
   locality?: string | null;
   category: Category;
   name: string;
+  aliases?: string[];
   summary: string;
   description: string;
   latitude: number | null;
@@ -103,7 +104,10 @@ export function searchTerritories(query: string): CatalogTerritory[] {
     : catalogTerritories.filter(
         (t) =>
           (t.level === "commune" || t.level === "locality") &&
-          normalize(t.name).includes(q),
+          normalize(
+            t.name +
+              (t.commune === "isla-de-pascua" ? " Rapa Nui Hanga Roa" : ""),
+          ).includes(q),
       );
 }
 export function filterPlaces(
@@ -123,7 +127,10 @@ export function filterPlaces(
       p.region === region &&
       (commune === "all" || p.commune === commune) &&
       (category === "all" || p.category === category) &&
-      (!q || normalize(p.name + " " + p.summary).includes(q)),
+      (!q ||
+        normalize(
+          p.name + " " + p.summary + " " + (p.aliases ?? []).join(" "),
+        ).includes(q)),
   );
 }
 export function regionBounds(id: RegionId): number[][] {

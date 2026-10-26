@@ -26,7 +26,7 @@ class IntegracionCatalogo(unittest.TestCase):
         cls.after, cls.audit = m.simulate(cls.rows, cls.before)
 
     def test_conserva_todo_el_catalogo_y_relaciones(self):
-        self.assertEqual(len(self.before["entities"]), 130)
+        self.assertEqual(len(self.before["entities"]), 134)
         for entity in self.before["entities"]:
             self.assertIn(entity, self.after["entities"])
         self.assertEqual(self.before["originals"], self.after["originals"])
@@ -177,7 +177,7 @@ class IntegracionCatalogo(unittest.TestCase):
         report = m.summarize(self.rows, self.before, self.after, self.audit)
         self.assertEqual(report["inputRows"], 737)
         self.assertEqual(report["masterValidCoordinates"], 63)
-        self.assertEqual(report["unchangedExistingEntities"], 130)
+        self.assertEqual(report["unchangedExistingEntities"], 134)
         self.assertEqual(report["actions"]["new-draft"], 713)
         self.assertEqual(report["actions"]["review-duplicate"], 24)
         self.assertEqual(
@@ -186,7 +186,7 @@ class IntegracionCatalogo(unittest.TestCase):
         )
         self.assertEqual(report["cutValidatedCommunes"], 0)
         self.assertEqual(
-            len(report["communesWithoutAttractionsInAvailableInputs"]), 217
+            len(report["communesWithoutAttractionsInAvailableInputs"]), 216
         )
         self.assertTrue(
             all(

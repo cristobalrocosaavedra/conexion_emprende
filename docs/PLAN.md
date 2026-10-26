@@ -240,3 +240,8 @@ Buscar desde una región también debe sugerir lugares de otras regiones con su 
 22. Catálogo maestro y revisión humana — 26-10-2026
 
 Tras revisar la simulación, el titular autoriza incorporar todo el maestro a la APK de pruebas, aun pendiente, y revisar el conjunto en un Excel de ida/vuelta. Se conserva el catálogo previo y se agregan referencias sin inventar coordenadas. Comunas/localidades se integran a la jerarquía y búsqueda, no se presentan como negocios. Las coincidencias exactas asocian evidencia sin reemplazar datos; los parecidos permanecen separados y señalados. Checklist completo con IDs y lector de devolución que prepara propuestas, sin publicación automática. No se autoriza producción ni promoción indiscriminada a verificado.
+
+
+23. Conteos regionales y Rapa Nui — 26-10-2026
+
+La portada debe distinguir región completa y comuna activa (Valparaíso tenía 86 referencias, La Ligua 11). Se conserva prioridad local y se añade acceso a toda la región. El usuario pide incluir Rapa Nui como parte de Valparaíso y sugerir llegada en avión sin calcular carretera desde el continente. Se agregan cuatro referencias OSM pendientes, con datos/licencia/procedencia, mapa y recorrido local separados. Los destinos siguen guardados al cambiar de ámbito. Se protege el cálculo vial y el esquema contra conexiones sobre el océano. El Excel anterior debe seguir siendo utilizable al crecer el catálogo.

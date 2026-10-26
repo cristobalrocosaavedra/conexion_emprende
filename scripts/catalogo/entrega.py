@@ -299,7 +299,7 @@ def write_workbook(path, app, entities):
     instructions = [
         ["Territorio Vivo — checklist de validación"],
         [
-            "1. Abre Checklist y filtra por tu región o comuna. Hay 917 entidades, no 917 atractivos."
+            f"1. Abre Checklist y filtra por tu región o comuna. Hay {len(entities)} entidades, no son todas atractivos."
         ],
         [
             "2. Conserva las columnas grises (identidad/datos actuales). Completa las columnas verdes."
@@ -418,6 +418,24 @@ def write_workbook(path, app, entities):
     manifest = wb.create_sheet("_control")
     manifest.append(["esquema", "1"])
     manifest.append(["appSha256", digest(json_bytes(app))])
+    row_hashes = {
+        row[0]: digest(
+            json_bytes([v if v is not None else "" for v in row[: len(FIXED)]])
+        )
+        for row in checklist_rows(app, entities)
+    }
+    schema_hash = digest(json_bytes(row_hashes))
+    manifest.append(["schemaSha256", schema_hash])
+    schema_file = AREA / "checklists" / (schema_hash + ".json")
+    if not schema_file.exists():
+        atomic_json(
+            schema_file,
+            {
+                "schemaSha256": schema_hash,
+                "appSha256": digest(json_bytes(app)),
+                "rows": row_hashes,
+            },
+        )
     for row in checklist_rows(app, entities):
         manifest.append([row[0], digest(json_bytes(row[: len(FIXED)]))])
     manifest.sheet_state = "hidden"
@@ -447,7 +465,42 @@ def read_return(path, app, entities):
         data = list(wb["Checklist"].iter_rows(values_only=True))
         if list(data[0]) != HEADERS:
             raise ValueError("No cambies los encabezados del checklist.")
-        expected = {r[0]: r[: len(FIXED)] for r in checklist_rows(app, entities)}
+        current_hashes = {
+            row[0]: digest(
+                json_bytes([v if v is not None else "" for v in row[: len(FIXED)]])
+            )
+            for row in checklist_rows(app, entities)
+        }
+        if "_control" not in wb.sheetnames:
+            raise ValueError("Falta la identificación de versión del checklist.")
+        control = dict(wb["_control"].iter_rows(values_only=True))
+        schema_key = control.get("schemaSha256")
+        if schema_key == digest(json_bytes(current_hashes)):
+            expected = current_hashes
+        else:
+            known = [
+                json.loads(p.read_text()) for p in (AREA / "checklists").glob("*.json")
+            ]
+            matches = [
+                item
+                for item in known
+                if (schema_key and item.get("schemaSha256") == schema_key)
+                or (
+                    not schema_key and item.get("appSha256") == control.get("appSha256")
+                )
+            ]
+            if len(matches) != 1:
+                raise ValueError(
+                    "Versión del checklist desconocida; conserva el archivo original."
+                )
+            expected = matches[0]["rows"]
+        control_rows = {
+            k: v
+            for k, v in control.items()
+            if k not in ("esquema", "schemaSha256", "appSha256")
+        }
+        if control_rows != expected:
+            raise ValueError("La identificación interna del checklist fue alterada.")
         ids = set()
         result = []
         errors = []
@@ -460,13 +513,25 @@ def read_return(path, app, entities):
                 raise ValueError("ID desconocido o repetido: " + str(id_))
             ids.add(id_)
             # Excel convierte celdas vacías en None; comparar normalizadas, por ID y no por orden.
-            if [v if v is not None else "" for v in values[: len(FIXED)]] != [
-                v if v is not None else "" for v in expected[id_]
-            ]:
+            if (
+                digest(
+                    json_bytes(
+                        [v if v is not None else "" for v in values[: len(FIXED)]]
+                    )
+                )
+                != expected[id_]
+            ):
                 raise ValueError(
                     "Se modificaron datos actuales de "
                     + id_
                     + ". Usa las columnas de corrección."
+                )
+            if current_hashes.get(id_) != expected[id_]:
+                errors.append(
+                    {
+                        "id": id_,
+                        "reason": "datos-actualizados-desde-la-version-del-excel-revisar-antes-de-aplicar",
+                    }
                 )
             if any(isinstance(v, str) and v.startswith("=") for v in values):
                 raise ValueError("No se admiten fórmulas en el checklist.")
@@ -511,7 +576,7 @@ def read_return(path, app, entities):
             ):
                 errors.append({"id": id_, "reason": "evidencia-no-https"})
             target = row["ID duplicado confirmado"]
-            if target and (target not in expected or target == id_):
+            if target and (target not in current_hashes or target == id_):
                 errors.append({"id": id_, "reason": "id-duplicado-destino-invalido"})
             corrections = (row["Latitud corregida"], row["Longitud corregida"])
             if any(v is not None and v != "" for v in corrections):
@@ -532,6 +597,8 @@ def read_return(path, app, entities):
             "schemaVersion": 1,
             "mode": "revision-humana-no-aplicada",
             "rows": result,
+            "pendingNewIds": sorted(set(current_hashes) - set(expected)),
+            "staleWorkbook": expected != current_hashes,
             "counts": {
                 status: sum(r["Resultado"] == status for r in result)
                 for status in ("Validado", "No validado", "Pendiente")

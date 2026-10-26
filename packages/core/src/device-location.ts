@@ -5,6 +5,7 @@ import {
   findRegionName,
   isLocated,
 } from "./catalog";
+import { roadAreaAtPoint } from "./travel-areas";
 import { haversineDistanceKm } from "./geo";
 import type { GeoPoint } from "./geo";
 import type { RegionId } from "./index";
@@ -131,7 +132,14 @@ export async function readDeviceLocation(
       Math.abs(point.longitude) > 180
     )
       return { status: "unresolved" };
-    const geometric = regionAtPoint(point);
+    const insularArea = roadAreaAtPoint(point);
+    const insularCommune =
+      insularArea === "rapa-nui"
+        ? "isla-de-pascua"
+        : insularArea === "juan-fernandez"
+          ? "juan-fernandez"
+          : null;
+    const geometric = insularCommune ? "valparaiso" : regionAtPoint(point);
     let address: DeviceAddress | undefined;
     try {
       address = (await adapter.reverseGeocode(point))[0];
@@ -151,11 +159,12 @@ export async function readDeviceLocation(
     const region = geometric ?? geocoded;
     if (!region) return { status: "unresolved" };
     const commune =
-      address &&
+      insularCommune ??
+      (address &&
       (!geocoded || geocoded === region) &&
       (!address.isoCountryCode || address.isoCountryCode === "CL")
         ? communeFromAddress(address, names)
-        : null;
+        : null);
     const compatibleCommune =
       commune &&
       catalogTerritories.some(

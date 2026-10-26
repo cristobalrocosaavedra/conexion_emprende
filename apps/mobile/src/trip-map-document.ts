@@ -1,4 +1,4 @@
-import { serializeForHtml } from "@territorio-vivo/core";
+import { schematicSegments, serializeForHtml } from "@territorio-vivo/core";
 import type { Place } from "@territorio-vivo/core";
 import { messages as t } from "@territorio-vivo/i18n";
 import { maplibreJs, maplibreCss, maplibreLicense } from "./vendor/maplibre";
@@ -11,6 +11,11 @@ export function buildTripMapDocument(
     points: points
       .filter((p) => p.latitude !== null && p.longitude !== null)
       .map((p) => ({ id: p.id, name: p.name, xy: [p.longitude, p.latitude] })),
+    segments: schematicSegments(points, roundTrip).map((group) =>
+      group
+        .filter((p) => p.latitude !== null && p.longitude !== null)
+        .map((p) => [p.longitude, p.latitude]),
+    ),
     roundTrip,
     labels: {
       follow: t.navigation.follow,
@@ -43,7 +48,7 @@ export function buildTripMapDocument(
  control(data.labels.all,()=>{follow=false;fit();});
  for(const event of ['dragstart','zoomstart','rotatestart','pitchstart'])map.on(event,e=>{if(e.originalEvent)follow=false;});
  const geo=xy=>({type:'Feature',properties:{},geometry:{type:'LineString',coordinates:xy.length>1?xy:[]}});
- const paintLine=()=>{const xy=line?line.points.map(p=>[p.longitude,p.latitude]):data.points.map(p=>p.xy);if(!line&&data.roundTrip&&xy.length>1)xy.push(xy[0]);map.getSource('road').setData(geo(xy));map.setPaintProperty('road-line','line-dasharray',line?[1,0]:[2,2]);note.textContent=(line?data.labels.road:data.labels.schematic)+(offline?" · "+data.labels.offline:"");};
+ const paintLine=()=>{const geometry=line?geo(line.points.map(p=>[p.longitude,p.latitude])):{type:'FeatureCollection',features:data.segments.map(geo)};map.getSource('road').setData(geometry);map.setPaintProperty('road-line','line-dasharray',line?[1,0]:[2,2]);note.textContent=(line?data.labels.road:data.labels.schematic)+(offline?" · "+data.labels.offline:"");};
  const apply=value=>{
  if(!value){fix=null;line=null;active=false;hadActive=false;map.getSource('position').setData({type:'FeatureCollection',features:[]});paintLine();return;}
  active=Boolean(value.follow);

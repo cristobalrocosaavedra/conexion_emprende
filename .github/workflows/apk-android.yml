@@ -50,7 +50,7 @@ jobs:
           persist-credentials: false
       - run: bash scripts/test-routing.sh
   ruteo-publico:
-    name: Probar rutas regional e interregional
+    name: Probar rutas regional, interregional e insular
     runs-on: ubuntu-24.04
     timeout-minutes: 4
     steps:

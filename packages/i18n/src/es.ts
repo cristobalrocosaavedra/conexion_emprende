@@ -56,7 +56,10 @@ export const es = {
     disconnect: "Desconectar servidor",
     serverError:
       "No se pudo conectar. Revisa HTTPS, el motor y la configuración de privacidad del servidor.",
+    transferRequired: "Prepara el recorrido local en la isla",
     errors: {
+      requiresFlight:
+        "Este recorrido está en otra zona sin conexión por carretera. Llega primero a la isla para iniciar desde tu ubicación; puedes previsualizar su recorrido local sin GPS.",
       server: "Activa las rutas de prueba para calcular tu recorrido.",
       missingCoordinates:
         "Alguna parada no tiene ubicación confirmada en el catálogo. Retírala para calcular el recorrido.",
@@ -196,6 +199,26 @@ export const es = {
   returnHome: "Volver al inicio",
   storageUnavailable:
     "No se pudo guardar esta selección en el dispositivo. Puedes seguir explorando.",
+  regionalReferences: "referencias en la región",
+  referencesIn: "en",
+  wholeRegion: "Ver toda la región",
+  rapaTitle: "Rapa Nui · Isla de Pascua",
+  exploreRapa: "Explorar Rapa Nui",
+  rapaArrival:
+    "Rapa Nui también pertenece a Valparaíso. Planifica la llegada en avión: no hay carretera al continente. Guarda sus lugares y prepara tu recorrido local en la app. Consulta vuelos y requisitos vigentes.",
+  insularMapHint:
+    "El mapa regional se centra en el continente. Elige Rapa Nui para explorar su mapa local.",
+  rapaTravelSource: "Referencia SERNATUR (2022)",
+  requiresFlight: "Destino insular · sin carretera al continente",
+  separateJourneys:
+    "Tus lugares siguen guardados. Cada zona tiene su recorrido en auto por separado; la app no conecta el continente y las islas por carretera.",
+  islandLocalRoute:
+    "Puedes preparar un recorrido dentro de la isla. Para iniciar con GPS debes estar allí; el traslado aéreo se organiza por separado.",
+  roadAreas: {
+    mainland: "Continente",
+    "rapa-nui": "Rapa Nui",
+    "juan-fernandez": "Juan Fernández",
+  },
   provincePrefix: "Provincia de",
   masterReference:
     "Referencia del catálogo aportado · pendiente de validación humana",
@@ -295,6 +318,7 @@ export const es = {
   regionalCatalog:
     "El catálogo de esta región está en preparación. Ya puedes explorar su mapa y seguir recorriendo Chile.",
   provincesLabel: "provincias",
+  catalogPendingDate: "Fuentes y fechas en cada ficha · vigencia pendiente",
   catalogReference:
     "Catálogo de referencia: datos aportados, heredados y comunitarios. Pendiente de validación humana; confirma ubicación y acceso antes de viajar.",
   osmCredit: "© Colaboradores de OpenStreetMap · ODbL 1.0",

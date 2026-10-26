@@ -28,3 +28,5 @@
 - Decisión vigente: presupuesto US$0, servicio público temporal preconfigurado dentro de la app, sin exigir VPS al viajero. No prometer ausencia de registros del proveedor; app sin historial de coordenadas. Ver docs/RUTEO-PUBLICO-DE-PRUEBAS.md.
 
 - Autorización del 26-10-2026: incorporar todo el maestro aportado a la APK de pruebas como pendiente de validación humana. Asociar evidencia de coincidencias exactas por nombre/comuna/tipo/categoría sin reemplazar los valores heredados; conservar separados los parecidos dudosos. Comunas/localidades en jerarquía y búsqueda, sin inventar coordenadas. Checklist Excel completo para devolver resultados; su lectura genera propuestas y nunca publica automáticamente. No se autoriza producción ni promoción a verificado sin revisión de evidencia.
+
+- Rapa Nui pertenece a Valparaíso: distinguir conteo regional de comuna activa. Los destinos insulares pueden guardarse y recorrerse localmente, con traslado aéreo separado; nunca calcular ni dibujar una carretera al continente. Preservar revisiones de versiones anteriores del Excel cuando el catálogo crezca. Ver docs/VALPARAISO-Y-RAPA-NUI.md.

@@ -3,6 +3,8 @@ import { AppState } from "react-native";
 import * as Location from "expo-location";
 import { activateKeepAwakeAsync, deactivateKeepAwake } from "expo-keep-awake";
 import {
+  roadAreaAtPoint,
+  roadAreaForPlace,
   fetchRoadRoute,
   travelHeading,
   haversineDistanceKm,
@@ -41,7 +43,8 @@ export type TripError =
   | "noRoute"
   | "invalidResponse"
   | "tooManyStops"
-  | "invalidPoints";
+  | "invalidPoints"
+  | "requiresFlight";
 export function useLiveTrip(
   points: Place[],
   roundTrip: boolean,
@@ -82,6 +85,14 @@ export function useLiveTrip(
   );
   const fail = useCallback((code: TripError) => {
     if (mounted.current) {
+      if (code === "requiresFlight") {
+        activeRef.current = false;
+        setActive(false);
+        origin.current = null;
+        currentFix.current = null;
+        lastReliable.current = null;
+        setFix(null);
+      }
       setError(code);
       setStatus("error");
     }
@@ -190,6 +201,10 @@ export function useLiveTrip(
           start = value;
         } else start = selected[0] as Place & GeoPoint;
         if (ticket !== generation.current) return;
+        if (
+          selected.some((p) => roadAreaForPlace(p) !== roadAreaAtPoint(start))
+        )
+          throw new RouteFailure("requiresFlight");
         if (!origin.current) origin.current = start;
         previewOrigin.current = start;
         const remaining = activeRef.current
@@ -259,6 +274,7 @@ export function useLiveTrip(
                   "gps",
                   "missingCoordinates",
                   "moreStops",
+                  "requiresFlight",
                 ].includes(message)
               ? (message as TripError)
               : "network",
@@ -319,6 +335,12 @@ export function useLiveTrip(
       setStatus("locating");
       const p = await readFix();
       if (ticket !== generation.current || !mounted.current) return;
+      if (
+        options.current.points.some(
+          (place) => roadAreaForPlace(place) !== roadAreaAtPoint(p),
+        )
+      )
+        throw new RouteFailure("requiresFlight");
       origin.current = p;
       currentFix.current = p;
       setFix(p);
@@ -328,10 +350,12 @@ export function useLiveTrip(
     } catch (e) {
       if (ticket !== generation.current || !mounted.current) return;
       fail(
-        e instanceof Error &&
-          ["permission", "services", "gps"].includes(e.message)
-          ? (e.message as TripError)
-          : "gps",
+        e instanceof RouteFailure
+          ? e.code
+          : e instanceof Error &&
+              ["permission", "services", "gps"].includes(e.message)
+            ? (e.message as TripError)
+            : "gps",
       );
     }
   }, [connect, fail, readFix, request, stop]);

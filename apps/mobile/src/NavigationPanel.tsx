@@ -80,7 +80,7 @@ export function NavigationPanel({
         accessibilityLiveRegion="polite"
         style={{ color: fg, fontWeight: "600" }}
       >
-        {n[nav.status]}
+        {nav.error === "requiresFlight" ? n.transferRequired : n[nav.status]}
       </Text>
       {nav.error && <Text style={{ color: fg }}>{n.errors[nav.error]}</Text>}
       {nav.route && (

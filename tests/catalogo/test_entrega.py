@@ -42,7 +42,7 @@ class EntregaCatalogo(unittest.TestCase):
 
     def test_todas_las_filas_trazables_y_sin_reemplazar_lugares(self):
         self.assertEqual(len(self.app["records"]), 737)
-        self.assertEqual(len(self.entities), 917)
+        self.assertEqual(len(self.entities), 921)
         self.assertEqual(len(self.app["places"]), 365)
         self.assertEqual(len(self.app["territories"]), 485)
         self.assertEqual(
@@ -62,7 +62,7 @@ class EntregaCatalogo(unittest.TestCase):
     def test_excel_sin_tocar_es_revision_parcial_valida(self):
         result = m.read_return(self.book, self.app, self.entities)
         self.assertEqual(
-            result["counts"], {"Validado": 0, "No validado": 0, "Pendiente": 917}
+            result["counts"], {"Validado": 0, "No validado": 0, "Pendiente": 921}
         )
         self.assertEqual(result["conflicts"], [])
         self.assertEqual(result["publications"], 0)
@@ -70,12 +70,29 @@ class EntregaCatalogo(unittest.TestCase):
 
         book = load_workbook(self.book, read_only=True)
         self.assertEqual(book["Origen maestro"].max_row, 738)
-        self.assertEqual(book["Checklist"].max_row, 918)
+        self.assertEqual(book["Checklist"].max_row, 922)
         self.assertEqual(book["Coincidencias"].max_row, 25)
         self.assertFalse(
             any(c.data_type == "f" for ws in book for row in ws for c in row)
         )
         book.close()
+
+    def test_admite_excel_060_sin_perder_la_revision_ni_exigir_filas_nuevas(self):
+        result = m.read_return(
+            ROOT / "tests/catalogo/fixtures/Checklist-0.6.0.xlsx",
+            self.app,
+            self.entities,
+        )
+        self.assertEqual(result["counts"]["Pendiente"], 917)
+        self.assertEqual(len(result["pendingNewIds"]), 4)
+        self.assertTrue(result["staleWorkbook"])
+        self.assertEqual(result["conflicts"], [])
+        self.assertTrue(
+            all(
+                id_.startswith("legacy:places:osm-way-")
+                for id_ in result["pendingNewIds"]
+            )
+        )
 
     def test_resultado_validado_exige_evidencia_y_comprobaciones(self):
         path = self.modify([(2, "Resultado", "Validado")])
@@ -95,7 +112,7 @@ class EntregaCatalogo(unittest.TestCase):
         )
         result = m.read_return(path, self.app, self.entities)
         self.assertEqual(result["counts"]["Validado"], 1)
-        self.assertEqual(result["counts"]["Pendiente"], 916)
+        self.assertEqual(result["counts"]["Pendiente"], 920)
         self.assertEqual(result["conflicts"], [])
 
     def test_correcciones_no_modifican_el_catalogo_y_coordenadas_invalidas(self):

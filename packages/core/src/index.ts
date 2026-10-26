@@ -54,3 +54,5 @@ export * from "./live-navigation";
 export * from "./routing-server";
 
 export * from "./travel-display";
+
+export * from "./travel-areas";

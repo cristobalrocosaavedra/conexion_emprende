@@ -1,3 +1,4 @@
+import { singleRoadArea } from "./travel-areas.ts";
 import type { GeoPoint } from "./geo";
 export type RouteFailureCode =
   | "network"
@@ -5,7 +6,8 @@ export type RouteFailureCode =
   | "noRoute"
   | "invalidResponse"
   | "tooManyStops"
-  | "invalidPoints";
+  | "invalidPoints"
+  | "requiresFlight";
 export class RouteFailure extends Error {
   constructor(
     public code: RouteFailureCode,
@@ -43,6 +45,7 @@ const validPoint = (p: GeoPoint) =>
 export function osrmRouteUrl(base: string, points: GeoPoint[]): string {
   if (points.length < 2 || points.some((p) => !validPoint(p)))
     throw new RouteFailure("invalidPoints");
+  if (!singleRoadArea(points)) throw new RouteFailure("requiresFlight");
   if (points.length > MAX_POINTS) throw new RouteFailure("tooManyStops");
   const url = new URL(base.endsWith("/") ? base : base + "/");
   if (
@@ -110,8 +113,9 @@ export function parseOsrmRoute(
     route.legs.length !== expectedWaypoints - 1
   )
     throw new RouteFailure("invalidResponse");
-  const points = geometry.coordinates.map(point),
-    steps: RoadStep[] = [],
+  const points = geometry.coordinates.map(point);
+  if (!singleRoadArea(points)) throw new RouteFailure("invalidResponse");
+  const steps: RoadStep[] = [],
     waypointMeters = [0];
   let distance = 0;
   for (const rawLeg of route.legs) {

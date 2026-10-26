@@ -1,5 +1,6 @@
 import { buildTripMapDocument } from "./trip-map-document";
 import {
+  roadAreaForPlace,
   regionFeatures,
   regionBounds,
   serializeForHtml,
@@ -21,11 +22,14 @@ export function buildMapDocument({
   dark?: boolean;
 }): string {
   if (trip) return buildTripMapDocument(points, dark, roundTrip);
+  const areas = [...new Set(points.map(roadAreaForPlace))];
+  const focusArea = areas.length === 1 ? areas[0] : "mainland";
+  const visiblePoints = points.filter((p) => roadAreaForPlace(p) === focusArea);
   const payload = serializeForHtml({
     features: regionFeatures,
     region,
     bounds: regionBounds(region),
-    points: points.map((p) => ({
+    points: visiblePoints.map((p) => ({
       id: p.id,
       name: p.name,
       lat: p.latitude,

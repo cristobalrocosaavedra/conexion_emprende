@@ -1,8 +1,8 @@
 # Revisar el catálogo en Excel y devolverlo
 
 El archivo [Checklist-validacion-Territorio-Vivo.xlsx](Checklist-validacion-Territorio-Vivo.xlsx)
-contiene **917 entidades**, incluyendo los datos anteriores y todo el maestro.
-No son 917 atractivos: hay territorios, lugares, un negocio y rutas.
+contiene **921 entidades**, incluyendo los datos anteriores y todo el maestro.
+No son 921 atractivos: hay territorios, lugares, un negocio y rutas.
 
 1. Descarga el archivo y ábrelo en Excel o LibreOffice. La hoja **Cómo usar** resume
    estas instrucciones. No necesitas una cuenta nueva para revisar los datos.
@@ -51,3 +51,8 @@ guarda en `content/staging/catalogo-maestro/trabajo/revision-humana.json`, fuera
 catálogo servido. Una revisión contradictoria se informa y termina con error;
 nunca se aplica silenciosamente. El comando directo equivalente es
 `python3 scripts/catalogo/entrega.py review --xlsx /ruta/al/archivo-devuelto.xlsx`.
+
+El archivo 0.6 de 917 entidades también se puede devolver. El lector conserva lo
+revisado y presenta los cuatro registros nuevos como pendientes, sin exigir
+rehacer el trabajo. Si la ficha de origen cambió desde esa edición se señala para
+revisión antes de aplicar correcciones.

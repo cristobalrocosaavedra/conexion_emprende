@@ -148,9 +148,9 @@ it("la distancia reutilizada es estable, simétrica y no inventa tiempos por car
 });
 
 describe("base comunitaria nacional", () => {
-  it("separa 27 referencias OSM pendientes y cubre las 16 regiones", () => {
+  it("separa 31 referencias OSM pendientes y cubre las 16 regiones", () => {
     const open = places.filter((p) => p.origin === "osm");
-    expect(open).toHaveLength(27);
+    expect(open).toHaveLength(31);
     expect([...new Set(open.map((p) => p.region))].sort()).toEqual(
       [...regionIds].sort(),
     );

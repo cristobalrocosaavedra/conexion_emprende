@@ -1,3 +1,12 @@
+## Actualización 0.6.1: Valparaíso y Rapa Nui
+
+[Detalle de la corrección](../VALPARAISO-Y-RAPA-NUI.md). El catálogo suma ahora
+433 fichas y el checklist 921 entidades, tras añadir cuatro referencias de Rapa
+Nui. Las 737 filas originales siguen trazadas. El Excel 0.6 anterior continúa
+siendo válido para devolver revisiones; los cuatro registros nuevos quedan
+pendientes cuando no estaban en ese archivo. Las cifras de la entrega 0.6 que
+siguen a continuación se conservan como antecedente.
+
 # Catálogo maestro: integración en la APK de pruebas 0.6
 
 La indicación posterior del usuario autoriza incorporar el material pendiente a

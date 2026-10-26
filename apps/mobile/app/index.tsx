@@ -31,7 +31,8 @@ import {
   haversineDistanceKm,
   isLocated,
   localities,
-  moveStop,
+  moveAreaStop,
+  roadAreaForPlace,
   neighbor,
   places,
   regionIds,
@@ -40,7 +41,12 @@ import {
   toggleStop,
   transitionPath,
 } from "@territorio-vivo/core";
-import type { Category, Place, RegionId } from "@territorio-vivo/core";
+import type {
+  RoadArea,
+  Category,
+  Place,
+  RegionId,
+} from "@territorio-vivo/core";
 import { messages as t } from "@territorio-vivo/i18n";
 import { palettes } from "@territorio-vivo/design-tokens";
 import { RegionPicker } from "../src/RegionPicker";
@@ -145,12 +151,22 @@ export default function Home() {
     () => nationalSuggestions(query, current),
     [query, current],
   );
-  const tripPlaces = useMemo(
+  const [tripArea, setTripArea] = useState<RoadArea | null>(null);
+  const savedPlaces = useMemo(
     () =>
       stopIds
         .map((id) => places.find((p) => p.id === id))
         .filter((p): p is Place => Boolean(p)),
     [stopIds],
+  );
+  const tripAreas = [...new Set(savedPlaces.map(roadAreaForPlace))];
+  const activeTripArea =
+    tripArea && tripAreas.includes(tripArea)
+      ? tripArea
+      : (tripAreas[0] ?? "mainland");
+  const tripPlaces = useMemo(
+    () => savedPlaces.filter((p) => roadAreaForPlace(p) === activeTripArea),
+    [savedPlaces, activeTripArea],
   );
   const routingServer = useRoutingServer();
   const liveTrip = useLiveTrip(tripPlaces, roundTrip, routingServer.url);
@@ -183,7 +199,16 @@ export default function Home() {
   );
   const featured = useMemo(
     () =>
-      [...regionalPlaces]
+      regionalPlaces
+        .filter(
+          (p) =>
+            roadAreaForPlace(p) ===
+            (activeCommune === "isla-de-pascua"
+              ? "rapa-nui"
+              : activeCommune === "juan-fernandez"
+                ? "juan-fernandez"
+                : "mainland"),
+        )
         .sort((a, b) => {
           const localDifference =
             Number(b.commune === activeCommune) -
@@ -644,12 +669,14 @@ export default function Home() {
                 <View style={{ flex: 1 }}>
                   <Text style={[styles.sectionHeading, text]}>
                     {regionalPlaces.length
-                      ? `${activeCommune ? regionalPlaces.filter((p) => p.commune === activeCommune).length : regionalPlaces.length} ${t.referencePlaces}`
+                      ? `${regionalPlaces.length} ${t.regionalReferences}`
                       : t.discoverRegion}
                   </Text>
                   <Text style={[styles.caption, muted]}>
                     {regionalPlaces.length
-                      ? `${activeProvince ? `${t.provincePrefix} ${provinceName(activeProvince)}` : `${provinceIds.length} ${t.provincesLabel}`} · ${localCommuneCount} ${t.communesLabel}`
+                      ? activeCommune
+                        ? `${regionalPlaces.filter((p) => p.commune === activeCommune).length} ${t.referencesIn} ${communeName(activeCommune)}`
+                        : `${provinceIds.length} ${t.provincesLabel} · ${localCommuneCount} ${t.communesLabel}`
                       : t.subtitle}
                   </Text>
                 </View>
@@ -661,7 +688,31 @@ export default function Home() {
                 style={{ flexGrow: 0 }}
                 contentContainerStyle={{ flexDirection: "row", gap: 7 }}
               >
+                {activeCommune &&
+                  button(
+                    t.wholeRegion,
+                    () => {
+                      setCommune("all");
+                      setQuery("");
+                      setCategory("all");
+                      setTab("explore");
+                    },
+                    false,
+                    true,
+                  )}
                 {button(t.explore, () => setTab("explore"), true, true)}
+                {current === "valparaiso" &&
+                  button(
+                    t.exploreRapa,
+                    () => {
+                      setCommune("isla-de-pascua");
+                      setQuery("");
+                      setCategory("all");
+                      setTab("explore");
+                    },
+                    false,
+                    true,
+                  )}
                 {button(t.events, () => setTab("events"), false, true)}
                 {button(t.routes, () => setTab("routes"), false, true)}
                 {button(t.businesses, () => setTab("businesses"), false, true)}
@@ -744,6 +795,36 @@ export default function Home() {
                   ? `${t.provincePrefix} ${provinceName(activeProvince)}`
                   : t.regions[current],
               )}
+              {current === "valparaiso" &&
+                (commune === "all" || commune === "isla-de-pascua") && (
+                  <View
+                    style={[
+                      styles.panelInside,
+                      { backgroundColor: colors.surface, borderRadius: 16 },
+                    ]}
+                  >
+                    {title(t.rapaTitle)}
+                    {body(t.rapaArrival)}
+                    {commune !== "isla-de-pascua" &&
+                      button(t.exploreRapa, () => {
+                        setCommune("isla-de-pascua");
+                        setQuery("");
+                        setCategory("all");
+                      })}
+                    <Pressable
+                      accessibilityRole="link"
+                      onPress={() =>
+                        openSource(
+                          "https://www.sernatur.cl/rapa-nui-recibio-nuevamente-a-visitantes-en-el-marco-de-la-reapertura-de-la-isla-al-turismo/",
+                        )
+                      }
+                    >
+                      <Text style={[styles.source, { color: colors.accent }]}>
+                        {t.rapaTravelSource}
+                      </Text>
+                    </Pressable>
+                  </View>
+                )}
               <TextInput
                 accessibilityLabel={t.search}
                 placeholder={t.search}
@@ -814,6 +895,9 @@ export default function Home() {
               <Text style={[styles.caption, muted]}>
                 {t.notOfficialMap} · {filtered.length} {t.referencePlaces}
               </Text>
+              {filtered.some((p) => roadAreaForPlace(p) !== "mainland") &&
+                filtered.some((p) => roadAreaForPlace(p) === "mainland") &&
+                body(t.insularMapHint)}
               {filtered.length ? (
                 filtered.map((p) => card(p))
               ) : (
@@ -927,7 +1011,28 @@ export default function Home() {
           ) : (
             <>
               {title(t.trip)}
-              {body(`${tripPlaces.length} ${t.selectedCount}`)}
+              {body(`${savedPlaces.length} ${t.selectedCount}`)}
+              {tripAreas.some((area) => area !== "mainland") && (
+                <View style={{ gap: 8 }}>
+                  {body(t.separateJourneys)}
+                  <View style={styles.quickActions}>
+                    {tripAreas.map((area) => (
+                      <View key={area}>
+                        {button(
+                          `${t.roadAreas[area]} · ${savedPlaces.filter((p) => roadAreaForPlace(p) === area).length}`,
+                          () => {
+                            liveTrip.stop();
+                            setTripArea(area);
+                          },
+                          activeTripArea === area,
+                          true,
+                        )}
+                      </View>
+                    ))}
+                  </View>
+                  {activeTripArea !== "mainland" && body(t.islandLocalRoute)}
+                </View>
+              )}
               {!tripPlaces.length ? (
                 <>
                   {body(t.emptyTrip)}
@@ -1009,7 +1114,15 @@ export default function Home() {
                       <View style={styles.quickActions}>
                         {button(
                           "↑",
-                          () => setStops(moveStop(stopIds, p.id, -1)),
+                          () =>
+                            setStops(
+                              moveAreaStop(
+                                stopIds,
+                                tripPlaces.map((p) => p.id),
+                                p.id,
+                                -1,
+                              ),
+                            ),
                           false,
                           true,
                           i === 0,
@@ -1017,7 +1130,15 @@ export default function Home() {
                         )}
                         {button(
                           "↓",
-                          () => setStops(moveStop(stopIds, p.id, 1)),
+                          () =>
+                            setStops(
+                              moveAreaStop(
+                                stopIds,
+                                tripPlaces.map((p) => p.id),
+                                p.id,
+                                1,
+                              ),
+                            ),
                           false,
                           true,
                           i === tripPlaces.length - 1,
@@ -1043,7 +1164,7 @@ export default function Home() {
           {physicalRegion && button(t.yourZone, () => void locate())}
           {storageError && body(t.storageUnavailable)}
           <Text style={[styles.caption, muted]}>
-            {t.demo} · {t.sourceDate}
+            {t.demo} · {t.catalogPendingDate}
             {"\n"}
             {t.osmLicense}
           </Text>
@@ -1051,7 +1172,7 @@ export default function Home() {
             t.openDataLicense,
             () =>
               void Linking.openURL(
-                "https://github.com/cristobalrocosaavedra/conexion_emprende/blob/6c377f14f4b6125bb1a4dc0f453fb244a38a4296/content/sources/OSM-CHILE.md",
+                "https://github.com/cristobalrocosaavedra/conexion_emprende/blob/606019dad28856db8576f826bccf81746f7b6202/content/sources/0.6.1/README.md",
               ),
           )}
         </ScrollView>
@@ -1202,6 +1323,12 @@ export default function Home() {
                   `${communeName(detail.commune)} · ${t.regions[detail.region]}`,
                 )}
                 {tag(t.categories[detail.category])}
+                {roadAreaForPlace(detail) !== "mainland" && (
+                  <>
+                    {tag(t.requiresFlight)}
+                    {body(t.islandLocalRoute)}
+                  </>
+                )}
                 {body(
                   detail.origin === "osm" ? t.osmDetails : detail.description,
                 )}
@@ -1247,9 +1374,7 @@ export default function Home() {
                   body(masterEvidence[detail.id]?.sourceLabel ?? t.sourceOwner)
                 )}
                 <Text style={[styles.caption, muted]}>
-                  {detail.origin === "master"
-                    ? `${t.importedOn} ${detail.importedAt} · ${t.pending}`
-                    : t.sourceDate}
+                  {`${t.importedOn} ${detail.importedAt} · ${t.pending}`}
                 </Text>
                 {detail.origin === "osm" && (
                   <Text style={[styles.caption, muted]}>{t.osmLicense}</Text>

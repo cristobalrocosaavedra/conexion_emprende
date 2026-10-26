@@ -10,7 +10,7 @@ import {
 import Svg, { Defs, LinearGradient, Rect, Stop } from "react-native-svg";
 import type { ImageSourcePropType } from "react-native";
 import { palettes } from "@territorio-vivo/design-tokens";
-import { communeName } from "@territorio-vivo/core";
+import { communeName, roadAreaForPlace } from "@territorio-vivo/core";
 import type { Place } from "@territorio-vivo/core";
 import { messages as t } from "@territorio-vivo/i18n";
 import { placeArt, placeArtLabel, placeArtFit } from "./art";
@@ -247,6 +247,11 @@ export function PlaceCard({
           </Text>
         )}
         <Text style={{ color: colors.muted, fontSize: 10 }}>{t.pending}</Text>
+        {roadAreaForPlace(place) !== "mainland" && (
+          <Text style={{ color: colors.accent, fontSize: 11 }}>
+            {t.requiresFlight}
+          </Text>
+        )}
         {place.origin === "osm" && (
           <Text style={{ color: colors.muted, fontSize: 9, lineHeight: 11 }}>
             {t.osmCredit}
