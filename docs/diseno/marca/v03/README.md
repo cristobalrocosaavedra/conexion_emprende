@@ -1,5 +1,7 @@
 # Pulso v03 — dirección preferida, todavía en exploración
 
+**Continuación:** se explora la multiforma de Chile en [v04](../v04/README.md); el titular elige B · Latitud viva.
+
 El 26-10-2026 el titular expresa preferencia tentativa por Pulso: «puede ser un poco mejor, pero no sé» y «tiene un poco más de onda». Se registra como dirección para seguir explorando, no como aprobación definitiva del logo, la paleta o su implementación. El nombre de la aplicación sigue siendo Territorio Vivo; Pulso es el concepto gráfico.
 
 Dos refinamientos generados con OpenAI image_gen a partir de la propuesta Pulso v02:

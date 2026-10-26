@@ -234,3 +234,10 @@ GitHub rechazó la primera subida con GH007 por el correo privado de los commits
 - El titular considera que Pulso tiene más onda, manteniendo dudas. Se registra preferencia provisional, sin atribuir aprobación definitiva de marca, nombre, paleta ni implementación.
 - Dos refinamientos con OpenAI image_gen: A conserva cuatro módulos orgánicos más compactos; B explora dos bandas y una V sugerida. Láminas con muestras ilustrativas de ícono guardadas en docs/diseno/marca/v03, procedencia y prompts registrados.
 - Entrega local sin push ni PR nuevo; solo imágenes y documentación. No se modifica la APK, su tema ni el catálogo. Las muestras de ícono no sustituyen pruebas físicas ni recursos de Android/iOS. No corresponde ejecutar pruebas de aplicación para estos bocetos.
+
+## 26-10-2026 — B · Latitud viva elegida y propuestas recuperadas
+
+- El titular solicita una interpretación de Pulso vinculada a la multiforma de Chile y después elige B · Latitud viva. Se registra como dirección visual elegida; Territorio Vivo conserva su nombre.
+- Restablecido el entorno, se recuperan las dos propuestas v04 que no se pudieron guardar por desconexión: A Mosaico territorial y B Latitud viva. Originales intactos, sin recrear o sustituir la elección del titular.
+- Se genera con OpenAI image_gen un ajuste de B más compacto, conservando las cinco piezas y colores. Propuesta elegida, ajuste y procedencia guardados en docs/diseno/marca/latitud-viva; no se atribuye aprobación automática del ajuste nuevo.
+- Entrega de imágenes/documentación versionada localmente, sin push ni nuevo PR. No se modifican app, APK, tema, catálogo, Matichoc, otros repositorios o producción. No se requieren pruebas de app por ser una entrega visual sin código; se revisa formato y diferencias de documentación.

@@ -1,5 +1,7 @@
 # Territorio Vivo — propuestas de logo
 
+**Dirección actual elegida:** [B · Latitud viva](latitud-viva/README.md), Pulso inspirado en la multiforma de Chile. Las propuestas anteriores se conservan como historial.
+
 **Estado:** las propuestas de esta página fueron rechazadas por el titular el 26-10-2026. Continuar la revisión en [logos v02](v02/README.md).
 
 Propuestas visuales generadas con OpenAI image_gen el 26-10-2026 tras la petición «Logo?». Concepto: ventana al territorio, camino entre cerros y sol; turquesa, azul petróleo y ocre.

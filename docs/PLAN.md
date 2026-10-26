@@ -255,3 +255,8 @@ El usuario solicita imágenes más representativas para cada región y zona. Se 
 25. Dirección de marca provisional — 26-10-2026
 
 Tras rechazar el logo turístico literal, el titular expresa preferencia tentativa por la exploración Pulso, de formas orgánicas y colores coral/fucsia sobre berenjena. Continuar refinando su símbolo, tipografía y legibilidad; no interpretar esta preferencia como logo final ni cambio de nombre. El producto sigue siendo Territorio Vivo. Las propuestas se guardan en docs/diseno/marca/v03 sin aplicarlas todavía a la app.
+
+
+26. Elección de dirección de marca — 26-10-2026
+
+El titular pide conectar Pulso con la multiforma de Chile y elige B, Latitud viva: piezas orgánicas coral/fucsia, composición norte-sur y extremo austral fragmentado. Se conserva la propuesta elegida y un refinamiento más compacto en docs/diseno/marca/latitud-viva. El producto sigue llamándose Territorio Vivo. Esta elección orienta la preparación de recursos gráficos; todavía no se integra a la APK ni se cambia el tema actual.
