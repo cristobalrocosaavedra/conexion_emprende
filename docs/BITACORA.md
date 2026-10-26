@@ -222,3 +222,9 @@ GitHub rechazó la primera subida con GH007 por el correo privado de los commits
 - Petición «Logo?»: se preparan dos interpretaciones del concepto ventana, cerros, camino y sol, con los colores de la app. Una propuesta transparente para fondo claro y una presentación sobre fondo oscuro, generadas con OpenAI image_gen.
 - Archivos de revisión guardados en docs/diseno/marca, con originales intactos y alcance documentado. Los intentos con residuos de transparencia se descartan. Bocetos PNG, sin afirmar que sean vectoriales o una marca definitiva.
 - Entrega local para revisión visual, sin push ni nuevo PR. No se integran a la app ni se cambia la APK del PR #4. No se modifica Matichoc, catálogo, producción ni otros repositorios. No se requieren pruebas de aplicación porque solo se guardan imágenes y documentación.
+
+## 26-10-2026 — Exploración de logo v02
+
+- El titular rechaza la primera propuesta por genérica y pide una marca más creativa y disruptiva. Se marca la dirección anterior como descartada y se conservan sus archivos como historial.
+- Tres nuevas direcciones con OpenAI image_gen: Pulso (orgánico, coral/fucsia), Cruce (modular, negro/lima) y Vértice (tipografía cinética, ultramar/amarillo). Bocetos guardados en docs/diseno/marca/v02 para comparación; pendientes de elección y refinamiento.
+- Solo imágenes y documentación locales, sin push ni PR nuevo, sin modificar APK, temas, catálogo, Matichoc ni producción. No se ejecutan pruebas de app porque no hay cambios funcionales.

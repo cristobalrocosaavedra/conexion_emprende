@@ -1,5 +1,7 @@
 # Territorio Vivo — propuestas de logo
 
+**Estado:** las propuestas de esta página fueron rechazadas por el titular el 26-10-2026. Continuar la revisión en [logos v02](v02/README.md).
+
 Propuestas visuales generadas con OpenAI image_gen el 26-10-2026 tras la petición «Logo?». Concepto: ventana al territorio, camino entre cerros y sol; turquesa, azul petróleo y ocre.
 
 - [Propuesta para fondos claros](propuesta-logo-claro.png): PNG con transparencia, nombre en azul oscuro.
