@@ -1,4 +1,10 @@
-import { regionFeatures, places, findRegionName, isLocated } from "./catalog";
+import {
+  catalogTerritories,
+  regionFeatures,
+  places,
+  findRegionName,
+  isLocated,
+} from "./catalog";
 import { haversineDistanceKm } from "./geo";
 import type { GeoPoint } from "./geo";
 import type { RegionId } from "./index";
@@ -152,7 +158,10 @@ export async function readDeviceLocation(
         : null;
     const compatibleCommune =
       commune &&
-      places.some((p) => p.region === region && p.commune === commune)
+      catalogTerritories.some(
+        (p) =>
+          p.level === "commune" && p.region === region && p.commune === commune,
+      )
         ? commune
         : null;
     const nearbyIds = places

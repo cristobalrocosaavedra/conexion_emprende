@@ -18,7 +18,9 @@
     "validate": "pnpm typecheck && pnpm lint && pnpm test && pnpm build && pnpm test:mobile && pnpm format:check",
     "test:mobile": "playwright test",
     "test:catalogo": "python3 -m unittest discover -s tests/catalogo -v",
-    "catalogo:simular": "python3 scripts/catalogo/integrar.py simulate"
+    "catalogo:simular": "python3 scripts/catalogo/integrar.py simulate",
+    "catalogo:generar": "python3 scripts/catalogo/entrega.py generate",
+    "catalogo:revisar": "python3 scripts/catalogo/entrega.py review"
   },
   "devDependencies": {
     "@eslint/js": "10.0.1",

@@ -1,8 +1,9 @@
 # Catálogo maestro: modelo candidato y límites de esta entrega
 
-26-10-2026. Esta entrega cumple la etapa de análisis y simulación pedida por el
-usuario. No reemplaza el catálogo que lee la APK y no publica el material nuevo.
-La propuesta se implementa en archivos locales reversibles, no en una base remota.
+26-10-2026. La primera entrega fue solo simulación. La indicación posterior del
+usuario autoriza mostrar el material pendiente en la APK de pruebas 0.6 y revisar
+sus datos mediante Excel. Se incorpora una proyección de lectura, sin base remota
+ni publicación productiva. El catálogo original no se reemplaza y conserva sus IDs.
 
 ## Estructura observada
 
@@ -59,7 +60,7 @@ suministrada se conserva en la afirmación original. La jerarquía región → p
 Para evitar la colisión real de `pedegua`, que ya existe como lugar y localidad,
 las claves candidatas usan `legacy:places:…`, `legacy:localities:…` y
 `legacy:routes:…`. Conservan el ID anterior en `legacy`, y las relaciones se
-adaptan explícitamente. **La app sigue usando sus IDs originales**, sin migración
+adaptan explícitamente. **Las fichas anteriores siguen usando sus IDs originales**, sin migración
 de preferencias ni cambios a viajes guardados en esta entrega.
 
 ## Fuente de verdad y revisión
@@ -73,7 +74,9 @@ las propuestas no constituyen otro catálogo para el buscador público.
 La correspondencia comienza por `(fuente, identificador externo)` y después por
 nombre normalizado, comuna completa, tipo y categoría compatible. Con coordenadas
 comparables se calcula distancia: más de 500 metros indica conflicto que requiere
-revisión. Las similitudes de nombre también se retienen para revisión; nunca se
+revisión. En 0.6 las 22 coincidencias exactas asocian únicamente evidencia, conservando los
+valores canónicos e IDs. Los dos parecidos siguen separados y señalados. Las
+similitudes de nombre también se retienen para revisión; nunca se
 fusionan homónimos por nombre solamente. Distintas comunas nunca se unen con esta
 regla. Variantes más lejanas pueden escapar a la heurística: «nuevo borrador» no
 certifica que el lugar no exista con otro nombre.
@@ -108,4 +111,5 @@ hay RLS o un buscador remoto funcionando. Antes de cualquier dato real remoto:
 4. Pruebas de anónimo, propietario, tercero y moderador, y rollback ensayado en desarrollo.
 
 El catálogo heredado ya visible conserva su advertencia de referencia pendiente.
-Esta entrega no promueve esos registros a verificados ni amplía su publicación.
+La autorización posterior permite ampliar las referencias pendientes en la APK de
+pruebas; no promueve ningún registro a verificado ni publica producción.

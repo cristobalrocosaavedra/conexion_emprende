@@ -19,3 +19,6 @@ previews
 
 # Paquete original, respaldo exacto y reportes reproducibles del importador.
 content/staging/catalogo-maestro
+
+# Proyección del catálogo generada de forma determinista, comprobada en pruebas.
+content/catalogo/maestro-app.json

@@ -196,6 +196,17 @@ export const es = {
   returnHome: "Volver al inicio",
   storageUnavailable:
     "No se pudo guardar esta selección en el dispositivo. Puedes seguir explorando.",
+  provincePrefix: "Provincia de",
+  masterReference:
+    "Referencia del catálogo aportado · pendiente de validación humana",
+  masterAccessPending:
+    "Fuente, coordenadas, acceso y condiciones todavía por comprobar. No se han confirmado horarios ni gratuidad.",
+  possibleDuplicate:
+    "Posible coincidencia con otra ficha · pendiente de revisión",
+  importedOn: "Incorporado el",
+  territoryMatches: "Comunas y localidades coincidentes",
+  territoryReference:
+    "Jerarquía territorial aportada, pendiente de contraste oficial. Elige una zona para explorar sus referencias.",
   sourceOwner: "Referencia aportada por el titular en el proyecto de origen",
   locationPending: "Ubicación sin confirmar · no se marca un punto exacto",
   communesLabel: "comunas",
@@ -285,7 +296,7 @@ export const es = {
     "El catálogo de esta región está en preparación. Ya puedes explorar su mapa y seguir recorriendo Chile.",
   provincesLabel: "provincias",
   catalogReference:
-    "Catálogo de referencia: datos heredados y cartografía comunitaria. Vigencia y acceso pendientes de comprobar.",
+    "Catálogo de referencia: datos aportados, heredados y comunitarios. Pendiente de validación humana; confirma ubicación y acceso antes de viajar.",
   osmCredit: "© Colaboradores de OpenStreetMap · ODbL 1.0",
   osmReference: "Referencia comunitaria de OpenStreetMap · sin verificar",
   osmDetails:

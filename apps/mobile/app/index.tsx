@@ -20,6 +20,11 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
 
 import {
+  catalogTerritories,
+  communeName,
+  provinceName,
+  searchTerritories,
+  masterEvidence,
   curatedRoutes,
   nationalSuggestions,
   filterPlaces,
@@ -104,21 +109,31 @@ export default function Home() {
         ? locatedCommune
         : null;
   const activeProvince = activeCommune
-    ? places.find((p) => p.region === current && p.commune === activeCommune)
-        ?.province
+    ? catalogTerritories.find(
+        (p) =>
+          p.level === "commune" &&
+          p.region === current &&
+          p.commune === activeCommune,
+      )?.province
     : null;
   const regionalPlaces = useMemo(
     () => places.filter((p) => p.region === current),
     [current],
   );
-  const provinceIds = [...new Set(regionalPlaces.map((p) => p.province))];
+  const regionalTerritories = catalogTerritories.filter(
+    (p) => p.region === current,
+  );
+  const provinceIds = regionalTerritories
+    .filter((p) => p.level === "province")
+    .map((p) => p.province);
+  const territoryMatches = useMemo(() => searchTerritories(query), [query]);
   const localCommuneCount = activeProvince
     ? new Set(
-        regionalPlaces
-          .filter((p) => p.province === activeProvince)
+        regionalTerritories
+          .filter((p) => p.level === "commune" && p.province === activeProvince)
           .map((p) => p.commune),
       ).size
-    : new Set(regionalPlaces.map((p) => p.commune)).size;
+    : regionalTerritories.filter((p) => p.level === "commune").length;
   const filtered = useMemo(
     () =>
       filterPlaces(current, commune, category, query).filter(
@@ -151,12 +166,20 @@ export default function Home() {
     );
   }, [tripLocated, roundTrip]);
   const communeIds = useMemo(
-    () => [...new Set(regionalPlaces.map((p) => p.commune))],
-    [regionalPlaces],
+    () =>
+      catalogTerritories
+        .filter((p) => p.level === "commune" && p.region === current)
+        .map((p) => p.commune!),
+    [current],
   );
   const regionalLocalities = useMemo(
-    () => localities.filter((p) => communeIds.includes(p.commune)),
-    [communeIds],
+    () =>
+      localities.filter(
+        (p) =>
+          communeIds.includes(p.commune) &&
+          (!p.region ? current === "valparaiso" : p.region === current),
+      ),
+    [communeIds, current],
   );
   const featured = useMemo(
     () =>
@@ -581,9 +604,7 @@ export default function Home() {
                 <View style={styles.localContext}>
                   <Text style={styles.provinceContext}>
                     {activeProvince
-                      ? t.provinceNames[
-                          activeProvince as keyof typeof t.provinceNames
-                        ]
+                      ? `${t.provincePrefix} ${provinceName(activeProvince)}`
                       : t.regions[current]}
                   </Text>
                   <Text
@@ -592,9 +613,7 @@ export default function Home() {
                       compactHome && { fontSize: 18 },
                     ]}
                   >
-                    {t.communePrefix}{" "}
-                    {t.communes[activeCommune as keyof typeof t.communes] ??
-                      activeCommune}
+                    {t.communePrefix} {communeName(activeCommune)}
                   </Text>
                   <Text style={styles.artLabel}>
                     {physicalRegion === current &&
@@ -630,7 +649,7 @@ export default function Home() {
                   </Text>
                   <Text style={[styles.caption, muted]}>
                     {regionalPlaces.length
-                      ? `${activeProvince ? t.provinceNames[activeProvince as keyof typeof t.provinceNames] : `${provinceIds.length} ${t.provincesLabel}`} · ${localCommuneCount} ${t.communesLabel}`
+                      ? `${activeProvince ? `${t.provincePrefix} ${provinceName(activeProvince)}` : `${provinceIds.length} ${t.provincesLabel}`} · ${localCommuneCount} ${t.communesLabel}`
                       : t.subtitle}
                   </Text>
                 </View>
@@ -722,9 +741,7 @@ export default function Home() {
               </View>
               {tag(
                 commune !== "all" && activeProvince
-                  ? t.provinceNames[
-                      activeProvince as keyof typeof t.provinceNames
-                    ]
+                  ? `${t.provincePrefix} ${provinceName(activeProvince)}`
                   : t.regions[current],
               )}
               <TextInput
@@ -756,7 +773,7 @@ export default function Home() {
                 {communeIds.map((id) => (
                   <View key={id}>
                     {button(
-                      t.communes[id as keyof typeof t.communes] ?? id,
+                      communeName(id),
                       () => setCommune(id),
                       commune === id,
                       true,
@@ -822,14 +839,36 @@ export default function Home() {
                   {nationalMatches.map((p) => (
                     <View key={p.id}>
                       {tag(
-                        `${t.regions[p.region]} · ${t.communes[p.commune as keyof typeof t.communes] ?? p.commune}`,
+                        `${t.regions[p.region]} · ${communeName(p.commune)}`,
                       )}
                       {card(p)}
                     </View>
                   ))}
                 </View>
               )}
-              {current === "valparaiso" && regionalLocalities.length > 0 && (
+              {territoryMatches.length > 0 && (
+                <View style={{ gap: 8 }}>
+                  {title(t.territoryMatches)}
+                  {body(t.territoryReference)}
+                  {territoryMatches.map((territory) => (
+                    <View key={territory.id}>
+                      {button(
+                        `${territory.name} · ${t.regions[territory.region]}`,
+                        () => {
+                          manualRegionSelection.current = true;
+                          setPreferences((p) => ({
+                            ...p,
+                            region: territory.region,
+                            commune: territory.commune ?? "all",
+                          }));
+                          setQuery("");
+                        },
+                      )}
+                    </View>
+                  ))}
+                </View>
+              )}
+              {regionalLocalities.length > 0 && (
                 <View
                   style={[
                     styles.panelInside,
@@ -1160,13 +1199,27 @@ export default function Home() {
                 {tag(placeArtLabel(detail))}
                 {title(detail.name)}
                 {body(
-                  `${t.communes[detail.commune as keyof typeof t.communes] ?? detail.commune} · ${t.regions[detail.region]}`,
+                  `${communeName(detail.commune)} · ${t.regions[detail.region]}`,
                 )}
                 {tag(t.categories[detail.category])}
                 {body(
                   detail.origin === "osm" ? t.osmDetails : detail.description,
                 )}
-                {body(detail.origin === "osm" ? t.osmReference : t.inherited)}
+                {body(
+                  detail.origin === "osm"
+                    ? t.osmReference
+                    : detail.origin === "master"
+                      ? t.masterReference
+                      : t.inherited,
+                )}
+                {masterEvidence[detail.id] && (
+                  <View style={{ gap: 8 }}>
+                    {body(masterEvidence[detail.id].category)}
+                    {masterEvidence[detail.id].possibleDuplicateIds.length >
+                      0 && body(t.possibleDuplicate)}
+                    {body(t.masterAccessPending)}
+                  </View>
+                )}
                 {body(t.visitInfo)}
                 {button(
                   stopIds.includes(detail.id) ? t.saved : t.save,
@@ -1191,9 +1244,13 @@ export default function Home() {
                     </Text>
                   </Pressable>
                 ) : (
-                  body(t.sourceOwner)
+                  body(masterEvidence[detail.id]?.sourceLabel ?? t.sourceOwner)
                 )}
-                <Text style={[styles.caption, muted]}>{t.sourceDate}</Text>
+                <Text style={[styles.caption, muted]}>
+                  {detail.origin === "master"
+                    ? `${t.importedOn} ${detail.importedAt} · ${t.pending}`
+                    : t.sourceDate}
+                </Text>
                 {detail.origin === "osm" && (
                   <Text style={[styles.caption, muted]}>{t.osmLicense}</Text>
                 )}

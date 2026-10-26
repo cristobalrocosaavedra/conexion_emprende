@@ -1,4 +1,27 @@
-# Catálogo maestro: resultado para revisión
+# Catálogo maestro: integración en la APK de pruebas 0.6
+
+La indicación posterior del usuario autoriza incorporar el material pendiente a
+la app de pruebas y preparar un Excel para su revisión humana. No se requiere otra
+confirmación para esta candidata; no se autoriza producción.
+
+- **429 fichas** de lugares/negocios: 64 anteriores y 365 adicionales.
+- **346 comunas**, 16 regiones y 56 provincias propuestas; **67 localidades**.
+- **3 rutas anteriores**, con sus 22 enlaces de paradas e IDs conservados.
+- **737 filas originales trazadas**. Se asocia evidencia de 22 coincidencias
+  exactas a sus fichas existentes sin reemplazar sus valores; dos parecidos quedan
+  como fichas separadas señaladas para revisión. No se marca nada como verificado.
+- Lugares sin coordenadas aparecen en búsqueda/ficha y se pueden guardar; no se
+  dibuja un punto ni se les asigna una entrada imaginaria. Solo los puntos
+  disponibles se usan para mapas y cálculos, con sus advertencias de referencia.
+
+[Descargar el checklist Excel](Checklist-validacion-Territorio-Vivo.xlsx) y leer
+[cómo rellenarlo y devolverlo](VALIDAR-EN-EXCEL.md). Tiene 917 entidades, no 917
+atractivos. El archivo original y los informes siguientes se mantienen como
+antecedentes; la proyección que lee la app es `content/catalogo/maestro-app.json`,
+generada desde el maestro y los snapshots existentes por `scripts/catalogo/entrega.py`.
+Hay un solo export de fichas para mapa, búsqueda, detalles y paradas.
+
+## Simulación inicial conservada como antecedente
 
 26-10-2026. Se leyó y siguió la instrucción del ZIP entregado. La rama
 `feat/catalogo-maestro-simulacion` conserva el catálogo actual y prepara la
@@ -39,7 +62,6 @@ Hay 217 comunas sin atractivos en los insumos disponibles. El inventario oficial
 SERNATUR/MMA no se descargó por bloqueo de red, por lo que no se incorporó ningún
 registro de ese recurso ni se verificó su licencia/CRS.
 
-Antes de promover esta propuesta al catálogo visible quedan la revisión de las
-coincidencias, el contraste territorial oficial, fuentes/licencias y las
-verificaciones correspondientes. La publicación productiva requiere autorización
+La promoción a fichas verificadas o a un catálogo productivo sigue pendiente del
+contraste territorial oficial, fuentes/licencias y las verificaciones correspondientes. La publicación productiva requiere autorización
 expresa; el importador de esta entrega no incluye un comando para publicarla.

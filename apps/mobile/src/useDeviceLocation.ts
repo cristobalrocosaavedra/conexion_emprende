@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { AppState, Platform } from "react-native";
 import * as Location from "expo-location";
-import { readDeviceLocation } from "@territorio-vivo/core";
+import { communeNames, readDeviceLocation } from "@territorio-vivo/core";
 import type {
   LocatedArea,
   LocationMode,
@@ -41,7 +41,7 @@ export function useDeviceLocation(options: Options) {
         reverseGeocode: (point) => Location.reverseGeocodeAsync(point),
       },
       mode,
-      t.communes,
+      communeNames,
     );
     try {
       const next = await Promise.race([

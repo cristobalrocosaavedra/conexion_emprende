@@ -29,6 +29,11 @@ jobs:
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       - run: pnpm exec playwright install --with-deps chromium
+      - name: Preparar herramientas del checklist
+        run: |
+          python3 -m venv "$RUNNER_TEMP/tv-catalogo-venv"
+          "$RUNNER_TEMP/tv-catalogo-venv/bin/python" -m pip install --disable-pip-version-check -r scripts/catalogo/requirements.txt
+          echo "$RUNNER_TEMP/tv-catalogo-venv/bin" >> "$GITHUB_PATH"
       - run: pnpm validate
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
         with:

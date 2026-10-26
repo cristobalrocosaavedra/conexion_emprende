@@ -10,6 +10,7 @@ import {
 import Svg, { Defs, LinearGradient, Rect, Stop } from "react-native-svg";
 import type { ImageSourcePropType } from "react-native";
 import { palettes } from "@territorio-vivo/design-tokens";
+import { communeName } from "@territorio-vivo/core";
 import type { Place } from "@territorio-vivo/core";
 import { messages as t } from "@territorio-vivo/i18n";
 import { placeArt, placeArtLabel, placeArtFit } from "./art";
@@ -221,9 +222,7 @@ export function PlaceCard({
       </View>
       <View style={{ padding: dense ? 9 : 13, gap: 5 }}>
         <Text style={{ color: colors.accent, fontSize: 11, fontWeight: "700" }}>
-          {t.communes[place.commune as keyof typeof t.communes] ??
-            place.commune}{" "}
-          · {t.categories[place.category]}
+          {communeName(place.commune)} · {t.categories[place.category]}
         </Text>
         <Text
           numberOfLines={compact ? 1 : 2}
@@ -240,7 +239,11 @@ export function PlaceCard({
             numberOfLines={3}
             style={{ color: colors.muted, fontSize: 13, lineHeight: 20 }}
           >
-            {place.origin === "osm" ? t.osmReference : place.summary}
+            {place.origin === "osm"
+              ? t.osmReference
+              : place.origin === "master"
+                ? t.masterReference
+                : place.summary}
           </Text>
         )}
         <Text style={{ color: colors.muted, fontSize: 10 }}>{t.pending}</Text>

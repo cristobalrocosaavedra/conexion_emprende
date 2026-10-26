@@ -8,7 +8,8 @@ fichas y selección de paradas. Los productos de origen permanecen independiente
 ## Desarrollo
 
 Node 24.19.0, pnpm 10.33.0 y Python 3.10 o posterior para las pruebas del
-importador local. Desde la raíz:
+importador local. Instalar herramientas de Excel con
+`python3 -m pip install -r scripts/catalogo/requirements.txt`. Desde la raíz:
 
 ```bash
 corepack pnpm install --frozen-lockfile

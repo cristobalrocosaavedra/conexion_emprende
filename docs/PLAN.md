@@ -235,3 +235,8 @@ El titular solicita usar un servicio público de rutas para pruebas inmediatas y
 21. Ajustes tras prueba en carretera — 25-10-2026
 
 Buscar desde una región también debe sugerir lugares de otras regiones con su ubicación administrativa, permitiendo guardarlos sin cambiar la región explorada. El mapa de viaje tendrá orientación según el avance del vehículo, alternativa norte arriba, gestos libres de desplazamiento/zoom/rotación y controles de recenter/recorrido completo. El seguimiento no debe anular gestos manuales. Rumbo de primer plano solo en memoria; las duraciones prolongadas se expresan en horas y minutos. El servicio de ruteo público temporal y el presupuesto US$0 se mantienen.
+
+
+22. Catálogo maestro y revisión humana — 26-10-2026
+
+Tras revisar la simulación, el titular autoriza incorporar todo el maestro a la APK de pruebas, aun pendiente, y revisar el conjunto en un Excel de ida/vuelta. Se conserva el catálogo previo y se agregan referencias sin inventar coordenadas. Comunas/localidades se integran a la jerarquía y búsqueda, no se presentan como negocios. Las coincidencias exactas asocian evidencia sin reemplazar datos; los parecidos permanecen separados y señalados. Checklist completo con IDs y lector de devolución que prepara propuestas, sin publicación automática. No se autoriza producción ni promoción indiscriminada a verificado.

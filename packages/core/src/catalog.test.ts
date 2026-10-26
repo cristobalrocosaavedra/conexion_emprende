@@ -17,9 +17,9 @@ import {
 } from "./index";
 describe("catálogo heredado con procedencia", () => {
   it("conserva 37 referencias sin verificarlas automáticamente", () => {
-    expect(places.filter((p) => p.origin !== "osm")).toHaveLength(37);
+    expect(places.filter((p) => !p.origin)).toHaveLength(37);
     expect(new Set(places.map((p) => p.id)).size).toBe(places.length);
-    for (const p of places) {
+    for (const p of places.filter((p) => p.origin !== "master")) {
       expect(p.verification).toBe("pending");
       if (p.source)
         expect(["http:", "https:"]).toContain(new URL(p.source.url).protocol);

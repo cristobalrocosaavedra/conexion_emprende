@@ -1,3 +1,4 @@
+import master from "../../../content/catalogo/maestro-app.json";
 import national from "../../../content/catalogo/osm-chile.json";
 import snapshot from "../../../content/catalogo/petorca.json";
 import geography from "../../../content/catalogo/regiones.geo.json";
@@ -17,13 +18,14 @@ export interface Place {
   longitude: number | null;
   source: { url: string; label: string } | null;
   verification: "pending";
-  origin?: "osm";
+  origin?: "osm" | "master";
   importedAt: string;
 }
 export interface Locality {
   id: string;
   commune: string;
   name: string;
+  region?: RegionId;
   latitude: number | null;
   longitude: number | null;
 }
@@ -41,10 +43,69 @@ export interface RegionFeature {
   properties: { id: RegionId; name: string; bounds: number[][] };
   geometry: { type: "MultiPolygon"; coordinates: number[][][][] };
 }
-export const places = [...snapshot.places, ...national.places] as Place[];
-export const localities = snapshot.localities as Locality[];
+export const places = [
+  ...snapshot.places,
+  ...national.places,
+  ...master.places,
+] as Place[];
+export const localities = [
+  ...snapshot.localities,
+  ...master.localities,
+] as Locality[];
 export const curatedRoutes = snapshot.routes as CuratedRoute[];
 export const regionFeatures = geography.features as RegionFeature[];
+export interface CatalogTerritory {
+  id: string;
+  level: "region" | "province" | "commune" | "locality";
+  name: string;
+  region: RegionId;
+  province: string | null;
+  commune: string | null;
+  parentId: string | null;
+  cut: null;
+  verification: "pending";
+}
+export const catalogTerritories = master.territories as CatalogTerritory[];
+export const masterRecords = master.records;
+export const masterEvidence = master.evidence as Record<
+  string,
+  {
+    rowIds: string[];
+    sourceLabel: string;
+    category: string;
+    declaredAccess: string;
+    possibleDuplicateIds: string[];
+  }
+>;
+export const communeNames: Record<string, string> = Object.fromEntries(
+  catalogTerritories
+    .filter((t) => t.level === "commune")
+    .map((t) => [t.commune!, t.name]),
+);
+export function communeName(id: string): string {
+  return communeNames[id] ?? id;
+}
+export function provinceName(id: string): string {
+  return (
+    catalogTerritories.find((t) => t.level === "province" && t.province === id)
+      ?.name ?? id
+  );
+}
+export function searchTerritories(query: string): CatalogTerritory[] {
+  const normalize = (s: string) =>
+    s
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLocaleLowerCase("es");
+  const q = normalize(query.trim());
+  return q.length < 2
+    ? []
+    : catalogTerritories.filter(
+        (t) =>
+          (t.level === "commune" || t.level === "locality") &&
+          normalize(t.name).includes(q),
+      );
+}
 export function filterPlaces(
   region: RegionId,
   commune = "all",
@@ -186,7 +247,10 @@ export function normalizePreferences(value: unknown): Preferences | null {
     : [];
   const commune =
     typeof v.commune === "string" &&
-    places.some((p) => p.region === region && p.commune === v.commune)
+    catalogTerritories.some(
+      (p) =>
+        p.level === "commune" && p.region === region && p.commune === v.commune,
+    )
       ? v.commune
       : "all";
   return { region, commune, theme, stopIds, roundTrip: v.roundTrip === true };

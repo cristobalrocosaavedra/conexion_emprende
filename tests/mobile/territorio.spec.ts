@@ -434,7 +434,7 @@ test("ruta pública lista sin configurar VPS: trazado por calles, mapa estable y
   await page
     .getByText("Tu ruta por calles", { exact: true })
     .scrollIntoViewIfNeeded();
-  await page.screenshot({ path: "previews/pantalla-ruta-0.5.0.png" });
+  await page.screenshot({ path: "previews/pantalla-ruta-0.6.0.png" });
   await expect(
     page.getByText("Conexión esquemática · no es una ruta por calles", {
       exact: true,
@@ -493,7 +493,7 @@ test("ruta pública lista sin configurar VPS: trazado por calles, mapa estable y
   await map
     .getByRole("button", { name: "Ver ruta completa", exact: true })
     .click();
-  await page.screenshot({ path: "previews/pantalla-mapa-0.5.0.png" });
+  await page.screenshot({ path: "previews/pantalla-mapa-0.6.0.png" });
   await expect(
     page.getByRole("button", { name: "Cerrar", exact: true }).last(),
   ).toBeVisible();
@@ -594,7 +594,7 @@ test("encuentra Matichoc en Valparaíso al buscar desde Coquimbo", async ({
   await page
     .getByRole("button", { name: "Chocolatería Matichoc", exact: true })
     .scrollIntoViewIfNeeded();
-  await page.screenshot({ path: "previews/pantalla-busqueda-0.5.0.png" });
+  await page.screenshot({ path: "previews/pantalla-busqueda-0.6.0.png" });
   await page
     .getByRole("button", { name: "Chocolatería Matichoc", exact: true })
     .click();
@@ -609,4 +609,113 @@ test("encuentra Matichoc en Valparaíso al buscar desde Coquimbo", async ({
   await expect(
     page.getByText("1. Chocolatería Matichoc", { exact: true }),
   ).toBeVisible();
+});
+
+test("el maestro permite revisar y guardar referencias nuevas sin inventar coordenadas", async ({
+  page,
+}) => {
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await page.evaluate(() =>
+    localStorage.setItem(
+      "territorio-vivo.preferences.v2",
+      JSON.stringify({
+        region: "metropolitana",
+        commune: "all",
+        theme: "dark",
+        stopIds: [],
+        roundTrip: false,
+      }),
+    ),
+  );
+  await page.reload();
+  await expect(
+    page.getByRole("button", { name: "Abrir selector de regiones" }),
+  ).toContainText("Metropolitana de Santiago");
+  await expect(page.getByTestId("regional-window")).toBeVisible();
+  await page.screenshot({ path: "previews/pantalla-inicio-0.6.0.png" });
+  await page.getByRole("tab", { name: /Explorar/ }).click();
+  await page
+    .getByRole("textbox", { name: "Buscar lugares" })
+    .fill("Violeta Parra");
+  await expect(
+    page.getByRole("button", { name: "Parque Violeta Parra", exact: true }),
+  ).toBeVisible();
+  await expect(
+    page.getByText("Lo Espejo · Naturaleza", { exact: true }),
+  ).toBeVisible();
+  await page
+    .getByRole("button", { name: "Parque Violeta Parra", exact: true })
+    .scrollIntoViewIfNeeded();
+  await page.screenshot({ path: "previews/pantalla-catalogo-0.6.0.png" });
+  await page
+    .getByRole("button", { name: "Parque Violeta Parra", exact: true })
+    .click();
+  await expect(
+    page.getByText("Ubicación sin confirmar · no se marca un punto exacto", {
+      exact: true,
+    }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("button", { name: "Explorar mapa", exact: true }),
+  ).toHaveCount(0);
+  await expect(
+    page
+      .getByText(
+        "Referencia del catálogo aportado · pendiente de validación humana",
+        { exact: true },
+      )
+      .last(),
+  ).toBeVisible();
+  await expect
+    .poll(
+      async () =>
+        (
+          await page
+            .getByRole("button", { name: "Cerrar", exact: true })
+            .last()
+            .boundingBox()
+        )?.y ?? 1000,
+    )
+    .toBeLessThan(70);
+  await page.screenshot({ path: "previews/pantalla-ficha-0.6.0.png" });
+  await page
+    .getByRole("button", { name: "Guardar en mi viaje", exact: true })
+    .click();
+  await page
+    .getByRole("button", { name: "Cerrar", exact: true })
+    .last()
+    .click();
+  await page.getByRole("tab", { name: /Mi viaje/ }).click();
+  await expect(
+    page.getByText("1. Parque Violeta Parra", { exact: true }),
+  ).toBeVisible();
+});
+
+test("buscar una comuna sin fichas permite elegirla y mantenerla tras reabrir", async ({
+  page,
+}) => {
+  await page.getByRole("tab", { name: /Explorar/ }).click();
+  await page.getByRole("textbox", { name: "Buscar lugares" }).fill("Camarones");
+  await expect(
+    page.getByText("Comunas y localidades coincidentes", { exact: true }),
+  ).toBeVisible();
+  await page
+    .getByRole("button", {
+      name: "Camarones · Arica y Parinacota",
+      exact: true,
+    })
+    .click();
+  await expect(
+    page.getByRole("button", { name: "Abrir selector de regiones" }),
+  ).toContainText("Arica y Parinacota");
+  await page.reload();
+  await expect
+    .poll(() =>
+      page.evaluate(
+        () =>
+          JSON.parse(localStorage.getItem("territorio-vivo.preferences.v2")!)
+            .commune,
+      ),
+    )
+    .toBe("camarones");
 });
