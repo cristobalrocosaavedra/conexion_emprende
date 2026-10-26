@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-26",
+  "license": "ODbL-1.0",
+  "attribution": "© Colaboradores de OpenStreetMap",
+  "objects": [
+    "way/222144438",
+    "way/1459388783",
+    "way/26273549",
+    "way/221696391"
+  ],
+  "coordinateRole": "Centros cartográficos, no accesos comprobados",
+  "travelSource": {
+    "url": "https://www.sernatur.cl/rapa-nui-recibio-nuevamente-a-visitantes-en-el-marco-de-la-reapertura-de-la-isla-al-turismo/",
+    "published": "2022-08-04",
+    "consulted": "2026-10-26",
+    "scope": "Referencia histórica que identifica el acceso aéreo por Mataveri y Región de Valparaíso; no se reutilizan horarios ni requisitos antiguos",
+    "sha256": "46e201165383512b9271f87b119eb804c2506c38ed276a6c75dff840b56a8787"
+  }
+}

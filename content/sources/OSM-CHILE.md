@@ -1,7 +1,7 @@
 # Extracto comunitario de OpenStreetMap
 
 Archivo independiente: [osm-chile.json](../catalogo/osm-chile.json).
-Fecha de consulta e importación: 24-10-2026. Contiene 27 registros en las 16
+Fecha de consulta e importación: 24-10-2026. La base inicial contenía 27 registros en las 16
 regiones, obtenidos mediante consultas pequeñas de centros urbanos a la API
 pública de OpenStreetMap. Las consultas, bounding boxes y hashes SHA-256 de las
 respuestas están en `queries`; cada referencia conserva tipo, ID, versión y fecha
@@ -40,9 +40,23 @@ Se conserva este conjunto separado del catálogo heredado de Petorca y del códi
 La aplicación consulta ambos conjuntos con el mismo contrato; no se relicencian
 las descripciones ni las imágenes del catálogo anterior como si fueran OSM.
 
-Atribución y licencia visibles en fichas y catálogo. El mismo JSON usado por esta
-versión y su licencia se adjuntan a la descarga del candidato y a los assets de la
-release, sin cobrar por el acceso al extracto ni restringir su redistribución bajo
-ODbL. Para una distribución por tiendas se deberá mantener una oferta accesible
-del extracto correspondiente a cada versión antes de lanzar; no basta un enlace
-a un repositorio privado ni solo al mapa original.
+Atribución y licencia visibles en fichas y catálogo. El JSON correspondiente y
+su licencia se ofrecen de forma pública en el repositorio mediante enlaces
+accesibles desde la app, separados de la instalación. No se cobra por el acceso
+al extracto ni se restringe su redistribución bajo ODbL. Para una distribución
+por tiendas se debe mantener esa oferta accesible para cada versión; no basta
+un repositorio privado ni solo un enlace al mapa original.
+
+## Ampliación Rapa Nui — 26-10-2026
+
+El extracto contiene ahora 31 referencias: se añaden Anakena, Ahu Tahai, Ahu
+Toŋariki y Museo Antropológico Padre Sebastián Englert, manteniendo las 27
+anteriores sin cambios. Procedencia, selección y geometría pública en
+[rapa-nui/procedencia.json](rapa-nui/procedencia.json) y
+[rapa-nui/extracto.osm](rapa-nui/extracto.osm). Sigue siendo referencia pendiente,
+con centros cartográficos sin comprobación de entrada o vigencia. Las consultas
+originales se mantienen con sus hashes, y las nuevas indican su fecha de captura.
+
+El archivo de instalación contiene únicamente la APK. El extracto completo y su
+licencia siguen accesibles en este repositorio y desde la información de la app;
+las capturas, metadatos y documentos se distribuyen por separado.

@@ -3,7 +3,7 @@
   "attribution": "© Colaboradores de OpenStreetMap",
   "licenseUrl": "https://www.openstreetmap.org/copyright",
   "snapshotAt": "2026-10-24",
-  "scope": "Consultas pequeñas de centros urbanos en las 16 regiones; referencias comunitarias sin verificación de vigencia ni acceso. No es un directorio nacional exhaustivo ni una selección de destacados.",
+  "scope": "Base de referencia comunitaria: centros urbanos de las 16 regiones y cuatro lugares de Rapa Nui añadidos el 26-10-2026. Sin verificación en terreno ni cobertura exhaustiva; coordenadas de referencia, no accesos.",
   "queries": [
     {
       "region": "antofagasta",
@@ -132,6 +132,33 @@
       "queryUrl": "https://www.openstreetmap.org/api/0.6/map?bbox=-71.626,-33.046,-71.614,-33.034",
       "bbox": [-71.626, -33.046, -71.614, -33.034],
       "sha256": "942f98c2ad911fa1c3a779c55a653434a3767441b0aaaaa8a1d4bc0f2d7edc08"
+    },
+    {
+      "region": "valparaiso",
+      "province": "isla-de-pascua",
+      "commune": "isla-de-pascua",
+      "queryUrl": "https://www.openstreetmap.org/api/0.6/map?bbox=-109.445,-27.16,-109.415,-27.13",
+      "bbox": [-109.445, -27.16, -109.415, -27.13],
+      "sha256": "aec7573c6ca24abcb94f6af9c0d31b4306962333ecd4b4a0f2ba73a918d98bb9",
+      "snapshotAt": "2026-10-26"
+    },
+    {
+      "region": "valparaiso",
+      "province": "isla-de-pascua",
+      "commune": "isla-de-pascua",
+      "queryUrl": "https://www.openstreetmap.org/api/0.6/map?bbox=-109.335,-27.085,-109.315,-27.065",
+      "bbox": [-109.335, -27.085, -109.315, -27.065],
+      "sha256": "0bed68977c48437591bc5e6f92a5519fa6603dc2524e1894b29e184181a84590",
+      "snapshotAt": "2026-10-26"
+    },
+    {
+      "region": "valparaiso",
+      "province": "isla-de-pascua",
+      "commune": "isla-de-pascua",
+      "queryUrl": "https://www.openstreetmap.org/api/0.6/map?bbox=-109.285,-27.135,-109.265,-27.115",
+      "bbox": [-109.285, -27.135, -109.265, -27.115],
+      "sha256": "1ed30fc7756bf571858f096a64ef588c1b7f4d01ee10c6a0929d64024c748e4d",
+      "snapshotAt": "2026-10-26"
     }
   ],
   "places": [
@@ -862,6 +889,151 @@
         "version": "2",
         "updatedAt": "2019-06-29T22:16:44Z",
         "tourism": "viewpoint"
+      }
+    },
+    {
+      "id": "osm-way-222144438",
+      "region": "valparaiso",
+      "province": "isla-de-pascua",
+      "commune": "isla-de-pascua",
+      "category": "cultura",
+      "name": "Ahu Tahai",
+      "aliases": ["Rapa Nui", "Isla de Pascua"],
+      "summary": "",
+      "description": "",
+      "latitude": -27.13949725,
+      "longitude": -109.4269312,
+      "source": {
+        "url": "https://www.openstreetmap.org/way/222144438",
+        "label": "OpenStreetMap · ODbL 1.0"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "osm-feature-center-unchecked",
+      "importedAt": "2026-10-26",
+      "origin": "osm",
+      "sourceRecord": {
+        "type": "way",
+        "id": "222144438",
+        "version": "2",
+        "updatedAt": "2016-07-20T01:56:50Z",
+        "tags": {
+          "historic": "monument",
+          "name": "Ahu Tahai",
+          "tourism": "attraction"
+        }
+      }
+    },
+    {
+      "id": "osm-way-1459388783",
+      "region": "valparaiso",
+      "province": "isla-de-pascua",
+      "commune": "isla-de-pascua",
+      "category": "cultura",
+      "name": "Museo Antropológico Padre Sebastián Englert",
+      "aliases": ["Rapa Nui", "Isla de Pascua"],
+      "summary": "",
+      "description": "",
+      "latitude": -27.137398146153846,
+      "longitude": -109.4240821,
+      "source": {
+        "url": "https://www.openstreetmap.org/way/1459388783",
+        "label": "OpenStreetMap · ODbL 1.0"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "osm-feature-center-unchecked",
+      "importedAt": "2026-10-26",
+      "origin": "osm",
+      "sourceRecord": {
+        "type": "way",
+        "id": "1459388783",
+        "version": "1",
+        "updatedAt": "2025-12-17T20:36:50Z",
+        "tags": {
+          "addr:city": "Isla de Pascua",
+          "addr:street": "Te Karera",
+          "alt_name": "Museo de Isla de Pascua",
+          "barrier": "wall",
+          "building": "no",
+          "museum": "archaeological",
+          "name": "Museo Antropológico Padre Sebastián Englert",
+          "name:en": "Father Sebastian Englert Anthropological Museum",
+          "name:fr": "Musée anthropologique Père-Sébastien-Englert",
+          "operator": "Servicio Nacional del Patrimonio Cultural",
+          "operator:type": "public",
+          "short_name": "MAPSE",
+          "tourism": "museum",
+          "wikidata": "Q5437650",
+          "wikipedia": "es:Museo Antropológico Padre Sebastián Englert"
+        }
+      }
+    },
+    {
+      "id": "osm-way-26273549",
+      "region": "valparaiso",
+      "province": "isla-de-pascua",
+      "commune": "isla-de-pascua",
+      "category": "playa",
+      "name": "Anakena",
+      "aliases": ["Rapa Nui", "Isla de Pascua"],
+      "summary": "",
+      "description": "",
+      "latitude": -27.07396762016129,
+      "longitude": -109.3229111,
+      "source": {
+        "url": "https://www.openstreetmap.org/way/26273549",
+        "label": "OpenStreetMap · ODbL 1.0"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "osm-feature-center-unchecked",
+      "importedAt": "2026-10-26",
+      "origin": "osm",
+      "sourceRecord": {
+        "type": "way",
+        "id": "26273549",
+        "version": "10",
+        "updatedAt": "2026-05-10T08:29:18Z",
+        "tags": {
+          "name": "Anakena",
+          "natural": "beach",
+          "surface": "sand",
+          "wikidata": "Q484376",
+          "wikipedia": "es:Playa Anakena"
+        }
+      }
+    },
+    {
+      "id": "osm-way-221696391",
+      "region": "valparaiso",
+      "province": "isla-de-pascua",
+      "commune": "isla-de-pascua",
+      "category": "cultura",
+      "name": "Ahu Toŋariki",
+      "aliases": ["Rapa Nui", "Isla de Pascua", "Ahu Tongariki"],
+      "summary": "",
+      "description": "",
+      "latitude": -27.125749925,
+      "longitude": -109.276922925,
+      "source": {
+        "url": "https://www.openstreetmap.org/way/221696391",
+        "label": "OpenStreetMap · ODbL 1.0"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "osm-feature-center-unchecked",
+      "importedAt": "2026-10-26",
+      "origin": "osm",
+      "sourceRecord": {
+        "type": "way",
+        "id": "221696391",
+        "version": "10",
+        "updatedAt": "2025-02-24T10:09:44Z",
+        "tags": {
+          "historic": "monument",
+          "name": "Ahu Toŋariki",
+          "name:ru": "Аху Тонгарики",
+          "tourism": "attraction",
+          "wikidata": "Q3448354",
+          "wikipedia": "es:Ahu Tongariki"
+        }
       }
     }
   ]
