@@ -1,3 +1,11 @@
+# Flujo vigente desde 0.2
+
+Ver [ACTUALIZACIONES.md](ACTUALIZACIONES.md): tres pantallas antes de descargar,
+instalación encima de la base y canal compartido después de revisión en develop.
+La APK candidata se llama `territorio-vivo-android.apk`. La base 0.1 fue instalada
+y probada por el usuario. El resto del documento conserva el registro inicial;
+las limitaciones y resultados históricos no describen el estado de 0.2.
+
 # Descargar la maqueta Android desde GitHub
 
 La APK se compila en **GitHub Actions**, no en el entorno de trabajo ni en EAS.
@@ -33,7 +41,7 @@ La compilación se ejecuta también por push a ramas feat/fix, por lo que no
 requiere fusionar nada en main o develop para obtener la APK. Los cambios en
 ramas docs solo validan; no disparan compilación nativa. Si se abre un PR además
 del push, puede haber dos ejecuciones iniciales; se cancelan ejecuciones obsoletas
-del mismo ref. Revisar consumo antes de ampliar frecuencia o arquitecturas.
+de la misma rama, compartiendo grupo entre push y PR. Revisar consumo antes de ampliar frecuencia o arquitecturas.
 
 ## Pasos en lenguaje simple
 
@@ -80,6 +88,27 @@ en las políticas del repositorio. Es una configuración de GitHub, no una razó
 para compartir contraseñas o tokens por chat.
 
 La API de GitHub estaba bloqueada por 403 del proxy durante la preparación;
-se guardó api.github.com en el borrador de red para permitir crear el PR y
-consultar runs desde el asistente. El acceso Git y el acceso API son independientes.
-El resultado final de push/PR/ejecución se registra en la bitácora.
+se guardó api.github.com y luego volvió a responder: el PR #1 ya está abierto como
+borrador a develop. La validación remota pasó, pero el primer build nativo falló.
+Para diagnosticarlo, los hosts de logs results-receiver.actions.githubusercontent.com
+y productionresultssa19.blob.core.windows.net deben habilitarse en el entorno;
+sus descargas siguen bloqueadas con 403. Los dominios están guardados en borrador.
+No hay APK comprobada todavía. El resultado se registra en la bitácora.
+
+## Corrección tras el primer build
+
+El PR #1 fue fusionado por el usuario en develop. Ya fue posible leer sus logs:
+el fallo estaba en la descarga del checksum de Gradle, que devolvía HTTP 301.
+La corrección sigue redirecciones HTTPS, conserva la validación SHA-256 y se
+detiene si hay discrepancia con un valor guardado. El resultado de la siguiente
+compilación se registra en la bitácora; todavía no equivale a instalación en un
+teléfono real.
+
+## Primera descarga disponible
+
+La ejecución 40117286924 del PR #2 terminó correctamente. [Descargar artefacto
+territorio-vivo-android-5](https://github.com/cristobalrocosaavedra/conexion_emprende/actions/runs/40117286924/artifacts/12569897462).
+Descomprimir el ZIP e instalar territorio-vivo-0.1.0-arm64.apk según los pasos de
+este documento. El artefacto tiene retención de 14 días; si expira, generar una
+nueva ejecución. La firma y el bundle fueron verificados por CI; la instalación
+y el funcionamiento en el teléfono del usuario siguen pendientes.

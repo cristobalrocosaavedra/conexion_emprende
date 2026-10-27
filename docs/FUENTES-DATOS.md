@@ -2,6 +2,12 @@
 
 24-10-2026. El usuario solicita comenzar una base para todas las regiones con directorios públicos. Esta entrega prepara el inventario y criterios. **No hay registros turísticos reales descargados o incorporados todavía.**
 
+## Actualización tras habilitar la red
+
+La API datos.gob.cl respondió HTTP 200 al repetir la consulta. Se guardaron únicamente [metadatos de los cinco conjuntos encontrados](../content/sources/inventario.json), no fichas ni archivos de prestadores. Todos declaran `cc-nc` y remiten a Creative Commons BY-NC 2.0; sus metadatos indican modificación en 2015. No se incorporarán automáticamente a un producto con monetización: falta permiso compatible y revisión de vigencia. Los informes 2010/2011 no constituyen una base de establecimientos actuales.
+
+La URL candidata SERNATUR respondió 404 después de superar el bloqueo del proxy; debe encontrarse una dirección vigente. La documentación de Expo ya responde HTTP 200. La tabla siguiente conserva el diagnóstico inicial para distinguir bloqueo de red, recurso inexistente y permiso de reutilización.
+
 ## Consultas realizadas
 
 | Fuente candidata          | URL consultada                                                           | Uso por investigar                                                                 | Resultado observado                                           |

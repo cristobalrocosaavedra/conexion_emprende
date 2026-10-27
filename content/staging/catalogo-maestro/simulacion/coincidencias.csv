@@ -1,0 +1,25 @@
+﻿id,name,region,province,commune,matchedId,matchedName,reason,distanceMeters,coordinateConflict
+TV-ATR-00462,Playa Lilenes,Valparaíso,Petorca,Papudo,legacy:places:papudo-playa-los-lilenes,Playa Los Lilenes,similar-name-territory-category,,False
+TV-ATR-00470,Los Molles,Valparaíso,Petorca,La Ligua,legacy:places:la-ligua-los-molles,Los Molles,same-name-territory-category,,False
+TV-ATR-00471,Pichicuy,Valparaíso,Petorca,La Ligua,legacy:places:la-ligua-pichicuy,Pichicuy,same-name-territory-category,,False
+TV-ATR-00485,Paseo Atkinson,Valparaíso,Valparaíso,Valparaíso,legacy:places:osm-node-3406229239,Paseo Atkinson,same-name-territory-category,,False
+TV-ATR-00499,Playa El Canelillo,Valparaíso,San Antonio,Algarrobo,master:TV-ATR-00498,Playa El Canelo,similar-name-territory-category,,False
+TV-LOC-00715,Valle Hermoso,Valparaíso,Petorca,La Ligua,legacy:localities:valle-hermoso,Valle Hermoso,same-name-territory-category,,False
+TV-LOC-00716,Placilla,Valparaíso,Petorca,La Ligua,legacy:localities:placilla,Placilla,same-name-territory-category,,False
+TV-LOC-00717,Pichicuy,Valparaíso,Petorca,La Ligua,legacy:localities:pichicuy,Pichicuy,same-name-territory-category,,False
+TV-LOC-00718,Los Molles,Valparaíso,Petorca,La Ligua,legacy:localities:los-molles-pueblo,Los Molles,same-name-territory-category,,False
+TV-LOC-00719,Huaquén,Valparaíso,Petorca,La Ligua,legacy:localities:huaquen,Huaquén,same-name-territory-category,,False
+TV-LOC-00720,Longotoma,Valparaíso,Petorca,La Ligua,legacy:localities:longotoma,Longotoma,same-name-territory-category,,False
+TV-LOC-00723,Alicahue,Valparaíso,Petorca,Cabildo,legacy:localities:alicahue,Alicahue,same-name-territory-category,,False
+TV-LOC-00724,Paihuén,Valparaíso,Petorca,Cabildo,legacy:localities:paihuen,Paihuén,same-name-territory-category,,False
+TV-LOC-00725,Artificio,Valparaíso,Petorca,Cabildo,legacy:localities:artificio,Artificio,same-name-territory-category,,False
+TV-LOC-00727,San Lorenzo,Valparaíso,Petorca,Cabildo,legacy:localities:san-lorenzo-cabildo,San Lorenzo,same-name-territory-category,,False
+TV-LOC-00728,Pullally,Valparaíso,Petorca,Papudo,legacy:localities:pullally,Pullally,same-name-territory-category,,False
+TV-LOC-00729,Las Salinas,Valparaíso,Petorca,Papudo,legacy:localities:las-salinas-papudo,Las Salinas,same-name-territory-category,,False
+TV-LOC-00730,Chincolco,Valparaíso,Petorca,Petorca,legacy:localities:chincolco,Chincolco,same-name-territory-category,,False
+TV-LOC-00731,Hierro Viejo,Valparaíso,Petorca,Petorca,legacy:localities:hierro-viejo,Hierro Viejo,same-name-territory-category,,False
+TV-LOC-00732,Pedegua,Valparaíso,Petorca,Petorca,legacy:localities:pedegua,Pedegua,same-name-territory-category,,False
+TV-LOC-00733,Manuel Montt,Valparaíso,Petorca,Petorca,legacy:localities:manuel-montt-petorca,Manuel Montt,same-name-territory-category,,False
+TV-LOC-00734,Cachagua,Valparaíso,Petorca,Zapallar,legacy:localities:cachagua,Cachagua,same-name-territory-category,,False
+TV-LOC-00735,Catapilco,Valparaíso,Petorca,Zapallar,legacy:localities:catapilco,Catapilco,same-name-territory-category,,False
+TV-LOC-00737,Blanquillo,Valparaíso,Petorca,Zapallar,legacy:localities:blanquillo,Blanquillo,same-name-territory-category,,False

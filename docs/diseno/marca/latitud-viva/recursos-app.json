@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-26",
+  "version": "0.7.1",
+  "tool": "OpenAI image_gen",
+  "reference": "contenido/simbolo-colores-zonas.png",
+  "original": "exec-69311c40-78ec-4d33-8dcf-39c8b64c6a55.png",
+  "iconPrompt": "Prepara el ÍCONO REAL DE INSTALACIÓN de la aplicación Territorio Vivo a partir del símbolo aprobado en la imagen adjunta. Imagen CUADRADA 1024 por 1024 píxeles, fondo COMPLETAMENTE OPACO y uniforme berenjena #22162E que llena todo el lienzo hasta las esquinas. SIN texto, SIN rótulos NORTE/CENTRO/SUR/AUSTRAL, SIN líneas de llamada, SIN nombre, SIN marco ni dibujo de teléfono. Conservar el MISMO símbolo abstracto vertical de cinco piezas de la referencia, aislado y CENTRADO ópticamente: norte ocre dorado con dos líneas marfil de dunas; centro terracota con cordillera y valle marfil; sur verde con araucaria sencilla y curva de agua marfil; dos piezas inferiores turquesa y azul con fiordos e islas marfil. Mantener la forma alargada orgánica de Pulso/Latitud viva y los cinco fragmentos separados, con algo más de grosor y menos microdetalle para lectura pequeña. Símbolo entero dentro del 64% central del lienzo en altura y del 48% central en anchura, con amplio espacio de seguridad uniforme: nada debe quedar cortado por la máscara circular o redondeada del sistema Android/iOS. No unir las piezas ni agregar otras. Escala generosa y equilibrada, extremos totalmente visibles. Contornos impecables y masas planas de color, sin gradientes, textura, brillo, sombra, relieve, letras ni nuevos adornos. Este archivo se usará directamente como ícono de app, no es una lámina de presentación. El fondo debe ser sólido y sin transparencia.",
+  "encoding": "PNG original intacto. WebP para cabecera (calidad 85) y lámina de zonas (calidad 80), método 6, sin cambios de dimensiones.",
+  "assets": [
+    {
+      "path": "apps/mobile/assets/marca/latitud-viva-icono.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1268238,
+      "sha256": "382dcb1d3ddc27cc4f0b00ff1fc656a43f74f89f0ace45e1320aba3485748f4e"
+    },
+    {
+      "path": "apps/mobile/assets/marca/latitud-viva-icono.webp",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 35992,
+      "sha256": "873560209f8f622df07cf7ee9202da435f60e379d1a0faeb2adc6026060a5b0f"
+    },
+    {
+      "path": "apps/mobile/assets/marca/latitud-viva-zonas.webp",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 46958,
+      "sha256": "b1b35275827202a0611b21c79eaa9ce5a4958f346a11f95ddbaf8311e26ae507"
+    }
+  ]
+}

@@ -7,3 +7,18 @@ apps/mobile/android
 apps/mobile/ios
 # Plan original conservado textualmente por solicitud del usuario.
 docs/PLAN.md
+
+# Código tercero conservado íntegro y geometría compacta.
+apps/mobile/src/vendor
+content/catalogo/regiones.geo.json
+
+playwright-report
+test-results
+
+previews
+
+# Paquete original, respaldo exacto y reportes reproducibles del importador.
+content/staging/catalogo-maestro
+
+# Proyección del catálogo generada de forma determinista, comprobada en pruebas.
+content/catalogo/maestro-app.json

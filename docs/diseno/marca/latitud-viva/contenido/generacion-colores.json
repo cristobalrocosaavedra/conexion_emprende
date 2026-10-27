@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-26",
+  "tool": "OpenAI image_gen",
+  "reference": "simbolo-explicado.png",
+  "output": "simbolo-colores-zonas.png",
+  "original": "exec-ad4c2a96-2854-4b0e-b5f7-95d0e16ce400.png",
+  "request": "Recolorear por zona conservando composición y motivos interiores.",
+  "palette": {
+    "norte": "#DFA642",
+    "centro": "#D87557",
+    "sur": "#4EA17C",
+    "austral": ["#4CA8B7", "#437FA8"]
+  },
+  "prompt": "Recolorea esta MISMA lámina explicativa de Territorio Vivo por zona geográfica. El usuario pide variar un poco los colores según cada zona. CAMBIAR SOLAMENTE los colores de relleno de las cinco piezas del símbolo. Mantener EXACTAMENTE las mismas formas orgánicas, posición, proporciones, tamaños, detalles interiores marfil (dunas, cordillera y valles, araucaria y agua, fiordos e islas), líneas conectoras, tipografía, todos los textos y su distribución, nombre pequeño «territorio vivo» y fondo berenjena oscuro. Paleta territorial armónica, natural y contemporánea, con saturación moderada: pieza NORTE ocre dorado cálido #DFA642, evocando arena y desierto; pieza CENTRO terracota suave #D87557, evocando tierra y valles; pieza SUR verde bosque luminoso #4EA17C; DOS piezas AUSTRAL en una misma familia azul, la izquierda turquesa patagónico #4CA8B7 y la derecha azul agua profundo #437FA8. Debe percibirse una transición cálida a fresca de norte a sur. No colores neón, no arcoíris estridente, no degradados, no textura ni sombras nuevas. Preservar todos los motivos marfil bien contrastados dentro de las piezas y todos los textos originales perfectamente legibles: NORTE / Desierto y relieve; CENTRO / Cordillera y valles; SUR / Bosque y agua; AUSTRAL / Fiordos e islas. No añadir elementos, emblemas, bordes, títulos, nuevas palabras o variantes extra; solo esta misma composición con la nueva paleta por zona. Acabado de branding limpio y plano."
+}

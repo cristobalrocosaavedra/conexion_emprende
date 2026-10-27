@@ -1,24 +1,49 @@
 import type { ExpoConfig } from "expo/config";
+import identity from "./app-identity.json";
+import permissions from "../../packages/i18n/src/permissions.json";
+const versionCode = Number(
+  process.env.TV_ANDROID_VERSION_CODE ?? identity.localVersionCode,
+);
+if (
+  !Number.isSafeInteger(versionCode) ||
+  versionCode <= 0 ||
+  versionCode > 2147483647
+)
+  throw new Error("El número de compilación Android no es válido.");
 const config: ExpoConfig = {
   name: "Territorio Vivo",
   slug: "territorio-vivo",
-  version: "0.1.0",
+  version: "0.7.1",
+  icon: "./assets/marca/latitud-viva-icono.png",
   orientation: "portrait",
   scheme: "territoriovivo",
   userInterfaceStyle: "automatic",
   platforms: ["android", "ios", "web"],
   android: {
-    package: "cl.territoriovivo.maqueta",
-    versionCode: 1,
-    permissions: [],
-    blockedPermissions: [
-      "android.permission.RECORD_AUDIO",
+    package: identity.androidPackage,
+    versionCode,
+    permissions: [
       "android.permission.ACCESS_FINE_LOCATION",
       "android.permission.ACCESS_COARSE_LOCATION",
     ],
+    blockedPermissions: [
+      "android.permission.RECORD_AUDIO",
+      "android.permission.ACCESS_BACKGROUND_LOCATION",
+      "android.permission.READ_EXTERNAL_STORAGE",
+      "android.permission.WRITE_EXTERNAL_STORAGE",
+      "android.permission.SYSTEM_ALERT_WINDOW",
+      "android.permission.VIBRATE",
+    ],
   },
-  ios: { bundleIdentifier: "cl.territoriovivo.maqueta", supportsTablet: true },
-  plugins: ["expo-router"],
+  ios: {
+    bundleIdentifier: identity.iosBundleIdentifier,
+    supportsTablet: true,
+    buildNumber: String(versionCode),
+  },
+  plugins: [
+    "expo-router",
+    ["expo-location", { locationWhenInUsePermission: permissions.es.location }],
+  ],
   experiments: { typedRoutes: false },
 };
 export default config;

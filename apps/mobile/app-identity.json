@@ -1,0 +1,7 @@
+{
+  "androidPackage": "cl.territoriovivo.maqueta",
+  "iosBundleIdentifier": "cl.territoriovivo.maqueta",
+  "localVersionCode": 2,
+  "ciVersionCodeOffset": 100000,
+  "testCertificateSha256": "fac61745dc0903786fb9ede62a962b399f7348f0bb6f899b8332667591033b9c"
+}

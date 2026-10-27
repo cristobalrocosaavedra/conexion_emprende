@@ -1,0 +1,347 @@
+﻿region,province,commune,rows,coordinates,existingPlaces,existingLocalities,existingRoutes,pendingCUT,coordinateConflicts,new-draft,update-assertions,review-duplicate,conflict,quarantine,unchanged,unchanged-proposal,proposal-updated
+Antofagasta,Antofagasta,Antofagasta,10,2,2,0,0,1,0,10,0,0,0,0,0,0,0
+Antofagasta,Antofagasta,Mejillones,3,0,0,0,0,1,0,3,0,0,0,0,0,0,0
+Antofagasta,Antofagasta,Sierra Gorda,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Antofagasta,Antofagasta,Taltal,5,1,0,0,0,1,0,5,0,0,0,0,0,0,0
+Antofagasta,El Loa,Calama,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Antofagasta,El Loa,Ollagüe,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Antofagasta,El Loa,San Pedro de Atacama,5,1,0,0,0,1,0,5,0,0,0,0,0,0,0
+Antofagasta,Tocopilla,María Elena,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Antofagasta,Tocopilla,Tocopilla,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Arica y Parinacota,Arica,Arica,13,2,2,0,0,1,0,13,0,0,0,0,0,0,0
+Arica y Parinacota,Arica,Camarones,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Arica y Parinacota,Parinacota,General Lagos,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Arica y Parinacota,Parinacota,Putre,5,2,0,0,0,1,0,5,0,0,0,0,0,0,0
+Atacama,Chañaral,Chañaral,2,1,0,0,0,1,0,2,0,0,0,0,0,0,0
+Atacama,Chañaral,Diego de Almagro,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Atacama,Copiapó,Caldera,9,1,0,0,0,1,0,9,0,0,0,0,0,0,0
+Atacama,Copiapó,Copiapó,4,1,1,0,0,1,0,4,0,0,0,0,0,0,0
+Atacama,Copiapó,Tierra Amarilla,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Atacama,Huasco,Alto del Carmen,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Atacama,Huasco,Freirina,2,0,0,0,0,1,0,2,0,0,0,0,0,0,0
+Atacama,Huasco,Huasco,5,1,0,0,0,1,0,5,0,0,0,0,0,0,0
+Atacama,Huasco,Vallenar,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Aysén,Aysén,Aysén,5,1,0,0,0,1,0,5,0,0,0,0,0,0,0
+Aysén,Aysén,Cisnes,4,1,0,0,0,1,0,4,0,0,0,0,0,0,0
+Aysén,Aysén,Guaitecas,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Aysén,Capitán Prat,Cochrane,2,0,0,0,0,1,0,2,0,0,0,0,0,0,0
+Aysén,Capitán Prat,O’Higgins,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Aysén,Capitán Prat,Tortel,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Aysén,Coyhaique,Coyhaique,4,0,1,0,0,1,0,4,0,0,0,0,0,0,0
+Aysén,Coyhaique,Lago Verde,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Aysén,General Carrera,Chile Chico,2,0,0,0,0,1,0,2,0,0,0,0,0,0,0
+Aysén,General Carrera,Río Ibáñez,5,2,0,0,0,1,0,5,0,0,0,0,0,0,0
+Biobío,Arauco,Arauco,3,0,0,0,0,1,0,3,0,0,0,0,0,0,0
+Biobío,Arauco,Cañete,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Biobío,Arauco,Contulmo,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Biobío,Arauco,Curanilahue,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Biobío,Arauco,Lebu,4,0,0,0,0,1,0,4,0,0,0,0,0,0,0
+Biobío,Arauco,Los Álamos,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Biobío,Arauco,Tirúa,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Biobío,Biobío,Alto Biobío,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Biobío,Biobío,Antuco,2,1,0,0,0,1,0,2,0,0,0,0,0,0,0
+Biobío,Biobío,Cabrero,2,1,0,0,0,1,0,2,0,0,0,0,0,0,0
+Biobío,Biobío,Laja,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Biobío,Biobío,Los Ángeles,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Biobío,Biobío,Mulchén,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Biobío,Biobío,Nacimiento,2,0,0,0,0,1,0,2,0,0,0,0,0,0,0
+Biobío,Biobío,Negrete,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Biobío,Biobío,Quilaco,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Biobío,Biobío,Quilleco,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Biobío,Biobío,San Rosendo,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Biobío,Biobío,Santa Bárbara,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Biobío,Biobío,Tucapel,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Biobío,Biobío,Yumbel,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Biobío,Concepción,Chiguayante,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Biobío,Concepción,Concepción,6,1,2,0,0,1,0,6,0,0,0,0,0,0,0
+Biobío,Concepción,Coronel,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Biobío,Concepción,Florida,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Biobío,Concepción,Hualpén,2,1,0,0,0,1,0,2,0,0,0,0,0,0,0
+Biobío,Concepción,Hualqui,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Biobío,Concepción,Lota,4,0,0,0,0,1,0,4,0,0,0,0,0,0,0
+Biobío,Concepción,Penco,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Biobío,Concepción,San Pedro de la Paz,5,0,0,0,0,1,0,5,0,0,0,0,0,0,0
+Biobío,Concepción,Santa Juana,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Biobío,Concepción,Talcahuano,3,0,0,0,0,1,0,3,0,0,0,0,0,0,0
+Biobío,Concepción,Tomé,5,0,0,0,0,1,0,5,0,0,0,0,0,0,0
+Coquimbo,Choapa,Canela,2,0,0,0,0,1,0,2,0,0,0,0,0,0,0
+Coquimbo,Choapa,Illapel,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Coquimbo,Choapa,Los Vilos,5,0,1,0,0,1,0,5,0,0,0,0,0,0,0
+Coquimbo,Choapa,Salamanca,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Coquimbo,Elqui,Andacollo,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Coquimbo,Elqui,Coquimbo,7,0,0,0,0,1,0,7,0,0,0,0,0,0,0
+Coquimbo,Elqui,La Higuera,5,1,0,0,0,1,0,5,0,0,0,0,0,0,0
+Coquimbo,Elqui,La Serena,8,0,2,0,0,1,0,8,0,0,0,0,0,0,0
+Coquimbo,Elqui,Paihuano,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Coquimbo,Elqui,Vicuña,4,0,0,0,0,1,0,4,0,0,0,0,0,0,0
+Coquimbo,Limarí,Combarbalá,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Coquimbo,Limarí,Monte Patria,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Coquimbo,Limarí,Ovalle,2,1,0,0,0,1,0,2,0,0,0,0,0,0,0
+Coquimbo,Limarí,Punitaqui,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Coquimbo,Limarí,Río Hurtado,2,1,0,0,0,1,0,2,0,0,0,0,0,0,0
+La Araucanía,Cautín,Carahue,2,0,0,0,0,1,0,2,0,0,0,0,0,0,0
+La Araucanía,Cautín,Cholchol,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+La Araucanía,Cautín,Cunco,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+La Araucanía,Cautín,Curarrehue,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+La Araucanía,Cautín,Freire,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+La Araucanía,Cautín,Galvarino,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+La Araucanía,Cautín,Gorbea,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+La Araucanía,Cautín,Lautaro,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+La Araucanía,Cautín,Loncoche,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+La Araucanía,Cautín,Melipeuco,3,1,0,0,0,1,0,3,0,0,0,0,0,0,0
+La Araucanía,Cautín,Nueva Imperial,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+La Araucanía,Cautín,Padre Las Casas,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+La Araucanía,Cautín,Perquenco,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+La Araucanía,Cautín,Pitrufquén,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+La Araucanía,Cautín,Pucón,6,2,0,0,0,1,0,6,0,0,0,0,0,0,0
+La Araucanía,Cautín,Saavedra,3,0,0,0,0,1,0,3,0,0,0,0,0,0,0
+La Araucanía,Cautín,Temuco,5,0,1,0,0,1,0,5,0,0,0,0,0,0,0
+La Araucanía,Cautín,Teodoro Schmidt,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+La Araucanía,Cautín,Toltén,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+La Araucanía,Cautín,Vilcún,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+La Araucanía,Cautín,Villarrica,3,0,0,0,0,1,0,3,0,0,0,0,0,0,0
+La Araucanía,Malleco,Angol,2,1,0,0,0,1,0,2,0,0,0,0,0,0,0
+La Araucanía,Malleco,Collipulli,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+La Araucanía,Malleco,Curacautín,2,0,0,0,0,1,0,2,0,0,0,0,0,0,0
+La Araucanía,Malleco,Ercilla,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+La Araucanía,Malleco,Lonquimay,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+La Araucanía,Malleco,Los Sauces,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+La Araucanía,Malleco,Lumaco,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+La Araucanía,Malleco,Purén,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+La Araucanía,Malleco,Renaico,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+La Araucanía,Malleco,Traiguén,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+La Araucanía,Malleco,Victoria,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Los Lagos,Chiloé,Ancud,5,0,0,0,0,1,0,5,0,0,0,0,0,0,0
+Los Lagos,Chiloé,Castro,3,0,0,0,0,1,0,3,0,0,0,0,0,0,0
+Los Lagos,Chiloé,Chonchi,4,1,0,0,0,1,0,4,0,0,0,0,0,0,0
+Los Lagos,Chiloé,Curaco de Vélez,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Los Lagos,Chiloé,Dalcahue,2,0,0,0,0,1,0,2,0,0,0,0,0,0,0
+Los Lagos,Chiloé,Puqueldón,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Los Lagos,Chiloé,Queilén,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Los Lagos,Chiloé,Quellón,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Los Lagos,Chiloé,Quemchi,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Los Lagos,Chiloé,Quinchao,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Los Lagos,Llanquihue,Calbuco,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Los Lagos,Llanquihue,Cochamó,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Los Lagos,Llanquihue,Fresia,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Los Lagos,Llanquihue,Frutillar,3,0,0,0,0,1,0,3,0,0,0,0,0,0,0
+Los Lagos,Llanquihue,Llanquihue,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Los Lagos,Llanquihue,Los Muermos,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Los Lagos,Llanquihue,Maullín,3,0,0,0,0,1,0,3,0,0,0,0,0,0,0
+Los Lagos,Llanquihue,Puerto Montt,7,1,1,0,0,1,0,7,0,0,0,0,0,0,0
+Los Lagos,Llanquihue,Puerto Varas,6,1,0,0,0,1,0,6,0,0,0,0,0,0,0
+Los Lagos,Osorno,Osorno,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Los Lagos,Osorno,Puerto Octay,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Los Lagos,Osorno,Purranque,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Los Lagos,Osorno,Puyehue,2,0,0,0,0,1,0,2,0,0,0,0,0,0,0
+Los Lagos,Osorno,Río Negro,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Los Lagos,Osorno,San Juan de la Costa,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Los Lagos,Osorno,San Pablo,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Los Lagos,Palena,Chaitén,2,1,0,0,0,1,0,2,0,0,0,0,0,0,0
+Los Lagos,Palena,Futaleufú,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Los Lagos,Palena,Hualaihué,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Los Lagos,Palena,Palena,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Los Ríos,Del Ranco,Futrono,3,0,0,0,0,1,0,3,0,0,0,0,0,0,0
+Los Ríos,Del Ranco,La Unión,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Los Ríos,Del Ranco,Lago Ranco,3,0,0,0,0,1,0,3,0,0,0,0,0,0,0
+Los Ríos,Del Ranco,Río Bueno,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Los Ríos,Valdivia,Corral,4,1,0,0,0,1,0,4,0,0,0,0,0,0,0
+Los Ríos,Valdivia,Lanco,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Los Ríos,Valdivia,Los Lagos,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Los Ríos,Valdivia,Mariquina,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Los Ríos,Valdivia,Máfil,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Los Ríos,Valdivia,Paillaco,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Los Ríos,Valdivia,Panguipulli,5,1,0,0,0,1,0,5,0,0,0,0,0,0,0
+Los Ríos,Valdivia,Valdivia,12,2,2,0,0,1,0,12,0,0,0,0,0,0,0
+Magallanes,Antártica Chilena,Antártica,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Magallanes,Antártica Chilena,Cabo de Hornos,2,0,0,0,0,1,0,2,0,0,0,0,0,0,0
+Magallanes,Magallanes,Laguna Blanca,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Magallanes,Magallanes,Punta Arenas,7,1,2,0,0,1,0,7,0,0,0,0,0,0,0
+Magallanes,Magallanes,Río Verde,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Magallanes,Magallanes,San Gregorio,2,1,0,0,0,1,0,2,0,0,0,0,0,0,0
+Magallanes,Tierra del Fuego,Porvenir,2,0,0,0,0,1,0,2,0,0,0,0,0,0,0
+Magallanes,Tierra del Fuego,Primavera,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Magallanes,Tierra del Fuego,Timaukel,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Magallanes,Última Esperanza,Natales,5,1,0,0,0,1,0,5,0,0,0,0,0,0,0
+Magallanes,Última Esperanza,Torres del Paine,3,1,0,0,0,1,0,3,0,0,0,0,0,0,0
+Maule,Cauquenes,Cauquenes,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Maule,Cauquenes,Chanco,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Maule,Cauquenes,Pelluhue,6,1,0,0,0,1,0,6,0,0,0,0,0,0,0
+Maule,Curicó,Curicó,3,0,0,0,0,1,0,3,0,0,0,0,0,0,0
+Maule,Curicó,Hualañé,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Maule,Curicó,Licantén,3,0,0,0,0,1,0,3,0,0,0,0,0,0,0
+Maule,Curicó,Molina,2,1,0,0,0,1,0,2,0,0,0,0,0,0,0
+Maule,Curicó,Rauco,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Maule,Curicó,Romeral,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Maule,Curicó,Sagrada Familia,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Maule,Curicó,Teno,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Maule,Curicó,Vichuquén,5,1,0,0,0,1,0,5,0,0,0,0,0,0,0
+Maule,Linares,Colbún,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Maule,Linares,Linares,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Maule,Linares,Longaví,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Maule,Linares,Parral,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Maule,Linares,Retiro,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Maule,Linares,San Javier,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Maule,Linares,Villa Alegre,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Maule,Linares,Yerbas Buenas,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Maule,Talca,Constitución,6,0,0,0,0,1,0,6,0,0,0,0,0,0,0
+Maule,Talca,Curepto,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Maule,Talca,Empedrado,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Maule,Talca,Maule,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Maule,Talca,Pelarco,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Maule,Talca,Pencahue,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Maule,Talca,Río Claro,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Maule,Talca,San Clemente,2,1,0,0,0,1,0,2,0,0,0,0,0,0,0
+Maule,Talca,San Rafael,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Maule,Talca,Talca,4,0,2,0,0,1,0,4,0,0,0,0,0,0,0
+Metropolitana,Chacabuco,Colina,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Metropolitana,Chacabuco,Lampa,2,1,0,0,0,1,0,2,0,0,0,0,0,0,0
+Metropolitana,Chacabuco,Tiltil,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Metropolitana,Cordillera,Pirque,2,1,0,0,0,1,0,2,0,0,0,0,0,0,0
+Metropolitana,Cordillera,Puente Alto,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Metropolitana,Cordillera,San José de Maipo,4,1,0,0,0,1,0,4,0,0,0,0,0,0,0
+Metropolitana,Maipo,Buin,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Metropolitana,Maipo,Calera de Tango,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Metropolitana,Maipo,Paine,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Metropolitana,Maipo,San Bernardo,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Metropolitana,Melipilla,Alhué,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Metropolitana,Melipilla,Curacaví,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Metropolitana,Melipilla,María Pinto,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Metropolitana,Melipilla,Melipilla,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Metropolitana,Melipilla,San Pedro,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Metropolitana,Santiago,Cerrillos,2,0,0,0,0,1,0,2,0,0,0,0,0,0,0
+Metropolitana,Santiago,Cerro Navia,2,0,0,0,0,1,0,2,0,0,0,0,0,0,0
+Metropolitana,Santiago,Conchalí,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Metropolitana,Santiago,El Bosque,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Metropolitana,Santiago,Estación Central,2,0,0,0,0,1,0,2,0,0,0,0,0,0,0
+Metropolitana,Santiago,Huechuraba,2,0,0,0,0,1,0,2,0,0,0,0,0,0,0
+Metropolitana,Santiago,Independencia,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Metropolitana,Santiago,La Cisterna,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Metropolitana,Santiago,La Florida,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Metropolitana,Santiago,La Granja,2,0,0,0,0,1,0,2,0,0,0,0,0,0,0
+Metropolitana,Santiago,La Pintana,4,0,0,0,0,1,0,4,0,0,0,0,0,0,0
+Metropolitana,Santiago,La Reina,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Metropolitana,Santiago,Las Condes,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Metropolitana,Santiago,Lo Barnechea,3,1,0,0,0,1,0,3,0,0,0,0,0,0,0
+Metropolitana,Santiago,Lo Espejo,2,0,0,0,0,1,0,2,0,0,0,0,0,0,0
+Metropolitana,Santiago,Lo Prado,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Metropolitana,Santiago,Macul,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Metropolitana,Santiago,Maipú,2,0,0,0,0,1,0,2,0,0,0,0,0,0,0
+Metropolitana,Santiago,Pedro Aguirre Cerda,3,0,0,0,0,1,0,3,0,0,0,0,0,0,0
+Metropolitana,Santiago,Peñalolén,3,0,0,0,0,1,0,3,0,0,0,0,0,0,0
+Metropolitana,Santiago,Providencia,4,0,0,0,0,1,0,4,0,0,0,0,0,0,0
+Metropolitana,Santiago,Pudahuel,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Metropolitana,Santiago,Quilicura,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Metropolitana,Santiago,Quinta Normal,3,0,0,0,0,1,0,3,0,0,0,0,0,0,0
+Metropolitana,Santiago,Recoleta,6,0,0,0,0,1,0,6,0,0,0,0,0,0,0
+Metropolitana,Santiago,Renca,2,0,0,0,0,1,0,2,0,0,0,0,0,0,0
+Metropolitana,Santiago,San Joaquín,2,0,0,0,0,1,0,2,0,0,0,0,0,0,0
+Metropolitana,Santiago,San Miguel,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Metropolitana,Santiago,San Ramón,2,0,0,0,0,1,0,2,0,0,0,0,0,0,0
+Metropolitana,Santiago,Santiago,5,0,2,0,0,1,0,5,0,0,0,0,0,0,0
+Metropolitana,Santiago,Vitacura,2,0,0,0,0,1,0,2,0,0,0,0,0,0,0
+Metropolitana,Santiago,Ñuñoa,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Metropolitana,Talagante,El Monte,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Metropolitana,Talagante,Isla de Maipo,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Metropolitana,Talagante,Padre Hurtado,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Metropolitana,Talagante,Peñaflor,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Metropolitana,Talagante,Talagante,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+O’Higgins,Cachapoal,Codegua,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+O’Higgins,Cachapoal,Coinco,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+O’Higgins,Cachapoal,Coltauco,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+O’Higgins,Cachapoal,Doñihue,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+O’Higgins,Cachapoal,Graneros,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+O’Higgins,Cachapoal,Las Cabras,2,1,0,0,0,1,0,2,0,0,0,0,0,0,0
+O’Higgins,Cachapoal,Machalí,3,1,0,0,0,1,0,3,0,0,0,0,0,0,0
+O’Higgins,Cachapoal,Malloa,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+O’Higgins,Cachapoal,Mostazal,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+O’Higgins,Cachapoal,Olivar,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+O’Higgins,Cachapoal,Peumo,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+O’Higgins,Cachapoal,Pichidegua,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+O’Higgins,Cachapoal,Quinta de Tilcoco,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+O’Higgins,Cachapoal,Rancagua,4,0,2,0,0,1,0,4,0,0,0,0,0,0,0
+O’Higgins,Cachapoal,Rengo,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+O’Higgins,Cachapoal,Requínoa,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+O’Higgins,Cachapoal,San Vicente,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+O’Higgins,Cardenal Caro,La Estrella,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+O’Higgins,Cardenal Caro,Litueche,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+O’Higgins,Cardenal Caro,Marchihue,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+O’Higgins,Cardenal Caro,Navidad,4,0,0,0,0,1,0,4,0,0,0,0,0,0,0
+O’Higgins,Cardenal Caro,Paredones,3,0,0,0,0,1,0,3,0,0,0,0,0,0,0
+O’Higgins,Cardenal Caro,Pichilemu,9,2,0,0,0,1,0,9,0,0,0,0,0,0,0
+O’Higgins,Colchagua,Chimbarongo,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+O’Higgins,Colchagua,Chépica,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+O’Higgins,Colchagua,Lolol,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+O’Higgins,Colchagua,Nancagua,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+O’Higgins,Colchagua,Palmilla,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+O’Higgins,Colchagua,Peralillo,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+O’Higgins,Colchagua,Placilla,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+O’Higgins,Colchagua,Pumanque,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+O’Higgins,Colchagua,San Fernando,2,0,0,0,0,1,0,2,0,0,0,0,0,0,0
+O’Higgins,Colchagua,Santa Cruz,2,0,0,0,0,1,0,2,0,0,0,0,0,0,0
+Tarapacá,Del Tamarugal,Camiña,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Tarapacá,Del Tamarugal,Colchane,2,1,0,0,0,1,0,2,0,0,0,0,0,0,0
+Tarapacá,Del Tamarugal,Huara,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Tarapacá,Del Tamarugal,Pica,5,1,0,0,0,1,0,5,0,0,0,0,0,0,0
+Tarapacá,Del Tamarugal,Pozo Almonte,2,1,0,0,0,1,0,2,0,0,0,0,0,0,0
+Tarapacá,Iquique,Alto Hospicio,2,0,0,0,0,1,0,2,0,0,0,0,0,0,0
+Tarapacá,Iquique,Iquique,10,1,2,0,0,1,0,10,0,0,0,0,0,0,0
+Valparaíso,Isla de Pascua,Isla de Pascua,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Valparaíso,Los Andes,Calle Larga,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Valparaíso,Los Andes,Los Andes,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Valparaíso,Los Andes,Rinconada,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Valparaíso,Los Andes,San Esteban,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Valparaíso,Marga Marga,Limache,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Valparaíso,Marga Marga,Olmué,2,1,0,0,0,1,0,2,0,0,0,0,0,0,0
+Valparaíso,Marga Marga,Quilpué,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Valparaíso,Marga Marga,Villa Alemana,2,0,0,0,0,1,0,2,0,0,0,0,0,0,0
+Valparaíso,Petorca,Cabildo,7,0,9,23,2,1,0,3,0,4,0,0,0,0,0
+Valparaíso,Petorca,La Ligua,13,0,8,16,2,1,0,5,0,8,0,0,0,0,0
+Valparaíso,Petorca,Papudo,8,0,7,3,1,1,0,5,0,3,0,0,0,0,0
+Valparaíso,Petorca,Petorca,5,0,7,14,1,1,0,1,0,4,0,0,0,0,0
+Valparaíso,Petorca,Zapallar,10,0,5,7,1,1,0,7,0,3,0,0,0,0,0
+Valparaíso,Quillota,Hijuelas,2,1,0,0,0,1,0,2,0,0,0,0,0,0,0
+Valparaíso,Quillota,La Calera,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Valparaíso,Quillota,La Cruz,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Valparaíso,Quillota,Nogales,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Valparaíso,Quillota,Quillota,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Valparaíso,San Antonio,Algarrobo,5,0,0,0,0,1,0,4,0,1,0,0,0,0,0
+Valparaíso,San Antonio,Cartagena,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Valparaíso,San Antonio,El Quisco,4,0,0,0,0,1,0,4,0,0,0,0,0,0,0
+Valparaíso,San Antonio,El Tabo,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Valparaíso,San Antonio,San Antonio,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Valparaíso,San Antonio,Santo Domingo,2,0,0,0,0,1,0,2,0,0,0,0,0,0,0
+Valparaíso,San Felipe de Aconcagua,Catemu,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Valparaíso,San Felipe de Aconcagua,Llaillay,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Valparaíso,San Felipe de Aconcagua,Panquehue,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Valparaíso,San Felipe de Aconcagua,Putaendo,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Valparaíso,San Felipe de Aconcagua,San Felipe,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Valparaíso,San Felipe de Aconcagua,Santa María,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Valparaíso,Valparaíso,Casablanca,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Valparaíso,Valparaíso,Concón,7,1,0,0,0,1,0,7,0,0,0,0,0,0,0
+Valparaíso,Valparaíso,Juan Fernández,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Valparaíso,Valparaíso,Puchuncaví,4,0,0,0,0,1,0,4,0,0,0,0,0,0,0
+Valparaíso,Valparaíso,Quintero,4,0,0,0,0,1,0,4,0,0,0,0,0,0,0
+Valparaíso,Valparaíso,Valparaíso,10,1,2,0,0,1,0,9,0,1,0,0,0,0,0
+Valparaíso,Valparaíso,Viña del Mar,5,0,0,0,0,1,0,5,0,0,0,0,0,0,0
+Ñuble,Diguillín,Bulnes,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Ñuble,Diguillín,Chillán,3,0,1,0,0,1,0,3,0,0,0,0,0,0,0
+Ñuble,Diguillín,Chillán Viejo,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Ñuble,Diguillín,El Carmen,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Ñuble,Diguillín,Pemuco,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Ñuble,Diguillín,Pinto,4,1,0,0,0,1,0,4,0,0,0,0,0,0,0
+Ñuble,Diguillín,Quillón,4,1,0,0,0,1,0,4,0,0,0,0,0,0,0
+Ñuble,Diguillín,San Ignacio,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Ñuble,Diguillín,Yungay,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Ñuble,Itata,Cobquecura,6,1,0,0,0,1,0,6,0,0,0,0,0,0,0
+Ñuble,Itata,Coelemu,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Ñuble,Itata,Ninhue,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Ñuble,Itata,Portezuelo,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Ñuble,Itata,Quirihue,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Ñuble,Itata,Ránquil,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Ñuble,Itata,Treguaco,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Ñuble,Punilla,Coihueco,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Ñuble,Punilla,San Carlos,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Ñuble,Punilla,San Fabián,2,1,0,0,0,1,0,2,0,0,0,0,0,0,0
+Ñuble,Punilla,San Nicolás,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+Ñuble,Punilla,Ñiquén,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0

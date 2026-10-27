@@ -1,0 +1,1257 @@
+{
+  "provenance": {
+    "repository": "Matichoc/directorio_turistico",
+    "commit": "4843e5c1aad8ec25371cb618304f528b74ababb1",
+    "path": "scripts/seed.ts",
+    "permission": "Copia/adaptación autorizada dos veces por el titular en esta sesión; origen sin modificaciones.",
+    "snapshotAt": "2026-10-24",
+    "verification": "Referencias heredadas; sin nueva verificación en terreno ni de vigencia."
+  },
+  "places": [
+    {
+      "id": "playa-papudo",
+      "region": "valparaiso",
+      "province": "petorca",
+      "commune": "papudo",
+      "locality": "papudo",
+      "category": "playa",
+      "name": "Playa de Papudo",
+      "summary": "Playa principal del balneario; La Terraza la bordea desde la gruta de la Virgen de Lourdes hasta la avenida Glorias Navales.",
+      "description": "Papudo es una comuna balnearia de la provincia de Petorca, con 6.356 habitantes según el Censo 2017. La Playa de Papudo es la principal del pueblo, bordeada por el paseo La Terraza desde la gruta de la Virgen de Lourdes hasta la avenida Glorias Navales — el punto de encuentro del balneario en verano. Sus aguas aparecieron en Sabingo (Chilevisión), donde Dani Urrizola aprendió a bucear en Papudo.",
+      "latitude": -32.5061,
+      "longitude": -71.4472,
+      "source": {
+        "url": "https://www.playasdechile.com/playas-en-papudo/",
+        "label": "PlayasDeChile.com — Playas en Papudo"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "reference-unchecked",
+      "importedAt": "2026-10-24"
+    },
+    {
+      "id": "playa-chica-papudo",
+      "region": "valparaiso",
+      "province": "petorca",
+      "commune": "papudo",
+      "locality": "papudo",
+      "category": "playa",
+      "name": "Playa Chica",
+      "summary": "Playa resguardada apta para el baño y deportes acuáticos, más protegida del oleaje que Playa Grande.",
+      "description": "También en la comuna de Papudo (6.356 habitantes, Censo 2017), Playa Chica es una alternativa más resguardada que Playa Grande, apta para el baño y deportes acuáticos gracias a su menor oleaje.",
+      "latitude": -32.5075,
+      "longitude": -71.4478,
+      "source": {
+        "url": "https://www.tripadvisor.com/Attraction_Review-g2161325-d6726685-Reviews-Playa_Chica-Papudo_Valparaiso_Region.html",
+        "label": "Tripadvisor — Playa Chica, Papudo"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "reference-unchecked",
+      "importedAt": "2026-10-24"
+    },
+    {
+      "id": "bahia-mirador-zapallar",
+      "region": "valparaiso",
+      "province": "petorca",
+      "commune": "zapallar",
+      "locality": "zapallar-pueblo",
+      "category": "naturaleza",
+      "name": "Bahía y mirador de Zapallar",
+      "summary": "Sendero costero con vistas panorámicas de la bahía, formaciones rocosas y atardeceres; la bahía resguardada suaviza el oleaje.",
+      "description": "Zapallar, comuna costera de 7.339 habitantes (Censo 2017), es uno de los balnearios más tradicionales de Chile central. Su bahía y mirador ofrecen un sendero costero con vistas panorámicas, formaciones rocosas y atardeceres; la bahía resguardada mantiene el oleaje suave todo el año.",
+      "latitude": -32.5522,
+      "longitude": -71.4614,
+      "source": {
+        "url": "https://www.minube.com/tips/actualidad/explora-los-encantos-de-zapallar-lugares-que-ver-imprescindibles",
+        "label": "minube — Qué ver en Zapallar"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "reference-unchecked",
+      "importedAt": "2026-10-24"
+    },
+    {
+      "id": "museo-de-la-ligua",
+      "region": "valparaiso",
+      "province": "petorca",
+      "commune": "la-ligua",
+      "locality": "la-ligua",
+      "category": "cultura",
+      "name": "Museo de La Ligua",
+      "summary": "Exhibiciones sobre el mundo prehispánico del territorio y sobre La Quintrala; entrada liberada, junto a la Plaza de Armas (Pedro Polanco 698).",
+      "description": "La Ligua, capital de la provincia y su comuna más poblada (35.390 habitantes, Censo 2017), alberga este museo junto a la Plaza de Armas. Sus salas exhiben piezas del mundo prehispánico del territorio y la historia de Catalina de los Ríos y Lisperguer, \"La Quintrala\" — entrada liberada.",
+      "latitude": -32.44298629572092,
+      "longitude": -71.23070231942702,
+      "source": {
+        "url": "https://es.wikipedia.org/wiki/Museo_de_La_Ligua",
+        "label": "Wikipedia — Museo de La Ligua"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "reference-unchecked",
+      "importedAt": "2026-10-24"
+    },
+    {
+      "id": "plaza-de-armas-la-ligua",
+      "region": "valparaiso",
+      "province": "petorca",
+      "commune": "la-ligua",
+      "locality": "la-ligua",
+      "category": "cultura",
+      "name": "Plaza de Armas de La Ligua",
+      "summary": "Corazón de la ciudad, con pileta central y kiosco donde se realizan conciertos y ferias, entre ellas la Feria de los Tejidos.",
+      "description": "Corazón de La Ligua (35.390 habitantes, Censo 2017), esta plaza reúne una pileta central y un kiosco donde se hacen conciertos y ferias durante el año, entre ellas la Feria de los Tejidos que celebra el oficio artesanal de la zona.",
+      "latitude": -32.44937169782485,
+      "longitude": -71.23167456175689,
+      "source": {
+        "url": "https://chileestuyo.cl/destino/la-ligua-valle-hermoso/",
+        "label": "Chile es Tuyo — La Ligua, Valle Hermoso"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "reference-unchecked",
+      "importedAt": "2026-10-24"
+    },
+    {
+      "id": "escalera-del-diablo",
+      "region": "valparaiso",
+      "province": "petorca",
+      "commune": "petorca",
+      "locality": "hierro-viejo",
+      "category": "naturaleza",
+      "name": "Escalera del Diablo",
+      "summary": "Formación rocosa natural en forma de escalera en el sector de Hierro Viejo; según la leyenda, el Diablo la usó para escapar de vuelta al infierno.",
+      "description": "En la comuna de Petorca (9.826 habitantes, Censo 2017), en el sector de Hierro Viejo, esta formación rocosa natural tiene forma de escalera. La leyenda local cuenta que el Diablo la usó para escapar de vuelta al infierno tras su paso por la zona.",
+      "latitude": -32.28516042143831,
+      "longitude": -70.99993433393475,
+      "source": {
+        "url": "https://geositiosdechile.sernageomin.cl/region/valparaiso/escalera-del-diablo/",
+        "label": "Sernageomin — Geositios de Chile: Escalera del Diablo"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "reference-unchecked",
+      "importedAt": "2026-10-24"
+    },
+    {
+      "id": "iglesia-la-merced-petorca",
+      "region": "valparaiso",
+      "province": "petorca",
+      "commune": "petorca",
+      "locality": "petorca",
+      "category": "cultura",
+      "name": "Iglesia La Merced de Petorca",
+      "summary": "Construida por los jesuitas en 1640 en la Plaza de Petorca; conserva líneas neogóticas con reminiscencias neobarrocas.",
+      "description": "Frente a la plaza de Petorca (9.826 habitantes, Censo 2017), esta iglesia fue construida por los jesuitas en 1640 y conserva líneas neogóticas con reminiscencias neobarrocas — uno de los templos más antiguos de la provincia.",
+      "latitude": -32.25155652774576,
+      "longitude": -70.93130407092764,
+      "source": {
+        "url": "https://www.sitrural.cl/wp-content/uploads/2024/11/Petorca_turismo.pdf",
+        "label": "Sitrural — Atractivos turísticos comuna de Petorca"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "reference-unchecked",
+      "importedAt": "2026-10-24"
+    },
+    {
+      "id": "casa-natal-manuel-montt",
+      "region": "valparaiso",
+      "province": "petorca",
+      "commune": "petorca",
+      "locality": "petorca",
+      "category": "cultura",
+      "name": "Casa natal de Manuel Montt",
+      "summary": "Monumento histórico: la casa donde nació en 1809 el expresidente Manuel Montt, quien gobernó Chile entre 1851 y 1861 (Manuel Montt 845).",
+      "description": "A un costado de la plaza de Petorca (9.826 habitantes, Censo 2017), esta casa es Monumento Histórico Nacional: aquí nació en 1809 Manuel Montt, quien gobernó Chile entre 1851 y 1861.",
+      "latitude": -32.2505,
+      "longitude": -70.9299,
+      "source": {
+        "url": "https://www.monumentos.gob.cl/monumentos/monumentos-historicos/casa-donde-nacio-presidente-manuel-montt",
+        "label": "Consejo de Monumentos Nacionales — Casa donde nació el presidente Manuel Montt"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "reference-unchecked",
+      "importedAt": "2026-10-24"
+    },
+    {
+      "id": "cerro-chache",
+      "region": "valparaiso",
+      "province": "petorca",
+      "commune": "cabildo",
+      "locality": null,
+      "category": "naturaleza",
+      "name": "Cerro Chache",
+      "summary": "La cumbre más alta de la cordillera de la Costa en Chile central (más de 2.338 m); punto de ascensiones desde Cabildo. Coordenadas aproximadas (centro de Cabildo) — pendientes de precisar.",
+      "description": "Desde Cabildo (19.388 habitantes, Censo 2017) se asciende a este cerro, la cumbre más alta de la cordillera de la Costa en Chile central, con más de 2.338 metros — un desafío buscado por montañistas de todo el país.",
+      "latitude": -32.4275,
+      "longitude": -71.06639,
+      "source": {
+        "url": "https://www.sitrural.cl/wp-content/uploads/2024/11/Cabildo_turismo.pdf",
+        "label": "Sitrural — Atractivos turísticos comuna de Cabildo"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "reference-unchecked",
+      "importedAt": "2026-10-24"
+    },
+    {
+      "id": "chocolateria-matichoc",
+      "region": "valparaiso",
+      "province": "petorca",
+      "commune": "la-ligua",
+      "locality": "la-ligua",
+      "category": "gastronomia",
+      "name": "Chocolatería Matichoc",
+      "summary": "Taller y tienda de chocolate artesanal fundada en 2011 por Inés Saavedra.",
+      "description": "En La Ligua (35.390 habitantes, Censo 2017), este taller y tienda de chocolate artesanal fue fundado en 2011 por Inés Saavedra.",
+      "latitude": -32.456567773339685,
+      "longitude": -71.24680276136594,
+      "source": {
+        "url": "https://www.matichoc.cl/inicio",
+        "label": "Matichoc — Pasión por el Cacao"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "reference-unchecked",
+      "importedAt": "2026-10-24"
+    },
+    {
+      "id": "pedegua",
+      "region": "valparaiso",
+      "province": "petorca",
+      "commune": "petorca",
+      "locality": "pedegua",
+      "category": "cultura",
+      "name": "Pedegua",
+      "summary": "Localidad rural de la comuna de Petorca, antigua parada del ramal ferroviario hacia Illapel; conserva la fachada y las bodegas restauradas de su estación de trenes.",
+      "description": "Localidad rural de Petorca (9.826 habitantes, Censo 2017), antigua parada del ramal ferroviario hacia Illapel; conserva la fachada y bodegas restauradas de su estación. El actor Etienne Bobenrieth recorrió sus historias y leyendas en el programa Sabingo (Chilevisión), en un capítulo dedicado a Pedegua, Chincolco e Hierro Viejo.",
+      "latitude": -32.35621569224541,
+      "longitude": -71.0699530998617,
+      "source": {
+        "url": "https://valparaisoregion.org/destino/cabildo/",
+        "label": "Valparaíso Región — Destino Cabildo"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "reference-unchecked",
+      "importedAt": "2026-10-24"
+    },
+    {
+      "id": "ruta-de-los-tuneles",
+      "region": "valparaiso",
+      "province": "petorca",
+      "commune": "cabildo",
+      "locality": null,
+      "category": "naturaleza",
+      "name": "Ruta de los Túneles",
+      "summary": "Antiguo trazado del ferrocarril Cabildo–Pedegua: cinco túneles y dos puentes ferroviarios en un entorno natural, incluidos los túneles La Grupa y Las Palmas (966 m, inaugurado en 1914). Se recorre en bicicleta o vehículo todo terreno; el acceso es desde Pedegua.",
+      "description": "En la comuna de Cabildo (19.388 habitantes, Censo 2017), este trazado del antiguo ferrocarril Cabildo–Pedegua se recorre hoy en bicicleta o vehículo todo terreno: cinco túneles y dos puentes, entre ellos La Grupa y Las Palmas (966 m, 1914), en un tramo que continúa hasta Illapel, en la Región de Coquimbo.",
+      "latitude": -32.35621569224541,
+      "longitude": -71.0699530998617,
+      "source": {
+        "url": "https://www.geovirtual2.cl/Ferrocarril-Chile-Coquimbo/Ferrocarril-Puente-Pedegua-Chile-01.htm",
+        "label": "GeoVirtual — Ferrocarriles del Norte de Chile: puente y túneles de Pedegua"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "reference-unchecked",
+      "importedAt": "2026-10-24"
+    },
+    {
+      "id": "la-ligua-valle-hermoso",
+      "region": "valparaiso",
+      "province": "petorca",
+      "commune": "la-ligua",
+      "locality": "valle-hermoso",
+      "category": "cultura",
+      "name": "Valle Hermoso",
+      "summary": "Barrio artesanal conocido como \"la cuna del tejido\": cerca de 150 tiendas y talleres donde se ve a los artesanos tejer en telares tradicionales con lana de oveja, alpaca y vicuña; en verano se celebra la Fiesta del Tejido.",
+      "description": "En La Ligua (35.390 habitantes, Censo 2017), este barrio artesanal es conocido como \"la cuna del tejido\": cerca de 150 tiendas y talleres donde se ve a los artesanos tejer en telares tradicionales con lana de oveja, alpaca y vicuña. En verano se celebra la Fiesta del Tejido.",
+      "latitude": -32.44181733434206,
+      "longitude": -71.20140631536381,
+      "source": {
+        "url": "https://www.sercotec.cl/barrios-comerciales/barrio-comercial-valle-hermoso-la-ligua/",
+        "label": "Sercotec — Barrio Comercial Valle Hermoso, La Ligua"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "reference-unchecked",
+      "importedAt": "2026-10-24"
+    },
+    {
+      "id": "la-ligua-area-de-dulces",
+      "region": "valparaiso",
+      "province": "petorca",
+      "commune": "la-ligua",
+      "locality": null,
+      "category": "gastronomia",
+      "name": "Área de los Dulces de La Ligua",
+      "summary": "Puestos y locales junto a la Ruta 5 Norte donde se vende la tradición repostera de La Ligua (alfajores, empolvados, cocadas, palitas) — con Sello de Origen desde 2014 y declarada Patrimonio Cultural Inmaterial de Chile en 2019.",
+      "description": "En la comuna de La Ligua (35.390 habitantes, Censo 2017), junto a la Ruta 5 Norte, decenas de puestos y locales venden la tradición repostera de la zona (alfajores, empolvados, cocadas, palitas) — con Sello de Origen desde 2014 y declarada Patrimonio Cultural Inmaterial de Chile en 2019. Sabingo (Chilevisión) le dedicó un capítulo a \"los encantos y la dulzura de La Ligua\".",
+      "latitude": -32.47741266666833,
+      "longitude": -71.26927646175562,
+      "source": {
+        "url": "https://www.patrimoniocultural.gob.cl/noticias/tradicion-de-los-dulces-de-la-ligua-ingresa-al-registro-de-patrimonio-cultural-inmaterial",
+        "label": "Servicio Nacional del Patrimonio Cultural — Tradición de los dulces de La Ligua"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "reference-unchecked",
+      "importedAt": "2026-10-24"
+    },
+    {
+      "id": "la-ligua-la-chorreada",
+      "region": "valparaiso",
+      "province": "petorca",
+      "commune": "la-ligua",
+      "locality": null,
+      "category": "naturaleza",
+      "name": "La Chorreada",
+      "summary": "Sector de quebrada al interior de La Ligua con pozones y pequeñas cascadas (\"las chorreadas\"), a los que se llega por un camino de ripio pasando la ex Mina La Patagua — hoy recorrido sobre todo por ciclistas de gravel.",
+      "description": "En la comuna de La Ligua (35.390 habitantes, Censo 2017), este sector de quebrada tiene pozones y pequeñas cascadas (\"las chorreadas\") a los que se llega por un camino de ripio que pasa la ex Mina La Patagua — hoy recorrido sobre todo por ciclistas de gravel. Sigue siendo un lugar con poca información pública; si conoces la zona y quieres ayudarnos a describirla mejor, cuéntanos.",
+      "latitude": -32.53980136909335,
+      "longitude": -71.13524334383668,
+      "source": {
+        "url": "https://www.wikiloc.com/gravel-bike-trails/la-ligua-las-chorreadas-59616563",
+        "label": "Wikiloc — La Ligua: Las Chorreadas"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "reference-unchecked",
+      "importedAt": "2026-10-24"
+    },
+    {
+      "id": "la-ligua-los-molles",
+      "region": "valparaiso",
+      "province": "petorca",
+      "commune": "la-ligua",
+      "locality": "los-molles-pueblo",
+      "category": "playa",
+      "name": "Los Molles",
+      "summary": "Ex caleta de pescadores de los años 60, hoy uno de los mejores destinos de buceo de Chile por sus aguas turquesas; también surf, kayak y senderos por los cerros, cerca de la Reserva Nacional Pingüino de Humboldt.",
+      "description": "En la comuna de La Ligua (35.390 habitantes, Censo 2017), esta ex caleta de pescadores de los años 60 es hoy uno de los mejores destinos de buceo de Chile por sus aguas turquesas, además de surf, kayak y senderos por los cerros, cerca de la Reserva Nacional Pingüino de Humboldt. Sabingo (Chilevisión) grabó un capítulo completo explorando sus aguas.",
+      "latitude": -32.236287985456514,
+      "longitude": -71.509924044495,
+      "source": {
+        "url": "https://es.wikipedia.org/wiki/Los_Molles_(Chile)",
+        "label": "Wikipedia — Los Molles (Chile)"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "reference-unchecked",
+      "importedAt": "2026-10-24"
+    },
+    {
+      "id": "la-ligua-pichicuy",
+      "region": "valparaiso",
+      "province": "petorca",
+      "commune": "la-ligua",
+      "locality": "pichicuy",
+      "category": "playa",
+      "name": "Pichicuy",
+      "summary": "Balneario de nombre mapudungún (\"pichi kuykuy\", puentecito), con un humedal protegido junto a la playa y la ola internacional \"La Marmola\" (hasta 13 m), que atrae surfistas de todo el mundo.",
+      "description": "En la comuna de La Ligua (35.390 habitantes, Censo 2017), esta playa se extiende cerca de 6 km de arena blanca hasta las dunas de Longotoma. Es sede de la ola internacional \"La Marmola\" (hasta 13 m) y de un humedal protegido junto a la playa; ferias locales acercan a los visitantes productos campesinos de la zona.",
+      "latitude": -32.34395655230688,
+      "longitude": -71.46046803135772,
+      "source": {
+        "url": "https://es.wikipedia.org/wiki/Pichicuy",
+        "label": "Wikipedia — Pichicuy"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "reference-unchecked",
+      "importedAt": "2026-10-24"
+    },
+    {
+      "id": "papudo-pullally",
+      "region": "valparaiso",
+      "province": "petorca",
+      "commune": "papudo",
+      "locality": "pullally",
+      "category": "naturaleza",
+      "name": "Laguna Pullally",
+      "summary": "Laguna dentro del Santuario de la Naturaleza Salinas de Pullally y Dunas de Longotoma (declarado en 2020), en la desembocadura de los ríos Petorca y La Ligua; el humedal alberga 137 especies de aves (más de un cuarto de las descritas en Chile), varias migratorias.",
+      "description": "En la comuna de Papudo (6.356 habitantes, Censo 2017), esta laguna forma parte del Santuario de la Naturaleza Salinas de Pullally y Dunas de Longotoma (declarado en 2020), en la desembocadura de los ríos Petorca y La Ligua. El humedal registra 137 especies de aves — más de un cuarto de las descritas en Chile — entre ellas gaviota garuma, perrito y pilpilén, además de especies migratorias del hemisferio norte.",
+      "latitude": -32.43467097116685,
+      "longitude": -71.31775915116937,
+      "source": {
+        "url": "https://es.wikipedia.org/wiki/Humedal_Salinas_de_Pullally_y_Dunas_de_Longotoma",
+        "label": "Wikipedia — Humedal Salinas de Pullally y Dunas de Longotoma"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "reference-unchecked",
+      "importedAt": "2026-10-24"
+    },
+    {
+      "id": "papudo-salinas-pullally",
+      "region": "valparaiso",
+      "province": "petorca",
+      "commune": "papudo",
+      "locality": "las-salinas-papudo",
+      "category": "naturaleza",
+      "name": "Salinas de Pullally",
+      "summary": "Sector de salinas del Santuario de la Naturaleza Salinas de Pullally y Dunas de Longotoma (declarado en 2020), entre las desembocaduras de los ríos Petorca y La Ligua.",
+      "description": "En la comuna de Papudo (6.356 habitantes, Censo 2017), este sector de salinas —a unos 12 km al norte del balneario— es una caleta de pescadores artesanales en la desembocadura del río Ligua, donde botes amarrados a un pequeño muelle cruzan el río. El encuentro entre el río y el mar deja aguas tranquilas aptas para niños, mientras el sector abierto atrae a surfistas por la calidad de sus olas.",
+      "latitude": -32.41007831226611,
+      "longitude": -71.41062008860503,
+      "source": {
+        "url": "https://es.wikipedia.org/wiki/Humedal_Salinas_de_Pullally_y_Dunas_de_Longotoma",
+        "label": "Wikipedia — Humedal Salinas de Pullally y Dunas de Longotoma"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "reference-unchecked",
+      "importedAt": "2026-10-24"
+    },
+    {
+      "id": "papudo-playa-los-lilenes",
+      "region": "valparaiso",
+      "province": "petorca",
+      "commune": "papudo",
+      "locality": null,
+      "category": "playa",
+      "name": "Playa Los Lilenes",
+      "summary": "Playa escondida y tranquila al norte de Papudo, a la que se llega por un sendero costero de unos 800 m (o a caballo); pocas visitas, ideal para nadar y descansar rodeado de naturaleza.",
+      "description": "En la comuna de Papudo (6.356 habitantes, Censo 2017), esta playa escondida se alcanza por un sendero costero de unos 800 m que también conecta con Punta Puyay y la llamada \"playa del amor\" — un circuito de caminata de baja exigencia y pocas visitas, ideal para nadar y descansar rodeado de naturaleza.",
+      "latitude": -32.49109919617068,
+      "longitude": -71.4326761566141,
+      "source": {
+        "url": "https://tres60.travel/el-lilen-la-playa-escondida-de-chile-que-combina-naturaleza-y-tranquilidad/",
+        "label": "tres60.travel — El Lilén, la playa escondida de Chile"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "reference-unchecked",
+      "importedAt": "2026-10-24"
+    },
+    {
+      "id": "papudo-parque",
+      "region": "valparaiso",
+      "province": "petorca",
+      "commune": "papudo",
+      "locality": "papudo",
+      "category": "naturaleza",
+      "name": "Costanera de Papudo",
+      "summary": "Paseo peatonal \"La Terraza\", desde la gruta de la Virgen de Lourdes hasta Av. Glorias Navales, bordeando Playa Chica y Playa Grande; tiendas de artesanía, restaurantes, juegos infantiles y club de yates.",
+      "description": "En la comuna de Papudo (6.356 habitantes, Censo 2017), este paseo peatonal —\"La Terraza\"— bordea Playa Chica y Playa Grande desde la gruta de la Virgen de Lourdes hasta la avenida Glorias Navales. Es el punto de encuentro del balneario en verano, con tiendas de artesanía, restaurantes, juegos infantiles y el club de yates.",
+      "latitude": -32.50461851619594,
+      "longitude": -71.44310276706875,
+      "source": {
+        "url": "https://www.playasdechile.com/playas-en-papudo/",
+        "label": "PlayasDeChile.com — Playas en Papudo"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "reference-unchecked",
+      "importedAt": "2026-10-24"
+    },
+    {
+      "id": "papudo-plaza",
+      "region": "valparaiso",
+      "province": "petorca",
+      "commune": "papudo",
+      "locality": "papudo",
+      "category": "cultura",
+      "name": "Plaza de Papudo",
+      "summary": "Plaza central del pueblo, punto de encuentro de la comunidad y sede de ferias artesanales; rodeada de tiendas y restaurantes, con áreas verdes para sentarse.",
+      "description": "En la comuna de Papudo (6.356 habitantes, Censo 2017), esta plaza central es el punto de encuentro de la comunidad y sede de ferias artesanales, rodeada de tiendas y restaurantes del pueblo.",
+      "latitude": -32.50745877114493,
+      "longitude": -71.44604956690678,
+      "source": {
+        "url": "http://www.vregion.cl/petorca/papudo/",
+        "label": "Valparaíso Región — Destino Papudo"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "reference-unchecked",
+      "importedAt": "2026-10-24"
+    },
+    {
+      "id": "zapallar-punta-pite",
+      "region": "valparaiso",
+      "province": "petorca",
+      "commune": "zapallar",
+      "locality": null,
+      "category": "naturaleza",
+      "name": "Punta Pite",
+      "summary": "Sendero costero de 1,5 km entre Papudo y Zapallar diseñado por la paisajista Teresa Moller (2004-2006): terrazas y escaleras en la misma roca de la costa, piscinas naturales, y avistamiento de pingüinos de Humboldt y delfines.",
+      "description": "En la comuna de Zapallar (7.339 habitantes, Censo 2017), este sendero costero de 1,5 km entre Papudo y Zapallar fue diseñado por la paisajista Teresa Moller (2004-2006): terrazas y escaleras talladas en la misma roca de la costa, piscinas naturales, y avistamiento de pingüinos de Humboldt y delfines.",
+      "latitude": -32.50429284866351,
+      "longitude": -71.46707955301645,
+      "source": {
+        "url": "https://laderasur.com/articulo/proyecto-punta-pite-escuela-de-pedreros/",
+        "label": "Ladera Sur — Proyecto Punta Pite"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "reference-unchecked",
+      "importedAt": "2026-10-24"
+    },
+    {
+      "id": "zapallar-laguna",
+      "region": "valparaiso",
+      "province": "petorca",
+      "commune": "zapallar",
+      "locality": null,
+      "category": "naturaleza",
+      "name": "Laguna de Zapallar",
+      "summary": "Humedal en la desembocadura de los esteros Catapilco y La Canela, santuario de aves acuáticas (tagua, zarapito, gansos); playa de casi 1 km y senderos junto al agua.",
+      "description": "En la comuna de Zapallar (7.339 habitantes, Censo 2017), esta laguna en la desembocadura de los esteros Catapilco y La Canela es refugio de aves acuáticas silvestres —tagua común, zarapito, perrito, gansos y pato jergón— con aporte migratorio del hemisferio norte visible en verano; tiene una playa de casi 1 km y senderos junto al agua.",
+      "latitude": -32.628327059623025,
+      "longitude": -71.43007578194081,
+      "source": {
+        "url": "https://laderasur.com/articulo/maitencillo-y-laguna-de-zapallar-tres-panoramas-imperdibles-por-cielo-mar-y-tierra/",
+        "label": "Ladera Sur — Maitencillo y Laguna de Zapallar"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "reference-unchecked",
+      "importedAt": "2026-10-24"
+    },
+    {
+      "id": "zapallar-cachagua",
+      "region": "valparaiso",
+      "province": "petorca",
+      "commune": "zapallar",
+      "locality": "cachagua",
+      "category": "naturaleza",
+      "name": "Cachagua — Isla de los Pingüinos y Playa Las Cujas",
+      "summary": "Isla Cachagua (4,5 ha, santuario de la naturaleza desde 1989) alberga hasta 2.000 pingüinos de Humboldt, uno de los 5 sitios de nidificación más importantes de Chile; junto a ella, la playa Las Cujas, parte del sendero costero Zapallar–Cachagua.",
+      "description": "En la comuna de Zapallar (7.339 habitantes, Censo 2017), la Isla Cachagua (4,5 ha, santuario de la naturaleza desde 1989) está separada de la costa por un brazo de mar de unos 100 m y alberga hasta 2.000 pingüinos de Humboldt — uno de los 5 sitios de nidificación más importantes de Chile. Junto a ella, la playa Las Cujas forma parte del sendero costero Zapallar–Cachagua.",
+      "latitude": -32.5781610253271,
+      "longitude": -71.45509798046939,
+      "source": {
+        "url": "https://www.munizapallar.cl/lugares-de-interes",
+        "label": "Municipalidad de Zapallar — Lugares de Interés"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "reference-unchecked",
+      "importedAt": "2026-10-24"
+    },
+    {
+      "id": "zapallar-catapilco",
+      "region": "valparaiso",
+      "province": "petorca",
+      "commune": "zapallar",
+      "locality": "catapilco",
+      "category": "naturaleza",
+      "name": "Catapilco y Palos Quemados",
+      "summary": "Sector cordillerano de Zapallar con la laguna de Catapilco y la cascada de Palos Quemados; ahí hubo estaciones del tren que a inicios del siglo XX llevaba veraneantes hasta Zapallar.",
+      "description": "En la comuna de Zapallar (7.339 habitantes, Censo 2017), esta caleta fue declarada puerto menor de cabotaje en 1847 y sus cerros le dan un microclima resguardado del viento costero. Ahí funcionó la estación de trenes de Palos Quemados y, después, la de Catapilco, desde donde veraneantes bajaban a Zapallar a inicios del siglo XX.",
+      "latitude": -32.63166740422701,
+      "longitude": -71.28061639377215,
+      "source": {
+        "url": "https://es.wikipedia.org/wiki/Estaci%C3%B3n_Catapilco",
+        "label": "Wikipedia — Estación Catapilco"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "reference-unchecked",
+      "importedAt": "2026-10-24"
+    },
+    {
+      "id": "cabildo-plaza",
+      "region": "valparaiso",
+      "province": "petorca",
+      "commune": "cabildo",
+      "locality": "cabildo",
+      "category": "cultura",
+      "name": "Plaza de Cabildo",
+      "summary": "Plaza central de Cabildo, punto de encuentro de la ciudad y punto de partida para recorrer los atractivos naturales y patrimoniales de la comuna.",
+      "description": "En la comuna de Cabildo (19.388 habitantes, Censo 2017), esta plaza central es el punto de encuentro de la ciudad y el punto de partida habitual para recorrer los atractivos naturales y patrimoniales de la comuna, desde el valle de Alicahue hasta los túneles del antiguo ferrocarril.",
+      "latitude": -32.426628719411156,
+      "longitude": -71.06650764657454,
+      "source": {
+        "url": "https://www.sitrural.cl/wp-content/uploads/2024/11/Cabildo_turismo.pdf",
+        "label": "Sitrural — Atractivos turísticos comuna de Cabildo"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "reference-unchecked",
+      "importedAt": "2026-10-24"
+    },
+    {
+      "id": "cabildo-alicahue",
+      "region": "valparaiso",
+      "province": "petorca",
+      "commune": "cabildo",
+      "locality": "alicahue",
+      "category": "cultura",
+      "name": "Alicahue",
+      "summary": "Valle cordillerano a 34 km de Cabildo, centro turístico de la comuna desde donde parten circuitos a la laguna, el Camino del Inca y petroglifos; en el sector se ubica la legendaria casa de La Quintrala.",
+      "description": "En la comuna de Cabildo (19.388 habitantes, Censo 2017), este valle a 34 km del pueblo —su nombre viene del mapudungún \"ali-ca-hue\", \"lugar seco\" o \"lugar cálido\"— es el centro turístico de la comuna: agricultura de paltas, almendros, cítricos y nueces, la laguna Chepical, La Casona (casa principal de la ex hacienda) y petroglifos de origen incaico.",
+      "latitude": -32.35112074114886,
+      "longitude": -70.78204457980051,
+      "source": {
+        "url": "https://alicahue.cl/",
+        "label": "Alicahue.cl — Valle Patrimonial y Turístico"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "reference-unchecked",
+      "importedAt": "2026-10-24"
+    },
+    {
+      "id": "cabildo-san-lorenzo",
+      "region": "valparaiso",
+      "province": "petorca",
+      "commune": "cabildo",
+      "locality": "san-lorenzo-cabildo",
+      "category": "cultura",
+      "name": "San Lorenzo",
+      "summary": "Localidad rural a 10 km de Cabildo hacia la cordillera (~2.800 habitantes); su parroquia, dedicada al patrono de mineros y campesinos, se independizó en 1633 con apoyo de Catalina de los Ríos (La Quintrala).",
+      "description": "En la comuna de Cabildo (19.388 habitantes, Censo 2017), esta localidad rural de unos 2.800 habitantes celebra cada 10 de agosto a su patrono San Lorenzo, protector de mineros y campesinos, con bailes religiosos que llegan desde distintos puntos de la comuna y la región.",
+      "latitude": -32.44020057056321,
+      "longitude": -71.00677988405883,
+      "source": {
+        "url": "https://revista.cenizas.cl/san-lorenzo-riqueza-patrimonial-y-religiosa-en-la-comuna-de-cabildo/",
+        "label": "Revista Cenizas — San Lorenzo, riqueza patrimonial y religiosa"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "reference-unchecked",
+      "importedAt": "2026-10-24"
+    },
+    {
+      "id": "cabildo-puente-la-sirena",
+      "region": "valparaiso",
+      "province": "petorca",
+      "commune": "cabildo",
+      "locality": null,
+      "category": "naturaleza",
+      "name": "Puente La Sirena",
+      "summary": "Puente rural cerca de San Lorenzo, conocido por la leyenda local de \"el carretero del puente La Sirena\".",
+      "description": "En la comuna de Cabildo (19.388 habitantes, Censo 2017), este puente rural cerca de San Lorenzo debe su nombre a una leyenda local: una sirena que aparecía sobre dos piedras blancas a peinarse con un peine de oro y cantar para encantar a los hombres. La historia del carretero enamorado que recoge la fuente en video sigue contándose en la zona.",
+      "latitude": -32.44042725165503,
+      "longitude": -71.00616371332443,
+      "source": {
+        "url": "https://www.youtube.com/watch?v=k754L4dFZnk/",
+        "label": "YouTube — \"El carretero del puente la sirena. Cabildo.\""
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "reference-unchecked",
+      "importedAt": "2026-10-24"
+    },
+    {
+      "id": "cabildo-castillo-del-diablo",
+      "region": "valparaiso",
+      "province": "petorca",
+      "commune": "cabildo",
+      "locality": null,
+      "category": "cultura",
+      "name": "Castillo del Diablo",
+      "summary": "Casona grande, nunca terminada, que la leyenda local liga a un pacto con el diablo a cambio de riqueza — el mismo motivo de leyenda rural que existe en otras partes de Chile.",
+      "description": "Casona grande, nunca terminada, que la leyenda local liga a un pacto con el diablo a cambio de riqueza — el mismo motivo de leyenda rural que existe en otras partes de Chile.",
+      "latitude": null,
+      "longitude": null,
+      "verification": "pending",
+      "coordinateAccuracy": "unlocated",
+      "importedAt": "2026-10-24",
+      "source": null,
+      "territoryNote": "Referencia oral del titular en el proyecto original; ubicación y fuente pública pendientes. No se muestra un pin exacto."
+    },
+    {
+      "id": "cabildo-la-vega",
+      "region": "valparaiso",
+      "province": "petorca",
+      "commune": "cabildo",
+      "locality": null,
+      "category": "naturaleza",
+      "name": "La Vega",
+      "summary": "Sector a 39 km de Cabildo, de acceso no pavimentado desde Alicahue; una cascada alimentada por la laguna El Chepical riega los cultivos del lugar, que tiene capilla, cabañas y zona de camping.",
+      "description": "En la comuna de Cabildo (19.388 habitantes, Censo 2017), este sector a 39 km del pueblo se alcanza por un camino sin pavimentar desde Alicahue; una cascada alimentada por la laguna El Chepical riega los cultivos locales, y el lugar cuenta con capilla, cabañas y zona de camping.",
+      "latitude": -32.44805056182343,
+      "longitude": -70.94619536681728,
+      "source": {
+        "url": "https://www.sitrural.cl/wp-content/uploads/2020/03/Cabildo_turismo.pdf",
+        "label": "Sitrural — Atractivos turísticos comuna de Cabildo"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "reference-unchecked",
+      "importedAt": "2026-10-24"
+    },
+    {
+      "id": "cabildo-tunel-la-grupa",
+      "region": "valparaiso",
+      "province": "petorca",
+      "commune": "cabildo",
+      "locality": null,
+      "category": "naturaleza",
+      "name": "Túnel La Grupa",
+      "summary": "Túnel de 1.277 m construido en 1907 para conectar por ferrocarril las estaciones de Pedegua y Cabildo; tras el cierre del ramal en los años 70 se pavimentó como parte de la ruta E-35 (Cabildo–Petorca), con semáforo de una vía.",
+      "description": "En la comuna de Cabildo (19.388 habitantes, Censo 2017), este túnel de 1.277 m se construyó en 1907 para el ferrocarril entre las estaciones de Pedegua y Cabildo. Tras el cierre del ramal se habilitó para automóviles como parte de la ruta E-35 hacia Petorca, con un solo carril y semáforo de ciclo de seis minutos.",
+      "latitude": -32.41055413711995,
+      "longitude": -71.0758728174616,
+      "source": {
+        "url": "https://es.wikipedia.org/wiki/T%C3%BAnel_La_Grupa",
+        "label": "Wikipedia — Túnel La Grupa"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "reference-unchecked",
+      "importedAt": "2026-10-24"
+    },
+    {
+      "id": "pedegua-puente",
+      "region": "valparaiso",
+      "province": "petorca",
+      "commune": "petorca",
+      "locality": "pedegua",
+      "category": "naturaleza",
+      "name": "Puente Pedegua",
+      "summary": "Puente ferroviario histórico junto a Pedegua, parte del antiguo ramal Cabildo–Illapel; uno de los dos puentes que se cruzan en la Ruta de los Túneles.",
+      "description": "En la comuna de Petorca (9.826 habitantes, Censo 2017), este puente ferroviario formaba parte del ramal Pedegua–Petorca, inaugurado en 1927 como tramo interior del ferrocarril Longitudinal Norte. Originalmente tenía 5 arcos; hoy los dos extremos fueron reemplazados por tramos modernos, y el puente cruza el río Petorca junto a la desembocadura del estero Las Palmas.",
+      "latitude": -32.348696990370975,
+      "longitude": -71.07050661121622,
+      "source": {
+        "url": "https://www.geovirtual2.cl/Ferrocarril-Chile-Coquimbo/Ferrocarril-Puente-Pedegua-Chile-01.htm",
+        "label": "GeoVirtual — Ferrocarriles del Norte de Chile: Puente Pedegua"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "reference-unchecked",
+      "importedAt": "2026-10-24"
+    },
+    {
+      "id": "petorca-tunel-las-palmas",
+      "region": "coquimbo",
+      "province": "choapa",
+      "commune": "los-vilos",
+      "locality": null,
+      "category": "naturaleza",
+      "name": "Túnel Las Palmas",
+      "summary": "Túnel ferroviario de 966 m inaugurado en 1914 (parte de la red Longitudinal Norte); declarado Monumento Histórico en 2011 junto a otros túneles y puentes del mismo trazado.",
+      "description": "Aunque administrativamente el túnel está del lado de la Región de Coquimbo, forma parte del mismo corredor ferroviario histórico que Pedegua y La Grupa, en la comuna de Petorca (9.826 habitantes, Censo 2017): 966 m inaugurados en 1914 como parte de la red Longitudinal Norte ordenada construir por el presidente Balmaceda, declarado Monumento Histórico en 2011.",
+      "latitude": -32.165013387998314,
+      "longitude": -71.15352300594377,
+      "source": {
+        "url": "https://www.monumentos.gob.cl/monumentos/monumentos-historicos/tunel-las-palmas",
+        "label": "Consejo de Monumentos Nacionales — Túnel Las Palmas"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "reference-unchecked",
+      "importedAt": "2026-10-24",
+      "territoryNote": "Clasificación corregida según la nota explícita del archivo de origen: Coquimbo, Los Vilos; referencia del corredor ferroviario de Petorca."
+    },
+    {
+      "id": "petorca-plaza",
+      "region": "valparaiso",
+      "province": "petorca",
+      "commune": "petorca",
+      "locality": "petorca",
+      "category": "cultura",
+      "name": "Plaza de Petorca",
+      "summary": "Plaza central de Petorca, con un círculo donde está el monumento a Manuel Montt; ahí mismo se ubica la Iglesia La Merced. Una remodelación reciente la hizo conocida como \"la plaza más cara de Chile\".",
+      "description": "En la comuna de Petorca (9.826 habitantes, Censo 2017), el centro del pueblo se construyó a mediados del siglo XVIII donde antes había una huerta parroquial, siguiendo el esquema clásico de plaza con una pileta en el círculo central. Hoy es el corazón administrativo, comercial y religioso de la ciudad, con el monumento a Manuel Montt y la Iglesia La Merced junto a ella.",
+      "latitude": -32.25155652774576,
+      "longitude": -70.93130407092764,
+      "source": {
+        "url": "https://www.infopetorca.cl/2019/07/la-plaza-mas-cara-de-chile-en-petorca.html",
+        "label": "InfoPetorca — La plaza más cara de Chile en Petorca"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "reference-unchecked",
+      "importedAt": "2026-10-24"
+    },
+    {
+      "id": "petorca-petroglifos-chincolco",
+      "region": "valparaiso",
+      "province": "petorca",
+      "commune": "petorca",
+      "locality": "chincolco",
+      "category": "cultura",
+      "name": "Petroglifos de Chincolco",
+      "summary": "Grabados rupestres en piedra asociados a las culturas El Molle, Las Ánimas, diaguita, mapuche e incluso incaica, con motivos geométricos, humanos, animales y serpientes; sin protección oficial, algunos dañados por vandalismo en 2021.",
+      "description": "En Chincolco, sector rural de la comuna de Petorca (9.826 habitantes, Censo 2017), estos grabados rupestres en piedra están asociados a las culturas El Molle, Las Ánimas, diaguita, mapuche e incluso incaica, con motivos geométricos, humanos, animales y serpientes. No tienen protección oficial — algunos fueron dañados por vandalismo en 2021. El mismo capítulo de Sabingo (Chilevisión) que recorrió Pedegua también pasó por Chincolco.",
+      "latitude": -32.16465513411942,
+      "longitude": -70.7752963617689,
+      "source": {
+        "url": "https://repositorio.uchile.cl/handle/2250/201561",
+        "label": "Repositorio Universidad de Chile — Petroglifos de Chincolco"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "reference-unchecked",
+      "importedAt": "2026-10-24"
+    }
+  ],
+  "localities": [
+    {
+      "id": "la-ligua",
+      "commune": "la-ligua",
+      "name": "La Ligua",
+      "latitude": -32.4498524,
+      "longitude": -71.23209659999999
+    },
+    {
+      "id": "longotoma",
+      "commune": "la-ligua",
+      "name": "Longotoma",
+      "latitude": -32.386471,
+      "longitude": -71.3690682
+    },
+    {
+      "id": "valle-hermoso",
+      "commune": "la-ligua",
+      "name": "Valle Hermoso",
+      "latitude": -32.4415506,
+      "longitude": -71.228445
+    },
+    {
+      "id": "placilla",
+      "commune": "la-ligua",
+      "name": "Placilla",
+      "latitude": -32.4514052,
+      "longitude": -71.2356135
+    },
+    {
+      "id": "pichicuy",
+      "commune": "la-ligua",
+      "name": "Pichicuy",
+      "latitude": -32.3408541,
+      "longitude": -71.4566308
+    },
+    {
+      "id": "los-molles-pueblo",
+      "commune": "la-ligua",
+      "name": "Los Molles",
+      "latitude": -32.239573799999995,
+      "longitude": -71.5147436
+    },
+    {
+      "id": "casas-viejas-de-longotoma",
+      "commune": "la-ligua",
+      "name": "Casas Viejas de Longotoma",
+      "latitude": -32.3412453,
+      "longitude": -71.32386
+    },
+    {
+      "id": "huaquen",
+      "commune": "la-ligua",
+      "name": "Huaquén",
+      "latitude": -32.4544032,
+      "longitude": -71.2358327
+    },
+    {
+      "id": "quebradilla",
+      "commune": "la-ligua",
+      "name": "Quebradilla",
+      "latitude": -32.4973948,
+      "longitude": -71.2591218
+    },
+    {
+      "id": "la-higuera-la-ligua",
+      "commune": "la-ligua",
+      "name": "La Higuera",
+      "latitude": -32.4809408,
+      "longitude": -71.1787567
+    },
+    {
+      "id": "la-ballena",
+      "commune": "la-ligua",
+      "name": "La Ballena",
+      "latitude": -32.2853332,
+      "longitude": -71.4713596
+    },
+    {
+      "id": "la-engorda",
+      "commune": "la-ligua",
+      "name": "La Engorda",
+      "latitude": -32.3271063,
+      "longitude": -71.189881
+    },
+    {
+      "id": "los-hornos",
+      "commune": "la-ligua",
+      "name": "Los Hornos",
+      "latitude": -32.4544032,
+      "longitude": -71.2358327
+    },
+    {
+      "id": "pueblo-de-roco",
+      "commune": "la-ligua",
+      "name": "Pueblo de Roco",
+      "latitude": -32.4433456,
+      "longitude": -71.19856419999999
+    },
+    {
+      "id": "pueblo-de-varas",
+      "commune": "la-ligua",
+      "name": "Pueblo de Varas",
+      "latitude": -32.4359375,
+      "longitude": -71.20956249999999
+    },
+    {
+      "id": "trapiche",
+      "commune": "la-ligua",
+      "name": "Trapiche",
+      "latitude": -32.3207948,
+      "longitude": -71.2906598
+    },
+    {
+      "id": "petorca",
+      "commune": "petorca",
+      "name": "Petorca",
+      "latitude": -32.2501986,
+      "longitude": -70.9239735
+    },
+    {
+      "id": "chincolco",
+      "commune": "petorca",
+      "name": "Chincolco",
+      "latitude": -32.2237235,
+      "longitude": -70.8427294
+    },
+    {
+      "id": "hierro-viejo",
+      "commune": "petorca",
+      "name": "Hierro Viejo",
+      "latitude": -32.276671900000004,
+      "longitude": -71.0047613
+    },
+    {
+      "id": "el-sobrante",
+      "commune": "petorca",
+      "name": "El Sobrante",
+      "latitude": -32.2278647,
+      "longitude": -70.8101533
+    },
+    {
+      "id": "pedernal",
+      "commune": "petorca",
+      "name": "Pedernal",
+      "latitude": -32.053333300000006,
+      "longitude": -70.85083329999999
+    },
+    {
+      "id": "frutillar-petorca",
+      "commune": "petorca",
+      "name": "Frutillar",
+      "latitude": -32.1970277,
+      "longitude": -71.1124132
+    },
+    {
+      "id": "manuel-montt-petorca",
+      "commune": "petorca",
+      "name": "Manuel Montt",
+      "latitude": -32.252222,
+      "longitude": -70.9312918
+    },
+    {
+      "id": "pedegua",
+      "commune": "petorca",
+      "name": "Pedegua",
+      "latitude": -32.3568547,
+      "longitude": -71.0697569
+    },
+    {
+      "id": "palquico",
+      "commune": "petorca",
+      "name": "Palquico",
+      "latitude": -32.2533008,
+      "longitude": -71.1379579
+    },
+    {
+      "id": "las-palmas-petorca",
+      "commune": "petorca",
+      "name": "Las Palmas",
+      "latitude": -32.2050581,
+      "longitude": -71.1490297
+    },
+    {
+      "id": "santa-julia",
+      "commune": "petorca",
+      "name": "Santa Julia",
+      "latitude": -32.3087045,
+      "longitude": -71.073267
+    },
+    {
+      "id": "la-polcura",
+      "commune": "petorca",
+      "name": "La Polcura",
+      "latitude": -32.2814091,
+      "longitude": -70.8681912
+    },
+    {
+      "id": "la-chimba-petorca",
+      "commune": "petorca",
+      "name": "La Chimba",
+      "latitude": -32.2416751,
+      "longitude": -70.903318
+    },
+    {
+      "id": "la-nipa",
+      "commune": "petorca",
+      "name": "La Ñipa",
+      "latitude": -32.2817291,
+      "longitude": -70.9742873
+    },
+    {
+      "id": "cabildo",
+      "commune": "cabildo",
+      "name": "Cabildo",
+      "latitude": -32.4258064,
+      "longitude": -71.0661621
+    },
+    {
+      "id": "alicahue",
+      "commune": "cabildo",
+      "name": "Alicahue",
+      "latitude": -32.3511981,
+      "longitude": -70.7820895
+    },
+    {
+      "id": "artificio",
+      "commune": "cabildo",
+      "name": "Artificio",
+      "latitude": -32.3960169,
+      "longitude": -71.0959729
+    },
+    {
+      "id": "casas-de-alicahue",
+      "commune": "cabildo",
+      "name": "Casas de Alicahue",
+      "latitude": -32.3512389,
+      "longitude": -70.7819294
+    },
+    {
+      "id": "el-cartucho",
+      "commune": "cabildo",
+      "name": "El Cartucho",
+      "latitude": -32.4107172,
+      "longitude": -71.07590499999999
+    },
+    {
+      "id": "el-crucero-cabildo",
+      "commune": "cabildo",
+      "name": "El Crucero",
+      "latitude": -32.4107172,
+      "longitude": -71.07590499999999
+    },
+    {
+      "id": "el-ingenio",
+      "commune": "cabildo",
+      "name": "El Ingenio",
+      "latitude": -32.481441800000006,
+      "longitude": -71.13134060000002
+    },
+    {
+      "id": "el-quemado",
+      "commune": "cabildo",
+      "name": "El Quemado",
+      "latitude": -32.4405539,
+      "longitude": -71.0068589
+    },
+    {
+      "id": "el-guayacan",
+      "commune": "cabildo",
+      "name": "El Guayacán",
+      "latitude": -32.420532,
+      "longitude": -71.0567654
+    },
+    {
+      "id": "hospital-cabildo",
+      "commune": "cabildo",
+      "name": "Hospital",
+      "latitude": -32.4282458,
+      "longitude": -71.0678078
+    },
+    {
+      "id": "la-mora",
+      "commune": "cabildo",
+      "name": "La Mora",
+      "latitude": -32.4910484,
+      "longitude": -70.96871569999999
+    },
+    {
+      "id": "los-perales",
+      "commune": "cabildo",
+      "name": "Los Perales",
+      "latitude": -32.3427049,
+      "longitude": -70.7540459
+    },
+    {
+      "id": "penablanca",
+      "commune": "cabildo",
+      "name": "Peñablanca",
+      "latitude": -32.4570158,
+      "longitude": -71.1025836
+    },
+    {
+      "id": "pitipeumo",
+      "commune": "cabildo",
+      "name": "Pitipeumo",
+      "latitude": -32.573714599999995,
+      "longitude": -70.9112735
+    },
+    {
+      "id": "san-lorenzo-cabildo",
+      "commune": "cabildo",
+      "name": "San Lorenzo",
+      "latitude": -32.435067,
+      "longitude": -70.9941499
+    },
+    {
+      "id": "montegrande",
+      "commune": "cabildo",
+      "name": "Montegrande",
+      "latitude": -32.437106299999996,
+      "longitude": -71.08577
+    },
+    {
+      "id": "las-puertas",
+      "commune": "cabildo",
+      "name": "Las Puertas",
+      "latitude": -32.487322,
+      "longitude": -70.932307
+    },
+    {
+      "id": "la-vina-cabildo",
+      "commune": "cabildo",
+      "name": "La Viña",
+      "latitude": -32.4252534,
+      "longitude": -70.9142329
+    },
+    {
+      "id": "pililen",
+      "commune": "cabildo",
+      "name": "Pililén",
+      "latitude": -32.4042355,
+      "longitude": -70.8848115
+    },
+    {
+      "id": "paihuen",
+      "commune": "cabildo",
+      "name": "Paihuén",
+      "latitude": -32.367592,
+      "longitude": -70.8526208
+    },
+    {
+      "id": "bartolillo",
+      "commune": "cabildo",
+      "name": "Bartolillo",
+      "latitude": -32.3877752,
+      "longitude": -70.85398260000001
+    },
+    {
+      "id": "los-molinos-cabildo",
+      "commune": "cabildo",
+      "name": "Los Molinos",
+      "latitude": -32.4074076,
+      "longitude": -71.0313632
+    },
+    {
+      "id": "algarrobo-cabildo",
+      "commune": "cabildo",
+      "name": "Algarrobo",
+      "latitude": -32.4666667,
+      "longitude": -71.0333333
+    },
+    {
+      "id": "zapallar-pueblo",
+      "commune": "zapallar",
+      "name": "Zapallar",
+      "latitude": -32.5541427,
+      "longitude": -71.4571667
+    },
+    {
+      "id": "cachagua",
+      "commune": "zapallar",
+      "name": "Cachagua",
+      "latitude": -32.5801888,
+      "longitude": -71.45219940000001
+    },
+    {
+      "id": "catapilco",
+      "commune": "zapallar",
+      "name": "Catapilco",
+      "latitude": -32.5745481,
+      "longitude": -71.2758429
+    },
+    {
+      "id": "blanquillo",
+      "commune": "zapallar",
+      "name": "Blanquillo",
+      "latitude": -32.5635368,
+      "longitude": -71.2724003
+    },
+    {
+      "id": "la-laguna-zapallar",
+      "commune": "zapallar",
+      "name": "La Laguna",
+      "latitude": -32.627804999999995,
+      "longitude": -71.4243082
+    },
+    {
+      "id": "la-hacienda-zapallar",
+      "commune": "zapallar",
+      "name": "La Hacienda",
+      "latitude": -32.5772371,
+      "longitude": -71.2998339
+    },
+    {
+      "id": "san-alfonso-zapallar",
+      "commune": "zapallar",
+      "name": "San Alfonso",
+      "latitude": -32.5674532,
+      "longitude": -71.275443
+    },
+    {
+      "id": "papudo",
+      "commune": "papudo",
+      "name": "Papudo",
+      "latitude": -32.506887299999995,
+      "longitude": -71.445776
+    },
+    {
+      "id": "pullally",
+      "commune": "papudo",
+      "name": "Pullally",
+      "latitude": -32.4330819,
+      "longitude": -71.32377009999999
+    },
+    {
+      "id": "las-salinas-papudo",
+      "commune": "papudo",
+      "name": "Las Salinas",
+      "latitude": -32.411236599999995,
+      "longitude": -71.4108425
+    }
+  ],
+  "routes": [
+    {
+      "id": "ruta-del-diablo",
+      "name": "Ruta del Diablo",
+      "description": "Recorre los lugares detrás del dicho \"el diablo murió en Petorca y en La Ligua lo enterraron\", partiendo bien metido en el campo —\"donde el diablo perdió el poncho\"— en la antigua estación y el puente de Pedegua, hasta la Escalera del Diablo en Hierro Viejo, la Iglesia La Merced de Petorca y los petroglifos de Chincolco.",
+      "stopIds": [
+        "pedegua",
+        "pedegua-puente",
+        "ruta-de-los-tuneles",
+        "escalera-del-diablo",
+        "iglesia-la-merced-petorca",
+        "petorca-petroglifos-chincolco"
+      ],
+      "source": {
+        "url": "https://petorcaminera.wordpress.com/2016/12/13/el-diablo-murio-en-petorca/",
+        "label": "Cavando en Petorca y su Minería — El Diablo murió en Petorca"
+      },
+      "cover": "ruta-del-diablo.webp",
+      "verification": "pending"
+    },
+    {
+      "id": "ruta-costera-papudo-zapallar",
+      "name": "Ruta Costera: Papudo y Zapallar",
+      "description": "Un recorrido por los balnearios tradicionales del litoral norte de la región de Valparaíso: las Salinas de Pullally y las playas de Papudo, la bahía de Zapallar, y el tramo costero de La Ligua en Los Molles y Pichicuy.",
+      "stopIds": [
+        "papudo-salinas-pullally",
+        "playa-papudo",
+        "playa-chica-papudo",
+        "bahia-mirador-zapallar",
+        "zapallar-punta-pite",
+        "la-ligua-los-molles",
+        "la-ligua-pichicuy"
+      ],
+      "source": {
+        "url": "https://www.minube.com/tips/actualidad/rincones-unicos-que-visitar-en-papudo-mar-y-montana-te-esperan",
+        "label": "minube — Qué ver en Papudo"
+      },
+      "cover": "ruta-costera-papudo-zapallar.webp",
+      "verification": "pending"
+    },
+    {
+      "id": "ruta-patrimonial-la-ligua-cabildo",
+      "name": "Ruta Patrimonial: La Ligua y Cabildo",
+      "description": "De los dulces y el tejido de La Ligua, pasando por La Chorreada, al interior cordillerano de Cabildo: San Lorenzo, Puente La Sirena, Castillo del Diablo, Alicahue, Cerro Chache y La Vega.",
+      "stopIds": [
+        "la-ligua-area-de-dulces",
+        "la-ligua-valle-hermoso",
+        "la-ligua-la-chorreada",
+        "cabildo-san-lorenzo",
+        "cabildo-puente-la-sirena",
+        "cabildo-castillo-del-diablo",
+        "cabildo-alicahue",
+        "cerro-chache",
+        "cabildo-la-vega"
+      ],
+      "source": {
+        "url": "https://www.sitrural.cl/wp-content/uploads/2024/11/Cabildo_turismo.pdf",
+        "label": "Sitrural — Atractivos turísticos comuna de Cabildo"
+      },
+      "cover": "ruta-patrimonial-la-ligua-cabildo.webp",
+      "verification": "pending"
+    }
+  ]
+}

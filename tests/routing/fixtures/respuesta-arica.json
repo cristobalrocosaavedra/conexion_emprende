@@ -1,0 +1,296 @@
+{
+  "code": "Ok",
+  "routes": [
+    {
+      "legs": [
+        {
+          "steps": [
+            {
+              "intersections": [
+                {
+                  "out": 0,
+                  "entry": [true],
+                  "bearings": [221],
+                  "location": [-70.313043, -18.478182]
+                },
+                {
+                  "out": 2,
+                  "in": 0,
+                  "entry": [false, true, true, false],
+                  "bearings": [45, 135, 225, 315],
+                  "location": [-70.313287, -18.478447]
+                }
+              ],
+              "driving_side": "right",
+              "geometry": {
+                "coordinates": [
+                  [-70.313043, -18.478182],
+                  [-70.313194, -18.478346],
+                  [-70.313234, -18.478389],
+                  [-70.313287, -18.478447],
+                  [-70.313925, -18.479143],
+                  [-70.31397, -18.479192]
+                ],
+                "type": "LineString"
+              },
+              "maneuver": {
+                "bearing_after": 221,
+                "bearing_before": 0,
+                "location": [-70.313043, -18.478182],
+                "modifier": "left",
+                "type": "depart"
+              },
+              "name": "Manuel Blanco Encalada",
+              "mode": "driving",
+              "weight": 15.2,
+              "duration": 15.2,
+              "distance": 148.6
+            },
+            {
+              "intersections": [
+                {
+                  "out": 3,
+                  "in": 0,
+                  "entry": [false, false, true, true],
+                  "bearings": [45, 135, 225, 315],
+                  "location": [-70.31397, -18.479192]
+                }
+              ],
+              "driving_side": "right",
+              "geometry": {
+                "coordinates": [
+                  [-70.31397, -18.479192],
+                  [-70.314292, -18.478947],
+                  [-70.314614, -18.478702],
+                  [-70.314661, -18.478667]
+                ],
+                "type": "LineString"
+              },
+              "maneuver": {
+                "bearing_after": 307,
+                "bearing_before": 220,
+                "location": [-70.31397, -18.479192],
+                "modifier": "right",
+                "type": "turn"
+              },
+              "name": "Bernardo O'Higgins",
+              "mode": "driving",
+              "weight": 10.8,
+              "duration": 10.8,
+              "distance": 93.3
+            },
+            {
+              "intersections": [
+                {
+                  "out": 0,
+                  "in": 1,
+                  "entry": [true, false, false, true],
+                  "bearings": [45, 135, 225, 315],
+                  "location": [-70.314661, -18.478667]
+                },
+                {
+                  "out": 0,
+                  "in": 2,
+                  "entry": [true, true, false, false],
+                  "bearings": [45, 135, 225, 315],
+                  "location": [-70.31386, -18.477799]
+                },
+                {
+                  "out": 0,
+                  "in": 2,
+                  "entry": [true, false, false, true],
+                  "bearings": [45, 135, 225, 315],
+                  "location": [-70.313359, -18.477257]
+                },
+                {
+                  "out": 0,
+                  "in": 2,
+                  "entry": [true, true, false],
+                  "bearings": [45, 135, 225],
+                  "location": [-70.312829, -18.476682]
+                },
+                {
+                  "out": 0,
+                  "in": 2,
+                  "entry": [true, false, false, true],
+                  "bearings": [45, 135, 225, 315],
+                  "location": [-70.312297, -18.476107]
+                },
+                {
+                  "out": 0,
+                  "in": 2,
+                  "entry": [true, true, false],
+                  "bearings": [45, 135, 225],
+                  "location": [-70.31162, -18.475373]
+                },
+                {
+                  "out": 0,
+                  "in": 2,
+                  "entry": [true, false, false],
+                  "bearings": [45, 135, 225],
+                  "location": [-70.311229, -18.47495]
+                },
+                {
+                  "out": 0,
+                  "in": 1,
+                  "entry": [true, false],
+                  "bearings": [135, 225],
+                  "location": [-70.310635, -18.474306]
+                }
+              ],
+              "driving_side": "right",
+              "geometry": {
+                "coordinates": [
+                  [-70.314661, -18.478667],
+                  [-70.313982, -18.477931],
+                  [-70.313937, -18.477882],
+                  [-70.31386, -18.477799],
+                  [-70.313404, -18.477305],
+                  [-70.313359, -18.477257],
+                  [-70.312829, -18.476682],
+                  [-70.31234, -18.476153],
+                  [-70.312297, -18.476107],
+                  [-70.312136, -18.475932],
+                  [-70.311767, -18.475533],
+                  [-70.31162, -18.475373],
+                  [-70.31139, -18.475125],
+                  [-70.311229, -18.47495],
+                  [-70.311032, -18.474737],
+                  [-70.310635, -18.474306],
+                  [-70.31, -18.474776]
+                ],
+                "type": "LineString"
+              },
+              "maneuver": {
+                "bearing_after": 40,
+                "bearing_before": 307,
+                "location": [-70.314661, -18.478667],
+                "modifier": "right",
+                "type": "turn"
+              },
+              "name": "General Lagos",
+              "mode": "driving",
+              "weight": 67.5,
+              "duration": 67.5,
+              "distance": 728.2
+            },
+            {
+              "intersections": [
+                {
+                  "out": 2,
+                  "in": 3,
+                  "entry": [false, true, true, false],
+                  "bearings": [45, 120, 225, 315],
+                  "location": [-70.31, -18.474776]
+                }
+              ],
+              "driving_side": "right",
+              "geometry": {
+                "coordinates": [
+                  [-70.31, -18.474776],
+                  [-70.310115, -18.474912]
+                ],
+                "type": "LineString"
+              },
+              "maneuver": {
+                "bearing_after": 217,
+                "bearing_before": 126,
+                "location": [-70.31, -18.474776],
+                "modifier": "right",
+                "type": "turn"
+              },
+              "name": "Manuel Blanco Encalada",
+              "mode": "driving",
+              "weight": 1.7,
+              "duration": 1.7,
+              "distance": 19.3
+            },
+            {
+              "intersections": [
+                {
+                  "in": 0,
+                  "entry": [true],
+                  "bearings": [39],
+                  "location": [-70.310115, -18.474912]
+                }
+              ],
+              "driving_side": "right",
+              "geometry": {
+                "coordinates": [
+                  [-70.310115, -18.474912],
+                  [-70.310115, -18.474912]
+                ],
+                "type": "LineString"
+              },
+              "maneuver": {
+                "bearing_after": 0,
+                "bearing_before": 219,
+                "location": [-70.310115, -18.474912],
+                "modifier": "left",
+                "type": "arrive"
+              },
+              "name": "Manuel Blanco Encalada",
+              "mode": "driving",
+              "weight": 0,
+              "duration": 0,
+              "distance": 0
+            }
+          ],
+          "weight": 95.2,
+          "summary": "Manuel Blanco Encalada, General Lagos",
+          "duration": 95.2,
+          "distance": 989.4
+        }
+      ],
+      "weight_name": "routability",
+      "geometry": {
+        "coordinates": [
+          [-70.313043, -18.478182],
+          [-70.313194, -18.478346],
+          [-70.313234, -18.478389],
+          [-70.313287, -18.478447],
+          [-70.313925, -18.479143],
+          [-70.31397, -18.479192],
+          [-70.314292, -18.478947],
+          [-70.314614, -18.478702],
+          [-70.314661, -18.478667],
+          [-70.313982, -18.477931],
+          [-70.313937, -18.477882],
+          [-70.31386, -18.477799],
+          [-70.313404, -18.477305],
+          [-70.313359, -18.477257],
+          [-70.312829, -18.476682],
+          [-70.31234, -18.476153],
+          [-70.312297, -18.476107],
+          [-70.312136, -18.475932],
+          [-70.311767, -18.475533],
+          [-70.31162, -18.475373],
+          [-70.31139, -18.475125],
+          [-70.311229, -18.47495],
+          [-70.311032, -18.474737],
+          [-70.310635, -18.474306],
+          [-70.31, -18.474776],
+          [-70.310115, -18.474912]
+        ],
+        "type": "LineString"
+      },
+      "weight": 95.2,
+      "duration": 95.2,
+      "distance": 989.4
+    }
+  ],
+  "waypoints": [
+    {
+      "hint": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "location": [-70.313043, -18.478182],
+      "name": "Manuel Blanco Encalada",
+      "distance": 19.96745024
+    },
+    {
+      "hint": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "location": [-70.310115, -18.474912],
+      "name": "Manuel Blanco Encalada",
+      "distance": 15.56923394
+    }
+  ]
+}

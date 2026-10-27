@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-26",
+  "tool": "OpenAI image_gen",
+  "decision": "El titular elige B · Latitud viva; el ajuste posterior es un refinamiento para revisión.",
+  "reference": "../v04/B-latitud-viva.png",
+  "originalSelected": "exec-c94f26c1-d95e-4d37-9af9-bd467f0169d4.png",
+  "refinementOriginal": "exec-3c7d8b05-359d-4fca-99e1-1f59c90705ee.png",
+  "refinementPrompt": "Refina con cambios MUY SUTILES el logo de la imagen adjunta, opción B Latitud viva, que el usuario acaba de elegir para «territorio vivo». Mantén el concepto elegido y su identidad: una silueta orgánica de norte a sur que evoca Chile, construida con CINCO fragmentos: pieza coral superior ancha, pieza fucsia central curvada, pieza coral inferior curvada y DOS grandes islotes fucsia al sur. Fondo berenjena muy oscuro #22162E, coral #FF6154 y fucsia #FF4597, nombre en marfil. NO cambiar a otra dirección ni agregar nuevos motivos. AJUSTE PRINCIPAL: compactar el símbolo moderadamente, reduciendo los espacios verticales y ensanchando ligeramente las piezas hasta una proporción global aproximada de 2 de alto por 1 de ancho; conservar el orden de los fragmentos, el ritmo sinuoso y el extremo sur dividido. Separaciones abiertas suficientemente gruesas para que la forma se lea a tamaños pequeños. Símbolo a la izquierda de la marca, nombre exacto «territorio» arriba y «vivo» debajo, misma tipografía sans humanista gruesa y redondeada de la referencia, perfectamente legible y alineada. Composición horizontal equilibrada, amplio margen de seguridad, sin etiqueta B ni títulos de propuesta, sin eslogan. Agrega una pequeña muestra ilustrativa del MISMO símbolo dentro de un cuadrado de esquinas redondeadas en el ángulo inferior izquierdo, a modo de vista de ícono. Esa muestra debe conservar exactamente los mismos cinco fragmentos. Acabado limpio de estudio de branding, colores planos, contornos nítidos, nada de textura, brillo, sombra o degradado. No mapas escolares, divisiones de regiones, banderas, pines, ventanas, soles ni paisajes. Es una identidad abstracta y contemporánea para una app de turismo, comercios locales y comunidad.",
+  "files": [
+    {
+      "path": "docs/diseno/marca/v04/A-mosaico-territorial.png",
+      "sha256": "1356919d5c9e1c6813cdce87ac66a9b85811f2a88cdc9ee0112fa5446a554ece",
+      "bytes": 1309677
+    },
+    {
+      "path": "docs/diseno/marca/v04/B-latitud-viva.png",
+      "sha256": "ddf514646c41199f254c2db203fe307ebef2d6cc954e888c031c2e7a8486754c",
+      "bytes": 1285267
+    },
+    {
+      "path": "docs/diseno/marca/latitud-viva/latitud-viva-ajuste.png",
+      "sha256": "178734e23ee7ff5163087724bfbc2b21863c61694b962c3acdb9fb00bde94c9c",
+      "bytes": 1278734
+    }
+  ]
+}

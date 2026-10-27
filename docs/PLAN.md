@@ -195,3 +195,75 @@ La primera entrega es el cascarón de Fase 0: portada esquemática, temas claro/
 15. Presupuesto y freemium por decidir
 
 El usuario solicita desde ahora presupuesto de mantenimiento y plan de monetización: ficha gratuita, mayor exposición pagada y herramientas para oferentes. COSTOS-Y-MONETIZACION.md presenta partidas, fórmulas, escenarios orientativos y punto de equilibrio, diferenciando supuestos de tarifas verificadas. No hay precios aprobados ni cobros implementados. La exposición pagada se rotula y no compra verificación. Moderación, soporte y reglas de compra digital de Android/iOS forman parte del costo y de las decisiones antes de cobrar.
+
+16. Ampliación de la maqueta tras la primera prueba en Android
+
+El usuario probó la primera APK y solicita una maqueta visual e interactiva más completa: gesto en la portada entera, reutilizar elementos propios para poblar Petorca, recrear las otras regiones y disponer de mapas. Confirmó por segunda vez que se pueden usar elementos de city_tour y directorio_turistico, con la condición de no modificar esos proyectos. Autorización acotada a esta ampliación, no permiso permanente para trabajos futuros.
+
+Se incorpora catálogo local de referencia, filtros por comuna/categoría, fichas con fuentes, mapa geográfico interactivo y selección/reordenación de paradas persistida en el dispositivo. No se crea backend de altas, moderación o pagos. Los recorridos conectan paradas de forma esquemática; no se presentan como rutas por calles ni tiempos calculados. Los eventos sin agenda vigente se muestran solo como demostraciones explícitas.
+
+Las 16 regiones tendrán portadas con identidad territorial, cuatro fondos ilustrados por grandes zonas y geometrías de Natural Earth para selección y exploración. El catálogo detallado parte de las referencias de Petorca y su corredor; las regiones aún sin fichas lo indican sin inventar establecimientos. La ubicación de primer plano puede identificar región con consentimiento; las coordenadas del viajero no se persisten. La compilación APK continúa exclusivamente en GitHub Actions y el código mantiene compatibilidad Android/iOS.
+
+17. Ajustes tras probar la APK 0.2 — definición confirmada el 24-10-2026
+
+El usuario considera satisfactoria la maqueta instalada y aclara la navegación como una lista ordenada de norte a sur: dedo hacia arriba muestra regiones del sur; dedo hacia abajo muestra regiones del norte. Esta decisión sustituye el sentido del gesto de la sección 10.8; los botones Norte/Sur siguen señalando destinos geográficos.
+
+El selector mostrará las dieciséis regiones a la vez en teléfonos habituales, con nombres enlazados a un mapa mediante líneas, evitando los cuadros grandes. Se mantendrán blancos de toque accesibles; el texto ampliado podrá requerir desplazamiento. Al elegir una región se verá un recorrido por el país con línea e indicador móvil, región atravesada y llegada; no solo destellos de fotos. Respetar reducir movimiento y permitir detener sin persistir pasos intermedios.
+
+Se amplía el catálogo basal con referencias públicas de otras regiones. Primera extracción: 27 registros urbanos de OpenStreetMap bajo ODbL, separados de las referencias de Petorca, sin verificar vigencia ni acceso. Se documentan fuentes oficiales para futuras referencias de parques; no se inventan coordenadas ni se copian fotos o descripciones sin revisar condiciones.
+
+El usuario aclara que la monetización será posicionamiento de negocios particulares, no venta de datos turísticos. Los atractivos públicos forman parte del catálogo gratuito. Revisar las condiciones de cada fuente y el uso concreto: no vender una base no determina por sí solo si su uso cumple una cláusula no comercial, y una etiqueta de un portal no prohíbe por sí sola mostrar parques o redactar fichas factuales propias. Promociones privadas siempre rotuladas y separadas de verificación y recomendación.
+
+18. Navegación interna y servidor propio — decisión del 24-10-2026
+
+Tras probar 0.3, el usuario solicita trazado real, botón de inicio y ubicación correcta al abrir. Rechaza derivar la navegación a Google Maps: editar paradas y recalcular debe ocurrir dentro de Territorio Vivo. Se autoriza ampliar el alcance a navegación visual en primer plano, no a registro de oferentes ni pagos.
+
+El usuario elige explícitamente un servidor propio sin registros de ubicación y un VPS nuevo separado, pendiente de contratación. No se usarán servidores públicos como respaldo para el GPS. Se prepara OSRM, HTTPS, límites y desactivación de registros en motor, gateway y contenedores. La app tendrá una configuración pública de servidor para activar la beta sin otra APK; antes de GPS comprobará configuración y salud. La posición, origen de regreso y geometría se mantienen solo en memoria; se pausa al salir de la app.
+
+Se corrige el permiso inicial: solicitar una vez si nunca se decidió y reutilizar mientras esté vigente, respetando denegación y la opción del sistema «Solo esta vez». La región guardada es una región consultada hasta obtener una ubicación reciente. La resolución local de región evita confundir una respuesta errónea Metropolitana con una posición de Valparaíso; la provincia no se interpreta como comuna.
+
+Preparación, presupuesto orientativo, límites y pasos simples del VPS en docs/SERVIDOR-DE-RUTAS.md. No hay contratación, despliegue productivo ni claves creadas por esta decisión. Cobertura nacional, certificado HTTPS público y recorrido físico Android/iOS se comprobarán en el servidor/dispositivos reales antes de declararlos operativos.
+
+19. Descarga simple — 25-10-2026
+
+El usuario reafirma el recorrido dentro de la app; si se evaluara una alternativa externa tendría que conservar el plan completo con paradas, no perder el viaje. La decisión vigente continúa siendo navegación interna y VPS propio. Pide que la descarga contenga únicamente la aplicación: separar capturas/videos y metadatos de la APK. Los artefactos de Actions se descargan como un ZIP con una sola APK; el canal de releases ofrece el .apk directo después de revisión/fusión del usuario. Las vistas quedan en el repositorio y los datos abiertos/licencia son accesibles desde la app.
+
+20. Servicio público temporal — autorización del 25-10-2026
+
+El titular solicita usar un servicio público de rutas para pruebas inmediatas y presupuesto US$0. Esta decisión sustituye para la beta la restricción de solo VPS propio sin logs. Se preconfigura FOSSGIS/OSRM, sin pedir servidor al viajero, manteniendo caminos e indicaciones dentro de Territorio Vivo. Aviso explícito: el proveedor recibe y registra consultas; respetar máximo una por segundo, atribución, no uso intensivo ni acceso vendido. La app sigue sin persistir coordenadas ni usar ubicación de segundo plano. Probar trayectos locales e interregionales reales antes de ofrecer descarga; la disponibilidad pública no se garantiza para producción. No consultar ni modificar los otros repositorios.
+
+21. Ajustes tras prueba en carretera — 25-10-2026
+
+Buscar desde una región también debe sugerir lugares de otras regiones con su ubicación administrativa, permitiendo guardarlos sin cambiar la región explorada. El mapa de viaje tendrá orientación según el avance del vehículo, alternativa norte arriba, gestos libres de desplazamiento/zoom/rotación y controles de recenter/recorrido completo. El seguimiento no debe anular gestos manuales. Rumbo de primer plano solo en memoria; las duraciones prolongadas se expresan en horas y minutos. El servicio de ruteo público temporal y el presupuesto US$0 se mantienen.
+
+
+22. Catálogo maestro y revisión humana — 26-10-2026
+
+Tras revisar la simulación, el titular autoriza incorporar todo el maestro a la APK de pruebas, aun pendiente, y revisar el conjunto en un Excel de ida/vuelta. Se conserva el catálogo previo y se agregan referencias sin inventar coordenadas. Comunas/localidades se integran a la jerarquía y búsqueda, no se presentan como negocios. Las coincidencias exactas asocian evidencia sin reemplazar datos; los parecidos permanecen separados y señalados. Checklist completo con IDs y lector de devolución que prepara propuestas, sin publicación automática. No se autoriza producción ni promoción indiscriminada a verificado.
+
+
+23. Conteos regionales y Rapa Nui — 26-10-2026
+
+La portada debe distinguir región completa y comuna activa (Valparaíso tenía 86 referencias, La Ligua 11). Se conserva prioridad local y se añade acceso a toda la región. El usuario pide incluir Rapa Nui como parte de Valparaíso y sugerir llegada en avión sin calcular carretera desde el continente. Se agregan cuatro referencias OSM pendientes, con datos/licencia/procedencia, mapa y recorrido local separados. Los destinos siguen guardados al cambiar de ámbito. Se protege el cálculo vial y el esquema contra conexiones sobre el océano. El Excel anterior debe seguir siendo utilizable al crecer el catálogo.
+
+
+24. Colección visual territorial — 26-10-2026
+
+El usuario solicita imágenes más representativas para cada región y zona. Se prepara una primera colección de 16 portadas regionales y ocho variantes de zonas, con estilo editorial coherente, optimizadas para móvil y guardadas en una galería revisable. Inicio y fichas eligen la imagen por región/comuna y distinguen ilustraciones de fotografías. Matichoc conserva su logo autorizado y completo. Las imágenes no cambian el catálogo ni su validación humana. Se conserva la APK como única descarga de instalación y la colección visual por separado. Ver docs/diseno/coleccion-0.7/README.md.
+
+
+25. Dirección de marca provisional — 26-10-2026
+
+Tras rechazar el logo turístico literal, el titular expresa preferencia tentativa por la exploración Pulso, de formas orgánicas y colores coral/fucsia sobre berenjena. Continuar refinando su símbolo, tipografía y legibilidad; no interpretar esta preferencia como logo final ni cambio de nombre. El producto sigue siendo Territorio Vivo. Las propuestas se guardan en docs/diseno/marca/v03 sin aplicarlas todavía a la app.
+
+
+26. Elección de dirección de marca — 26-10-2026
+
+El titular pide conectar Pulso con la multiforma de Chile y elige B, Latitud viva: piezas orgánicas coral/fucsia, composición norte-sur y extremo austral fragmentado. Se conserva la propuesta elegida y un refinamiento más compacto en docs/diseno/marca/latitud-viva. El producto sigue llamándose Territorio Vivo. Esta elección orienta la preparación de recursos gráficos; todavía no se integra a la APK ni se cambia el tema actual.
+
+Revisión visual solicitada: los detalles interiores del símbolo incorporan desierto, cordillera/valles, bosque/agua y fiordos/islas. Se recolorean por zona: ocres en el norte, terracota en el centro, verde en el sur y azules en austral. Ver docs/diseno/marca/latitud-viva/contenido; la revisión gráfica no cambia todavía el tema ni la APK.
+
+
+27. Marca integrada a la candidata — 26-10-2026
+
+El titular solicita incluir la identidad recoloreada en la nueva compilación y PR. Candidata 0.7.1: logo en cabecera, ampliación al tocarlo e ícono de instalación para Android/iOS generado desde la misma dirección B. Se mantienen identificadores, firma, preferencias y catálogo. Actualizar el mismo PR #4, ejecutar validación completa, mostrar capturas y compilar la APK solo en Actions antes de ofrecer descarga. Ver docs/diseno/marca/latitud-viva/INTEGRACION.md.

@@ -1,0 +1,5 @@
+# Preservar exactamente los insumos entregados y el respaldo del catálogo.
+content/staging/catalogo-maestro/entrada/** -text -whitespace
+content/staging/catalogo-maestro/respaldo/** -text -whitespace
+# CSV de reporte compatibles con planillas: UTF-8 con BOM y líneas CRLF.
+content/staging/catalogo-maestro/simulacion/*.csv -text whitespace=cr-at-eol

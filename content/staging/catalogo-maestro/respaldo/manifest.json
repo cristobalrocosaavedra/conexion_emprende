@@ -1,0 +1,25 @@
+{
+  "commit": "739182c27381dd2b8e8a989aabb5a71cc01f9291",
+  "files": {
+    "content/catalogo/petorca.json": "5f38b010e3daa4a41a0c60b7f444ea0f94c761b189333aafe79c655a18d9d305",
+    "content/catalogo/osm-chile.json": "e71c503053a123c69e35d8f46376b95d8a28ebb12aee3791e61a2f0dafc0c6bd",
+    "content/catalogo/regiones.geo.json": "ed2e21c4ccff73f5ec2f2f6c61e40b7bb0577b5581a35f749ecc3d2df3e4ac53",
+    "apps/mobile/src/art.ts": "a22f177e619fae5496662647e333f277a36e90ee9f0fed1bb688d42f612801bc",
+    "apps/mobile/src/usePreferences.ts": "2acdeb486aba6e8f32b8603378e1555301740e21907a6050508b719d8f898c23",
+    "packages/core/src/catalog.ts": "d9b137567069213149a51982d228312121cbef05db6c63185392521438f0e5e7",
+    "apps/mobile/assets/territorio/austral.webp": "143e85b72e5dca119e56e3706eecdbffa3b1441e6bc3e7f60cda151f1f235dd8",
+    "apps/mobile/assets/territorio/centro.webp": "bf931e91f945f930cc29457215da356f023750fd32faa456d7da828ba3c936b2",
+    "apps/mobile/assets/territorio/hostales.webp": "3d984cd093d3f3601a498d683b32f762fbb447c8d2d490ed8d0e078c15baab51",
+    "apps/mobile/assets/territorio/humedal.webp": "9a0bbc92178e5e324f95e40c2cbf88cf9e4fd7a0ab67a36b1a2ece39c3feec18",
+    "apps/mobile/assets/territorio/matichoc-logo.webp": "e1bdbc7b11930eb1c129164d60cb1364c097f2b37841186a4dcb9be8fdcb1506",
+    "apps/mobile/assets/territorio/norte.webp": "faa67d58b940018b4253b17655fb02164dc4f7a2daa7a01d8c08d32104eb90b3",
+    "apps/mobile/assets/territorio/paseo-costanera.webp": "0f0049f3d9fce411a920d7d3546bc79600dcbe16affd0797c96812a03f97b4fc",
+    "apps/mobile/assets/territorio/playa.webp": "ee0d92b44badbede29e8b4a15259aabc6adcffeead9ed315d6e8edefc87849b5",
+    "apps/mobile/assets/territorio/plaza.webp": "6c0068e3a1f32aaa515db5deb46dc13a29cd1e8580d54332e30b1b91570b2cc0",
+    "apps/mobile/assets/territorio/ruta-costera-papudo-zapallar.webp": "6cbc963d314b35360234c4d917160b51e572d139b2c063471da80ccbd546b7a8",
+    "apps/mobile/assets/territorio/ruta-del-diablo.webp": "ad4a37ac6f0e5ce4671d1e126105cf9af61862361da660397eae5b6ec3aa7e98",
+    "apps/mobile/assets/territorio/ruta-patrimonial-la-ligua-cabildo.webp": "4f5ae07eaf2d728abe52c97b2a8c115dfed0b7738e5e87f85b33f75d0c20c974",
+    "apps/mobile/assets/territorio/sur.webp": "d568475fd52b434b893498888d039e9aa34dcd3db2b5cf2984747f63e2953f44"
+  },
+  "paqueteSha256": "d3afc45060469271a9aa587cccf7e49c465efd0ef957f114611c92a814081814"
+}

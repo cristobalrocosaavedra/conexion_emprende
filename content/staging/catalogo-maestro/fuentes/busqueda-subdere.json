@@ -1,0 +1,510 @@
+{
+  "help": "https://datos.gob.cl/api/3/action/help_show?name=package_search",
+  "success": true,
+  "result": {
+    "count": 4,
+    "facets": {},
+    "results": [
+      {
+        "author": "SUBDERE",
+        "author_email": "",
+        "creator_user_id": "fb905435-dfb7-4e15-9d49-cc2d233a3d04",
+        "id": "9ad2df52-b2f4-4250-ab16-28cb5a2edd6d",
+        "isopen": false,
+        "license_id": "cc-nc",
+        "license_title": "Creative Commons Non-Commercial (Any)",
+        "license_url": "http://creativecommons.org/licenses/by-nc/2.0/",
+        "maintainer": "Rodrigo Osorio",
+        "maintainer_email": "rodrigo.osorio@subdere.gov.cl",
+        "metadata_created": "2015-10-30T12:48:26.361092",
+        "metadata_modified": "2022-10-11T19:19:46.138526",
+        "name": "15883",
+        "notes": "Los Límites de la División Política Administrativa (DPA) 2020 de Chile, es un archivo shapefile de polígonos que se enmarca en el Trabajo del Grupo de Trabajo DPA de la IDE Chile, donde participan las siguientes instituciones: Subsecretaría de Desarrollo Regional y Administrativo (SUBDERE), Instituto Geográfico Militar (IGM), la Dirección Nacional de Fronteras y Límites del Estado (DIFROL) e Instituto Nacional de Estadísticas (INE); este trabajo es el resultado de la coordinación de las instituciones participantes para obtener una capa de la División Política del país actualizada, y que resulta de la unión de las capas de límites internacionales de DIFROL, los límites interiores del país de SUBDERE y línea de costa e islas de IGM para todo el país, su sistema de referencia es SIRGAS Chile y su escala de representación es 1:50.000. Cabe mencionar que esta capa no incluye el Territorio Antártico Chileno. Esta cartografía cuenta con la aprobación para su circulación mediante, la resolución exenta Nº43 de DIFROL. De acuerdo a las disposiciones contenidas en el DFL Nº5 de 1967, DS Nº 566 de 1970 y DFL Nº83 de 1979 del Ministerio de Relaciones Exteriores, toda publicación cuya circulación sea autorizada por esta Dirección Nacional, deberá llevar la siguiente leyenda: \"Autorizada su circulación por Resolución Nº50 del 2019 de la Dirección Nacional de Fronteras y Límites del Estado\". La edición y circulación de mapas, cartas geográficas u otros impresos y documentos que se refieran o relacionen con los límites y fronteras de Chile, no comprometen, en modo alguno, al Estado de Chile, de acuerdo con el Art. 2º, letra g) del DFL Nº83 de 1979 del Ministerio de Relaciones Exteriores. Cabe considerar que aunque esta cartografía cuenta con la aprobación para la circulación de DIFROL, las publicaciones y productos derivados de ella deben ser revisados y validados de igual manera por DIFROL. Para desplegar esta capa, el usuario debe tener desplegados todos los shapefiles referidos al límite internacional de Chile. La cartografía se entrega separada en 3 shapefiles: comunas, provincias y regiones. No se considera el polígono correspondiente a la comuna Antártica en la región de Magallanes y de la Antártica Chilena. Historial de versiones: V2018, elaborado con la unión de las siguientes líneas: - Límites Interiores, versión 04 (SUBDERE, 13/11/2017) - Límite Internacional, versión 2 (DIFROL, 22/03/2018) - Línea de costa e islas, versión 1 (IGM, N/A) V2019, elaborado con la unión de las siguientes líneas: - Límites Interiores, versión 0501 (SUBDERE, 18/01/2019) - Límite Internacional, versión 3 (DIFROL, 02/01/2019) - Línea de costa e islas, versión 1 (IGM, N/A) V2020, elaborado con la unión de las siguientes líneas: - Límites Interiores, versión 06 (SUBDERE, 31/03/2020) - Límite Internacional, versión 3 (DIFROL, 02/01/2019) - Línea de costa e islas, versión 1 (IGM, N/A)",
+        "num_resources": 2,
+        "num_tags": 6,
+        "organization": {
+          "id": "AB002",
+          "name": "subsecretaria_de_desarrollo_regional",
+          "title": "Subsecretaría de Desarrollo Regional y Administrativo",
+          "type": "organization",
+          "description": "",
+          "image_url": "",
+          "created": "2015-10-30T12:31:24.306543",
+          "is_organization": true,
+          "approval_status": "approved",
+          "state": "active"
+        },
+        "owner_org": "AB002",
+        "private": false,
+        "state": "active",
+        "title": "División Político Administrativa",
+        "type": "dataset",
+        "url": "No informado",
+        "version": "",
+        "extras": [
+          {
+            "key": "Coordenadas",
+            "value": "-76.2866,-66.96,-56.3275,-16.5947"
+          }
+        ],
+        "groups": [
+          {
+            "description": "Información geoespacial, mapas, territorios y datos sobre características físicas y humanas del entorno.",
+            "display_name": "Geografía",
+            "id": "9",
+            "image_display_url": "https://datos.gob.cl/uploads/group/2024-10-04-094611.691972geografia.png",
+            "name": "geografia",
+            "title": "Geografía"
+          }
+        ],
+        "resources": [
+          {
+            "cache_last_updated": null,
+            "cache_url": null,
+            "created": "2013-11-22T19:23:16",
+            "datastore_active": false,
+            "datastore_contains_all_records_of_source_file": false,
+            "description": "Los Límites de la División Política Administrativa (DPA) 2020 de Chile, es un archivo shapefile de polígonos que se enmarca en el Trabajo del Grupo de Trabajo DPA de la IDE Chile, donde participan las siguientes instituciones: Subsecretaría de Desarrollo Regional y Administrativo (SUBDERE), Instituto Geográfico Militar (IGM), la Dirección Nacional de Fronteras y Límites del Estado (DIFROL) e Instituto Nacional de Estadísticas (INE); este trabajo es el resultado de la coordinación de las instituciones participantes para obtener una capa de la División Política del país actualizada, y que resulta de la unión de las capas de límites internacionales de DIFROL, los límites interiores del país de SUBDERE y línea de costa e islas de IGM para todo el país, su sistema de referencia es SIRGAS Chile y su escala de representación es 1:50.000. Cabe mencionar que esta capa no incluye el Territorio Antártico Chileno. Esta cartografía cuenta con la aprobación para su circulación mediante, la resolución exenta Nº43 de DIFROL. De acuerdo a las disposiciones contenidas en el DFL Nº5 de 1967, DS Nº 566 de 1970 y DFL Nº83 de 1979 del Ministerio de Relaciones Exteriores, toda publicación cuya circulación sea autorizada por esta Dirección Nacional, deberá llevar la siguiente leyenda: \"Autorizada su circulación por Resolución Nº50 del 2019 de la Dirección Nacional de Fronteras y Límites del Estado\". La edición y circulación de mapas, cartas geográficas u otros impresos y documentos que se refieran o relacionen con los límites y fronteras de Chile, no comprometen, en modo alguno, al Estado de Chile, de acuerdo con el Art. 2º, letra g) del DFL Nº83 de 1979 del Ministerio de Relaciones Exteriores. Cabe considerar que aunque esta cartografía cuenta con la aprobación para la circulación de DIFROL, las publicaciones y productos derivados de ella deben ser revisados y validados de igual manera por DIFROL. Para desplegar esta capa, el usuario debe tener desplegados todos los shapefiles referidos al límite internacional de Chile. La cartografía se entrega separada en 3 shapefiles: comunas, provincias y regiones. No se considera el polígono correspondiente a la comuna Antártica en la región de Magallanes y de la Antártica Chilena. Historial de versiones: V2018, elaborado con la unión de las siguientes líneas: - Límites Interiores, versión 04 (SUBDERE, 13/11/2017) - Límite Internacional, versión 2 (DIFROL, 22/03/2018) - Línea de costa e islas, versión 1 (IGM, N/A) V2019, elaborado con la unión de las siguientes líneas: - Límites Interiores, versión 0501 (SUBDERE, 18/01/2019) - Límite Internacional, versión 3 (DIFROL, 02/01/2019) - Línea de costa e islas, versión 1 (IGM, N/A) V2020, elaborado con la unión de las siguientes líneas: - Límites Interiores, versión 06 (SUBDERE, 31/03/2020) - Límite Internacional, versión 3 (DIFROL, 02/01/2019) - Línea de costa e islas, versión 1 (IGM, N/A)",
+            "format": "shp",
+            "hash": "",
+            "id": "390d883e-e119-4a59-a5aa-70f00414535a",
+            "last_modified": "2013-11-22T19:23:16",
+            "metadata_modified": null,
+            "mimetype": "application/zip",
+            "mimetype_inner": null,
+            "name": "División Político Administrativa 2020",
+            "package_id": "9ad2df52-b2f4-4250-ab16-28cb5a2edd6d",
+            "position": 0,
+            "resource_type": null,
+            "size": 5576,
+            "state": "active",
+            "url": "https://www.ide.cl/descargas/capas/subdere/DivisionPoliticoAdministrativa2020.zip",
+            "url_type": null
+          },
+          {
+            "cache_last_updated": null,
+            "cache_url": null,
+            "created": "2022-10-11T19:19:46.204693",
+            "datastore_active": false,
+            "datastore_contains_all_records_of_source_file": false,
+            "description": "Servicio Web para la cobertura de límites de la División Político Administrativa 2020",
+            "format": "html",
+            "hash": "",
+            "id": "45c1abdd-07e0-4343-92b2-25ea0c82c108",
+            "last_modified": null,
+            "metadata_modified": null,
+            "mimetype": null,
+            "mimetype_inner": null,
+            "name": "Servicio Web División Político Administrativa",
+            "package_id": "9ad2df52-b2f4-4250-ab16-28cb5a2edd6d",
+            "position": 1,
+            "resource_type": null,
+            "size": null,
+            "state": "active",
+            "url": "https://www.geoportal.cl/arcgis/rest/services/MinisteriodeInterior/chile_minterior_subdere_DPA2020/MapServer",
+            "url_type": null
+          }
+        ],
+        "tags": [
+          {
+            "display_name": "DPA",
+            "id": "523e6623-b091-4082-971c-0d930a1697ea",
+            "name": "DPA",
+            "state": "active",
+            "vocabulary_id": null
+          },
+          {
+            "display_name": "Límites",
+            "id": "e0561ffe-d6fe-4340-b673-32315cc14ddb",
+            "name": "Límites",
+            "state": "active",
+            "vocabulary_id": null
+          },
+          {
+            "display_name": "comunal",
+            "id": "c47191ba-828c-4715-986d-661a1c9f554d",
+            "name": "comunal",
+            "state": "active",
+            "vocabulary_id": null
+          },
+          {
+            "display_name": "division politica administrativa",
+            "id": "34eaa276-7653-42e7-b665-cce1a09ec98b",
+            "name": "division politica administrativa",
+            "state": "active",
+            "vocabulary_id": null
+          },
+          {
+            "display_name": "provincial",
+            "id": "2fcd0493-6a66-4c1d-9fb8-99de4340e080",
+            "name": "provincial",
+            "state": "active",
+            "vocabulary_id": null
+          },
+          {
+            "display_name": "regional",
+            "id": "c4808a35-b8cb-4d78-a7af-686d0921a6f1",
+            "name": "regional",
+            "state": "active",
+            "vocabulary_id": null
+          }
+        ],
+        "relationships_as_subject": [],
+        "relationships_as_object": []
+      },
+      {
+        "author": "Gustavo Solis Sanchez",
+        "author_email": "gustavosolis@munimafil.cl",
+        "creator_user_id": "488dda31-6dc1-45bb-86d3-b907efe8f79e",
+        "id": "0b6fedea-23bc-4a8a-8d81-bd6ce7bb1269",
+        "isopen": true,
+        "license_id": "other-open",
+        "license_title": "Other (Open)",
+        "maintainer": "Juan Carlos Catril",
+        "maintainer_email": "secplan@munimafil.cl",
+        "metadata_created": "2022-11-17T18:45:55.182113",
+        "metadata_modified": "2022-11-17T18:46:35.636483",
+        "name": "14105_listado_iniciativas_2017-2022",
+        "notes": "Iniciativas realizadas en la comuna de Máfil con financiamiento externo (SUBDERE, GORE de Los Ríos, entre otros) o Municipal.",
+        "num_resources": 1,
+        "num_tags": 4,
+        "organization": {
+          "id": "MU162",
+          "name": "municipalidad_de_mafil",
+          "title": "Municipalidad de Máfil",
+          "type": "organization",
+          "description": "",
+          "image_url": "2015-12-11-134413.770172LOGO-MAFIL.jpg",
+          "created": "2015-10-30T12:34:45.472534",
+          "is_organization": true,
+          "approval_status": "approved",
+          "state": "active"
+        },
+        "owner_org": "MU162",
+        "private": false,
+        "state": "active",
+        "title": "14105_listado_iniciativas_2017-2022",
+        "type": "dataset",
+        "url": "Elaboración Propia - SECPLAN",
+        "version": "1.0",
+        "resources": [
+          {
+            "cache_last_updated": null,
+            "cache_url": null,
+            "ckan_url": "https://datos.gob.cl",
+            "created": "2022-11-17T18:46:34.270105",
+            "datastore_active": true,
+            "datastore_contains_all_records_of_source_file": true,
+            "description": "Sin descripción",
+            "format": "xlsx",
+            "hash": "",
+            "id": "c28ae6cf-da37-4a30-9c7f-78e28da75123",
+            "ignore_hash": false,
+            "last_modified": "2022-11-17T18:46:34.190753",
+            "metadata_modified": null,
+            "mimetype": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+            "mimetype_inner": null,
+            "name": "14105_INICIATIVAS_2017-2022 SECPLAN.xlsx",
+            "original_url": "https://datos.gob.cl/dataset/0b6fedea-23bc-4a8a-8d81-bd6ce7bb1269/resource/c28ae6cf-da37-4a30-9c7f-78e28da75123/download/14105_iniciativas_2017-2022-secplan.xlsx",
+            "package_id": "0b6fedea-23bc-4a8a-8d81-bd6ce7bb1269",
+            "position": 0,
+            "resource_id": "c28ae6cf-da37-4a30-9c7f-78e28da75123",
+            "resource_type": null,
+            "set_url_type": false,
+            "size": 37650,
+            "state": "active",
+            "task_created": "2022-11-17 18:46:35.825366",
+            "url": "https://datos.gob.cl/dataset/0b6fedea-23bc-4a8a-8d81-bd6ce7bb1269/resource/c28ae6cf-da37-4a30-9c7f-78e28da75123/download/14105_iniciativas_2017-2022-secplan.xlsx",
+            "url_type": "upload"
+          }
+        ],
+        "tags": [
+          {
+            "display_name": "Iniciativas",
+            "id": "1c916be1-7d8b-431b-bb3a-4851e198a6ff",
+            "name": "Iniciativas",
+            "state": "active",
+            "vocabulary_id": null
+          },
+          {
+            "display_name": "Inversión pública",
+            "id": "aa6a2797-92b9-4268-b4de-9a6817c04083",
+            "name": "Inversión pública",
+            "state": "active",
+            "vocabulary_id": null
+          },
+          {
+            "display_name": "Licitaciones",
+            "id": "31f6e41a-f40b-4525-85dd-28cf0c3878bb",
+            "name": "Licitaciones",
+            "state": "active",
+            "vocabulary_id": null
+          },
+          {
+            "display_name": "máfil",
+            "id": "bde6b2c1-b7cc-4be2-992c-426ca0cd3b1f",
+            "name": "máfil",
+            "state": "active",
+            "vocabulary_id": null
+          }
+        ],
+        "extras": [],
+        "groups": [],
+        "relationships_as_subject": [],
+        "relationships_as_object": []
+      },
+      {
+        "author": "SUBDERE",
+        "author_email": "",
+        "creator_user_id": "fb905435-dfb7-4e15-9d49-cc2d233a3d04",
+        "id": "518b81c4-3efb-49d0-9018-7841e3b7b8ae",
+        "isopen": false,
+        "license_id": "cc-nc",
+        "license_title": "Creative Commons Non-Commercial (Any)",
+        "license_url": "http://creativecommons.org/licenses/by-nc/2.0/",
+        "maintainer": "Rodrigo Osorio",
+        "maintainer_email": "rodrigo.osorio@subdere.gov.cl",
+        "metadata_created": "2015-10-30T12:48:53.464471",
+        "metadata_modified": "2022-10-11T19:20:25.107428",
+        "name": "28286",
+        "notes": "La cobertura de Límites de la División Político Administrativa (DPA) digital de Chile, es un archivo de polilíneas, y representa los límites interiores de todo el país.\r\nEste trabajo fue desarrollado por la Subsecretaría de Desarrollo Regional y Administrativa (SUBDERE) en conjunto con el Instituto Geográfico Militar (IGM), y cuyo inicio se remonta al año 2008, formalizado a través de un Convenio entre ambas instituciones, aprobado en Decreto Exento N° 4.763 del año 2013.\r\nLos límites fueron digitalizados por IGM, usando la cartografía base escala 1:50.000 en formato digital, siguiendo la redacción de las leyes que indican los límites de cada una de las unidades administrativas del país: regiones, provincias y comunas. Subdere visó el trazado digital, comparándolo con el trazado histórico que mantenía esta institución, y corrigiéndolo en los casos necesarios según la ley vigente, trabajo que concluyó en la primera versión de la cobertura en el año 2013.\r\nDebido al dinamismo del territorio y los cambios que provoca en la cartografía que de él se elabora, Subdere revisa permanentemente la línea de límites interiores, a distintas escalas, corrigiendo la geometría cuando corresponda para ajustarla a la descripción que hace del límite la ley vigente.\r\nLa versión 7 incluye la revisión de los todos los límites trazados por linderos prediales para las regiones del Libertador General Bernardo O’Higgins y del Maule, sobre cartografía predial del Centro de Información de Recursos Naturales CIREN. La cobertura de límites cuentan con un error asociado a la digitalización de la carta base digital 1:50.000 del IGM, aun cuando se utilice en algunos casos cartografía de mayor detalle para ubicar los distintos elementos geográficos que utiliza la ley para describir los límites político-administrativos.",
+        "num_resources": 1,
+        "num_tags": 6,
+        "organization": {
+          "id": "AB002",
+          "name": "subsecretaria_de_desarrollo_regional",
+          "title": "Subsecretaría de Desarrollo Regional y Administrativo",
+          "type": "organization",
+          "description": "",
+          "image_url": "",
+          "created": "2015-10-30T12:31:24.306543",
+          "is_organization": true,
+          "approval_status": "approved",
+          "state": "active"
+        },
+        "owner_org": "AB002",
+        "private": false,
+        "state": "active",
+        "title": "Línea Digital de los Límites Interiores de la División Política Administrativa",
+        "type": "dataset",
+        "url": "SUBDERE",
+        "version": "0702",
+        "extras": [
+          {
+            "key": "Coordenadas",
+            "value": "-76.2866,-66.96,-56.3275,-16.5947"
+          }
+        ],
+        "groups": [
+          {
+            "description": "Información geoespacial, mapas, territorios y datos sobre características físicas y humanas del entorno.",
+            "display_name": "Geografía",
+            "id": "9",
+            "image_display_url": "https://datos.gob.cl/uploads/group/2024-10-04-094611.691972geografia.png",
+            "name": "geografia",
+            "title": "Geografía"
+          }
+        ],
+        "resources": [
+          {
+            "cache_last_updated": null,
+            "cache_url": null,
+            "created": "2016-03-18T16:00:37.863508",
+            "datastore_active": false,
+            "datastore_contains_all_records_of_source_file": false,
+            "description": "Historial de cambios en versiones:\r\nV01 – 09/09/2013: Revisión de las cartas que consideran la mayor cantidad de límites de todo el país y límites interregionales (34%).\r\nV02 – 02/12/2014: Revisión completa de la sección A (39%).\r\nV03 – 22/10/2015: Revisión completa de la sección B (44%).\r\nV04 – 13/11/2017: Revisión completa a escala 1:50.000 de las secciones C, D, E, F, G, H, I y J (93% revisado). Además de los acuerdos tomados en la mesa técnica de DPA – SNIT:\r\n•\tSe elimina rectángulo de Campos de Hielo, por corresponder a límite Internacional.\r\n•\tSólo se mantiene el campo “TIPO”, que identifica si la línea es un límite regional, provincial o comunal.\r\n\t* Se publica en datum SIRGAS2000, coordenadas geográficas.\r\nV0401 – 05/09/2018: Actualización para incluir la nueva región de Ñuble (cambian los valores del campo \"TIPO\")\r\nV05 - 11/12/2018: Revisión a escala urbana de las comunas de las áreas metropolitanas de Valparaíso, Concepción y Santiago. Además se publica en SIRGAS-Chile, coordenadas geográficas, por indicación de la mesa técnica DPA - SNIT.\r\nV0501 – 18/01/2019: Corrección de trazado en comunas de la Región Metropolitana de Santiago (Recoleta-Huechuraba, Santiago-Quinta Normal, Puente Alto-La Pintana\r\nV06 – 18/12/2019: \r\n•\tRevisión a escala urbana de las comunas de: Coquimbo, La Serena, Andacollo, Quillota, La Cruz, San Antonio, Cartagena, Santo Domingo, Rancagua, Machalí, Graneros, Doñihue, Olívar, Curicó, Rauco, Talca, Maule, Chillán, Chillán Viejo, San Nicolás, Temuco, Padre Las Casas, Lautaro, Vilcún, Puerto Montt y Puerto Varas.\r\n•\tSe modifica el límite entre las comunas de Concepción y San Pedro de la Paz sobre el río Biobío, según dictamen de Contraloría N° 31.423 de 18 de diciembre de 2018, que indica que el límite entre ambas comunas es el eje central de dicho afluente.\r\nV07 – 24/11/2021\r\n•\tRevisión y corrección de límites trazados sobre linderos prediales para las regiones del Libertador Bernardo O’Higgins y del Maule.\r\n•\tEliminación de islas correspondientes a la comuna de Corral.\r\n•\tCorrección del límite entre las comunas de Chile Chico y Río Ibáñez, sector Puerto Río Tranquilo.\r\nV0701 – 05/05/2022\r\n•\tCorrección del límite entre las comunas de Coquimbo y Ovalle, sector Portezuelo El Alambre Camarones.\r\nV0702 – 16/08/2022\r\n•\tRevisión y corrección de límites descritos por la ley sobre linderos prediales, para la región de Valparaíso, ajustando el trazado a WMS de propiedades de CIREN, año 2014, escala 1:10.000.\r\n•\tCorrección del límite entre las comunas de Vicuña y Andacollo, al oriente de la ciudad de Andacollo, para ajustar a la línea de cumbres que señala la ley, sobre cartografía 1:50.000 del IGM.\r\n•\tCorrección del límite entre las comunas de Papudo y La Ligua, al norte de la localidad de La Chimba, para ajustar de mejor manera a la hidrografía 1:50.000 de la cartografía del IGM.\r\n•\tCorrección del límite entre las comunas de San Felipe y Panquehue, al poniente de la ciudad de San Felipe, para ajustar de mejor manera a la hidrografía 1:50.000 de la cartografía del IGM.\r\n•\tCorrección del límite entre las comunas de San Felipe y Los Andes, en la localidad de San Rafael. La ley señala calles para describir el límite en el sector. Sin embargo, estas calles no se encuentran en cartografía oficial ni tampoco en mapas comerciales. El límite se corrige se acuerdo al límite con fines censales del Instituto Nacional de Estadísticas.\r\n•\tCorrección del límite entre las comunas de Catemu y Panquehue, sector Lo Campo, para ajustar de mejor manera a la hidrografía 1:50.000 de la cartografía del IGM.\r\n•\tCorrección del límite entre las comunas de Peñaflor, Padre Hurtado y Calera de Tango, ajustando el trazado a cartografía histórica de linderos prediales.\r\n•\tCorrección del límite entre las comunas de San José de Maipo y Machalí, para ajustar a la línea de cumbres de la cartografía 1:50.000 del IGM.\r\n•\tSe extienden las líneas comunales para intersectar con la línea de límites internacionales y la línea de costa, para el posterior cierre de polígonos.\r\n\r\n Contacto\r\n *             Responsable de los Metadatos:\r\nRodrigo Osorio, profesional de la División de Estudios y Políticas Públicas\r\n *             Nombre de la Organización\r\nSUBDERE\r\n Información de Contacto\r\n *             Teléfono\r\n2 26763030\r\n *             Dirección\r\nEdificio Moneda Bicentenario, Teatinos 92, segundo piso.\r\n *             E-Mail\r\nrodrigo.osorio@subdere.gov.cl\r\n *             Sitio web de contacto\r\nwww.subdere.gov.cl\r\n Sistema de Referencia:\r\n *             Sistema de Referencia:\r\nEPSG: 5360, SIRGAS-Chile, Coordenadas Geográficas.\r\n",
+            "format": "shp",
+            "hash": "",
+            "id": "897b2db4-47d5-4ece-b3b6-e3031af2d868",
+            "last_modified": null,
+            "metadata_modified": null,
+            "mimetype": "application/rar",
+            "mimetype_inner": null,
+            "name": "Línea Digital de los Límites Interiores de la División Política Administrativa, versión 07.02",
+            "package_id": "518b81c4-3efb-49d0-9018-7841e3b7b8ae",
+            "position": 0,
+            "resource_type": null,
+            "size": null,
+            "state": "active",
+            "url": "https://www.ide.cl/descargas/capas/subdere/limites_dpa_v0702_sirgaschile_gcs.rar",
+            "url_type": null
+          }
+        ],
+        "tags": [
+          {
+            "display_name": "DPA",
+            "id": "523e6623-b091-4082-971c-0d930a1697ea",
+            "name": "DPA",
+            "state": "active",
+            "vocabulary_id": null
+          },
+          {
+            "display_name": "Límites",
+            "id": "e0561ffe-d6fe-4340-b673-32315cc14ddb",
+            "name": "Límites",
+            "state": "active",
+            "vocabulary_id": null
+          },
+          {
+            "display_name": "comunal",
+            "id": "c47191ba-828c-4715-986d-661a1c9f554d",
+            "name": "comunal",
+            "state": "active",
+            "vocabulary_id": null
+          },
+          {
+            "display_name": "division politica administrativa",
+            "id": "34eaa276-7653-42e7-b665-cce1a09ec98b",
+            "name": "division politica administrativa",
+            "state": "active",
+            "vocabulary_id": null
+          },
+          {
+            "display_name": "provincial",
+            "id": "2fcd0493-6a66-4c1d-9fb8-99de4340e080",
+            "name": "provincial",
+            "state": "active",
+            "vocabulary_id": null
+          },
+          {
+            "display_name": "regional",
+            "id": "c4808a35-b8cb-4d78-a7af-686d0921a6f1",
+            "name": "regional",
+            "state": "active",
+            "vocabulary_id": null
+          }
+        ],
+        "relationships_as_subject": [],
+        "relationships_as_object": []
+      },
+      {
+        "author": "IDE Chile",
+        "author_email": "",
+        "creator_user_id": "cbada5f0-2da5-4f9c-ba89-81507b026e1d",
+        "id": "76d8a5e0-98dc-4444-8893-5511663badaa",
+        "isopen": true,
+        "license_id": "cc-by",
+        "license_title": "Creative Commons Attribution",
+        "license_url": "http://www.opendefinition.org/licenses/cc-by",
+        "maintainer": "",
+        "maintainer_email": "",
+        "metadata_created": "2024-06-04T21:59:22.454075",
+        "metadata_modified": "2024-08-28T13:46:23.295467",
+        "name": "categoria-geoespacial-limites-y-fronteras",
+        "notes": "Fichas de metadatos publicadas en el Geoportal de Chile. Esta categoría incluye una amplia gama de temas, como división política administrativa, límite internacional, etc.",
+        "num_resources": 2,
+        "num_tags": 5,
+        "organization": {
+          "id": "5cc68148-e503-4cc0-ba82-f3d6a38af2ff",
+          "name": "infraestructura-de-datos-geoespaciales-de-chile",
+          "title": "Infraestructura de Datos Geoespaciales de Chile",
+          "type": "organization",
+          "description": "La Infraestructura de Datos Geoespaciales de Chile (IDE Chile) es una red de instituciones públicas que trabaja de manera coordinada y colaborativa con el objetivo de poner a disposición de toda la comunidad, información geoespacial actualizada y confiable, que sea útil para la gestión pública y privada, atendiendo también a las necesidades ciudadanas.\r\n\r\nLa IDE Chile funciona en forma efectiva como organismo coordinador, disponibilizando en las distintas plataformas digitales la información que los servicios del Estado han entregado en forma voluntaria, sin existir obligatoriedad en esa disposición a todos los organismos que forman parte de la organización del Estado. El funcionamiento de la IDE Chile permitirá definir datos fundamentales y temáticos que cada servicio deberá proveer.\r\n\r\nEstas decisiones deben basarse en una eficiente Gestión de la Información Territorial, entendida ésta como el conjunto de las actividades que realizan las personas e instituciones del país y que tienen por objeto la producción, desarrollo, actualización y traspaso de la información territorial.\r\n\r\nLa IDE Chile es un mecanismo de coordinación interinstitucional permanente para la gestión de información territorial pública en el país, integrado por las instituciones del Estado generadoras y usuarias de dicha información, y cuyo objetivo es apoyar y optimizar la ejecución de la Política de Gestión de Información Territorial y velar por el pleno cumplimiento de ella.",
+          "image_url": "2025-02-20-172448.621810descarga-28.png",
+          "created": "2024-06-04T16:31:24.454448",
+          "is_organization": true,
+          "approval_status": "approved",
+          "state": "active"
+        },
+        "owner_org": "5cc68148-e503-4cc0-ba82-f3d6a38af2ff",
+        "private": false,
+        "state": "active",
+        "title": "Categoría Geoespacial: Límites y fronteras",
+        "type": "dataset",
+        "url": "",
+        "version": "",
+        "resources": [
+          {
+            "cache_last_updated": null,
+            "cache_url": null,
+            "created": "2024-06-04T21:59:55.350912",
+            "datastore_active": false,
+            "datastore_contains_all_records_of_source_file": false,
+            "description": "Conjunto de fichas de metadatos publicadas en el Geoportal de Chile relacionadas con la categoría de Límites y fronteras",
+            "format": "",
+            "hash": "",
+            "id": "917a992c-118c-48be-84f6-fcfc67f97a89",
+            "last_modified": null,
+            "metadata_modified": null,
+            "mimetype": null,
+            "mimetype_inner": null,
+            "name": "Categoría Geoespacial:Límites y fronteras",
+            "package_id": "76d8a5e0-98dc-4444-8893-5511663badaa",
+            "position": 0,
+            "resource_type": null,
+            "size": null,
+            "state": "active",
+            "url": "https://www.geoportal.cl/geoportal/catalog?categories%5B%5D=boundaries&action=search",
+            "url_type": null
+          },
+          {
+            "cache_last_updated": null,
+            "cache_url": null,
+            "created": "2024-08-28T13:46:23.411139",
+            "datastore_active": false,
+            "datastore_contains_all_records_of_source_file": false,
+            "description": "Los Límites de la División Política Administrativa (DPA) 2023 de Chile, es un archivo shapefile de polígonos que se enmarca en el Trabajo del Grupo de Trabajo DPA de la IDE Chile, donde participan las siguientes instituciones: Subsecretaría de Desarrollo Regional y Administrativo (SUBDERE), Instituto Geográfico Militar (IGM), la Dirección Nacional de Fronteras y Límites del Estado (DIFROL) e Instituto Nacional de Estadísticas (INE); este trabajo es el resultado de la coordinación de las instituciones participantes para obtener una capa de la División Política del país actualizada, y que resulta de la unión de las capas de límites internacionales de DIFROL, los límites interiores del país de SUBDERE y línea de costa e islas de IGM para todo el país, su sistema de referencia es SIRGAS Chile y su escala de representación es 1:50.000. Cabe mencionar que esta capa no incluye el Territorio Antártico Chileno. Esta cartografía cuenta con la aprobación para su circulación mediante, resolución exenta de DIFROL. De acuerdo a las disposiciones contenidas en el DFL Nº5 de 1967, DS Nº 566 de 1970 y DFL Nº83 de 1979 del Ministerio de Relaciones Exteriores, toda publicación cuya circulación sea autorizada por esta Dirección Nacional, deberá llevar la siguiente leyenda: &amp;amp;quot;Autorizada su circulación por Resolución Nº50 del 2019 de la Dirección Nacional de Fronteras y Límites del Estado&amp;amp;quot;. La edición y circulación de mapas, cartas geográficas u otros impresos y documentos que se refieran o relacionen con los límites y fronteras de Chile, no comprometen, en modo alguno, al Estado de Chile, de acuerdo con el Art. 2º, letra g) del DFL Nº83 de 1979 del Ministerio de Relaciones Exteriores. Cabe considerar que aunque esta cartografía cuenta con la aprobación para la circulación de DIFROL, las publicaciones y productos derivados de ella deben ser revisados y validados de igual manera por DIFROL. Para desplegar esta capa, el usuario debe tener desplegados todos los shapefiles referidos al límite internacional de Chile. La cartografía se entrega separada en 3 shapefiles: comunas, provincias y regiones. No se considera el polígono correspondiente a la comuna Antártica en la región de Magallanes y de la Antártica Chilena.",
+            "format": "shp",
+            "hash": "",
+            "id": "0cc095c1-80f0-4d31-9aad-4dcffce3d957",
+            "last_modified": null,
+            "metadata_modified": null,
+            "mimetype": null,
+            "mimetype_inner": null,
+            "name": "División Política Administrativa 2023",
+            "package_id": "76d8a5e0-98dc-4444-8893-5511663badaa",
+            "position": 1,
+            "resource_type": null,
+            "size": null,
+            "state": "active",
+            "url": "https://www.geoportal.cl/geoportal/catalog/download/912598ad-ac92-35f6-8045-098f214bd9c2",
+            "url_type": null
+          }
+        ],
+        "tags": [
+          {
+            "display_name": "DPA",
+            "id": "523e6623-b091-4082-971c-0d930a1697ea",
+            "name": "DPA",
+            "state": "active",
+            "vocabulary_id": null
+          },
+          {
+            "display_name": "Límites",
+            "id": "e0561ffe-d6fe-4340-b673-32315cc14ddb",
+            "name": "Límites",
+            "state": "active",
+            "vocabulary_id": null
+          },
+          {
+            "display_name": "división política administrativa",
+            "id": "5f9ba6c9-c47e-4ccb-95d3-583ec5d6ef69",
+            "name": "división política administrativa",
+            "state": "active",
+            "vocabulary_id": null
+          },
+          {
+            "display_name": "fronteras",
+            "id": "8131fcf0-b3ee-41dd-86e6-d737d2c78d4e",
+            "name": "fronteras",
+            "state": "active",
+            "vocabulary_id": null
+          },
+          {
+            "display_name": "límite internacional",
+            "id": "6429fae1-378d-47cf-a30d-c55d618146dc",
+            "name": "límite internacional",
+            "state": "active",
+            "vocabulary_id": null
+          }
+        ],
+        "extras": [],
+        "groups": [],
+        "relationships_as_subject": [],
+        "relationships_as_object": []
+      }
+    ],
+    "sort": "score desc, metadata_modified desc",
+    "search_facets": {}
+  }
+}

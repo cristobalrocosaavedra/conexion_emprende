@@ -4,6 +4,9 @@ export default tseslint.config(
   {
     ignores: [
       "**/node_modules/**",
+      "apps/mobile/src/vendor/**",
+      "test-results/**",
+      "playwright-report/**",
       "**/dist/**",
       "**/.next/**",
       "**/.expo/**",
@@ -13,6 +16,10 @@ export default tseslint.config(
     ],
   },
   js.configs.recommended,
+  {
+    files: ["scripts/**/*.mjs"],
+    languageOptions: { globals: { URL: "readonly", process: "readonly" } },
+  },
   ...tseslint.configs.recommended,
   {
     files: ["**/*.ts", "**/*.tsx"],

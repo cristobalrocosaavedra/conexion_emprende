@@ -1,0 +1,1040 @@
+{
+  "license": "ODbL-1.0",
+  "attribution": "© Colaboradores de OpenStreetMap",
+  "licenseUrl": "https://www.openstreetmap.org/copyright",
+  "snapshotAt": "2026-10-24",
+  "scope": "Base de referencia comunitaria: centros urbanos de las 16 regiones y cuatro lugares de Rapa Nui añadidos el 26-10-2026. Sin verificación en terreno ni cobertura exhaustiva; coordenadas de referencia, no accesos.",
+  "queries": [
+    {
+      "region": "antofagasta",
+      "province": "antofagasta",
+      "commune": "antofagasta",
+      "queryUrl": "https://www.openstreetmap.org/api/0.6/map?bbox=-70.406,-23.656,-70.394,-23.644",
+      "bbox": [-70.406, -23.656, -70.394, -23.644],
+      "sha256": "8cc5c59e0ad39445f8415c20489d61262163bb98ca99f4766de315c535f6301c"
+    },
+    {
+      "region": "araucania",
+      "province": "cautin",
+      "commune": "temuco",
+      "queryUrl": "https://www.openstreetmap.org/api/0.6/map?bbox=-72.596,-38.746,-72.584,-38.734",
+      "bbox": [-72.596, -38.746, -72.584, -38.734],
+      "sha256": "9a84e7a8959330c2b7f5e5381127d656ff0220ab365d3c2dcd75d783e0c7c0c0"
+    },
+    {
+      "region": "arica-parinacota",
+      "province": "arica",
+      "commune": "arica",
+      "queryUrl": "https://www.openstreetmap.org/api/0.6/map?bbox=-70.319,-18.484,-70.307,-18.472",
+      "bbox": [-70.319, -18.484, -70.307, -18.472],
+      "sha256": "da753a3fffeb00238312e3935d526b4cbdfb6bfac76c9825b89b53396888678d"
+    },
+    {
+      "region": "atacama",
+      "province": "copiapo",
+      "commune": "copiapo",
+      "queryUrl": "https://www.openstreetmap.org/api/0.6/map?bbox=-70.336,-27.366,-70.324,-27.354",
+      "bbox": [-70.336, -27.366, -70.324, -27.354],
+      "sha256": "dd6829599df9716ac540d4a8a4660d30d284263b1a3797fde8636b30bc97736e"
+    },
+    {
+      "region": "aysen",
+      "province": "coyhaique",
+      "commune": "coyhaique",
+      "queryUrl": "https://www.openstreetmap.org/api/0.6/map?bbox=-72.076,-45.576,-72.064,-45.564",
+      "bbox": [-72.076, -45.576, -72.064, -45.564],
+      "sha256": "9b506e6b01b1b1aa3b8a9dd9f4e08884ef3cb69a929887f0f24c70edf3cbcaa8"
+    },
+    {
+      "region": "biobio",
+      "province": "concepcion",
+      "commune": "concepcion",
+      "queryUrl": "https://www.openstreetmap.org/api/0.6/map?bbox=-73.056,-36.836,-73.044,-36.824",
+      "bbox": [-73.056, -36.836, -73.044, -36.824],
+      "sha256": "0cd1737b65c9a85282323ee27810251723ab9c7799e586df7082748c9ca657d7"
+    },
+    {
+      "region": "coquimbo",
+      "province": "elqui",
+      "commune": "la-serena",
+      "queryUrl": "https://www.openstreetmap.org/api/0.6/map?bbox=-71.256,-29.906,-71.244,-29.894",
+      "bbox": [-71.256, -29.906, -71.244, -29.894],
+      "sha256": "dd110427006d844bee104b836e292dc78e5445b91c7cfa95eb2f15946f2ab83d"
+    },
+    {
+      "region": "los-lagos",
+      "province": "llanquihue",
+      "commune": "puerto-montt",
+      "queryUrl": "https://www.openstreetmap.org/api/0.6/map?bbox=-72.946,-41.476,-72.934,-41.464",
+      "bbox": [-72.946, -41.476, -72.934, -41.464],
+      "sha256": "5b50a71449d2bc793816221403f1861dac0ddd0063672ce6177907cc50ec40f9"
+    },
+    {
+      "region": "los-rios",
+      "province": "valdivia",
+      "commune": "valdivia",
+      "queryUrl": "https://www.openstreetmap.org/api/0.6/map?bbox=-73.256,-39.821,-73.244,-39.809",
+      "bbox": [-73.256, -39.821, -73.244, -39.809],
+      "sha256": "75078be387e6c6ece74abd60d3573ef5f8e5603362403b55c0bb8be8493ea7c8"
+    },
+    {
+      "region": "magallanes",
+      "province": "magallanes",
+      "commune": "punta-arenas",
+      "queryUrl": "https://www.openstreetmap.org/api/0.6/map?bbox=-70.916,-53.166,-70.904,-53.154",
+      "bbox": [-70.916, -53.166, -70.904, -53.154],
+      "sha256": "34c85a6bc21e6e5df91866fa5f5820a5cf42bf40183aad29d4ada2e664f36645"
+    },
+    {
+      "region": "maule",
+      "province": "talca",
+      "commune": "talca",
+      "queryUrl": "https://www.openstreetmap.org/api/0.6/map?bbox=-71.666,-35.436,-71.654,-35.424",
+      "bbox": [-71.666, -35.436, -71.654, -35.424],
+      "sha256": "0d7df6ab97f03e9146de87d8237e33980840cce56125a31c5fcb8d8f4c02cd18"
+    },
+    {
+      "region": "metropolitana",
+      "province": "santiago",
+      "commune": "santiago",
+      "queryUrl": "https://www.openstreetmap.org/api/0.6/map?bbox=-70.656,-33.446,-70.644,-33.434",
+      "bbox": [-70.656, -33.446, -70.644, -33.434],
+      "sha256": "eaf25fa516b2eac9ead5c210f3736f2566a13fd247d34e9b54d9b0becb71f697"
+    },
+    {
+      "region": "nuble",
+      "province": "diguillin",
+      "commune": "chillan",
+      "queryUrl": "https://www.openstreetmap.org/api/0.6/map?bbox=-72.106,-36.616,-72.094,-36.604",
+      "bbox": [-72.106, -36.616, -72.094, -36.604],
+      "sha256": "06ccee4d59b0e06c81ff776f76e61e63c6199b22a537b570246523268947ad5d"
+    },
+    {
+      "region": "ohiggins",
+      "province": "cachapoal",
+      "commune": "rancagua",
+      "queryUrl": "https://www.openstreetmap.org/api/0.6/map?bbox=-70.746,-34.176,-70.734,-34.164",
+      "bbox": [-70.746, -34.176, -70.734, -34.164],
+      "sha256": "7f97e8c386ac5ab31fdb9de97d21a6913610dba95eb5935470c365f9da966f1c"
+    },
+    {
+      "region": "tarapaca",
+      "province": "iquique",
+      "commune": "iquique",
+      "queryUrl": "https://www.openstreetmap.org/api/0.6/map?bbox=-70.156,-20.216,-70.144,-20.204",
+      "bbox": [-70.156, -20.216, -70.144, -20.204],
+      "sha256": "9634c2d8e76b82ae86e1fa798088f01b7acaf2def66fe8a3b09d9c30f144d904"
+    },
+    {
+      "region": "valparaiso",
+      "province": "valparaiso",
+      "commune": "valparaiso",
+      "queryUrl": "https://www.openstreetmap.org/api/0.6/map?bbox=-71.626,-33.046,-71.614,-33.034",
+      "bbox": [-71.626, -33.046, -71.614, -33.034],
+      "sha256": "942f98c2ad911fa1c3a779c55a653434a3767441b0aaaaa8a1d4bc0f2d7edc08"
+    },
+    {
+      "region": "valparaiso",
+      "province": "isla-de-pascua",
+      "commune": "isla-de-pascua",
+      "queryUrl": "https://www.openstreetmap.org/api/0.6/map?bbox=-109.445,-27.16,-109.415,-27.13",
+      "bbox": [-109.445, -27.16, -109.415, -27.13],
+      "sha256": "aec7573c6ca24abcb94f6af9c0d31b4306962333ecd4b4a0f2ba73a918d98bb9",
+      "snapshotAt": "2026-10-26"
+    },
+    {
+      "region": "valparaiso",
+      "province": "isla-de-pascua",
+      "commune": "isla-de-pascua",
+      "queryUrl": "https://www.openstreetmap.org/api/0.6/map?bbox=-109.335,-27.085,-109.315,-27.065",
+      "bbox": [-109.335, -27.085, -109.315, -27.065],
+      "sha256": "0bed68977c48437591bc5e6f92a5519fa6603dc2524e1894b29e184181a84590",
+      "snapshotAt": "2026-10-26"
+    },
+    {
+      "region": "valparaiso",
+      "province": "isla-de-pascua",
+      "commune": "isla-de-pascua",
+      "queryUrl": "https://www.openstreetmap.org/api/0.6/map?bbox=-109.285,-27.135,-109.265,-27.115",
+      "bbox": [-109.285, -27.135, -109.265, -27.115],
+      "sha256": "1ed30fc7756bf571858f096a64ef588c1b7f4d01ee10c6a0929d64024c748e4d",
+      "snapshotAt": "2026-10-26"
+    }
+  ],
+  "places": [
+    {
+      "id": "osm-way-194038195",
+      "region": "antofagasta",
+      "province": "antofagasta",
+      "commune": "antofagasta",
+      "category": "cultura",
+      "name": "Centro Cultural Estación Antofagasta",
+      "summary": "",
+      "description": "",
+      "latitude": -23.644837323809526,
+      "longitude": -70.3973551,
+      "source": {
+        "url": "https://www.openstreetmap.org/way/194038195",
+        "label": "OpenStreetMap · ODbL 1.0"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "osm-feature-center-unchecked",
+      "importedAt": "2026-10-24",
+      "origin": "osm",
+      "sourceRecord": {
+        "type": "way",
+        "id": "194038195",
+        "version": "13",
+        "updatedAt": "2025-11-10T19:40:01Z",
+        "tourism": "museum"
+      }
+    },
+    {
+      "id": "osm-way-192677063",
+      "region": "antofagasta",
+      "province": "antofagasta",
+      "commune": "antofagasta",
+      "category": "cultura",
+      "name": "Museo Regional de Antofagasta",
+      "summary": "",
+      "description": "",
+      "latitude": -23.644388199999998,
+      "longitude": -70.39785248888889,
+      "source": {
+        "url": "https://www.openstreetmap.org/way/192677063",
+        "label": "OpenStreetMap · ODbL 1.0"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "osm-feature-center-unchecked",
+      "importedAt": "2026-10-24",
+      "origin": "osm",
+      "sourceRecord": {
+        "type": "way",
+        "id": "192677063",
+        "version": "7",
+        "updatedAt": "2024-04-18T22:03:46Z",
+        "tourism": "museum"
+      }
+    },
+    {
+      "id": "osm-way-75214640",
+      "region": "araucania",
+      "province": "cautin",
+      "commune": "temuco",
+      "category": "cultura",
+      "name": "Mercado Municipal Temuco",
+      "summary": "",
+      "description": "",
+      "latitude": -38.737087716666665,
+      "longitude": -72.58806536666667,
+      "source": {
+        "url": "https://www.openstreetmap.org/way/75214640",
+        "label": "OpenStreetMap · ODbL 1.0"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "osm-feature-center-unchecked",
+      "importedAt": "2026-10-24",
+      "origin": "osm",
+      "sourceRecord": {
+        "type": "way",
+        "id": "75214640",
+        "version": "13",
+        "updatedAt": "2024-02-06T00:24:10Z",
+        "tourism": "attraction"
+      }
+    },
+    {
+      "id": "osm-node-12462068289",
+      "region": "arica-parinacota",
+      "province": "arica",
+      "commune": "arica",
+      "category": "cultura",
+      "name": "Museo de Arica",
+      "summary": "",
+      "description": "",
+      "latitude": -18.4787569,
+      "longitude": -70.313321,
+      "source": {
+        "url": "https://www.openstreetmap.org/node/12462068289",
+        "label": "OpenStreetMap · ODbL 1.0"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "osm-node-unchecked",
+      "importedAt": "2026-10-24",
+      "origin": "osm",
+      "sourceRecord": {
+        "type": "node",
+        "id": "12462068289",
+        "version": "1",
+        "updatedAt": "2024-12-30T03:04:10Z",
+        "tourism": "museum"
+      }
+    },
+    {
+      "id": "osm-node-13305279880",
+      "region": "arica-parinacota",
+      "province": "arica",
+      "commune": "arica",
+      "category": "cultura",
+      "name": "Museo de Bomberos de Arica",
+      "summary": "",
+      "description": "",
+      "latitude": -18.480621,
+      "longitude": -70.3112331,
+      "source": {
+        "url": "https://www.openstreetmap.org/node/13305279880",
+        "label": "OpenStreetMap · ODbL 1.0"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "osm-node-unchecked",
+      "importedAt": "2026-10-24",
+      "origin": "osm",
+      "sourceRecord": {
+        "type": "node",
+        "id": "13305279880",
+        "version": "1",
+        "updatedAt": "2025-11-14T20:38:38Z",
+        "tourism": "museum"
+      }
+    },
+    {
+      "id": "osm-node-890430259",
+      "region": "atacama",
+      "province": "copiapo",
+      "commune": "copiapo",
+      "category": "cultura",
+      "name": "Museo Mineralógico",
+      "summary": "",
+      "description": "",
+      "latitude": -27.3655496,
+      "longitude": -70.3307126,
+      "source": {
+        "url": "https://www.openstreetmap.org/node/890430259",
+        "label": "OpenStreetMap · ODbL 1.0"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "osm-node-unchecked",
+      "importedAt": "2026-10-24",
+      "origin": "osm",
+      "sourceRecord": {
+        "type": "node",
+        "id": "890430259",
+        "version": "3",
+        "updatedAt": "2018-10-04T23:58:11Z",
+        "tourism": "museum"
+      }
+    },
+    {
+      "id": "osm-node-4680332392",
+      "region": "aysen",
+      "province": "coyhaique",
+      "commune": "coyhaique",
+      "category": "cultura",
+      "name": "Feria Artesanías",
+      "summary": "",
+      "description": "",
+      "latitude": -45.5714563,
+      "longitude": -72.0694841,
+      "source": {
+        "url": "https://www.openstreetmap.org/node/4680332392",
+        "label": "OpenStreetMap · ODbL 1.0"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "osm-node-unchecked",
+      "importedAt": "2026-10-24",
+      "origin": "osm",
+      "sourceRecord": {
+        "type": "node",
+        "id": "4680332392",
+        "version": "1",
+        "updatedAt": "2017-02-11T16:07:29Z",
+        "tourism": "attraction"
+      }
+    },
+    {
+      "id": "osm-node-7018032813",
+      "region": "biobio",
+      "province": "concepcion",
+      "commune": "concepcion",
+      "category": "cultura",
+      "name": "Museo de Arte Religioso",
+      "summary": "",
+      "description": "",
+      "latitude": -36.8276061,
+      "longitude": -73.0510817,
+      "source": {
+        "url": "https://www.openstreetmap.org/node/7018032813",
+        "label": "OpenStreetMap · ODbL 1.0"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "osm-node-unchecked",
+      "importedAt": "2026-10-24",
+      "origin": "osm",
+      "sourceRecord": {
+        "type": "node",
+        "id": "7018032813",
+        "version": "4",
+        "updatedAt": "2024-07-30T23:46:18Z",
+        "tourism": "museum"
+      }
+    },
+    {
+      "id": "osm-way-174342874",
+      "region": "biobio",
+      "province": "concepcion",
+      "commune": "concepcion",
+      "category": "cultura",
+      "name": "Museo de Historia de Concepción",
+      "summary": "",
+      "description": "",
+      "latitude": -36.83384252727273,
+      "longitude": -73.05018088181818,
+      "source": {
+        "url": "https://www.openstreetmap.org/way/174342874",
+        "label": "OpenStreetMap · ODbL 1.0"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "osm-feature-center-unchecked",
+      "importedAt": "2026-10-24",
+      "origin": "osm",
+      "sourceRecord": {
+        "type": "way",
+        "id": "174342874",
+        "version": "8",
+        "updatedAt": "2023-12-10T22:17:11Z",
+        "tourism": "museum"
+      }
+    },
+    {
+      "id": "osm-node-9719664283",
+      "region": "coquimbo",
+      "province": "elqui",
+      "commune": "la-serena",
+      "category": "cultura",
+      "name": "Museo Sala de Arte Religioso",
+      "summary": "",
+      "description": "",
+      "latitude": -29.9025882,
+      "longitude": -71.2510368,
+      "source": {
+        "url": "https://www.openstreetmap.org/node/9719664283",
+        "label": "OpenStreetMap · ODbL 1.0"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "osm-node-unchecked",
+      "importedAt": "2026-10-24",
+      "origin": "osm",
+      "sourceRecord": {
+        "type": "node",
+        "id": "9719664283",
+        "version": "3",
+        "updatedAt": "2023-10-23T13:37:22Z",
+        "tourism": "museum"
+      }
+    },
+    {
+      "id": "osm-way-557853143",
+      "region": "coquimbo",
+      "province": "elqui",
+      "commune": "la-serena",
+      "category": "cultura",
+      "name": "Museo de Historia Regional",
+      "summary": "",
+      "description": "",
+      "latitude": -29.90314841,
+      "longitude": -71.25304486,
+      "source": {
+        "url": "https://www.openstreetmap.org/way/557853143",
+        "label": "OpenStreetMap · ODbL 1.0"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "osm-feature-center-unchecked",
+      "importedAt": "2026-10-24",
+      "origin": "osm",
+      "sourceRecord": {
+        "type": "way",
+        "id": "557853143",
+        "version": "8",
+        "updatedAt": "2025-12-31T12:15:13Z",
+        "tourism": "museum"
+      }
+    },
+    {
+      "id": "osm-node-10582375021",
+      "region": "los-lagos",
+      "province": "llanquihue",
+      "commune": "puerto-montt",
+      "category": "cultura",
+      "name": "Galería de arte La Caracola",
+      "summary": "",
+      "description": "",
+      "latitude": -41.4712199,
+      "longitude": -72.9352221,
+      "source": {
+        "url": "https://www.openstreetmap.org/node/10582375021",
+        "label": "OpenStreetMap · ODbL 1.0"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "osm-node-unchecked",
+      "importedAt": "2026-10-24",
+      "origin": "osm",
+      "sourceRecord": {
+        "type": "node",
+        "id": "10582375021",
+        "version": "2",
+        "updatedAt": "2025-06-13T20:08:55Z",
+        "tourism": "gallery"
+      }
+    },
+    {
+      "id": "osm-node-5312649309",
+      "region": "los-rios",
+      "province": "valdivia",
+      "commune": "valdivia",
+      "category": "cultura",
+      "name": "Centro Cultural Espacio en Construcción",
+      "summary": "",
+      "description": "",
+      "latitude": -39.8147986,
+      "longitude": -73.2476101,
+      "source": {
+        "url": "https://www.openstreetmap.org/node/5312649309",
+        "label": "OpenStreetMap · ODbL 1.0"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "osm-node-unchecked",
+      "importedAt": "2026-10-24",
+      "origin": "osm",
+      "sourceRecord": {
+        "type": "node",
+        "id": "5312649309",
+        "version": "5",
+        "updatedAt": "2025-04-10T15:37:13Z",
+        "tourism": "museum"
+      }
+    },
+    {
+      "id": "osm-node-1637314219",
+      "region": "los-rios",
+      "province": "valdivia",
+      "commune": "valdivia",
+      "category": "cultura",
+      "name": "Museo Naval Submarino O’Brien",
+      "summary": "",
+      "description": "",
+      "latitude": -39.8158461,
+      "longitude": -73.2492061,
+      "source": {
+        "url": "https://www.openstreetmap.org/node/1637314219",
+        "label": "OpenStreetMap · ODbL 1.0"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "osm-node-unchecked",
+      "importedAt": "2026-10-24",
+      "origin": "osm",
+      "sourceRecord": {
+        "type": "node",
+        "id": "1637314219",
+        "version": "8",
+        "updatedAt": "2023-04-09T20:51:18Z",
+        "tourism": "museum"
+      }
+    },
+    {
+      "id": "osm-node-12685657228",
+      "region": "magallanes",
+      "province": "magallanes",
+      "commune": "punta-arenas",
+      "category": "cultura",
+      "name": "Colección Paleontológica de Antártica y Patagonia",
+      "summary": "",
+      "description": "",
+      "latitude": -53.1654658,
+      "longitude": -70.9076413,
+      "source": {
+        "url": "https://www.openstreetmap.org/node/12685657228",
+        "label": "OpenStreetMap · ODbL 1.0"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "osm-node-unchecked",
+      "importedAt": "2026-10-24",
+      "origin": "osm",
+      "sourceRecord": {
+        "type": "node",
+        "id": "12685657228",
+        "version": "1",
+        "updatedAt": "2025-03-20T20:45:16Z",
+        "tourism": "museum"
+      }
+    },
+    {
+      "id": "osm-node-1659908886",
+      "region": "magallanes",
+      "province": "magallanes",
+      "commune": "punta-arenas",
+      "category": "cultura",
+      "name": "Museo Naval Marítimo de Punta Arenas",
+      "summary": "",
+      "description": "",
+      "latitude": -53.163581,
+      "longitude": -70.9043021,
+      "source": {
+        "url": "https://www.openstreetmap.org/node/1659908886",
+        "label": "OpenStreetMap · ODbL 1.0"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "osm-node-unchecked",
+      "importedAt": "2026-10-24",
+      "origin": "osm",
+      "sourceRecord": {
+        "type": "node",
+        "id": "1659908886",
+        "version": "5",
+        "updatedAt": "2025-03-20T20:45:16Z",
+        "tourism": "museum"
+      }
+    },
+    {
+      "id": "osm-node-13311025272",
+      "region": "maule",
+      "province": "talca",
+      "commune": "talca",
+      "category": "cultura",
+      "name": "Museo Bomberil Benito Riquelme",
+      "summary": "",
+      "description": "",
+      "latitude": -35.4288016,
+      "longitude": -71.6603771,
+      "source": {
+        "url": "https://www.openstreetmap.org/node/13311025272",
+        "label": "OpenStreetMap · ODbL 1.0"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "osm-node-unchecked",
+      "importedAt": "2026-10-24",
+      "origin": "osm",
+      "sourceRecord": {
+        "type": "node",
+        "id": "13311025272",
+        "version": "1",
+        "updatedAt": "2025-11-17T14:20:32Z",
+        "tourism": "museum"
+      }
+    },
+    {
+      "id": "osm-way-214849869",
+      "region": "maule",
+      "province": "talca",
+      "commune": "talca",
+      "category": "cultura",
+      "name": "Museo O'Higginiano y de Bellas Artes de Talca",
+      "summary": "",
+      "description": "",
+      "latitude": -35.425786900000006,
+      "longitude": -71.66419571333334,
+      "source": {
+        "url": "https://www.openstreetmap.org/way/214849869",
+        "label": "OpenStreetMap · ODbL 1.0"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "osm-feature-center-unchecked",
+      "importedAt": "2026-10-24",
+      "origin": "osm",
+      "sourceRecord": {
+        "type": "way",
+        "id": "214849869",
+        "version": "8",
+        "updatedAt": "2024-11-04T22:33:22Z",
+        "tourism": "museum"
+      }
+    },
+    {
+      "id": "osm-node-10702579775",
+      "region": "metropolitana",
+      "province": "santiago",
+      "commune": "santiago",
+      "category": "cultura",
+      "name": "Altar de la Patria",
+      "summary": "",
+      "description": "",
+      "latitude": -33.4457192,
+      "longitude": -70.6533205,
+      "source": {
+        "url": "https://www.openstreetmap.org/node/10702579775",
+        "label": "OpenStreetMap · ODbL 1.0"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "osm-node-unchecked",
+      "importedAt": "2026-10-24",
+      "origin": "osm",
+      "sourceRecord": {
+        "type": "node",
+        "id": "10702579775",
+        "version": "3",
+        "updatedAt": "2023-12-14T16:48:02Z",
+        "tourism": "museum"
+      }
+    },
+    {
+      "id": "osm-node-10963945038",
+      "region": "metropolitana",
+      "province": "santiago",
+      "commune": "santiago",
+      "category": "cultura",
+      "name": "Museo Histórico Nacional",
+      "summary": "",
+      "description": "",
+      "latitude": -33.4371206,
+      "longitude": -70.6506217,
+      "source": {
+        "url": "https://www.openstreetmap.org/node/10963945038",
+        "label": "OpenStreetMap · ODbL 1.0"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "osm-node-unchecked",
+      "importedAt": "2026-10-24",
+      "origin": "osm",
+      "sourceRecord": {
+        "type": "node",
+        "id": "10963945038",
+        "version": "6",
+        "updatedAt": "2025-03-25T12:17:41Z",
+        "tourism": "museum"
+      }
+    },
+    {
+      "id": "osm-node-12294994825",
+      "region": "nuble",
+      "province": "diguillin",
+      "commune": "chillan",
+      "category": "cultura",
+      "name": "Museo San Francisco",
+      "summary": "",
+      "description": "",
+      "latitude": -36.6044972,
+      "longitude": -72.0959511,
+      "source": {
+        "url": "https://www.openstreetmap.org/node/12294994825",
+        "label": "OpenStreetMap · ODbL 1.0"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "osm-node-unchecked",
+      "importedAt": "2026-10-24",
+      "origin": "osm",
+      "sourceRecord": {
+        "type": "node",
+        "id": "12294994825",
+        "version": "1",
+        "updatedAt": "2024-10-29T01:31:31Z",
+        "tourism": "museum"
+      }
+    },
+    {
+      "id": "osm-way-487390856",
+      "region": "ohiggins",
+      "province": "cachapoal",
+      "commune": "rancagua",
+      "category": "cultura",
+      "name": "Museo Patrimonial de la Merced",
+      "summary": "",
+      "description": "",
+      "latitude": -34.168611036363636,
+      "longitude": -70.73991369090909,
+      "source": {
+        "url": "https://www.openstreetmap.org/way/487390856",
+        "label": "OpenStreetMap · ODbL 1.0"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "osm-feature-center-unchecked",
+      "importedAt": "2026-10-24",
+      "origin": "osm",
+      "sourceRecord": {
+        "type": "way",
+        "id": "487390856",
+        "version": "4",
+        "updatedAt": "2026-05-15T07:34:38Z",
+        "tourism": "museum"
+      }
+    },
+    {
+      "id": "osm-way-464455938",
+      "region": "ohiggins",
+      "province": "cachapoal",
+      "commune": "rancagua",
+      "category": "cultura",
+      "name": "Museo Regional de Rancagua",
+      "summary": "",
+      "description": "",
+      "latitude": -34.173361855555555,
+      "longitude": -70.74147777777779,
+      "source": {
+        "url": "https://www.openstreetmap.org/way/464455938",
+        "label": "OpenStreetMap · ODbL 1.0"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "osm-feature-center-unchecked",
+      "importedAt": "2026-10-24",
+      "origin": "osm",
+      "sourceRecord": {
+        "type": "way",
+        "id": "464455938",
+        "version": "6",
+        "updatedAt": "2023-08-23T23:33:53Z",
+        "tourism": "museum"
+      }
+    },
+    {
+      "id": "osm-node-12254375150",
+      "region": "tarapaca",
+      "province": "iquique",
+      "commune": "iquique",
+      "category": "cultura",
+      "name": "Museo del Deporte Hernán Cortez",
+      "summary": "",
+      "description": "",
+      "latitude": -20.2158299,
+      "longitude": -70.1522221,
+      "source": {
+        "url": "https://www.openstreetmap.org/node/12254375150",
+        "label": "OpenStreetMap · ODbL 1.0"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "osm-node-unchecked",
+      "importedAt": "2026-10-24",
+      "origin": "osm",
+      "sourceRecord": {
+        "type": "node",
+        "id": "12254375150",
+        "version": "1",
+        "updatedAt": "2024-10-16T03:49:41Z",
+        "tourism": "museum"
+      }
+    },
+    {
+      "id": "osm-way-148157708",
+      "region": "tarapaca",
+      "province": "iquique",
+      "commune": "iquique",
+      "category": "cultura",
+      "name": "Museo Corbeta Esmeralda",
+      "summary": "",
+      "description": "",
+      "latitude": -20.20933118888889,
+      "longitude": -70.1516300074074,
+      "source": {
+        "url": "https://www.openstreetmap.org/way/148157708",
+        "label": "OpenStreetMap · ODbL 1.0"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "osm-feature-center-unchecked",
+      "importedAt": "2026-10-24",
+      "origin": "osm",
+      "sourceRecord": {
+        "type": "way",
+        "id": "148157708",
+        "version": "9",
+        "updatedAt": "2024-10-16T03:49:41Z",
+        "tourism": "museum"
+      }
+    },
+    {
+      "id": "osm-way-479821102",
+      "region": "valparaiso",
+      "province": "valparaiso",
+      "commune": "valparaiso",
+      "category": "cultura",
+      "name": "Arco Británico",
+      "summary": "",
+      "description": "",
+      "latitude": -33.044635039999996,
+      "longitude": -71.62046136000001,
+      "source": {
+        "url": "https://www.openstreetmap.org/way/479821102",
+        "label": "OpenStreetMap · ODbL 1.0"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "osm-feature-center-unchecked",
+      "importedAt": "2026-10-24",
+      "origin": "osm",
+      "sourceRecord": {
+        "type": "way",
+        "id": "479821102",
+        "version": "6",
+        "updatedAt": "2025-02-25T08:11:27Z",
+        "tourism": "attraction"
+      }
+    },
+    {
+      "id": "osm-node-3406229239",
+      "region": "valparaiso",
+      "province": "valparaiso",
+      "commune": "valparaiso",
+      "category": "naturaleza",
+      "name": "Paseo Atkinson",
+      "summary": "",
+      "description": "",
+      "latitude": -33.0425344,
+      "longitude": -71.6252214,
+      "source": {
+        "url": "https://www.openstreetmap.org/node/3406229239",
+        "label": "OpenStreetMap · ODbL 1.0"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "osm-node-unchecked",
+      "importedAt": "2026-10-24",
+      "origin": "osm",
+      "sourceRecord": {
+        "type": "node",
+        "id": "3406229239",
+        "version": "2",
+        "updatedAt": "2019-06-29T22:16:44Z",
+        "tourism": "viewpoint"
+      }
+    },
+    {
+      "id": "osm-way-222144438",
+      "region": "valparaiso",
+      "province": "isla-de-pascua",
+      "commune": "isla-de-pascua",
+      "category": "cultura",
+      "name": "Ahu Tahai",
+      "aliases": ["Rapa Nui", "Isla de Pascua"],
+      "summary": "",
+      "description": "",
+      "latitude": -27.13949725,
+      "longitude": -109.4269312,
+      "source": {
+        "url": "https://www.openstreetmap.org/way/222144438",
+        "label": "OpenStreetMap · ODbL 1.0"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "osm-feature-center-unchecked",
+      "importedAt": "2026-10-26",
+      "origin": "osm",
+      "sourceRecord": {
+        "type": "way",
+        "id": "222144438",
+        "version": "2",
+        "updatedAt": "2016-07-20T01:56:50Z",
+        "tags": {
+          "historic": "monument",
+          "name": "Ahu Tahai",
+          "tourism": "attraction"
+        }
+      }
+    },
+    {
+      "id": "osm-way-1459388783",
+      "region": "valparaiso",
+      "province": "isla-de-pascua",
+      "commune": "isla-de-pascua",
+      "category": "cultura",
+      "name": "Museo Antropológico Padre Sebastián Englert",
+      "aliases": ["Rapa Nui", "Isla de Pascua"],
+      "summary": "",
+      "description": "",
+      "latitude": -27.137398146153846,
+      "longitude": -109.4240821,
+      "source": {
+        "url": "https://www.openstreetmap.org/way/1459388783",
+        "label": "OpenStreetMap · ODbL 1.0"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "osm-feature-center-unchecked",
+      "importedAt": "2026-10-26",
+      "origin": "osm",
+      "sourceRecord": {
+        "type": "way",
+        "id": "1459388783",
+        "version": "1",
+        "updatedAt": "2025-12-17T20:36:50Z",
+        "tags": {
+          "addr:city": "Isla de Pascua",
+          "addr:street": "Te Karera",
+          "alt_name": "Museo de Isla de Pascua",
+          "barrier": "wall",
+          "building": "no",
+          "museum": "archaeological",
+          "name": "Museo Antropológico Padre Sebastián Englert",
+          "name:en": "Father Sebastian Englert Anthropological Museum",
+          "name:fr": "Musée anthropologique Père-Sébastien-Englert",
+          "operator": "Servicio Nacional del Patrimonio Cultural",
+          "operator:type": "public",
+          "short_name": "MAPSE",
+          "tourism": "museum",
+          "wikidata": "Q5437650",
+          "wikipedia": "es:Museo Antropológico Padre Sebastián Englert"
+        }
+      }
+    },
+    {
+      "id": "osm-way-26273549",
+      "region": "valparaiso",
+      "province": "isla-de-pascua",
+      "commune": "isla-de-pascua",
+      "category": "playa",
+      "name": "Anakena",
+      "aliases": ["Rapa Nui", "Isla de Pascua"],
+      "summary": "",
+      "description": "",
+      "latitude": -27.07396762016129,
+      "longitude": -109.3229111,
+      "source": {
+        "url": "https://www.openstreetmap.org/way/26273549",
+        "label": "OpenStreetMap · ODbL 1.0"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "osm-feature-center-unchecked",
+      "importedAt": "2026-10-26",
+      "origin": "osm",
+      "sourceRecord": {
+        "type": "way",
+        "id": "26273549",
+        "version": "10",
+        "updatedAt": "2026-05-10T08:29:18Z",
+        "tags": {
+          "name": "Anakena",
+          "natural": "beach",
+          "surface": "sand",
+          "wikidata": "Q484376",
+          "wikipedia": "es:Playa Anakena"
+        }
+      }
+    },
+    {
+      "id": "osm-way-221696391",
+      "region": "valparaiso",
+      "province": "isla-de-pascua",
+      "commune": "isla-de-pascua",
+      "category": "cultura",
+      "name": "Ahu Toŋariki",
+      "aliases": ["Rapa Nui", "Isla de Pascua", "Ahu Tongariki"],
+      "summary": "",
+      "description": "",
+      "latitude": -27.125749925,
+      "longitude": -109.276922925,
+      "source": {
+        "url": "https://www.openstreetmap.org/way/221696391",
+        "label": "OpenStreetMap · ODbL 1.0"
+      },
+      "verification": "pending",
+      "coordinateAccuracy": "osm-feature-center-unchecked",
+      "importedAt": "2026-10-26",
+      "origin": "osm",
+      "sourceRecord": {
+        "type": "way",
+        "id": "221696391",
+        "version": "10",
+        "updatedAt": "2025-02-24T10:09:44Z",
+        "tags": {
+          "historic": "monument",
+          "name": "Ahu Toŋariki",
+          "name:ru": "Аху Тонгарики",
+          "tourism": "attraction",
+          "wikidata": "Q3448354",
+          "wikipedia": "es:Ahu Tongariki"
+        }
+      }
+    }
+  ]
+}
