@@ -15,13 +15,15 @@
     "build": "pnpm --filter @territorio-vivo/mobile build && pnpm --filter @territorio-vivo/web build",
     "format:check": "prettier --check .",
     "format": "prettier --write .",
-    "validate": "pnpm typecheck && pnpm lint && pnpm test && pnpm build && pnpm test:mobile && pnpm format:check",
+    "validate": "pnpm typecheck && pnpm lint && pnpm test && pnpm build && pnpm test:mobile && pnpm test:sitio && pnpm format:check",
     "test:mobile": "playwright test",
     "test:catalogo": "python3 -m unittest discover -s tests/catalogo -v",
     "catalogo:simular": "python3 scripts/catalogo/integrar.py simulate",
     "catalogo:generar": "python3 scripts/catalogo/entrega.py generate",
     "catalogo:revisar": "python3 scripts/catalogo/entrega.py review",
-    "build:web": "pnpm --filter @territorio-vivo/mobile build:web"
+    "build:web": "pnpm --filter @territorio-vivo/mobile build:web",
+    "build:sitio": "node scripts/web/construir-sitio.mjs",
+    "test:sitio": "playwright test -c playwright.sitio.config.ts"
   },
   "devDependencies": {
     "@eslint/js": "10.0.1",

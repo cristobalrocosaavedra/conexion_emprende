@@ -1,7 +1,11 @@
 import { defineConfig } from "vitest/config";
 export default defineConfig({
   test: {
-    include: ["packages/**/*.test.ts", "tests/release/**/*.test.mjs"],
+    include: [
+      "packages/**/*.test.ts",
+      "apps/web/src/**/*.test.ts",
+      "tests/release/**/*.test.mjs",
+    ],
     maxWorkers: 2,
   },
 });

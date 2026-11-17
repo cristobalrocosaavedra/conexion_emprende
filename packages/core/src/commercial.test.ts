@@ -1,5 +1,11 @@
 import { describe, expect, it } from "vitest";
-import { businessPlans, formatClp, teamContact, withIva } from "./commercial";
+import {
+  businessPlans,
+  formatClp,
+  planIncludesMapAndRoute,
+  teamContact,
+  withIva,
+} from "./commercial";
 
 describe("planes para negocios", () => {
   it("muestran neto + IVA y su total", () => {
@@ -7,6 +13,12 @@ describe("planes para negocios", () => {
       11888, 29738, 47588,
     ]);
     expect(formatClp(11888)).toBe("$11.888");
+  });
+
+  it("Presencia solo muestra datos; desde Completo hay mapa y rutas", () => {
+    expect(planIncludesMapAndRoute("presencia")).toBe(false);
+    expect(planIncludesMapAndRoute("completo")).toBe(true);
+    expect(planIncludesMapAndRoute("destacado")).toBe(true);
   });
 
   it("solo hay un plan recomendado", () => {

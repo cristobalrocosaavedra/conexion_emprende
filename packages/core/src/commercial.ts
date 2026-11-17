@@ -9,12 +9,34 @@ export interface BusinessPlan {
   id: "presencia" | "completo" | "destacado";
   netClp: number;
   recommended: boolean;
+  /** Ubicación en el mapa y opción de sumarse a rutas (diferencia clave desde Completo). */
+  mapAndRoute: boolean;
+  /** Espacio destacado rotulado. */
+  featured: boolean;
 }
 
 export const businessPlans: readonly BusinessPlan[] = [
-  { id: "presencia", netClp: 9990, recommended: false },
-  { id: "completo", netClp: 24990, recommended: true },
-  { id: "destacado", netClp: 39990, recommended: false },
+  {
+    id: "presencia",
+    netClp: 9990,
+    recommended: false,
+    mapAndRoute: false,
+    featured: false,
+  },
+  {
+    id: "completo",
+    netClp: 24990,
+    recommended: true,
+    mapAndRoute: true,
+    featured: false,
+  },
+  {
+    id: "destacado",
+    netClp: 39990,
+    recommended: false,
+    mapAndRoute: true,
+    featured: true,
+  },
 ];
 
 export const withIva = (net: number) => Math.round(net * (1 + IVA));
@@ -31,4 +53,9 @@ export function teamContact(env: Record<string, string | undefined>) {
     email: email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) ? email : null,
     whatsapp: whatsapp && whatsapp.length >= 8 ? whatsapp : null,
   };
+}
+
+/** Presencia muestra solo datos y dirección; desde Completo, mapa y rutas. */
+export function planIncludesMapAndRoute(id: BusinessPlan["id"]): boolean {
+  return businessPlans.find((p) => p.id === id)?.mapAndRoute ?? false;
 }

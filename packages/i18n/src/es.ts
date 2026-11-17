@@ -1,4 +1,5 @@
 import permissions from "./permissions.json";
+import { sitio } from "./es-sitio";
 export const es = {
   noRegionalResults: "No hay coincidencias en la región seleccionada.",
   otherRegions: "Coincidencias en otras regiones",
@@ -347,7 +348,8 @@ export const es = {
     back: "Volver a explorar",
     joinTitle: "Suma tu negocio a Turismo en tu Mano",
     joinIntro:
-      "Aparece en el mapa y en tu comuna para que viajeros y vecinos te encuentren. Revisamos cada ficha antes de publicarla.",
+      "Aparece en tu comuna para que viajeros y vecinos te encuentren. Desde el plan Completo, también en el mapa y en las rutas. Revisamos cada ficha antes de publicarla.",
+    chooseStep: "Elige tu plan",
     rules: [
       "Solo negocios formalizados.",
       "Pagar no compra buenas notas ni el sello de verificado.",
@@ -358,14 +360,27 @@ export const es = {
     total: "Total",
     perMonth: "al mes",
     recommended: "Recomendado",
+    routeKey:
+      "La diferencia clave: desde el plan Completo tu negocio aparece en el mapa y se puede sumar a las rutas.",
+    features: {
+      card: "Ficha con dirección y contacto",
+      map: "Ubicación en el mapa",
+      route: "Se puede sumar a rutas",
+      photos: "Fotos, horarios y estadísticas",
+      featured: "Espacio destacado rotulado",
+    },
+    included: "Incluido",
+    notIncluded: "No incluido",
     plans: {
       presencia: {
         name: "Presencia",
-        detail: "Ficha con ubicación, categoría y contacto en tu comuna.",
+        detail:
+          "Ficha con dirección, categoría y contacto en tu comuna. No aparece en el mapa ni en las rutas.",
       },
       completo: {
         name: "Completo",
-        detail: "Presencia más fotos, horarios y estadísticas de visitas.",
+        detail:
+          "Tu negocio en el mapa y en las rutas: los viajeros pueden sumarlo a Mi ruta y llegar a pie o en auto. Además, fotos, horarios y estadísticas de visitas.",
       },
       destacado: {
         name: "Destacado",
@@ -543,6 +558,8 @@ export const es = {
     "No pudimos identificar tu región con suficiente certeza. Elígela en el selector.",
   locationWeb: "Elige tu región manualmente en esta vista web.",
   yourZone: "Mi zona",
+  notOnMap:
+    "Este negocio todavía no aparece en el mapa ni en las rutas. Puedes ver sus datos aquí.",
   located: "Región identificada con tu permiso",
   more: "Más opciones",
   routes: "Rutas",
@@ -567,4 +584,5 @@ export const es = {
     aysen: "Un horizonte austral",
     magallanes: "El extremo sur te espera",
   },
+  sitio,
 };

@@ -22,3 +22,5 @@ content/staging/catalogo-maestro
 
 # Proyección del catálogo generada de forma determinista, comprobada en pruebas.
 content/catalogo/maestro-app.json
+apps/web/out
+apps/web/public/arte

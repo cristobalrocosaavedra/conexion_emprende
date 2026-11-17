@@ -1,13 +1,14 @@
 # Publicar la web en Cloudflare Pages
 
-La web es la misma app (Expo) exportada para navegador: `turismoentumano.cl`, `turismoentumano.cl/<región o comuna>` (por ejemplo `/la-ligua`), `/suma-tu-negocio` y `/municipios`. No usa servidor propio: son archivos estáticos.
+La web es un **sitio propio** (Next.js, `apps/web`) con una página por región (`/region/valparaiso`), provincia (`/provincia/petorca`), comuna (`/la-ligua`) y ficha (`/la-ligua/chocolateria-matichoc`), cada una con sus pestañas Qué hacer, Explorar y Negocios. La app de mapa y rutas (Expo) queda dentro del mismo sitio en `/explorar`. No usa servidor propio: son archivos estáticos (unas 8.600, dentro del límite de Pages).
 
 ## Qué ya está preparado en el repositorio
 
-- `pnpm build:web` genera `apps/mobile/dist`.
-- `apps/mobile/public/_redirects`: toda dirección sin archivo abre la app (necesario para `/comuna`).
-- `apps/mobile/public/_headers`: cabeceras de seguridad; ubicación permitida solo para el propio sitio. **`X-Robots-Tag: noindex` y `robots.txt` bloquean Google mientras sea versión de prueba**; se quitan solo cuando apruebes abrirla.
-- Ubicación: la pide el navegador al abrir; si se rechaza, se elige región o comuna a mano. No se envían ni guardan coordenadas.
+- `pnpm build:sitio` genera `apps/web/out`: el sitio completo más la app de rutas en `/explorar`. (`pnpm build:web` sigue generando solo la app en `apps/mobile/dist`.)
+- `apps/web/public/_redirects`: las direcciones bajo `/explorar/` abren la app de rutas.
+- `apps/web/public/_headers`: cabeceras de seguridad; ubicación permitida solo para el propio sitio. **`X-Robots-Tag: noindex` y `robots.txt` bloquean Google mientras sea versión de prueba**; se quitan solo cuando apruebes abrirla.
+- Probar en tu computador: `pnpm build:sitio` y luego `node scripts/web/servir-sitio.mjs` (abre http://127.0.0.1:3013).
+- Ubicación: la pide el navegador al tocar «Usar mi ubicación»; si se rechaza, se elige región o comuna a mano. No se envían ni guardan coordenadas.
 
 ## Paso a paso (lo haces tú; no compartas claves en el chat)
 
@@ -15,8 +16,8 @@ La web es la misma app (Expo) exportada para navegador: `turismoentumano.cl`, `t
 2. **Workers y Pages → Crear → Pages → Conectar a Git** y elige el repositorio `conexion_emprende`.
 3. Configuración de compilación:
    - Rama de producción: `main` (solo se publica cuando tú fusiones).
-   - Comando de compilación: `pnpm build:web`
-   - Carpeta de salida: `apps/mobile/dist`
+   - Comando de compilación: `pnpm build:sitio`
+   - Carpeta de salida: `apps/web/out`
    - Variables de entorno: `NODE_VERSION` = `24.19.0`.
    - Opcionales y públicas (no son secretas): `EXPO_PUBLIC_CONTACTO_CORREO` y `EXPO_PUBLIC_CONTACTO_WHATSAPP`. Sin ellas, la página muestra «Muy pronto publicaremos el contacto».
 4. Guarda. Cada rama (por ejemplo `develop` o un PR) recibe su propia dirección de vista previa `*.pages.dev` para revisar antes de publicar.

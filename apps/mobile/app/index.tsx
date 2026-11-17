@@ -30,6 +30,7 @@ import {
   nationalSuggestions,
   filterPlaces,
   haversineDistanceKm,
+  isBusinessPlace,
   isLocated,
   localities,
   moveAreaStop,
@@ -151,7 +152,7 @@ export default function Home() {
   const filtered = useMemo(
     () =>
       filterPlaces(current, commune, category, query).filter(
-        (p) => tab !== "businesses" || p.category === "gastronomia",
+        (p) => tab !== "businesses" || isBusinessPlace(p),
       ),
     [current, commune, category, query, tab],
   );
@@ -1411,18 +1412,22 @@ export default function Home() {
                   </View>
                 )}
                 {body(t.visitInfo)}
-                {button(
-                  stopIds.includes(detail.id) ? t.saved : t.save,
-                  () => save(detail.id),
-                  true,
-                )}
+                {detail.onMap === false
+                  ? body(t.notOnMap)
+                  : button(
+                      stopIds.includes(detail.id) ? t.saved : t.save,
+                      () => save(detail.id),
+                      true,
+                    )}
                 {isLocated(detail)
                   ? button(t.viewMap, () => {
                       setMapPlace(detail);
                       setDetail(null);
                       setMapMode("place");
                     })
-                  : body(t.locationPending)}
+                  : detail.onMap === false
+                    ? null
+                    : body(t.locationPending)}
                 {title(t.source)}
                 {detail.source ? (
                   <Pressable

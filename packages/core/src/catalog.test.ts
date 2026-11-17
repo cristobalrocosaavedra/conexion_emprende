@@ -8,6 +8,7 @@ import {
   isLocated,
   moveStop,
   normalizePreferences,
+  placeListing,
   places,
   regionFeatures,
   regionIds,
@@ -183,5 +184,42 @@ describe("verificación con evidencia", () => {
   it("Matichoc figura como verificado por su titular", () => {
     const m = places.find((p) => p.id === "chocolateria-matichoc");
     expect(m?.verification).toBe("verified");
+  });
+});
+
+describe("negocios en el mapa según plan", () => {
+  it("sin plan solo hay ficha; desde Completo, mapa y rutas", () => {
+    expect(
+      placeListing({ id: "negocio-sin-plan", category: "gastronomia" }),
+    ).toEqual({
+      plan: null,
+      onMap: false,
+    });
+    expect(
+      placeListing({ id: "chocolateria-matichoc", category: "gastronomia" }),
+    ).toEqual({
+      plan: "destacado",
+      onMap: true,
+    });
+    expect(
+      placeListing({ id: "cualquier-playa", category: "playa" }).onMap,
+    ).toBe(true);
+  });
+  it("la zona de dulceras de La Ligua se trata como atractivo público", () => {
+    expect(
+      placeListing({ id: "la-ligua-area-de-dulces", category: "gastronomia" }),
+    ).toEqual({
+      plan: null,
+      onMap: true,
+    });
+    const area = places.find((p) => p.id === "la-ligua-area-de-dulces")!;
+    expect(area.latitude).not.toBeNull();
+  });
+  it("una parada guardada de un negocio sin mapa se descarta", () => {
+    expect(
+      normalizePreferences({
+        stopIds: ["chocolateria-matichoc", "negocio-sin-plan"],
+      })!.stopIds,
+    ).toEqual(["chocolateria-matichoc"]);
   });
 });

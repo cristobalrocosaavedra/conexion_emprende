@@ -1,0 +1,19 @@
+{
+  "nota": "Planes vigentes de fichas comerciales. Presencia ($9.990): solo datos y dirección. Desde Completo ($24.990): mapa y rutas. Destacado: además espacio rotulado. Negocios encontrados en la web sin registro quedan al nivel Presencia (solo ficha) por decisión del titular. Los que el titular entregue en listados se registran con plan Completo, salvo que indique otro. 'ocultos' retira fichas del sitio y de la app sin borrar los datos de origen.",
+  "records": [
+    {
+      "placeId": "chocolateria-matichoc",
+      "plan": "destacado",
+      "since": "2026-11-17",
+      "note": "Negocio fundador; plan Destacado (el más completo) subvencionado por el titular."
+    }
+  ],
+  "atractivosPublicos": [
+    {
+      "placeId": "la-ligua-area-de-dulces",
+      "since": "2026-11-17",
+      "note": "Zona tradicional de dulceras de La Ligua, no un negocio único; se trata como atractivo por decisión del titular. Cada dulcería puede sumarse con su propio plan."
+    }
+  ],
+  "ocultos": []
+}

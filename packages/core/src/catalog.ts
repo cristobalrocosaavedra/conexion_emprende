@@ -3,6 +3,9 @@ import national from "../../../content/catalogo/osm-chile.json";
 import snapshot from "../../../content/catalogo/petorca.json";
 import geography from "../../../content/catalogo/regiones.geo.json";
 import verificationLog from "../../../content/catalogo/verificacion.json";
+import planLog from "../../../content/catalogo/planes-negocios.json";
+import { planIncludesMapAndRoute } from "./commercial";
+import type { BusinessPlan } from "./commercial";
 import type { RegionId } from "./index";
 export type Category = "playa" | "naturaleza" | "cultura" | "gastronomia";
 /** pending: sin revisar · official: fuente de organismo identificado · verified: revisión documentada. */
@@ -32,6 +35,10 @@ export interface Place {
   verification: VerificationStatus;
   origin?: "osm" | "master";
   importedAt: string;
+  /** Plan comercial vigente (solo negocios). */
+  plan?: BusinessPlan["id"] | null;
+  /** En el mapa y en rutas: atractivos siempre; negocios solo desde el plan Completo. */
+  onMap?: boolean;
 }
 export interface Locality {
   id: string;
@@ -59,12 +66,49 @@ export interface RegionFeature {
 export const verificationRecords = Object.fromEntries(
   (verificationLog.records as VerificationRecord[]).map((r) => [r.placeId, r]),
 ) as Partial<Record<string, VerificationRecord>>;
+/** Categorías que se presentan como comercio local (sujetas a plan). */
+export const businessCategories: Category[] = ["gastronomia"];
+/** Lugares de categoría comercial que se tratan como atractivo (no requieren plan). */
+export const publicAttractionIds = new Set(
+  planLog.atractivosPublicos.map((r) => r.placeId),
+);
+export const isBusinessPlace = (p: Pick<Place, "id" | "category">) =>
+  businessCategories.includes(p.category) && !publicAttractionIds.has(p.id);
+export const businessPlanRecords = Object.fromEntries(
+  (planLog.records as { placeId: string; plan: BusinessPlan["id"] }[]).map(
+    (r) => [r.placeId, r.plan],
+  ),
+) as Partial<Record<string, BusinessPlan["id"]>>;
+/**
+ * Un negocio sin plan, o con Presencia, no entrega su ubicación al mapa ni a rutas:
+ * sus coordenadas no se publican en la app ni en el sitio.
+ */
+export function placeListing(p: Pick<Place, "id" | "category">): {
+  plan: BusinessPlan["id"] | null;
+  onMap: boolean;
+} {
+  if (!isBusinessPlace(p)) return { plan: null, onMap: true };
+  const plan = businessPlanRecords[p.id] ?? null;
+  return { plan, onMap: !!plan && planIncludesMapAndRoute(plan) };
+}
+/** Fichas retiradas por decisión del titular (los datos de origen se conservan). */
+export const hiddenPlaceIds = new Set(
+  (planLog.ocultos as { placeId: string }[]).map((r) => r.placeId),
+);
 export const places = (
   [...snapshot.places, ...national.places, ...master.places] as Place[]
-).map((p): Place => ({
-  ...p,
-  verification: verificationRecords[p.id]?.status ?? "pending",
-}));
+)
+  .filter((p) => !hiddenPlaceIds.has(p.id))
+  .map((p): Place => {
+    const { plan, onMap } = placeListing(p);
+    return {
+      ...p,
+      verification: verificationRecords[p.id]?.status ?? "pending",
+      plan,
+      onMap,
+      ...(onMap ? {} : { latitude: null, longitude: null }),
+    };
+  });
 export const localities = [
   ...snapshot.localities,
   ...master.localities,
@@ -263,7 +307,8 @@ export function normalizePreferences(value: unknown): Preferences | null {
         ...new Set(
           v.stopIds.filter(
             (id): id is string =>
-              typeof id === "string" && places.some((p) => p.id === id),
+              typeof id === "string" &&
+              places.some((p) => p.id === id && p.onMap !== false),
           ),
         ),
       ].slice(0, 100)

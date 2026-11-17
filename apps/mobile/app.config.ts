@@ -51,6 +51,12 @@ const config: ExpoConfig = {
     "expo-router",
     ["expo-location", { locationWhenInUsePermission: permissions.es.location }],
   ],
-  experiments: { typedRoutes: false },
+  experiments: {
+    typedRoutes: false,
+    // En el sitio web la app de rutas vive en /explorar (ver scripts/web/construir-sitio.mjs).
+    ...(process.env.EXPO_BASE_URL
+      ? { baseUrl: process.env.EXPO_BASE_URL }
+      : {}),
+  },
 };
 export default config;

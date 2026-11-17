@@ -318,6 +318,8 @@ create table public.planes (
   meses_regalo_anual smallint not null default 2,
   beneficios jsonb not null default '[]'::jsonb,
   destaca boolean not null default false, -- otorga espacio destacado rotulado
+  -- Presencia: solo datos y dirección. Desde Completo: ubicación en el mapa y rutas.
+  en_mapa_y_rutas boolean not null default false,
   publico boolean not null default true,
   activo boolean not null default true
 );
@@ -487,7 +489,7 @@ group by r.id;
 
 create view public.planes_publicos with (security_barrier) as
 select id, nombre, para, precio_neto_clp, iva_porcentaje, precio_total_clp,
-       meses_regalo_anual, beneficios, destaca
+       meses_regalo_anual, beneficios, destaca, en_mapa_y_rutas
 from public.planes where publico and activo;
 
 -- Cercanía: llamar por POST (rpc) para que las coordenadas no queden en URLs.
@@ -698,7 +700,7 @@ create policy lectura on public.estadisticas_diarias for select to authenticated
 -- Datos base sin inventar: planes vigentes del material comercial.
 -- Promociones y precios de lanzamiento quedan pendientes de decisión.
 -- ---------------------------------------------------------------------------
-insert into public.planes (id, nombre, para, precio_neto_clp, beneficios, destaca) values
-  ('presencia', 'Presencia', '{negocio,cadena,agrupacion}', 9990, '[]', false),
-  ('completo', 'Completo', '{negocio,cadena,agrupacion}', 24990, '[]', false),
-  ('destacado', 'Destacado', '{negocio,cadena,agrupacion}', 39990, '[]', true);
+insert into public.planes (id, nombre, para, precio_neto_clp, beneficios, destaca, en_mapa_y_rutas) values
+  ('presencia', 'Presencia', '{negocio,cadena,agrupacion}', 9990, '[]', false, false),
+  ('completo', 'Completo', '{negocio,cadena,agrupacion}', 24990, '[]', false, true),
+  ('destacado', 'Destacado', '{negocio,cadena,agrupacion}', 39990, '[]', true, true);
