@@ -24,3 +24,6 @@ content/staging/catalogo-maestro
 content/catalogo/maestro-app.json
 apps/web/out
 apps/web/public/arte
+
+# Extracto ODbL por comuna, guardado compacto tal como lo usa el script de coordenadas.
+content/sources/osm-coordenadas
