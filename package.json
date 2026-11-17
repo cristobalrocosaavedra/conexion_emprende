@@ -20,7 +20,8 @@
     "test:catalogo": "python3 -m unittest discover -s tests/catalogo -v",
     "catalogo:simular": "python3 scripts/catalogo/integrar.py simulate",
     "catalogo:generar": "python3 scripts/catalogo/entrega.py generate",
-    "catalogo:revisar": "python3 scripts/catalogo/entrega.py review"
+    "catalogo:revisar": "python3 scripts/catalogo/entrega.py review",
+    "build:web": "pnpm --filter @territorio-vivo/mobile build:web"
   },
   "devDependencies": {
     "@eslint/js": "10.0.1",

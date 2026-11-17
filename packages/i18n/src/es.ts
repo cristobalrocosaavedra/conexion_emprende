@@ -25,7 +25,12 @@ export const es = {
     preview: "Ver entre mis paradas",
     recalculate: "Recalcular",
     follow: "Seguir mi posición",
-    openMap: "Ver navegación en mapa",
+    openMap: "Ver en el mapa",
+    modeLabel: "¿Cómo vas?",
+    modeFoot: "A pie",
+    modeCar: "En auto",
+    more: "Más opciones",
+    less: "Menos opciones",
     road: "Trazado por calles · auto · tiempo estimado sin tráfico en vivo",
     foreground:
       "La ubicación se usa mientras esta pantalla está activa. Al salir de la app, la navegación se pausa. No se guarda tu recorrido.",
@@ -37,7 +42,8 @@ export const es = {
     enable: "Activar rutas de prueba",
     disable: "Desactivar rutas",
     publicService: "Servicio gratuito de pruebas · FOSSGIS / OSRM",
-    publicPrivacyShort: "Servicio público temporal · consultas registradas",
+    publicPrivacyShort:
+      "Rutas con FOSSGIS / OSRM, servicio público temporal · registra las consultas",
     publicPrivacy:
       "El servicio recibe las coordenadas consultadas y las guarda en sus registros. Se usa temporalmente para probar rutas; puede limitar consultas o no estar disponible. La app no guarda un historial de tu ubicación.",
     conditions: "Condiciones del servicio",
@@ -100,14 +106,14 @@ export const es = {
     },
   },
 
-  brand: "Territorio Vivo",
+  brand: "Turismo en tu Mano",
   brandIdentity: {
-    open: "Ver el símbolo de Territorio Vivo",
+    open: "Ver el símbolo de Turismo en tu Mano",
     title: "Nuestro territorio, en un símbolo",
     image:
       "Latitud viva: norte ocre, centro terracota, sur verde y austral azul",
     description:
-      "Latitud viva reúne desierto, cordillera, bosque y agua en una forma que recorre el país de norte a sur.",
+      "Latitud viva reúne desierto, cordillera, bosque y agua en una forma que recorre el país de norte a sur y descansa en la palma de una mano: Chile en tu mano.",
     symbolic:
       "Es una interpretación gráfica del territorio; no es un mapa ni un límite regional.",
   },
@@ -284,6 +290,13 @@ export const es = {
   mapOffline:
     "No se cargó el mapa de fondo. Los límites y puntos siguen disponibles.",
   pending: "Pendiente de verificación",
+  verification: {
+    pending: "Pendiente de verificación",
+    official: "Fuente oficial",
+    verified: "✓ Verificado",
+  },
+  verificationEvidence: "Respaldo",
+  reviewedOn: "revisado el",
   tripSchematic: "Conexión esquemática · no es una ruta por calles",
   geographicMap: "Chile continental · límites simplificados de Natural Earth",
   all: "Todo",
@@ -327,6 +340,123 @@ export const es = {
   seeAll: "Ver todos",
   regionalCatalog:
     "El catálogo de esta región está en preparación. Ya puedes explorar su mapa y seguir recorriendo Chile.",
+  emptyZone:
+    "Aún no llegamos a tu zona: ¿tienes un negocio o conoces un lugar?",
+  joinBusiness: "Suma tu negocio",
+  commercial: {
+    back: "Volver a explorar",
+    joinTitle: "Suma tu negocio a Turismo en tu Mano",
+    joinIntro:
+      "Aparece en el mapa y en tu comuna para que viajeros y vecinos te encuentren. Revisamos cada ficha antes de publicarla.",
+    rules: [
+      "Solo negocios formalizados.",
+      "Pagar no compra buenas notas ni el sello de verificado.",
+      "Lo destacado siempre se muestra rotulado.",
+    ],
+    plansTitle: "Planes mensuales",
+    plusIva: "+ IVA",
+    total: "Total",
+    perMonth: "al mes",
+    recommended: "Recomendado",
+    plans: {
+      presencia: {
+        name: "Presencia",
+        detail: "Ficha con ubicación, categoría y contacto en tu comuna.",
+      },
+      completo: {
+        name: "Completo",
+        detail: "Presencia más fotos, horarios y estadísticas de visitas.",
+      },
+      destacado: {
+        name: "Destacado",
+        detail: "Completo más espacio destacado y rotulado en tu zona.",
+      },
+    },
+    annual: "Pagando anual, 2 meses de regalo.",
+    founders:
+      "Precio especial para los primeros negocios que se suman. Escríbenos.",
+    draftNote:
+      "Beneficios en revisión; el detalle final se confirma al inscribirte.",
+    contactTitle: "Conversemos",
+    email: "Escribir un correo",
+    whatsapp: "Escribir por WhatsApp",
+    contactSoon:
+      "Muy pronto publicaremos el contacto del equipo en esta página.",
+    municipalLink: "¿Eres municipio? Conoce el plan para tu comuna",
+    municipalTitle: "Para municipios",
+    municipalIntro:
+      "Tu comuna ya tiene su espacio en Turismo en tu Mano. Con el plan para municipios, suma su identidad local y su propia dirección «comunaentumano.cl», con la misma información en ambos lugares.",
+    municipalPoints: [
+      "Identidad de la comuna: colores, portada y su letra sobre la mano.",
+      "Información oficial rotulada como fuente municipal, con fecha.",
+      "Panel para que el equipo municipal proponga y actualice contenidos.",
+      "Nada se publica a nombre del municipio sin su autorización.",
+    ],
+    municipalPrice: "Propuesta a medida según la comuna. Conversemos.",
+    businessLink: "¿Tienes un negocio? Revisa los planes",
+    team: "Equipo Turismo en tu Mano",
+    termsLink: "Términos de uso",
+    privacyLink: "Privacidad",
+  },
+  legal: {
+    draft:
+      "Borrador en revisión legal. Se publicará la versión final, con la identificación de la empresa titular, antes de abrir el sitio al público.",
+    updated: "Última actualización: 16-11-2026",
+    termsTitle: "Términos de uso",
+    terms: [
+      {
+        title: "Qué es Turismo en tu Mano",
+        body: "Una plataforma para descubrir lugares, experiencias y comercios locales de Chile. Mostramos la información con su fuente y su estado: pendiente de verificación, fuente oficial o verificado.",
+      },
+      {
+        title: "Información de los lugares",
+        body: "Hacemos lo posible por mantener la información al día, pero horarios, precios y disponibilidad pueden cambiar. Confirma con el lugar antes de viajar. Los datos pendientes se muestran como pendientes.",
+      },
+      {
+        title: "Negocios y contenido destacado",
+        body: "Cada negocio es responsable de los datos que entrega. Revisamos las fichas antes de publicarlas. Pagar un plan no compra buenas notas ni el sello de verificado, y todo contenido destacado se muestra rotulado.",
+      },
+      {
+        title: "Mapas, rutas y datos abiertos",
+        body: "Los mapas y parte de los lugares provienen de OpenStreetMap (© colaboradores de OpenStreetMap, licencia ODbL). Las rutas son estimaciones: respeta siempre la señalización y las condiciones del camino.",
+      },
+      {
+        title: "Uso correcto",
+        body: "No está permitido copiar masivamente el contenido, publicar información falsa ni usar la plataforma con fines ilegales.",
+      },
+      {
+        title: "Cambios y ley aplicable",
+        body: "Podemos actualizar estos términos e indicaremos la fecha del cambio. Se rigen por las leyes de la República de Chile.",
+      },
+    ],
+    privacyTitle: "Privacidad",
+    privacy: [
+      {
+        title: "Tu ubicación",
+        body: "Solo con tu permiso, que pide el propio navegador o teléfono. Se usa en tu dispositivo para abrir tu región y ordenar lo cercano. No la guardamos ni la enviamos a nuestros servidores. Si no la compartes, eliges región o comuna a mano.",
+      },
+      {
+        title: "Rutas por calles",
+        body: "Cuando pides calcular una ruta, los puntos de origen y las paradas se envían al servicio de rutas indicado en la app para obtener el trazado. Ese proveedor puede registrar las consultas. No guardamos tu recorrido.",
+      },
+      {
+        title: "Lo que queda en tu navegador",
+        body: "Tus preferencias (tema y región) y las paradas que eliges se guardan solo en tu dispositivo. Puedes borrarlas limpiando los datos del sitio.",
+      },
+      {
+        title: "Cuentas, cookies y medición",
+        body: "Hoy no pedimos cuenta ni usamos cookies de publicidad o seguimiento. El proveedor de alojamiento procesa datos técnicos mínimos, como la dirección IP, para entregar el sitio y protegerlo.",
+      },
+      {
+        title: "Negocios que se suman",
+        body: "Los datos de contacto que entrega un negocio se usan para publicar su ficha y gestionar su plan. Los pagos los procesa el proveedor de pagos; no guardamos datos de tarjetas.",
+      },
+      {
+        title: "Tus derechos",
+        body: "Puedes pedir acceso, corrección o eliminación de tus datos conforme a la ley chilena de protección de datos personales, escribiendo al contacto del equipo.",
+      },
+    ],
+  },
   provincesLabel: "provincias",
   catalogPendingDate: "Fuentes y fechas en cada ficha · vigencia pendiente",
   catalogReference:
@@ -341,7 +471,7 @@ export const es = {
   source: "Fuente y procedencia",
   sourceDate: "Importado el 24-10-2026 · vigencia pendiente",
   inherited:
-    "Contenido adaptado de tu directorio. Fuente y coordenadas pendientes de revisión en Territorio Vivo.",
+    "Contenido adaptado de tu directorio. Fuente y coordenadas pendientes de revisión en Turismo en tu Mano.",
   readSource: "Consultar fuente",
   save: "Guardar en mi viaje",
   saved: "Guardado · quitar del viaje",

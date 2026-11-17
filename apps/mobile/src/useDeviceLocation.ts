@@ -1,7 +1,15 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { AppState, Platform } from "react-native";
 import * as Location from "expo-location";
-import { communeNames, readDeviceLocation } from "@territorio-vivo/core";
+import {
+  communeNames,
+  createBrowserLocationAdapter,
+  readDeviceLocation,
+} from "@territorio-vivo/core";
+import type {
+  BrowserGeolocation,
+  LocationAdapter,
+} from "@territorio-vivo/core";
 import type {
   LocatedArea,
   LocationMode,
@@ -13,7 +21,31 @@ interface Options {
   selectionVersion: () => number;
   onReady: (area: LocatedArea, mode: LocationMode, version: number) => void;
 }
+const nativeAdapter: LocationAdapter = {
+  getPermission: () => Location.getForegroundPermissionsAsync(),
+  requestPermission: () => Location.requestForegroundPermissionsAsync(),
+  servicesEnabled: () => Location.hasServicesEnabledAsync(),
+  getPosition: () =>
+    Location.getCurrentPositionAsync({ accuracy: Location.Accuracy.High }),
+  reverseGeocode: (point) => Location.reverseGeocodeAsync(point),
+};
+
+/** En la web se usa la geolocalización del navegador, sin servicios externos. */
+function webAdapter(): LocationAdapter {
+  const nav = (
+    globalThis as {
+      navigator?: {
+        geolocation?: BrowserGeolocation;
+        permissions?: Parameters<typeof createBrowserLocationAdapter>[1];
+      };
+    }
+  ).navigator;
+  return createBrowserLocationAdapter(nav?.geolocation, nav?.permissions);
+}
+
 export function useDeviceLocation(options: Options) {
+  const adapter = useRef<LocationAdapter | null>(null);
+  adapter.current ??= Platform.OS === "web" ? webAdapter() : nativeAdapter;
   const optionsRef = useRef(options);
   optionsRef.current = options;
   const mounted = useRef(false),
@@ -22,27 +54,14 @@ export function useDeviceLocation(options: Options) {
   const [busy, setBusy] = useState(false);
   const [result, setResult] = useState<LocationResult | null>(null);
   const refresh = useCallback(async (mode: LocationMode = "manual") => {
-    if (!optionsRef.current.enabled || pending.current || Platform.OS === "web")
+    if (!optionsRef.current.enabled || pending.current || !adapter.current)
       return;
     pending.current = true;
     const ticket = ++epoch.current,
       version = optionsRef.current.selectionVersion();
     setBusy(true);
     let timer: ReturnType<typeof setTimeout> | undefined;
-    const operation = readDeviceLocation(
-      {
-        getPermission: () => Location.getForegroundPermissionsAsync(),
-        requestPermission: () => Location.requestForegroundPermissionsAsync(),
-        servicesEnabled: () => Location.hasServicesEnabledAsync(),
-        getPosition: () =>
-          Location.getCurrentPositionAsync({
-            accuracy: Location.Accuracy.High,
-          }),
-        reverseGeocode: (point) => Location.reverseGeocodeAsync(point),
-      },
-      mode,
-      communeNames,
-    );
+    const operation = readDeviceLocation(adapter.current, mode, communeNames);
     try {
       const next = await Promise.race([
         operation,
@@ -63,7 +82,7 @@ export function useDeviceLocation(options: Options) {
     }
   }, []);
   useEffect(() => {
-    if (!options.enabled || Platform.OS === "web") return;
+    if (!options.enabled) return;
     mounted.current = true;
     void refresh("startup");
     let previous = AppState.currentState;
@@ -81,22 +100,20 @@ export function useDeviceLocation(options: Options) {
   }, [options.enabled, refresh]);
   const message = busy
     ? t.locationBusy
-    : Platform.OS === "web"
-      ? t.locationWeb
-      : result?.status === "ready"
-        ? result.area.approximate
-          ? t.locatedApproximate
-          : t.located
-        : result?.status === "denied"
-          ? t.locationDenied
-          : result?.status === "servicesOff"
-            ? t.locationServicesOff
-            : result?.status === "stale"
-              ? t.locationStale
-              : result?.status === "unresolved"
-                ? t.locationUnresolved
-                : result?.status === "unavailable"
-                  ? t.locationUnavailable
-                  : "";
+    : result?.status === "ready"
+      ? result.area.approximate
+        ? t.locatedApproximate
+        : t.located
+      : result?.status === "denied"
+        ? t.locationDenied
+        : result?.status === "servicesOff"
+          ? t.locationServicesOff
+          : result?.status === "stale"
+            ? t.locationStale
+            : result?.status === "unresolved"
+              ? t.locationUnresolved
+              : result?.status === "unavailable"
+                ? t.locationUnavailable
+                : "";
   return { busy, result, message, refresh };
 }

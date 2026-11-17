@@ -1,0 +1,433 @@
+{
+  "_nota": "Estados de verificación con evidencia. No modifica los datos de origen; se aplica al cargar el catálogo. 16-11-2026.",
+  "records": [
+    {
+      "placeId": "casa-natal-manuel-montt",
+      "status": "official",
+      "organism": "Consejo de Monumentos Nacionales",
+      "evidenceUrl": "https://www.monumentos.gob.cl/monumentos/monumentos-historicos/casa-donde-nacio-presidente-manuel-montt",
+      "method": "Fuente registrada en el catálogo pertenece a un organismo público; clasificación aprobada por el titular",
+      "checkedOn": "2026-11-16"
+    },
+    {
+      "placeId": "chocolateria-matichoc",
+      "status": "verified",
+      "organism": "Chocolatería Matichoc (titular)",
+      "evidenceUrl": "https://www.matichoc.cl/inicio",
+      "method": "Confirmado por el titular, dueño del negocio",
+      "checkedOn": "2026-11-16"
+    },
+    {
+      "placeId": "escalera-del-diablo",
+      "status": "official",
+      "organism": "Sernageomin",
+      "evidenceUrl": "https://geositiosdechile.sernageomin.cl/region/valparaiso/escalera-del-diablo/",
+      "method": "Fuente registrada en el catálogo pertenece a un organismo público; clasificación aprobada por el titular",
+      "checkedOn": "2026-11-16"
+    },
+    {
+      "placeId": "la-ligua-area-de-dulces",
+      "status": "official",
+      "organism": "Servicio Nacional del Patrimonio Cultural",
+      "evidenceUrl": "https://www.patrimoniocultural.gob.cl/noticias/tradicion-de-los-dulces-de-la-ligua-ingresa-al-registro-de-patrimonio-cultural-inmaterial",
+      "method": "Fuente registrada en el catálogo pertenece a un organismo público; clasificación aprobada por el titular",
+      "checkedOn": "2026-11-16"
+    },
+    {
+      "placeId": "la-ligua-valle-hermoso",
+      "status": "official",
+      "organism": "Sercotec",
+      "evidenceUrl": "https://www.sercotec.cl/barrios-comerciales/barrio-comercial-valle-hermoso-la-ligua/",
+      "method": "Fuente registrada en el catálogo pertenece a un organismo público; clasificación aprobada por el titular",
+      "checkedOn": "2026-11-16"
+    },
+    {
+      "placeId": "master:TV-ATR-00347",
+      "status": "official",
+      "organism": "Parque Metropolitano de Santiago",
+      "evidenceUrl": "https://tramitespms.parquemet.cl/t/actividades-recreativas",
+      "method": "Fuente registrada en el catálogo pertenece a un organismo público; clasificación aprobada por el titular",
+      "checkedOn": "2026-11-16"
+    },
+    {
+      "placeId": "master:TV-ATR-00348",
+      "status": "official",
+      "organism": "Parque Metropolitano de Santiago",
+      "evidenceUrl": "https://tramitespms.parquemet.cl/t/actividades-recreativas",
+      "method": "Fuente registrada en el catálogo pertenece a un organismo público; clasificación aprobada por el titular",
+      "checkedOn": "2026-11-16"
+    },
+    {
+      "placeId": "master:TV-ATR-00349",
+      "status": "official",
+      "organism": "Parque Metropolitano de Santiago",
+      "evidenceUrl": "https://tramitespms.parquemet.cl/t/actividades-recreativas",
+      "method": "Fuente registrada en el catálogo pertenece a un organismo público; clasificación aprobada por el titular",
+      "checkedOn": "2026-11-16"
+    },
+    {
+      "placeId": "master:TV-ATR-00350",
+      "status": "official",
+      "organism": "Parque Metropolitano de Santiago",
+      "evidenceUrl": "https://tramitespms.parquemet.cl/t/actividades-recreativas",
+      "method": "Fuente registrada en el catálogo pertenece a un organismo público; clasificación aprobada por el titular",
+      "checkedOn": "2026-11-16"
+    },
+    {
+      "placeId": "master:TV-ATR-00351",
+      "status": "official",
+      "organism": "Parque Metropolitano de Santiago",
+      "evidenceUrl": "https://tramitespms.parquemet.cl/t/actividades-recreativas",
+      "method": "Fuente registrada en el catálogo pertenece a un organismo público; clasificación aprobada por el titular",
+      "checkedOn": "2026-11-16"
+    },
+    {
+      "placeId": "master:TV-ATR-00352",
+      "status": "official",
+      "organism": "Parque Metropolitano de Santiago",
+      "evidenceUrl": "https://tramitespms.parquemet.cl/t/actividades-recreativas",
+      "method": "Fuente registrada en el catálogo pertenece a un organismo público; clasificación aprobada por el titular",
+      "checkedOn": "2026-11-16"
+    },
+    {
+      "placeId": "master:TV-ATR-00353",
+      "status": "official",
+      "organism": "Parque Metropolitano de Santiago",
+      "evidenceUrl": "https://tramitespms.parquemet.cl/t/actividades-recreativas",
+      "method": "Fuente registrada en el catálogo pertenece a un organismo público; clasificación aprobada por el titular",
+      "checkedOn": "2026-11-16"
+    },
+    {
+      "placeId": "master:TV-ATR-00354",
+      "status": "official",
+      "organism": "Parque Metropolitano de Santiago",
+      "evidenceUrl": "https://tramitespms.parquemet.cl/t/actividades-recreativas",
+      "method": "Fuente registrada en el catálogo pertenece a un organismo público; clasificación aprobada por el titular",
+      "checkedOn": "2026-11-16"
+    },
+    {
+      "placeId": "master:TV-ATR-00355",
+      "status": "official",
+      "organism": "Parque Metropolitano de Santiago",
+      "evidenceUrl": "https://tramitespms.parquemet.cl/t/actividades-recreativas",
+      "method": "Fuente registrada en el catálogo pertenece a un organismo público; clasificación aprobada por el titular",
+      "checkedOn": "2026-11-16"
+    },
+    {
+      "placeId": "master:TV-ATR-00356",
+      "status": "official",
+      "organism": "Parque Metropolitano de Santiago",
+      "evidenceUrl": "https://tramitespms.parquemet.cl/t/actividades-recreativas",
+      "method": "Fuente registrada en el catálogo pertenece a un organismo público; clasificación aprobada por el titular",
+      "checkedOn": "2026-11-16"
+    },
+    {
+      "placeId": "master:TV-ATR-00357",
+      "status": "official",
+      "organism": "Parque Metropolitano de Santiago",
+      "evidenceUrl": "https://tramitespms.parquemet.cl/t/actividades-recreativas",
+      "method": "Fuente registrada en el catálogo pertenece a un organismo público; clasificación aprobada por el titular",
+      "checkedOn": "2026-11-16"
+    },
+    {
+      "placeId": "master:TV-ATR-00358",
+      "status": "official",
+      "organism": "Parque Metropolitano de Santiago",
+      "evidenceUrl": "https://tramitespms.parquemet.cl/t/actividades-recreativas",
+      "method": "Fuente registrada en el catálogo pertenece a un organismo público; clasificación aprobada por el titular",
+      "checkedOn": "2026-11-16"
+    },
+    {
+      "placeId": "master:TV-ATR-00359",
+      "status": "official",
+      "organism": "Parque Metropolitano de Santiago",
+      "evidenceUrl": "https://tramitespms.parquemet.cl/t/actividades-recreativas",
+      "method": "Fuente registrada en el catálogo pertenece a un organismo público; clasificación aprobada por el titular",
+      "checkedOn": "2026-11-16"
+    },
+    {
+      "placeId": "master:TV-ATR-00360",
+      "status": "official",
+      "organism": "Parque Metropolitano de Santiago",
+      "evidenceUrl": "https://tramitespms.parquemet.cl/t/actividades-recreativas",
+      "method": "Fuente registrada en el catálogo pertenece a un organismo público; clasificación aprobada por el titular",
+      "checkedOn": "2026-11-16"
+    },
+    {
+      "placeId": "master:TV-ATR-00361",
+      "status": "official",
+      "organism": "Parque Metropolitano de Santiago",
+      "evidenceUrl": "https://tramitespms.parquemet.cl/t/actividades-recreativas",
+      "method": "Fuente registrada en el catálogo pertenece a un organismo público; clasificación aprobada por el titular",
+      "checkedOn": "2026-11-16"
+    },
+    {
+      "placeId": "master:TV-ATR-00362",
+      "status": "official",
+      "organism": "Parque Metropolitano de Santiago",
+      "evidenceUrl": "https://tramitespms.parquemet.cl/t/actividades-recreativas",
+      "method": "Fuente registrada en el catálogo pertenece a un organismo público; clasificación aprobada por el titular",
+      "checkedOn": "2026-11-16"
+    },
+    {
+      "placeId": "master:TV-ATR-00363",
+      "status": "official",
+      "organism": "Parque Metropolitano de Santiago",
+      "evidenceUrl": "https://tramitespms.parquemet.cl/t/actividades-recreativas",
+      "method": "Fuente registrada en el catálogo pertenece a un organismo público; clasificación aprobada por el titular",
+      "checkedOn": "2026-11-16"
+    },
+    {
+      "placeId": "master:TV-ATR-00364",
+      "status": "official",
+      "organism": "Parque Metropolitano de Santiago",
+      "evidenceUrl": "https://tramitespms.parquemet.cl/t/actividades-recreativas",
+      "method": "Fuente registrada en el catálogo pertenece a un organismo público; clasificación aprobada por el titular",
+      "checkedOn": "2026-11-16"
+    },
+    {
+      "placeId": "master:TV-ATR-00365",
+      "status": "official",
+      "organism": "Parque Metropolitano de Santiago",
+      "evidenceUrl": "https://tramitespms.parquemet.cl/t/actividades-recreativas",
+      "method": "Fuente registrada en el catálogo pertenece a un organismo público; clasificación aprobada por el titular",
+      "checkedOn": "2026-11-16"
+    },
+    {
+      "placeId": "master:TV-ATR-00366",
+      "status": "official",
+      "organism": "Parque Metropolitano de Santiago",
+      "evidenceUrl": "https://tramitespms.parquemet.cl/t/actividades-recreativas",
+      "method": "Fuente registrada en el catálogo pertenece a un organismo público; clasificación aprobada por el titular",
+      "checkedOn": "2026-11-16"
+    },
+    {
+      "placeId": "master:TV-ATR-00367",
+      "status": "official",
+      "organism": "Parque Metropolitano de Santiago",
+      "evidenceUrl": "https://tramitespms.parquemet.cl/t/actividades-recreativas",
+      "method": "Fuente registrada en el catálogo pertenece a un organismo público; clasificación aprobada por el titular",
+      "checkedOn": "2026-11-16"
+    },
+    {
+      "placeId": "master:TV-ATR-00368",
+      "status": "official",
+      "organism": "ChileAtiende",
+      "evidenceUrl": "https://www.chileatiende.gob.cl/fichas/60851-horarios-y-tarifas-de-atractivos-del-parquemet",
+      "method": "Fuente registrada en el catálogo pertenece a un organismo público; clasificación aprobada por el titular",
+      "checkedOn": "2026-11-16"
+    },
+    {
+      "placeId": "master:TV-ATR-00369",
+      "status": "official",
+      "organism": "Ministerio de Vivienda y Urbanismo",
+      "evidenceUrl": "https://www.minvu.gob.cl/noticia/minvu-anuncia-reapertura-de-parquemet-y-toda-su-red-de-parques-urbanos-en-chile-con-horarios-especiales/",
+      "method": "Fuente registrada en el catálogo pertenece a un organismo público; clasificación aprobada por el titular",
+      "checkedOn": "2026-11-16"
+    },
+    {
+      "placeId": "master:TV-ATR-00370",
+      "status": "official",
+      "organism": "Ministerio de Vivienda y Urbanismo",
+      "evidenceUrl": "https://www.minvu.gob.cl/sobre-minvu/parques-minvu/",
+      "method": "Fuente registrada en el catálogo pertenece a un organismo público; clasificación aprobada por el titular",
+      "checkedOn": "2026-11-16"
+    },
+    {
+      "placeId": "master:TV-ATR-00371",
+      "status": "official",
+      "organism": "Ministerio de Vivienda y Urbanismo",
+      "evidenceUrl": "https://www.minvu.gob.cl/sobre-minvu/parques-minvu/",
+      "method": "Fuente registrada en el catálogo pertenece a un organismo público; clasificación aprobada por el titular",
+      "checkedOn": "2026-11-16"
+    },
+    {
+      "placeId": "master:TV-ATR-00372",
+      "status": "official",
+      "organism": "Ministerio de Vivienda y Urbanismo",
+      "evidenceUrl": "https://www.minvu.gob.cl/sobre-minvu/parques-minvu/",
+      "method": "Fuente registrada en el catálogo pertenece a un organismo público; clasificación aprobada por el titular",
+      "checkedOn": "2026-11-16"
+    },
+    {
+      "placeId": "master:TV-ATR-00373",
+      "status": "official",
+      "organism": "Ministerio de Vivienda y Urbanismo",
+      "evidenceUrl": "https://www.minvu.gob.cl/sobre-minvu/parques-minvu/",
+      "method": "Fuente registrada en el catálogo pertenece a un organismo público; clasificación aprobada por el titular",
+      "checkedOn": "2026-11-16"
+    },
+    {
+      "placeId": "master:TV-ATR-00374",
+      "status": "official",
+      "organism": "Ministerio de Vivienda y Urbanismo",
+      "evidenceUrl": "https://www.minvu.gob.cl/sobre-minvu/parques-minvu/",
+      "method": "Fuente registrada en el catálogo pertenece a un organismo público; clasificación aprobada por el titular",
+      "checkedOn": "2026-11-16"
+    },
+    {
+      "placeId": "master:TV-ATR-00375",
+      "status": "official",
+      "organism": "Ministerio de Vivienda y Urbanismo",
+      "evidenceUrl": "https://www.minvu.gob.cl/sobre-minvu/parques-minvu/",
+      "method": "Fuente registrada en el catálogo pertenece a un organismo público; clasificación aprobada por el titular",
+      "checkedOn": "2026-11-16"
+    },
+    {
+      "placeId": "master:TV-ATR-00376",
+      "status": "official",
+      "organism": "Ministerio de Vivienda y Urbanismo",
+      "evidenceUrl": "https://www.minvu.gob.cl/sobre-minvu/parques-minvu/",
+      "method": "Fuente registrada en el catálogo pertenece a un organismo público; clasificación aprobada por el titular",
+      "checkedOn": "2026-11-16"
+    },
+    {
+      "placeId": "master:TV-ATR-00377",
+      "status": "official",
+      "organism": "Ministerio de Vivienda y Urbanismo",
+      "evidenceUrl": "https://www.minvu.gob.cl/sobre-minvu/parques-minvu/",
+      "method": "Fuente registrada en el catálogo pertenece a un organismo público; clasificación aprobada por el titular",
+      "checkedOn": "2026-11-16"
+    },
+    {
+      "placeId": "master:TV-ATR-00378",
+      "status": "official",
+      "organism": "Ministerio de Vivienda y Urbanismo",
+      "evidenceUrl": "https://www.minvu.gob.cl/sobre-minvu/parques-minvu/",
+      "method": "Fuente registrada en el catálogo pertenece a un organismo público; clasificación aprobada por el titular",
+      "checkedOn": "2026-11-16"
+    },
+    {
+      "placeId": "master:TV-ATR-00379",
+      "status": "official",
+      "organism": "Ministerio de Vivienda y Urbanismo",
+      "evidenceUrl": "https://www.minvu.gob.cl/sobre-minvu/parques-minvu/",
+      "method": "Fuente registrada en el catálogo pertenece a un organismo público; clasificación aprobada por el titular",
+      "checkedOn": "2026-11-16"
+    },
+    {
+      "placeId": "master:TV-ATR-00380",
+      "status": "official",
+      "organism": "Ministerio de Vivienda y Urbanismo",
+      "evidenceUrl": "https://www.minvu.gob.cl/sobre-minvu/parques-minvu/",
+      "method": "Fuente registrada en el catálogo pertenece a un organismo público; clasificación aprobada por el titular",
+      "checkedOn": "2026-11-16"
+    },
+    {
+      "placeId": "master:TV-ATR-00381",
+      "status": "official",
+      "organism": "Ministerio de Vivienda y Urbanismo",
+      "evidenceUrl": "https://www.minvu.gob.cl/sobre-minvu/parques-minvu/",
+      "method": "Fuente registrada en el catálogo pertenece a un organismo público; clasificación aprobada por el titular",
+      "checkedOn": "2026-11-16"
+    },
+    {
+      "placeId": "master:TV-ATR-00382",
+      "status": "official",
+      "organism": "Ministerio de Vivienda y Urbanismo",
+      "evidenceUrl": "https://www.minvu.gob.cl/sobre-minvu/parques-minvu/",
+      "method": "Fuente registrada en el catálogo pertenece a un organismo público; clasificación aprobada por el titular",
+      "checkedOn": "2026-11-16"
+    },
+    {
+      "placeId": "master:TV-ATR-00383",
+      "status": "official",
+      "organism": "Ministerio de Vivienda y Urbanismo",
+      "evidenceUrl": "https://www.minvu.gob.cl/sobre-minvu/parques-minvu/",
+      "method": "Fuente registrada en el catálogo pertenece a un organismo público; clasificación aprobada por el titular",
+      "checkedOn": "2026-11-16"
+    },
+    {
+      "placeId": "master:TV-ATR-00384",
+      "status": "official",
+      "organism": "Ministerio de Vivienda y Urbanismo",
+      "evidenceUrl": "https://www.minvu.gob.cl/noticia/minvu-anuncia-reapertura-de-parquemet-y-toda-su-red-de-parques-urbanos-en-chile-con-horarios-especiales/",
+      "method": "Fuente registrada en el catálogo pertenece a un organismo público; clasificación aprobada por el titular",
+      "checkedOn": "2026-11-16"
+    },
+    {
+      "placeId": "master:TV-ATR-00385",
+      "status": "official",
+      "organism": "Ministerio de Vivienda y Urbanismo",
+      "evidenceUrl": "https://www.minvu.gob.cl/noticia/minvu-anuncia-reapertura-de-parquemet-y-toda-su-red-de-parques-urbanos-en-chile-con-horarios-especiales/",
+      "method": "Fuente registrada en el catálogo pertenece a un organismo público; clasificación aprobada por el titular",
+      "checkedOn": "2026-11-16"
+    },
+    {
+      "placeId": "master:TV-ATR-00386",
+      "status": "official",
+      "organism": "Ministerio de Vivienda y Urbanismo",
+      "evidenceUrl": "https://www.minvu.gob.cl/noticia/minvu-anuncia-reapertura-de-parquemet-y-toda-su-red-de-parques-urbanos-en-chile-con-horarios-especiales/",
+      "method": "Fuente registrada en el catálogo pertenece a un organismo público; clasificación aprobada por el titular",
+      "checkedOn": "2026-11-16"
+    },
+    {
+      "placeId": "master:TV-ATR-00387",
+      "status": "official",
+      "organism": "Ministerio de Vivienda y Urbanismo",
+      "evidenceUrl": "https://www.minvu.gob.cl/noticia/minvu-anuncia-reapertura-de-parquemet-y-toda-su-red-de-parques-urbanos-en-chile-con-horarios-especiales/",
+      "method": "Fuente registrada en el catálogo pertenece a un organismo público; clasificación aprobada por el titular",
+      "checkedOn": "2026-11-16"
+    },
+    {
+      "placeId": "master:TV-ATR-00388",
+      "status": "official",
+      "organism": "Ministerio de Vivienda y Urbanismo",
+      "evidenceUrl": "https://www.minvu.gob.cl/noticia/minvu-anuncia-reapertura-de-parquemet-y-toda-su-red-de-parques-urbanos-en-chile-con-horarios-especiales/",
+      "method": "Fuente registrada en el catálogo pertenece a un organismo público; clasificación aprobada por el titular",
+      "checkedOn": "2026-11-16"
+    },
+    {
+      "placeId": "master:TV-ATR-00389",
+      "status": "official",
+      "organism": "Ministerio de Vivienda y Urbanismo",
+      "evidenceUrl": "https://www.minvu.gob.cl/noticia/minvu-anuncia-reapertura-de-parquemet-y-toda-su-red-de-parques-urbanos-en-chile-con-horarios-especiales/",
+      "method": "Fuente registrada en el catálogo pertenece a un organismo público; clasificación aprobada por el titular",
+      "checkedOn": "2026-11-16"
+    },
+    {
+      "placeId": "master:TV-ATR-00390",
+      "status": "official",
+      "organism": "Ministerio de Vivienda y Urbanismo",
+      "evidenceUrl": "https://www.minvu.gob.cl/noticia/minvu-anuncia-reapertura-de-parquemet-y-toda-su-red-de-parques-urbanos-en-chile-con-horarios-especiales/",
+      "method": "Fuente registrada en el catálogo pertenece a un organismo público; clasificación aprobada por el titular",
+      "checkedOn": "2026-11-16"
+    },
+    {
+      "placeId": "master:TV-ATR-00391",
+      "status": "official",
+      "organism": "Ministerio de Vivienda y Urbanismo",
+      "evidenceUrl": "https://www.minvu.gob.cl/noticia/minvu-anuncia-reapertura-de-parquemet-y-toda-su-red-de-parques-urbanos-en-chile-con-horarios-especiales/",
+      "method": "Fuente registrada en el catálogo pertenece a un organismo público; clasificación aprobada por el titular",
+      "checkedOn": "2026-11-16"
+    },
+    {
+      "placeId": "petorca-tunel-las-palmas",
+      "status": "official",
+      "organism": "Consejo de Monumentos Nacionales",
+      "evidenceUrl": "https://www.monumentos.gob.cl/monumentos/monumentos-historicos/tunel-las-palmas",
+      "method": "Fuente registrada en el catálogo pertenece a un organismo público; clasificación aprobada por el titular",
+      "checkedOn": "2026-11-16"
+    },
+    {
+      "placeId": "zapallar-cachagua",
+      "status": "official",
+      "organism": "Municipalidad de Zapallar",
+      "evidenceUrl": "https://www.munizapallar.cl/lugares-de-interes",
+      "method": "Fuente registrada en el catálogo pertenece a un organismo público; clasificación aprobada por el titular",
+      "checkedOn": "2026-11-16"
+    }
+  ],
+  "porConfirmar": [
+    {
+      "placeId": "pedegua",
+      "name": "Pedegua",
+      "url": "https://valparaisoregion.org/destino/cabildo/"
+    },
+    {
+      "placeId": "papudo-plaza",
+      "name": "Plaza de Papudo",
+      "url": "http://www.vregion.cl/petorca/papudo/"
+    }
+  ]
+}

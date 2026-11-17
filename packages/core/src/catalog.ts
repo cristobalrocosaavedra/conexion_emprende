@@ -2,8 +2,19 @@ import master from "../../../content/catalogo/maestro-app.json";
 import national from "../../../content/catalogo/osm-chile.json";
 import snapshot from "../../../content/catalogo/petorca.json";
 import geography from "../../../content/catalogo/regiones.geo.json";
+import verificationLog from "../../../content/catalogo/verificacion.json";
 import type { RegionId } from "./index";
 export type Category = "playa" | "naturaleza" | "cultura" | "gastronomia";
+/** pending: sin revisar · official: fuente de organismo identificado · verified: revisión documentada. */
+export type VerificationStatus = "pending" | "official" | "verified";
+export interface VerificationRecord {
+  placeId: string;
+  status: Exclude<VerificationStatus, "pending">;
+  organism: string;
+  evidenceUrl: string;
+  method: string;
+  checkedOn: string;
+}
 export interface Place {
   id: string;
   region: RegionId;
@@ -18,7 +29,7 @@ export interface Place {
   latitude: number | null;
   longitude: number | null;
   source: { url: string; label: string } | null;
-  verification: "pending";
+  verification: VerificationStatus;
   origin?: "osm" | "master";
   importedAt: string;
 }
@@ -44,11 +55,16 @@ export interface RegionFeature {
   properties: { id: RegionId; name: string; bounds: number[][] };
   geometry: { type: "MultiPolygon"; coordinates: number[][][][] };
 }
-export const places = [
-  ...snapshot.places,
-  ...national.places,
-  ...master.places,
-] as Place[];
+/** Registro con evidencia; los datos de origen no se modifican. */
+export const verificationRecords = Object.fromEntries(
+  (verificationLog.records as VerificationRecord[]).map((r) => [r.placeId, r]),
+) as Partial<Record<string, VerificationRecord>>;
+export const places = (
+  [...snapshot.places, ...national.places, ...master.places] as Place[]
+).map((p): Place => ({
+  ...p,
+  verification: verificationRecords[p.id]?.status ?? "pending",
+}));
 export const localities = [
   ...snapshot.localities,
   ...master.localities,

@@ -14,13 +14,16 @@ import {
   serializeForHtml,
   swipeDirection,
   toggleStop,
+  verificationRecords,
 } from "./index";
 describe("catálogo heredado con procedencia", () => {
   it("conserva 37 referencias sin verificarlas automáticamente", () => {
     expect(places.filter((p) => !p.origin)).toHaveLength(37);
     expect(new Set(places.map((p) => p.id)).size).toBe(places.length);
     for (const p of places.filter((p) => p.origin !== "master")) {
-      expect(p.verification).toBe("pending");
+      expect(p.verification).toBe(
+        verificationRecords[p.id]?.status ?? "pending",
+      );
       if (p.source)
         expect(["http:", "https:"]).toContain(new URL(p.source.url).protocol);
       else expect(isLocated(p)).toBe(false);
@@ -161,5 +164,24 @@ describe("base comunitaria nacional", () => {
       expect(isLocated(p)).toBe(true);
       expect(p.verification).toBe("pending");
     }
+  });
+});
+
+describe("verificación con evidencia", () => {
+  it("solo eleva lugares con registro y evidencia fechada", () => {
+    const elevated = places.filter((p) => p.verification !== "pending");
+    expect(elevated.length).toBe(Object.keys(verificationRecords).length);
+    for (const p of elevated) {
+      const r = verificationRecords[p.id]!;
+      expect(r.evidenceUrl).toMatch(/^https?:\/\//);
+      expect(r.checkedOn).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+      expect(r.method.length).toBeGreaterThan(10);
+    }
+    // OpenStreetMap nunca se eleva por sí solo.
+    expect(elevated.filter((p) => p.origin === "osm")).toHaveLength(0);
+  });
+  it("Matichoc figura como verificado por su titular", () => {
+    const m = places.find((p) => p.id === "chocolateria-matichoc");
+    expect(m?.verification).toBe("verified");
   });
 });

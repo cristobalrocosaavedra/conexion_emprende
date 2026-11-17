@@ -22,7 +22,7 @@ test.beforeEach(async ({ page }) => {
   await page.route("https://tile.openstreetmap.org/**", (r) => r.abort());
   await page.goto("/");
   await expect(
-    page.getByText("Territorio Vivo", { exact: true }),
+    page.getByText("Turismo en tu Mano", { exact: true }),
   ).toBeVisible();
 });
 test("cambia de región con un gesto sobre el contenido fuera de la ilustración", async ({
@@ -80,7 +80,10 @@ test("explora Petorca, filtra, abre fuente y guarda una parada persistente", asy
     .getByRole("button", { name: "Chocolatería Matichoc", exact: true })
     .click();
   await expect(
-    page.getByText("Pendiente de verificación", { exact: true }).first(),
+    page.getByText("✓ Verificado", { exact: true }).first(),
+  ).toBeVisible();
+  await expect(
+    page.getByText(/Confirmado por el titular, dueño del negocio/),
   ).toBeVisible();
   await expect(
     page.getByText("Fuente y procedencia", { exact: true }),
@@ -106,7 +109,7 @@ test("mapa conserva puntos sin teselas y abre ficha desde el popup", async ({
   await page.getByRole("textbox", { name: "Buscar lugares" }).fill("museo");
   const map = page.frameLocator('iframe[title="Mapa interactivo"]');
   await expect(map.locator(".leaflet-overlay-pane svg")).toBeVisible();
-  await map.locator(".leaflet-interactive").last().click();
+  await map.locator(".leaflet-marker-icon").last().click();
   await map.getByRole("button", { name: "Ver ficha", exact: true }).click();
   await expect(
     page.getByText("Museo de La Ligua", { exact: true }).first(),
@@ -415,14 +418,26 @@ test("ruta pública lista sin configurar VPS: trazado por calles, mapa estable y
   await page.reload();
   await page.getByRole("tab", { name: /Mi viaje/ }).click();
   await expect(
-    page.getByText("Servicio gratuito de pruebas · FOSSGIS / OSRM", {
-      exact: true,
-    }),
+    page.getByText(
+      "Rutas con FOSSGIS / OSRM, servicio público temporal · registra las consultas",
+      { exact: true },
+    ),
   ).toBeVisible();
   await expect(
     page.getByRole("textbox", { name: "Conectar el servidor de esta prueba" }),
   ).toHaveCount(0);
   expect(requests).toEqual([]);
+  // El panel muestra solo lo esencial; lo demás queda en «Más opciones».
+  await expect(
+    page.getByRole("button", { name: "A pie", exact: true }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("button", { name: "En auto", exact: true }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("button", { name: "Ver entre mis paradas", exact: true }),
+  ).toHaveCount(0);
+  await page.getByRole("button", { name: "Más opciones", exact: true }).click();
   await page
     .getByRole("button", { name: "Ver entre mis paradas", exact: true })
     .click();
@@ -434,7 +449,7 @@ test("ruta pública lista sin configurar VPS: trazado por calles, mapa estable y
   await page
     .getByText("Tu ruta por calles", { exact: true })
     .scrollIntoViewIfNeeded();
-  await page.screenshot({ path: "previews/pantalla-ruta-0.7.1.png" });
+  await page.screenshot({ path: "previews/pantalla-ruta-0.8.0.png" });
   await expect(
     page.getByText("Conexión esquemática · no es una ruta por calles", {
       exact: true,
@@ -453,14 +468,15 @@ test("ruta pública lista sin configurar VPS: trazado por calles, mapa estable y
   // Las áreas regionales dejaron de ser enlaces que cerraban el mapa.
   await page.unroute("https://tile.openstreetmap.org/**");
   await page
-    .getByRole("button", { name: "Ver navegación en mapa", exact: true })
+    .getByRole("button", { name: "Ver en el mapa", exact: true })
     .click();
   const map = page.frameLocator("iframe").last();
   await map.locator("#map").click({ position: { x: 150, y: 120 } });
   await page.unroute("https://tile.openstreetmap.org/**");
+  // Sin navegación activa el mapa no muestra botones de seguimiento.
   await expect(
     map.getByRole("button", { name: "Ver ruta completa", exact: true }),
-  ).toBeVisible();
+  ).toBeHidden();
   await expect(map.locator("#note")).toContainText("Trazado por calles");
   await map.locator("#map").evaluate(() => {
     const w = window as unknown as {
@@ -490,10 +506,11 @@ test("ruta pública lista sin configurar VPS: trazado por calles, mapa estable y
     w.tvNavigation({ ...value, fix: { ...value.fix, longitude: -70.31 } });
     if (w.tvMap.getZoom() !== 12) throw Error("El GPS anuló el zoom manual");
   });
+  // Al navegar aparecen los controles de seguimiento.
   await map
     .getByRole("button", { name: "Ver ruta completa", exact: true })
     .click();
-  await page.screenshot({ path: "previews/pantalla-mapa-0.7.1.png" });
+  await page.screenshot({ path: "previews/pantalla-mapa-0.8.0.png" });
   await expect(
     page.getByRole("button", { name: "Cerrar", exact: true }).last(),
   ).toBeVisible();
@@ -556,6 +573,7 @@ test("desactivar rutas persiste y no consulta proveedor al abrir", async ({
     page.getByRole("button", { name: "Iniciar ruta", exact: true }),
   ).toBeVisible();
   expect(calls).toEqual([]);
+  await page.getByRole("button", { name: "Más opciones", exact: true }).click();
   await page
     .getByRole("button", { name: "Desactivar rutas", exact: true })
     .click();
@@ -594,7 +612,7 @@ test("encuentra Matichoc en Valparaíso al buscar desde Coquimbo", async ({
   await page
     .getByRole("button", { name: "Chocolatería Matichoc", exact: true })
     .scrollIntoViewIfNeeded();
-  await page.screenshot({ path: "previews/pantalla-busqueda-0.7.1.png" });
+  await page.screenshot({ path: "previews/pantalla-busqueda-0.8.0.png" });
   await page
     .getByRole("button", { name: "Chocolatería Matichoc", exact: true })
     .click();
@@ -632,7 +650,7 @@ test("el maestro permite revisar y guardar referencias nuevas sin inventar coord
     page.getByRole("button", { name: "Abrir selector de regiones" }),
   ).toContainText("Metropolitana de Santiago");
   await expect(page.getByTestId("regional-window")).toBeVisible();
-  await page.screenshot({ path: "previews/pantalla-inicio-0.7.1.png" });
+  await page.screenshot({ path: "previews/pantalla-inicio-0.8.0.png" });
   await page.getByRole("tab", { name: /Explorar/ }).click();
   await page
     .getByRole("textbox", { name: "Buscar lugares" })
@@ -646,7 +664,7 @@ test("el maestro permite revisar y guardar referencias nuevas sin inventar coord
   await page
     .getByRole("button", { name: "Parque Violeta Parra", exact: true })
     .scrollIntoViewIfNeeded();
-  await page.screenshot({ path: "previews/pantalla-catalogo-0.7.1.png" });
+  await page.screenshot({ path: "previews/pantalla-catalogo-0.8.0.png" });
   await page
     .getByRole("button", { name: "Parque Violeta Parra", exact: true })
     .click();
@@ -677,7 +695,7 @@ test("el maestro permite revisar y guardar referencias nuevas sin inventar coord
         )?.y ?? 1000,
     )
     .toBeLessThan(70);
-  await page.screenshot({ path: "previews/pantalla-ficha-0.7.1.png" });
+  await page.screenshot({ path: "previews/pantalla-ficha-0.8.0.png" });
   await page
     .getByRole("button", { name: "Guardar en mi viaje", exact: true })
     .click();
@@ -740,7 +758,7 @@ test("la portada diferencia Valparaíso completo de las once referencias de La L
     page.getByText("90 referencias en la región", { exact: true }),
   ).toBeVisible();
   await expect(page.getByText("11 en La Ligua", { exact: true })).toBeVisible();
-  await page.screenshot({ path: "previews/pantalla-valparaiso-0.7.1.png" });
+  await page.screenshot({ path: "previews/pantalla-valparaiso-0.8.0.png" });
   await page
     .getByRole("button", { name: "Ver toda la región", exact: true })
     .click();
@@ -773,9 +791,9 @@ test("Rapa Nui tiene cuatro referencias y mapa local con aviso de llegada aérea
   ).toBeVisible();
   await expect(page.getByText(/Planifica la llegada en avión/)).toBeVisible();
   await expect(
-    page.frameLocator("iframe").first().locator("path.leaflet-interactive"),
+    page.frameLocator("iframe").first().locator(".leaflet-marker-icon"),
   ).toHaveCount(4);
-  await page.screenshot({ path: "previews/pantalla-rapa-0.7.1.png" });
+  await page.screenshot({ path: "previews/pantalla-rapa-0.8.0.png" });
   await page.getByRole("tab", { name: /Inicio/ }).click();
   await expect(
     page.getByText("4 en Isla de Pascua", { exact: true }),
@@ -831,7 +849,7 @@ test("los destinos insulares permanecen guardados aparte y no consultan rutas de
     .getByText("3 lugares guardados", { exact: true })
     .scrollIntoViewIfNeeded();
   await page.screenshot({
-    path: "previews/pantalla-viajes-separados-0.7.1.png",
+    path: "previews/pantalla-viajes-separados-0.8.0.png",
   });
   await page.getByRole("button", { name: "Iniciar ruta", exact: true }).click();
   await expect(
@@ -850,7 +868,7 @@ test("los destinos insulares permanecen guardados aparte y no consultan rutas de
     "osm-way-222144438",
     "osm-way-1459388783",
   ]);
-  await page.screenshot({ path: "previews/pantalla-aviso-traslado-0.7.1.png" });
+  await page.screenshot({ path: "previews/pantalla-aviso-traslado-0.8.0.png" });
 });
 
 test("la portada cambia de paisaje por zona y conserva imágenes legibles en el celular", async ({
@@ -895,7 +913,7 @@ test("la portada cambia de paisaje por zona y conserva imágenes legibles en el 
     const window = await page.getByTestId("territorial-cover").boundingBox();
     expect(frame!.width).toBeGreaterThanOrEqual(window!.width);
     expect(frame!.height).toBeGreaterThanOrEqual(window!.height);
-    await page.screenshot({ path: `previews/pantalla-${capture}-0.7.1.png` });
+    await page.screenshot({ path: `previews/pantalla-${capture}-0.8.0.png` });
   }
   expect(sources.size).toBe(3);
 });
@@ -922,7 +940,7 @@ test("el logo territorial se ve en claro y oscuro y se puede ampliar sin perder 
     );
     await page.reload();
     const brand = page.getByRole("button", {
-      name: "Ver el símbolo de Territorio Vivo",
+      name: "Ver el símbolo de Turismo en tu Mano",
       exact: true,
     });
     await expect(brand).toBeInViewport({ ratio: 1 });
@@ -939,7 +957,7 @@ test("el logo territorial se ve en claro y oscuro y se puede ampliar sin perder 
       .toBe(true);
     if (theme === "dark")
       await page.screenshot({
-        path: "previews/pantalla-marca-inicio-0.7.1.png",
+        path: "previews/pantalla-marca-inicio-0.8.0.png",
       });
     await brand.click();
     await expect(
@@ -970,7 +988,7 @@ test("el logo territorial se ve en claro y oscuro y se puede ampliar sin perder 
       );
     });
     await page.screenshot({
-      path: `previews/pantalla-marca-${theme}-0.7.1.png`,
+      path: `previews/pantalla-marca-${theme}-0.8.0.png`,
       animations: "disabled",
     });
     await page.getByRole("button", { name: "Cerrar", exact: true }).click();
@@ -986,4 +1004,89 @@ test("el logo territorial se ve en claro y oscuro y se puede ampliar sin perder 
       page.getByRole("button", { name: "Abrir selector de regiones" }),
     ).toContainText("Valparaíso");
   }
+});
+
+test("la dirección de una comuna abre su territorio en la web", async ({
+  page,
+}) => {
+  await page.goto("/la-ligua");
+  await expect(
+    page.getByText("90 referencias en la región", { exact: true }),
+  ).toBeVisible();
+  await expect(page.getByText("11 en La Ligua", { exact: true })).toBeVisible();
+  await page.goto("/metropolitana");
+  await expect(
+    page.getByText("Metropolitana de Santiago", { exact: true }).first(),
+  ).toBeVisible();
+});
+
+test("suma tu negocio muestra planes netos con IVA y enlace a municipios", async ({
+  page,
+}) => {
+  await page
+    .getByRole("button", { name: "Suma tu negocio", exact: true })
+    .first()
+    .click();
+  await expect(page).toHaveURL(/\/suma-tu-negocio$/);
+  await expect(page.getByText("$9.990 + IVA", { exact: true })).toBeVisible();
+  await expect(
+    page.getByText("Total $29.738 al mes", { exact: true }),
+  ).toBeVisible();
+  await expect(
+    page.getByText("Lo destacado siempre se muestra rotulado.", {
+      exact: false,
+    }),
+  ).toBeVisible();
+  // Sin contacto configurado no se inventa un correo.
+  await expect(
+    page.getByText(/Muy pronto publicaremos el contacto/),
+  ).toBeVisible();
+  await page.screenshot({ path: "previews/pantalla-suma-negocio-0.8.0.png" });
+  await page.getByRole("button", { name: /¿Eres municipio\?/ }).click();
+  await expect(page).toHaveURL(/\/municipios$/);
+  await expect(page.getByText(/comunaentumano\.cl/)).toBeVisible();
+});
+
+test("en la web la ubicación aceptada abre la región de la persona", async ({
+  page,
+  context,
+}) => {
+  await context.grantPermissions(["geolocation"]);
+  // Punto sintético en Santiago para la prueba; no es una ubicación real.
+  await context.setGeolocation({
+    latitude: -33.4372,
+    longitude: -70.6506,
+    accuracy: 30,
+  });
+  await page.evaluate(() => localStorage.clear());
+  await page.reload();
+  await expect(
+    page.getByText("Metropolitana de Santiago", { exact: true }).first(),
+  ).toBeVisible();
+  // La región por defecto es Valparaíso: abrir Metropolitana prueba la ubicación.
+  // No se guardan coordenadas en el navegador.
+  const stored = await page.evaluate(() => JSON.stringify(localStorage));
+  expect(stored).not.toContain("-33.43");
+  expect(stored).not.toContain("-70.65");
+});
+
+test("términos y privacidad se presentan como borrador y explican ubicación y rutas", async ({
+  page,
+}) => {
+  await page.goto("/terminos");
+  await expect(page.getByText(/Borrador en revisión legal/)).toBeVisible();
+  await expect(page.getByText(/licencia ODbL/)).toBeVisible();
+  await page.goto("/privacidad");
+  await expect(page.getByText(/No la guardamos ni la enviamos/)).toBeVisible();
+  await expect(
+    page.getByText(/Ese proveedor puede registrar las consultas/),
+  ).toBeVisible();
+});
+
+test("Matichoc aparece verificado y su ficha muestra el respaldo", async ({
+  page,
+}) => {
+  await page.getByRole("tab", { name: /Explorar/ }).click();
+  await page.getByRole("textbox", { name: "Buscar lugares" }).fill("Matichoc");
+  await expect(page.getByText("✓ Verificado").first()).toBeVisible();
 });

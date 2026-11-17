@@ -11,14 +11,21 @@ if (
 )
   throw new Error("El número de compilación Android no es válido.");
 const config: ExpoConfig = {
-  name: "Territorio Vivo",
+  name: "Turismo en tu Mano",
   slug: "territorio-vivo",
-  version: "0.7.1",
-  icon: "./assets/marca/latitud-viva-icono.png",
+  version: "0.8.0",
+  icon: "./assets/marca/turismo-en-tu-mano-icono.png",
   orientation: "portrait",
   scheme: "territoriovivo",
   userInterfaceStyle: "automatic",
   platforms: ["android", "ios", "web"],
+  web: {
+    name: "Turismo en tu Mano",
+    shortName: "Turismo en tu Mano",
+    favicon: "./assets/marca/turismo-en-tu-mano-icono.png",
+    themeColor: "#22162E",
+    backgroundColor: "#FAF6EE",
+  },
   android: {
     package: identity.androidPackage,
     versionCode,
