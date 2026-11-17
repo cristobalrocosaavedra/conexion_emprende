@@ -17,7 +17,8 @@ it("representa las 737 filas, todas las comunas y localidades sin borrar el catÃ
   expect(catalogTerritories.filter((t) => t.level === "commune")).toHaveLength(
     346,
   );
-  expect(places).toHaveLength(433);
+  // 433 heredados + lugares agregados desde fuentes oficiales (oficiales.json).
+  expect(places.filter((p) => p.origin !== "official")).toHaveLength(433);
   expect(localities).toHaveLength(67);
   expect(places.filter((p) => p.origin === "master")).toHaveLength(365);
   expect(masterEvidence["la-ligua-los-molles"].rowIds).toContain(

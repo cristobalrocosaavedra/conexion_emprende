@@ -1,6 +1,7 @@
 import master from "../../../content/catalogo/maestro-app.json";
 import national from "../../../content/catalogo/osm-chile.json";
 import snapshot from "../../../content/catalogo/petorca.json";
+import official from "../../../content/catalogo/oficiales.json";
 import geography from "../../../content/catalogo/regiones.geo.json";
 import verificationLog from "../../../content/catalogo/verificacion.json";
 import planLog from "../../../content/catalogo/planes-negocios.json";
@@ -33,7 +34,7 @@ export interface Place {
   longitude: number | null;
   source: { url: string; label: string } | null;
   verification: VerificationStatus;
-  origin?: "osm" | "master";
+  origin?: "osm" | "master" | "official";
   importedAt: string;
   /** Plan comercial vigente (solo negocios). */
   plan?: BusinessPlan["id"] | null;
@@ -96,7 +97,12 @@ export const hiddenPlaceIds = new Set(
   (planLog.ocultos as { placeId: string }[]).map((r) => r.placeId),
 );
 export const places = (
-  [...snapshot.places, ...national.places, ...master.places] as Place[]
+  [
+    ...snapshot.places,
+    ...national.places,
+    ...master.places,
+    ...official.places,
+  ] as Place[]
 )
   .filter((p) => !hiddenPlaceIds.has(p.id))
   .map((p): Place => {

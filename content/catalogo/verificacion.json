@@ -402,6 +402,14 @@
       "checkedOn": "2026-11-16"
     },
     {
+      "placeId": "oficinas-salitreras-humberstone-santa-laura",
+      "status": "official",
+      "organism": "Consejo de Monumentos Nacionales",
+      "evidenceUrl": "https://www.monumentos.gob.cl/monumentos/monumentos-historicos/oficina-salitrera-humberstone",
+      "method": "Ficha oficial del Monumento Histórico (D. N° 320/1970), con coordenadas publicadas por el organismo",
+      "checkedOn": "2026-11-17"
+    },
+    {
       "placeId": "petorca-tunel-las-palmas",
       "status": "official",
       "organism": "Consejo de Monumentos Nacionales",

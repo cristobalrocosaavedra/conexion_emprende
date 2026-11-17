@@ -56,7 +56,11 @@ export const sitio = {
     "Ilustración de referencia de la zona; no es una fotografía del lugar.",
   regionTitle: (name: string, id: string) =>
     id === "metropolitana" ? `Región ${name}` : `Región de ${name}`,
-  provinceTitle: (name: string) => `Provincia de ${name}`,
+  // «Del Tamarugal» y «Del Ranco» se nombran «Provincia del …».
+  provinceTitle: (name: string) =>
+    name.startsWith("Del ")
+      ? `Provincia del ${name.slice(4)}`
+      : `Provincia de ${name}`,
   provinces: "Provincias",
   communes: "Comunas",
   communesCount: (n: number) => plural(n, "comuna", "comunas"),

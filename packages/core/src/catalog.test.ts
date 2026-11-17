@@ -223,3 +223,20 @@ describe("negocios en el mapa según plan", () => {
     ).toEqual(["chocolateria-matichoc"]);
   });
 });
+
+describe("lugares agregados desde fuentes oficiales", () => {
+  it("Humberstone está en Pozo Almonte con fuente y coordenadas oficiales", () => {
+    const h = places.find(
+      (p) => p.id === "oficinas-salitreras-humberstone-santa-laura",
+    )!;
+    expect(h).toMatchObject({
+      region: "tarapaca",
+      province: "del-tamarugal",
+      commune: "pozo-almonte",
+      verification: "official",
+      origin: "official",
+    });
+    expect(h.latitude).toBeCloseTo(-20.2086, 3);
+    expect(h.source?.url).toContain("monumentos.gob.cl");
+  });
+});

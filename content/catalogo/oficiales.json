@@ -1,0 +1,38 @@
+{
+  "_nota": "Lugares agregados desde fuentes oficiales, con fuente, fecha y coordenadas tomadas de la fuente (no estimadas). 17-11-2026.",
+  "places": [
+    {
+      "id": "oficinas-salitreras-humberstone-santa-laura",
+      "region": "tarapaca",
+      "province": "del-tamarugal",
+      "commune": "pozo-almonte",
+      "locality": null,
+      "category": "cultura",
+      "name": "Oficinas Salitreras Humberstone y Santa Laura",
+      "aliases": [
+        "Humberstone",
+        "Santa Laura",
+        "Oficina Salitrera Humberstone"
+      ],
+      "summary": "Oficinas salitreras en la pampa de Pozo Almonte, a unos 47 km de Iquique. Monumento Histórico desde 1970 y Patrimonio Mundial de la UNESCO desde 2005.",
+      "description": "Oficinas salitreras en la pampa de Pozo Almonte, a unos 47 km de Iquique. Monumento Histórico desde 1970 (Decreto N° 320) y Patrimonio Mundial de la UNESCO desde 2005. Humberstone conserva principalmente su campamento y Santa Laura su área industrial. Las administra la Corporación Museo del Salitre.",
+      "latitude": -20.208559,
+      "longitude": -69.795439,
+      "coordinateAccuracy": "official-utm-cmn",
+      "source": {
+        "url": "https://www.monumentos.gob.cl/monumentos/monumentos-historicos/oficina-salitrera-humberstone",
+        "label": "Consejo de Monumentos Nacionales"
+      },
+      "verification": "pending",
+      "origin": "official",
+      "importedAt": "2026-11-17"
+    }
+  ],
+  "evidencias": {
+    "oficinas-salitreras-humberstone-santa-laura": [
+      "Consejo de Monumentos Nacionales: ficha Oficina Salitrera Humberstone, coordenadas UTM WGS84 huso 19S N 7765240 E 416901 (convertidas a -20.208559, -69.795439).",
+      "Registro Chile Patrimonios (Servicio Nacional del Patrimonio Cultural), ficha 01PMN-3782: Pozo Almonte, Tamarugal, Región de Tarapacá.",
+      "Patrimonio Cultural y Museo del Salitre: Patrimonio Mundial 2005; administración de la Corporación Museo del Salitre; Humberstone conserva el campamento y Santa Laura el área industrial."
+    ]
+  }
+}
