@@ -100,7 +100,7 @@ const releaseNotes = `## Versión de pruebas ${meta.version} · compilación ${m
 const body = {
   tag_name: tag,
   target_commitish: meta.commit,
-  name: `Territorio Vivo ${meta.version} · Android de pruebas`,
+  name: `Turismo en tu Mano ${meta.version} · Android de pruebas`,
   body: releaseNotes,
   draft: true,
   prerelease: false,

@@ -4,8 +4,8 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { messages as t } from "@territorio-vivo/i18n";
 import { Action } from "./ui";
 import type { Palette } from "./ui";
-const icon = require("../assets/marca/latitud-viva-icono.webp");
-const zones = require("../assets/marca/latitud-viva-zonas.webp");
+const icon = require("../assets/marca/turismo-en-tu-mano-icono.webp");
+const zones = require("../assets/marca/turismo-en-tu-mano-zonas.webp");
 
 export function Brand({
   colors,

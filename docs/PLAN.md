@@ -267,3 +267,21 @@ Revisión visual solicitada: los detalles interiores del símbolo incorporan des
 27. Marca integrada a la candidata — 26-10-2026
 
 El titular solicita incluir la identidad recoloreada en la nueva compilación y PR. Candidata 0.7.1: logo en cabecera, ampliación al tocarlo e ícono de instalación para Android/iOS generado desde la misma dirección B. Se mantienen identificadores, firma, preferencias y catálogo. Actualizar el mismo PR #4, ejecutar validación completa, mostrar capturas y compilar la APK solo en Actions antes de ofrecer descarga. Ver docs/diseno/marca/latitud-viva/INTEGRACION.md.
+
+
+28. Turismo en tu Mano — alineación de conceptos — 11-11-2026
+
+El titular alinea los nombres. En los puntos que cambian, esta sección reemplaza las anteriores (incluida la tabla de la sección 1):
+
+- **Turismo en tu Mano** es la plataforma **nacional** (Chile) de turismo y comercio local, abierta al público para que se sumen pymes y grupos. Es el producto que se construye en este repositorio. **Territorio Vivo** queda como nombre interno del código y del historial.
+- Pueden sumarse: pymes y emprendedores; agrupaciones de emprendedores (ferias, cooperativas, asociaciones); instituciones aliadas (cámaras, gremios, programas de fomento) y empresas con varios locales. Falta armar un plan con los beneficios de la plataforma para cada tipo de miembro.
+- **[Comuna] en tu Mano** existe solo si se acuerda con un municipio el uso de sus datos. Según el contrato puede ser un espacio oficial dentro de la plataforma, un producto propio de la comuna, o ambos. **No hay acuerdo con ningún municipio a la fecha.** El repositorio city_tour sigue independiente y con la regla de dos confirmaciones.
+- **Logo:** la plataforma usa Latitud viva **adaptado** a la familia «en tu Mano». No se usa una letra T sobre una mano, porque podría confundirse con una comuna que empiece con T. La fórmula letra sobre la mano (como la P de Papudo en tu Mano, según describe el titular) se reserva para los productos comunales. La adaptación concreta queda por proponer y aprobar antes de integrarla.
+- **Se mantiene:** identificadores Android/iOS, firma y nombre del archivo del canal de descarga, para que la actualización se instale encima sin perder datos. Cambia solo el nombre visible.
+- **Pendiente:** revisar en INAPI la disponibilidad de «Turismo en tu Mano» antes del lanzamiento público. El alcance funcional vigente no cambia con esta alineación.
+
+El titular elige la variante A «Chile en la palma» el mismo día: las cinco piezas aprobadas descansan sobre una mano abierta marfil. Se integra con el nombre visible en la candidata 0.8.0. Ver docs/diseno/marca/latitud-viva/mano.
+
+Actualización 16-11-2026: el titular rechaza la mano dibujada por script y aporta el logo generado en GPT (cinco piezas, pin, arcos ocre y mano morada) y el manual de marca 1.0. El ícono de la app usa la versión limpia sobre marfil. Ver docs/diseno/marca/turismo-en-tu-mano.
+
+Papudo (16-11-2026): mientras la Municipalidad no lo autorice, los datos de sus guías turísticas se usan solo en Papudo en tu Mano. Turismo en tu Mano mantiene el catálogo transversal existente sin cambios. Con autorización, la guía podrá incorporarse como fuente oficial con evidencia.

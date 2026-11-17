@@ -12,7 +12,8 @@ import { readDeviceLocation } from "./device-location";
 const rapa = places.filter((p) => p.commune === "isla-de-pascua");
 const mainland = { latitude: -32.4498524, longitude: -71.2320966 };
 it("conserva La Ligua y cuenta toda Valparaíso además de Rapa Nui", () => {
-  expect(filterPlaces("valparaiso")).toHaveLength(90);
+  // 90 heredados + Área Histórica de Valparaíso (fuente oficial, 17-11-2026).
+  expect(filterPlaces("valparaiso")).toHaveLength(91);
   expect(filterPlaces("valparaiso", "la-ligua")).toHaveLength(11);
   expect(rapa).toHaveLength(4);
   expect(filterPlaces("valparaiso", "all", "all", "Rapa Nui")).toHaveLength(4);

@@ -18,6 +18,7 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
+import { router, useLocalSearchParams } from "expo-router";
 
 import {
   catalogTerritories,
@@ -29,6 +30,7 @@ import {
   nationalSuggestions,
   filterPlaces,
   haversineDistanceKm,
+  isBusinessPlace,
   isLocated,
   localities,
   moveAreaStop,
@@ -40,7 +42,10 @@ import {
   swipeDirection,
   toggleStop,
   transitionPath,
+  verificationRecords,
+  routingUrlForMode,
 } from "@territorio-vivo/core";
+import type { TravelMode } from "@territorio-vivo/core";
 import type {
   RoadArea,
   Category,
@@ -147,7 +152,7 @@ export default function Home() {
   const filtered = useMemo(
     () =>
       filterPlaces(current, commune, category, query).filter(
-        (p) => tab !== "businesses" || p.category === "gastronomia",
+        (p) => tab !== "businesses" || isBusinessPlace(p),
       ),
     [current, commune, category, query, tab],
   );
@@ -173,7 +178,12 @@ export default function Home() {
     [savedPlaces, activeTripArea],
   );
   const routingServer = useRoutingServer();
-  const liveTrip = useLiveTrip(tripPlaces, roundTrip, routingServer.url);
+  const [travelMode, setTravelMode] = useState<TravelMode>("car");
+  const liveTrip = useLiveTrip(
+    tripPlaces,
+    roundTrip,
+    routingServer.url ? routingUrlForMode(routingServer.url, travelMode) : "",
+  );
   const tripLocated = useMemo(() => tripPlaces.filter(isLocated), [tripPlaces]);
   const tripDistance = useMemo(() => {
     const points =
@@ -400,6 +410,33 @@ export default function Home() {
     onPanResponderTerminate: () =>
       Animated.spring(motion, { toValue: 0, useNativeDriver: true }).start(),
   });
+  // Dirección turismoentumano.cl/<región o comuna>: abre ese territorio.
+  const { territorio, ver } = useLocalSearchParams<{
+    territorio?: string;
+    ver?: string;
+  }>();
+  const openedTerritory = useRef<string | null>(null);
+  // «Iniciar ruta» del sitio abre /explorar/?ver=ruta: Mi viaje con su mapa.
+  const openedTrip = useRef(false);
+  useEffect(() => {
+    if (!hydrated || ver !== "ruta" || openedTrip.current) return;
+    openedTrip.current = true;
+    setTab("trip");
+    setMapMode("trip");
+  }, [hydrated, ver]);
+  useEffect(() => {
+    const slug = typeof territorio === "string" ? territorio.toLowerCase() : "";
+    if (!hydrated || !slug || openedTerritory.current === slug) return;
+    openedTerritory.current = slug;
+    if ((regionIds as readonly string[]).includes(slug)) {
+      selectRegion(slug as RegionId, false, "all", false);
+      return;
+    }
+    const area = catalogTerritories.find(
+      (p) => p.level === "commune" && p.commune === slug,
+    );
+    if (area) selectRegion(area.region, false, slug, false);
+  }, [hydrated, territorio]); // solo al abrir la dirección
   const deviceLocation = useDeviceLocation({
     enabled: hydrated,
     selectionVersion: () => generation.current,
@@ -732,6 +769,12 @@ export default function Home() {
                 {button(t.events, () => setTab("events"), false, true)}
                 {button(t.routes, () => setTab("routes"), false, true)}
                 {button(t.businesses, () => setTab("businesses"), false, true)}
+                {button(
+                  t.joinBusiness,
+                  () => router.push("/suma-tu-negocio"),
+                  false,
+                  true,
+                )}
               </ScrollView>
               {featured.length ? (
                 <ScrollView
@@ -751,8 +794,13 @@ export default function Home() {
                     },
                   ]}
                 >
-                  {body(t.regionalCatalog)}
-                  {button(t.viewMap, () => setMapMode("region"), true)}
+                  {body(t.emptyZone)}
+                  {button(
+                    t.joinBusiness,
+                    () => router.push("/suma-tu-negocio"),
+                    true,
+                  )}
+                  {button(t.viewMap, () => setMapMode("region"))}
                 </View>
               )}
               <View style={styles.rowBetween}>
@@ -1097,6 +1145,11 @@ export default function Home() {
                     server={routingServer}
                     dark={mode === "dark"}
                     onMap={() => setMapMode("trip")}
+                    mode={travelMode}
+                    onMode={(next) => {
+                      liveTrip.stop();
+                      setTravelMode(next);
+                    }}
                   />
                   {!liveTrip.route && (
                     <>
@@ -1127,7 +1180,8 @@ export default function Home() {
                             : ""}
                         </Text>
                         <Text style={[styles.caption, muted]}>
-                          {t.regions[p.region]} · {t.pending}
+                          {t.regions[p.region]} ·{" "}
+                          {t.verification[p.verification]}
                         </Text>
                       </Pressable>
                       <View style={styles.quickActions}>
@@ -1323,7 +1377,7 @@ export default function Home() {
             <>
               <View style={styles.modalHeading}>
                 {button(t.close, () => setDetail(null), false, true)}
-                {tag(t.pending)}
+                {tag(t.verification[detail.verification])}
               </View>
               <ScrollView contentContainerStyle={styles.content}>
                 <Image
@@ -1369,18 +1423,22 @@ export default function Home() {
                   </View>
                 )}
                 {body(t.visitInfo)}
-                {button(
-                  stopIds.includes(detail.id) ? t.saved : t.save,
-                  () => save(detail.id),
-                  true,
-                )}
+                {detail.onMap === false
+                  ? body(t.notOnMap)
+                  : button(
+                      stopIds.includes(detail.id) ? t.saved : t.save,
+                      () => save(detail.id),
+                      true,
+                    )}
                 {isLocated(detail)
                   ? button(t.viewMap, () => {
                       setMapPlace(detail);
                       setDetail(null);
                       setMapMode("place");
                     })
-                  : body(t.locationPending)}
+                  : detail.onMap === false
+                    ? null
+                    : body(t.locationPending)}
                 {title(t.source)}
                 {detail.source ? (
                   <Pressable
@@ -1395,8 +1453,13 @@ export default function Home() {
                   body(masterEvidence[detail.id]?.sourceLabel ?? t.sourceOwner)
                 )}
                 <Text style={[styles.caption, muted]}>
-                  {`${t.importedOn} ${detail.importedAt} · ${t.pending}`}
+                  {`${t.importedOn} ${detail.importedAt} · ${t.verification[detail.verification]}`}
                 </Text>
+                {verificationRecords[detail.id] && (
+                  <Text style={[styles.caption, muted]}>
+                    {`${t.verificationEvidence}: ${verificationRecords[detail.id]!.organism} · ${verificationRecords[detail.id]!.method} · ${t.reviewedOn} ${verificationRecords[detail.id]!.checkedOn}`}
+                  </Text>
+                )}
                 {detail.origin === "osm" && (
                   <Text style={[styles.caption, muted]}>{t.osmLicense}</Text>
                 )}

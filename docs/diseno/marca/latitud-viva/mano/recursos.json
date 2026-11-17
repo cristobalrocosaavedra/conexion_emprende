@@ -1,0 +1,36 @@
+{
+  "date": "2026-11-11",
+  "version": "0.8.0",
+  "variant": "A · Chile en la palma (rechazada el 16-11-2026; los archivos de la app con estos nombres fueron reemplazados, ver docs/diseno/marca/turismo-en-tu-mano)",
+  "tool": "Composición local reproducible con Pillow (generar.py); sin generador de imágenes externo",
+  "source": {
+    "path": "apps/mobile/assets/marca/latitud-viva-icono.png",
+    "sha256": "382dcb1d3ddc27cc4f0b00ff1fc656a43f74f89f0ace45e1320aba3485748f4e",
+    "note": "Las cinco piezas aprobadas se reutilizan sin redibujar, solo reescaladas; la mano marfil es vectorial dibujada por el script."
+  },
+  "assets": [
+    {
+      "path": "apps/mobile/assets/marca/turismo-en-tu-mano-icono.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 227173,
+      "sha256": "b7e7c44959af00fc1ad72edbc2b72cdfba52c1961b0776208bb4a272fde39940"
+    },
+    {
+      "path": "apps/mobile/assets/marca/turismo-en-tu-mano-icono.webp",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 36738,
+      "sha256": "e73837ca7c56a57fe058629dec408650ada61663fb43803697630944602a6c4d"
+    },
+    {
+      "path": "apps/mobile/assets/marca/turismo-en-tu-mano-zonas.webp",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 43444,
+      "sha256": "a02ff47630855611d5c83fb4d89746a74e4c8558154d1b52df014834ca0c23ae",
+      "note": "latitud-viva-zonas.webp con el rótulo «territorio vivo» cubierto por el fondo; piezas y textos de zonas intactos."
+    }
+  ],
+  "review": "revision-lamina.png: tamaños 192/96/48 px y texto provisional en Segoe UI Black (fuente del sistema, solo para revisión; no se distribuye)."
+}

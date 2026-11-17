@@ -1,0 +1,2 @@
+# La app de rutas vive en /explorar (exportación de Expo con baseUrl).
+/explorar/* /explorar/index.html 200

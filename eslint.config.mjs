@@ -13,12 +13,23 @@ export default tseslint.config(
       "apps/mobile/android/**",
       "apps/mobile/ios/**",
       "**/next-env.d.ts",
+      "apps/web/out/**",
+      "apps/web/public/arte/**",
     ],
   },
   js.configs.recommended,
   {
     files: ["scripts/**/*.mjs"],
-    languageOptions: { globals: { URL: "readonly", process: "readonly" } },
+    languageOptions: {
+      globals: {
+        URL: "readonly",
+        process: "readonly",
+        console: "readonly",
+        setTimeout: "readonly",
+        fetch: "readonly",
+        AbortSignal: "readonly",
+      },
+    },
   },
   ...tseslint.configs.recommended,
   {

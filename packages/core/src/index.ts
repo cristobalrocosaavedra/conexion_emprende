@@ -47,6 +47,8 @@ export * from "./catalog";
 export * from "./geo";
 
 export * from "./device-location";
+export * from "./browser-location";
+export * from "./commercial";
 
 export * from "./road-routing";
 export * from "./live-navigation";

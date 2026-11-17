@@ -57,3 +57,7 @@ previews/
 content/staging/catalogo-maestro/simulacion/estado-propuesto.json
 content/staging/catalogo-maestro/trabajo/
 __pycache__/
+
+# Sitio web: arte copiado y exportación estática
+apps/web/public/arte/
+apps/web/out/

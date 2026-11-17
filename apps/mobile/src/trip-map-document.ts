@@ -32,7 +32,7 @@ export function buildTripMapDocument(
     },
   });
   return `<!doctype html><html lang="es"><head><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><style>${maplibreCss}
- html,body,#map{height:100%;width:100%;margin:0;background:${dark ? "#102d42" : "#ddebe6"}}#controls{position:absolute;left:8px;top:8px;display:flex;flex-wrap:wrap;gap:6px;max-width:75%}button{font:600 13px system-ui;min-height:44px;border:1px solid #9ab5bd;border-radius:10px;background:#fff;color:#123247;padding:8px}#note{position:absolute;bottom:28px;left:8px;max-width:80%;background:#fffdeb;color:#123247;padding:6px;border-radius:8px;font:11px system-ui;pointer-events:none}.maplibregl-popup{font:14px system-ui;color:#123247}</style></head><body><script type="application/json" id="licenses">${serializeForHtml(maplibreLicense)}</script><div id="map"></div><div id="controls"></div><div id="note"></div><script>${maplibreJs}</script><script>
+ html,body,#map{height:100%;width:100%;margin:0;background:${dark ? "#102d42" : "#ddebe6"}}#controls{position:absolute;left:8px;top:8px;display:none;flex-wrap:wrap;gap:6px;max-width:75%}button{font:600 13px system-ui;min-height:44px;border:1px solid #9ab5bd;border-radius:10px;background:#fff;color:#123247;padding:8px}#note{position:absolute;bottom:28px;left:8px;max-width:80%;background:#fffdeb;color:#123247;padding:6px;border-radius:8px;font:11px system-ui;pointer-events:none}.maplibregl-popup{font:14px system-ui;color:#123247}</style></head><body><script type="application/json" id="licenses">${serializeForHtml(maplibreLicense)}</script><div id="map"></div><div id="controls"></div><div id="note"></div><script>${maplibreJs}</script><script>
  const data=${data};const note=document.getElementById('note');
  const send=value=>{if(window.ReactNativeWebView)window.ReactNativeWebView.postMessage(JSON.stringify(value));else window.parent.postMessage(JSON.stringify(value),'*');};
  try{
@@ -49,9 +49,12 @@ export function buildTripMapDocument(
  for(const event of ['dragstart','zoomstart','rotatestart','pitchstart'])map.on(event,e=>{if(e.originalEvent)follow=false;});
  const geo=xy=>({type:'Feature',properties:{},geometry:{type:'LineString',coordinates:xy.length>1?xy:[]}});
  const paintLine=()=>{const geometry=line?geo(line.points.map(p=>[p.longitude,p.latitude])):{type:'FeatureCollection',features:data.segments.map(geo)};map.getSource('road').setData(geometry);map.setPaintProperty('road-line','line-dasharray',line?[1,0]:[2,2]);note.textContent=(line?data.labels.road:data.labels.schematic)+(offline?" · "+data.labels.offline:"");};
+ // Los controles de seguimiento solo aparecen mientras se navega.
+ const showControls=on=>{document.getElementById('controls').style.display=on?'flex':'none';};
  const apply=value=>{
- if(!value){fix=null;line=null;active=false;hadActive=false;map.getSource('position').setData({type:'FeatureCollection',features:[]});paintLine();return;}
+ if(!value){showControls(false);fix=null;line=null;active=false;hadActive=false;map.getSource('position').setData({type:'FeatureCollection',features:[]});paintLine();return;}
  active=Boolean(value.follow);
+ showControls(active);
  if(Object.prototype.hasOwnProperty.call(value,'route')){line=value.route;paintLine();if(line&&!active)fit();}
  fix=value.fix;
  if(fix&&Number.isFinite(fix.latitude)&&Number.isFinite(fix.longitude)){

@@ -8,19 +8,23 @@ import {
   isLocated,
   moveStop,
   normalizePreferences,
+  placeListing,
   places,
   regionFeatures,
   regionIds,
   serializeForHtml,
   swipeDirection,
   toggleStop,
+  verificationRecords,
 } from "./index";
 describe("catálogo heredado con procedencia", () => {
   it("conserva 37 referencias sin verificarlas automáticamente", () => {
     expect(places.filter((p) => !p.origin)).toHaveLength(37);
     expect(new Set(places.map((p) => p.id)).size).toBe(places.length);
     for (const p of places.filter((p) => p.origin !== "master")) {
-      expect(p.verification).toBe("pending");
+      expect(p.verification).toBe(
+        verificationRecords[p.id]?.status ?? "pending",
+      );
       if (p.source)
         expect(["http:", "https:"]).toContain(new URL(p.source.url).protocol);
       else expect(isLocated(p)).toBe(false);
@@ -161,5 +165,95 @@ describe("base comunitaria nacional", () => {
       expect(isLocated(p)).toBe(true);
       expect(p.verification).toBe("pending");
     }
+  });
+});
+
+describe("verificación con evidencia", () => {
+  it("solo eleva lugares con registro y evidencia fechada", () => {
+    const elevated = places.filter((p) => p.verification !== "pending");
+    expect(elevated.length).toBe(Object.keys(verificationRecords).length);
+    for (const p of elevated) {
+      const r = verificationRecords[p.id]!;
+      expect(r.evidenceUrl).toMatch(/^https?:\/\//);
+      expect(r.checkedOn).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+      expect(r.method.length).toBeGreaterThan(10);
+    }
+    // OpenStreetMap nunca se eleva por sí solo.
+    expect(elevated.filter((p) => p.origin === "osm")).toHaveLength(0);
+  });
+  it("Matichoc figura como verificado por su titular", () => {
+    const m = places.find((p) => p.id === "chocolateria-matichoc");
+    expect(m?.verification).toBe("verified");
+  });
+});
+
+describe("negocios en el mapa según plan", () => {
+  it("sin plan solo hay ficha; desde Completo, mapa y rutas", () => {
+    expect(
+      placeListing({ id: "negocio-sin-plan", category: "gastronomia" }),
+    ).toEqual({
+      plan: null,
+      onMap: false,
+    });
+    expect(
+      placeListing({ id: "chocolateria-matichoc", category: "gastronomia" }),
+    ).toEqual({
+      plan: "destacado",
+      onMap: true,
+    });
+    expect(
+      placeListing({ id: "cualquier-playa", category: "playa" }).onMap,
+    ).toBe(true);
+  });
+  it("la zona de dulceras de La Ligua se trata como atractivo público", () => {
+    expect(
+      placeListing({ id: "la-ligua-area-de-dulces", category: "gastronomia" }),
+    ).toEqual({
+      plan: null,
+      onMap: true,
+    });
+    const area = places.find((p) => p.id === "la-ligua-area-de-dulces")!;
+    expect(area.latitude).not.toBeNull();
+  });
+  it("una parada guardada de un negocio sin mapa se descarta", () => {
+    expect(
+      normalizePreferences({
+        stopIds: ["chocolateria-matichoc", "negocio-sin-plan"],
+      })!.stopIds,
+    ).toEqual(["chocolateria-matichoc"]);
+  });
+});
+
+describe("lugares agregados desde fuentes oficiales", () => {
+  it("Humberstone está en Pozo Almonte con fuente y coordenadas oficiales", () => {
+    const h = places.find(
+      (p) => p.id === "oficinas-salitreras-humberstone-santa-laura",
+    )!;
+    expect(h).toMatchObject({
+      region: "tarapaca",
+      province: "del-tamarugal",
+      commune: "pozo-almonte",
+      verification: "official",
+      origin: "official",
+    });
+    expect(h.latitude).toBeCloseTo(-20.2086, 3);
+    expect(h.source?.url).toContain("monumentos.gob.cl");
+  });
+});
+
+describe("Patrimonio Mundial con fuente oficial", () => {
+  it("suma Castro, Valparaíso y Chinchorro, y ubica Sewell con coordenadas del CMN", () => {
+    const byId = (id: string) => places.find((p) => p.id === id)!;
+    expect(byId("templo-san-francisco-de-castro").commune).toBe("castro");
+    expect(byId("area-historica-de-valparaiso").latitude).toBeCloseTo(
+      -33.039,
+      2,
+    );
+    // Sin coordenadas oficiales: solo se ubica por coincidencia exacta en OSM.
+    expect(byId("museo-de-sitio-colon-10").source?.url).toContain("chinchorro");
+    const sewell = byId("master:TV-ATR-00532");
+    expect(sewell.coordinateSource).toBe("official");
+    expect(sewell.latitude).toBeCloseTo(-34.0848, 3);
+    expect(sewell.verification).toBe("official");
   });
 });

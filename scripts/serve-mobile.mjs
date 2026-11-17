@@ -1,6 +1,6 @@
 import { createServer } from "node:http";
 import { readFile, stat } from "node:fs/promises";
-import { resolve, extname } from "node:path";
+import { resolve, extname, sep } from "node:path";
 const root = resolve("apps/mobile/dist");
 const types = {
   ".html": "text/html; charset=utf-8",
@@ -18,11 +18,14 @@ createServer(async (req, res) => {
       new URL(req.url, "http://127.0.0.1").pathname,
     );
     let file = resolve(root, "." + pathname);
-    if (file !== root && !file.startsWith(root + "/")) {
+    if (file !== root && !file.startsWith(root + sep)) {
       res.writeHead(403).end();
       return;
     }
-    if ((await stat(file)).isDirectory()) file = resolve(file, "index.html");
+    // Como Cloudflare Pages: rutas sin archivo (/la-ligua) abren la app.
+    const info = await stat(file).catch(() => null);
+    if (!info && !extname(pathname)) file = resolve(root, "index.html");
+    else if (info?.isDirectory()) file = resolve(file, "index.html");
     const data = await readFile(file);
     res
       .writeHead(200, {

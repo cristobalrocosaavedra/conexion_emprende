@@ -5,6 +5,8 @@ import {
   checkRoutingServer,
   routingServerUrl,
   PUBLIC_ROUTING_URL,
+  PUBLIC_ROUTING_FOOT_URL,
+  routingUrlForMode,
 } from "./routing-server";
 import { navigationUpdate, routeLengths } from "./live-navigation";
 import type { RoadRoute } from "./road-routing";
@@ -274,4 +276,20 @@ describe("avance y recálculo en memoria", () => {
       ).arrived,
     ).toBe(true);
   });
+});
+
+it("el servicio público ofrece rutas a pie y en auto; un servidor propio conserva su perfil", async () => {
+  expect(routingUrlForMode(PUBLIC_ROUTING_URL, "foot")).toBe(
+    PUBLIC_ROUTING_FOOT_URL,
+  );
+  expect(routingUrlForMode(PUBLIC_ROUTING_FOOT_URL, "car")).toBe(
+    PUBLIC_ROUTING_URL,
+  );
+  expect(routingUrlForMode("https://rutas.ejemplo.cl/", "foot")).toBe(
+    "https://rutas.ejemplo.cl/",
+  );
+  const server = await checkRoutingServer(PUBLIC_ROUTING_FOOT_URL, (() => {
+    throw new Error("no debe consultar");
+  }) as unknown as typeof fetch);
+  expect(server.baseUrl).toBe(PUBLIC_ROUTING_FOOT_URL);
 });

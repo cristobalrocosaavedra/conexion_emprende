@@ -56,7 +56,7 @@ export function Action({
         style={{
           color: primary
             ? colors === palettes.dark
-              ? "#072b30"
+              ? "#22162E"
               : "#fff"
             : colors.text,
           fontSize: small ? 12 : 15,
@@ -259,7 +259,16 @@ export function PlaceCard({
                 : place.summary}
           </Text>
         )}
-        <Text style={{ color: colors.muted, fontSize: 10 }}>{t.pending}</Text>
+        <Text
+          style={{
+            color:
+              place.verification === "pending" ? colors.muted : colors.accent,
+            fontSize: place.verification === "pending" ? 10 : 12,
+            fontWeight: place.verification === "pending" ? "400" : "700",
+          }}
+        >
+          {t.verification[place.verification]}
+        </Text>
         {roadAreaForPlace(place) !== "mainland" && (
           <Text style={{ color: colors.accent, fontSize: 11 }}>
             {t.requiresFlight}

@@ -1,0 +1,5968 @@
+{
+  "license": "ODbL-1.0",
+  "attribution": "© Colaboradores de OpenStreetMap",
+  "licenseUrl": "https://www.openstreetmap.org/copyright",
+  "snapshotAt": "2026-11-17",
+  "method": "Mismo nombre normalizado (sin tildes ni signos) o alias, dentro del área administrativa de la misma comuna en OSM (admin_level 8, región por ISO 3166-2). Si hay varios con el mismo nombre deben estar a menos de 1,5 km; si no, pasan a revisión. Ubicación de referencia, no acceso verificado.",
+  "exact": {
+    "master:TV-ATR-00347": {
+      "latitude": -33.521699,
+      "longitude": -70.677634,
+      "osm": "way/291865074",
+      "osmName": "Parque Violeta Parra",
+      "kind": "leisure=park",
+      "commune": "lo-espejo"
+    },
+    "master:TV-ATR-00348": {
+      "latitude": -33.388003,
+      "longitude": -70.656023,
+      "osm": "way/195919217",
+      "osmName": "Parque Santa Mónica",
+      "kind": "leisure=park",
+      "commune": "recoleta"
+    },
+    "master:TV-ATR-00361": {
+      "latitude": -33.40385,
+      "longitude": -70.618839,
+      "osm": "way/363377037",
+      "osmName": "Parque Mahuidahue",
+      "kind": "leisure=park",
+      "commune": "recoleta"
+    },
+    "master:TV-ATR-00362": {
+      "latitude": -33.4188,
+      "longitude": -70.644381,
+      "osm": "way/923953783",
+      "osmName": "Parque Cerro Blanco",
+      "kind": "leisure=park",
+      "commune": "recoleta"
+    },
+    "master:TV-ATR-00368": {
+      "latitude": -33.40887,
+      "longitude": -70.620411,
+      "osm": "way/168227059",
+      "osmName": "Parque Metropolitano de Santiago",
+      "kind": "leisure=park",
+      "commune": "recoleta"
+    },
+    "master:TV-ATR-00349": {
+      "latitude": -33.487781,
+      "longitude": -70.671245,
+      "osm": "way/382939694",
+      "osmName": "Parque Pierre Dubois",
+      "kind": "leisure=park",
+      "commune": "pedro-aguirre-cerda"
+    },
+    "master:TV-ATR-00356": {
+      "latitude": -33.485206,
+      "longitude": -70.669755,
+      "osm": "way/90955392",
+      "osmName": "Parque André Jarlán",
+      "kind": "leisure=park",
+      "commune": "pedro-aguirre-cerda"
+    },
+    "master:TV-ATR-00353": {
+      "latitude": -33.424026,
+      "longitude": -70.680358,
+      "osm": "way/177734992",
+      "osmName": "Parque de la Familia",
+      "kind": "leisure=park",
+      "commune": "quinta-normal"
+    },
+    "master:TV-ATR-00351": {
+      "latitude": -33.410871,
+      "longitude": -70.729874,
+      "osm": "way/208113785",
+      "osmName": "Parque Lo Varas",
+      "kind": "leisure=park",
+      "commune": "renca"
+    },
+    "master:TV-ATR-00352": {
+      "latitude": -33.542253,
+      "longitude": -70.641688,
+      "osm": "way/31705729",
+      "osmName": "Parque La Bandera",
+      "kind": "leisure=park",
+      "commune": "san-ramon"
+    },
+    "master:TV-ATR-00354": {
+      "latitude": -33.484706,
+      "longitude": -70.691165,
+      "osm": "node/13436725419",
+      "osmName": "Parque Cerrillos",
+      "kind": "tourism=information",
+      "commune": "cerrillos"
+    },
+    "master:TV-ATR-00355": {
+      "latitude": -33.465726,
+      "longitude": -70.69482,
+      "osm": "way/191917402",
+      "osmName": "Parque Bernardo Leighton",
+      "kind": "leisure=park",
+      "commune": "estacion-central"
+    },
+    "master:TV-ATR-00358": {
+      "latitude": -33.425837,
+      "longitude": -70.758712,
+      "osm": "way/408115179",
+      "osmName": "Parque La Hondonada",
+      "kind": "leisure=park",
+      "commune": "cerro-navia"
+    },
+    "master:TV-ATR-00360": {
+      "latitude": -33.591415,
+      "longitude": -70.629492,
+      "osm": "way/192295101",
+      "osmName": "Parque Mapuhue",
+      "kind": "leisure=park",
+      "commune": "la-pintana"
+    },
+    "master:TV-ATR-00364": {
+      "latitude": -33.566739,
+      "longitude": -70.612547,
+      "osm": "way/233008074",
+      "osmName": "Parque La Platina",
+      "kind": "leisure=park",
+      "commune": "la-pintana"
+    },
+    "master:TV-ATR-00363": {
+      "latitude": -33.361775,
+      "longitude": -70.637109,
+      "osm": "way/1044529163",
+      "osmName": "Parque Huechuraba",
+      "kind": "leisure=park",
+      "commune": "huechuraba"
+    },
+    "master:TV-ATR-00365": {
+      "latitude": -33.511037,
+      "longitude": -70.629554,
+      "osm": "way/24742920",
+      "osmName": "Parque La Castrina",
+      "kind": "leisure=park",
+      "commune": "san-joaquin"
+    },
+    "master:TV-ATR-00392": {
+      "latitude": -18.454323,
+      "longitude": -70.305529,
+      "osm": "way/83861240",
+      "osmName": "Playa Chinchorro",
+      "kind": "natural=beach",
+      "commune": "arica"
+    },
+    "master:TV-ATR-00394": {
+      "latitude": -18.488004,
+      "longitude": -70.327321,
+      "osm": "way/141192756",
+      "osmName": "Playa El Laucho",
+      "kind": "natural=beach",
+      "commune": "arica"
+    },
+    "master:TV-ATR-00395": {
+      "latitude": -18.493555,
+      "longitude": -70.326359,
+      "osm": "way/141191216",
+      "osmName": "Playa La Lisera",
+      "kind": "natural=beach",
+      "commune": "arica"
+    },
+    "master:TV-ATR-00396": {
+      "latitude": -18.544392,
+      "longitude": -70.331775,
+      "osm": "way/257720819",
+      "osmName": "Playa Corazones",
+      "kind": "natural=beach",
+      "commune": "arica"
+    },
+    "master:TV-ATR-00399": {
+      "latitude": -18.511079,
+      "longitude": -70.219202,
+      "osm": "way/836907880",
+      "osmName": "Valle de Azapa",
+      "kind": "natural=valley",
+      "commune": "arica"
+    },
+    "master:TV-ATR-00400": {
+      "latitude": -18.4241,
+      "longitude": -70.129331,
+      "osm": "way/836907881",
+      "osmName": "Valle de Lluta",
+      "kind": "natural=valley",
+      "commune": "arica"
+    },
+    "master:TV-ATR-00427": {
+      "latitude": -25.009444,
+      "longitude": -70.465342,
+      "osm": "node/214211993",
+      "osmName": "Paposo",
+      "kind": "place=village",
+      "commune": "taltal"
+    },
+    "master:TV-ATR-00428": {
+      "latitude": -27.102324,
+      "longitude": -70.855919,
+      "osm": "node/977677594",
+      "osmName": "Bahía Inglesa",
+      "kind": "place=village",
+      "commune": "caldera"
+    },
+    "master:TV-ATR-00429": {
+      "latitude": -27.065668,
+      "longitude": -70.825928,
+      "osm": "way/84544929",
+      "osmName": "Playa Mansa",
+      "kind": "natural=beach",
+      "commune": "caldera"
+    },
+    "master:TV-ATR-00430": {
+      "latitude": -27.063137,
+      "longitude": -70.818213,
+      "osm": "way/539299116",
+      "osmName": "Playa Brava",
+      "kind": "natural=beach",
+      "commune": "caldera"
+    },
+    "master:TV-ATR-00431": {
+      "latitude": -27.006259,
+      "longitude": -70.795755,
+      "osm": "way/1033111734",
+      "osmName": "Playa Ramada",
+      "kind": "natural=beach",
+      "commune": "caldera"
+    },
+    "master:TV-ATR-00439": {
+      "latitude": -29.901182,
+      "longitude": -71.274121,
+      "osm": "node/9593193501",
+      "osmName": "Playa El Faro",
+      "kind": "leisure=beach_resort",
+      "commune": "la-serena"
+    },
+    "master:TV-ATR-00377": {
+      "latitude": -33.06746,
+      "longitude": -71.36757,
+      "osm": "way/584068969",
+      "osmName": "Parque El Álamo",
+      "kind": "leisure=park",
+      "commune": "villa-alemana"
+    },
+    "master:TV-ATR-00486": {
+      "latitude": -33.041187,
+      "longitude": -71.626561,
+      "osm": "node/3418287777",
+      "osmName": "Paseo Gervasoni",
+      "kind": "tourism=viewpoint",
+      "commune": "valparaiso"
+    },
+    "master:TV-ATR-00488": {
+      "latitude": -33.038324,
+      "longitude": -71.628372,
+      "osm": "node/6346463652",
+      "osmName": "Barrio Puerto",
+      "kind": "place=quarter",
+      "commune": "valparaiso"
+    },
+    "master:TV-ATR-00489": {
+      "latitude": -33.043406,
+      "longitude": -71.629843,
+      "osm": "node/259141088",
+      "osmName": "Cerro Alegre",
+      "kind": "place=neighbourhood",
+      "commune": "valparaiso"
+    },
+    "master:TV-ATR-00490": {
+      "latitude": -33.042263,
+      "longitude": -71.626495,
+      "osm": "node/259141093",
+      "osmName": "Cerro Concepción",
+      "kind": "place=neighbourhood",
+      "commune": "valparaiso"
+    },
+    "master:TV-ATR-00379": {
+      "latitude": -34.164123,
+      "longitude": -70.705069,
+      "osm": "way/336939632",
+      "osmName": "Parque Cordillera",
+      "kind": "leisure=park",
+      "commune": "rancagua"
+    },
+    "master:TV-ATR-00531": {
+      "latitude": -34.170286,
+      "longitude": -70.740757,
+      "osm": "way/180775253",
+      "osmName": "Plaza de los Héroes",
+      "kind": "leisure=park;place=square;tourism=attraction",
+      "commune": "rancagua"
+    },
+    "master:TV-ATR-00380": {
+      "latitude": -34.634035,
+      "longitude": -71.349102,
+      "osm": "way/513114279",
+      "osmName": "Parque La Paz",
+      "kind": "leisure=park",
+      "commune": "santa-cruz"
+    },
+    "master:TV-ATR-00546": {
+      "latitude": -35.418103,
+      "longitude": -71.680446,
+      "osm": "way/214960079",
+      "osmName": "Parque Río Claro",
+      "kind": "leisure=park",
+      "commune": "talca"
+    },
+    "master:TV-ATR-00540": {
+      "latitude": -35.798481,
+      "longitude": -72.565472,
+      "osm": "node/214201337",
+      "osmName": "Mariscadero",
+      "kind": "place=neighbourhood",
+      "commune": "pelluhue"
+    },
+    "master:TV-ATR-00559": {
+      "latitude": -36.833594,
+      "longitude": -73.050304,
+      "osm": "way/207535208",
+      "osmName": "Parque Ecuador",
+      "kind": "leisure=park",
+      "commune": "concepcion"
+    },
+    "master:TV-ATR-00385": {
+      "latitude": -37.598887,
+      "longitude": -73.665087,
+      "osm": "way/490239482",
+      "osmName": "Parque del Carbón",
+      "kind": "leisure=park",
+      "commune": "lebu"
+    },
+    "master:TV-ATR-00576": {
+      "latitude": -37.576446,
+      "longitude": -73.639986,
+      "osm": "way/1375685162",
+      "osmName": "Playa Millaneco",
+      "kind": "natural=beach",
+      "commune": "lebu"
+    },
+    "master:TV-ATR-00562": {
+      "latitude": -36.843347,
+      "longitude": -73.116221,
+      "osm": "way/513403563",
+      "osmName": "Humedal Los Batros",
+      "kind": "natural=wetland",
+      "commune": "san-pedro-de-la-paz"
+    },
+    "master:TV-ATR-00587": {
+      "latitude": -38.742309,
+      "longitude": -72.621371,
+      "osm": "way/60186426",
+      "osmName": "Parque Estadio Germán Becker",
+      "kind": "leisure=sports_centre",
+      "commune": "temuco"
+    },
+    "master:TV-ATR-00588": {
+      "latitude": -38.724736,
+      "longitude": -72.588875,
+      "osm": "way/330085446",
+      "osmName": "Mirador Cerro Ñielol",
+      "kind": "building=yes;tourism=viewpoint",
+      "commune": "temuco"
+    },
+    "master:TV-ATR-00592": {
+      "latitude": -39.849788,
+      "longitude": -73.393785,
+      "osm": "way/464251605",
+      "osmName": "Playa Los Molinos",
+      "kind": "natural=beach",
+      "commune": "valdivia"
+    },
+    "master:TV-ATR-00597": {
+      "latitude": -39.856649,
+      "longitude": -73.234429,
+      "osm": "node/7906561031",
+      "osmName": "Humedal Angachilla",
+      "kind": "tourism=information",
+      "commune": "valdivia"
+    },
+    "master:TV-ATR-00614": {
+      "latitude": -41.488008,
+      "longitude": -72.902319,
+      "osm": "way/42294753",
+      "osmName": "Playa Pelluco",
+      "kind": "natural=beach",
+      "commune": "puerto-montt"
+    },
+    "master:TV-ATR-00634": {
+      "latitude": -45.462767,
+      "longitude": -72.818237,
+      "osm": "node/214186249",
+      "osmName": "Puerto Chacabuco",
+      "kind": "place=village",
+      "commune": "aysen"
+    },
+    "master:TV-ATR-00401": {
+      "latitude": -18.207366,
+      "longitude": -69.558634,
+      "osm": "node/4522529850",
+      "osmName": "Mirador de Putre",
+      "kind": "tourism=viewpoint",
+      "commune": "putre"
+    },
+    "master:TV-ATR-00403": {
+      "latitude": -20.247897,
+      "longitude": -70.141655,
+      "osm": "relation/2991784",
+      "osmName": "Playa Brava",
+      "kind": "natural=beach",
+      "commune": "iquique"
+    },
+    "master:TV-ATR-00405": {
+      "latitude": -20.217182,
+      "longitude": -70.156421,
+      "osm": "relation/7776553",
+      "osmName": "Playa Bellavista",
+      "kind": "natural=beach",
+      "commune": "iquique"
+    },
+    "master:TV-ATR-00406": {
+      "latitude": -20.330959,
+      "longitude": -70.14332,
+      "osm": "node/2990615223",
+      "osmName": "Playa Blanca",
+      "kind": "place=hamlet",
+      "commune": "iquique"
+    },
+    "master:TV-ATR-00407": {
+      "latitude": -20.704311,
+      "longitude": -70.189273,
+      "osm": "way/1277665734",
+      "osmName": "Playa Chanavayita",
+      "kind": "natural=beach",
+      "commune": "iquique"
+    },
+    "master:TV-ATR-00411": {
+      "latitude": -20.485522,
+      "longitude": -69.317129,
+      "osm": "node/4623342131",
+      "osmName": "Cocha Resbaladero",
+      "kind": "tourism=attraction",
+      "commune": "pica"
+    },
+    "master:TV-ATR-00413": {
+      "latitude": -20.513823,
+      "longitude": -69.361347,
+      "osm": "node/214194948",
+      "osmName": "Matilla",
+      "kind": "place=village",
+      "commune": "pica"
+    },
+    "master:TV-ATR-00414": {
+      "latitude": -23.670824,
+      "longitude": -70.408909,
+      "osm": "way/95023083",
+      "osmName": "Balneario Municipal",
+      "kind": "natural=beach",
+      "commune": "antofagasta"
+    },
+    "master:TV-ATR-00416": {
+      "latitude": -23.638658,
+      "longitude": -70.398208,
+      "osm": "relation/7188672",
+      "osmName": "Playa Paraíso",
+      "kind": "natural=beach",
+      "commune": "antofagasta"
+    },
+    "master:TV-ATR-00420": {
+      "latitude": -23.667453,
+      "longitude": -70.40628,
+      "osm": "way/557680161",
+      "osmName": "Paseo del Mar",
+      "kind": "leisure=park",
+      "commune": "antofagasta"
+    },
+    "master:TV-ATR-00425": {
+      "latitude": -22.968299,
+      "longitude": -68.242637,
+      "osm": "way/199350261",
+      "osmName": "Aldea de Tulor",
+      "kind": "historic=archaeological_site;tourism=attraction",
+      "commune": "san-pedro-de-atacama"
+    },
+    "master:TV-ATR-00444": {
+      "latitude": -29.979325,
+      "longitude": -71.352869,
+      "osm": "way/100856946",
+      "osmName": "Playa La Herradura",
+      "kind": "natural=beach",
+      "commune": "coquimbo"
+    },
+    "master:TV-ATR-00445": {
+      "latitude": -30.197703,
+      "longitude": -71.42201,
+      "osm": "node/214231830",
+      "osmName": "Guanaqueros",
+      "kind": "place=village",
+      "commune": "coquimbo"
+    },
+    "master:TV-ATR-00446": {
+      "latitude": -30.257216,
+      "longitude": -71.492858,
+      "osm": "node/214185056",
+      "osmName": "Tongoy",
+      "kind": "place=town",
+      "commune": "coquimbo"
+    },
+    "master:TV-ATR-00447": {
+      "latitude": -30.063889,
+      "longitude": -71.366349,
+      "osm": "node/959448967",
+      "osmName": "Totoralillo",
+      "kind": "place=village",
+      "commune": "coquimbo"
+    },
+    "master:TV-ATR-00450": {
+      "latitude": -29.24304,
+      "longitude": -71.464094,
+      "osm": "way/376931071",
+      "osmName": "Playa Punta de Choros",
+      "kind": "natural=beach",
+      "commune": "la-higuera"
+    },
+    "master:TV-ATR-00451": {
+      "latitude": -29.622243,
+      "longitude": -71.286145,
+      "osm": "node/214189465",
+      "osmName": "Caleta Hornos",
+      "kind": "place=village",
+      "commune": "la-higuera"
+    },
+    "master:TV-ATR-00453": {
+      "latitude": -32.139636,
+      "longitude": -71.52716,
+      "osm": "node/214230979",
+      "osmName": "Pichidangui",
+      "kind": "place=village",
+      "commune": "los-vilos"
+    },
+    "master:TV-ATR-00454": {
+      "latitude": -31.900239,
+      "longitude": -71.500597,
+      "osm": "way/104026004",
+      "osmName": "Playa Los Vilos",
+      "kind": "natural=beach",
+      "commune": "los-vilos"
+    },
+    "master:TV-ATR-00455": {
+      "latitude": -31.84981,
+      "longitude": -71.522988,
+      "osm": "way/460109257",
+      "osmName": "Playa Ñague",
+      "kind": "natural=beach",
+      "commune": "los-vilos"
+    },
+    "master:TV-ATR-00460": {
+      "latitude": -32.496414,
+      "longitude": -71.438872,
+      "osm": "way/28402073",
+      "osmName": "Playa Grande de Papudo",
+      "kind": "natural=beach",
+      "commune": "papudo"
+    },
+    "master:TV-ATR-00461": {
+      "latitude": -32.505378,
+      "longitude": -71.448005,
+      "osm": "way/145258917",
+      "osmName": "Playa Chica de Papudo",
+      "kind": "natural=beach",
+      "commune": "papudo"
+    },
+    "master:TV-ATR-00465": {
+      "latitude": -32.5508,
+      "longitude": -71.461096,
+      "osm": "way/25636233",
+      "osmName": "Playa Zapallar",
+      "kind": "natural=beach",
+      "commune": "zapallar"
+    },
+    "master:TV-ATR-00466": {
+      "latitude": -32.594818,
+      "longitude": -71.444861,
+      "osm": "way/28422181",
+      "osmName": "Playa Cachagua",
+      "kind": "natural=beach",
+      "commune": "zapallar"
+    },
+    "master:TV-ATR-00467": {
+      "latitude": -32.628068,
+      "longitude": -71.43034,
+      "osm": "way/28422552",
+      "osmName": "Playa La Laguna",
+      "kind": "natural=beach",
+      "commune": "zapallar"
+    },
+    "master:TV-ATR-00475": {
+      "latitude": -32.922713,
+      "longitude": -71.525034,
+      "osm": "way/23582343",
+      "osmName": "Playa Amarilla",
+      "kind": "natural=beach",
+      "commune": "concon"
+    },
+    "master:TV-ATR-00476": {
+      "latitude": -32.92661,
+      "longitude": -71.527819,
+      "osm": "way/25405201",
+      "osmName": "Playa Negra",
+      "kind": "natural=beach",
+      "commune": "concon"
+    },
+    "master:TV-ATR-00483": {
+      "latitude": -33.012842,
+      "longitude": -71.55497,
+      "osm": "way/729700081",
+      "osmName": "Playa Acapulco",
+      "kind": "natural=beach",
+      "commune": "vina-del-mar"
+    },
+    "master:TV-ATR-00492": {
+      "latitude": -32.775683,
+      "longitude": -71.526717,
+      "osm": "way/257574645",
+      "osmName": "Playa El Durazno",
+      "kind": "natural=beach",
+      "commune": "quintero"
+    },
+    "master:TV-ATR-00493": {
+      "latitude": -32.779644,
+      "longitude": -71.509192,
+      "osm": "way/257577720",
+      "osmName": "Playa Loncura",
+      "kind": "natural=beach",
+      "commune": "quintero"
+    },
+    "master:TV-ATR-00496": {
+      "latitude": -33.420859,
+      "longitude": -71.701818,
+      "osm": "way/142497244",
+      "osmName": "Playa Punta de Tralca",
+      "kind": "natural=beach",
+      "commune": "el-quisco"
+    },
+    "master:TV-ATR-00498": {
+      "latitude": -33.367375,
+      "longitude": -71.688884,
+      "osm": "way/142495771",
+      "osmName": "Playa El Canelo",
+      "kind": "natural=beach;tourism=attraction",
+      "commune": "algarrobo"
+    },
+    "master:TV-ATR-00499": {
+      "latitude": -33.366213,
+      "longitude": -71.687019,
+      "osm": "way/142495772",
+      "osmName": "Playa El Canelillo",
+      "kind": "natural=beach",
+      "commune": "algarrobo"
+    },
+    "master:TV-ATR-00504": {
+      "latitude": -32.709927,
+      "longitude": -71.496475,
+      "osm": "way/150942053",
+      "osmName": "Playa Cau Cau",
+      "kind": "natural=beach",
+      "commune": "puchuncavi"
+    },
+    "master:TV-ATR-00505": {
+      "latitude": -33.440014,
+      "longitude": -70.643324,
+      "osm": "way/23321628",
+      "osmName": "Cerro Santa Lucía",
+      "kind": "leisure=park",
+      "commune": "santiago"
+    },
+    "master:TV-ATR-00506": {
+      "latitude": -33.435031,
+      "longitude": -70.641713,
+      "osm": "way/332070819",
+      "osmName": "Parque Forestal",
+      "kind": "leisure=park",
+      "commune": "santiago"
+    },
+    "master:TV-ATR-00507": {
+      "latitude": -33.438201,
+      "longitude": -70.639858,
+      "osm": "way/1496201363",
+      "osmName": "Barrio Lastarria",
+      "kind": "boundary=place",
+      "commune": "santiago"
+    },
+    "master:TV-ATR-00508": {
+      "latitude": -33.442791,
+      "longitude": -70.673952,
+      "osm": "relation/20395144",
+      "osmName": "Barrio Yungay",
+      "kind": "boundary=place",
+      "commune": "santiago"
+    },
+    "master:TV-ATR-00509": {
+      "latitude": -33.42017,
+      "longitude": -70.613183,
+      "osm": "way/197933423",
+      "osmName": "Parque de las Esculturas",
+      "kind": "leisure=park",
+      "commune": "providencia"
+    },
+    "master:TV-ATR-00510": {
+      "latitude": -33.440603,
+      "longitude": -70.611824,
+      "osm": "way/190428379",
+      "osmName": "Parque Inés de Suárez",
+      "kind": "leisure=pitch",
+      "commune": "providencia"
+    },
+    "master:TV-ATR-00519": {
+      "latitude": -34.397335,
+      "longitude": -72.026274,
+      "osm": "way/154823750",
+      "osmName": "Playa Infiernillo",
+      "kind": "natural=beach",
+      "commune": "pichilemu"
+    },
+    "master:TV-ATR-00521": {
+      "latitude": -34.424662,
+      "longitude": -72.038387,
+      "osm": "way/367537545",
+      "osmName": "Playa Punta de Lobos",
+      "kind": "natural=beach",
+      "commune": "pichilemu"
+    },
+    "master:TV-ATR-00524": {
+      "latitude": -33.960745,
+      "longitude": -71.873316,
+      "osm": "node/214229300",
+      "osmName": "Matanzas",
+      "kind": "place=hamlet",
+      "commune": "navidad"
+    },
+    "master:TV-ATR-00525": {
+      "latitude": -33.905589,
+      "longitude": -71.834045,
+      "osm": "way/399351206",
+      "osmName": "Playa La Boca",
+      "kind": "natural=beach",
+      "commune": "navidad"
+    },
+    "master:TV-ATR-00526": {
+      "latitude": -34.004167,
+      "longitude": -71.852765,
+      "osm": "node/4051972399",
+      "osmName": "Pupuya",
+      "kind": "place=hamlet",
+      "commune": "navidad"
+    },
+    "master:TV-ATR-00527": {
+      "latitude": -34.642625,
+      "longitude": -72.038134,
+      "osm": "node/214197910",
+      "osmName": "Bucalemu",
+      "kind": "place=village",
+      "commune": "paredones"
+    },
+    "master:TV-ATR-00534": {
+      "latitude": -35.325031,
+      "longitude": -72.426651,
+      "osm": "way/212458430",
+      "osmName": "Playa Los Gringos",
+      "kind": "natural=beach",
+      "commune": "constitucion"
+    },
+    "master:TV-ATR-00536": {
+      "latitude": -35.32808,
+      "longitude": -72.434319,
+      "osm": "way/171485222",
+      "osmName": "Piedra de la Iglesia",
+      "kind": "tourism=attraction",
+      "commune": "constitucion"
+    },
+    "master:TV-ATR-00543": {
+      "latitude": -34.772156,
+      "longitude": -72.039872,
+      "osm": "relation/15548124",
+      "osmName": "Laguna Torca",
+      "kind": "natural=water",
+      "commune": "vichuquen"
+    },
+    "master:TV-ATR-00544": {
+      "latitude": -34.933661,
+      "longitude": -72.180155,
+      "osm": "node/635940908",
+      "osmName": "Iloca",
+      "kind": "place=village",
+      "commune": "licanten"
+    },
+    "master:TV-ATR-00545": {
+      "latitude": -34.895444,
+      "longitude": -72.178921,
+      "osm": "node/214199844",
+      "osmName": "Duao",
+      "kind": "place=village",
+      "commune": "licanten"
+    },
+    "master:TV-ATR-00550": {
+      "latitude": -36.064639,
+      "longitude": -72.790766,
+      "osm": "way/29275434",
+      "osmName": "Playa Buchupureo",
+      "kind": "natural=beach",
+      "commune": "cobquecura"
+    },
+    "master:TV-ATR-00556": {
+      "latitude": -36.6111,
+      "longitude": -72.101647,
+      "osm": "way/95388479",
+      "osmName": "Mercado de Chillán",
+      "kind": "amenity=marketplace",
+      "commune": "chillan"
+    },
+    "master:TV-ATR-00567": {
+      "latitude": -36.548627,
+      "longitude": -72.936438,
+      "osm": "node/214221598",
+      "osmName": "Dichato",
+      "kind": "place=town",
+      "commune": "tome"
+    },
+    "master:TV-ATR-00581": {
+      "latitude": -39.289784,
+      "longitude": -72.217906,
+      "osm": "way/460054090",
+      "osmName": "Playa Pucará",
+      "kind": "natural=beach",
+      "commune": "villarrica"
+    },
+    "master:TV-ATR-00584": {
+      "latitude": -38.881576,
+      "longitude": -73.312323,
+      "osm": "relation/450378",
+      "osmName": "Lago Budi",
+      "kind": "natural=water",
+      "commune": "saavedra"
+    },
+    "master:TV-ATR-00619": {
+      "latitude": -41.859502,
+      "longitude": -73.826939,
+      "osm": "way/255221526",
+      "osmName": "Playa Arena Gruesa",
+      "kind": "natural=beach",
+      "commune": "ancud"
+    },
+    "master:TV-ATR-00620": {
+      "latitude": -41.929384,
+      "longitude": -74.03652,
+      "osm": "node/2182953196",
+      "osmName": "Puñihuil",
+      "kind": "place=hamlet",
+      "commune": "ancud"
+    },
+    "master:TV-ATR-00624": {
+      "latitude": -42.602656,
+      "longitude": -74.134927,
+      "osm": "way/150608993",
+      "osmName": "Playa Cucao",
+      "kind": "natural=beach",
+      "commune": "chonchi"
+    },
+    "master:TV-ATR-00631": {
+      "latitude": -45.575305,
+      "longitude": -72.079022,
+      "osm": "node/4274764303",
+      "osmName": "Piedra del Indio",
+      "kind": "tourism=attraction",
+      "commune": "coyhaique"
+    },
+    "master:TV-ATR-00647": {
+      "latitude": -51.73675,
+      "longitude": -72.47893,
+      "osm": "node/3068306001",
+      "osmName": "Mirador de Última Esperanza",
+      "kind": "place=neighbourhood",
+      "commune": "natales"
+    }
+  },
+  "doubtful": {
+    "master:TV-ATR-00367": {
+      "name": "Parque Bicentenario de la Infancia",
+      "commune": "recoleta",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/6816215756",
+          "name": "Centenario",
+          "lat": -33.407488,
+          "lon": -70.611371,
+          "kind": "historic=memorial"
+        },
+        {
+          "osm": "way/291863251",
+          "name": "Parque Urbano Bicentenario de la Infancia",
+          "lat": -33.419943,
+          "lon": -70.63948,
+          "kind": "leisure=park"
+        }
+      ]
+    },
+    "master:TV-ATR-00350": {
+      "name": "Parque Mapocho Río",
+      "commune": "quinta-normal",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "way/1100975303",
+          "name": "Parque Mapocho Río Tramo 1",
+          "lat": -33.412165,
+          "lon": -70.699168,
+          "kind": "leisure=park"
+        },
+        {
+          "osm": "way/1100979128",
+          "name": "Parque Mapocho Río Tramo 2",
+          "lat": -33.41032,
+          "lon": -70.713981,
+          "kind": "leisure=park"
+        }
+      ]
+    },
+    "master:TV-ATR-00357": {
+      "name": "Parque Brasil",
+      "commune": "la-granja",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/3700295423",
+          "name": "Subcomisaría Parque Brasil",
+          "lat": -33.515395,
+          "lon": -70.614798,
+          "kind": "amenity=police"
+        },
+        {
+          "osm": "node/10692329742",
+          "name": "Villa Brasil",
+          "lat": -33.520307,
+          "lon": -70.631424,
+          "kind": "place=neighbourhood"
+        },
+        {
+          "osm": "node/13050989233",
+          "name": "Villa Brasil",
+          "lat": -33.519045,
+          "lon": -70.629556,
+          "kind": "place=neighbourhood"
+        },
+        {
+          "osm": "way/15716172",
+          "name": "Parque Municipal de La Granja República de Brasil",
+          "lat": -33.519286,
+          "lon": -70.614129,
+          "kind": "leisure=park"
+        }
+      ]
+    },
+    "master:TV-ATR-00359": {
+      "name": "Parque Peñalolén",
+      "commune": "penalolen",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/906435282",
+          "name": "Centro Innovativo La Puerta de Peñalolén",
+          "lat": -33.468395,
+          "lon": -70.560356,
+          "kind": "amenity=school"
+        },
+        {
+          "osm": "node/906435287",
+          "name": "Colegio Alcantara De Los Altos De Peñalolén",
+          "lat": -33.476253,
+          "lon": -70.539636,
+          "kind": "amenity=school"
+        },
+        {
+          "osm": "node/906435345",
+          "name": "Colegio Montahue de Peñalolén",
+          "lat": -33.485609,
+          "lon": -70.529749,
+          "kind": "amenity=school"
+        },
+        {
+          "osm": "node/906435346",
+          "name": "Escuela Especial de Peñalolén",
+          "lat": -33.473036,
+          "lon": -70.525674,
+          "kind": "amenity=school"
+        },
+        {
+          "osm": "node/1239225905",
+          "name": "Comunidad Ecológica de Peñalolén",
+          "lat": -33.488662,
+          "lon": -70.530873,
+          "kind": "place=neighbourhood"
+        }
+      ]
+    },
+    "master:TV-ATR-00513": {
+      "name": "Quebrada de Macul",
+      "commune": "penalolen",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "way/191659878",
+          "name": "Piscinas Antialuviones Quebrada de Macul",
+          "lat": -33.505956,
+          "lon": -70.524236,
+          "kind": "natural=water"
+        },
+        {
+          "osm": "way/559619443",
+          "name": "Parque Natural Quebrada de Macul",
+          "lat": -33.488381,
+          "lon": -70.487253,
+          "kind": "leisure=nature_reserve"
+        },
+        {
+          "osm": "way/862776172",
+          "name": "Parque Natural Quebrada de Macul",
+          "lat": -33.493007,
+          "lon": -70.517931,
+          "kind": "amenity=ranger_station;building=yes"
+        }
+      ]
+    },
+    "master:TV-ATR-00369": {
+      "name": "Parque Punta Norte",
+      "commune": "arica",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/12631853931",
+          "name": "Punta Norte",
+          "lat": -18.42943,
+          "lon": -70.290042,
+          "kind": "place=neighbourhood"
+        },
+        {
+          "osm": "way/288991888",
+          "name": "CESFAM Eugenio Petruccelli Astudillo (ex Punta Norte)",
+          "lat": -18.42681,
+          "lon": -70.290729,
+          "kind": "amenity=clinic"
+        },
+        {
+          "osm": "way/622877413",
+          "name": "Parque Urbano Punta Norte",
+          "lat": -18.430512,
+          "lon": -70.289528,
+          "kind": "leisure=park"
+        },
+        {
+          "osm": "way/830001003",
+          "name": "Jardín Infantil Punta Norte",
+          "lat": -18.429033,
+          "lon": -70.289822,
+          "kind": "amenity=kindergarten"
+        },
+        {
+          "osm": "way/830144912",
+          "name": "Parque Urbano Punta Norte",
+          "lat": -18.427443,
+          "lon": -70.290435,
+          "kind": "leisure=park"
+        }
+      ]
+    },
+    "master:TV-ATR-00393": {
+      "name": "Playa Las Machas",
+      "commune": "arica",
+      "reason": "varios con el mismo nombre",
+      "candidates": [
+        {
+          "osm": "node/10587222100",
+          "name": "Playa Las Machas",
+          "lat": -18.445305,
+          "lon": -70.303298,
+          "kind": "leisure=beach_resort"
+        },
+        {
+          "osm": "relation/11492473",
+          "name": "Playa Las Machas",
+          "lat": -18.421121,
+          "lon": -70.3197,
+          "kind": "natural=beach"
+        }
+      ]
+    },
+    "master:TV-ATR-00397": {
+      "name": "Mirador de la Virgen del Morro",
+      "commune": "arica",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/2623166728",
+          "name": "El Morro",
+          "lat": -18.416578,
+          "lon": -70.227232,
+          "kind": "place=hamlet"
+        },
+        {
+          "osm": "way/673899000",
+          "name": "v",
+          "lat": -18.561195,
+          "lon": -70.10567,
+          "kind": "natural=water"
+        }
+      ]
+    },
+    "master:TV-ATR-00398": {
+      "name": "Mirador de Anzota",
+      "commune": "arica",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/12677244913",
+          "name": "Cuevas de Anzota",
+          "lat": -18.54994,
+          "lon": -70.331398,
+          "kind": "tourism=attraction"
+        }
+      ]
+    },
+    "museo-de-sitio-colon-10": {
+      "name": "Museo de Sitio Colón 10",
+      "commune": "arica",
+      "reason": "varios con el mismo nombre",
+      "candidates": [
+        {
+          "osm": "way/231802701",
+          "name": "Museo de Sitio Colón 10",
+          "lat": -18.48074,
+          "lon": -70.321561,
+          "kind": "building=yes;heritage=1;tourism=museum"
+        }
+      ]
+    },
+    "master:TV-ATR-00371": {
+      "name": "Parque Borde Costero de Taltal",
+      "commune": "taltal",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214231207",
+          "name": "Taltal",
+          "lat": -25.407829,
+          "lon": -70.485842,
+          "kind": "place=town"
+        },
+        {
+          "osm": "way/691329078",
+          "name": "Paseo Nuevo Borde Costero de Taltal",
+          "lat": -25.402639,
+          "lon": -70.481695,
+          "kind": "leisure=park"
+        },
+        {
+          "osm": "relation/295883",
+          "name": "Taltal",
+          "lat": -25.304623,
+          "lon": -69.860941,
+          "kind": "boundary=administrative"
+        }
+      ]
+    },
+    "master:TV-ATR-00426": {
+      "name": "Cifuncho",
+      "commune": "taltal",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214218004",
+          "name": "Caleta Cifuncho",
+          "lat": -25.654012,
+          "lon": -70.646414,
+          "kind": "place=hamlet"
+        },
+        {
+          "osm": "node/10289388589",
+          "name": "Cerro Cifuncho",
+          "lat": -25.771996,
+          "lon": -70.580446,
+          "kind": "natural=peak"
+        },
+        {
+          "osm": "way/783499539",
+          "name": "Playa Cifuncho",
+          "lat": -25.650213,
+          "lon": -70.640885,
+          "kind": "natural=beach"
+        }
+      ]
+    },
+    "master:TV-ATR-00438": {
+      "name": "Paseo Ribereño de Copiapó",
+      "commune": "copiapo",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214229792",
+          "name": "Copiapó",
+          "lat": -27.366468,
+          "lon": -70.332275,
+          "kind": "place=city"
+        },
+        {
+          "osm": "node/7678569909",
+          "name": "Copiapó",
+          "lat": -27.3631,
+          "lon": -70.329316,
+          "kind": "man_made=monitoring_station"
+        },
+        {
+          "osm": "relation/295922",
+          "name": "Copiapó",
+          "lat": -27.422636,
+          "lon": -69.703284,
+          "kind": "boundary=administrative"
+        }
+      ]
+    },
+    "master:TV-ATR-00373": {
+      "name": "Parque Monseñor Ariztía",
+      "commune": "caldera",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "way/602197034",
+          "name": "Parque urbano Monseñor Ariztia",
+          "lat": -27.06562,
+          "lon": -70.831432,
+          "kind": "leisure=park"
+        },
+        {
+          "osm": "way/602203284",
+          "name": "Parque urbano Monseñor Ariztía",
+          "lat": -27.072925,
+          "lon": -70.825236,
+          "kind": "leisure=park"
+        },
+        {
+          "osm": "way/602209333",
+          "name": "Parque urbano Monseñor Ariztia",
+          "lat": -27.068231,
+          "lon": -70.82977,
+          "kind": "leisure=park"
+        }
+      ]
+    },
+    "master:TV-ATR-00432": {
+      "name": "Playa Puerto Viejo",
+      "commune": "caldera",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214194661",
+          "name": "Puerto Viejo",
+          "lat": -27.334493,
+          "lon": -70.933101,
+          "kind": "place=hamlet"
+        },
+        {
+          "osm": "way/111289576",
+          "name": "Cancha Puerto Viejo",
+          "lat": -27.336465,
+          "lon": -70.935459,
+          "kind": "leisure=pitch"
+        }
+      ]
+    },
+    "master:TV-ATR-00433": {
+      "name": "Mirador de Bahía Inglesa",
+      "commune": "caldera",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/977677594",
+          "name": "Bahía Inglesa",
+          "lat": -27.102324,
+          "lon": -70.855919,
+          "kind": "place=village"
+        },
+        {
+          "osm": "way/789647463",
+          "name": "Los Jardines de Bahía Inglesa",
+          "lat": -27.102024,
+          "lon": -70.852518,
+          "kind": "tourism=hostel"
+        }
+      ]
+    },
+    "master:TV-ATR-00374": {
+      "name": "Parque Deportivo Los Llanos",
+      "commune": "la-serena",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "way/306433611",
+          "name": "Parque Complejo Polideportivo Los Llanos",
+          "lat": -29.877822,
+          "lon": -71.220469,
+          "kind": "leisure=sports_centre"
+        },
+        {
+          "osm": "way/315304788",
+          "name": "Estadio Polideportivo Los Llanos",
+          "lat": -29.878162,
+          "lon": -71.219568,
+          "kind": "leisure=pitch"
+        },
+        {
+          "osm": "way/589997188",
+          "name": "Skatepark Parque Deportivo Los Llanos",
+          "lat": -29.878695,
+          "lon": -71.21999,
+          "kind": "leisure=pitch"
+        }
+      ]
+    },
+    "master:TV-ATR-00375": {
+      "name": "Parque Lambert",
+      "commune": "la-serena",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214185758",
+          "name": "Lambert",
+          "lat": -29.843259,
+          "lon": -71.12044,
+          "kind": "place=village"
+        },
+        {
+          "osm": "node/2823092801",
+          "name": "CECOSF Lambert",
+          "lat": -29.886329,
+          "lon": -71.226398,
+          "kind": "amenity=doctors"
+        },
+        {
+          "osm": "node/5511947593",
+          "name": "Valle Lambert",
+          "lat": -29.862566,
+          "lon": -71.116857,
+          "kind": "place=hamlet"
+        },
+        {
+          "osm": "node/8380961247",
+          "name": "Villa Lambert",
+          "lat": -29.887542,
+          "lon": -71.225286,
+          "kind": "place=neighbourhood"
+        },
+        {
+          "osm": "node/9851861546",
+          "name": "Cruz en Memoria de Charles L. Lambert",
+          "lat": -29.889132,
+          "lon": -71.225887,
+          "kind": "man_made=cross"
+        }
+      ]
+    },
+    "master:TV-ATR-00440": {
+      "name": "Playa Cuatro Esquinas",
+      "commune": "la-serena",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/9269032181",
+          "name": "Skatepark Cuatro Esquinas",
+          "lat": -29.932871,
+          "lon": -71.256571,
+          "kind": "leisure=pitch"
+        },
+        {
+          "osm": "way/672361225",
+          "name": "Centro Comunitario y Cultural Cuatro Esquinas",
+          "lat": -29.934251,
+          "lon": -71.257266,
+          "kind": "amenity=community_centre;building=yes"
+        }
+      ]
+    },
+    "master:TV-ATR-00441": {
+      "name": "Playa Canto del Agua",
+      "commune": "la-serena",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/7192100186",
+          "name": "Agua",
+          "lat": -29.927734,
+          "lon": -71.279072,
+          "kind": "amenity=drinking_water"
+        }
+      ]
+    },
+    "master:TV-ATR-00443": {
+      "name": "Barrio Patrimonial de La Serena",
+      "commune": "la-serena",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/50020503",
+          "name": "La Serena",
+          "lat": -29.902705,
+          "lon": -71.251957,
+          "kind": "place=city"
+        },
+        {
+          "osm": "node/9717113428",
+          "name": "♥ La Serena",
+          "lat": -29.930401,
+          "lon": -71.280519,
+          "kind": "tourism=artwork"
+        },
+        {
+          "osm": "relation/1588927",
+          "name": "La Serena",
+          "lat": -29.833453,
+          "lon": -71.015205,
+          "kind": "boundary=administrative"
+        }
+      ]
+    },
+    "master:TV-ATR-00376": {
+      "name": "Parque La Pampilla de San Isidro",
+      "commune": "vicuna",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/2974551210",
+          "name": "San Isidro",
+          "lat": -30.026348,
+          "lon": -70.690731,
+          "kind": "place=neighbourhood"
+        }
+      ]
+    },
+    "master:TV-ATR-00458": {
+      "name": "Pueblo de Diaguitas",
+      "commune": "vicuna",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214190585",
+          "name": "Diaguitas",
+          "lat": -30.022807,
+          "lon": -70.634209,
+          "kind": "place=hamlet"
+        }
+      ]
+    },
+    "master:TV-ATR-00459": {
+      "name": "Ruta de Gabriela Mistral",
+      "commune": "vicuna",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/13451634283",
+          "name": "Gabriela Mistral",
+          "lat": -30.192648,
+          "lon": -69.825396,
+          "kind": "tourism=artwork"
+        }
+      ]
+    },
+    "master:TV-ATR-00378": {
+      "name": "Parque Placilla",
+      "commune": "valparaiso",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214232423",
+          "name": "Placilla de Peñuelas",
+          "lat": -33.114887,
+          "lon": -71.56798,
+          "kind": "place=town"
+        },
+        {
+          "osm": "node/2191965303",
+          "name": "Subcomisaría Placilla Peñuelas",
+          "lat": -33.11472,
+          "lon": -71.576293,
+          "kind": "amenity=police"
+        },
+        {
+          "osm": "node/8917619262",
+          "name": "CESFAM Placilla",
+          "lat": -33.11291,
+          "lon": -71.56621,
+          "kind": "amenity=clinic"
+        },
+        {
+          "osm": "node/11246155964",
+          "name": "Escuela Especial Cumbres de Placilla",
+          "lat": -33.114365,
+          "lon": -71.558376,
+          "kind": "amenity=school"
+        },
+        {
+          "osm": "node/12610411182",
+          "name": "Nuevo Placilla",
+          "lat": -33.115288,
+          "lon": -71.553772,
+          "kind": "place=neighbourhood"
+        }
+      ]
+    },
+    "master:TV-ATR-00381": {
+      "name": "Parque Cerro Condell",
+      "commune": "curico",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/1257228394",
+          "name": "Cerro Condell",
+          "lat": -34.97856,
+          "lon": -71.229119,
+          "kind": "tourism=picnic_site"
+        },
+        {
+          "osm": "node/1257228458",
+          "name": "Observatorio Cerro Condell",
+          "lat": -34.978775,
+          "lon": -71.22924,
+          "kind": "tourism=museum"
+        },
+        {
+          "osm": "node/2147011472",
+          "name": "Juegos Cerro Condell",
+          "lat": -34.975881,
+          "lon": -71.225481,
+          "kind": "leisure=playground"
+        },
+        {
+          "osm": "node/11943191747",
+          "name": "Condell",
+          "lat": -34.988955,
+          "lon": -71.236953,
+          "kind": "amenity=pharmacy"
+        },
+        {
+          "osm": "way/204712934",
+          "name": "Piscinas Cerro Condell",
+          "lat": -34.9794,
+          "lon": -71.230277,
+          "kind": "leisure=sports_centre"
+        }
+      ]
+    },
+    "master:TV-ATR-00548": {
+      "name": "Cerro Condell de Curicó",
+      "commune": "curico",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214180445",
+          "name": "Curicó",
+          "lat": -34.985368,
+          "lon": -71.23937,
+          "kind": "place=city"
+        },
+        {
+          "osm": "node/1257228394",
+          "name": "Cerro Condell",
+          "lat": -34.97856,
+          "lon": -71.229119,
+          "kind": "tourism=picnic_site"
+        },
+        {
+          "osm": "node/3073439413",
+          "name": "CURICÓ",
+          "lat": -34.968069,
+          "lon": -71.21562,
+          "kind": "man_made=beacon"
+        },
+        {
+          "osm": "node/11943191747",
+          "name": "Condell",
+          "lat": -34.988955,
+          "lon": -71.236953,
+          "kind": "amenity=pharmacy"
+        },
+        {
+          "osm": "relation/544819",
+          "name": "Curicó",
+          "lat": -35.224105,
+          "lon": -70.875742,
+          "kind": "boundary=administrative"
+        }
+      ]
+    },
+    "master:TV-ATR-00382": {
+      "name": "Parque Estero Piduco",
+      "commune": "talca",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "way/321890195",
+          "name": "Piduco",
+          "lat": -35.429821,
+          "lon": -71.643517,
+          "kind": "amenity=place_of_worship;building=church"
+        },
+        {
+          "osm": "relation/18367476",
+          "name": "Humedal Urbano Cajón del Río Claro y Estero Piduco",
+          "lat": -35.40172,
+          "lon": -71.661827,
+          "kind": "boundary=protected_area;leisure=nature_reserve"
+        }
+      ]
+    },
+    "master:TV-ATR-00547": {
+      "name": "Parque Alameda de Talca",
+      "commune": "talca",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/50028181",
+          "name": "Talca",
+          "lat": -35.426534,
+          "lon": -71.666032,
+          "kind": "place=city"
+        },
+        {
+          "osm": "relation/541797",
+          "name": "Talca",
+          "lat": -35.421337,
+          "lon": -71.606943,
+          "kind": "boundary=administrative"
+        }
+      ]
+    },
+    "master:TV-ATR-00383": {
+      "name": "Parque Costanera",
+      "commune": "pelluhue",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "way/619271236",
+          "name": "Parque Urbano Costanera Pelluhue",
+          "lat": -35.810252,
+          "lon": -72.573719,
+          "kind": "leisure=park"
+        },
+        {
+          "osm": "way/1250870878",
+          "name": "Plaza Costanera",
+          "lat": -35.844424,
+          "lon": -72.639382,
+          "kind": "leisure=park"
+        }
+      ]
+    },
+    "master:TV-ATR-00538": {
+      "name": "Playa de Curanipe",
+      "commune": "pelluhue",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214227750",
+          "name": "Curanipe",
+          "lat": -35.845254,
+          "lon": -72.636357,
+          "kind": "place=village"
+        },
+        {
+          "osm": "node/11459814212",
+          "name": "Pinares de Curanipe",
+          "lat": -35.874403,
+          "lon": -72.532829,
+          "kind": "place=farm"
+        },
+        {
+          "osm": "way/339210330",
+          "name": "Terminal de buses de Curanipe",
+          "lat": -35.845783,
+          "lon": -72.63819,
+          "kind": "amenity=bus_station"
+        }
+      ]
+    },
+    "master:TV-ATR-00539": {
+      "name": "Playa de Pelluhue",
+      "commune": "pelluhue",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214197902",
+          "name": "Pelluhue",
+          "lat": -35.81502,
+          "lon": -72.576959,
+          "kind": "place=town"
+        },
+        {
+          "osm": "way/201349238",
+          "name": "Municipalidad de Pelluhue",
+          "lat": -35.845333,
+          "lon": -72.636695,
+          "kind": "building=yes"
+        },
+        {
+          "osm": "way/383117736",
+          "name": "Plaza de Pelluhue",
+          "lat": -35.814978,
+          "lon": -72.57697,
+          "kind": "leisure=park"
+        },
+        {
+          "osm": "way/603507612",
+          "name": "Liceo de Pelluhue",
+          "lat": -35.812407,
+          "lon": -72.573844,
+          "kind": "amenity=school"
+        },
+        {
+          "osm": "way/603507614",
+          "name": "Internado Liceo de Pelluhue",
+          "lat": -35.81106,
+          "lon": -72.573119,
+          "kind": "building=yes"
+        }
+      ]
+    },
+    "master:TV-ATR-00384": {
+      "name": "Parque Cerro Caracol",
+      "commune": "concepcion",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/1390333310",
+          "name": "Caracol",
+          "lat": -36.826321,
+          "lon": -73.052588,
+          "kind": "amenity=parking"
+        },
+        {
+          "osm": "node/2085056502",
+          "name": "Mirador El Castillo del Cerro Caracol",
+          "lat": -36.83312,
+          "lon": -73.045464,
+          "kind": "tourism=viewpoint"
+        },
+        {
+          "osm": "node/2085056549",
+          "name": "Mirador Cerro Caracol",
+          "lat": -36.8341,
+          "lon": -73.045237,
+          "kind": "tourism=viewpoint"
+        },
+        {
+          "osm": "node/2612196499",
+          "name": "Cerro Caracol",
+          "lat": -36.842192,
+          "lon": -73.038126,
+          "kind": "natural=peak"
+        },
+        {
+          "osm": "node/5509674342",
+          "name": "Bosque nativo en crecimiento del Cerro Caracol",
+          "lat": -36.8413,
+          "lon": -73.041848,
+          "kind": "natural=yes"
+        }
+      ]
+    },
+    "master:TV-ATR-00560": {
+      "name": "Parque Bicentenario de Concepción",
+      "commune": "concepcion",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/330756068",
+          "name": "Concepción",
+          "lat": -36.82707,
+          "lon": -73.050206,
+          "kind": "place=city"
+        },
+        {
+          "osm": "relation/1620105",
+          "name": "Concepción",
+          "lat": -36.845617,
+          "lon": -72.968104,
+          "kind": "boundary=administrative"
+        }
+      ]
+    },
+    "master:TV-ATR-00561": {
+      "name": "Mirador del Cerro Caracol",
+      "commune": "concepcion",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/1390333310",
+          "name": "Caracol",
+          "lat": -36.826321,
+          "lon": -73.052588,
+          "kind": "amenity=parking"
+        },
+        {
+          "osm": "node/2085056502",
+          "name": "Mirador El Castillo del Cerro Caracol",
+          "lat": -36.83312,
+          "lon": -73.045464,
+          "kind": "tourism=viewpoint"
+        },
+        {
+          "osm": "node/2612196499",
+          "name": "Cerro Caracol",
+          "lat": -36.842192,
+          "lon": -73.038126,
+          "kind": "natural=peak"
+        },
+        {
+          "osm": "node/5509674342",
+          "name": "Bosque nativo en crecimiento del Cerro Caracol",
+          "lat": -36.8413,
+          "lon": -73.041848,
+          "kind": "natural=yes"
+        }
+      ]
+    },
+    "master:TV-ATR-00577": {
+      "name": "Mirador Boca Lebu",
+      "commune": "lebu",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214233604",
+          "name": "Lebu",
+          "lat": -37.610228,
+          "lon": -73.656055,
+          "kind": "place=city"
+        },
+        {
+          "osm": "way/161779926",
+          "name": "Escuela Boca Lebu",
+          "lat": -37.602653,
+          "lon": -73.659094,
+          "kind": "amenity=school"
+        },
+        {
+          "osm": "way/1247032727",
+          "name": "Boca Lebu",
+          "lat": -37.596245,
+          "lon": -73.664347,
+          "kind": "leisure=park"
+        },
+        {
+          "osm": "relation/1654913",
+          "name": "Lebu",
+          "lat": -37.93427,
+          "lon": -73.689889,
+          "kind": "boundary=administrative"
+        }
+      ]
+    },
+    "master:TV-ATR-00386": {
+      "name": "Parque Los Batros",
+      "commune": "san-pedro-de-la-paz",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "way/513403563",
+          "name": "Humedal Los Batros",
+          "lat": -36.843347,
+          "lon": -73.116221,
+          "kind": "natural=wetland"
+        },
+        {
+          "osm": "way/617909859",
+          "name": "Parque Humedal Los Batros",
+          "lat": -36.831675,
+          "lon": -73.126857,
+          "kind": "leisure=park"
+        },
+        {
+          "osm": "relation/13904531",
+          "name": "Santuario de la Naturaleza Laguna Grande y Humedal Los Batros",
+          "lat": -36.846164,
+          "lon": -73.120975,
+          "kind": "boundary=protected_area;leisure=nature_reserve"
+        }
+      ]
+    },
+    "master:TV-ATR-00563": {
+      "name": "Laguna Grande de San Pedro",
+      "commune": "san-pedro-de-la-paz",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "way/32087908",
+          "name": "Laguna Grande",
+          "lat": -36.858272,
+          "lon": -73.109005,
+          "kind": "natural=water"
+        }
+      ]
+    },
+    "master:TV-ATR-00564": {
+      "name": "Laguna Chica de San Pedro",
+      "commune": "san-pedro-de-la-paz",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "way/32087675",
+          "name": "Laguna Chica",
+          "lat": -36.849384,
+          "lon": -73.085879,
+          "kind": "natural=water"
+        }
+      ]
+    },
+    "master:TV-ATR-00387": {
+      "name": "Parque Costanera Río Vergara",
+      "commune": "nacimiento",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "way/555189387",
+          "name": "Costanera Río Vergara",
+          "lat": -37.50236,
+          "lon": -72.666634,
+          "kind": "leisure=park"
+        }
+      ]
+    },
+    "master:TV-ATR-00388": {
+      "name": "Parque Santa Lucía",
+      "commune": "temuco",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/8557086120",
+          "name": "Villa Santa Lucía",
+          "lat": -38.742369,
+          "lon": -72.574637,
+          "kind": "place=neighbourhood"
+        },
+        {
+          "osm": "relation/11717988",
+          "name": "Santa Lucía",
+          "lat": -38.742961,
+          "lon": -72.613206,
+          "kind": "leisure=park"
+        }
+      ]
+    },
+    "master:TV-ATR-00586": {
+      "name": "Parque Isla Cautín",
+      "commune": "temuco",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/1175027854",
+          "name": "Isla Cautín",
+          "lat": -38.746821,
+          "lon": -72.592572,
+          "kind": "place=locality"
+        },
+        {
+          "osm": "node/9869596392",
+          "name": "Administración Parque Isla Cautín",
+          "lat": -38.747024,
+          "lon": -72.598987,
+          "kind": "amenity=ranger_station"
+        },
+        {
+          "osm": "node/13993668931",
+          "name": "Cautín",
+          "lat": -38.735736,
+          "lon": -72.580899,
+          "kind": "amenity=veterinary"
+        },
+        {
+          "osm": "way/107636231",
+          "name": "Parque Municipal Isla Cautín",
+          "lat": -38.749046,
+          "lon": -72.597546,
+          "kind": "leisure=park"
+        }
+      ]
+    },
+    "master:TV-ATR-00389": {
+      "name": "Parque Humedal Catrico",
+      "commune": "valdivia",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/4390369268",
+          "name": "🌲",
+          "lat": -39.810158,
+          "lon": -73.249338,
+          "kind": "natural=tree"
+        },
+        {
+          "osm": "node/4894569510",
+          "name": "🌴",
+          "lat": -39.810974,
+          "lon": -73.250564,
+          "kind": "natural=tree"
+        },
+        {
+          "osm": "node/13277703258",
+          "name": "Catrico",
+          "lat": -39.852845,
+          "lon": -73.257326,
+          "kind": "tourism=chalet"
+        },
+        {
+          "osm": "way/1447141624",
+          "name": "Catrico",
+          "lat": -39.853076,
+          "lon": -73.257275,
+          "kind": "building=yes"
+        }
+      ]
+    },
+    "master:TV-ATR-00591": {
+      "name": "Playa Grande de Niebla",
+      "commune": "valdivia",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214202280",
+          "name": "Niebla",
+          "lat": -39.870486,
+          "lon": -73.400475,
+          "kind": "place=town"
+        },
+        {
+          "osm": "node/4390369268",
+          "name": "🌲",
+          "lat": -39.810158,
+          "lon": -73.249338,
+          "kind": "natural=tree"
+        },
+        {
+          "osm": "node/4532577155",
+          "name": "Niebla",
+          "lat": -39.876094,
+          "lon": -73.386088,
+          "kind": "amenity=ferry_terminal"
+        },
+        {
+          "osm": "node/4894569510",
+          "name": "🌴",
+          "lat": -39.810974,
+          "lon": -73.250564,
+          "kind": "natural=tree"
+        },
+        {
+          "osm": "node/4936340988",
+          "name": "Niebla",
+          "lat": -39.872801,
+          "lon": -73.3831,
+          "kind": "amenity=ferry_terminal"
+        }
+      ]
+    },
+    "master:TV-ATR-00593": {
+      "name": "Playa de Curiñanco",
+      "commune": "valdivia",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214203228",
+          "name": "Curiñanco",
+          "lat": -39.735209,
+          "lon": -73.389674,
+          "kind": "place=hamlet"
+        },
+        {
+          "osm": "node/4390369268",
+          "name": "🌲",
+          "lat": -39.810158,
+          "lon": -73.249338,
+          "kind": "natural=tree"
+        },
+        {
+          "osm": "node/4894569510",
+          "name": "🌴",
+          "lat": -39.810974,
+          "lon": -73.250564,
+          "kind": "natural=tree"
+        },
+        {
+          "osm": "node/5885316621",
+          "name": "Condominio Los Notros de Curiñanco",
+          "lat": -39.823008,
+          "lon": -73.28086,
+          "kind": "place=neighbourhood"
+        },
+        {
+          "osm": "node/12952502286",
+          "name": "Escuela Rural de Curiñanco",
+          "lat": -39.726125,
+          "lon": -73.394615,
+          "kind": "tourism=information"
+        }
+      ]
+    },
+    "master:TV-ATR-00594": {
+      "name": "Costanera de Valdivia",
+      "commune": "valdivia",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/3956170554",
+          "name": "Valdivia",
+          "lat": -39.814126,
+          "lon": -73.245986,
+          "kind": "place=city"
+        },
+        {
+          "osm": "node/4390369268",
+          "name": "🌲",
+          "lat": -39.810158,
+          "lon": -73.249338,
+          "kind": "natural=tree"
+        },
+        {
+          "osm": "node/4894569510",
+          "name": "🌴",
+          "lat": -39.810974,
+          "lon": -73.250564,
+          "kind": "natural=tree"
+        },
+        {
+          "osm": "node/7678545003",
+          "name": "Valdivia",
+          "lat": -39.831248,
+          "lon": -73.228484,
+          "kind": "man_made=monitoring_station"
+        },
+        {
+          "osm": "relation/1785691",
+          "name": "Valdivia",
+          "lat": -39.834388,
+          "lon": -73.166938,
+          "kind": "boundary=administrative"
+        }
+      ]
+    },
+    "master:TV-ATR-00595": {
+      "name": "Barrio Isla Teja",
+      "commune": "valdivia",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/1613830857",
+          "name": "Bar",
+          "lat": -39.83848,
+          "lon": -73.210221,
+          "kind": "amenity=bar"
+        },
+        {
+          "osm": "node/4390369268",
+          "name": "🌲",
+          "lat": -39.810158,
+          "lon": -73.249338,
+          "kind": "natural=tree"
+        },
+        {
+          "osm": "node/4894569510",
+          "name": "🌴",
+          "lat": -39.810974,
+          "lon": -73.250564,
+          "kind": "natural=tree"
+        },
+        {
+          "osm": "node/6240946711",
+          "name": "Isla Teja",
+          "lat": -39.810607,
+          "lon": -73.258241,
+          "kind": "place=suburb"
+        },
+        {
+          "osm": "relation/5967393",
+          "name": "Isla Teja",
+          "lat": -39.806187,
+          "lon": -73.258482,
+          "kind": "place=island"
+        }
+      ]
+    },
+    "master:TV-ATR-00596": {
+      "name": "Fuerte de Niebla",
+      "commune": "valdivia",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214202280",
+          "name": "Niebla",
+          "lat": -39.870486,
+          "lon": -73.400475,
+          "kind": "place=town"
+        },
+        {
+          "osm": "node/4390369268",
+          "name": "🌲",
+          "lat": -39.810158,
+          "lon": -73.249338,
+          "kind": "natural=tree"
+        },
+        {
+          "osm": "node/4532577155",
+          "name": "Niebla",
+          "lat": -39.876094,
+          "lon": -73.386088,
+          "kind": "amenity=ferry_terminal"
+        },
+        {
+          "osm": "node/4894569510",
+          "name": "🌴",
+          "lat": -39.810974,
+          "lon": -73.250564,
+          "kind": "natural=tree"
+        },
+        {
+          "osm": "node/4936340988",
+          "name": "Niebla",
+          "lat": -39.872801,
+          "lon": -73.3831,
+          "kind": "amenity=ferry_terminal"
+        }
+      ]
+    },
+    "master:TV-ATR-00598": {
+      "name": "Humedal Río Cruces",
+      "commune": "valdivia",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/4390369268",
+          "name": "🌲",
+          "lat": -39.810158,
+          "lon": -73.249338,
+          "kind": "natural=tree"
+        },
+        {
+          "osm": "node/4894569510",
+          "name": "🌴",
+          "lat": -39.810974,
+          "lon": -73.250564,
+          "kind": "natural=tree"
+        }
+      ]
+    },
+    "master:TV-ATR-00390": {
+      "name": "Parque Municipal",
+      "commune": "puerto-montt",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/4618613060",
+          "name": "Población Municipal",
+          "lat": -41.468401,
+          "lon": -72.917603,
+          "kind": "place=neighbourhood"
+        },
+        {
+          "osm": "node/11087510091",
+          "name": "Mercado Municipal Ancud",
+          "lat": -41.475673,
+          "lon": -72.949152,
+          "kind": "amenity=marketplace"
+        },
+        {
+          "osm": "node/11170720087",
+          "name": "Biblioteca Municipal Puerta Sur",
+          "lat": -41.469934,
+          "lon": -72.996437,
+          "kind": "amenity=library"
+        },
+        {
+          "osm": "way/124816920",
+          "name": "Gimnasio Municipal Mario Marchant",
+          "lat": -41.474181,
+          "lon": -72.952116,
+          "kind": "building=yes;leisure=sports_centre"
+        },
+        {
+          "osm": "way/253350716",
+          "name": "Edificio Consistorial Municipalidad de Puerto Montt",
+          "lat": -41.462839,
+          "lon": -72.937405,
+          "kind": "amenity=townhall;building=yes"
+        }
+      ]
+    },
+    "master:TV-ATR-00615": {
+      "name": "Playa Chinquihue",
+      "commune": "puerto-montt",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214207696",
+          "name": "Chinquihue",
+          "lat": -41.502795,
+          "lon": -72.994838,
+          "kind": "place=quarter"
+        },
+        {
+          "osm": "node/3978416652",
+          "name": "Escuela rural Chinquihue Alto",
+          "lat": -41.524719,
+          "lon": -73.050259,
+          "kind": "amenity=school"
+        },
+        {
+          "osm": "node/4363185697",
+          "name": "Cabañas Chinquihue Alto",
+          "lat": -41.522023,
+          "lon": -73.055979,
+          "kind": "tourism=motel"
+        },
+        {
+          "osm": "node/6200141392",
+          "name": "Chinquihue Norte",
+          "lat": -41.501121,
+          "lon": -73.041615,
+          "kind": "place=hamlet"
+        },
+        {
+          "osm": "node/8210280882",
+          "name": "Brisas de Chinquihue",
+          "lat": -41.506413,
+          "lon": -73.016369,
+          "kind": "place=neighbourhood"
+        }
+      ]
+    },
+    "master:TV-ATR-00616": {
+      "name": "Costanera de Puerto Montt",
+      "commune": "puerto-montt",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/84466877",
+          "name": "Puerto Montt",
+          "lat": -41.471798,
+          "lon": -72.939591,
+          "kind": "place=city"
+        },
+        {
+          "osm": "node/10915422954",
+          "name": "PUERTO MONTT",
+          "lat": -41.429273,
+          "lon": -73.091917,
+          "kind": "man_made=beacon"
+        },
+        {
+          "osm": "relation/1798806",
+          "name": "Puerto Montt",
+          "lat": -41.521603,
+          "lon": -72.857485,
+          "kind": "boundary=administrative"
+        }
+      ]
+    },
+    "master:TV-ATR-00617": {
+      "name": "Mercado Angelmó",
+      "commune": "puerto-montt",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/270111451",
+          "name": "Angelmó",
+          "lat": -41.485552,
+          "lon": -72.963245,
+          "kind": "place=quarter"
+        },
+        {
+          "osm": "node/3976176646",
+          "name": "Angelmó",
+          "lat": -41.486969,
+          "lon": -72.96406,
+          "kind": "tourism=viewpoint"
+        }
+      ]
+    },
+    "master:TV-ATR-00391": {
+      "name": "Parque Artesanos Puerto Chacabuco",
+      "commune": "aysen",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214186249",
+          "name": "Puerto Chacabuco",
+          "lat": -45.462767,
+          "lon": -72.818237,
+          "kind": "place=village"
+        }
+      ]
+    },
+    "master:TV-ATR-00633": {
+      "name": "Costanera de Puerto Aysén",
+      "commune": "aysen",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214215842",
+          "name": "Puerto Aysén",
+          "lat": -45.406817,
+          "lon": -72.697679,
+          "kind": "place=city"
+        },
+        {
+          "osm": "node/11239984612",
+          "name": "AYSÉN",
+          "lat": -45.407013,
+          "lon": -72.68309,
+          "kind": "historic=memorial"
+        },
+        {
+          "osm": "relation/1982383",
+          "name": "Aysén",
+          "lat": -46.146908,
+          "lon": -73.806314,
+          "kind": "boundary=administrative"
+        }
+      ]
+    },
+    "master:TV-ATR-00402": {
+      "name": "Bofedales de Parinacota",
+      "commune": "putre",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214198937",
+          "name": "Parinacota",
+          "lat": -18.201987,
+          "lon": -69.268169,
+          "kind": "place=hamlet"
+        }
+      ]
+    },
+    "master:TV-ATR-00404": {
+      "name": "Playa Huayquique",
+      "commune": "iquique",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "way/1347231111",
+          "name": "Universidad Arturo Prat Campus Huayquique",
+          "lat": -20.271257,
+          "lon": -70.130736,
+          "kind": "amenity=university"
+        }
+      ]
+    },
+    "master:TV-ATR-00408": {
+      "name": "Caleta Río Seco",
+      "commune": "iquique",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/2521140815",
+          "name": "Río Seco",
+          "lat": -20.996666,
+          "lon": -70.160956,
+          "kind": "place=hamlet"
+        }
+      ]
+    },
+    "master:TV-ATR-00412": {
+      "name": "Oasis de Pica",
+      "commune": "pica",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214201884",
+          "name": "Pica",
+          "lat": -20.491142,
+          "lon": -69.329075,
+          "kind": "place=town"
+        },
+        {
+          "osm": "way/198047656",
+          "name": "Oasis de Pica - Resbaladero",
+          "lat": -20.488616,
+          "lon": -69.321161,
+          "kind": "natural=wood"
+        },
+        {
+          "osm": "relation/239424",
+          "name": "Pica",
+          "lat": -20.44282,
+          "lon": -68.956781,
+          "kind": "boundary=administrative"
+        }
+      ]
+    },
+    "master:TV-ATR-00415": {
+      "name": "Playa Trocadero",
+      "commune": "antofagasta",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/1892522522",
+          "name": "Grua Trocadero",
+          "lat": -23.583703,
+          "lon": -70.393678,
+          "kind": "man_made=crane"
+        },
+        {
+          "osm": "node/1893676456",
+          "name": "Grua Trocadero",
+          "lat": -23.583772,
+          "lon": -70.393745,
+          "kind": "tourism=viewpoint"
+        },
+        {
+          "osm": "node/10210199489",
+          "name": "Café Trocadero",
+          "lat": -23.659062,
+          "lon": -70.39941,
+          "kind": "amenity=cafe"
+        },
+        {
+          "osm": "way/112697629",
+          "name": "Balneareo El Trocadero",
+          "lat": -23.584928,
+          "lon": -70.394275,
+          "kind": "natural=beach"
+        },
+        {
+          "osm": "way/179020027",
+          "name": "Balneareo El Trocadero",
+          "lat": -23.585522,
+          "lon": -70.393821,
+          "kind": "leisure=playground"
+        }
+      ]
+    },
+    "master:TV-ATR-00417": {
+      "name": "Playa La Chimba",
+      "commune": "antofagasta",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/7774049922",
+          "name": "Punta La Chimba",
+          "lat": -23.505441,
+          "lon": -70.424466,
+          "kind": "natural=cape"
+        },
+        {
+          "osm": "node/8027059048",
+          "name": "Mirador Quebrada de La Chimba",
+          "lat": -23.53899,
+          "lon": -70.365016,
+          "kind": "tourism=viewpoint"
+        },
+        {
+          "osm": "node/11954911881",
+          "name": "Alto La Chimba",
+          "lat": -23.5627,
+          "lon": -70.381914,
+          "kind": "place=neighbourhood"
+        },
+        {
+          "osm": "way/488983703",
+          "name": "La Chimba",
+          "lat": -23.555589,
+          "lon": -70.404435,
+          "kind": "natural=beach"
+        },
+        {
+          "osm": "way/510766646",
+          "name": "Cancha La Chimba",
+          "lat": -23.543976,
+          "lon": -70.385247,
+          "kind": "leisure=pitch"
+        }
+      ]
+    },
+    "master:TV-ATR-00418": {
+      "name": "Mirador de La Portada",
+      "commune": "antofagasta",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214231579",
+          "name": "La Portada",
+          "lat": -23.498753,
+          "lon": -70.424423,
+          "kind": "place=locality"
+        },
+        {
+          "osm": "node/1389142550",
+          "name": "Mirador de la Portada de Antofagasta",
+          "lat": -23.5,
+          "lon": -70.428731,
+          "kind": "tourism=viewpoint"
+        }
+      ]
+    },
+    "master:TV-ATR-00419": {
+      "name": "Mirador de Ruinas de Huanchaca",
+      "commune": "antofagasta",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "way/112710569",
+          "name": "U",
+          "lat": -23.679999,
+          "lon": -70.407928,
+          "kind": "building=university"
+        },
+        {
+          "osm": "way/135571435",
+          "name": "Ruinas de Huanchaca",
+          "lat": -23.686087,
+          "lon": -70.411467,
+          "kind": "building=yes;historic=ruins"
+        },
+        {
+          "osm": "way/526336914",
+          "name": "Ruinas de Huanchaca",
+          "lat": -23.685188,
+          "lon": -70.412852,
+          "kind": "amenity=theatre;building=yes"
+        }
+      ]
+    },
+    "master:TV-ATR-00421": {
+      "name": "Balneario de Mejillones",
+      "commune": "mejillones",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214195492",
+          "name": "Mejillones",
+          "lat": -23.100234,
+          "lon": -70.448308,
+          "kind": "place=town"
+        },
+        {
+          "osm": "way/195460193",
+          "name": "Mejillones",
+          "lat": -23.09984,
+          "lon": -70.454952,
+          "kind": "building=yes;tourism=hotel"
+        },
+        {
+          "osm": "relation/1564422",
+          "name": "Mejillones",
+          "lat": -22.892996,
+          "lon": -70.250101,
+          "kind": "boundary=administrative"
+        }
+      ]
+    },
+    "master:TV-ATR-00422": {
+      "name": "Hornitos",
+      "commune": "mejillones",
+      "reason": "varios con el mismo nombre",
+      "candidates": [
+        {
+          "osm": "node/2387724738",
+          "name": "Hornitos",
+          "lat": -22.91812,
+          "lon": -70.290345,
+          "kind": "place=hamlet"
+        },
+        {
+          "osm": "relation/9476810",
+          "name": "Hornitos",
+          "lat": -22.888852,
+          "lon": -70.292049,
+          "kind": "natural=beach"
+        }
+      ]
+    },
+    "master:TV-ATR-00423": {
+      "name": "Mirador de Kari Piedra del Coyote",
+      "commune": "san-pedro-de-atacama",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214221679",
+          "name": "Coyo",
+          "lat": -22.952804,
+          "lon": -68.234341,
+          "kind": "place=hamlet"
+        },
+        {
+          "osm": "node/6498843285",
+          "name": "Piedra del Coyote",
+          "lat": -22.917714,
+          "lon": -68.252238,
+          "kind": "tourism=viewpoint"
+        }
+      ]
+    },
+    "master:TV-ATR-00424": {
+      "name": "Pueblo de Toconao",
+      "commune": "san-pedro-de-atacama",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/5909299333",
+          "name": "Toconao",
+          "lat": -23.190521,
+          "lon": -68.00704,
+          "kind": "place=village"
+        }
+      ]
+    },
+    "master:TV-ATR-00434": {
+      "name": "Playa Grande de Huasco",
+      "commune": "huasco",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/1373671679",
+          "name": "Huasco",
+          "lat": -28.465125,
+          "lon": -71.220795,
+          "kind": "place=town"
+        },
+        {
+          "osm": "relation/1572197",
+          "name": "Huasco",
+          "lat": -28.290528,
+          "lon": -71.042265,
+          "kind": "boundary=administrative"
+        }
+      ]
+    },
+    "master:TV-ATR-00435": {
+      "name": "Playa Chica de Huasco",
+      "commune": "huasco",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/1373671679",
+          "name": "Huasco",
+          "lat": -28.465125,
+          "lon": -71.220795,
+          "kind": "place=town"
+        },
+        {
+          "osm": "relation/1572197",
+          "name": "Huasco",
+          "lat": -28.290528,
+          "lon": -71.042265,
+          "kind": "boundary=administrative"
+        }
+      ]
+    },
+    "master:TV-ATR-00436": {
+      "name": "Humedal de Huasco Bajo",
+      "commune": "huasco",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214222873",
+          "name": "Huasco Bajo",
+          "lat": -28.474661,
+          "lon": -71.177547,
+          "kind": "place=village"
+        },
+        {
+          "osm": "node/1373671679",
+          "name": "Huasco",
+          "lat": -28.465125,
+          "lon": -71.220795,
+          "kind": "place=town"
+        },
+        {
+          "osm": "relation/1572197",
+          "name": "Huasco",
+          "lat": -28.290528,
+          "lon": -71.042265,
+          "kind": "boundary=administrative"
+        }
+      ]
+    },
+    "master:TV-ATR-00437": {
+      "name": "Mirador de Caleta Chañaral de Aceituno",
+      "commune": "freirina",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214232758",
+          "name": "Caleta Chañaral de Aceituno",
+          "lat": -29.078187,
+          "lon": -71.490271,
+          "kind": "place=hamlet"
+        }
+      ]
+    },
+    "master:TV-ATR-00448": {
+      "name": "Playa Grande de Tongoy",
+      "commune": "coquimbo",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214185056",
+          "name": "Tongoy",
+          "lat": -30.257216,
+          "lon": -71.492858,
+          "kind": "place=town"
+        }
+      ]
+    },
+    "master:TV-ATR-00449": {
+      "name": "Mirador de La Cruz del Tercer Milenio",
+      "commune": "coquimbo",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/1064753654",
+          "name": "Cruz del Tercer Milenio",
+          "lat": -29.951909,
+          "lon": -71.3472,
+          "kind": "tourism=attraction"
+        },
+        {
+          "osm": "way/374039566",
+          "name": "Cruz del Tercer Milenio",
+          "lat": -29.952192,
+          "lon": -71.347475,
+          "kind": "building=yes;historic=building"
+        }
+      ]
+    },
+    "master:TV-ATR-00452": {
+      "name": "Mirador de Punta de Choros",
+      "commune": "la-higuera",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214185237",
+          "name": "Punta de Choros",
+          "lat": -29.247073,
+          "lon": -71.461623,
+          "kind": "place=village"
+        },
+        {
+          "osm": "node/9017321217",
+          "name": "Punta de Choros",
+          "lat": -29.243079,
+          "lon": -71.460227,
+          "kind": "amenity=doctors"
+        },
+        {
+          "osm": "way/996367384",
+          "name": "Escuela de Punta de Choros",
+          "lat": -29.245989,
+          "lon": -71.460988,
+          "kind": "amenity=school"
+        }
+      ]
+    },
+    "master:TV-ATR-00456": {
+      "name": "Humedal Laguna Conchalí",
+      "commune": "los-vilos",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214223061",
+          "name": "Conchalí",
+          "lat": -31.872232,
+          "lon": -71.479369,
+          "kind": "place=hamlet"
+        },
+        {
+          "osm": "way/313514298",
+          "name": "Laguna Conchalí",
+          "lat": -31.876372,
+          "lon": -71.496882,
+          "kind": "natural=water"
+        }
+      ]
+    },
+    "master:TV-ATR-00463": {
+      "name": "Mirador de Punta Puyai",
+      "commune": "papudo",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/1073053513",
+          "name": "Punta Puyai",
+          "lat": -32.499341,
+          "lon": -71.434171,
+          "kind": "place=neighbourhood"
+        }
+      ]
+    },
+    "master:TV-ATR-00464": {
+      "name": "Paseo Costero de Papudo",
+      "commune": "papudo",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214196602",
+          "name": "Papudo",
+          "lat": -32.50759,
+          "lon": -71.445935,
+          "kind": "place=town"
+        },
+        {
+          "osm": "relation/113203",
+          "name": "Papudo",
+          "lat": -32.47656,
+          "lon": -71.373391,
+          "kind": "boundary=administrative"
+        }
+      ]
+    },
+    "master:TV-ATR-00462": {
+      "name": "Playa Lilenes",
+      "commune": "papudo",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "way/455437298",
+          "name": "Lilén",
+          "lat": -32.487418,
+          "lon": -71.431308,
+          "kind": "natural=beach"
+        }
+      ]
+    },
+    "master:TV-ATR-00468": {
+      "name": "Mirador Isla de los Pingüinos de Cachagua",
+      "commune": "zapallar",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214221711",
+          "name": "Cachagua",
+          "lat": -32.579615,
+          "lon": -71.453085,
+          "kind": "place=village"
+        }
+      ]
+    },
+    "master:TV-ATR-00469": {
+      "name": "Sendero Costero de Zapallar",
+      "commune": "zapallar",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214181198",
+          "name": "Zapallar",
+          "lat": -32.552829,
+          "lon": -71.458818,
+          "kind": "place=town"
+        },
+        {
+          "osm": "node/2265964494",
+          "name": "Zapallar",
+          "lat": -32.556135,
+          "lon": -71.455368,
+          "kind": "amenity=fast_food"
+        },
+        {
+          "osm": "relation/110713",
+          "name": "Zapallar",
+          "lat": -32.590009,
+          "lon": -71.338737,
+          "kind": "boundary=administrative"
+        }
+      ]
+    },
+    "master:TV-ATR-00472": {
+      "name": "Playa La Ballena",
+      "commune": "la-ligua",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/2975544295",
+          "name": "La Ballena",
+          "lat": -32.281899,
+          "lon": -71.468713,
+          "kind": "place=hamlet"
+        },
+        {
+          "osm": "node/10599359925",
+          "name": "Lota La Ballena",
+          "lat": -32.298903,
+          "lon": -71.463299,
+          "kind": "leisure=adult_gaming_centre"
+        }
+      ]
+    },
+    "master:TV-ATR-00473": {
+      "name": "Mirador de Los Molles",
+      "commune": "la-ligua",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/946142836",
+          "name": "Los Molles",
+          "lat": -32.239565,
+          "lon": -71.513666,
+          "kind": "place=village"
+        },
+        {
+          "osm": "node/2975544294",
+          "name": "Los Molles",
+          "lat": -32.273993,
+          "lon": -71.248008,
+          "kind": "place=isolated_dwelling"
+        }
+      ]
+    },
+    "master:TV-ATR-00474": {
+      "name": "Humedal de Los Molles",
+      "commune": "la-ligua",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/946142836",
+          "name": "Los Molles",
+          "lat": -32.239565,
+          "lon": -71.513666,
+          "kind": "place=village"
+        },
+        {
+          "osm": "node/2975544294",
+          "name": "Los Molles",
+          "lat": -32.273993,
+          "lon": -71.248008,
+          "kind": "place=isolated_dwelling"
+        }
+      ]
+    },
+    "master:TV-ATR-00477": {
+      "name": "Playa La Boca",
+      "commune": "concon",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/9125323964",
+          "name": "La Boca Gourmet",
+          "lat": -32.92044,
+          "lon": -71.509373,
+          "kind": "amenity=cafe"
+        },
+        {
+          "osm": "way/752867194",
+          "name": "La Boca",
+          "lat": -32.91897,
+          "lon": -71.511884,
+          "kind": "natural=beach"
+        }
+      ]
+    },
+    "master:TV-ATR-00478": {
+      "name": "Playa Los Lilenes",
+      "commune": "concon",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "way/25403187",
+          "name": "Los Lilenes",
+          "lat": -32.927809,
+          "lon": -71.545627,
+          "kind": "natural=beach"
+        }
+      ]
+    },
+    "master:TV-ATR-00479": {
+      "name": "Humedal Desembocadura Río Aconcagua",
+      "commune": "concon",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "relation/5744214",
+          "name": "Rio Aconcagua",
+          "lat": -32.91946,
+          "lon": -71.496332,
+          "kind": "natural=water"
+        }
+      ]
+    },
+    "master:TV-ATR-00480": {
+      "name": "Playa Reñaca",
+      "commune": "vina-del-mar",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214211375",
+          "name": "Reñaca",
+          "lat": -32.971533,
+          "lon": -71.543713,
+          "kind": "place=suburb"
+        },
+        {
+          "osm": "node/255380288",
+          "name": "Tenencia de Reñaca",
+          "lat": -32.969626,
+          "lon": -71.542586,
+          "kind": "amenity=police"
+        },
+        {
+          "osm": "node/389006817",
+          "name": "Mirador de Reñaca",
+          "lat": -32.999114,
+          "lon": -71.492552,
+          "kind": "place=neighbourhood"
+        },
+        {
+          "osm": "node/1095859895",
+          "name": "Green Lab Reñaca",
+          "lat": -32.969599,
+          "lon": -71.544465,
+          "kind": "amenity=restaurant"
+        },
+        {
+          "osm": "node/4684658589",
+          "name": "Costa Reñaca",
+          "lat": -32.979601,
+          "lon": -71.531825,
+          "kind": "tourism=hotel"
+        }
+      ]
+    },
+    "master:TV-ATR-00481": {
+      "name": "Playa Caleta Abarca",
+      "commune": "vina-del-mar",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/5034703897",
+          "name": "Hostal Caleta Abarca",
+          "lat": -33.025327,
+          "lon": -71.56578,
+          "kind": "tourism=hostel"
+        },
+        {
+          "osm": "node/6346463675",
+          "name": "Población Caleta Abarca",
+          "lat": -33.025181,
+          "lon": -71.567602,
+          "kind": "place=neighbourhood"
+        },
+        {
+          "osm": "way/27710762",
+          "name": "Caleta Abarca",
+          "lat": -33.023131,
+          "lon": -71.569742,
+          "kind": "natural=beach"
+        },
+        {
+          "osm": "way/574238131",
+          "name": "Edificio Caleta Abarca",
+          "lat": -33.024297,
+          "lon": -71.56848,
+          "kind": "building=apartments"
+        }
+      ]
+    },
+    "master:TV-ATR-00482": {
+      "name": "Playa Las Salinas",
+      "commune": "vina-del-mar",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/3424846138",
+          "name": "Población Naval Las Salinas",
+          "lat": -32.984491,
+          "lon": -71.542415,
+          "kind": "place=neighbourhood"
+        },
+        {
+          "osm": "node/12177023602",
+          "name": "Las Salinas",
+          "lat": -32.998933,
+          "lon": -71.548373,
+          "kind": "place=neighbourhood"
+        },
+        {
+          "osm": "node/13334141213",
+          "name": "Conjunto Habitacional Empart Las Salinas.",
+          "lat": -33.001215,
+          "lon": -71.5445,
+          "kind": "place=neighbourhood"
+        },
+        {
+          "osm": "way/23390781",
+          "name": "Balneario Las Salinas",
+          "lat": -32.989492,
+          "lon": -71.547013,
+          "kind": "natural=beach"
+        },
+        {
+          "osm": "way/23426034",
+          "name": "Parque Playa Las Salinas",
+          "lat": -32.999707,
+          "lon": -71.549445,
+          "kind": "leisure=park"
+        }
+      ]
+    },
+    "master:TV-ATR-00491": {
+      "name": "Playa Ritoque",
+      "commune": "quintero",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214203988",
+          "name": "Ritoque",
+          "lat": -32.817717,
+          "lon": -71.530245,
+          "kind": "place=hamlet"
+        },
+        {
+          "osm": "node/4208071089",
+          "name": "Restaurante Ritoque",
+          "lat": -32.827384,
+          "lon": -71.528348,
+          "kind": "amenity=restaurant"
+        },
+        {
+          "osm": "node/4329590389",
+          "name": "Rocas de Ritoque",
+          "lat": -32.826475,
+          "lon": -71.528771,
+          "kind": "place=hamlet"
+        },
+        {
+          "osm": "node/7776200162",
+          "name": "Punta Ritoque",
+          "lat": -32.827204,
+          "lon": -71.532454,
+          "kind": "natural=cape"
+        },
+        {
+          "osm": "node/10797302409",
+          "name": "Espacio Ritoque",
+          "lat": -32.896155,
+          "lon": -71.504842,
+          "kind": "amenity=nightclub"
+        }
+      ]
+    },
+    "master:TV-ATR-00494": {
+      "name": "Playa El Quisco",
+      "commune": "el-quisco",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/842295469",
+          "name": "El Quisco",
+          "lat": -33.400311,
+          "lon": -71.693998,
+          "kind": "place=town"
+        },
+        {
+          "osm": "node/948895761",
+          "name": "1.ª Compañía de Bomberos de El Quisco",
+          "lat": -33.399224,
+          "lon": -71.689049,
+          "kind": "amenity=fire_station"
+        },
+        {
+          "osm": "node/948895781",
+          "name": "Playa Principal El Quisco",
+          "lat": -33.393684,
+          "lon": -71.694578,
+          "kind": "tourism=viewpoint"
+        },
+        {
+          "osm": "node/948895808",
+          "name": "Ilustre Municipalidad de El Quisco",
+          "lat": -33.399917,
+          "lon": -71.694014,
+          "kind": "amenity=townhall"
+        },
+        {
+          "osm": "node/948895815",
+          "name": "CESFAM El Quisco",
+          "lat": -33.397493,
+          "lon": -71.694377,
+          "kind": "amenity=clinic"
+        }
+      ]
+    },
+    "master:TV-ATR-00495": {
+      "name": "Playa Isla Negra",
+      "commune": "el-quisco",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/243631350",
+          "name": "Isla Negra",
+          "lat": -33.440275,
+          "lon": -71.680564,
+          "kind": "place=suburb"
+        },
+        {
+          "osm": "node/948852218",
+          "name": "Iglesia de Isla Negra",
+          "lat": -33.437708,
+          "lon": -71.684494,
+          "kind": "amenity=place_of_worship"
+        },
+        {
+          "osm": "node/11417413912",
+          "name": "CECOSF Isla Negra",
+          "lat": -33.438444,
+          "lon": -71.684046,
+          "kind": "amenity=doctors"
+        },
+        {
+          "osm": "node/11496004766",
+          "name": "Taxis Isla Negra",
+          "lat": -33.440898,
+          "lon": -71.683258,
+          "kind": "amenity=taxi"
+        },
+        {
+          "osm": "node/13457197924",
+          "name": "Centro de Expansión Cultural Isla Negra",
+          "lat": -33.437479,
+          "lon": -71.685314,
+          "kind": "amenity=arts_centre"
+        }
+      ]
+    },
+    "master:TV-ATR-00497": {
+      "name": "Playa Pejerrey",
+      "commune": "algarrobo",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "way/257213027",
+          "name": "Playa El Pejerrey",
+          "lat": -33.360434,
+          "lon": -71.669667,
+          "kind": "natural=beach"
+        }
+      ]
+    },
+    "master:TV-ATR-00501": {
+      "name": "Humedal Río Maipo",
+      "commune": "santo-domingo",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "way/895696753",
+          "name": "Santuario de la Naturaleza Humedal Río Maipo",
+          "lat": -33.621011,
+          "lon": -71.626318,
+          "kind": "boundary=protected_area;leisure=nature_reserve"
+        },
+        {
+          "osm": "way/905904987",
+          "name": "Administración Parque Humedal Río Maipo",
+          "lat": -33.624043,
+          "lon": -71.627005,
+          "kind": "amenity=ranger_station;building=yes"
+        },
+        {
+          "osm": "relation/11161794",
+          "name": "Rio Maipo",
+          "lat": -33.726816,
+          "lon": -71.556481,
+          "kind": "natural=water"
+        }
+      ]
+    },
+    "master:TV-ATR-00502": {
+      "name": "Playa Maitencillo",
+      "commune": "puchuncavi",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214197524",
+          "name": "Maitencillo",
+          "lat": -32.644184,
+          "lon": -71.432936,
+          "kind": "place=town"
+        },
+        {
+          "osm": "node/958196350",
+          "name": "Capilla Maitencillo",
+          "lat": -32.644184,
+          "lon": -71.432234,
+          "kind": "amenity=place_of_worship"
+        },
+        {
+          "osm": "node/958197656",
+          "name": "Retén Maitencillo",
+          "lat": -32.646072,
+          "lon": -71.430107,
+          "kind": "amenity=police"
+        },
+        {
+          "osm": "node/4722425411",
+          "name": "Burgazo Maitencillo",
+          "lat": -32.683081,
+          "lon": -71.414742,
+          "kind": "amenity=restaurant"
+        },
+        {
+          "osm": "node/5257889091",
+          "name": "Posta Salud Rural Maitencillo",
+          "lat": -32.646064,
+          "lon": -71.430745,
+          "kind": "amenity=doctors"
+        }
+      ]
+    },
+    "master:TV-ATR-00503": {
+      "name": "Playa Horcón",
+      "commune": "puchuncavi",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214214866",
+          "name": "Horcón",
+          "lat": -32.711241,
+          "lon": -71.488477,
+          "kind": "place=neighbourhood"
+        },
+        {
+          "osm": "node/1157121665",
+          "name": "Retén Horcón",
+          "lat": -32.715966,
+          "lon": -71.486523,
+          "kind": "amenity=police"
+        },
+        {
+          "osm": "node/4419376183",
+          "name": "Geositio Ventana de Horcón",
+          "lat": -32.708465,
+          "lon": -71.49338,
+          "kind": "tourism=viewpoint"
+        },
+        {
+          "osm": "node/4422227481",
+          "name": "Posta salud rural Horcón",
+          "lat": -32.711267,
+          "lon": -71.48871,
+          "kind": "amenity=doctors"
+        },
+        {
+          "osm": "node/12798589523",
+          "name": "Comunidad Vecinal Las Camelias de Horcón",
+          "lat": -32.723652,
+          "lon": -71.486727,
+          "kind": "place=neighbourhood"
+        }
+      ]
+    },
+    "master:TV-ATR-00511": {
+      "name": "Barrio Italia",
+      "commune": "providencia",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/13565453801",
+          "name": "Ramen Ryoma Barrio Italia",
+          "lat": -33.446629,
+          "lon": -70.625905,
+          "kind": "amenity=restaurant"
+        },
+        {
+          "osm": "way/638106448",
+          "name": "Vo Hotel Barrio Italia",
+          "lat": -33.446367,
+          "lon": -70.62981,
+          "kind": "building=yes;tourism=hotel"
+        }
+      ]
+    },
+    "master:TV-ATR-00512": {
+      "name": "Parque Bicentenario de Vitacura",
+      "commune": "vitacura",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214226402",
+          "name": "Vitacura",
+          "lat": -33.387106,
+          "lon": -70.576452,
+          "kind": "place=suburb"
+        },
+        {
+          "osm": "node/4672274592",
+          "name": "BiCE",
+          "lat": -33.376903,
+          "lon": -70.571384,
+          "kind": "amenity=bank"
+        },
+        {
+          "osm": "relation/162990",
+          "name": "Vitacura",
+          "lat": -33.380009,
+          "lon": -70.565563,
+          "kind": "boundary=administrative"
+        }
+      ]
+    },
+    "master:TV-ATR-00514": {
+      "name": "Mirador de Farellones",
+      "commune": "lo-barnechea",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214198225",
+          "name": "Farellones",
+          "lat": -33.350796,
+          "lon": -70.312941,
+          "kind": "place=hamlet"
+        },
+        {
+          "osm": "node/5709137122",
+          "name": "El Alemán de Farellones",
+          "lat": -33.351668,
+          "lon": -70.312169,
+          "kind": "amenity=restaurant"
+        },
+        {
+          "osm": "way/628634053",
+          "name": "Escuela de Farellones",
+          "lat": -33.352463,
+          "lon": -70.311811,
+          "kind": "amenity=school"
+        }
+      ]
+    },
+    "master:TV-ATR-00515": {
+      "name": "Mirador Embalse El Yeso",
+      "commune": "san-jose-de-maipo",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "way/28962207",
+          "name": "Embalse El Yeso",
+          "lat": -33.651151,
+          "lon": -70.070267,
+          "kind": "natural=water"
+        }
+      ]
+    },
+    "master:TV-ATR-00516": {
+      "name": "Pueblo de San José de Maipo",
+      "commune": "san-jose-de-maipo",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214180495",
+          "name": "San José de Maipo",
+          "lat": -33.640397,
+          "lon": -70.352784,
+          "kind": "place=town"
+        },
+        {
+          "osm": "relation/166556",
+          "name": "San José de Maipo",
+          "lat": -33.671828,
+          "lon": -70.134777,
+          "kind": "boundary=administrative"
+        }
+      ]
+    },
+    "master:TV-ATR-00517": {
+      "name": "Parque Tres Poniente",
+      "commune": "maipu",
+      "reason": "varios con el mismo nombre",
+      "candidates": [
+        {
+          "osm": "way/24529838",
+          "name": "Parque Tres Poniente",
+          "lat": -33.525971,
+          "lon": -70.77786,
+          "kind": "leisure=park"
+        },
+        {
+          "osm": "way/142438696",
+          "name": "Parque Tres Poniente",
+          "lat": -33.504531,
+          "lon": -70.77893,
+          "kind": "leisure=park"
+        },
+        {
+          "osm": "way/142438702",
+          "name": "Parque Tres Poniente",
+          "lat": -33.501393,
+          "lon": -70.779109,
+          "kind": "leisure=park"
+        },
+        {
+          "osm": "way/572841694",
+          "name": "Parque Tres Poniente",
+          "lat": -33.499581,
+          "lon": -70.779017,
+          "kind": "leisure=park"
+        },
+        {
+          "osm": "relation/7732423",
+          "name": "Parque Tres Poniente",
+          "lat": -33.515282,
+          "lon": -70.778654,
+          "kind": "leisure=park"
+        }
+      ]
+    },
+    "master:TV-ATR-00518": {
+      "name": "Playa Principal de Pichilemu",
+      "commune": "pichilemu",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214225768",
+          "name": "Pichilemu",
+          "lat": -34.385169,
+          "lon": -72.004661,
+          "kind": "place=town"
+        },
+        {
+          "osm": "relation/1660973",
+          "name": "Pichilemu",
+          "lat": -34.367801,
+          "lon": -71.899182,
+          "kind": "boundary=administrative"
+        }
+      ]
+    },
+    "master:TV-ATR-00520": {
+      "name": "Playa Hermosa de Pichilemu",
+      "commune": "pichilemu",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214225768",
+          "name": "Pichilemu",
+          "lat": -34.385169,
+          "lon": -72.004661,
+          "kind": "place=town"
+        },
+        {
+          "osm": "relation/1660973",
+          "name": "Pichilemu",
+          "lat": -34.367801,
+          "lon": -71.899182,
+          "kind": "boundary=administrative"
+        }
+      ]
+    },
+    "master:TV-ATR-00522": {
+      "name": "Mirador de Punta de Lobos",
+      "commune": "pichilemu",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/314166136",
+          "name": "Punta de Lobos",
+          "lat": -34.425195,
+          "lon": -72.048025,
+          "kind": "tourism=viewpoint"
+        },
+        {
+          "osm": "node/1672909213",
+          "name": "Punta de Lobos",
+          "lat": -34.429275,
+          "lon": -72.037568,
+          "kind": "place=hamlet"
+        },
+        {
+          "osm": "node/7774005199",
+          "name": "Punta de Lobos",
+          "lat": -34.425448,
+          "lon": -72.048925,
+          "kind": "natural=cape"
+        },
+        {
+          "osm": "node/11592994912",
+          "name": "Punta de Lobos",
+          "lat": -34.405763,
+          "lon": -72.025963,
+          "kind": "amenity=pharmacy"
+        }
+      ]
+    },
+    "master:TV-ATR-00523": {
+      "name": "Paseo Costanera de Pichilemu",
+      "commune": "pichilemu",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214225768",
+          "name": "Pichilemu",
+          "lat": -34.385169,
+          "lon": -72.004661,
+          "kind": "place=town"
+        },
+        {
+          "osm": "relation/1660973",
+          "name": "Pichilemu",
+          "lat": -34.367801,
+          "lon": -71.899182,
+          "kind": "boundary=administrative"
+        }
+      ]
+    },
+    "master:TV-ATR-00528": {
+      "name": "Pueblo de San Pedro de Alcántara",
+      "commune": "paredones",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214183123",
+          "name": "San Pedro de Alcántara",
+          "lat": -34.76892,
+          "lon": -71.836377,
+          "kind": "place=hamlet"
+        },
+        {
+          "osm": "node/1816639758",
+          "name": "San Pedro de Alcantara",
+          "lat": -34.768937,
+          "lon": -71.835619,
+          "kind": "amenity=restaurant"
+        },
+        {
+          "osm": "node/8823025085",
+          "name": "San Pedro",
+          "lat": -34.639911,
+          "lon": -72.043988,
+          "kind": "tourism=artwork"
+        }
+      ]
+    },
+    "master:TV-ATR-00529": {
+      "name": "Plaza de Armas de San Fernando",
+      "commune": "san-fernando",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214204398",
+          "name": "San Fernando",
+          "lat": -34.583791,
+          "lon": -70.989122,
+          "kind": "place=city"
+        },
+        {
+          "osm": "node/7678545035",
+          "name": "San Fernando",
+          "lat": -34.579792,
+          "lon": -70.989658,
+          "kind": "man_made=monitoring_station"
+        },
+        {
+          "osm": "node/8458876797",
+          "name": "San Fernando",
+          "lat": -34.592881,
+          "lon": -70.986941,
+          "kind": "natural=tree"
+        },
+        {
+          "osm": "node/14104496632",
+          "name": "San Fernando",
+          "lat": -34.571594,
+          "lon": -70.972354,
+          "kind": "tourism=artwork"
+        },
+        {
+          "osm": "way/559142834",
+          "name": "Pileta de la Plaza de Armas de San Fernando",
+          "lat": -34.583894,
+          "lon": -70.989113,
+          "kind": "amenity=fountain"
+        }
+      ]
+    },
+    "master:TV-ATR-00532": {
+      "name": "Campamento Minero Sewell",
+      "commune": "machali",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214228350",
+          "name": "Sewell",
+          "lat": -34.084883,
+          "lon": -70.382939,
+          "kind": "place=village;tourism=attraction"
+        }
+      ]
+    },
+    "master:TV-ATR-00533": {
+      "name": "Playa de Constitución",
+      "commune": "constitucion",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/656582484",
+          "name": "Constitución",
+          "lat": -35.331831,
+          "lon": -72.4119,
+          "kind": "place=city"
+        },
+        {
+          "osm": "node/1823767533",
+          "name": "Memorial del Detenido Desaparecido de Constitución",
+          "lat": -35.330886,
+          "lon": -72.411826,
+          "kind": "historic=memorial"
+        },
+        {
+          "osm": "node/12291983414",
+          "name": "Museo de Constitución",
+          "lat": -35.330911,
+          "lon": -72.412105,
+          "kind": "tourism=museum"
+        },
+        {
+          "osm": "way/51744995",
+          "name": "Plaza de Armas de Constitución",
+          "lat": -35.331854,
+          "lon": -72.411863,
+          "kind": "leisure=park"
+        },
+        {
+          "osm": "way/171324228",
+          "name": "Estadio Municipal de Constitución Enrique Donn Müller",
+          "lat": -35.3388,
+          "lon": -72.408032,
+          "kind": "leisure=sports_centre"
+        }
+      ]
+    },
+    "master:TV-ATR-00537": {
+      "name": "Mirador Cerro Mutrún",
+      "commune": "constitucion",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/529139866",
+          "name": "Cerro Mutrún",
+          "lat": -35.323056,
+          "lon": -72.413081,
+          "kind": "natural=peak"
+        },
+        {
+          "osm": "node/3354392395",
+          "name": "Cerro Mutrún",
+          "lat": -35.322184,
+          "lon": -72.411458,
+          "kind": "tourism=viewpoint"
+        },
+        {
+          "osm": "way/489111453",
+          "name": "Cerro Mutrún",
+          "lat": -35.322668,
+          "lon": -72.412681,
+          "kind": "leisure=park"
+        }
+      ]
+    },
+    "master:TV-ATR-00541": {
+      "name": "Playa Llico",
+      "commune": "vichuquen",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214223342",
+          "name": "Llico",
+          "lat": -34.766441,
+          "lon": -72.074627,
+          "kind": "place=village"
+        },
+        {
+          "osm": "node/7774005203",
+          "name": "Punta Llico",
+          "lat": -34.754853,
+          "lon": -72.088251,
+          "kind": "natural=cape"
+        },
+        {
+          "osm": "way/202052561",
+          "name": "Plaza Llico",
+          "lat": -34.765251,
+          "lon": -72.078197,
+          "kind": "leisure=park"
+        },
+        {
+          "osm": "way/217865165",
+          "name": "Reten Llico",
+          "lat": -34.765168,
+          "lon": -72.077542,
+          "kind": "amenity=police;building=yes"
+        },
+        {
+          "osm": "way/473680706",
+          "name": "Posta de salud rural llico",
+          "lat": -34.764755,
+          "lon": -72.078645,
+          "kind": "amenity=doctors;building=yes"
+        }
+      ]
+    },
+    "master:TV-ATR-00542": {
+      "name": "Playa Boyeruca",
+      "commune": "vichuquen",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214230051",
+          "name": "Boyeruca",
+          "lat": -34.688451,
+          "lon": -72.050272,
+          "kind": "place=hamlet"
+        },
+        {
+          "osm": "node/1631430920",
+          "name": "Restaurant Boyeruca",
+          "lat": -34.687491,
+          "lon": -72.057972,
+          "kind": "amenity=restaurant"
+        },
+        {
+          "osm": "node/2850548467",
+          "name": "Boyeruca",
+          "lat": -34.688821,
+          "lon": -72.054737,
+          "kind": "amenity=restaurant"
+        },
+        {
+          "osm": "node/2850569203",
+          "name": "Mirador Municipal Boyeruca",
+          "lat": -34.689548,
+          "lon": -72.060081,
+          "kind": "tourism=viewpoint"
+        },
+        {
+          "osm": "node/2850573802",
+          "name": "El Mirador Boyeruca",
+          "lat": -34.689325,
+          "lon": -72.059541,
+          "kind": "amenity=restaurant"
+        }
+      ]
+    },
+    "master:TV-ATR-00549": {
+      "name": "Playa de Cobquecura",
+      "commune": "cobquecura",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214225707",
+          "name": "Cobquecura",
+          "lat": -36.131757,
+          "lon": -72.791542,
+          "kind": "place=village"
+        },
+        {
+          "osm": "node/321703060",
+          "name": "Ilustre Municipalidad de Cobquecura",
+          "lat": -36.131547,
+          "lon": -72.79241,
+          "kind": "amenity=townhall"
+        },
+        {
+          "osm": "node/6267011785",
+          "name": "Sabores de Cobquecura",
+          "lat": -36.132991,
+          "lon": -72.796196,
+          "kind": "amenity=restaurant"
+        },
+        {
+          "osm": "node/10976985994",
+          "name": "Escuela Especial de Lenguaje cumbres de Cobquecura",
+          "lat": -36.130372,
+          "lon": -72.788971,
+          "kind": "amenity=school"
+        },
+        {
+          "osm": "node/12453590214",
+          "name": "Ecomuseo de Cobquecura",
+          "lat": -36.130855,
+          "lon": -72.790116,
+          "kind": "tourism=museum"
+        }
+      ]
+    },
+    "master:TV-ATR-00551": {
+      "name": "Playa de Taucú",
+      "commune": "cobquecura",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/2382489850",
+          "name": "Taucú",
+          "lat": -36.171477,
+          "lon": -72.808098,
+          "kind": "place=hamlet"
+        }
+      ]
+    },
+    "master:TV-ATR-00552": {
+      "name": "Mirador de la Iglesia de Piedra",
+      "commune": "cobquecura",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/5515192498",
+          "name": "Iglesia de Piedra",
+          "lat": -36.093842,
+          "lon": -72.813745,
+          "kind": "tourism=attraction"
+        }
+      ]
+    },
+    "master:TV-ATR-00553": {
+      "name": "Playa Municipal Laguna Avendaño",
+      "commune": "quillon",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "way/89060451",
+          "name": "Laguna Avendaño",
+          "lat": -36.756504,
+          "lon": -72.445123,
+          "kind": "natural=water"
+        }
+      ]
+    },
+    "master:TV-ATR-00554": {
+      "name": "Mirador Laguna Avendaño",
+      "commune": "quillon",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "way/89060451",
+          "name": "Laguna Avendaño",
+          "lat": -36.756504,
+          "lon": -72.445123,
+          "kind": "natural=water"
+        },
+        {
+          "osm": "way/552023612",
+          "name": "Escuela Laguna Avendaño",
+          "lat": -36.740318,
+          "lon": -72.455762,
+          "kind": "amenity=school"
+        },
+        {
+          "osm": "relation/13764617",
+          "name": "Humedal Urbano Laguna Avendaño",
+          "lat": -36.749359,
+          "lon": -72.44514,
+          "kind": "boundary=protected_area;leisure=nature_reserve"
+        }
+      ]
+    },
+    "master:TV-ATR-00555": {
+      "name": "Plaza de Armas de Chillán",
+      "commune": "chillan",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214189449",
+          "name": "Chillán",
+          "lat": -36.606662,
+          "lon": -72.103319,
+          "kind": "place=city"
+        },
+        {
+          "osm": "node/10915422950",
+          "name": "CHILLÁN",
+          "lat": -36.586424,
+          "lon": -72.032717,
+          "kind": "man_made=beacon"
+        },
+        {
+          "osm": "relation/255340",
+          "name": "Chillán",
+          "lat": -36.629625,
+          "lon": -72.164423,
+          "kind": "boundary=administrative"
+        }
+      ]
+    },
+    "master:TV-ATR-00557": {
+      "name": "Mirador del Valle Las Trancas",
+      "commune": "pinto",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/311824718",
+          "name": "Las Trancas",
+          "lat": -36.914792,
+          "lon": -71.495698,
+          "kind": "place=hamlet"
+        },
+        {
+          "osm": "node/6839424247",
+          "name": "El Valle",
+          "lat": -36.828919,
+          "lon": -71.683302,
+          "kind": "place=hamlet"
+        }
+      ]
+    },
+    "master:TV-ATR-00558": {
+      "name": "Sendero de las Trancas",
+      "commune": "pinto",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/311824718",
+          "name": "Las Trancas",
+          "lat": -36.914792,
+          "lon": -71.495698,
+          "kind": "place=hamlet"
+        }
+      ]
+    },
+    "master:TV-ATR-00565": {
+      "name": "Playa de Tumbes",
+      "commune": "talcahuano",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/5292877344",
+          "name": "Península de Tumbes",
+          "lat": -36.674339,
+          "lon": -73.118992,
+          "kind": "natural=peninsula"
+        },
+        {
+          "osm": "way/352190570",
+          "name": "Escuela F-495 Península De Tumbes",
+          "lat": -36.639374,
+          "lon": -73.094723,
+          "kind": "amenity=school"
+        }
+      ]
+    },
+    "master:TV-ATR-00566": {
+      "name": "Mirador de Tumbes",
+      "commune": "talcahuano",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/5292877344",
+          "name": "Península de Tumbes",
+          "lat": -36.674339,
+          "lon": -73.118992,
+          "kind": "natural=peninsula"
+        },
+        {
+          "osm": "way/352190570",
+          "name": "Escuela F-495 Península De Tumbes",
+          "lat": -36.639374,
+          "lon": -73.094723,
+          "kind": "amenity=school"
+        }
+      ]
+    },
+    "master:TV-ATR-00568": {
+      "name": "Playa Bellavista de Tomé",
+      "commune": "tome",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214210109",
+          "name": "Tomé",
+          "lat": -36.61708,
+          "lon": -72.957504,
+          "kind": "place=town"
+        },
+        {
+          "osm": "node/1235426711",
+          "name": "Bellavista",
+          "lat": -36.636842,
+          "lon": -72.9513,
+          "kind": "place=quarter"
+        },
+        {
+          "osm": "relation/1558890",
+          "name": "Tomé",
+          "lat": -36.596947,
+          "lon": -72.853586,
+          "kind": "boundary=administrative"
+        }
+      ]
+    },
+    "master:TV-ATR-00569": {
+      "name": "Coliumo",
+      "commune": "tome",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/2090312103",
+          "name": "Posta Coliumo",
+          "lat": -36.556031,
+          "lon": -72.958022,
+          "kind": "amenity=doctors"
+        },
+        {
+          "osm": "node/5142167173",
+          "name": "Vegas de Coliumo Sur",
+          "lat": -36.567027,
+          "lon": -72.963079,
+          "kind": "place=hamlet"
+        },
+        {
+          "osm": "node/5142167176",
+          "name": "Vegas de Coliumo Norte",
+          "lat": -36.552448,
+          "lon": -72.957566,
+          "kind": "place=hamlet"
+        },
+        {
+          "osm": "node/5732752623",
+          "name": "Alto Coliumo Norte",
+          "lat": -36.539888,
+          "lon": -72.973133,
+          "kind": "place=hamlet"
+        },
+        {
+          "osm": "node/5732752626",
+          "name": "Alto Coliumo Sur",
+          "lat": -36.561842,
+          "lon": -72.968595,
+          "kind": "place=hamlet"
+        }
+      ]
+    },
+    "master:TV-ATR-00570": {
+      "name": "Playa de Cocholgüe",
+      "commune": "tome",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/1235427085",
+          "name": "Cocholgüe",
+          "lat": -36.595481,
+          "lon": -72.976399,
+          "kind": "place=quarter"
+        }
+      ]
+    },
+    "master:TV-ATR-00571": {
+      "name": "Parque Isidora Cousiño",
+      "commune": "lota",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "way/89121388",
+          "name": "Parque de Lota Isidora Cousiño",
+          "lat": -37.091557,
+          "lon": -73.168524,
+          "kind": "leisure=park"
+        }
+      ]
+    },
+    "master:TV-ATR-00572": {
+      "name": "Pabellón 83 Lota",
+      "commune": "lota",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214194166",
+          "name": "Lota",
+          "lat": -37.094453,
+          "lon": -73.156402,
+          "kind": "place=town"
+        },
+        {
+          "osm": "relation/1654885",
+          "name": "Lota",
+          "lat": -37.125488,
+          "lon": -73.113711,
+          "kind": "boundary=administrative"
+        }
+      ]
+    },
+    "master:TV-ATR-00573": {
+      "name": "Playa de Colcura",
+      "commune": "lota",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/931968561",
+          "name": "Colcura",
+          "lat": -37.112067,
+          "lon": -73.146964,
+          "kind": "place=quarter"
+        },
+        {
+          "osm": "way/148472027",
+          "name": "Escuela Valle de Colcura F-687",
+          "lat": -37.109256,
+          "lon": -73.145831,
+          "kind": "building=school"
+        },
+        {
+          "osm": "way/203616771",
+          "name": "Fuerte de Colcura",
+          "lat": -37.106278,
+          "lon": -73.160751,
+          "kind": "historic=fort"
+        }
+      ]
+    },
+    "master:TV-ATR-00574": {
+      "name": "Laraquete",
+      "commune": "arauco",
+      "reason": "varios con el mismo nombre",
+      "candidates": [
+        {
+          "osm": "node/214205709",
+          "name": "Laraquete",
+          "lat": -37.167427,
+          "lon": -73.18534,
+          "kind": "place=village"
+        },
+        {
+          "osm": "node/2454646443",
+          "name": "Laraquete",
+          "lat": -37.168568,
+          "lon": -73.186972,
+          "kind": "tourism=hotel"
+        },
+        {
+          "osm": "node/7678545016",
+          "name": "Laraquete",
+          "lat": -37.184453,
+          "lon": -73.195172,
+          "kind": "man_made=monitoring_station"
+        }
+      ]
+    },
+    "master:TV-ATR-00575": {
+      "name": "Playa de Llico",
+      "commune": "arauco",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214192195",
+          "name": "Llico",
+          "lat": -37.198149,
+          "lon": -73.564866,
+          "kind": "place=village"
+        }
+      ]
+    },
+    "master:TV-ATR-00578": {
+      "name": "Playa Grande de Pucón",
+      "commune": "pucon",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214208312",
+          "name": "Pucón",
+          "lat": -39.273117,
+          "lon": -71.97776,
+          "kind": "place=town"
+        },
+        {
+          "osm": "relation/1734577",
+          "name": "Pucón",
+          "lat": -39.287253,
+          "lon": -71.785453,
+          "kind": "boundary=administrative"
+        }
+      ]
+    },
+    "master:TV-ATR-00579": {
+      "name": "Playa de Caburgua",
+      "commune": "pucon",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/1395498424",
+          "name": "Caburgua",
+          "lat": -39.199382,
+          "lon": -71.808128,
+          "kind": "place=village"
+        },
+        {
+          "osm": "node/4113910621",
+          "name": "Camping Ojos de Caburgua",
+          "lat": -39.238169,
+          "lon": -71.833883,
+          "kind": "tourism=camp_site"
+        },
+        {
+          "osm": "node/6848199600",
+          "name": "Nevados de Caburgua",
+          "lat": -39.15333,
+          "lon": -71.662332,
+          "kind": "natural=peak"
+        },
+        {
+          "osm": "way/397309024",
+          "name": "Caburgua",
+          "lat": -39.303537,
+          "lon": -72.032187,
+          "kind": "building=yes"
+        }
+      ]
+    },
+    "master:TV-ATR-00580": {
+      "name": "Mirador de Quelhue",
+      "commune": "pucon",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/5420448358",
+          "name": "Quelhue",
+          "lat": -39.233681,
+          "lon": -71.958696,
+          "kind": "place=hamlet"
+        }
+      ]
+    },
+    "master:TV-ATR-00582": {
+      "name": "Playa de Lican Ray",
+      "commune": "villarrica",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214216620",
+          "name": "Licán Ray",
+          "lat": -39.489724,
+          "lon": -72.155385,
+          "kind": "place=village"
+        },
+        {
+          "osm": "node/11638323023",
+          "name": "Cabañas Aves de Licán Ray",
+          "lat": -39.490583,
+          "lon": -72.160724,
+          "kind": "tourism=chalet"
+        }
+      ]
+    },
+    "master:TV-ATR-00583": {
+      "name": "Playa de Puerto Saavedra",
+      "commune": "saavedra",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214204327",
+          "name": "Puerto Saavedra",
+          "lat": -38.792317,
+          "lon": -73.396865,
+          "kind": "place=town"
+        },
+        {
+          "osm": "way/151478680",
+          "name": "Hospital de Puerto Saavedra",
+          "lat": -38.799377,
+          "lon": -73.392663,
+          "kind": "amenity=hospital"
+        },
+        {
+          "osm": "way/154399924",
+          "name": "Municipalidad de Puerto Saavedra",
+          "lat": -38.792557,
+          "lon": -73.395478,
+          "kind": "amenity=townhall"
+        },
+        {
+          "osm": "way/154400129",
+          "name": "Gimnasio Municipal de Puerto Saavedra",
+          "lat": -38.793454,
+          "lon": -73.397014,
+          "kind": "leisure=sports_centre"
+        },
+        {
+          "osm": "way/154400731",
+          "name": "Bomberos de Puerto Saavedra",
+          "lat": -38.791416,
+          "lon": -73.397091,
+          "kind": "amenity=fire_station"
+        }
+      ]
+    },
+    "master:TV-ATR-00585": {
+      "name": "Playa de Nehuentúe",
+      "commune": "carahue",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214225526",
+          "name": "Nehuentúe",
+          "lat": -38.743854,
+          "lon": -73.411602,
+          "kind": "place=village"
+        },
+        {
+          "osm": "way/52429642",
+          "name": "Escuela Pública de Nehuentúe",
+          "lat": -38.744925,
+          "lon": -73.411985,
+          "kind": "building=school"
+        }
+      ]
+    },
+    "master:TV-ATR-00589": {
+      "name": "Mirador de Malalcahuello",
+      "commune": "curacautin",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214187834",
+          "name": "Malalcahuello",
+          "lat": -38.475169,
+          "lon": -71.581589,
+          "kind": "place=village"
+        },
+        {
+          "osm": "node/1890545789",
+          "name": "Termas de Malalcahuello",
+          "lat": -38.49224,
+          "lon": -71.58596,
+          "kind": "leisure=sauna;tourism=viewpoint"
+        },
+        {
+          "osm": "node/2147129463",
+          "name": "Termas de Malalcahuello Thermal Resort",
+          "lat": -38.492395,
+          "lon": -71.585165,
+          "kind": "tourism=hotel"
+        },
+        {
+          "osm": "node/9501853002",
+          "name": "Caballo de Malalcahuello",
+          "lat": -38.475185,
+          "lon": -71.581661,
+          "kind": "tourism=artwork"
+        },
+        {
+          "osm": "way/93471911",
+          "name": "Plaza de Malalcahuello",
+          "lat": -38.475498,
+          "lon": -71.581486,
+          "kind": "leisure=park"
+        }
+      ]
+    },
+    "master:TV-ATR-00590": {
+      "name": "Mirador de Conguillío",
+      "commune": "melipeuco",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/13360645345",
+          "name": "Aires de Conguillío",
+          "lat": -38.85412,
+          "lon": -71.697082,
+          "kind": "amenity=restaurant"
+        },
+        {
+          "osm": "way/1457003607",
+          "name": "Conguillío",
+          "lat": -38.648405,
+          "lon": -71.641698,
+          "kind": "building=cabin;tourism=cabin"
+        }
+      ]
+    },
+    "master:TV-ATR-00599": {
+      "name": "Playa Chaihuín",
+      "commune": "corral",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214216583",
+          "name": "Chaihuín",
+          "lat": -39.949513,
+          "lon": -73.574632,
+          "kind": "place=hamlet"
+        },
+        {
+          "osm": "node/5253979389",
+          "name": "Hostal Chaihuin",
+          "lat": -39.944026,
+          "lon": -73.576312,
+          "kind": "tourism=motel"
+        },
+        {
+          "osm": "node/5253979766",
+          "name": "Cabañas Chaihuin",
+          "lat": -39.938504,
+          "lon": -73.586301,
+          "kind": "tourism=motel"
+        },
+        {
+          "osm": "node/5281244738",
+          "name": "Chaihuín Sur",
+          "lat": -39.953454,
+          "lon": -73.581383,
+          "kind": "place=hamlet"
+        },
+        {
+          "osm": "node/5322906123",
+          "name": "Local de comidas típicas Chaihuin",
+          "lat": -39.953023,
+          "lon": -73.576254,
+          "kind": "amenity=restaurant"
+        }
+      ]
+    },
+    "master:TV-ATR-00600": {
+      "name": "Fuerte de Corral",
+      "commune": "corral",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214208670",
+          "name": "Corral",
+          "lat": -39.88774,
+          "lon": -73.431454,
+          "kind": "place=town"
+        },
+        {
+          "osm": "node/1641785422",
+          "name": "Corral",
+          "lat": -39.881956,
+          "lon": -73.42421,
+          "kind": "amenity=ferry_terminal"
+        },
+        {
+          "osm": "node/1641786152",
+          "name": "Corral",
+          "lat": -39.887697,
+          "lon": -73.429045,
+          "kind": "amenity=parking"
+        },
+        {
+          "osm": "relation/1785692",
+          "name": "Corral",
+          "lat": -39.983792,
+          "lon": -73.422851,
+          "kind": "boundary=administrative"
+        }
+      ]
+    },
+    "master:TV-ATR-00601": {
+      "name": "Playa de Panguipulli",
+      "commune": "panguipulli",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214191417",
+          "name": "Panguipulli",
+          "lat": -39.641991,
+          "lon": -72.33338,
+          "kind": "place=town"
+        },
+        {
+          "osm": "node/966044583",
+          "name": "Ilustre Municipalidad de Panguipulli",
+          "lat": -39.641611,
+          "lon": -72.332303,
+          "kind": "amenity=townhall"
+        },
+        {
+          "osm": "node/966044584",
+          "name": "Hospital de Panguipulli",
+          "lat": -39.640678,
+          "lon": -72.342459,
+          "kind": "amenity=hospital"
+        },
+        {
+          "osm": "node/966046874",
+          "name": "Bomberos de Panguipulli",
+          "lat": -39.641566,
+          "lon": -72.331425,
+          "kind": "amenity=fire_station"
+        },
+        {
+          "osm": "node/2339411088",
+          "name": "Monumento Forjadores de Panguipulli",
+          "lat": -39.643532,
+          "lon": -72.324045,
+          "kind": "tourism=artwork"
+        }
+      ]
+    },
+    "master:TV-ATR-00602": {
+      "name": "Playa de Coñaripe",
+      "commune": "panguipulli",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214209549",
+          "name": "Coñaripe",
+          "lat": -39.567853,
+          "lon": -72.007417,
+          "kind": "place=village"
+        },
+        {
+          "osm": "node/2193092893",
+          "name": "Termas de Coñaripe",
+          "lat": -39.635179,
+          "lon": -71.922751,
+          "kind": "leisure=swimming_pool;natural=spring"
+        },
+        {
+          "osm": "node/2406876315",
+          "name": "Termas de Coñaripe",
+          "lat": -39.635444,
+          "lon": -71.922668,
+          "kind": "tourism=hotel"
+        },
+        {
+          "osm": "node/2406879868",
+          "name": "Termas de Coñaripe",
+          "lat": -39.635233,
+          "lon": -71.92232,
+          "kind": "tourism=attraction"
+        },
+        {
+          "osm": "way/209081734",
+          "name": "Termas de Coñaripe",
+          "lat": -39.635126,
+          "lon": -71.922897,
+          "kind": "leisure=swimming_pool"
+        }
+      ]
+    },
+    "master:TV-ATR-00603": {
+      "name": "Playa de Choshuenco",
+      "commune": "panguipulli",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214230545",
+          "name": "Choshuenco",
+          "lat": -39.837216,
+          "lon": -72.082341,
+          "kind": "place=village"
+        },
+        {
+          "osm": "way/934489832",
+          "name": "Registro Civil de Choshuenco",
+          "lat": -39.8364,
+          "lon": -72.080278,
+          "kind": "building=yes"
+        }
+      ]
+    },
+    "master:TV-ATR-00604": {
+      "name": "Playa de Futrono",
+      "commune": "futrono",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214233081",
+          "name": "Futrono",
+          "lat": -40.131196,
+          "lon": -72.38266,
+          "kind": "place=town"
+        },
+        {
+          "osm": "node/6175108391",
+          "name": "Cuartel Auxiliar de Futrono",
+          "lat": -40.132377,
+          "lon": -72.374793,
+          "kind": "amenity=fire_station"
+        },
+        {
+          "osm": "node/6812395718",
+          "name": "Parroquia Santa María de Futrono",
+          "lat": -40.131279,
+          "lon": -72.391377,
+          "kind": "amenity=place_of_worship"
+        },
+        {
+          "osm": "node/10926403631",
+          "name": "Ilustre Municipalidad de Futrono",
+          "lat": -40.131129,
+          "lon": -72.390487,
+          "kind": "amenity=townhall"
+        },
+        {
+          "osm": "way/157023718",
+          "name": "Centro Campestre de Futrono",
+          "lat": -40.133971,
+          "lon": -72.393485,
+          "kind": "leisure=sports_centre"
+        }
+      ]
+    },
+    "master:TV-ATR-00605": {
+      "name": "Playa de Llifén",
+      "commune": "futrono",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/1391531830",
+          "name": "Llifén",
+          "lat": -40.200127,
+          "lon": -72.259609,
+          "kind": "place=village"
+        },
+        {
+          "osm": "node/10920549157",
+          "name": "Centro Comunitario de Llifen",
+          "lat": -40.197977,
+          "lon": -72.258145,
+          "kind": "amenity=community_centre"
+        },
+        {
+          "osm": "node/10920549158",
+          "name": "Feria Costumbrista de Llifen",
+          "lat": -40.19792,
+          "lon": -72.257906,
+          "kind": "amenity=marketplace"
+        }
+      ]
+    },
+    "master:TV-ATR-00606": {
+      "name": "Playa Lago Ranco",
+      "commune": "lago-ranco",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214233889",
+          "name": "Lago Ranco",
+          "lat": -40.321671,
+          "lon": -72.48135,
+          "kind": "place=town"
+        },
+        {
+          "osm": "node/966144093",
+          "name": "Iglesia Lago Ranco",
+          "lat": -40.322697,
+          "lon": -72.478886,
+          "kind": "amenity=place_of_worship"
+        },
+        {
+          "osm": "node/966144094",
+          "name": "Bomberos Lago Ranco",
+          "lat": -40.322741,
+          "lon": -72.480572,
+          "kind": "amenity=fire_station"
+        },
+        {
+          "osm": "node/966145310",
+          "name": "Museo Lago Ranco",
+          "lat": -40.320491,
+          "lon": -72.475808,
+          "kind": "tourism=museum"
+        },
+        {
+          "osm": "node/1950148834",
+          "name": "Estacionamiento de la Municipalidad de Lago Ranco",
+          "lat": -40.320528,
+          "lon": -72.480358,
+          "kind": "amenity=parking"
+        }
+      ]
+    },
+    "master:TV-ATR-00607": {
+      "name": "Mirador de Lago Ranco",
+      "commune": "lago-ranco",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214233889",
+          "name": "Lago Ranco",
+          "lat": -40.321671,
+          "lon": -72.48135,
+          "kind": "place=town"
+        },
+        {
+          "osm": "node/1950148834",
+          "name": "Estacionamiento de la Municipalidad de Lago Ranco",
+          "lat": -40.320528,
+          "lon": -72.480358,
+          "kind": "amenity=parking"
+        },
+        {
+          "osm": "node/6631832671",
+          "name": "Juzgado de Policía Local de Lago Ranco",
+          "lat": -40.321716,
+          "lon": -72.477997,
+          "kind": "amenity=courthouse"
+        },
+        {
+          "osm": "node/13155138656",
+          "name": "Juzgado de Policía Local de Lago Ranco",
+          "lat": -40.321716,
+          "lon": -72.477997,
+          "kind": "amenity=courthouse"
+        },
+        {
+          "osm": "way/125224318",
+          "name": "Estadio Municipal de Lago Ranco",
+          "lat": -40.324364,
+          "lon": -72.484987,
+          "kind": "leisure=sports_centre"
+        }
+      ]
+    },
+    "master:TV-ATR-00608": {
+      "name": "Playa de Puerto Varas",
+      "commune": "puerto-varas",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214196767",
+          "name": "Puerto Varas",
+          "lat": -41.317802,
+          "lon": -72.982907,
+          "kind": "place=town"
+        },
+        {
+          "osm": "node/1141537186",
+          "name": "Ilustre Municipalidad de Puerto Varas",
+          "lat": -41.317449,
+          "lon": -72.984612,
+          "kind": "amenity=townhall"
+        },
+        {
+          "osm": "node/1642605600",
+          "name": "Puerto Varas",
+          "lat": -41.316879,
+          "lon": -72.982749,
+          "kind": "amenity=parking"
+        },
+        {
+          "osm": "node/1746664093",
+          "name": "Mirador de Puerto Varas",
+          "lat": -41.344155,
+          "lon": -72.944454,
+          "kind": "place=village"
+        },
+        {
+          "osm": "node/2456935716",
+          "name": "Villa Altos de Puerto Varas",
+          "lat": -41.32851,
+          "lon": -72.986854,
+          "kind": "place=neighbourhood"
+        }
+      ]
+    },
+    "master:TV-ATR-00609": {
+      "name": "Playa de Ensenada",
+      "commune": "puerto-varas",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/63573909",
+          "name": "Ensenada",
+          "lat": -41.208186,
+          "lon": -72.538669,
+          "kind": "place=hamlet"
+        },
+        {
+          "osm": "node/3625675280",
+          "name": "Mirador de Ensenada",
+          "lat": -41.224645,
+          "lon": -72.64913,
+          "kind": "amenity=restaurant"
+        },
+        {
+          "osm": "way/580503902",
+          "name": "Escuela Rural Epson de Ensenada",
+          "lat": -41.207993,
+          "lon": -72.539733,
+          "kind": "amenity=school"
+        },
+        {
+          "osm": "way/1527904342",
+          "name": "Delegacion Municipal de Ensenada",
+          "lat": -41.212251,
+          "lon": -72.543147,
+          "kind": "building=public"
+        }
+      ]
+    },
+    "master:TV-ATR-00610": {
+      "name": "Costanera de Puerto Varas",
+      "commune": "puerto-varas",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214196767",
+          "name": "Puerto Varas",
+          "lat": -41.317802,
+          "lon": -72.982907,
+          "kind": "place=town"
+        },
+        {
+          "osm": "node/1642605600",
+          "name": "Puerto Varas",
+          "lat": -41.316879,
+          "lon": -72.982749,
+          "kind": "amenity=parking"
+        },
+        {
+          "osm": "node/3667332946",
+          "name": "Puerto Varas",
+          "lat": -41.319554,
+          "lon": -72.983029,
+          "kind": "tourism=hostel"
+        },
+        {
+          "osm": "relation/1798888",
+          "name": "Puerto Varas",
+          "lat": -41.126706,
+          "lon": -72.588172,
+          "kind": "boundary=administrative"
+        }
+      ]
+    },
+    "master:TV-ATR-00611": {
+      "name": "Iglesia Sagrado Corazón de Jesús",
+      "commune": "puerto-varas",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "way/96310746",
+          "name": "Iglesia del Sagrado Corazón de Jesús",
+          "lat": -41.320662,
+          "lon": -72.986068,
+          "kind": "amenity=place_of_worship;building=yes"
+        },
+        {
+          "osm": "way/827301289",
+          "name": "Iglesia Sagrado Corazón de Jesus",
+          "lat": -41.320502,
+          "lon": -72.986585,
+          "kind": "amenity=parking"
+        }
+      ]
+    },
+    "master:TV-ATR-00612": {
+      "name": "Playa de Frutillar Bajo",
+      "commune": "frutillar",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214211545",
+          "name": "Frutillar Bajo",
+          "lat": -41.136005,
+          "lon": -73.027542,
+          "kind": "place=quarter"
+        },
+        {
+          "osm": "node/1367415968",
+          "name": "Frutillar",
+          "lat": -41.125846,
+          "lon": -73.060474,
+          "kind": "place=town"
+        },
+        {
+          "osm": "relation/1796410",
+          "name": "Frutillar",
+          "lat": -41.103616,
+          "lon": -73.082269,
+          "kind": "boundary=administrative"
+        }
+      ]
+    },
+    "master:TV-ATR-00613": {
+      "name": "Costanera de Frutillar Bajo",
+      "commune": "frutillar",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214211545",
+          "name": "Frutillar Bajo",
+          "lat": -41.136005,
+          "lon": -73.027542,
+          "kind": "place=quarter"
+        },
+        {
+          "osm": "node/1367415968",
+          "name": "Frutillar",
+          "lat": -41.125846,
+          "lon": -73.060474,
+          "kind": "place=town"
+        },
+        {
+          "osm": "relation/1796410",
+          "name": "Frutillar",
+          "lat": -41.103616,
+          "lon": -73.082269,
+          "kind": "boundary=administrative"
+        }
+      ]
+    },
+    "master:TV-ATR-00618": {
+      "name": "Playa Lechagua",
+      "commune": "ancud",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214196858",
+          "name": "Lechagua",
+          "lat": -41.878233,
+          "lon": -73.888695,
+          "kind": "place=hamlet"
+        },
+        {
+          "osm": "way/120109750",
+          "name": "Lechagua",
+          "lat": -41.876754,
+          "lon": -73.881671,
+          "kind": "natural=beach"
+        }
+      ]
+    },
+    "master:TV-ATR-00621": {
+      "name": "Fuerte San Antonio de Ancud",
+      "commune": "ancud",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/181299499",
+          "name": "Ancud",
+          "lat": -41.868216,
+          "lon": -73.828722,
+          "kind": "place=town"
+        },
+        {
+          "osm": "node/1562506599",
+          "name": "San Antonio",
+          "lat": -41.961851,
+          "lon": -73.818766,
+          "kind": "place=hamlet"
+        },
+        {
+          "osm": "node/12286138940",
+          "name": "Fuerte San Antonio",
+          "lat": -41.862582,
+          "lon": -73.830705,
+          "kind": "historic=fort"
+        },
+        {
+          "osm": "node/12773351501",
+          "name": "San Antonio",
+          "lat": -41.874322,
+          "lon": -73.638439,
+          "kind": "place=hamlet"
+        },
+        {
+          "osm": "relation/3078203",
+          "name": "Ancud",
+          "lat": -42.005544,
+          "lon": -73.759377,
+          "kind": "boundary=administrative"
+        }
+      ]
+    },
+    "master:TV-ATR-00622": {
+      "name": "Palafitos de Gamboa",
+      "commune": "castro",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/1777153547",
+          "name": "Gamboa",
+          "lat": -42.4831,
+          "lon": -73.772378,
+          "kind": "place=neighbourhood"
+        }
+      ]
+    },
+    "master:TV-ATR-00625": {
+      "name": "Costanera de Chonchi",
+      "commune": "chonchi",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214219800",
+          "name": "Chonchi",
+          "lat": -42.623976,
+          "lon": -73.772442,
+          "kind": "place=town"
+        },
+        {
+          "osm": "node/1091168161",
+          "name": "Chonchi",
+          "lat": -42.620341,
+          "lon": -73.770892,
+          "kind": "tourism=viewpoint"
+        },
+        {
+          "osm": "relation/3076208",
+          "name": "Chonchi",
+          "lat": -42.684687,
+          "lon": -73.952627,
+          "kind": "boundary=administrative"
+        }
+      ]
+    },
+    "master:TV-ATR-00626": {
+      "name": "Feria Artesanal de Dalcahue",
+      "commune": "dalcahue",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/1091322794",
+          "name": "Dalcahue",
+          "lat": -42.38082,
+          "lon": -73.647824,
+          "kind": "tourism=viewpoint"
+        },
+        {
+          "osm": "node/1556686435",
+          "name": "Dalcahue",
+          "lat": -42.379553,
+          "lon": -73.6473,
+          "kind": "place=town"
+        },
+        {
+          "osm": "way/356403427",
+          "name": "Dalca",
+          "lat": -42.381483,
+          "lon": -73.655186,
+          "kind": "amenity=restaurant;building=yes"
+        },
+        {
+          "osm": "relation/3077688",
+          "name": "Dalcahue",
+          "lat": -42.312485,
+          "lon": -73.765946,
+          "kind": "boundary=administrative"
+        }
+      ]
+    },
+    "master:TV-ATR-00627": {
+      "name": "Playa Pangal de Maullín",
+      "commune": "maullin",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214186803",
+          "name": "Maullín",
+          "lat": -41.616014,
+          "lon": -73.595071,
+          "kind": "place=town"
+        },
+        {
+          "osm": "node/4161876531",
+          "name": "Pangal",
+          "lat": -41.605807,
+          "lon": -73.648649,
+          "kind": "place=hamlet"
+        },
+        {
+          "osm": "relation/1798790",
+          "name": "Maullín",
+          "lat": -41.647381,
+          "lon": -73.610878,
+          "kind": "boundary=administrative"
+        }
+      ]
+    },
+    "master:TV-ATR-00628": {
+      "name": "Playa de Carelmapu",
+      "commune": "maullin",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214207665",
+          "name": "Carelmapu",
+          "lat": -41.748036,
+          "lon": -73.706107,
+          "kind": "place=village"
+        },
+        {
+          "osm": "node/1875430862",
+          "name": "Cabañas Tierra Verde Carelmapu",
+          "lat": -41.750139,
+          "lon": -73.706444,
+          "kind": "tourism=hostel"
+        }
+      ]
+    },
+    "master:TV-ATR-00629": {
+      "name": "Playa Entre Lagos",
+      "commune": "puyehue",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214219832",
+          "name": "Entre Lagos",
+          "lat": -40.683557,
+          "lon": -72.603999,
+          "kind": "place=town"
+        },
+        {
+          "osm": "node/1812065692",
+          "name": "Informacion Turistica Entre Lagos",
+          "lat": -40.685851,
+          "lon": -72.592321,
+          "kind": "tourism=information"
+        },
+        {
+          "osm": "node/3137674794",
+          "name": "Pueblo Artesanal Entre Lagos",
+          "lat": -40.694365,
+          "lon": -72.607202,
+          "kind": "amenity=marketplace"
+        },
+        {
+          "osm": "node/3375022193",
+          "name": "Café Entre Lagos",
+          "lat": -40.684931,
+          "lon": -72.600887,
+          "kind": "amenity=restaurant"
+        },
+        {
+          "osm": "node/4431633009",
+          "name": "Información Turistica Entre Lagos",
+          "lat": -40.689706,
+          "lon": -72.604914,
+          "kind": "tourism=information"
+        }
+      ]
+    },
+    "master:TV-ATR-00630": {
+      "name": "Mirador Cerro Mackay",
+      "commune": "coyhaique",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/4355005384",
+          "name": "Cerro Mackay",
+          "lat": -45.607943,
+          "lon": -72.075236,
+          "kind": "natural=peak"
+        }
+      ]
+    },
+    "master:TV-ATR-00632": {
+      "name": "Plaza de Armas de Coyhaique",
+      "commune": "coyhaique",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214210491",
+          "name": "Coyhaique",
+          "lat": -45.57118,
+          "lon": -72.068486,
+          "kind": "place=city"
+        },
+        {
+          "osm": "node/7678544999",
+          "name": "Coyhaique",
+          "lat": -45.579499,
+          "lon": -72.060877,
+          "kind": "man_made=monitoring_station"
+        },
+        {
+          "osm": "relation/1982302",
+          "name": "Coyhaique",
+          "lat": -45.485218,
+          "lon": -72.125678,
+          "kind": "boundary=administrative"
+        }
+      ]
+    },
+    "master:TV-ATR-00635": {
+      "name": "Playa de Puyuhuapi",
+      "commune": "cisnes",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214179475",
+          "name": "Puyuhuapi",
+          "lat": -44.325209,
+          "lon": -72.558428,
+          "kind": "place=village"
+        },
+        {
+          "osm": "node/396630465",
+          "name": "3ra Compañía de Bomberos de Puyuhuapi",
+          "lat": -44.324938,
+          "lon": -72.559891,
+          "kind": "amenity=fire_station"
+        },
+        {
+          "osm": "node/3228647187",
+          "name": "Mirador de Puyuhuapi",
+          "lat": -44.319307,
+          "lon": -72.576446,
+          "kind": "tourism=viewpoint"
+        },
+        {
+          "osm": "way/265141705",
+          "name": "Gimnasio de Puyuhuapi",
+          "lat": -44.324929,
+          "lon": -72.557361,
+          "kind": "leisure=pitch"
+        }
+      ]
+    },
+    "master:TV-ATR-00636": {
+      "name": "Mirador de La Junta",
+      "commune": "cisnes",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/1284362349",
+          "name": "La Junta",
+          "lat": -43.972117,
+          "lon": -72.405302,
+          "kind": "place=village"
+        },
+        {
+          "osm": "node/5250296066",
+          "name": "La Junta",
+          "lat": -43.969838,
+          "lon": -72.400762,
+          "kind": "amenity=restaurant"
+        },
+        {
+          "osm": "way/136813504",
+          "name": "Estadio Municipal de La Junta",
+          "lat": -43.974221,
+          "lon": -72.408936,
+          "kind": "leisure=sports_centre"
+        }
+      ]
+    },
+    "master:TV-ATR-00637": {
+      "name": "Mirador de Villa Cerro Castillo",
+      "commune": "rio-ibanez",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/653314579",
+          "name": "Cerro Castillo",
+          "lat": -46.122102,
+          "lon": -72.158171,
+          "kind": "amenity=cafe"
+        },
+        {
+          "osm": "node/1278371476",
+          "name": "Cerro Castillo",
+          "lat": -46.062915,
+          "lon": -72.206163,
+          "kind": "natural=peak"
+        },
+        {
+          "osm": "node/2960252919",
+          "name": "Villa Cerro Castillo",
+          "lat": -46.122616,
+          "lon": -72.154366,
+          "kind": "place=village"
+        }
+      ]
+    },
+    "master:TV-ATR-00638": {
+      "name": "Mirador de Puerto Río Tranquilo",
+      "commune": "rio-ibanez",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/485835330",
+          "name": "Puerto Río Tranquilo",
+          "lat": -46.623926,
+          "lon": -72.676288,
+          "kind": "place=village"
+        }
+      ]
+    },
+    "master:TV-ATR-00639": {
+      "name": "Costanera de Chile Chico",
+      "commune": "chile-chico",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214193252",
+          "name": "Chile Chico",
+          "lat": -46.539662,
+          "lon": -71.724582,
+          "kind": "place=town"
+        },
+        {
+          "osm": "node/2731194470",
+          "name": "Costanera",
+          "lat": -46.843423,
+          "lon": -72.70339,
+          "kind": "amenity=restaurant"
+        },
+        {
+          "osm": "node/7179409837",
+          "name": "Chile Chico",
+          "lat": -46.537314,
+          "lon": -71.725644,
+          "kind": "tourism=information"
+        },
+        {
+          "osm": "node/7182169033",
+          "name": "Costanera",
+          "lat": -46.536456,
+          "lon": -71.73113,
+          "kind": "amenity=restaurant"
+        },
+        {
+          "osm": "node/11878536425",
+          "name": "Chile Chico",
+          "lat": -46.535459,
+          "lon": -71.730662,
+          "kind": "amenity=ferry_terminal"
+        }
+      ]
+    },
+    "master:TV-ATR-00640": {
+      "name": "Mirador de Cochrane",
+      "commune": "cochrane",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214203286",
+          "name": "Cochrane",
+          "lat": -47.254166,
+          "lon": -72.573213,
+          "kind": "place=town"
+        },
+        {
+          "osm": "node/4683845837",
+          "name": "Juzgado de Letras y Garantía de Cochrane",
+          "lat": -47.255664,
+          "lon": -72.576531,
+          "kind": "amenity=courthouse"
+        },
+        {
+          "osm": "way/318931509",
+          "name": "Gimnasio Municipal de Cochrane",
+          "lat": -47.252017,
+          "lon": -72.573277,
+          "kind": "building=civic;leisure=fitness_centre"
+        },
+        {
+          "osm": "way/533028024",
+          "name": "Fiscalía Local de Cochrane",
+          "lat": -47.253034,
+          "lon": -72.575579,
+          "kind": "amenity=courthouse;building=government"
+        },
+        {
+          "osm": "way/1128792602",
+          "name": "Hospital de Cochrane",
+          "lat": -47.255364,
+          "lon": -72.570335,
+          "kind": "amenity=hospital"
+        }
+      ]
+    },
+    "master:TV-ATR-00641": {
+      "name": "Mirador Cerro de la Cruz",
+      "commune": "punta-arenas",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/1064100648",
+          "name": "Cerro de la Cruz",
+          "lat": -53.159852,
+          "lon": -70.915297,
+          "kind": "place=neighbourhood"
+        },
+        {
+          "osm": "node/6052252901",
+          "name": "La Cruz",
+          "lat": -53.063168,
+          "lon": -70.869058,
+          "kind": "place=hamlet"
+        },
+        {
+          "osm": "node/6352927204",
+          "name": "Cerro de la Cruz",
+          "lat": -53.160112,
+          "lon": -70.915813,
+          "kind": "tourism=viewpoint"
+        },
+        {
+          "osm": "relation/19744036",
+          "name": "Humedal Urbano Laguna Pudeto – Cerro de la Cruz",
+          "lat": -53.156752,
+          "lon": -70.919959,
+          "kind": "boundary=protected_area;leisure=nature_reserve"
+        }
+      ]
+    },
+    "master:TV-ATR-00642": {
+      "name": "Mirador del Estrecho de Magallanes",
+      "commune": "punta-arenas",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/12685644011",
+          "name": "Estrecho de Magallanes",
+          "lat": -53.107269,
+          "lon": -70.879184,
+          "kind": "tourism=artwork"
+        },
+        {
+          "osm": "way/286227372",
+          "name": "Estrecho de Magallanes",
+          "lat": -53.155251,
+          "lon": -71.608544,
+          "kind": "natural=strait"
+        },
+        {
+          "osm": "way/843595580",
+          "name": "Magallanes",
+          "lat": -53.142771,
+          "lon": -70.906959,
+          "kind": "place=neighbourhood"
+        },
+        {
+          "osm": "way/1239138850",
+          "name": "Parque del Estrecho de Magallanes",
+          "lat": -53.615888,
+          "lon": -70.934584,
+          "kind": "leisure=nature_reserve"
+        }
+      ]
+    },
+    "master:TV-ATR-00643": {
+      "name": "Costanera del Estrecho",
+      "commune": "punta-arenas",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/10080483349",
+          "name": "Jardín Infantil Costanera del Estrecho",
+          "lat": -53.157025,
+          "lon": -70.888003,
+          "kind": "amenity=kindergarten"
+        },
+        {
+          "osm": "node/11749272092",
+          "name": "Costanera",
+          "lat": -53.164567,
+          "lon": -70.900459,
+          "kind": "tourism=viewpoint"
+        },
+        {
+          "osm": "way/1027301339",
+          "name": "Hospedaje Costanera del Estrecho",
+          "lat": -53.155685,
+          "lon": -70.890731,
+          "kind": "building=yes;tourism=guest_house"
+        }
+      ]
+    },
+    "master:TV-ATR-00644": {
+      "name": "Plaza Muñoz Gamero",
+      "commune": "punta-arenas",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/6578976704",
+          "name": "Muñoz Gamero",
+          "lat": -53.17693,
+          "lon": -70.918465,
+          "kind": "historic=wreck"
+        },
+        {
+          "osm": "node/10700232005",
+          "name": "Pontón Muñoz Gamero",
+          "lat": -53.176757,
+          "lon": -70.918931,
+          "kind": "tourism=attraction"
+        },
+        {
+          "osm": "way/747947154",
+          "name": "Plaza de Armas Benjamín Muñoz Gamero",
+          "lat": -53.162665,
+          "lon": -70.908047,
+          "kind": "leisure=park"
+        }
+      ]
+    },
+    "master:TV-ATR-00645": {
+      "name": "Cementerio Municipal de Punta Arenas",
+      "commune": "punta-arenas",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/181356942",
+          "name": "Punta Arenas",
+          "lat": -53.162569,
+          "lon": -70.907822,
+          "kind": "place=city"
+        },
+        {
+          "osm": "node/5994135285",
+          "name": "Punta arenas",
+          "lat": -53.163873,
+          "lon": -70.912634,
+          "kind": "amenity=restaurant"
+        },
+        {
+          "osm": "node/6579063383",
+          "name": "Punta Arenas",
+          "lat": -53.132803,
+          "lon": -70.880376,
+          "kind": "tourism=information"
+        },
+        {
+          "osm": "node/11040478215",
+          "name": "Punta Arenas",
+          "lat": -53.164778,
+          "lon": -70.900883,
+          "kind": "tourism=information"
+        },
+        {
+          "osm": "relation/1979467",
+          "name": "Punta Arenas",
+          "lat": -53.637471,
+          "lon": -72.460512,
+          "kind": "boundary=administrative"
+        }
+      ]
+    },
+    "master:TV-ATR-00646": {
+      "name": "Mirador Costanera de Puerto Natales",
+      "commune": "natales",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/3069560415",
+          "name": "Costanera",
+          "lat": -51.734219,
+          "lon": -72.50435,
+          "kind": "place=neighbourhood"
+        },
+        {
+          "osm": "node/3736621516",
+          "name": "Puerto Natales",
+          "lat": -51.7262,
+          "lon": -72.505998,
+          "kind": "place=city"
+        },
+        {
+          "osm": "way/345779746",
+          "name": "Costanera",
+          "lat": -51.735057,
+          "lon": -72.507548,
+          "kind": "amenity=parking"
+        },
+        {
+          "osm": "relation/1980619",
+          "name": "Natales",
+          "lat": -50.712386,
+          "lon": -73.699317,
+          "kind": "boundary=administrative"
+        }
+      ]
+    },
+    "master:TV-ATR-00648": {
+      "name": "Costanera de Puerto Natales",
+      "commune": "natales",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/3069560415",
+          "name": "Costanera",
+          "lat": -51.734219,
+          "lon": -72.50435,
+          "kind": "place=neighbourhood"
+        },
+        {
+          "osm": "node/3736621516",
+          "name": "Puerto Natales",
+          "lat": -51.7262,
+          "lon": -72.505998,
+          "kind": "place=city"
+        },
+        {
+          "osm": "way/345779746",
+          "name": "Costanera",
+          "lat": -51.735057,
+          "lon": -72.507548,
+          "kind": "amenity=parking"
+        },
+        {
+          "osm": "relation/1980619",
+          "name": "Natales",
+          "lat": -50.712386,
+          "lon": -73.699317,
+          "kind": "boundary=administrative"
+        }
+      ]
+    },
+    "master:TV-ATR-00649": {
+      "name": "Costanera de Porvenir",
+      "commune": "porvenir",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214223403",
+          "name": "Porvenir",
+          "lat": -53.295674,
+          "lon": -70.36874,
+          "kind": "place=town"
+        },
+        {
+          "osm": "way/749190925",
+          "name": "Paseo Costanera de Porvenir",
+          "lat": -53.299339,
+          "lon": -70.367452,
+          "kind": "place=square"
+        },
+        {
+          "osm": "relation/1980517",
+          "name": "Porvenir",
+          "lat": -53.349099,
+          "lon": -69.658796,
+          "kind": "boundary=administrative"
+        }
+      ]
+    },
+    "master:TV-ATR-00650": {
+      "name": "Costanera de Puerto Williams",
+      "commune": "cabo-de-hornos",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/214223618",
+          "name": "Puerto Williams",
+          "lat": -54.935775,
+          "lon": -67.60625,
+          "kind": "place=town"
+        },
+        {
+          "osm": "node/2591710815",
+          "name": "Puerto Williams",
+          "lat": -54.932117,
+          "lon": -67.596649,
+          "kind": "amenity=ferry_terminal"
+        }
+      ]
+    },
+    "master:TV-ATR-00651": {
+      "name": "Mirador de Villa Cerro Castillo",
+      "commune": "torres-del-paine",
+      "reason": "nombre parecido",
+      "candidates": [
+        {
+          "osm": "node/1277118445",
+          "name": "Cerro Castillo",
+          "lat": -51.256249,
+          "lon": -72.344688,
+          "kind": "place=hamlet"
+        },
+        {
+          "osm": "node/12688635890",
+          "name": "Cerro Castillo",
+          "lat": -50.97827,
+          "lon": -73.102591,
+          "kind": "natural=peak"
+        },
+        {
+          "osm": "way/562512531",
+          "name": "Museo Municipal de Villa Cerro Castillo",
+          "lat": -51.255538,
+          "lon": -72.344006,
+          "kind": "building=yes;tourism=museum"
+        },
+        {
+          "osm": "way/562512538",
+          "name": "Capilla de Villa Cerro Castillo",
+          "lat": -51.256004,
+          "lon": -72.343766,
+          "kind": "amenity=place_of_worship;building=yes"
+        }
+      ]
+    }
+  },
+  "notFound": [
+    {
+      "id": "cabildo-castillo-del-diablo",
+      "name": "Castillo del Diablo",
+      "commune": "cabildo"
+    },
+    {
+      "id": "master:TV-ATR-00366",
+      "name": "Parque La Serena",
+      "commune": "la-pintana"
+    },
+    {
+      "id": "master:TV-ATR-00370",
+      "name": "Parque Sur Oriente Santa Rosa",
+      "commune": "alto-hospicio"
+    },
+    {
+      "id": "master:TV-ATR-00372",
+      "name": "Parque Urbano Kaukari",
+      "commune": "copiapo"
+    },
+    {
+      "id": "centro-interpretacion-mina-san-jose",
+      "name": "Centro de Interpretación Mina San José",
+      "commune": "caldera"
+    },
+    {
+      "id": "master:TV-ATR-00442",
+      "name": "Avenida del Mar",
+      "commune": "la-serena"
+    },
+    {
+      "id": "master:TV-ATR-00484",
+      "name": "Paseo 21 de Mayo",
+      "commune": "valparaiso"
+    },
+    {
+      "id": "master:TV-ATR-00487",
+      "name": "Paseo Yugoslavo",
+      "commune": "valparaiso"
+    },
+    {
+      "id": "master:TV-ATR-00530",
+      "name": "Paseo Independencia",
+      "commune": "rancagua"
+    },
+    {
+      "id": "master:TV-ATR-00409",
+      "name": "Mirador de Alto Hospicio",
+      "commune": "iquique"
+    },
+    {
+      "id": "master:TV-ATR-00410",
+      "name": "Paseo Baquedano",
+      "commune": "iquique"
+    },
+    {
+      "id": "master:TV-ATR-00457",
+      "name": "Humedal Salinas de Huentelauquén",
+      "commune": "canela"
+    },
+    {
+      "id": "master:TV-ATR-00500",
+      "name": "Humedal San Jerónimo",
+      "commune": "algarrobo"
+    },
+    {
+      "id": "master:TV-ATR-00535",
+      "name": "Playa Vega de los Patos",
+      "commune": "constitucion"
+    },
+    {
+      "id": "master:TV-ATR-00623",
+      "name": "Palafitos de Pedro Montt",
+      "commune": "castro"
+    }
+  ],
+  "communesWithoutArea": [],
+  "pendingQueries": []
+}

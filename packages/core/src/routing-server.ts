@@ -1,7 +1,18 @@
 // Servicio compartido temporal autorizado por el titular para pruebas sin costo.
 export const PUBLIC_ROUTING_URL =
   "https://routing.openstreetmap.de/routed-car/";
-export const isPublicRouting = (url: string) => url === PUBLIC_ROUTING_URL;
+export const PUBLIC_ROUTING_FOOT_URL =
+  "https://routing.openstreetmap.de/routed-foot/";
+export const isPublicRouting = (url: string) =>
+  url === PUBLIC_ROUTING_URL || url === PUBLIC_ROUTING_FOOT_URL;
+export type TravelMode = "car" | "foot";
+/** El servicio público ofrece perfil a pie; un servidor propio, solo el suyo. */
+export const routingUrlForMode = (url: string, mode: TravelMode) =>
+  isPublicRouting(url)
+    ? mode === "foot"
+      ? PUBLIC_ROUTING_FOOT_URL
+      : PUBLIC_ROUTING_URL
+    : url;
 export interface RoutingServer {
   baseUrl: string;
   name: string;
@@ -27,7 +38,7 @@ export async function checkRoutingServer(
 ): Promise<RoutingServer> {
   if (isPublicRouting(input))
     return {
-      baseUrl: PUBLIC_ROUTING_URL,
+      baseUrl: input,
       name: "FOSSGIS / OSRM",
       maxWaypoints: 40,
       coverage: "Mundial; servicio de pruebas sin garantía",
@@ -65,7 +76,7 @@ export async function checkRoutingServer(
     if (!health.ok) throw new Error("El motor de rutas aún no está listo.");
     return {
       baseUrl: base,
-      name: "Territorio Vivo",
+      name: "Turismo en tu Mano",
       maxWaypoints: c.maxWaypoints,
       coverage:
         typeof c.coverage === "string" ? c.coverage.slice(0, 100) : "Chile",

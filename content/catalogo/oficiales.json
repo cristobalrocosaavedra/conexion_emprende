@@ -1,0 +1,164 @@
+{
+  "_nota": "Lugares agregados desde fuentes oficiales, con fuente, fecha y coordenadas tomadas de la fuente (no estimadas). 17-11-2026.",
+  "places": [
+    {
+      "id": "oficinas-salitreras-humberstone-santa-laura",
+      "region": "tarapaca",
+      "province": "del-tamarugal",
+      "commune": "pozo-almonte",
+      "locality": null,
+      "category": "cultura",
+      "name": "Oficinas Salitreras Humberstone y Santa Laura",
+      "aliases": [
+        "Humberstone",
+        "Santa Laura",
+        "Oficina Salitrera Humberstone"
+      ],
+      "summary": "Oficinas salitreras en la pampa de Pozo Almonte, a unos 47 km de Iquique. Monumento Histórico desde 1970 y Patrimonio Mundial de la UNESCO desde 2005.",
+      "description": "Oficinas salitreras en la pampa de Pozo Almonte, a unos 47 km de Iquique. Monumento Histórico desde 1970 (Decreto N° 320) y Patrimonio Mundial de la UNESCO desde 2005. Humberstone conserva principalmente su campamento y Santa Laura su área industrial. Las administra la Corporación Museo del Salitre.",
+      "latitude": -20.208559,
+      "longitude": -69.795439,
+      "coordinateAccuracy": "official-utm-cmn",
+      "source": {
+        "url": "https://www.monumentos.gob.cl/monumentos/monumentos-historicos/oficina-salitrera-humberstone",
+        "label": "Consejo de Monumentos Nacionales"
+      },
+      "verification": "pending",
+      "origin": "official",
+      "importedAt": "2026-11-17"
+    },
+    {
+      "id": "centro-interpretacion-mina-san-jose",
+      "region": "atacama",
+      "province": "copiapo",
+      "commune": "caldera",
+      "locality": null,
+      "category": "cultura",
+      "name": "Centro de Interpretación Mina San José",
+      "aliases": [
+        "Mina San José",
+        "Mina San Esteban",
+        "Los 33",
+        "33 mineros",
+        "Campamento Esperanza"
+      ],
+      "summary": "Sitio del derrumbe y rescate de los 33 mineros de 2010, con centro de interpretación y memorial.",
+      "description": "Mina donde 33 mineros quedaron atrapados en 2010 y fueron rescatados. Hoy funciona como centro de interpretación, con un memorial de 8 hitos que marcan el campamento Esperanza, el acceso a la mina, las sondas, el lugar del rescate, el hospital y el helipuerto. Sernatur Atacama y la Municipalidad de Caldera firmaron un convenio de turismo en 2017, y la Municipalidad de Copiapó organiza visitas guiadas. Confirma horarios y visitas antes de viajar.",
+      "latitude": null,
+      "longitude": null,
+      "coordinateAccuracy": "pending-official",
+      "source": {
+        "url": "https://www.sernatur.cl/inicia-convenio-que-fortalecera-el-turismo-en-mina-san-jose/",
+        "label": "Sernatur"
+      },
+      "verification": "pending",
+      "origin": "official",
+      "importedAt": "2026-11-17"
+    },
+    {
+      "id": "templo-san-francisco-de-castro",
+      "region": "los-lagos",
+      "province": "chiloe",
+      "commune": "castro",
+      "locality": null,
+      "category": "cultura",
+      "name": "Templo de San Francisco de Castro",
+      "aliases": [
+        "Iglesia de Castro",
+        "Iglesias de Chiloé",
+        "San Francisco de Castro"
+      ],
+      "summary": "Iglesia de Castro, una de las 16 Iglesias de Chiloé Patrimonio Mundial de la UNESCO (2000). Monumento Histórico desde 1979.",
+      "description": "Templo construido entre 1910 y 1912 con diseño del arquitecto italiano Eduardo Provasoli, en el centro de Castro. Monumento Histórico desde 1979 (Decreto N° 1875) y una de las 16 Iglesias de Chiloé inscritas como Patrimonio Mundial de la UNESCO en 2000.",
+      "latitude": -42.481355,
+      "longitude": -73.763808,
+      "coordinateAccuracy": "official-utm-cmn",
+      "source": {
+        "url": "https://www.monumentos.gob.cl/monumentos/monumentos-historicos/templo-de-san-francisco-de-castro",
+        "label": "Consejo de Monumentos Nacionales"
+      },
+      "verification": "pending",
+      "origin": "official",
+      "importedAt": "2026-11-17"
+    },
+    {
+      "id": "area-historica-de-valparaiso",
+      "region": "valparaiso",
+      "province": "valparaiso",
+      "commune": "valparaiso",
+      "locality": null,
+      "category": "cultura",
+      "name": "Área Histórica de Valparaíso",
+      "aliases": [
+        "Barrio histórico de Valparaíso",
+        "Cerro Alegre",
+        "Cerro Concepción",
+        "Patrimonio Mundial Valparaíso"
+      ],
+      "summary": "Área histórica de la ciudad-puerto, Patrimonio Mundial de la UNESCO desde 2003 y Zona Típica desde 2001.",
+      "description": "Zona Típica (Decreto N° 605 de 2001, ampliada en 2008) y Patrimonio Mundial de la UNESCO desde 2003. Reúne sectores como los cerros Alegre y Concepción, la Plaza Sotomayor, el entorno de la Iglesia La Matriz, la Quebrada Márquez, la Plaza Echaurren y calle Serrano, el Cerro Cordillera y el sector bancario de calle Prat.",
+      "latitude": -33.039227,
+      "longitude": -71.62986,
+      "coordinateAccuracy": "official-utm-cmn",
+      "source": {
+        "url": "https://www.monumentos.gob.cl/monumentos/zonas-tipicas/area-historica-de-valparaiso",
+        "label": "Consejo de Monumentos Nacionales"
+      },
+      "verification": "pending",
+      "origin": "official",
+      "importedAt": "2026-11-17"
+    },
+    {
+      "id": "museo-de-sitio-colon-10",
+      "region": "arica-parinacota",
+      "province": "arica",
+      "commune": "arica",
+      "locality": null,
+      "category": "cultura",
+      "name": "Museo de Sitio Colón 10",
+      "aliases": [
+        "Colón 10",
+        "Cultura Chinchorro",
+        "Momias Chinchorro",
+        "Chinchorro"
+      ],
+      "summary": "Componente urbano del sitio Patrimonio Mundial «Asentamiento y momificación artificial de la cultura Chinchorro», a los pies del Morro de Arica.",
+      "description": "Museo de sitio a los pies del Morro de Arica, donde se pueden ver restos de la cultura Chinchorro in situ. Es uno de los tres componentes del sitio Patrimonio Mundial «Asentamiento y momificación artificial de la cultura Chinchorro», junto al Faldeo Norte del Morro de Arica y la Desembocadura de Camarones.",
+      "latitude": null,
+      "longitude": null,
+      "coordinateAccuracy": "pending-official",
+      "source": {
+        "url": "https://www.monumentos.gob.cl/patrimonio-mundial/actual/asentamiento-y-momificacion-artificial-de-la-cultura-chinchorro",
+        "label": "Consejo de Monumentos Nacionales"
+      },
+      "verification": "pending",
+      "origin": "official",
+      "importedAt": "2026-11-17"
+    }
+  ],
+  "evidencias": {
+    "oficinas-salitreras-humberstone-santa-laura": [
+      "Consejo de Monumentos Nacionales: ficha Oficina Salitrera Humberstone, coordenadas UTM WGS84 huso 19S N 7765240 E 416901 (convertidas a -20.208559, -69.795439).",
+      "Registro Chile Patrimonios (Servicio Nacional del Patrimonio Cultural), ficha 01PMN-3782: Pozo Almonte, Tamarugal, Región de Tarapacá.",
+      "Patrimonio Cultural y Museo del Salitre: Patrimonio Mundial 2005; administración de la Corporación Museo del Salitre; Humberstone conserva el campamento y Santa Laura el área industrial."
+    ],
+    "centro-interpretacion-mina-san-jose": [
+      "Sernatur (01-02-2017): «Centro de Interpretación Mina San José», comuna de Caldera; convenio Sernatur Atacama y Municipalidad de Caldera.",
+      "Municipalidad de Copiapó (2023 y 2025): visitas guiadas al memorial de 8 hitos, con el campamento Esperanza.",
+      "Sin coordenadas publicadas por fuente oficial: ubicación por confirmar; no entra en mapa ni rutas hasta tenerla."
+    ],
+    "templo-san-francisco-de-castro": [
+      "CMN: Monumento Histórico N° 240, D.S. 1875 (19-07-1979); UTM WGS84 19S N 5285770 E 108420.",
+      "CMN: forma parte de las 16 Iglesias de Chiloé, Patrimonio Mundial 2000."
+    ],
+    "area-historica-de-valparaiso": [
+      "CMN: Zona Típica N° 813, Decretos 605 (2001), 453 y 2459 (2008); UTM WGS84 19S N 6341290 E 254403.",
+      "CMN: Patrimonio Mundial UNESCO 2003."
+    ],
+    "museo-de-sitio-colon-10": [
+      "CMN: componentes del sitio Chinchorro (Faldeo Norte del Morro, Colón 10, Desembocadura de Camarones).",
+      "CMN: yacimientos de Arica declarados Monumento Histórico (Decreto 4867 de 1967); restos visitables en el Museo de Sitio Colón 10.",
+      "Sin coordenadas oficiales: se busca coincidencia exacta en OSM."
+    ]
+  }
+}

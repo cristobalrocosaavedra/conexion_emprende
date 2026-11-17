@@ -1,7 +1,8 @@
+import { useState } from "react";
 import { Text, View, Linking } from "react-native";
 import { messages as t } from "@territorio-vivo/i18n";
 import { durationParts } from "@territorio-vivo/core";
-import type { RoadStep } from "@territorio-vivo/core";
+import type { RoadStep, TravelMode } from "@territorio-vivo/core";
 import { palettes } from "@territorio-vivo/design-tokens";
 import { Action } from "./ui";
 import type { useLiveTrip } from "./useLiveTrip";
@@ -45,22 +46,33 @@ export function NavigationPanel({
   dark,
   compact = false,
   onMap,
+  mode = "car",
+  onMode,
 }: {
   nav: ReturnType<typeof useLiveTrip>;
   server: ReturnType<typeof useRoutingServer>;
   dark: boolean;
   compact?: boolean;
   onMap?: () => void;
+  mode?: TravelMode;
+  onMode?: (mode: TravelMode) => void;
 }) {
+  const [more, setMore] = useState(false);
   const fg = dark ? "#f4f0e5" : "#123247",
     muted = dark ? "#c1cbd0" : "#46616c";
   const busy = nav.status === "locating" || nav.status === "calculating";
-  const action = (label: string, onPress: () => void, disabled = false) => (
+  const action = (
+    label: string,
+    onPress: () => void,
+    disabled = false,
+    primary = false,
+  ) => (
     <Action
       key={label}
       label={label}
       onPress={onPress}
       disabled={disabled}
+      primary={primary}
       colors={palettes[dark ? "dark" : "light"]}
     />
   );
@@ -114,65 +126,72 @@ export function NavigationPanel({
         </>
       ) : (
         <>
-          {!compact && (
-            <Text style={{ color: muted }}>
-              {server.publicService ? n.publicService : n.connected}
-            </Text>
-          )}
-          {server.publicService && (
-            <Text style={{ color: muted }}>
-              {compact ? n.publicPrivacyShort : n.publicPrivacy}
-            </Text>
-          )}
-          {!compact && server.publicService && (
+          {onMode && server.publicService && !nav.active && (
             <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8 }}>
-              {action(
-                n.conditions,
-                () =>
-                  void Linking.openURL(
-                    "https://routing.openstreetmap.de/about.html",
-                  ),
-              )}
-              {action(
-                n.fixMap,
-                () =>
-                  void Linking.openURL(
-                    "https://www.openstreetmap.org/fixthemap",
-                  ),
-              )}
+              {action(n.modeFoot, () => onMode("foot"), busy, mode === "foot")}
+              {action(n.modeCar, () => onMode("car"), busy, mode === "car")}
             </View>
           )}
           <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8 }}>
             {!nav.active && action(n.start, () => void nav.start(), busy)}
-            {!nav.active &&
-              !compact &&
-              action(n.calculate, () => void nav.preview(true), busy)}
-            {!nav.active &&
-              !compact &&
-              action(n.preview, () => void nav.preview(false), busy)}
             {nav.active &&
               action(n.recalculate, () => void nav.recalculate(), busy)}
             {(nav.active || busy || nav.route) && action(n.stop, nav.stop)}
             {onMap && action(n.openMap, onMap)}
           </View>
-          {!compact &&
-            !nav.active &&
-            action(
-              n.disable,
-              () => {
-                nav.stop();
-                void server.disconnect();
-              },
-              busy,
-            )}
+          {server.publicService && (
+            <Text style={{ color: muted, fontSize: 13 }}>
+              {n.publicPrivacyShort}
+            </Text>
+          )}
+          {!compact && action(more ? n.less : n.more, () => setMore((v) => !v))}
+          {!compact && more && (
+            <>
+              <Text style={{ color: muted }}>
+                {server.publicService ? n.publicService : n.connected}
+              </Text>
+              {server.publicService && (
+                <Text style={{ color: muted }}>{n.publicPrivacy}</Text>
+              )}
+              <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8 }}>
+                {!nav.active &&
+                  action(n.calculate, () => void nav.preview(true), busy)}
+                {!nav.active &&
+                  action(n.preview, () => void nav.preview(false), busy)}
+                {server.publicService &&
+                  action(
+                    n.conditions,
+                    () =>
+                      void Linking.openURL(
+                        "https://routing.openstreetmap.de/about.html",
+                      ),
+                  )}
+                {server.publicService &&
+                  action(
+                    n.fixMap,
+                    () =>
+                      void Linking.openURL(
+                        "https://www.openstreetmap.org/fixthemap",
+                      ),
+                  )}
+                {!nav.active &&
+                  action(
+                    n.disable,
+                    () => {
+                      nav.stop();
+                      void server.disconnect();
+                    },
+                    busy,
+                  )}
+              </View>
+              <Text style={{ color: muted }}>
+                {n.foreground}
+                {"\n"}
+                {n.liveEdits}
+              </Text>
+            </>
+          )}
         </>
-      )}
-      {!compact && (
-        <Text style={{ color: muted }}>
-          {n.foreground}
-          {"\n"}
-          {n.liveEdits}
-        </Text>
       )}
       {server.storageFailed && (
         <Text style={{ color: muted }}>{t.storageUnavailable}</Text>

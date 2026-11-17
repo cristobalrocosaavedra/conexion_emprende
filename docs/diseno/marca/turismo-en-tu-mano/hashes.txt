@@ -1,0 +1,8 @@
+bce4cc47fd64e5892da7a39e30de03ca22a1ed3d81bec793e03c4dc0fcf6cea2  docs/diseno/marca/turismo-en-tu-mano/manual-de-marca-v1.0.pdf
+ead23c8d4d1521dff884500c6e0c1d97e090a282c441faec2ffefa775a737ffd  docs/diseno/marca/turismo-en-tu-mano/originales-gpt/horizontal-transparente.webp
+50dd735095e908ba2b38d843e6a2d654ede20ef0358e4eaf212e23c68b9f1f98  docs/diseno/marca/turismo-en-tu-mano/originales-gpt/simbolo-fondo-berenjena.webp
+028854ebe8635411fae9618208785e3d2ab5ad8984aad724c663902b5491fb03  docs/diseno/marca/turismo-en-tu-mano/originales-gpt/simbolo-transparente.webp
+f22f434f1c15b554214625babd00ac424c02ed3deba51e3514c015fb274333ea  docs/diseno/marca/turismo-en-tu-mano/originales-gpt/texto-transparente.webp
+0ea67bde0dc333b365c15874dfc406785dac6cb7041f475c07a2eb90573112d2  docs/diseno/marca/turismo-en-tu-mano/originales-gpt/vertical-transparente.webp
+813051236f2c3573574be56db58a996fcc4494d1f81de52a2d37e308728b1262  apps/mobile/assets/marca/turismo-en-tu-mano-icono.png
+27f565cf973d83d24fa0ee19fd46cb1d581dedd322fb7b77eff8ddc302190734  apps/mobile/assets/marca/turismo-en-tu-mano-icono.webp
