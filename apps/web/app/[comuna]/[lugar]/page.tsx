@@ -135,7 +135,7 @@ export default async function PlacePage({ params }: Params) {
                 <p className="chico-texto">{s.noCoords}</p>
               )}
             </div>
-            {place.onMap !== false && <RouteButton id={place.id} />}
+            {isLocated(place) && <RouteButton id={place.id} />}
             {near.length > 0 && (
               <section className="cerca">
                 <h2>{s.nearby}</h2>

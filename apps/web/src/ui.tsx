@@ -15,6 +15,7 @@ import {
   communesOf,
   evidenceOf,
   href,
+  isLocated,
   placeArt,
   provinceById,
   provincesOf,
@@ -328,7 +329,7 @@ export function PlaceCard({
             ` · ${communeById(place.commune)?.name ?? place.commune}`}
           {evidence && ` · ${evidence.organism}`}
         </p>
-        {place.onMap !== false && <RouteButton id={place.id} small />}
+        {isLocated(place) && <RouteButton id={place.id} small />}
       </div>
     </article>
   );

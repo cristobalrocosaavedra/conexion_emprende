@@ -37,6 +37,7 @@ export function GET() {
       n: p.name,
       d: `${communeById(p.commune)?.name ?? p.commune} · ${regionName(p.region)}`,
       h: href.place(p),
+      a: (p.aliases ?? []).join(" "),
     })),
   ];
   return Response.json(data);

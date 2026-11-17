@@ -25,6 +25,7 @@ export function RoutePlanner({
     .map((id) => index.get(id))
     .filter((p): p is PlaceLite => !!p && p.onMap);
   const regions = new Set(list.map((p) => p.region));
+  const unlocated = list.filter((p) => p.lat === null || p.lon === null);
   const move = (i: number, d: -1 | 1) => {
     const ids = list.map((p) => p.id);
     const j = i + d;
@@ -42,13 +43,27 @@ export function RoutePlanner({
         </p>
         {list.length > 0 && (
           <div className="fila">
-            <a
-              className="boton boton-ruta"
-              href="/explorar/"
-              onClick={() => startIn(list[0].region)}
-            >
-              ▶ {s.startRoute}
-            </a>
+            {unlocated.length === 0 ? (
+              <a
+                className="boton boton-ruta"
+                href="/explorar/"
+                onClick={() => startIn(list[0].region)}
+              >
+                ▶ {s.startRoute}
+              </a>
+            ) : (
+              <button
+                type="button"
+                className="boton boton-ruta"
+                onClick={() =>
+                  set(
+                    list.filter((p) => !unlocated.includes(p)).map((p) => p.id),
+                  )
+                }
+              >
+                {s.removeUnlocated(unlocated.length)}
+              </button>
+            )}
             <button
               type="button"
               className="boton boton-borde"
@@ -60,7 +75,14 @@ export function RoutePlanner({
         )}
       </div>
       {list.length > 0 && (
-        <p className="suave chico-texto">{s.startRouteNote}</p>
+        <p
+          className={unlocated.length ? "aviso" : "suave chico-texto"}
+          role="status"
+        >
+          {unlocated.length
+            ? s.unlocatedWarning(unlocated.map((p) => p.name).join(", "))
+            : s.startRouteNote}
+        </p>
       )}
       <div className="ruta-cuerpo">
         <ol className="paradas">
@@ -90,6 +112,8 @@ export function RoutePlanner({
                     </a>
                     <span className="suave">
                       {t.categories[p.category]} · {p.communeName}
+                      {(p.lat === null || p.lon === null) &&
+                        ` · ${s.noLocationShort}`}
                     </span>
                   </div>
                   <div className="parada-acciones">

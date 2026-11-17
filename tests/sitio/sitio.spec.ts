@@ -152,6 +152,18 @@ test("Mi ruta: paradas de varias regiones, orden editable", async ({
   );
   await expect(page.locator(".capa circle")).toHaveCount(2);
   await shot(page, "escritorio-06-mi-ruta");
+  // Una parada sin ubicación confirmada impide calcular la ruta: se avisa y se puede quitar.
+  await page.evaluate((k) => {
+    const v = JSON.parse(localStorage.getItem(k)!);
+    v.stopIds.push("master:TV-ATR-00392");
+    localStorage.setItem(k, JSON.stringify(v));
+  }, prefsKey);
+  await page.reload();
+  await expect(page.locator(".aviso")).toContainText("Playa Chinchorro");
+  await page
+    .getByRole("button", { name: "Quitar 1 parada sin ubicación" })
+    .click();
+  await expect(page.getByRole("link", { name: /Iniciar ruta/ })).toBeVisible();
 });
 
 test("buscador: encuentra comunas y lugares", async ({ page }) => {
@@ -160,6 +172,11 @@ test("buscador: encuentra comunas y lugares", async ({ page }) => {
   await expect(page.locator(".resultados a").first()).toHaveAttribute(
     "href",
     "/la-ligua",
+  );
+  await page.locator("#buscar").fill("33 mineros");
+  await expect(page.locator(".resultados a").first()).toHaveAttribute(
+    "href",
+    "/caldera/centro-de-interpretacion-mina-san-jose",
   );
   await page.locator("#buscar").fill("matichoc");
   await expect(page.locator(".resultados a").first()).toHaveAttribute(

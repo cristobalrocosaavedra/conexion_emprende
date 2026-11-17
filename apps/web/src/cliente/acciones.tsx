@@ -180,6 +180,7 @@ interface Entry {
   n: string;
   d: string;
   h: string;
+  a?: string;
 }
 const normalize = (v: string) =>
   v.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
@@ -197,7 +198,7 @@ export function SearchBox({ big }: { big?: boolean }) {
   const results =
     index && q.length >= 2
       ? index
-          .filter((e) => normalize(e.n).includes(q))
+          .filter((e) => normalize(`${e.n} ${e.a ?? ""}`).includes(q))
           .sort(
             (a, b) =>
               Number(!normalize(a.n).startsWith(q)) -

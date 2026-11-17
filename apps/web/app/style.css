@@ -176,6 +176,7 @@ h3 {
   margin-left: 4px;
 }
 .cabecera-barra {
+  color: var(--texto);
   position: sticky;
   top: 0;
   z-index: 30;
@@ -249,6 +250,9 @@ h3 {
   border-radius: 16px;
   box-shadow: var(--sombra);
   z-index: 40;
+}
+.resultados {
+  color: var(--texto);
 }
 .resultados li > * {
   display: flex;

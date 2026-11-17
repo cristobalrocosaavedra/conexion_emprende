@@ -26,6 +26,34 @@
       "verification": "pending",
       "origin": "official",
       "importedAt": "2026-11-17"
+    },
+    {
+      "id": "centro-interpretacion-mina-san-jose",
+      "region": "atacama",
+      "province": "copiapo",
+      "commune": "caldera",
+      "locality": null,
+      "category": "cultura",
+      "name": "Centro de Interpretación Mina San José",
+      "aliases": [
+        "Mina San José",
+        "Mina San Esteban",
+        "Los 33",
+        "33 mineros",
+        "Campamento Esperanza"
+      ],
+      "summary": "Sitio del derrumbe y rescate de los 33 mineros de 2010, con centro de interpretación y memorial.",
+      "description": "Mina donde 33 mineros quedaron atrapados en 2010 y fueron rescatados. Hoy funciona como centro de interpretación, con un memorial de 8 hitos que marcan el campamento Esperanza, el acceso a la mina, las sondas, el lugar del rescate, el hospital y el helipuerto. Sernatur Atacama y la Municipalidad de Caldera firmaron un convenio de turismo en 2017, y la Municipalidad de Copiapó organiza visitas guiadas. Confirma horarios y visitas antes de viajar.",
+      "latitude": null,
+      "longitude": null,
+      "coordinateAccuracy": "pending-official",
+      "source": {
+        "url": "https://www.sernatur.cl/inicia-convenio-que-fortalecera-el-turismo-en-mina-san-jose/",
+        "label": "Sernatur"
+      },
+      "verification": "pending",
+      "origin": "official",
+      "importedAt": "2026-11-17"
     }
   ],
   "evidencias": {
@@ -33,6 +61,11 @@
       "Consejo de Monumentos Nacionales: ficha Oficina Salitrera Humberstone, coordenadas UTM WGS84 huso 19S N 7765240 E 416901 (convertidas a -20.208559, -69.795439).",
       "Registro Chile Patrimonios (Servicio Nacional del Patrimonio Cultural), ficha 01PMN-3782: Pozo Almonte, Tamarugal, Región de Tarapacá.",
       "Patrimonio Cultural y Museo del Salitre: Patrimonio Mundial 2005; administración de la Corporación Museo del Salitre; Humberstone conserva el campamento y Santa Laura el área industrial."
+    ],
+    "centro-interpretacion-mina-san-jose": [
+      "Sernatur (01-02-2017): «Centro de Interpretación Mina San José», comuna de Caldera; convenio Sernatur Atacama y Municipalidad de Caldera.",
+      "Municipalidad de Copiapó (2023 y 2025): visitas guiadas al memorial de 8 hitos, con el campamento Esperanza.",
+      "Sin coordenadas publicadas por fuente oficial: ubicación por confirmar; no entra en mapa ni rutas hasta tenerla."
     ]
   }
 }

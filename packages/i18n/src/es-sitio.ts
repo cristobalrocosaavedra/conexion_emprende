@@ -139,6 +139,13 @@ export const sitio = {
   startRoute: "Iniciar ruta",
   startRouteNote:
     "Abre el mapa con rutas a pie o en auto entre tus paradas, con tu permiso de ubicación.",
+  unlocatedWarning: (names: string) =>
+    `Para calcular la ruta, todas las paradas necesitan ubicación confirmada. Todavía no la tienen: ${names}.`,
+  removeUnlocated: (n: number) =>
+    n === 1
+      ? "Quitar 1 parada sin ubicación"
+      : `Quitar ${n} paradas sin ubicación`,
+  noLocationShort: "sin ubicación confirmada",
   flight: "Traslado aéreo",
   flightNote: "Entre el continente y Rapa Nui se viaja en avión.",
   stored: "Se guarda solo en tu navegador, sin coordenadas.",

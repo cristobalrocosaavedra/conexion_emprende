@@ -220,7 +220,11 @@ function TodoTab({ level, id }: { level: Level; id: string }) {
                         {r.source.label}
                       </a>
                     </p>
-                    <AddAllButton ids={r.stopIds} />
+                    <AddAllButton
+                      ids={stops
+                        .filter((p) => isLocated(p!) && onMap(p!))
+                        .map((p) => p!.id)}
+                    />
                   </div>
                 </article>
               );

@@ -10,6 +10,14 @@
       "checkedOn": "2026-11-16"
     },
     {
+      "placeId": "centro-interpretacion-mina-san-jose",
+      "status": "official",
+      "organism": "Sernatur",
+      "evidenceUrl": "https://www.sernatur.cl/inicia-convenio-que-fortalecera-el-turismo-en-mina-san-jose/",
+      "method": "Publicación oficial de Sernatur sobre el centro de interpretación; ubicación exacta pendiente",
+      "checkedOn": "2026-11-17"
+    },
+    {
       "placeId": "chocolateria-matichoc",
       "status": "verified",
       "organism": "Chocolatería Matichoc (titular)",
