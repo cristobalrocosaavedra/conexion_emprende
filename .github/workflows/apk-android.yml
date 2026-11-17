@@ -67,7 +67,8 @@ jobs:
       contents: read
       actions: read
     needs: [validar, motor-rutas, ruteo-publico]
-    if: ${{ !startsWith(github.ref, 'refs/heads/docs/') && !startsWith(github.head_ref, 'docs/') }}
+    # Prioridad web (17-11-2026): la APK se compila solo a pedido (Run workflow).
+    if: ${{ github.event_name == 'workflow_dispatch' && !startsWith(github.ref, 'refs/heads/docs/') }}
     runs-on: ubuntu-24.04
     timeout-minutes: 55
     env:
