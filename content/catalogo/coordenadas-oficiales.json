@@ -1,0 +1,12 @@
+{
+  "_nota": "Coordenadas publicadas por organismos oficiales para lugares que ya existen en el catálogo sin ubicación. Tienen prioridad sobre OSM y no modifican los datos de origen. 17-11-2026.",
+  "records": {
+    "master:TV-ATR-00532": {
+      "latitude": -34.084801,
+      "longitude": -70.381595,
+      "organism": "Consejo de Monumentos Nacionales",
+      "url": "https://www.monumentos.gob.cl/monumentos/zonas-tipicas/campamento-sewell",
+      "note": "Zona Típica N° 740, UTM WGS84 19S N 6227580 E 372535; Patrimonio Mundial 2006."
+    }
+  }
+}

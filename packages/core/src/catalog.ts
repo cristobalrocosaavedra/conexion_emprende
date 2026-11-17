@@ -2,6 +2,8 @@ import master from "../../../content/catalogo/maestro-app.json";
 import national from "../../../content/catalogo/osm-chile.json";
 import snapshot from "../../../content/catalogo/petorca.json";
 import official from "../../../content/catalogo/oficiales.json";
+import osmCoordinates from "../../../content/catalogo/coordenadas-osm.json";
+import officialCoordinates from "../../../content/catalogo/coordenadas-oficiales.json";
 import geography from "../../../content/catalogo/regiones.geo.json";
 import verificationLog from "../../../content/catalogo/verificacion.json";
 import planLog from "../../../content/catalogo/planes-negocios.json";
@@ -36,6 +38,8 @@ export interface Place {
   verification: VerificationStatus;
   origin?: "osm" | "master" | "official";
   importedAt: string;
+  /** Origen de la ubicación cuando no viene en la fuente del lugar. */
+  coordinateSource?: "official" | "osm-exact-name";
   /** Plan comercial vigente (solo negocios). */
   plan?: BusinessPlan["id"] | null;
   /** En el mapa y en rutas: atractivos siempre; negocios solo desde el plan Completo. */
@@ -96,6 +100,43 @@ export function placeListing(p: Pick<Place, "id" | "category">): {
 export const hiddenPlaceIds = new Set(
   (planLog.ocultos as { placeId: string }[]).map((r) => r.placeId),
 );
+/**
+ * Ubicaciones de referencia de OSM (ODbL) por mismo nombre en la misma comuna.
+ * Solo completan lugares con fuente propia y sin coordenadas; no reemplazan datos.
+ */
+const osmExact = osmCoordinates.exact as Partial<
+  Record<string, { latitude: number; longitude: number; osm: string }>
+>;
+/** Elemento OSM usado como ubicación de referencia (para atribución y revisión). */
+export const osmLocationOf = (id: string) => osmExact[id]?.osm ?? null;
+const officialPoints = officialCoordinates.records as Partial<
+  Record<
+    string,
+    { latitude: number; longitude: number; url: string; organism: string }
+  >
+>;
+/** Fuente oficial de una ubicación agregada (organismo y enlace). */
+export const officialLocationOf = (id: string) => officialPoints[id] ?? null;
+function withOsmLocation(p: Place): Place {
+  if (p.latitude !== null && p.longitude !== null) return p;
+  const official = officialPoints[p.id];
+  if (official)
+    return {
+      ...p,
+      latitude: official.latitude,
+      longitude: official.longitude,
+      coordinateSource: "official",
+    };
+  const match = osmExact[p.id];
+  if (!match || !p.source || (p.latitude !== null && p.longitude !== null))
+    return p;
+  return {
+    ...p,
+    latitude: match.latitude,
+    longitude: match.longitude,
+    coordinateSource: "osm-exact-name",
+  };
+}
 export const places = (
   [
     ...snapshot.places,
@@ -105,6 +146,7 @@ export const places = (
   ] as Place[]
 )
   .filter((p) => !hiddenPlaceIds.has(p.id))
+  .map(withOsmLocation)
   .map((p): Place => {
     const { plan, onMap } = placeListing(p);
     return {

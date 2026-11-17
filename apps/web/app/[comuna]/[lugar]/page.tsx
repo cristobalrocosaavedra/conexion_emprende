@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { officialLocationOf, osmLocationOf } from "@territorio-vivo/core";
 import { messages as t } from "@territorio-vivo/i18n";
 import {
   FavoriteButton,
@@ -178,6 +179,29 @@ export default async function PlacePage({ params }: Params) {
               </p>
             ) : (
               <p className="suave">{s.sourceNone}</p>
+            )}
+            {place.coordinateSource === "official" && (
+              <p className="suave chico-texto">
+                <a
+                  href={officialLocationOf(place.id)!.url}
+                  rel="noopener"
+                  target="_blank"
+                >
+                  {s.officialLocation(officialLocationOf(place.id)!.organism)}
+                </a>
+              </p>
+            )}
+            {place.coordinateSource === "osm-exact-name" && (
+              <p className="suave chico-texto">
+                {s.osmLocation}{" "}
+                <a
+                  href={`https://www.openstreetmap.org/${osmLocationOf(place.id)}`}
+                  rel="noopener"
+                  target="_blank"
+                >
+                  {s.osmLocationLink}
+                </a>
+              </p>
             )}
           </div>
           <a className="boton boton-borde" href="/suma-tu-negocio#contacto">

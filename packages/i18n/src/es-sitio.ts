@@ -125,6 +125,11 @@ export const sitio = {
   sourceLink: "Ver fuente",
   sourceNone: "Sin fuente publicada todavía.",
   osmNote: "Dato de OpenStreetMap, © colaboradores, licencia ODbL.",
+  osmLocation:
+    "Ubicación de referencia tomada de OpenStreetMap por el mismo nombre en la misma comuna (© colaboradores, ODbL). Confirma el acceso antes de viajar.",
+  osmLocationLink: "Ver en OpenStreetMap",
+  officialLocation: (organism: string) =>
+    `Ubicación publicada por ${organism}.`,
   reportError: "¿Ves un error? Avísanos",
   about: "Sobre este lugar",
   aboutEmpty:

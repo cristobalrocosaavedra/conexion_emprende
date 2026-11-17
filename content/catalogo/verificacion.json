@@ -2,6 +2,14 @@
   "_nota": "Estados de verificación con evidencia. No modifica los datos de origen; se aplica al cargar el catálogo. 16-11-2026.",
   "records": [
     {
+      "placeId": "area-historica-de-valparaiso",
+      "status": "official",
+      "organism": "Consejo de Monumentos Nacionales",
+      "evidenceUrl": "https://www.monumentos.gob.cl/monumentos/zonas-tipicas/area-historica-de-valparaiso",
+      "method": "Ficha oficial del Consejo de Monumentos Nacionales (Patrimonio Mundial)",
+      "checkedOn": "2026-11-17"
+    },
+    {
       "placeId": "casa-natal-manuel-montt",
       "status": "official",
       "organism": "Consejo de Monumentos Nacionales",
@@ -410,6 +418,22 @@
       "checkedOn": "2026-11-16"
     },
     {
+      "placeId": "master:TV-ATR-00532",
+      "status": "official",
+      "organism": "Consejo de Monumentos Nacionales",
+      "evidenceUrl": "https://www.monumentos.gob.cl/monumentos/zonas-tipicas/campamento-sewell",
+      "method": "Ficha oficial del Consejo de Monumentos Nacionales (Patrimonio Mundial)",
+      "checkedOn": "2026-11-17"
+    },
+    {
+      "placeId": "museo-de-sitio-colon-10",
+      "status": "official",
+      "organism": "Consejo de Monumentos Nacionales",
+      "evidenceUrl": "https://www.monumentos.gob.cl/patrimonio-mundial/actual/asentamiento-y-momificacion-artificial-de-la-cultura-chinchorro",
+      "method": "Ficha oficial del Consejo de Monumentos Nacionales (Patrimonio Mundial)",
+      "checkedOn": "2026-11-17"
+    },
+    {
       "placeId": "oficinas-salitreras-humberstone-santa-laura",
       "status": "official",
       "organism": "Consejo de Monumentos Nacionales",
@@ -424,6 +448,14 @@
       "evidenceUrl": "https://www.monumentos.gob.cl/monumentos/monumentos-historicos/tunel-las-palmas",
       "method": "Fuente registrada en el catálogo pertenece a un organismo público; clasificación aprobada por el titular",
       "checkedOn": "2026-11-16"
+    },
+    {
+      "placeId": "templo-san-francisco-de-castro",
+      "status": "official",
+      "organism": "Consejo de Monumentos Nacionales",
+      "evidenceUrl": "https://www.monumentos.gob.cl/monumentos/monumentos-historicos/templo-de-san-francisco-de-castro",
+      "method": "Ficha oficial del Consejo de Monumentos Nacionales (Patrimonio Mundial)",
+      "checkedOn": "2026-11-17"
     },
     {
       "placeId": "zapallar-cachagua",

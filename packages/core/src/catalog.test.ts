@@ -240,3 +240,20 @@ describe("lugares agregados desde fuentes oficiales", () => {
     expect(h.source?.url).toContain("monumentos.gob.cl");
   });
 });
+
+describe("Patrimonio Mundial con fuente oficial", () => {
+  it("suma Castro, Valparaíso y Chinchorro, y ubica Sewell con coordenadas del CMN", () => {
+    const byId = (id: string) => places.find((p) => p.id === id)!;
+    expect(byId("templo-san-francisco-de-castro").commune).toBe("castro");
+    expect(byId("area-historica-de-valparaiso").latitude).toBeCloseTo(
+      -33.039,
+      2,
+    );
+    // Sin coordenadas oficiales: solo se ubica por coincidencia exacta en OSM.
+    expect(byId("museo-de-sitio-colon-10").source?.url).toContain("chinchorro");
+    const sewell = byId("master:TV-ATR-00532");
+    expect(sewell.coordinateSource).toBe("official");
+    expect(sewell.latitude).toBeCloseTo(-34.0848, 3);
+    expect(sewell.verification).toBe("official");
+  });
+});

@@ -1,3 +1,4 @@
+import masterJson from "../../../content/catalogo/maestro-app.json";
 import { expect, it } from "vitest";
 import {
   catalogTerritories,
@@ -44,9 +45,13 @@ it("encuentra atractivos de otras regiones con o sin coordenadas y no inventa pu
     "Violeta Parra",
   )[0];
   expect(park).toBeDefined();
-  expect(isLocated(park)).toBe(false);
-  expect(park.latitude).toBeNull();
-  expect(park.longitude).toBeNull();
+  // El maestro no trae coordenadas; la ubicación de referencia viene de OSM
+  // (mismo nombre en la misma comuna) y queda atribuida, sin cambiar el origen.
+  expect(park.coordinateSource).toBe("osm-exact-name");
+  expect(isLocated(park)).toBe(true);
+  expect(
+    masterRecords.length && placesFromMaster("master:TV-ATR-00347")?.latitude,
+  ).toBeNull();
 });
 it("distingue los parecidos por revisar y conserva las preferencias anteriores", () => {
   const c = places.find((p) => p.name === "Playa El Canelillo")!;
@@ -80,3 +85,8 @@ it("encuentra territorios sin atractivos y conserva su selección sin inventar C
     ),
   ).toBe(true);
 });
+function placesFromMaster(id: string) {
+  return (masterJson.places as { id: string; latitude: number | null }[]).find(
+    (p) => p.id === id,
+  );
+}
