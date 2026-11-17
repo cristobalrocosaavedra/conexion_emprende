@@ -46,7 +46,7 @@ export function RoutePlanner({
             {unlocated.length === 0 ? (
               <a
                 className="boton boton-ruta"
-                href="/explorar/"
+                href="/explorar/?ver=ruta"
                 onClick={() => startIn(list[0].region)}
               >
                 ▶ {s.startRoute}

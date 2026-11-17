@@ -411,8 +411,19 @@ export default function Home() {
       Animated.spring(motion, { toValue: 0, useNativeDriver: true }).start(),
   });
   // Dirección turismoentumano.cl/<región o comuna>: abre ese territorio.
-  const { territorio } = useLocalSearchParams<{ territorio?: string }>();
+  const { territorio, ver } = useLocalSearchParams<{
+    territorio?: string;
+    ver?: string;
+  }>();
   const openedTerritory = useRef<string | null>(null);
+  // «Iniciar ruta» del sitio abre /explorar/?ver=ruta: Mi viaje con su mapa.
+  const openedTrip = useRef(false);
+  useEffect(() => {
+    if (!hydrated || ver !== "ruta" || openedTrip.current) return;
+    openedTrip.current = true;
+    setTab("trip");
+    setMapMode("trip");
+  }, [hydrated, ver]);
   useEffect(() => {
     const slug = typeof territorio === "string" ? territorio.toLowerCase() : "";
     if (!hydrated || !slug || openedTerritory.current === slug) return;

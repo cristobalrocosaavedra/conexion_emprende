@@ -654,19 +654,28 @@ test("el maestro permite revisar y guardar referencias nuevas sin inventar coord
   await page.getByRole("tab", { name: /Explorar/ }).click();
   await page
     .getByRole("textbox", { name: "Buscar lugares" })
-    .fill("Violeta Parra");
+    .fill("Bicentenario de la Infancia");
   await expect(
-    page.getByRole("button", { name: "Parque Violeta Parra", exact: true }),
+    page.getByRole("button", {
+      name: "Parque Bicentenario de la Infancia",
+      exact: true,
+    }),
   ).toBeVisible();
   await expect(
-    page.getByText("Lo Espejo · Naturaleza", { exact: true }),
+    page.getByText("Recoleta · Naturaleza", { exact: true }),
   ).toBeVisible();
   await page
-    .getByRole("button", { name: "Parque Violeta Parra", exact: true })
+    .getByRole("button", {
+      name: "Parque Bicentenario de la Infancia",
+      exact: true,
+    })
     .scrollIntoViewIfNeeded();
   await page.screenshot({ path: "previews/pantalla-catalogo-0.8.0.png" });
   await page
-    .getByRole("button", { name: "Parque Violeta Parra", exact: true })
+    .getByRole("button", {
+      name: "Parque Bicentenario de la Infancia",
+      exact: true,
+    })
     .click();
   await expect(
     page.getByText("Ubicación sin confirmar · no se marca un punto exacto", {
@@ -705,7 +714,7 @@ test("el maestro permite revisar y guardar referencias nuevas sin inventar coord
     .click();
   await page.getByRole("tab", { name: /Mi viaje/ }).click();
   await expect(
-    page.getByText("1. Parque Violeta Parra", { exact: true }),
+    page.getByText("1. Parque Bicentenario de la Infancia", { exact: true }),
   ).toBeVisible();
 });
 
@@ -755,7 +764,7 @@ test("la portada diferencia Valparaíso completo de las once referencias de La L
   );
   await page.reload();
   await expect(
-    page.getByText("90 referencias en la región", { exact: true }),
+    page.getByText("91 referencias en la región", { exact: true }),
   ).toBeVisible();
   await expect(page.getByText("11 en La Ligua", { exact: true })).toBeVisible();
   await page.screenshot({ path: "previews/pantalla-valparaiso-0.8.0.png" });
@@ -771,7 +780,7 @@ test("la portada diferencia Valparaíso completo de las once referencias de La L
       ),
     )
     .toBe("all");
-  await expect(page.getByText(/90 lugares de referencia/)).toBeVisible();
+  await expect(page.getByText(/91 lugares de referencia/)).toBeVisible();
 });
 
 test("Rapa Nui tiene cuatro referencias y mapa local con aviso de llegada aérea", async ({
@@ -1011,7 +1020,7 @@ test("la dirección de una comuna abre su territorio en la web", async ({
 }) => {
   await page.goto("/la-ligua");
   await expect(
-    page.getByText("90 referencias en la región", { exact: true }),
+    page.getByText("91 referencias en la región", { exact: true }),
   ).toBeVisible();
   await expect(page.getByText("11 en La Ligua", { exact: true })).toBeVisible();
   await page.goto("/metropolitana");
